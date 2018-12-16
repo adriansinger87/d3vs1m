@@ -7,8 +7,13 @@ namespace D3vS1m.Application.Antenna
 {
     public class FlatAntennaArgs : BaseArgs
     {
+        public FlatAntennaArgs()
+        {
+            base.Name = "flat antenna model";
+        }
+
         /// <summary>
-        /// Gibt den für alle Geräte gültigen Antennengewinn aus oder legt diesen fest 
+        /// Gets or sets the antenna gain for all devices to the same value. 
         /// </summary>
         public float FlatGain { get; set; }
     }

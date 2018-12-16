@@ -4,6 +4,16 @@ using System.Text;
 
 namespace D3vS1m.Domain.Enumerations
 {
-    // TODO add global enum classes here...
-
+    /// <summary>
+    /// It describes the executed simulation model in the state machine
+    /// </summary>
+    public enum RuntimeStates {
+        Antenna,
+        Channel,
+        Devices,
+        Netowrk,
+        Communication,
+        Energy,
+        Scene,
+    }
 }
