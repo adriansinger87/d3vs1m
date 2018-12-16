@@ -12,6 +12,7 @@ namespace D3vS1m.Application
         public const string SphericAntenna = "spheric antenna model";
 
         // channel models
+        public const string AdaptedFriisTransmission = "adapted friis transmission model";
 
         // device models
 
@@ -20,6 +21,8 @@ namespace D3vS1m.Application
         // communication models
 
         // scene models
+
+        public const string InvariantScene = "invariant scene model";
 
         // energy models
     }

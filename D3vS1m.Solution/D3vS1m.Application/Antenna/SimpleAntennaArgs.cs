@@ -1,11 +1,11 @@
-﻿using D3vS1m.Domain.Arguments;
+﻿using D3vS1m.Domain.Data.Arguments;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace D3vS1m.Application.Antenna
 {
-    class SimpleAntennaArgs : BaseArgs
+    public class SimpleAntennaArgs : BaseArgs
     {
         public SimpleAntennaArgs()
         {

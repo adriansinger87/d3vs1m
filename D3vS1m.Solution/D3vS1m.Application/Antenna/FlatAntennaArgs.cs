@@ -1,4 +1,4 @@
-﻿using D3vS1m.Domain.Arguments;
+﻿using D3vS1m.Domain.Data.Arguments;
 using System;
 using System.Collections.Generic;
 using System.Text;
