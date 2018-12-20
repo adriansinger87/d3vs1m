@@ -1,7 +1,9 @@
 ﻿using D3vS1m.Application.Antenna;
 using D3vS1m.Application.Channel;
+using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Runtime;
+using D3vS1m.Domain.Simulation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace MSTests.Application
     {
         // -- fields
 
-        RuntimeController _runtime;
+        RuntimeBase _runtime;
 
         // -- inherits
 
@@ -37,16 +39,25 @@ namespace MSTests.Application
         [TestMethod]
         public void RunSingleStep()
         {
-            var simulators = new ISimulationRunnable[]
+            // arrange
+            SimulatorRepository simRepo = new SimulatorRepository
             {
-                new BaseRunner(new SceneSimulator().With(new InvariantSceneArgs())),
-                new BaseRunner(new AdaptedFriisSimulator().With(new AdaptedFriisArgs())),
-                new BaseRunner(new SimpleAntennaSimulator().With(new SimpleAntennaArgs()))
+                new SceneSimulator().With(new InvariantSceneArgs()),
+                new AdaptedFriisSimulator().With(new AdaptedFriisArgs()),
+                new SimpleAntennaSimulator().With(new SimpleAntennaArgs())
             };
 
-            _runtime.Setup(simulators);
+            // act
+            if (_runtime.Setup(simRepo).Validate() == false)
+            {
+                Assert.Fail("error on validating the simulation");
+            }
+
             _runtime.Run();
             _runtime.Stop();
+
+            // assert
+
         }
     }
 }

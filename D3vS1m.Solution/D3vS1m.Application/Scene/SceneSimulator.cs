@@ -1,4 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Enumerations;
 using D3vS1m.Domain.Simulation;
 using System;
 using System.Collections.Generic;
@@ -22,5 +23,7 @@ namespace D3vS1m.Application.Scene
         }
 
         public string Name { get { return _args.Name; } }
+
+        public SimulationModels Model { get { return SimulationModels.Scene; } }
     }
 }
