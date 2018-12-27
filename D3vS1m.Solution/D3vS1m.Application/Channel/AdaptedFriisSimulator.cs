@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Enumerations;
+using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace D3vS1m.Application.Channel
 {
-    public class AdaptedFriisSimulator : ISimulatable
+    public class AdaptedFriisSimulator : SimulatorEventBase, ISimulatable
     {
         private AdaptedFriisArgs _args;
-
-
 
         public ISimulatable With(BaseArgs arguments)
         {
@@ -21,7 +20,24 @@ namespace D3vS1m.Application.Channel
 
         public void Execute()
         {
+            BeforeExecution();
 
+            // do your implementation here...
+
+            _args.AttenuationExponent = 1;
+            _args.AttenuationOffset = 2;
+
+            AfterExecution();
+        }
+
+        protected override void BeforeExecution()
+        {
+            BeforeExecution(new SimulatorEventArgs(_args));
+        }
+
+        protected override void AfterExecution()
+        {
+            AfterExecution(new SimulatorEventArgs(_args));
         }
 
         // -- properties
