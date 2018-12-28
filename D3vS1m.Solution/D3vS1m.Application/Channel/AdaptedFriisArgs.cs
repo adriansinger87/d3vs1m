@@ -10,6 +10,7 @@ namespace D3vS1m.Application.Channel
             Name = Models.AdaptedFriisTransmission;
 
             // default settings
+            RadioBox = new RadioCuboid();
             // TODO: refactore magic numbers
             AttenuationExponent = 1.25F;
             AttenuationOffset = 0.5F;
