@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Antenna
 
         // -- methods
 
-        public ISimulatable With(BaseArgs arguments)
+        public ISimulatable With(ArgumentsBase arguments)
         {
             _args = arguments as SimpleAntennaArgs;
 
@@ -37,6 +37,6 @@ namespace D3vS1m.Application.Antenna
 
         public SimulationModels Model { get { return SimulationModels.Antenna; } }
 
-        public BaseArgs Arguments { get { return _args; } }
+        public ArgumentsBase Arguments { get { return _args; } }
     }
 }

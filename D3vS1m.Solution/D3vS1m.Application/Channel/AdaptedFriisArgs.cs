@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace D3vS1m.Application.Channel
 {
-    public class AdaptedFriisArgs : BaseArgs
+    public class AdaptedFriisArgs : ArgumentsBase
     {
         public AdaptedFriisArgs()
         {

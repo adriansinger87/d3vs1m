@@ -9,7 +9,7 @@ namespace D3vS1m.Application.Channel
     {
         private AdaptedFriisArgs _args;
 
-        public ISimulatable With(BaseArgs arguments)
+        public ISimulatable With(ArgumentsBase arguments)
         {
             _args = arguments as AdaptedFriisArgs;
             return this;
@@ -21,6 +21,7 @@ namespace D3vS1m.Application.Channel
 
             // do your implementation here...
 
+            // TODO: remove following two lines of demo code
             _args.AttenuationExponent = 1;
             _args.AttenuationOffset = 2;
 
@@ -43,6 +44,6 @@ namespace D3vS1m.Application.Channel
 
         public SimulationModels Model { get { return SimulationModels.Channel; } }
 
-        public BaseArgs Arguments { get { return _args; } }
+        public ArgumentsBase Arguments { get { return _args; } }
     }
 }

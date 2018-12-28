@@ -12,7 +12,7 @@ namespace D3vS1m.Domain.Simulation
         /// </summary>
         /// <param name="arguments"></param>
         /// <returns>the calling instance of the simulator</returns>
-        ISimulatable With(BaseArgs arguments);
+        ISimulatable With(ArgumentsBase arguments);
 
         /// <summary>
         /// Runs the implementation of the simulation model
@@ -21,7 +21,7 @@ namespace D3vS1m.Domain.Simulation
 
         // -- properties
 
-        BaseArgs Arguments { get; }
+        ArgumentsBase Arguments { get; }
 
         /// <summary>
         /// Gets the name property of the simulation model

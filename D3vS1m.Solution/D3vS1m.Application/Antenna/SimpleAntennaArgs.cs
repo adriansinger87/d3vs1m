@@ -2,7 +2,7 @@
 
 namespace D3vS1m.Application.Antenna
 {
-    public class SimpleAntennaArgs : BaseArgs
+    public class SimpleAntennaArgs : ArgumentsBase
     {
         public SimpleAntennaArgs()
         {

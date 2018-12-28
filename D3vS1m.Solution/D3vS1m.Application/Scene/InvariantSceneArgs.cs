@@ -2,7 +2,7 @@
 
 namespace D3vS1m.Application.Scene
 {
-    public class InvariantSceneArgs : BaseArgs
+    public class InvariantSceneArgs : ArgumentsBase
     {
         public InvariantSceneArgs()
         {

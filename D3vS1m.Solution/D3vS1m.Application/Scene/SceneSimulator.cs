@@ -8,7 +8,7 @@ namespace D3vS1m.Application.Scene
     {
         private InvariantSceneArgs _args;
         
-        public ISimulatable With(BaseArgs arguments)
+        public ISimulatable With(ArgumentsBase arguments)
         {
             _args = arguments as InvariantSceneArgs;
             return this;
@@ -23,6 +23,6 @@ namespace D3vS1m.Application.Scene
 
         public SimulationModels Model { get { return SimulationModels.Scene; } }
 
-        public BaseArgs Arguments { get { return _args; } }
+        public ArgumentsBase Arguments { get { return _args; } }
     }
 }

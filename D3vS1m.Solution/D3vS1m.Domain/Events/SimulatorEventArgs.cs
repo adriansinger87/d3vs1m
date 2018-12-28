@@ -9,7 +9,7 @@ namespace D3vS1m.Domain.Events
     {
         // -- constructor
 
-        public SimulatorEventArgs(BaseArgs arguments)
+        public SimulatorEventArgs(ArgumentsBase arguments)
         {
             Timestamp = DateTime.Now;
             Arguments = arguments;
@@ -19,6 +19,6 @@ namespace D3vS1m.Domain.Events
 
         public DateTime Timestamp { get; private set; }
 
-        public BaseArgs Arguments { get; private set; }
+        public ArgumentsBase Arguments { get; private set; }
     }
 }

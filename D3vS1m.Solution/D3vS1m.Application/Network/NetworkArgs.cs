@@ -5,7 +5,7 @@ using System.Text;
 
 namespace D3vS1m.Application.Network
 {
-    public class NetworkArgs : BaseArgs
+    public class NetworkArgs : ArgumentsBase
     {
         public NetworkArgs()
         {
