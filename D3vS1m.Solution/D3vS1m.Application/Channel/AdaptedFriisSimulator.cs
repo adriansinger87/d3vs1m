@@ -2,9 +2,6 @@
 using D3vS1m.Domain.Enumerations;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Channel
 {
@@ -45,5 +42,7 @@ namespace D3vS1m.Application.Channel
         public string Name { get { return _args.Name; } }
 
         public SimulationModels Model { get { return SimulationModels.Channel; } }
+
+        public BaseArgs Arguments { get { return _args; } }
     }
 }

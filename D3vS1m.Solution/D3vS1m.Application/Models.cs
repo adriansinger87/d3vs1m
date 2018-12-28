@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace D3vS1m.Application
+﻿namespace D3vS1m.Application
 {
     public class Models
     {
@@ -17,6 +13,7 @@ namespace D3vS1m.Application
         // device models
 
         // netowrk models
+        public const string PeerToPeerNetwork = "peer to peer network";
 
         // communication models
 

@@ -1,5 +1,3 @@
-using System;
-
 namespace D3vS1m.Web.Models
 {
     public class ErrorViewModel

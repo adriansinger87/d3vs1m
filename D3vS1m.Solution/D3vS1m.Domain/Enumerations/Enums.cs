@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace D3vS1m.Domain.Enumerations
+﻿namespace D3vS1m.Domain.Enumerations
 {
     /// <summary>
     /// It describes the executed simulation model in the state machine
@@ -11,7 +7,7 @@ namespace D3vS1m.Domain.Enumerations
         Antenna,
         Channel,
         Devices,
-        Netowrk,
+        Network,
         Communication,
         Energy,
         Scene,

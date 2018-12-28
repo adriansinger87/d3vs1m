@@ -1,9 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Enumerations;
-using D3vS1m.Domain.Events;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Domain.Simulation
 {
@@ -24,6 +20,8 @@ namespace D3vS1m.Domain.Simulation
         void Execute();
 
         // -- properties
+
+        BaseArgs Arguments { get; }
 
         /// <summary>
         /// Gets the name property of the simulation model

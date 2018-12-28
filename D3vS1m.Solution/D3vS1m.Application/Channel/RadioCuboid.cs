@@ -1,13 +1,13 @@
 ﻿using D3vS1m.Domain.Data.Scene;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Channel
 {
-    internal class FriisCube
+    /// <summary>
+    /// Stores the data of the cuboid that is used as input for the wireless radio channel simulation
+    /// </summary>
+    public class RadioCuboid
     {
-        public FriisCube()
+        public RadioCuboid()
         {
             this.MinCorner = new Vector();
             this.MaxCorner = new Vector();

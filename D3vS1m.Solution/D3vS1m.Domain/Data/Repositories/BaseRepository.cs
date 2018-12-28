@@ -1,8 +1,6 @@
 ﻿using D3vS1m.Domain.System.Logging;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Domain.Data.Repositories
 {

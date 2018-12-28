@@ -1,9 +1,6 @@
 ﻿using D3vS1m.Domain.System.Logging;
 using D3vS1m.Persistence.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MSTests
 {

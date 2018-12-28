@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using D3vS1m.Domain.Extensions;
 
 namespace MSTests.Domain.Extensions

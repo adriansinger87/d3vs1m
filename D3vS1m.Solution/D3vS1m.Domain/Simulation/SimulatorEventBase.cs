@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.Enumerations;
-using D3vS1m.Domain.Events;
+﻿using D3vS1m.Domain.Events;
 
 namespace D3vS1m.Domain.Simulation
 {

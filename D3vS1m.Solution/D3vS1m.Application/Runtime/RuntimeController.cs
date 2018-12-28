@@ -1,28 +1,27 @@
 ﻿using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Runtime;
-using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Logging;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace D3vS1m.Application.Runtime
 {
     public class RuntimeController : RuntimeBase
     {
-        private SimulationValidator validator;
+        /// <summary>
+        /// injected concretion of the validation of the simulation models
+        /// </summary>
+        private BasicValidator _validator;
 
-        public RuntimeController()
+        public RuntimeController(BasicValidator validator)
         {
-            validator = new SimulationValidator();
+            _validator = validator;
         }
 
         public override bool Validate()
         {
             // execute validation
-            ValidationResult results = validator.Validate(_simRepo);
+            ValidationResult results = _validator.Validate(_simRepo);
 
             // log
             results.RuleSetsExecuted.ToList().ForEach(s => Log.Trace(s));

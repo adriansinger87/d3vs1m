@@ -2,9 +2,7 @@
 using NLog;
 using NLog.Layouts;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace D3vS1m.Persistence.Logging
 {

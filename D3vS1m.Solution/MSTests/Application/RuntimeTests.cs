@@ -1,14 +1,13 @@
 ﻿using D3vS1m.Application.Antenna;
 using D3vS1m.Application.Channel;
+using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene;
+using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MSTests.Application
 {
@@ -26,7 +25,7 @@ namespace MSTests.Application
         {
             base.Arrange();
 
-            _runtime = new RuntimeController();
+            _runtime = new RuntimeController(new D3vS1mValidator());
         }
 
         [TestCleanup]
@@ -40,16 +39,17 @@ namespace MSTests.Application
         [TestMethod]
         public void RunSingleStep()
         {
+            // arrange
             AdaptedFriisSimulator afs = new AdaptedFriisSimulator().With(new AdaptedFriisArgs()) as AdaptedFriisSimulator;
             afs.OnExecuting += AdaptedFriisOnExecuting;
             afs.Executed += AdaptedFriisExecuted;
 
-            // arrange
             SimulatorRepository simRepo = new SimulatorRepository
             {
                 new SceneSimulator().With(new InvariantSceneArgs()),
                 afs,
-                new SimpleAntennaSimulator().With(new SimpleAntennaArgs())
+                new SimpleAntennaSimulator().With(new SimpleAntennaArgs()),
+                new PeerToPeerNetworkSimulator().With(new NetworkArgs())
             };
 
             // act
