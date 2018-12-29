@@ -1,4 +1,4 @@
-﻿namespace D3vS1m.Domain.Enumerations
+﻿namespace D3vS1m.Domain.System.Enumerations
 {
     /// <summary>
     /// It describes the executed simulation model in the state machine
@@ -12,5 +12,17 @@
         Energy,
         Scene,
         Custom
+    }
+
+    public enum ExportTypes
+    {
+        Json,
+        Csv
+    }
+
+    public enum ImportTypes
+    {
+        Json,
+        Csv
     }
 }

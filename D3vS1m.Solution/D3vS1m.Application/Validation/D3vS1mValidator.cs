@@ -1,5 +1,5 @@
 ﻿using D3vS1m.Application.Channel;
-using D3vS1m.Domain.Enumerations;
+using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.Simulation;
 using FluentValidation;
 using System.Linq;

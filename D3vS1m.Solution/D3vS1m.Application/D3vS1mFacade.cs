@@ -14,8 +14,6 @@ namespace D3vS1m.Application
     {
         // -- fields
 
-        private SimulatorRepository _repo;
-
         // -- constructors
 
         public D3vS1mFacade()

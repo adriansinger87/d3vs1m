@@ -1,5 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.Enumerations;
+using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.Simulation;
 using System;
 using System.Collections.Generic;

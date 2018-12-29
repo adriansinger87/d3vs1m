@@ -1,7 +1,7 @@
 ﻿using D3vS1m.Domain.Simulation;
 using FluentValidation;
 using System.Linq;
-using D3vS1m.Domain.Enumerations;
+using D3vS1m.Domain.System.Enumerations;
 
 namespace D3vS1m.Application.Validation
 {
