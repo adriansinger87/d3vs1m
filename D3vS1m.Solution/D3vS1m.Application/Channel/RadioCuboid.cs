@@ -19,35 +19,33 @@ namespace D3vS1m.Application.Channel
 
         // --- public methoden
 
-        public HashSet<float[]> CreateRxPositions()
+        public Vector[] CreateRxPositions()
         {
-            if (DataDimension == null)
-            {
-                DataDimension = new int[3] {
-                     (int)Math.Ceiling((MaxCorner.X - MinCorner.X) / (Resolution)),
-                     (int)Math.Ceiling((MaxCorner.Y - MinCorner.Y) / (Resolution)),
-                     (int)Math.Ceiling((MaxCorner.Z - MinCorner.Z) / (Resolution))
-                 };
-                TotalData = DataDimension[0] * DataDimension[1] * DataDimension[2];
-            }
-
-            HashSet<float[]> positions = new HashSet<float[]>();
+            DataDimension = new int[3] {
+                 (int)Math.Ceiling((MaxCorner.X - MinCorner.X) / (Resolution)),
+                 (int)Math.Ceiling((MaxCorner.Y - MinCorner.Y) / (Resolution)),
+                 (int)Math.Ceiling((MaxCorner.Z - MinCorner.Z) / (Resolution))
+             };
+            TotalData = DataDimension[0] * DataDimension[1] * DataDimension[2];
+     
+            Vector[] positions = new Vector[TotalData];
             float mid = Resolution / 2;
             // 'mid' pushes the data-point into the middle of an imaginary cube with the length of box.Resolution
             // prevent the point to reach the edges of box
+            int i = 0;
             for (float x = MinCorner.X + mid; x < MaxCorner.X; x = (float)Math.Round(x + Resolution, 3))
             {
                 for (float y = MinCorner.Y + mid; y < MaxCorner.Y; y = (float)Math.Round(y + Resolution, 3))
                 {
                     for (float z = MinCorner.Z + mid; z < MaxCorner.Z; z = (float)Math.Round(z + Resolution, 3))
                     {
-                        positions.Add(new float[] { x, y, z });
+                        positions[i] = new Vector( x, y, z );
+                        i++;
                     }
                 }
             }
 
-            Log.Info($"{positions.Count} rx positions created");
-
+            Log.Info($"{positions.Length} rx positions created");
             return positions;
         }
 

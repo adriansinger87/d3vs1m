@@ -1,4 +1,6 @@
-﻿namespace D3vS1m.Domain.Data.Scene
+﻿using System;
+
+namespace D3vS1m.Domain.Data.Scene
 {
     /// <summary>
     /// The Vector represents a 3D-vector in the cartesian coordinate system with a float type for the x, y and z dimension.
@@ -71,5 +73,17 @@
         public float X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
+
+        public double Length
+        {
+            get
+            {
+                // sqrt( (x)² + (y)² + (z)² )  
+                return Math.Sqrt((X * X) + (Y * Y) + (Z * Z));
+                    //Math.Pow(X, 2) +
+                    //Math.Pow(Y, 2) +
+                    //Math.Pow(Z, 2));
+            }
+        }
     }
 }

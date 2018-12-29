@@ -36,6 +36,8 @@ namespace MSTests.Application
 
         // -- test methods
 
+        []
+
         [TestMethod]
         public void RunSingleStep()
         {

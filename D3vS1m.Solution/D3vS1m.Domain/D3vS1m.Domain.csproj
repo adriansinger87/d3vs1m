@@ -9,4 +9,8 @@
     <Compile Remove="Simulation\ISimulationRunnable.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IO\" />
+  </ItemGroup>
+
 </Project>
