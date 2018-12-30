@@ -16,6 +16,7 @@
         public const string PeerToPeerNetwork = "peer to peer network";
 
         // communication models
+        public const string WirelessCommunication = "wireless communication model";
 
         // scene models
 

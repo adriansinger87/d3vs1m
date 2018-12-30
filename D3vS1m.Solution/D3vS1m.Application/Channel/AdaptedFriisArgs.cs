@@ -1,4 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Data.Scene;
 using System.Collections.Generic;
 
 namespace D3vS1m.Application.Channel
@@ -11,6 +12,7 @@ namespace D3vS1m.Application.Channel
 
             // default settings
             RadioBox = new RadioCuboid();
+
             // TODO: refactore magic numbers
             AttenuationExponent = 1.25F;
             AttenuationOffset = 0.5F;
@@ -20,7 +22,7 @@ namespace D3vS1m.Application.Channel
         public float AttenuationOffset { get; set; }
         public bool UseObstacles { get; set; }
         public RadioCuboid RadioBox { get; set; }
-        public List<float[]> RxPositions { get; set; }
+        public Vector[] RxPositions { get; set; }
         public float[] RxValues { get; set; }
         public List<float[]> RxColors { get; set; }
     }
