@@ -2,7 +2,7 @@
 
 namespace D3vS1m.Domain.Simulation
 {
-    public class SimulatorRepository : BaseRepository<ISimulatable>
+    public class SimulatorRepository : RepositoryBase<ISimulatable>
     {
         public SimulatorRepository()
         {

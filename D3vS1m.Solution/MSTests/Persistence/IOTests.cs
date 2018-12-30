@@ -1,4 +1,5 @@
-﻿using D3vS1m.Domain.IO;
+﻿using D3vS1m.Application.Devices;
+using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Persistence;
 using D3vS1m.Persistence.Imports;
@@ -41,15 +42,18 @@ namespace MSTests.Persistence
                 Location = base.DataDirectory,
                 Name = "devices.json"
             };
+            int length = 18;
 
             // act
-            List<object> import = _io.Importer(ImportTypes.Json)
+            List<BasicDevice> devices = _io.Importer(ImportTypes.Json)
                 .Setup(_setting)
                 .Import()
-                .CastTo<List<object>>(new JsonCasting());
+                .CastTo<List<BasicDevice>>(new JsonCasting());
 
             // assert
-
+            Assert.IsNotNull(devices);
+            Assert.IsTrue(devices.Count == length, $"device list has length {devices.Count} , should be {length}");
+            Assert.IsTrue(devices.TrueForAll(d => d != null), "device was 'null'");
         }
     }
 }

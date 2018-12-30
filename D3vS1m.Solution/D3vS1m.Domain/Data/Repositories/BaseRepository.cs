@@ -8,7 +8,7 @@ namespace D3vS1m.Domain.Data.Repositories
     /// abstract base class with functionality for concrete repository classes 
     /// </summary>
     /// <typeparam name="T">type of the items in the repository</typeparam>
-    public abstract class BaseRepository<T> : IEnumerable
+    public abstract class RepositoryBase<T> : IEnumerable
     {
         // -- fields
 
@@ -24,7 +24,7 @@ namespace D3vS1m.Domain.Data.Repositories
         /// <summary>
         /// default constructor that creates new list of T
         /// </summary>
-        public BaseRepository()
+        public RepositoryBase()
         {
             _items = new List<T>();
         }
@@ -101,7 +101,7 @@ namespace D3vS1m.Domain.Data.Repositories
             {
                 if (string.IsNullOrEmpty(_name))
                 {
-                    return "Repository vom Typ " + typeof(T).Name;
+                    return "repository of type " + typeof(T).Name;
                 }
                 else
                 {

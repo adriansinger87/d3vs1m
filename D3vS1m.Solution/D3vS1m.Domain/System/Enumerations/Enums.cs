@@ -14,6 +14,18 @@
         Custom
     }
 
+    public enum PartTypes
+    {
+        PowerSupply,
+        Transceiver,
+        Controller,
+        Memory,
+        Antenna,
+        Sensor,
+        Actuator,
+        Custom
+    };
+
     public enum ExportTypes
     {
         Json,
