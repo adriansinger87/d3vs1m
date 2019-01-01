@@ -15,7 +15,7 @@ namespace MSTests
         {
             if (Log.IsNotNull == false)
             {
-                Log.Inject(new NLogger());
+                Log.Inject(new TestsNLogger());
             }
         }
 
