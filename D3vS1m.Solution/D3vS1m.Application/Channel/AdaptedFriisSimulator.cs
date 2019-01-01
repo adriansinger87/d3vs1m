@@ -8,6 +8,7 @@ using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Application.Communication;
 using D3vS1m.Domain.System.Logging;
 using D3vS1m.Application.Scene;
+using System.Diagnostics;
 
 namespace D3vS1m.Application.Channel
 {
@@ -47,6 +48,8 @@ namespace D3vS1m.Application.Channel
 
         private void FriisTransmission()
         {
+            var watch = new Stopwatch();
+            watch.Start();
             var tx = new Vector();
             float a = _radioArgs.AttenuationExponent;
             float c = GetFriisConstant(_commArgs.TxWavelength);
@@ -61,6 +64,11 @@ namespace D3vS1m.Application.Channel
                 .AsParallel()
                 .Select((rx, i) => new { Index = i, Rx = rx })
                 .ForAll(d => _radioArgs.RxValues[d.Index] = GetAdaptedFriisAttenuation(c, Vector.GetLength(tx, d.Rx), a));
+
+            // log the brutto duration
+            watch.Stop();
+            Log.Trace($"{Name} calculated {_radioArgs.RadioBox.TotalData} values in {watch.ElapsedMilliseconds} ms");
+
         }
 
         /// <summary>

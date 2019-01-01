@@ -37,8 +37,6 @@ namespace MSTests.Application
         public void AdaptedFriis()
         {
             // arrange
-            var watch = new Stopwatch();
-
             var comArgs = new WirelessCommArgs();
             var radioArgs = base.GetRadioArgs();
             var sceneArgs = new InvariantSceneArgs();
@@ -59,10 +57,7 @@ namespace MSTests.Application
             };
 
             // act
-            watch.Start();
             sim.Run();
-            watch.Stop();
-            Log.Info($"{sim.Name} calculated {radioArgs.RadioBox.TotalData} values in {watch.ElapsedMilliseconds} ms");
             
             // assert
             Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation"); 

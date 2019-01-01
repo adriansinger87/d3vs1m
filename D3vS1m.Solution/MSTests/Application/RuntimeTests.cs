@@ -8,7 +8,11 @@ using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MSTests.Application
 {
@@ -18,6 +22,9 @@ namespace MSTests.Application
         // -- fields
 
         RuntimeBase _runtime;
+
+        DateTime _startTime;
+        int _duration;
 
         // -- inherits
 
@@ -38,9 +45,11 @@ namespace MSTests.Application
         // -- test methods
 
         [TestMethod]
-        public void RunSingleStep()
+        public async Task RunAsync()
         {
             // arrange
+            int count = 3;
+
             var sceneArgs = new InvariantSceneArgs();
             var radioArgs = base.GetRadioArgs();
             var comArgs = new WirelessCommArgs();
@@ -60,17 +69,25 @@ namespace MSTests.Application
                     .With(netArgs)
             };
 
-            // act
+            
             if (_runtime.Setup(simRepo).Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");
             }
 
-            _runtime.Run();
-            _runtime.Stop();
+            // act
+            Log.Trace($"RunAsync for {count} times");
+            await _runtime.RunAsync(count);
 
-            // assert
+            _duration = 3000;
+            Log.Trace($"RunAsync for {_duration} ms");
+            _startTime = DateTime.Now;
+            await _runtime.RunAsync(breakAfterTime);
+        }
 
+        private bool breakAfterTime(RuntimeBase runtime)
+        {
+            return (DateTime.Now - _startTime).TotalMilliseconds <= _duration ? true : false;
         }
     }
 }

@@ -1,4 +1,7 @@
 ﻿using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace D3vS1m.Domain.Runtime
 {
@@ -11,6 +14,8 @@ namespace D3vS1m.Domain.Runtime
         private ISimulatable _currentSim;
 
         protected bool _isValid;
+
+        protected bool _isRunning;
 
         // -- methods
 
@@ -25,28 +30,58 @@ namespace D3vS1m.Domain.Runtime
 
         public void Stop()
         {
-            // TODO: implement something to stop simulation
+            Log.Trace("Simulation runtime stopped");
+            _isRunning = false;
         }
 
-        public void Run()
+        public async Task RunAsync()
+        {
+            // go baby go!
+            await RunAsync((runtime) => { return true; });
+        }
+
+        public async Task RunAsync(int count)
+        {
+            int i = 0;
+
+            // run for count times
+            await RunAsync((runtime) =>
+            {
+                if (i >= count)
+                {
+                    return false;
+                }
+
+                i++;
+                return true;
+            });
+        }
+
+        public async Task RunAsync(Func<RuntimeBase, bool> condition)
         {
             if (!_isValid)
             {
-                // stop continous running
+                // stop running
+                Log.Trace("Simulation is invalid or was not validated");
+                Stop();
                 return;
             }
 
-            // TODO: implement continous running progress and break conditions maybe with time based or event based approach 
-            // TODO: implement Run and Stop as async methods
-
-            foreach (ISimulatable sim in _simRepo)
+            await Task.Run(() =>
             {
-                _currentSim = sim;
-
-                _currentSim.Run();
-            }
+                _isRunning = condition(this);
+                while (_isRunning)
+                {
+                    foreach (ISimulatable sim in _simRepo)
+                    {
+                        sim.Run();
+                    }
+                    _isRunning = condition(this);
+                }
+                Log.Trace($"Leave simulation task");
+            });
         }
-
+        
         // -- properties
     }
 }
