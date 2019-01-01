@@ -8,6 +8,9 @@ using System.Text;
 using D3vS1m.Application.Communication;
 using System.Diagnostics;
 using D3vS1m.Domain.System.Logging;
+using D3vS1m.Domain.Simulation;
+using D3vS1m.Application.Scene;
+using D3vS1m.Application.Network;
 
 namespace MSTests.Application
 {
@@ -36,31 +39,33 @@ namespace MSTests.Application
             // arrange
             var watch = new Stopwatch();
 
-            var min = new Vector(-10, -10, -10);
-            var max = new Vector(10, 10, 10);
             var comArgs = new WirelessCommArgs();
-            var radioArgs = new AdaptedFriisArgs();
+            var radioArgs = base.GetRadioArgs();
+            var sceneArgs = new InvariantSceneArgs();
+            var netArgs = new NetworkArgs();
 
-            radioArgs.RadioBox.Resolution = 0.25F;
-            radioArgs.RadioBox.MinCorner = min;
-            radioArgs.RadioBox.MaxCorner = max;
-            // update the positions always when the box changes
-            radioArgs.RxPositions = radioArgs.RadioBox.CreateRxPositions();
+            var sim = new AdaptedFriisSimulator()
+                .With(radioArgs)                    // own arguments
+                .With(comArgs)                      // additional arguments...
+                .With(sceneArgs)
+                .With(netArgs);                     // false positive
 
-            var sim = new AdaptedFriisSimulator().With(radioArgs) as AdaptedFriisSimulator;
             sim.OnExecuting += (obj, e) => {
-                (obj as AdaptedFriisSimulator).SetupCommunication(comArgs);
+                Log.Trace($"{obj.ToString()} started");
+            };
+
+            sim.Executed += (obj, e) => {
+                Log.Trace($"{obj.ToString()} finished");
             };
 
             // act
             watch.Start();
-            sim.Execute();
+            sim.Run();
             watch.Stop();
-
             Log.Info($"{sim.Name} calculated {radioArgs.RadioBox.TotalData} values in {watch.ElapsedMilliseconds} ms");
-            // assert
-            Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation");
             
+            // assert
+            Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation"); 
         }
 
         [TestMethod]

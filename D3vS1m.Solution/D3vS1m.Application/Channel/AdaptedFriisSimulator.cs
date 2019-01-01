@@ -6,16 +6,18 @@ using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Application.Communication;
+using D3vS1m.Domain.System.Logging;
+using D3vS1m.Application.Scene;
 
 namespace D3vS1m.Application.Channel
 {
-    public class AdaptedFriisSimulator : SimulatorEventBase, ISimulatable
+    public class AdaptedFriisSimulator : SimulatorBase
     {
         // -- fields
 
         private AdaptedFriisArgs _radioArgs;
-
         private WirelessCommArgs _commArgs;
+        private InvariantSceneArgs _sceneArgs;
 
         public AdaptedFriisSimulator()
         {
@@ -24,19 +26,22 @@ namespace D3vS1m.Application.Channel
 
         // -- methods
 
-        public ISimulatable With(ArgumentsBase arguments)
+        public override ISimulatable With(ArgumentsBase arguments)
         {
-            _radioArgs = arguments as AdaptedFriisArgs;
+            if (arguments is AdaptedFriisArgs)          _radioArgs = arguments as AdaptedFriisArgs;
+            else if (arguments is WirelessCommArgs)     _commArgs = arguments as WirelessCommArgs;
+            else if (arguments is InvariantSceneArgs)   _sceneArgs = arguments as InvariantSceneArgs;
+            else
+            {
+                Log.Warn($"'{arguments.Name}' arguments were not added to the '{Name}'");
+            }
             return this;
         }
 
-        public void Execute()
+        public override void Run()
         {
             BeforeExecution();
-
-            // do your implementation here...
             FriisTransmission();
-
             AfterExecution();
         }
 
@@ -87,24 +92,13 @@ namespace D3vS1m.Application.Channel
             _commArgs = args as WirelessCommArgs;
         }
 
-        // -- events
-
-        protected override void BeforeExecution()
-        {
-            BeforeExecution(new SimulatorEventArgs(_radioArgs));
-        }
-
-        protected override void AfterExecution()
-        {
-            AfterExecution(new SimulatorEventArgs(_radioArgs));
-        }
-
         // -- properties
 
-        public string Name { get { return _radioArgs.Name; } }
+        public override string Name { get { return _radioArgs.Name; } }
 
-        public SimulationModels Model { get { return SimulationModels.Channel; } }
+        public override SimulationModels Model { get { return SimulationModels.Channel; } }
 
-        public ArgumentsBase Arguments { get { return _radioArgs; } }
+        public override ArgumentsBase Arguments { get { return _radioArgs; } }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using D3vS1m.Domain.System.Logging;
+﻿using D3vS1m.Application.Channel;
+using D3vS1m.Domain.Data.Scene;
+using D3vS1m.Domain.System.Logging;
 using D3vS1m.Persistence.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -21,6 +23,21 @@ namespace MSTests
         public virtual void Cleanup()
         {
             Log.Stop();
+        }
+
+        public AdaptedFriisArgs GetRadioArgs()
+        {
+            var min = new Vector(-10, -10, -10);
+            var max = new Vector(10, 10, 10);
+            var radioArgs = new AdaptedFriisArgs();
+
+            radioArgs.RadioBox.Resolution = 0.25F;
+            radioArgs.RadioBox.MinCorner = min;
+            radioArgs.RadioBox.MaxCorner = max;
+            // update the positions always when the box changes
+            radioArgs.RxPositions = radioArgs.RadioBox.CreateRxPositions();
+
+            return radioArgs;
         }
 
         public string BaseDirectory

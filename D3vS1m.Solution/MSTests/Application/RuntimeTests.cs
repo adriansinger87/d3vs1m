@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Application.Antenna;
 using D3vS1m.Application.Channel;
+using D3vS1m.Application.Communication;
 using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene;
@@ -40,16 +41,23 @@ namespace MSTests.Application
         public void RunSingleStep()
         {
             // arrange
-            AdaptedFriisSimulator afs = new AdaptedFriisSimulator().With(new AdaptedFriisArgs()) as AdaptedFriisSimulator;
-            afs.OnExecuting += AdaptedFriisOnExecuting;
-            afs.Executed += AdaptedFriisExecuted;
+            var sceneArgs = new InvariantSceneArgs();
+            var radioArgs = base.GetRadioArgs();
+            var comArgs = new WirelessCommArgs();
+            var netArgs = new NetworkArgs();
+            var antennaArgs = new SimpleAntennaArgs();
 
             SimulatorRepository simRepo = new SimulatorRepository
             {
-                new SceneSimulator().With(new InvariantSceneArgs()),
-                afs,
-                new SimpleAntennaSimulator().With(new SimpleAntennaArgs()),
-                new PeerToPeerNetworkSimulator().With(new NetworkArgs())
+                new SceneSimulator()
+                    .With(sceneArgs),
+                new AdaptedFriisSimulator()
+                    .With(radioArgs)
+                    .With(comArgs),
+                new SimpleAntennaSimulator()
+                    .With(antennaArgs),
+                new PeerToPeerNetworkSimulator()
+                    .With(netArgs)
             };
 
             // act
@@ -62,17 +70,6 @@ namespace MSTests.Application
             _runtime.Stop();
 
             // assert
-
-        }
-
-        private void AdaptedFriisOnExecuting(object sender, SimulatorEventArgs args)
-        {
-
-        }
-
-
-        private void AdaptedFriisExecuted(object sender, SimulatorEventArgs args)
-        {
 
         }
     }

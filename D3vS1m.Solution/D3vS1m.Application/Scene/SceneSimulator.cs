@@ -4,25 +4,29 @@ using D3vS1m.Domain.Simulation;
 
 namespace D3vS1m.Application.Scene
 {
-    public class SceneSimulator : ISimulatable
+    public class SceneSimulator : SimulatorBase
     {
-        private InvariantSceneArgs _args;
+        private InvariantSceneArgs _sceneArgs;
         
-        public ISimulatable With(ArgumentsBase arguments)
+        public override ISimulatable With(ArgumentsBase arguments)
         {
-            _args = arguments as InvariantSceneArgs;
+            _sceneArgs = arguments as InvariantSceneArgs;
             return this;
         }
 
-        public void Execute()
+        public override void Run()
         {
+            base.BeforeExecution();
 
+            base.AfterExecution();
         }
 
-        public string Name { get { return _args.Name; } }
 
-        public SimulationModels Model { get { return SimulationModels.Scene; } }
+        public override string Name { get { return _sceneArgs.Name; } }
 
-        public ArgumentsBase Arguments { get { return _args; } }
+        public override SimulationModels Model { get { return SimulationModels.Scene; } }
+
+        public override ArgumentsBase Arguments { get { return _sceneArgs; } }
+
     }
 }

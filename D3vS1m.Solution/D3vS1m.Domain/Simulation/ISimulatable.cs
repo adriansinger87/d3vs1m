@@ -1,10 +1,23 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Events;
 using D3vS1m.Domain.System.Enumerations;
 
 namespace D3vS1m.Domain.Simulation
 {
     public interface ISimulatable
     {
+        // -- events
+
+        /// <summary>
+        /// Shall be fired at first, when the execution of the simulation model starts 
+        /// </summary>
+        event SimulatorEventHandler OnExecuting;
+
+        /// <summary>
+        /// Shall be fired at last, when the execution of the simulation model has finished 
+        /// </summary>
+        event SimulatorEventHandler Executed;
+
         // -- methods
 
         /// <summary>
@@ -17,7 +30,7 @@ namespace D3vS1m.Domain.Simulation
         /// <summary>
         /// Runs the implementation of the simulation model
         /// </summary>
-        void Execute();
+        void Run();
 
         // -- properties
 

@@ -4,7 +4,7 @@ using D3vS1m.Domain.Simulation;
 
 namespace D3vS1m.Application.Antenna
 {
-    public class SimpleAntennaSimulator : ISimulatable
+    public class SimpleAntennaSimulator : SimulatorBase
     {
         // -- fields
 
@@ -19,24 +19,27 @@ namespace D3vS1m.Application.Antenna
 
         // -- methods
 
-        public ISimulatable With(ArgumentsBase arguments)
+        public override ISimulatable With(ArgumentsBase arguments)
         {
             _args = arguments as SimpleAntennaArgs;
 
             return this;
         }
 
-        public void Execute()
+        public override void Run()
         {
-           
+            base.BeforeExecution();
+
+            base.AfterExecution();
         }
 
         // -- properties
 
-        public string Name { get { return _args.Name; } }
+        public override string Name { get { return _args.Name; } }
 
-        public SimulationModels Model { get { return SimulationModels.Antenna; } }
+        public override SimulationModels Model { get { return SimulationModels.Antenna; } }
 
-        public ArgumentsBase Arguments { get { return _args; } }
+        public override ArgumentsBase Arguments { get { return _args; } }
+
     }
 }

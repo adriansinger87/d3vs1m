@@ -4,12 +4,13 @@ using D3vS1m.Domain.Simulation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using D3vS1m.Domain.Events;
 
 namespace D3vS1m.Application.Network
 {
-    public class PeerToPeerNetworkSimulator : ISimulatable
+    public class PeerToPeerNetworkSimulator : SimulatorBase
     {
-        private NetworkArgs _args;
+        private NetworkArgs _networkArgs;
 
         // -- constructor
 
@@ -20,23 +21,27 @@ namespace D3vS1m.Application.Network
 
         // -- methods
 
-        public ISimulatable With(ArgumentsBase arguments)
+        public override ISimulatable With(ArgumentsBase arguments)
         {
-            _args = arguments as NetworkArgs;
+            _networkArgs = arguments as NetworkArgs;
             return this;
         }
 
-        public void Execute()
+        public override void Run()
         {
+            base.BeforeExecution();
             // TODO: run network simulation here...
+
+            base.AfterExecution();
         }
 
         // -- properties       
 
-        public ArgumentsBase Arguments { get { return _args; } }
+        public override ArgumentsBase Arguments { get { return _networkArgs; } }
 
-        public string Name { get { return _args.Name; } }
+        public override string Name { get { return _networkArgs.Name; } }
 
-        public SimulationModels Model { get { return SimulationModels.Network; } }
+        public override SimulationModels Model { get { return SimulationModels.Network; } }
+
     }
 }

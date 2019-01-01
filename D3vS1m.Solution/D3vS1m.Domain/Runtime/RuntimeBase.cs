@@ -43,7 +43,7 @@ namespace D3vS1m.Domain.Runtime
             {
                 _currentSim = sim;
 
-                _currentSim.Execute();
+                _currentSim.Run();
             }
         }
 
