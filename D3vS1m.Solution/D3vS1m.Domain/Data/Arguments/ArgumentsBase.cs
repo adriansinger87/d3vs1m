@@ -5,6 +5,10 @@
     /// </summary>
     public abstract class ArgumentsBase
     {
+        /// <summary>
+        /// Returns the Name property of the abstract base class
+        /// </summary>
+        /// <returns>result string</returns>
         public override string ToString()
         {
             return $"args: {Name}";

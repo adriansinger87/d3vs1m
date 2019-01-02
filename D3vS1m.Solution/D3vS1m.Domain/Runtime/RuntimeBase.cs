@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace D3vS1m.Domain.Runtime
 {
+    /// <summary>
+    /// Abstract class with some base functionality to setup and run the desired simulation models
+    /// </summary>
     public abstract class RuntimeBase
     {
         // -- fields
@@ -15,6 +18,7 @@ namespace D3vS1m.Domain.Runtime
 
         protected bool _isValid;
         protected bool _isRunning;
+        protected bool _stopping;
 
         // -- events
 
@@ -32,26 +36,44 @@ namespace D3vS1m.Domain.Runtime
             return this;
         }
 
+        /// <summary>
+        /// The conrete runtime implementation implements the validation of all simulation models here.
+        /// The Method is called before the iteration of all registered models in the RunAsync method.
+        /// </summary>
+        /// <returns></returns>
         public abstract bool Validate();
 
-        public virtual void Stop()
+        /// <summary>
+        /// Stops the simulation after finishing the current iteration of the simulation.
+        /// </summary>
+        public void Stop()
         {
-            Log.Trace("Simulation runtime stopped");
             _isRunning = false;
+            _stopping = true;
+            Log.Trace("Simulation runtime stopping");
         }
-
+                
         #region RunAsync
-        public virtual async Task RunAsync()
+        /// <summary>
+        /// Start the iteration of the run method of all registered simulation models
+        /// without any break condition
+        /// </summary>
+        /// <returns>The task object representing the async task</returns>
+        public async Task RunAsync()
         {
             // go baby go!
             await RunAsync((runtime) => { return true; });
         }
 
-        public virtual async Task RunAsync(int count)
+        /// <summary>
+        /// Start the iteration of the run method of all registered simulation models
+        /// for a defined number of times
+        /// </summary>
+        /// <param name="count">Determines the number of iterations of all simulation models</param>
+        /// <returns>The task object representing the async task</returns>
+        public async Task RunAsync(int count)
         {
             int i = 0;
-
-            // run for count times
             await RunAsync((runtime) =>
             {
                 if (i >= count)
@@ -64,8 +86,15 @@ namespace D3vS1m.Domain.Runtime
             });
         }
 
+        /// <summary>
+        /// Start the iteration of the run method of all registered simulation models
+        /// as long as the condition method returns true
+        /// </summary>
+        /// <param name="condition">A method that determines the condition to continue or to end the simulation</param>
+        /// <returns>The task object representing the async task</returns>
         public virtual async Task RunAsync(Func<RuntimeBase, bool> condition)
         {
+            _stopping = false;  // reset the stopping flag before entering the async part of the method
             if (!_isValid)
             {
                 // stop running
@@ -83,15 +112,28 @@ namespace D3vS1m.Domain.Runtime
                     {
                         sim.Run();
                     }
-                    _isRunning = condition(this);
 
-                    // fire event that one siulation run is finished
+                    if (!_stopping) // separate flag to ensure that the condition method does not overwrite the stop action
+                    {
+                        _isRunning = condition(this);
+                    }
+
+                    // fire event that one iteration of all siulation models has finished
                     IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
                 }
                 Log.Trace($"Leave simulation task");
             });
         }
         #endregion
+
+        /// <summary>
+        /// Returns the Name property of the Arguments instance
+        /// </summary>
+        /// <returns>result string</returns>
+        public override string ToString()
+        {
+            return Arguments.Name;
+        }
 
         // -- properties
 

@@ -90,6 +90,7 @@ namespace MSTests.Application
                 var args = runtime.Arguments as RuntimeArgs;
                 return (DateTime.Now - args.StartTime).TotalMilliseconds <= timing ? true : false;
             });
+
         }
     }
 }

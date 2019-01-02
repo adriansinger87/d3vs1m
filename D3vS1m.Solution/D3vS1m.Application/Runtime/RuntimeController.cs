@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace D3vS1m.Application.Runtime
 {
+    /// <summary>
+    /// Implements the abstract class RuntimeBase and adds some behavior for validation and conrete runtime arguments
+    /// </summary>
     public class RuntimeController : RuntimeBase
     {
         // -- fields
@@ -25,6 +28,10 @@ namespace D3vS1m.Application.Runtime
 
         // -- constructor
 
+        /// <summary>
+        /// The constructor gets the concrete validator injected and instanciates the concrete arguments of RuntimeArgs type
+        /// </summary>
+        /// <param name="validator">The validator concretion could be of type BasicValidator or a derived class</param>
         public RuntimeController(BasicValidator validator)
         {
             _validator = validator;
@@ -33,6 +40,10 @@ namespace D3vS1m.Application.Runtime
 
         // -- methods
 
+        /// <summary>
+        /// Validate the simulation models and their arguments
+        /// </summary>
+        /// <returns>Returns 'true' if there are no errors otherwise 'false'.</returns>
         public override bool Validate()
         {
             // execute validation
@@ -53,19 +64,24 @@ namespace D3vS1m.Application.Runtime
             return _isValid;
         }
 
+        /// <summary>
+        /// Start the iteration of the run method of all registered simulation models
+        /// as long as the condition method returns true
+        /// The overide adds the start time to the concrete RuntimeArgs instance.
+        /// </summary>
+        /// <param name="condition">A method that determines the condition to continue or to end the simulation</param>
+        /// <returns>The task object representing the async task</returns>
         public override Task RunAsync(Func<RuntimeBase, bool> condition)
         {
             _args.StartTime = DateTime.Now;
             return base.RunAsync(condition);
         }
 
-        public override string ToString()
-        {
-            return _args.Name;
-        }
-
         // -- properties
 
+        /// <summary>
+        /// Gets the concrete arguments of type RuntimeArgs  
+        /// </summary>
         public override ArgumentsBase Arguments { get { return _args; } }
     }
 }
