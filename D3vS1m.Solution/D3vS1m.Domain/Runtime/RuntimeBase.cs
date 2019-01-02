@@ -1,4 +1,6 @@
-﻿using D3vS1m.Domain.Simulation;
+﻿using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Events;
+using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Logging;
 using System;
 using System.Threading.Tasks;
@@ -8,14 +10,18 @@ namespace D3vS1m.Domain.Runtime
     public abstract class RuntimeBase
     {
         // -- fields
-
+        
         protected SimulatorRepository _simRepo;
 
-        private ISimulatable _currentSim;
-
         protected bool _isValid;
-
         protected bool _isRunning;
+
+        // -- events
+
+        /// <summary>
+        /// The event gets fired when the execution of all simulation models has finished one iteration 
+        /// </summary>
+        public event SimulatorEventHandler IterationPassed;
 
         // -- methods
 
@@ -28,19 +34,20 @@ namespace D3vS1m.Domain.Runtime
 
         public abstract bool Validate();
 
-        public void Stop()
+        public virtual void Stop()
         {
             Log.Trace("Simulation runtime stopped");
             _isRunning = false;
         }
 
-        public async Task RunAsync()
+        #region RunAsync
+        public virtual async Task RunAsync()
         {
             // go baby go!
             await RunAsync((runtime) => { return true; });
         }
 
-        public async Task RunAsync(int count)
+        public virtual async Task RunAsync(int count)
         {
             int i = 0;
 
@@ -57,7 +64,7 @@ namespace D3vS1m.Domain.Runtime
             });
         }
 
-        public async Task RunAsync(Func<RuntimeBase, bool> condition)
+        public virtual async Task RunAsync(Func<RuntimeBase, bool> condition)
         {
             if (!_isValid)
             {
@@ -77,11 +84,20 @@ namespace D3vS1m.Domain.Runtime
                         sim.Run();
                     }
                     _isRunning = condition(this);
+
+                    // fire event that one siulation run is finished
+                    IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
                 }
                 Log.Trace($"Leave simulation task");
             });
         }
-        
+        #endregion
+
         // -- properties
+
+        /// <summary>
+        /// Gets the specific arguments for the concrete runtime implementation as base class 
+        /// </summary>
+        public abstract ArgumentsBase Arguments { get; }
     }
 }

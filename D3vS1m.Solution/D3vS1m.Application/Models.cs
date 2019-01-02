@@ -2,6 +2,9 @@
 {
     public class Models
     {
+        // runtime
+        public const string Runtime = "D3vS1m runtime";
+
         // antenna models
         public const string FlatAntenna = "flat antenna model";
         public const string SimpleAntenna = "simple antenna model";

@@ -22,9 +22,7 @@ namespace MSTests.Application
         // -- fields
 
         RuntimeBase _runtime;
-
-        DateTime _startTime;
-        int _duration;
+        SimulatorRepository _repo;
 
         // -- inherits
 
@@ -33,7 +31,32 @@ namespace MSTests.Application
         {
             base.Arrange();
 
+            var sceneArgs = new InvariantSceneArgs();
+            var radioArgs = base.GetRadioArgs();
+            var comArgs = new WirelessCommArgs();
+            var netArgs = new NetworkArgs();
+            var antennaArgs = new SimpleAntennaArgs();
+
+            _repo = new SimulatorRepository
+            {
+                new SceneSimulator()
+                    .With(sceneArgs),
+                new AdaptedFriisSimulator()
+                    .With(radioArgs)
+                    .With(comArgs),
+                new SimpleAntennaSimulator()
+                    .With(antennaArgs),
+                new PeerToPeerNetworkSimulator()
+                    .With(netArgs)
+            };
+
             _runtime = new RuntimeController(new D3vS1mValidator());
+            _runtime.IterationPassed += (o, e) =>
+            {
+                var runtimeArgs = e.Arguments as RuntimeArgs;
+                var duration = (DateTime.Now - runtimeArgs.StartTime);
+                Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
+            };
         }
 
         [TestCleanup]
@@ -48,46 +71,25 @@ namespace MSTests.Application
         public async Task RunAsync()
         {
             // arrange
-            int count = 3;
-
-            var sceneArgs = new InvariantSceneArgs();
-            var radioArgs = base.GetRadioArgs();
-            var comArgs = new WirelessCommArgs();
-            var netArgs = new NetworkArgs();
-            var antennaArgs = new SimpleAntennaArgs();
-
-            SimulatorRepository simRepo = new SimulatorRepository
-            {
-                new SceneSimulator()
-                    .With(sceneArgs),
-                new AdaptedFriisSimulator()
-                    .With(radioArgs)
-                    .With(comArgs),
-                new SimpleAntennaSimulator()
-                    .With(antennaArgs),
-                new PeerToPeerNetworkSimulator()
-                    .With(netArgs)
-            };
-
-            
-            if (_runtime.Setup(simRepo).Validate() == false)
+            int timing;
+            if (_runtime.Setup(_repo).Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");
             }
 
-            // act
-            Log.Trace($"RunAsync for {count} times");
-            await _runtime.RunAsync(count);
+            // act 3 iterations
+            timing = 3;
+            Log.Trace($"RunAsync for {timing} times");
+            await _runtime.RunAsync(timing);
 
-            _duration = 3000;
-            Log.Trace($"RunAsync for {_duration} ms");
-            _startTime = DateTime.Now;
-            await _runtime.RunAsync(breakAfterTime);
-        }
-
-        private bool breakAfterTime(RuntimeBase runtime)
-        {
-            return (DateTime.Now - _startTime).TotalMilliseconds <= _duration ? true : false;
+            // act 3 seconds of running simulation
+            timing = 3000;
+            Log.Trace($"RunAsync for {timing} ms");
+            await _runtime.RunAsync((runtime) =>
+            {
+                var args = runtime.Arguments as RuntimeArgs;
+                return (DateTime.Now - args.StartTime).TotalMilliseconds <= timing ? true : false;
+            });
         }
     }
 }
