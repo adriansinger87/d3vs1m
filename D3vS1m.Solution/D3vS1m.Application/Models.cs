@@ -2,7 +2,7 @@
 {
     public class Models
     {
-        // runtime#
+        // runtime
         public const string Runtime = "D3vS1m runtime";
 
         // antenna models
@@ -22,7 +22,6 @@
         public const string WirelessCommunication = "wireless communication model";
 
         // scene models
-
         public const string InvariantScene = "invariant scene model";
 
         // energy models
