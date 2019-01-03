@@ -1,4 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Scene;
+using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,12 @@ namespace D3vS1m.Application.Channel
     /// </summary>
     public class RadioCuboid
     {
+
         public RadioCuboid()
         {
-            this.MinCorner = new Vector(-5, -5, -5);
-            this.MaxCorner = new Vector(5, 5, 5);
-            this.Resolution = 1;
+            MinCorner = Domain.System.Constants.Const.Channel.Radio.Space.MinCorner;
+            MaxCorner = Domain.System.Constants.Const.Channel.Radio.Space.MaxCorner;
+            Resolution = Domain.System.Constants.Const.Channel.Radio.Space.Resolution;
         }
 
         // --- public methoden
@@ -30,7 +32,7 @@ namespace D3vS1m.Application.Channel
      
             Vector[] positions = new Vector[TotalData];
             float mid = Resolution / 2;
-            // 'mid' pushes the data-point into the middle of an imaginary cube with the length of box.Resolution
+            // 'mid' pushes the data-point into the middle of an imaginary cube with half of the length of resolution
             // prevent the point to reach the edges of box
             int i = 0;
             for (float x = MinCorner.X + mid; x < MaxCorner.X; x = (float)Math.Round(x + Resolution, 3))

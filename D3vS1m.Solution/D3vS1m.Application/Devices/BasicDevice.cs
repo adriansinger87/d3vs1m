@@ -1,5 +1,6 @@
 ﻿
 using D3vS1m.Domain.Data.Scene;
+using D3vS1m.Domain.System.Constants;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,13 +12,13 @@ namespace D3vS1m.Application.Devices
         public BasicDevice()
         {
             UUID = Guid.NewGuid().ToString();
-            Position = new Vector();
-            Orientation = new Angle();
+            
             Parts = new PartsRepository();
 
-            // TODO: remove magic strings
-            Name = "Device";
-            Description = "basic device type";
+            Name = Domain.System.Constants.Const.Device.Name;
+            Description = Domain.System.Constants.Const.Device.Description;
+            Position = Domain.System.Constants.Const.Device.Position;
+            Orientation = Domain.System.Constants.Const.Device.Orientation;
         }
 
         // -- public methods

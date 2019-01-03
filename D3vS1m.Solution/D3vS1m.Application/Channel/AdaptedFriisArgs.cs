@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Data.Scene;
+using D3vS1m.Domain.System.Constants;
 using System.Collections.Generic;
 
 namespace D3vS1m.Application.Channel
@@ -13,9 +14,8 @@ namespace D3vS1m.Application.Channel
             // default settings
             RadioBox = new RadioCuboid();
 
-            // TODO: refactore magic numbers
-            AttenuationExponent = 1.25F;
-            AttenuationOffset = 0.5F;
+            AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
+            AttenuationOffset = Domain.System.Constants.Const.Channel.Radio.AttenuationOffset;
         }
 
         public float AttenuationExponent { get; set; }

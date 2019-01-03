@@ -1,5 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.Extensions;
+using D3vS1m.Domain.System.Constants;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Communication
         // --- properties
 
         public float TxFrequencyMHz { get; set; }
-        public float TxWavelength { get { return Radio.FreqToMeter(this.TxFrequencyMHz); } }
+        public float TxWavelength { get { return Domain.System.Constants.Const.Channel.Radio.FreqToMeter(this.TxFrequencyMHz); } }
         public float TxPowerDBm { get; set; }
     }
 }

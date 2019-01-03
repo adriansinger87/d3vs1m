@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using D3vS1m.Domain.Extensions;
+using D3vS1m.Domain.System.Constants;
 
 namespace MSTests.Domain.Extensions
 {
@@ -14,8 +14,8 @@ namespace MSTests.Domain.Extensions
             float inputDeg = 45.5f;
 
             // Act
-            float rad = inputDeg.ToRadian();
-            float deg = rad.ToDegree();
+            float rad = Const.ToRadian(inputDeg);
+            float deg = Const.ToDegree(rad);
 
             // Assert
             Assert.IsTrue(Math.Round(inputDeg, 2) == Math.Round(deg, 2));

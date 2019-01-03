@@ -1,4 +1,5 @@
-﻿using System;
+﻿using D3vS1m.Domain.System.Constants;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,9 +9,8 @@ namespace D3vS1m.Domain.Data.Scene
     {
         public Angle()
         {
-            // TODO: remove magic numbers
-            Azimuth = 0;
-            Elevation = 90;
+            Azimuth = Const.Antenna.Azimuth;
+            Elevation = Const.Antenna.Elevation;
         }
 
         public Angle(float azimuth, float elevation)
