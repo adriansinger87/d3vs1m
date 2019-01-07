@@ -7,9 +7,9 @@ namespace D3vS1m.Domain.Simulation
 {
     public interface ISimulationFacadable
     {
-        void RegisterSimulation();
+        void RegisterPredefined();
 
-        void Register(ISimulatable simulator, ArgumentsBase args);
+        ISimulatable Register(ISimulatable simulator, ArgumentsBase args);
 
         SimulatorRepository SimulatorRepo { get; }
     }

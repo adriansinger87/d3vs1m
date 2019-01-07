@@ -6,6 +6,9 @@ namespace D3vS1m.Application.Scene.Materials
 {
     public partial class Material
     {
+
+        // -- constructor
+
         public Material()
         {
             UUID = Guid.NewGuid().ToString();
@@ -20,6 +23,8 @@ namespace D3vS1m.Application.Scene.Materials
             this.Physics.Add(physic);
         }
 
+        // -- properties
+
         /// <summary>
         /// Gets or sets the Name property
         /// </summary>
@@ -30,6 +35,9 @@ namespace D3vS1m.Application.Scene.Materials
         /// </summary>
         public string UUID { get; private set; }
 
+        /// <summary>
+        /// Gets all frequency dependend material physic properties of type PhysicsRepository
+        /// </summary>
         public PhysicsRepository Physics { get; set; }
     }
 }

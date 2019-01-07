@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Communication
         // --- properties
 
         public float TxFrequencyMHz { get; set; }
-        public float TxWavelength { get { return Domain.System.Constants.Const.Channel.Radio.FreqToMeter(this.TxFrequencyMHz); } }
+        public float TxWavelength { get { return Const.Channel.Radio.FreqToMeter(this.TxFrequencyMHz); } }
         public float TxPowerDBm { get; set; }
     }
 }

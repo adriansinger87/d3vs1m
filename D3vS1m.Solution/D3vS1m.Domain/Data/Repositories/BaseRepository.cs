@@ -32,13 +32,23 @@ namespace D3vS1m.Domain.Data.Repositories
         // -- methods
 
         /// <summary>
+        /// Takes the searchItem and processes a search in the repository
+        /// </summary>
+        /// <param name="searchItem">The item for the search</param>
+        /// <returns>True if it was found, false if not</returns>
+        public bool Contains(T searchItem)
+        {
+            return _items.Contains(searchItem);
+        }
+
+        /// <summary>
         /// Adds a new item to the repository
         /// </summary>
         /// <param name="item">the new instance of T that shall be added to the list</param>
         /// <returns>returns the new item</returns>
         public T Add(T item)
         {
-            this._items.Add(item);
+            _items.Add(item);
             return item;
         }
 

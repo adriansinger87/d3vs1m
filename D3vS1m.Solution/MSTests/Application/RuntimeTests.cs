@@ -1,4 +1,5 @@
-﻿using D3vS1m.Application.Antenna;
+﻿using D3vS1m.Application;
+using D3vS1m.Application.Antenna;
 using D3vS1m.Application.Channel;
 using D3vS1m.Application.Communication;
 using D3vS1m.Application.Network;
@@ -66,6 +67,19 @@ namespace MSTests.Application
         }
 
         // -- test methods
+
+        [TestMethod]
+        public void RegisterSimulation()
+        {
+            // arrange
+            var facade = new D3vS1mFacade();
+
+            // act
+            facade.RegisterSimulation();
+
+            // assert
+            Assert.IsTrue(facade.SimulatorRepo.Count >= 4, "not enough simulators registered");
+        }
 
         [TestMethod]
         public async Task RunAsync()

@@ -6,7 +6,7 @@ namespace D3vS1m.Application.Antenna
     {
         public SimpleAntennaArgs()
         {
-            base.Name = Models.SimpleAntenna;
+            Name = Models.SimpleAntenna;
         }
 
         /// <summary>

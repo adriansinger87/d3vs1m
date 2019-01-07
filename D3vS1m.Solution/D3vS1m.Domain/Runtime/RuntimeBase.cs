@@ -29,6 +29,12 @@ namespace D3vS1m.Domain.Runtime
 
         // -- methods
 
+        /// <summary>
+        /// Takes the Simulator Repository instance with all ready-to-go simulators and sets the internal valid-state to invalid.
+        /// This ensures that the concretion of this base class implements a validation method and runs it before the simulation. 
+        /// </summary>
+        /// <param name="simulatorRepo">The repository instance</param>
+        /// <returns>Returns the calling instance for method chaining</returns>
         public RuntimeBase Setup(SimulatorRepository simulatorRepo)
         {
             _isValid = false;
@@ -118,7 +124,7 @@ namespace D3vS1m.Domain.Runtime
                         _isRunning = condition(this);
                     }
 
-                    // fire event that one iteration of all siulation models has finished
+                    // fire event that one iteration of all simulation models has finished
                     IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
                 }
                 Log.Trace($"Leave simulation task");
@@ -141,5 +147,15 @@ namespace D3vS1m.Domain.Runtime
         /// Gets the specific arguments for the concrete runtime implementation as base class 
         /// </summary>
         public abstract ArgumentsBase Arguments { get; }
+
+        /// <summary>
+        /// Gets the information, if the validation was successful or not.
+        /// </summary>
+        public bool IsValid { get { return _isValid; } }
+
+        /// <summary>
+        /// Gets the information, if the simulation is running or not. 
+        /// </summary>
+        public bool IsRunning { get { return _isRunning; } }
     }
 }
