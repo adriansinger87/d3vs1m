@@ -35,6 +35,7 @@
     public enum ImportTypes
     {
         Json,
-        Csv
+        Csv,
+        WavefrontObj
     }
 }

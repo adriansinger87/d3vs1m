@@ -11,7 +11,7 @@ namespace D3vS1m.Domain.System.Constants
         {
             public const string Name = "Device";
             public const string Description = "basic device type";
-            public static readonly Vector Position = new Vector();
+            public static readonly Vertex Position = new Vertex();
             public static readonly Angle Orientation = new Angle();
         }
     }

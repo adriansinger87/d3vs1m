@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace D3vS1m.Application.Scene.Geometry
+namespace D3vS1m.Application.Scene.Geometries
 {
     public class GeometryRepository : RepositoryBase<Geometry>
     {

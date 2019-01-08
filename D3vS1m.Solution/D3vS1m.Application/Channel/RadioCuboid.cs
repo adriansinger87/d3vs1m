@@ -21,7 +21,7 @@ namespace D3vS1m.Application.Channel
 
         // --- public methoden
 
-        public Vector[] CreateRxPositions()
+        public Vertex[] CreateRxPositions()
         {
             DataDimension = new int[3] {
                  (int)Math.Ceiling((MaxCorner.X - MinCorner.X) / (Resolution)),
@@ -30,7 +30,7 @@ namespace D3vS1m.Application.Channel
              };
             TotalData = DataDimension[0] * DataDimension[1] * DataDimension[2];
      
-            Vector[] positions = new Vector[TotalData];
+            Vertex[] positions = new Vertex[TotalData];
             float mid = Resolution / 2;
             // 'mid' pushes the data-point into the middle of an imaginary cube with half of the length of resolution
             // prevent the point to reach the edges of box
@@ -41,7 +41,7 @@ namespace D3vS1m.Application.Channel
                 {
                     for (float z = MinCorner.Z + mid; z < MaxCorner.Z; z = (float)Math.Round(z + Resolution, 3))
                     {
-                        positions[i] = new Vector( x, y, z );
+                        positions[i] = new Vertex( x, y, z );
                         i++;
                     }
                 }
@@ -58,8 +58,8 @@ namespace D3vS1m.Application.Channel
 
         // --- properties
 
-        public Vector MinCorner { get; set; }
-        public Vector MaxCorner { get; set; }
+        public Vertex MinCorner { get; set; }
+        public Vertex MaxCorner { get; set; }
         public float Resolution { get; set; }
         public int[] DataDimension { get; set; }
         public int TotalData { get; set; }

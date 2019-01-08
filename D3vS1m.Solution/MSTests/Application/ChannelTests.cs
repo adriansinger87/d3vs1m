@@ -68,8 +68,8 @@ namespace MSTests.Application
         {
             // arrange
             var box = new RadioCuboid();
-            var min = new Vector(-10, -10, -10);
-            var max = new Vector(10, 10, 10);
+            var min = new Vertex(-10, -10, -10);
+            var max = new Vertex(10, 10, 10);
 
             box.Resolution = 0.25F;
             box.MinCorner = min;

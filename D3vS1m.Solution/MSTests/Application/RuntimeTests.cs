@@ -75,7 +75,7 @@ namespace MSTests.Application
             var facade = new D3vS1mFacade();
 
             // act
-            facade.RegisterSimulation();
+            facade.RegisterPredefined();
 
             // assert
             Assert.IsTrue(facade.SimulatorRepo.Count >= 4, "not enough simulators registered");

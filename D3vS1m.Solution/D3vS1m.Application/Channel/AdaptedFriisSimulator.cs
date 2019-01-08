@@ -50,7 +50,7 @@ namespace D3vS1m.Application.Channel
         {
             var watch = new Stopwatch();
             watch.Start();
-            var tx = new Vector();
+            var tx = new Vertex();
             float a = _radioArgs.AttenuationExponent;
             float c = GetFriisConstant(_commArgs.TxWavelength);
             _radioArgs.RxValues = new float[_radioArgs.RadioBox.TotalData];
@@ -63,7 +63,7 @@ namespace D3vS1m.Application.Channel
             _radioArgs.RxPositions
                 .AsParallel()
                 .Select((rx, i) => new { Index = i, Rx = rx })
-                .ForAll(d => _radioArgs.RxValues[d.Index] = GetAdaptedFriisAttenuation(c, Vector.GetLength(tx, d.Rx), a));
+                .ForAll(d => _radioArgs.RxValues[d.Index] = GetAdaptedFriisAttenuation(c, Vertex.GetLength(tx, d.Rx), a));
 
             // log the brutto duration
             watch.Stop();

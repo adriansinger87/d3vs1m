@@ -14,7 +14,7 @@ namespace MSTests.Persistence
     [TestClass]
     public class IOTests : BaseTests
     {
-        IOController _io;
+        IOControllable _io;
         private IOSettingsBase _setting;
 
         [TestInitialize]

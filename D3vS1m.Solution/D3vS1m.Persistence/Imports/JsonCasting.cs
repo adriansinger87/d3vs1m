@@ -12,7 +12,7 @@ namespace D3vS1m.Persistence.Imports
     {
         public Tout CastTo<Tout, Tin>(Tin input) where Tout : new()
         {
-            Tout obj = default(Tout);
+            Tout obj = new Tout();
             try
             {
                 string json = input.ToString();

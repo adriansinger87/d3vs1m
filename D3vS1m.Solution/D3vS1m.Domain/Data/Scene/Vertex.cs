@@ -5,17 +5,17 @@ namespace D3vS1m.Domain.Data.Scene
     /// <summary>
     /// The Vector represents a 3D-vector in the cartesian coordinate system with a float type for the x, y and z dimension.
     /// </summary>
-    public class Vector
+    public class Vertex
     {
         #region Constructors (2)
-        public Vector()
+        public Vertex()
         {
             this.X = 0;
             this.Y = 0;
             this.Z = 0;
         }
 
-        public Vector(float x, float y, float z)
+        public Vertex(float x, float y, float z)
         {
             this.X = x;
             this.Y = y;
@@ -65,7 +65,7 @@ namespace D3vS1m.Domain.Data.Scene
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public static float GetLength(Vector a, Vector b)
+        public static float GetLength(Vertex a, Vertex b)
         {
             // sqrt( (a.x - b.x)² + (a.y - b.y)² + (a.z - b.z)² )  
             return (float)Math.Sqrt(
@@ -74,13 +74,13 @@ namespace D3vS1m.Domain.Data.Scene
                 Math.Pow(a.Z - b.Z, 2));
         }
 
-        public static Vector Normalize(Vector a, Vector b, Vector c)
+        public static Vertex Normalize(Vertex a, Vertex b, Vertex c)
         {
             /*
              * based on three vectors, two directional vectors ab and ac are created and cross product is calculated
              * this one stands orthogonal on the plane
              */ 
-            Vector n = ((a - b) * (a - c));
+            Vertex n = ((a - b) * (a - c));
 
             // length of normal
             float len = n.Length;
@@ -99,21 +99,21 @@ namespace D3vS1m.Domain.Data.Scene
             return n;
         }
 
-        public static float Scalar(Vector a, Vector b)
+        public static float Scalar(Vertex a, Vertex b)
         {
             return (a.X * b.X) + (a.Y * b.Y) + (a.Z * b.Z);
         }
 
         // -- operators
 
-        public static Vector operator +(Vector a, Vector b)
+        public static Vertex operator +(Vertex a, Vertex b)
         {
-            return new Vector(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+            return new Vertex(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         }
 
-        public static Vector operator -(Vector a, Vector b)
+        public static Vertex operator -(Vertex a, Vertex b)
         {
-            return new Vector(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+            return new Vertex(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
         }
 
         /// <summary>
@@ -122,9 +122,9 @@ namespace D3vS1m.Domain.Data.Scene
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public static Vector operator *(Vector a, Vector b)
+        public static Vertex operator *(Vertex a, Vertex b)
         {
-            return new Vector(
+            return new Vertex(
                 ((a.Y * b.Z) - (a.Z * b.Y)),
                 ((a.Z * b.X) - (a.X * b.Z)),
                 ((a.X * b.Y) - (a.Y * b.X)));

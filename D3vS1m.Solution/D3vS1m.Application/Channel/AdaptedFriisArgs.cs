@@ -22,7 +22,7 @@ namespace D3vS1m.Application.Channel
         public float AttenuationOffset { get; set; }
         public bool UseObstacles { get; set; }
         public RadioCuboid RadioBox { get; set; }
-        public Vector[] RxPositions { get; set; }
+        public Vertex[] RxPositions { get; set; }
         public float[] RxValues { get; set; }
         public List<float[]> RxColors { get; set; }
     }

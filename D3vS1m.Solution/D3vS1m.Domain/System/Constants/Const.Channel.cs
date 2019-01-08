@@ -16,8 +16,8 @@ namespace D3vS1m.Domain.System.Constants
             {
                 public class Space
                 {
-                    public static readonly Vector MinCorner = new Vector(-5, -5, -5);
-                    public static readonly Vector MaxCorner = new Vector(5, 5, 5);
+                    public static readonly Vertex MinCorner = new Vertex(-5, -5, -5);
+                    public static readonly Vertex MaxCorner = new Vertex(5, 5, 5);
                     public const float Resolution = 1;
                 }
 

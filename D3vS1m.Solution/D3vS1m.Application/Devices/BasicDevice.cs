@@ -33,7 +33,7 @@ namespace D3vS1m.Application.Devices
         public string UUID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Vector Position { get; set; }
+        public Vertex Position { get; set; }
         public Angle Orientation { get; set; }
 
         public PartsRepository Parts { get; }

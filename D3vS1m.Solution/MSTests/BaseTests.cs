@@ -27,8 +27,8 @@ namespace MSTests
 
         public AdaptedFriisArgs GetRadioArgs()
         {
-            var min = new Vector(-10, -10, -10);
-            var max = new Vector(10, 10, 10);
+            var min = new Vertex(-10, -10, -10);
+            var max = new Vertex(10, 10, 10);
             var radioArgs = new AdaptedFriisArgs();
 
             radioArgs.RadioBox.Resolution = 0.25F;
