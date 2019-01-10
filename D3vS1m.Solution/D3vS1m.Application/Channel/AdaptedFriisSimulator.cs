@@ -95,6 +95,7 @@ namespace D3vS1m.Application.Channel
             return 20 * (float)Math.Log10((4 * Math.PI / wavelength));
         }
 
+        [Obsolete]
         public void SetupCommunication(ArgumentsBase args)
         {
             _commArgs = args as WirelessCommArgs;
