@@ -1,2 +1,2 @@
 # d3vs1m
-discrete event development for network device simulation
+discrete event simulation & development for network device simulation
