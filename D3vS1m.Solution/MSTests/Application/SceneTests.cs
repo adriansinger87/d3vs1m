@@ -41,15 +41,19 @@ namespace MSTests.Application
             };
 
             // act
-            Geometry sceneRoot = _io.Importer(ImportTypes.WavefrontObj)
+            var sceneRoot = _io.Importer(ImportTypes.WavefrontObj)
                  .Setup(_setting)
                  .Import()
                  .CastTo<Geometry>(new ObjCasting());
+            sceneRoot.Name = _setting.Name;
 
             // assert
+            var name = "Wand";
+            var wall = sceneRoot.FirstByName(name, true);
             Assert.IsNotNull(sceneRoot, "no imported object");
+            Assert.IsTrue(sceneRoot.Children.Count == 2, "wrong children found");
+            Assert.IsNotNull(wall, $"The geometry '{name}' is missing");
 
-            sceneRoot.Name = _setting.Name;
         }
 
         [TestMethod]

@@ -64,6 +64,11 @@ namespace D3vS1m.Application.Scene
             {
                 Log.Fatal(ex);
             }
+            finally
+            {
+                _vertices = null;
+                _normales = null;
+            }
            
             // final return
             return (Tout)Convert.ChangeType(_root, outType);
@@ -106,7 +111,8 @@ namespace D3vS1m.Application.Scene
             }
             else if (lineData[0] == "f")        // face
             {
-                ReadFace(lineData, _current);
+                _current.Faces.Add(
+                    ReadFace(lineData, _current));
             }
         }
 
@@ -191,8 +197,7 @@ namespace D3vS1m.Application.Scene
                 if (string.IsNullOrEmpty(data)) continue;
 
                 string[] triple = data.Split('/');
-
-               
+                
                 int vex = SetIndex(triple[0]);      // vertex index
                 int vtx = -1;                       // vertex texture index
                 int vnx = -1;                       // vertex normale
@@ -210,11 +215,36 @@ namespace D3vS1m.Application.Scene
                 {
                     vtx = SetIndex(triple[1]);
                 }
-
-                // TODO push indices to Face object
                 
+                // push vertices 
+                f.Vertices.Add(_vertices[vex]);
+
+                // push normals
+                if (vnx > -1)
+                {
+                    f.Normals.Add(_vertices[vnx]);
+                }
             }
 
+            return NormalizeFace(f);
+        }
+
+        private Face NormalizeFace(Face f)
+        {
+            try
+            {
+                if (f.Normals.Count > 0) return f;
+
+                Vertex n = Vertex.Normalize(f.A, f.B, f.C);
+                _normales.Add(n);
+                f.Normals.Add(n);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Could not normalize face");
+                Log.Fatal(ex);
+            } 
+           
             return f;
         }
 

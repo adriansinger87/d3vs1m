@@ -9,22 +9,41 @@ namespace D3vS1m.Application.Scene.Geometries
     {
         public Face()
         {
-            this.A = 0;
-            this.B = 0;
-            this.C = 0;
-            this.N = new Vertex();
+            Vertices = new List<Vertex>();
+            Normals = new List<Vertex>();
         }
 
-        public void Set(int a, int b, int c, Vertex n)
+        private Vertex getVertex(int index)
         {
-            this.A = a;
-            this.B = b;
-            this.C = c;
+            return Vertices.Count > index ? Vertices[index] : new Vertex();
         }
 
-        public int A { get; set; }
-        public int B { get; set; }
-        public int C { get; set; }
-        public Vertex N { get; set; }
+        private Vertex getNormale(int index)
+        {
+            // in case of a fault do not return null but a (0 | 0 | 0 ) object
+            return Normals.Count > index ? Normals[index] : new Vertex();
+        }
+
+        // -- properties
+
+        /// <summary>
+        /// Gets the list of vertices that represents the face
+        /// </summary>
+        public List<Vertex> Vertices { get; private set; }
+
+        /// <summary>
+        /// Gets the list of normals that represents the face
+        /// </summary>
+        public List<Vertex> Normals { get; private set; }
+
+        public Vertex A { get { return getVertex(0); } }
+        public Vertex B { get { return getVertex(1); } }
+        public Vertex C { get { return getVertex(2); } }
+        public Vertex D { get { return getVertex(3); } }
+
+        public Vertex NormaleA { get { return getNormale(0); } }
+        public Vertex NormaleB { get { return getNormale(1); } }
+        public Vertex NormaleC { get { return getNormale(2); } }
+        public Vertex NormaleD { get { return getNormale(3); } }
     }
 }
