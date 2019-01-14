@@ -14,6 +14,7 @@ namespace MSTests.Application
     [TestClass]
     public class SceneTests : BaseTests
     {
+        GeometryRepository _geometries;
         IOControllable _io;
 
         [TestInitialize]
@@ -22,6 +23,7 @@ namespace MSTests.Application
             base.Arrange();
 
             _io = new IOController();
+            _geometries = new GeometryRepository();
         }
 
         [TestCleanup]
@@ -45,14 +47,16 @@ namespace MSTests.Application
                  .Setup(_setting)
                  .Import()
                  .CastTo<Geometry>(new ObjCasting());
-            sceneRoot.Name = _setting.Name;
+            _geometries.Add(sceneRoot, _setting.Name);
 
             // assert
-            var name = "Wand";
-            var wall = sceneRoot.FirstByName(name, true);
             Assert.IsNotNull(sceneRoot, "no imported object");
+
+            var name = "Wand";
+            var found = _geometries.FirstOrDefault(name, true);
+           
             Assert.IsTrue(sceneRoot.Children.Count == 2, "wrong children found");
-            Assert.IsNotNull(wall, $"The geometry '{name}' is missing");
+            Assert.IsNotNull(found, $"The geometry '{name}' is missing");
 
         }
 

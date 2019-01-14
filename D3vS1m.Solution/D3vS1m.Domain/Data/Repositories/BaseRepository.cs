@@ -1,6 +1,7 @@
 ﻿using D3vS1m.Domain.System.Logging;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace D3vS1m.Domain.Data.Repositories
 {
@@ -46,7 +47,7 @@ namespace D3vS1m.Domain.Data.Repositories
         /// </summary>
         /// <param name="item">the new instance of T that shall be added to the list</param>
         /// <returns>returns the new item</returns>
-        public T Add(T item)
+        public virtual T Add(T item)
         {
             _items.Add(item);
             return item;

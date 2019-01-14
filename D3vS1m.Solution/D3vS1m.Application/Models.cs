@@ -6,12 +6,12 @@
         public const string Runtime = "D3vS1m runtime";
 
         // antenna models
-        public const string FlatAntenna = "flat antenna model";
-        public const string SimpleAntenna = "simple antenna model";
-        public const string SphericAntenna = "spheric antenna model";
+        public const string FlatAntenna = "flat antenna";
+        public const string SimpleAntenna = "simple antenna";
+        public const string SphericAntenna = "spheric antenna";
 
         // channel models
-        public const string AdaptedFriisTransmission = "adapted friis transmission model";
+        public const string AdaptedFriisTransmission = "adapted friis transmission";
 
         // device models
 
@@ -19,10 +19,10 @@
         public const string PeerToPeerNetwork = "peer to peer network";
 
         // communication models
-        public const string WirelessCommunication = "wireless communication model";
+        public const string WirelessCommunication = "wireless communication";
 
         // scene models
-        public const string InvariantScene = "invariant scene model";
+        public const string InvariantScene = "invariant scene";
 
         // energy models
     }

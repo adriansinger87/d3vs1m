@@ -28,6 +28,12 @@ namespace D3vS1m.Application.Scene.Geometries
             return found;
         }
 
+        public Geometry Add(Geometry item, string name)
+        {
+            item.Name = name;
+            return base.Add(item);
+        }
+
         // -- indexer 
 
         /// <summary>

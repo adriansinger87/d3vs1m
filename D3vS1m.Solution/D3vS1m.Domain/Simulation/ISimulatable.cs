@@ -42,6 +42,11 @@ namespace D3vS1m.Domain.Simulation
         string Name { get; }
 
         /// <summary>
+        /// Gets the Identifier of the simulation model
+        /// </summary>
+        string Id { get; }
+
+        /// <summary>
         /// Gets the type of the simulation model
         /// </summary>
         SimulationModels Model { get; }

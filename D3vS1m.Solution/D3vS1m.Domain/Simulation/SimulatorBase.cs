@@ -64,6 +64,8 @@ namespace D3vS1m.Domain.Simulation
 
         public abstract string Name { get; }
 
+        public string Id { get { return $"{Model.ToString()}_{Name.Replace(' ', '_')}".ToLower(); } }
+
         public abstract SimulationModels Model { get; }
     }
 }

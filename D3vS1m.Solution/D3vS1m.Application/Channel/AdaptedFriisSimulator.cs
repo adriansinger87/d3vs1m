@@ -109,5 +109,6 @@ namespace D3vS1m.Application.Channel
 
         public override ArgumentsBase Arguments { get { return _radioArgs; } }
 
+        
     }
 }

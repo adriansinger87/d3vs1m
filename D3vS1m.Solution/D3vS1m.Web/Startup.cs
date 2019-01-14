@@ -12,6 +12,8 @@ namespace D3vS1m.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+
         }
 
         public IConfiguration Configuration { get; }

@@ -7,6 +7,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
+    <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
+    <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
