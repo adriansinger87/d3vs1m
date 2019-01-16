@@ -22,12 +22,9 @@ namespace D3vS1m.Application.Antenna
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (arguments is SimpleAntennaArgs) _args = arguments as SimpleAntennaArgs;
-            else
-            {
-                Log.Warn($"'{arguments.Name}' arguments were not added to the '{this.GetType().Name}'");
-            }
-            return this;
+            if (ConvertArgs(arguments, ref _args)) return this;
+            else                                   return ArgsNotAdded(arguments.Name);
+
         }
 
         public override void Run()

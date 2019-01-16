@@ -16,7 +16,7 @@ namespace D3vS1m.Application.Communication
     {
         // -- fields
 
-        WirelessCommArgs _args;
+        WirelessCommArgs _commArgs;
 
         // -- constructor
 
@@ -29,12 +29,8 @@ namespace D3vS1m.Application.Communication
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (arguments is WirelessCommArgs) _args = arguments as WirelessCommArgs;
-            else
-            {
-                Log.Warn($"'{arguments.Name}' arguments were not added to the '{this.GetType().Name}'");
-            }
-            return this;
+            if (ConvertArgs(arguments, ref _commArgs))  return this;
+            else                                    return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()
@@ -46,11 +42,11 @@ namespace D3vS1m.Application.Communication
 
         // -- properties
 
-        public override string Name { get { return _args.Name; } }
+        public override string Name { get { return _commArgs.Name; } }
 
         public override SimulationModels Model { get { return SimulationModels.Communication; } }
 
-        public override ArgumentsBase Arguments { get { return _args; } }
+        public override ArgumentsBase Arguments { get { return _commArgs; } }
 
     }
 }

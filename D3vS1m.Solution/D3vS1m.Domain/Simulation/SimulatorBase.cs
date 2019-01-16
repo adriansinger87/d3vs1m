@@ -1,6 +1,8 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Domain.System.Logging;
+using System;
 
 namespace D3vS1m.Domain.Simulation
 {
@@ -19,6 +21,26 @@ namespace D3vS1m.Domain.Simulation
         public event SimulatorEventHandler Executed;
 
         // -- methods
+
+        protected bool ConvertArgs<T>(ArgumentsBase input, ref T target)
+        {
+            if (input is T)
+            {
+                Type type = typeof(T);
+                target = (T)Convert.ChangeType(input, type);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        protected ISimulatable ArgsNotAdded(string argsName)
+        {
+            Log.Warn($"'{argsName}' arguments were not added to the model '{Name}'");
+            return this;
+        }
 
         /// <summary>
         /// Adds a concrete argument object to the simulator

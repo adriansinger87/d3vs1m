@@ -42,6 +42,9 @@ namespace D3vS1m.Persistence
             import = new ObjImport();
             _imports.Add(import.Type, import);
 
+            import = new CsvImport();
+            _imports.Add(import.Type, import);
+
 
             // add new import types here
         }

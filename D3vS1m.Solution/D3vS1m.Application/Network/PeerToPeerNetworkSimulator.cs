@@ -23,8 +23,8 @@ namespace D3vS1m.Application.Network
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            _networkArgs = arguments as NetworkArgs;
-            return this;
+            if (ConvertArgs(arguments, ref _networkArgs))   return this;
+            else                                            return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()

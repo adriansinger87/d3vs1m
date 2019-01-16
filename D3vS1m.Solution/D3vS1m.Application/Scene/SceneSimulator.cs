@@ -10,8 +10,8 @@ namespace D3vS1m.Application.Scene
         
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            _sceneArgs = arguments as InvariantSceneArgs;
-            return this;
+            if (ConvertArgs(arguments, ref _sceneArgs))     return this;
+            else                                        return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()

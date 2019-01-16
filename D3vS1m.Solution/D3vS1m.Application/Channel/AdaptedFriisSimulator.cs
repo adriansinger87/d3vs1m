@@ -29,14 +29,10 @@ namespace D3vS1m.Application.Channel
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (arguments is AdaptedFriisArgs)          _radioArgs = arguments as AdaptedFriisArgs;
-            else if (arguments is WirelessCommArgs)     _commArgs = arguments as WirelessCommArgs;
-            else if (arguments is InvariantSceneArgs)   _sceneArgs = arguments as InvariantSceneArgs;
-            else
-            {
-                Log.Warn($"'{arguments.Name}' arguments were not added to the '{Name}'");
-            }
-            return this;
+            if      (ConvertArgs(arguments, ref _radioArgs))    return this;
+            else if (ConvertArgs(arguments, ref _commArgs))     return this;
+            else if (ConvertArgs(arguments, ref _sceneArgs))    return this;
+            else                                            return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()
