@@ -30,7 +30,32 @@ namespace MSTests.Persistence
             Log.Info("eine Info Nachricht");
             Log.Warn("eine Warn Nachricht");
             Log.Error("eine Error Nachricht");
-            Log.Fatal(new Exception("eine Fatal Exception"));
+
+            try
+            {
+                Throw();
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex);
+            }
+        }
+
+        private void Throw()
+        {
+            try
+            {
+                ThrowInner();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("an exception was thrown", ex);
+            }
+        }
+
+        private void ThrowInner()
+        {
+            throw new Exception("throw inner ex");
         }
 
     }

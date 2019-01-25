@@ -11,7 +11,6 @@ namespace D3vS1m.Application.Data
 
         public SphericGain()
         {
-            this.Position = new Vertex();
         }
 
         public override string ToString()
@@ -21,7 +20,6 @@ namespace D3vS1m.Application.Data
 
         // --- properties
 
-        public Vertex Position { get; set; }
         public float Gain { get; set; }
     }
 }

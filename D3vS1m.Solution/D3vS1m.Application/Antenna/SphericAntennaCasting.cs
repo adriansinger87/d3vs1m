@@ -46,7 +46,7 @@ namespace D3vS1m.Persistence.Settings
 
         private int getElevationNumber(int rows)
         {
-            return (rows % 2 == 0 ? rows : rows - 1);
+            return (rows % 2 != 0 ? rows : rows - 1);
         }
 
         private SphericGain initGain(int row, int col, SphericGain gain)

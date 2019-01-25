@@ -77,7 +77,7 @@ namespace D3vS1m.Persistence.Imports
             // all other rows
             DataRow Row;
             int firstRowIndex = (hasHeader == true ? 1 : 0);
-            for (int i = firstRowIndex; i < lines.GetLength(0); i++)
+            for (int i = firstRowIndex; i < lines.Length; i++)
             {
                 fields = lines[i].Split(new char[] { separator });
                 Row = _table.NewRow();

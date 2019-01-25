@@ -189,5 +189,22 @@ namespace D3vS1m.Application.Data
         /// Gibt die Größe der Matrix aus. Diese kann nur über die Init-Methode verändert werden.
         /// </summary>
         public int ColsCount { get { return this.nCols; } }
+
+        // -- indexer 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
+        public T this[int row, int col]
+        {
+            get
+            {
+                return matrix[row][col];
+            }
+        }
+
     }
 }
