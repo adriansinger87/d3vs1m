@@ -38,6 +38,8 @@ namespace D3vS1m.Application.Antenna
             // TODO: implement sheric gain calculation here...
             // iterate all network orientation informations and calculate resulting antenna gain
 
+            
+
             // TODO remove test magic numbers
             float gain = CalculateGain(45,45);
         }

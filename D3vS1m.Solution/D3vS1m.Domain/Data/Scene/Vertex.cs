@@ -42,6 +42,12 @@ namespace D3vS1m.Domain.Data.Scene
             return $"( {X} | {Y} | {Z} )";
         }
 
+        public override bool Equals(object obj)
+        {
+            Vertex v = obj as Vertex;
+            return (this.X == v.X && this.Y == v.Y && this.Z == v.Z);
+        }
+
         // --- properties
 
         public float X { get; set; }

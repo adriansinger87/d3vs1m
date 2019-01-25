@@ -1,5 +1,4 @@
-﻿
-using D3vS1m.Domain.IO;
+﻿using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Logging;
 using Newtonsoft.Json;
 using System;
@@ -15,7 +14,7 @@ namespace D3vS1m.Persistence.Imports
             Tout obj = new Tout();
             try
             {
-                string json = input.ToString();
+                string json = input as string;
                 obj = JsonConvert.DeserializeObject<Tout>(json);
             }
             catch(Exception ex)

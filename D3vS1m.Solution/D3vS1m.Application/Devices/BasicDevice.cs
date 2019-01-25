@@ -15,10 +15,10 @@ namespace D3vS1m.Application.Devices
             
             Parts = new PartsRepository();
 
-            Name = Domain.System.Constants.Const.Device.Name;
-            Description = Domain.System.Constants.Const.Device.Description;
-            Position = Domain.System.Constants.Const.Device.Position;
-            Orientation = Domain.System.Constants.Const.Device.Orientation;
+            Name = Const.Device.Name;
+            Description = Const.Device.Description;
+            Position = new Vertex(Const.Device.PosX, Const.Device.PosY, Const.Device.PosZ);
+            Orientation = new Angle(Const.Antenna.Azimuth, Const.Antenna.Elevation);
         }
 
         // -- public methods
@@ -30,10 +30,11 @@ namespace D3vS1m.Application.Devices
 
         // -- properties
 
-        public string UUID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
         public Vertex Position { get; set; }
+
+        public string UUID { get; set; }    
+        public string Description { get; set; }
         public Angle Orientation { get; set; }
 
         public PartsRepository Parts { get; }

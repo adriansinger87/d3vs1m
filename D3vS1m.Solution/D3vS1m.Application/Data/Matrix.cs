@@ -7,15 +7,13 @@ namespace D3vS1m.Application.Data
     // TODO: make english comments
     public class Matrix<T>
     {
-        private int nRows;
-        private int nCols;
 
         /*
          * generic jagged array:
          * KEIN 2D-Array, weil diese langsamer sind, in manchen Fällen innere Schleifen benötigen, wo eine jagged array keins braucht UND
          * weil man leicht eine 3-Ecks Matrix erstellen kann, da es keine zeilenweisen Abhängigkeiten gibt.
          */
-        private T[][] matrix;
+        protected T[][] _matrix;
 
         // --- constructors
 
@@ -53,15 +51,16 @@ namespace D3vS1m.Application.Data
         /// <param name="value">der initiale Wert</param>
         public void Init(int rows, int cols, T value)
         {
-            this.nRows = rows;
-            this.nCols = cols;
-            matrix = new T[nRows][];
-            for (int r = 0; r < nRows; r++)
+            RowsCount = rows;
+            ColsCount = cols;
+
+            _matrix = new T[RowsCount][];
+            for (int r = 0; r < RowsCount; r++)
             {
-                matrix[r] = new T[nCols];
-                for (int c = 0; c < nCols; c++)
+                _matrix[r] = new T[ColsCount];
+                for (int c = 0; c < ColsCount; c++)
                 {
-                    matrix[r][c] = value;
+                    _matrix[r][c] = value;
                 }
             }
         }
@@ -73,11 +72,11 @@ namespace D3vS1m.Application.Data
         /// Der Rückgabewert überschreibt das Matrixelement vom Typ T.</param>
         public virtual void Each(Func<int, int, T, T> function)
         {
-            for (int r = 0; r < this.nRows; r++)
+            for (int r = 0; r < RowsCount; r++)
             {
-                for (int c = 0; c < this.nCols; c++)
+                for (int c = 0; c < ColsCount; c++)
                 {
-                    matrix[r][c] = function(r, c, matrix[r][c]);
+                    _matrix[r][c] = function(r, c, _matrix[r][c]);
                 }
             }
         }
@@ -91,23 +90,23 @@ namespace D3vS1m.Application.Data
         public T Get(int row, int col)
         {
             validate(row, col);
-            return matrix[row][col];
+            return _matrix[row][col];
         }
 
         public T[] GetRow(int row)
         {
             validateRow(row);
-            return matrix[row];
+            return _matrix[row];
         }
 
         public T[] GetCol(int col)
         {
             validateCol(col);
 
-            T[] colArray = new T[this.nRows];
-            for (int r = 0; r < this.nRows; r++)
+            T[] colArray = new T[RowsCount];
+            for (int r = 0; r < RowsCount; r++)
             {
-                colArray[r] = matrix[r][col];
+                colArray[r] = _matrix[r][col];
             }
             return colArray;
         }
@@ -121,7 +120,7 @@ namespace D3vS1m.Application.Data
         public void Set(int row, int col, T value)
         {
             validate(row, col);
-            matrix[row][col] = value;
+            _matrix[row][col] = value;
         }
 
         /// <summary>
@@ -151,7 +150,7 @@ namespace D3vS1m.Application.Data
 
         public override string ToString()
         {
-            return string.Format("Rows: {0} x Cols: {1} Matrix", nRows, nCols);
+            return string.Format("Rows: {0} x Cols: {1} Matrix", RowsCount, ColsCount);
         }
 
         // --- private methods
@@ -164,7 +163,7 @@ namespace D3vS1m.Application.Data
 
         private void validateRow(int row)
         {
-            if (row < 0 || row > nRows)
+            if (row < 0 || row > RowsCount)
             {
                 throw new Exception("Die Zeile liegt außerhalb des gültigen Bereichs");
             }
@@ -172,7 +171,7 @@ namespace D3vS1m.Application.Data
 
         private void validateCol(int col)
         {
-            if (col < 0 || col > nCols)
+            if (col < 0 || col > ColsCount)
             {
                 throw new Exception("Die Spalte liegt außerhalb des gültigen Bereichs");
             }
@@ -183,12 +182,12 @@ namespace D3vS1m.Application.Data
         /// <summary>
         /// Gibt die Größe der Matrix aus. Diese kann nur über die Init-Methode verändert werden.
         /// </summary>
-        public int RowsCount { get { return this.nRows; } }
+        public int RowsCount { get; private set; }
 
         /// <summary>
         /// Gibt die Größe der Matrix aus. Diese kann nur über die Init-Methode verändert werden.
         /// </summary>
-        public int ColsCount { get { return this.nCols; } }
+        public int ColsCount { get; private set; }
 
         // -- indexer 
 
@@ -202,7 +201,7 @@ namespace D3vS1m.Application.Data
         {
             get
             {
-                return matrix[row][col];
+                return _matrix[row][col];
             }
         }
 
