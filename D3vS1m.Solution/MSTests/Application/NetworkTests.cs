@@ -33,6 +33,7 @@ namespace MSTests.Application
             // act
             netArgs.SetupMatrices();
             netArgs.CalculateDistances();
+            netArgs.CalculateAngles();
 
             // assert
             netArgs.Network.DistanceMatrix.Each((r, c, v) => {
