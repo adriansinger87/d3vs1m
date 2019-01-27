@@ -8,7 +8,7 @@ using D3vS1m.Application.Devices;
 
 namespace D3vS1m.Application.Validation
 {
-    public class NetworkValidator : AbstractValidator<NetworkArgs>
+    public class NetworkValidator : AbstractValidator<PeerToPeerNetwork>
     {
         public NetworkValidator()
         {
@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Validation
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
 
-            RuleFor(netArgs => netArgs.Network)
+            RuleFor(net => net)
                 .Must(n => ContainsDevices(n))
                 .WithMessage("network instance must be present and should contain at least one device");
 

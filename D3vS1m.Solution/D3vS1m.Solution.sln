@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3vS1m.Application", "D3vS1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSTests", "MSTests\MSTests.csproj", "{9D90B781-E52C-4163-A430-52E227021421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3vS1m.Web", "D3vS1m.Web\D3vS1m.Web.csproj", "{7C2B46DF-864A-4622-B194-806BF6C6F510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3vS1m.Web", "D3vS1m.Web\D3vS1m.Web.csproj", "{7C2B46DF-864A-4622-B194-806BF6C6F510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
