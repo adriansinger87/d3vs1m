@@ -11,5 +11,5 @@ The provided simulation models are shown in the following list The checked model
 - [x] channel model (radio channel)
 - [x] device model
 - [ ] communication model
-- [ ] energy model
+- [x] energy model
  
