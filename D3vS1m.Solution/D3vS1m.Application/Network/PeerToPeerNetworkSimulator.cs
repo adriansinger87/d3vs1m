@@ -46,20 +46,14 @@ namespace D3vS1m.Application.Network
 
         public override void Run()
         {
+            if (!_netArgs.NetworkOutdated)  return;
+
             base.BeforeExecution();
 
-            if (_netArgs.NetworkOutdated)
-            {
-                // TODO: define a way to change devices during runtime, so that this method gets called if needed and not only once
-                _net.SetupMatrices(); // re-init all matrices in case devices became more or less
+            CalculateDistances();
+            CalculateOrientations();
+            _netArgs.NetworkOutdated = false;   // network is now up-to-date
 
-                CalculateDistances();
-                CalculateOrientations();
-
-                // network is now up-to-date
-                _netArgs.NetworkOutdated = false;
-            }
-            
             base.AfterExecution();
         }
 

@@ -38,7 +38,7 @@ namespace D3vS1m.Application.Network
             AssociationMatrix.Init(size);
             DistanceMatrix.Init(size);
             RssMatrix.Init(size);
-            AngleMatrix.Init(size);
+            AngleMatrix.Init(size, new Angle(float.NaN, float.NaN));
         }
 
         private void LogValidationErrors(ValidationResult results)

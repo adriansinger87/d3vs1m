@@ -33,18 +33,26 @@ namespace MSTests.Application
             var devices = base.ImportDevices("devices.json").ToArray();
             _network = netArgs.Network;
             _network.AddRange(devices);
-            _network.SetupMatrices();
-
-            //TODO ass gets reset durign running the simulator
-            _network.AssociationMatrix.Each(ApplyAssociations);
 
             // act
+            netSim.OnExecuting += (o, e) =>
+            {
+                _network.SetupMatrices();
+                _network.AssociationMatrix.Each(ApplyAssociations);
+            };
             netSim.With(netArgs).Run();
 
             // assert
             netArgs.Network.DistanceMatrix.Each((r, c, v) => {
 
                 Assert.IsTrue(v > 0, $"position at row '{r}' and col '{c}' should not be '{v}'");
+                return v;
+            });
+
+            netArgs.Network.AngleMatrix.Each((r, c, v) => {
+
+                Assert.IsTrue(float.IsNaN(v.Azimuth) == false, $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
+                Assert.IsTrue(float.IsNaN(v.Elevation) == false, $"Elevation at position at row '{r}' and col '{c}' should not be NaN");
                 return v;
             });
         }
