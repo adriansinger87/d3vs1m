@@ -25,6 +25,7 @@
         public const string InvariantScene = "invariant scene";
 
         // energy models
+        public const string BatteryPack = "battery pack";
     }
 
 }

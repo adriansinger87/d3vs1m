@@ -35,6 +35,8 @@ namespace D3vS1m.Application.Antenna
         
         public override void Run()
         {
+            base.BeforeExecution();
+
             // TODO: implement sheric gain calculation here...
             // iterate all network orientation informations and calculate resulting antenna gain
 
@@ -42,6 +44,8 @@ namespace D3vS1m.Application.Antenna
 
             // TODO remove test magic numbers
             float gain = CalculateGain(45,45);
+
+            base.AfterExecution();
         }
 
         private float CalculateGain(float azimuthDegree, float elevationDegree)
