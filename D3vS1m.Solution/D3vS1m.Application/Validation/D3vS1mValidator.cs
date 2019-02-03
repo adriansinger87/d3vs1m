@@ -18,14 +18,25 @@ namespace D3vS1m.Application.Validation
 
             base.SetupRules();
 
+            // channel
+            RuleFor(repo => repo.Cast<ISimulatable>())
+                .Must(list => list.Any(i => i.Model == SimulationModels.Channel))
+                .WithMessage("channel model not present");
+
+            RuleFor(repo => repo.Cast<ISimulatable>().FirstOrDefault(i => i.Model == SimulationModels.Channel))
+                .Must(i => i.Arguments != null).WithMessage("channel model has no arguments")
+                .Must(i => i.Arguments is AdaptedFriisArgs).WithMessage("scene model has wrong argument type")
+                .Must(i => ValidateChannelArguments(i)).WithMessage("scene model arguments not valid");
+
+            // network
+            RuleFor(repo => repo.Cast<ISimulatable>())
+                .Must(list => list.Any(i => i.Model == SimulationModels.Network))
+                .WithMessage("network model not present");
+
+            // scene
             RuleFor(repo => repo.Cast<ISimulatable>())
                 .Must(list => list.Any(i => i.Model == SimulationModels.Scene))
                 .WithMessage("scene model not present");
-
-            RuleFor(repo => repo.Cast<ISimulatable>().FirstOrDefault(i => i.Model == SimulationModels.Channel))
-                .Must(i => i.Arguments != null).WithMessage("scene model has no arguments")
-                .Must(i => i.Arguments is AdaptedFriisArgs).WithMessage("scene model has wrong argument type")
-                .Must(i => ValidateChannelArguments(i)).WithMessage("scene model arguments not valid");
         }
 
         private bool ValidateChannelArguments(ISimulatable sim)

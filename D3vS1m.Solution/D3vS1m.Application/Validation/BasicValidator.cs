@@ -18,14 +18,6 @@ namespace D3vS1m.Application.Validation
         protected virtual void SetupRules()
         {
             RuleFor(repo => repo.Count).GreaterThan(0);
-
-            RuleFor(repo => repo.Cast<ISimulatable>())
-                .Must(list => list.Any(i => i.Model == SimulationModels.Channel))
-                .WithMessage("channel model not present");
-
-            RuleFor(repo => repo.Cast<ISimulatable>())
-                .Must(list => list.Any(i => i.Model == SimulationModels.Network))
-                .WithMessage("network model not present");
         }
     }
 }

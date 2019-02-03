@@ -9,6 +9,8 @@ namespace D3vS1m.Application.Energy
         public StateFields Initial;
         public StateFields Now;
 
+        private float _cutoffVoltage;
+
         public BatteryState()
         {
                 
@@ -40,6 +42,7 @@ namespace D3vS1m.Application.Energy
         {
             battery.Polynom = polynom;
             battery.CutoffVoltage = cutoffVoltage;
+            _cutoffVoltage = cutoffVoltage;
             battery.MaxDischargeCurrent = maxDischargeCurrent;
 
             // copy properties
@@ -48,9 +51,21 @@ namespace D3vS1m.Application.Energy
             Now.Charge = 0;    // actual used load should be zero and will be increased during simulation
         }
 
+
+
         public override string ToString()
         {
             return $"Initial: {Initial.ToString()}, Now: {Now.ToString()}";
+        }
+
+        // -- properties
+
+        /// <summary>
+        /// Gets the information wheather the battery pack is empty or not. 
+        /// </summary>
+        public bool IsDepleted
+        {
+            get { return (Now.SoD >= 1 || Now.Voltage <= _cutoffVoltage); }
         }
 
         // -- inner struct
