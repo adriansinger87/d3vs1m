@@ -19,6 +19,18 @@
       "library": "materialize@1.0.0",
       "destination": "wwwroot/lib/materialize",
       "files": [ "js/materialize.min.js", "css/materialize.min.css" ]
+    },
+    {
+      "library": "MaterialDesign-Webfont@3.4.93",
+      "destination": "wwwroot/lib/mdi",
+      "files": [
+        "css/materialdesignicons.min.css",
+        "fonts/materialdesignicons-webfont.eot",
+        "fonts/materialdesignicons-webfont.svg",
+        "fonts/materialdesignicons-webfont.ttf",
+        "fonts/materialdesignicons-webfont.woff",
+        "fonts/materialdesignicons-webfont.woff2"
+      ]
     }
   ]
 }

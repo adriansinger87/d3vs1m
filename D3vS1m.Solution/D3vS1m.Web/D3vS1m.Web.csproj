@@ -25,11 +25,17 @@
     <Content Update="wwwroot\lib\jquery\jquery.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\lib\materialize\css\materialize.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\materialize\js\materialize.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\lib\vue\vue.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties libman_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties libman_1json__JSONSchema="http://json.schemastore.org/bukkit-plugin" /></VisualStudio></ProjectExtensions>
 
 </Project>

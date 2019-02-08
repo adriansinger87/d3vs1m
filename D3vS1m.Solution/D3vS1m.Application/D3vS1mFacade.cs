@@ -35,7 +35,8 @@ namespace D3vS1m.Application
 
             // arguments
             var sceneArgs = new InvariantSceneArgs();
-            var antennaArgs = new SimpleAntennaArgs();
+            var simpleAntennaArgs = new SimpleAntennaArgs();
+            var sphericAntennaArgs = new SphericAntennaArgs();
             var radioArgs = new AdaptedFriisArgs();
             var netArgs = new NetworkArgs();
             var comArgs = new WirelessCommArgs();
@@ -49,7 +50,8 @@ namespace D3vS1m.Application
                 comArgs });
 
             // anntenna
-            Register(new SimpleAntennaSimulator(), antennaArgs);
+            Register(new SimpleAntennaSimulator(), simpleAntennaArgs);
+            Register(new SphericAntennaSimulator(), sphericAntennaArgs);
 
             // network
             Register(new PeerToPeerNetworkSimulator(), netArgs);

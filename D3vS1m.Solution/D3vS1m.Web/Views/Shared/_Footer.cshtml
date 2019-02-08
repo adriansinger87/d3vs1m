@@ -1,32 +1,72 @@
-﻿@*
-    <hr />
-    <footer>
-        <p>&copy; 2018 - D3vS1m.Web</p>
-    </footer>
-*@
+﻿@* back-to-top *@
+@*<div class="back-to-top">
+        <a href="#top" class="btn-floating waves-effect waves-light blue accent-1"><i class="mdi mdi-chevron-up"></i></a>
+    </div>*@
 
-<footer class="page-footer">
-    <div class="container">
+@* Footer *@
+<footer id="footer" class="page-footer blue-grey lighten-4 scrollspy">
+    <div class="container grey-text text-darken-2">
         <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+
+            <div class="col s12 m12 l8">
+                <ul class="footer-links">
+                    <li><h5>Links</h5></li>
+                    <li>
+                        <div class="valign-wrapper">
+                            <a href="https://github.com/adriansinger87/d3vs1m" target="_blank"><i class="mdi mdi-github-circle left"></i></a>
+                            github
+                        </div>
+                    </li>
                 </ul>
+            </div>
+
+            <div class="col s12 m12 l4">
+                <h5>Technologies</h5>
+                <div class="chip">
+                    <img src="~/images/html5.jpg" />
+                    <a href="https://www.w3.org/TR/html5/" target="_blank">HTML 5</a>
+                </div>
+                <div class="chip">
+                    <img src="~/images/materialize.jpg" />
+                    <a href="http://materializecss.com/" target="_blank">MaterializeCSS</a>
+                </div>
+                @*<div class="chip">
+                        <img src="~/Content/img/d3.jpg" />
+                        <a href="https://d3js.org/" target="_blank">Data-Driven-Documents D3.js</a>
+                    </div>*@
+                @*<div class="chip">
+                        <img src="~/Content/img/threejs.jpg" />
+                        <a href="http://threejs.org/" target="_blank">THREE.js</a>
+                    </div>
+                    <div class="chip">
+                        <img src="~/Content/img/webgl.jpg" />
+                        <a href="https://www.khronos.org/webgl/" target="_blank">WebGL</a>
+                    </div>*@
+                @*<div class="chip">
+                        <img src="~/Content/img/moment.jpg" />
+                        <a href="http://momentjs.com/" target="_blank">Moment.js</a>
+                    </div>
+                    <div class="chip">
+                        <img src="~/Content/img/knockout.jpg" />
+                        <a href="http://knockoutjs.com/" target="_blank">Knockout.js</a>
+                    </div>*@
+                @*<div class="chip">
+                        <img src="~/Content/img/CUDAfy.jpg" />
+                        <a href="https://cudafy.codeplex.com/" target="_blank">CUDAfy.NET</a>
+                    </div>*@
+                <div class="chip">
+                    <img src="~/images/visual-studio.jpg" />
+                    <a href="http://www.asp.net/mvc" target="_blank">ASP.NET Core</a>
+                </div>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
-        <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        <div class="container grey-text text-darken-2">
+            <div class="row">
+                <div class="col s8">d3vs1m © 2016-2019 Adrian Singer</div>
+                @*<div class="col s4 right-align">Version:  @typeof(D3vS1m.Web.Program).Assembly.GetName().Version</div>*@
+            </div>
         </div>
     </div>
 </footer>

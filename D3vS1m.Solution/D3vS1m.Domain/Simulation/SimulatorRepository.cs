@@ -1,4 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Repositories;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace D3vS1m.Domain.Simulation
@@ -8,7 +9,13 @@ namespace D3vS1m.Domain.Simulation
         public SimulatorRepository()
         {
             base.Name = "simulation models";
+
+
         }
+
+        // -- properties
+
+        public List<ISimulatable> Items { get { return _items; } }
 
         // -- indexer
 
