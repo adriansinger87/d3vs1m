@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace D3vS1m.Web
 {
@@ -12,8 +13,6 @@ namespace D3vS1m.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
-
         }
 
         public IConfiguration Configuration { get; }
@@ -28,8 +27,21 @@ namespace D3vS1m.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // session
+#if DEBUG
+            TimeSpan ts = TimeSpan.FromSeconds(10);
+#else
+            TimeSpan ts = TimeSpan.FromMinutes(10);
+#endif
+
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = ts;
+                options.Cookie.HttpOnly = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +59,8 @@ namespace D3vS1m.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
