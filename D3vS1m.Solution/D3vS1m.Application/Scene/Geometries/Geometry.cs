@@ -10,9 +10,7 @@ namespace D3vS1m.Application.Scene.Geometries
     {
         public Geometry()
         {
-            // TODO: remove magic string
-            Name = "geometry";
-
+            Name = Models.DefaultGeometry;
             Faces = new List<Face>();
             Vertices = new List<Vertex>();
             Normales = new List<Vertex>();

@@ -52,7 +52,7 @@ namespace MSTests
             // arrange
             var _setting = new FileSettings
             {
-                Location = DataDirectory,
+                Location = TestDataDirectory,
                 Name = filename //"devices.json"
             };
 
@@ -82,7 +82,14 @@ namespace MSTests
 
             }
         }
-
+        
+        public string TestDataDirectory
+        {
+            get
+            {
+                return "Test_Data";
+            }
+        }
         public string DataDirectory
         {
             get

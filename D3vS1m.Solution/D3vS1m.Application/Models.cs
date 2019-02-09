@@ -23,6 +23,7 @@
 
         // scene models
         public const string InvariantScene = "invariant scene";
+        public const string DefaultGeometry = "geometry";
 
         // energy models
         public const string BatteryPack = "battery pack";

@@ -18,4 +18,10 @@
     <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Test_Data\devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

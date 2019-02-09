@@ -44,8 +44,8 @@ namespace MSTests.Persistence
 
             var _setting = new FileSettings
             {
-                Location = DataDirectory,
-                Name = "devices.json"
+                Location = TestDataDirectory,
+                Name = "devices_2.json"
             };
             
 
