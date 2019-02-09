@@ -1,0 +1,47 @@
+﻿/* Custom Materialize Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.pin-top {
+    position: relative;
+    z-index: 1000;
+}
+
+.pin-bottom {
+    position: relative;
+    z-index: 1000;
+}
+
+.pinned {
+    position: fixed;
+    z-index: 1000;
+}
+
+.tabs {
+    overflow-x: hidden !important;
+}
+
+.tab a {
+    color: #1976d2 !important;
+}
+
+.tabs .indicator {
+    background-color: #1976d2 !important;
+}
+
+.tab-icon {
+    margin-top: 10px;
+}
+
+.collapsible {
+    margin: 7px !important;
+}
+
+.chip {
+    background-color: rgba(51, 51, 51, 0.1) !important;
+}
+/* END ovf materializeCSS  */
