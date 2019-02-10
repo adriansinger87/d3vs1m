@@ -1,4 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Repositories;
+using D3vS1m.Domain.System.Enumerations;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,6 +30,15 @@ namespace D3vS1m.Domain.Simulation
             get
             {
                 var found = _items.FirstOrDefault(s => s.Id == id);
+                return found;
+            }
+        }
+
+        public ISimulatable this[SimulationModels type]
+        {
+            get
+            {
+                var found = _items.FirstOrDefault(s => s.Type == type);
                 return found;
             }
         }

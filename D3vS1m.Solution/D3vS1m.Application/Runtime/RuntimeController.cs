@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Logging;
 using FluentValidation.Results;
@@ -36,6 +37,8 @@ namespace D3vS1m.Application.Runtime
         {
             _validator = validator;
             _args = new RuntimeArgs();
+
+            base.IterationPassed += OnIterationPassed;
         }
 
         // -- methods
@@ -73,8 +76,16 @@ namespace D3vS1m.Application.Runtime
         /// <returns>The task object representing the async task</returns>
         public override Task RunAsync(Func<RuntimeBase, bool> condition)
         {
-            _args.StartTime = DateTime.Now;
+            _args.ResetTime();
             return base.RunAsync(condition);
+        }
+
+        private void OnIterationPassed(object sender, SimulatorEventArgs e)
+        {
+            _args.Iterations++;
+            _args.ElapsedTime = _args.ElapsedTime.Add(_args.CycleDuration);
+
+            Log.Trace($"{_args.Iterations} iterations, duration: {_args.ElapsedTime}");
         }
 
         // -- properties

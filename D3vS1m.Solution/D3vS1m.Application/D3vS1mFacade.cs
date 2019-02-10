@@ -1,9 +1,12 @@
 ﻿using D3vS1m.Application.Antenna;
 using D3vS1m.Application.Channel;
 using D3vS1m.Application.Communication;
+using D3vS1m.Application.Energy;
 using D3vS1m.Application.Network;
+using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Logging;
 using System;
@@ -29,39 +32,46 @@ namespace D3vS1m.Application
         /// Registers all relevant simulation models in the repository and
         /// sets up all simulator arguments.
         /// </summary>
-        public void RegisterPredefined()
+        public void RegisterPredefined(RuntimeBase runtime)
         {
             Log.Trace("Register simulation models for D3vS1m Application");
 
             // arguments
+            var netArgs = new NetworkArgs();
             var sceneArgs = new InvariantSceneArgs();
             var simpleAntennaArgs = new SimpleAntennaArgs();
             var sphericAntennaArgs = new SphericAntennaArgs();
             var radioArgs = new AdaptedFriisArgs();
-            var netArgs = new NetworkArgs();
             var comArgs = new WirelessCommArgs();
-
-            // scene
-            Register(new SceneSimulator(), sceneArgs);
-
-            // radio channel
-            Register(new AdaptedFriisSimulator(), new ArgumentsBase[] {
-                radioArgs,
-                comArgs });
-
-            // anntenna
-            Register(new SimpleAntennaSimulator(), simpleAntennaArgs);
-            Register(new SphericAntennaSimulator(), sphericAntennaArgs);
+            var energyArgs = new BatteryArgs();
 
             // network
-            Register(new PeerToPeerNetworkSimulator(), netArgs);
+            Register(new PeerToPeerNetworkSimulator(runtime), netArgs);
+
+            // scene
+            Register(new SceneSimulator(runtime), sceneArgs);
+
+            // radio channel
+            Register(new AdaptedFriisSimulator(runtime), new ArgumentsBase[] {
+                radioArgs,
+                comArgs,
+                sceneArgs
+            });
+
+            // anntenna
+            Register(new SimpleAntennaSimulator(runtime), simpleAntennaArgs);
+            Register(new SphericAntennaSimulator(runtime), sphericAntennaArgs);
 
             // devices
 
             // communication
-            Register(new LRWPANSimulator(), comArgs);
+            Register(new LRWPANSimulator(runtime), comArgs);
 
             // energy
+            Register(new BatteryPackSimulator(runtime), new ArgumentsBase[] {
+                energyArgs,
+                runtime.Arguments
+            });
         }
 
         /// <summary>

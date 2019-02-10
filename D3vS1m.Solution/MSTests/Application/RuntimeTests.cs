@@ -9,6 +9,7 @@ using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -32,6 +33,19 @@ namespace MSTests.Application
         {
             base.Arrange();
 
+            _runtime = new RuntimeController(new D3vS1mValidator());
+            _runtime.IterationPassed += (o, e) =>
+            {
+                var runtimeArgs = e.Arguments as RuntimeArgs;
+                var duration = (DateTime.Now - runtimeArgs.StartTime);
+                Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
+            };
+
+            SetupDemoRepo(_runtime);
+        }
+
+        private void SetupDemoRepo(RuntimeBase runtime)
+        {
             var sceneArgs = new InvariantSceneArgs();
             var radioArgs = base.GetRadioArgs();
             var comArgs = new WirelessCommArgs();
@@ -40,23 +54,15 @@ namespace MSTests.Application
 
             _repo = new SimulatorRepository
             {
-                new SceneSimulator()
+                new SceneSimulator(runtime)
                     .With(sceneArgs),
-                new AdaptedFriisSimulator()
+                new AdaptedFriisSimulator(runtime)
                     .With(radioArgs)
                     .With(comArgs),
-                new SimpleAntennaSimulator()
+                new SimpleAntennaSimulator(runtime)
                     .With(antennaArgs),
-                new PeerToPeerNetworkSimulator()
+                new PeerToPeerNetworkSimulator(runtime)
                     .With(netArgs)
-            };
-
-            _runtime = new RuntimeController(new D3vS1mValidator());
-            _runtime.IterationPassed += (o, e) =>
-            {
-                var runtimeArgs = e.Arguments as RuntimeArgs;
-                var duration = (DateTime.Now - runtimeArgs.StartTime);
-                Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
             };
         }
 
@@ -69,13 +75,45 @@ namespace MSTests.Application
         // -- test methods
 
         [TestMethod]
+        public async Task RunPredefinedSimulation()
+        {
+            // arrange
+            var facade = new D3vS1mFacade();
+            facade.RegisterPredefined(_runtime);
+            var netArgs = facade.SimulatorRepo[SimulationModels.Network].Arguments as NetworkArgs;
+
+            // special setup
+            _runtime.Started += (o, e) =>
+            {
+                facade.SimulatorRepo[SimulationModels.Channel].With(base.GetRadioArgs());
+            };
+
+            netArgs.Network.AddRange(
+                base.ImportDevices().ToArray());
+
+            // act
+            int iterations = 5;
+            if (_runtime.Setup(facade.SimulatorRepo).Validate() == false)
+            {
+                Assert.Fail("error on validating the simulation");
+            }
+
+            Log.Trace($"RunAsync for {iterations} times");
+            await _runtime.RunAsync(iterations);
+
+            // assert
+            var runArgs = _runtime.Arguments as RuntimeArgs;
+            Assert.IsTrue(runArgs.Iterations == 5, $"simulation should have passed {iterations} iterations");
+        }
+
+        [TestMethod]
         public void RegisterSimulation()
         {
             // arrange
             var facade = new D3vS1mFacade();
 
             // act
-            facade.RegisterPredefined();
+            facade.RegisterPredefined(_runtime);
 
             // assert
             Assert.IsTrue(facade.SimulatorRepo.Count >= 4, "not enough simulators registered");

@@ -1,4 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Logging;
@@ -20,7 +21,7 @@ namespace D3vS1m.Application.Communication
 
         // -- constructor
 
-        public LRWPANSimulator()
+        public LRWPANSimulator(RuntimeBase runtime) : base(runtime)
         {
 
         }
@@ -44,7 +45,7 @@ namespace D3vS1m.Application.Communication
 
         public override string Name { get { return _commArgs.Name; } }
 
-        public override SimulationModels Model { get { return SimulationModels.Communication; } }
+        public override SimulationModels Type { get { return SimulationModels.Communication; } }
 
         public override ArgumentsBase Arguments { get { return _commArgs; } }
 

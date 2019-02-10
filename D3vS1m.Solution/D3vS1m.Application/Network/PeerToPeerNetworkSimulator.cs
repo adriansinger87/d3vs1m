@@ -10,6 +10,7 @@ using FluentValidation.Results;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Logging;
+using D3vS1m.Domain.Runtime;
 
 namespace D3vS1m.Application.Network
 {
@@ -18,13 +19,18 @@ namespace D3vS1m.Application.Network
         private NetworkArgs _netArgs;
         private PeerToPeerNetwork _net;
 
-
-
         // -- constructor
 
-        public PeerToPeerNetworkSimulator()
+        /// <summary>
+        /// Baware: no runtime will be usable
+        /// </summary>
+        public PeerToPeerNetworkSimulator() : this(null)
         {
+        }
 
+        public PeerToPeerNetworkSimulator(RuntimeBase runtime) : base(runtime)
+        {
+            runtime.Started += OnStart;
         }
 
         // -- methods
@@ -58,6 +64,11 @@ namespace D3vS1m.Application.Network
         }
 
         // -- private method
+
+        private void OnStart(object sender, SimulatorEventArgs e)
+        {
+            _netArgs.Network.SetupMatrices();
+        }
 
         /// <summary>
         /// Calculates all distances between each device.
@@ -140,7 +151,7 @@ namespace D3vS1m.Application.Network
 
         public override string Name { get { return _netArgs.Name; } }
 
-        public override SimulationModels Model { get { return SimulationModels.Network; } }
+        public override SimulationModels Type { get { return SimulationModels.Network; } }
 
        
 

@@ -1,4 +1,6 @@
 ﻿using D3vS1m.Application;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Validation;
 using D3vS1m.Domain.System.Logging;
 using D3vS1m.Web.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -42,7 +44,7 @@ namespace D3vS1m.Web.Controllers.Api
         private D3vS1mFacade CreateContext()
         {
             var data = new D3vS1mFacade();
-            data.RegisterPredefined();
+            data.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
             return data;
         }
 

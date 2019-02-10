@@ -23,6 +23,16 @@ namespace D3vS1m.Domain.Runtime
         // -- events
 
         /// <summary>
+        /// The event gets fired when the simulation starts the first iteration. 
+        /// </summary>
+        public event SimulatorEventHandler Started;
+
+        /// <summary>
+        /// The event gets fired when the simulation stoppes the last iteration. 
+        /// </summary>
+        public event SimulatorEventHandler Stopped;
+
+        /// <summary>
         /// The event gets fired when the execution of all simulation models has finished one iteration 
         /// </summary>
         public event SimulatorEventHandler IterationPassed;
@@ -111,7 +121,12 @@ namespace D3vS1m.Domain.Runtime
 
             await Task.Run(() =>
             {
+                Log.Trace($"Start simulation");
                 _isRunning = condition(this);
+
+                // fire event on iteration starts
+                Started?.Invoke(this, new SimulatorEventArgs(Arguments));
+
                 while (_isRunning)
                 {
                     foreach (ISimulatable sim in _simRepo)
@@ -119,15 +134,18 @@ namespace D3vS1m.Domain.Runtime
                         sim.Run();
                     }
 
+                    // fire event that one iteration of all simulation models has finished
+                    IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
+
                     if (!_stopping) // separate flag to ensure that the condition method does not overwrite the stop action
                     {
                         _isRunning = condition(this);
                     }
-
-                    // fire event that one iteration of all simulation models has finished
-                    IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
                 }
-                Log.Trace($"Leave simulation task");
+
+                // fire event on iteration stopps
+                Stopped?.Invoke(this, new SimulatorEventArgs(Arguments));
+                Log.Trace($"End simulation");
             });
         }
         #endregion

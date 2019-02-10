@@ -38,7 +38,7 @@ namespace D3vS1m.Web.Controllers.Api
             ISimulatable simulator = null;
             foreach (ISimulatable sim in Context.SimulatorRepo)
             {
-                if (sim.Model == (SimulationModels)model)
+                if (sim.Type == (SimulationModels)model)
                 {
                     simulator = sim;
                     break;
