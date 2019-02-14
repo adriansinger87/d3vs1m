@@ -1,32 +1,38 @@
 ﻿namespace D3vS1m.Application
 {
-    public class Models
+    public static class Models
     {
+
+        public static string GetID(string model)
+        {
+            return model.Replace(" ", "_");
+        }
+
         // runtime
-        public const string Runtime = "D3vS1m runtime";
+        public static string Runtime => "D3vS1m runtime";
 
         // antenna models
-        public const string FlatAntenna = "flat antenna";
-        public const string SimpleAntenna = "simple antenna";
-        public const string SphericAntenna = "spheric antenna";
+        public static string FlatAntenna => "flat antenna";
+        public static string SimpleAntenna => "simple antenna";
+        public static string SphericAntenna => "spheric antenna";
 
         // channel models
-        public const string AdaptedFriisTransmission = "adapted friis transmission";
+        public static string AdaptedFriisTransmission => "adapted friis transmission";
 
         // device models
 
         // netowrk models
-        public const string PeerToPeerNetwork = "peer to peer network";
+        public static string PeerToPeerNetwork => "peer to peer network";
 
         // communication models
-        public const string WirelessCommunication = "wireless communication";
+        public static string WirelessCommunication => "wireless communication";
 
         // scene models
-        public const string InvariantScene = "invariant scene";
-        public const string DefaultGeometry = "geometry";
+        public static string InvariantScene => "invariant scene";
+        public static string DefaultGeometry => "geometry";
 
         // energy models
-        public const string BatteryPack = "battery pack";
+        public static string BatteryPack => "battery pack";
     }
 
 }

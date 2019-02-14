@@ -33,7 +33,7 @@ namespace D3vS1m.Application.Channel
 
         public AdaptedFriisSimulator(RuntimeBase runtime) : base(runtime)
         {
-            runtime.Started += OnStarted;
+
         }
 
         // -- methods
@@ -106,11 +106,6 @@ namespace D3vS1m.Application.Channel
         public void SetupCommunication(ArgumentsBase args)
         {
             _commArgs = args as WirelessCommArgs;
-        }
-
-        private void OnStarted(object sender, SimulatorEventArgs e)
-        {
-
         }
 
         // -- properties

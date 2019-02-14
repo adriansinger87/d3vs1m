@@ -33,7 +33,7 @@ namespace MSTests.Application
             // arrange
             var antennaSim = new SphericAntennaSimulator();
             _antennaArgs = new SphericAntennaArgs();
-            LoadCsv(_antennaArgs);
+            LoadAntennaData(_antennaArgs);
 
             antennaSim.With(_antennaArgs);
 
@@ -46,21 +46,6 @@ namespace MSTests.Application
         }
 
         // TODO remove refactore into another test
-        private void LoadCsv(SphericAntennaArgs args)
-        {
-            var io = new IOController();
-
-            var settings = new CsvSettings
-            {
-                Location = base.DataDirectory,
-                Name = "PCB_868_tot.csv",
-            };
-
-            args.GainMatrix = io
-                .Importer(ImportTypes.Csv)
-                .Setup(settings)
-                .Import()
-                .CastTo<Matrix<SphericGain>>(new SphericAntennaCasting());
-        }
+        
     }
 }

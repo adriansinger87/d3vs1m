@@ -30,7 +30,11 @@ namespace D3vS1m.Domain.Simulation
 
         public SimulatorBase(RuntimeBase runtime)
         {
-            _runtime = runtime;
+            if (runtime != null)
+            {
+                _runtime = runtime;
+                _runtime.Started += OnStarted;
+            }
         }
 
         // -- methods
@@ -82,6 +86,11 @@ namespace D3vS1m.Domain.Simulation
         protected void AfterExecution()
         {
             Executed?.Invoke(this, new SimulatorEventArgs(this.Arguments));
+        }
+
+        protected virtual void OnStarted(object sender, SimulatorEventArgs e)
+        {
+
         }
 
         /// <summary>
