@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using D3vS1m.Application;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using Microsoft.AspNetCore.Http;
@@ -19,7 +21,7 @@ namespace D3vS1m.Web.Controllers.Api
         public SimulatorsV2Controller()
         {
             _data = new D3vS1mFacade();
-            _data.RegisterPredefined();
+            _data.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
         }
 
 

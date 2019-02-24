@@ -1,5 +1,9 @@
-﻿using D3vS1m.Application.Channel;
+﻿using D3vS1m.Application.Antenna;
+using D3vS1m.Application.Channel;
+using D3vS1m.Application.Data;
 using D3vS1m.Application.Devices;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Enumerations;
@@ -32,6 +36,30 @@ namespace MSTests
             Log.Stop();
         }
 
+        public void LoadAntennaData(SphericAntennaArgs args, string file = "PCB_868_tot.csv")
+        {
+            var io = new IOController();
+
+            var settings = new CsvSettings
+            {
+                Location = DataDirectory,
+                Name = file,
+            };
+
+            args.GainMatrix = io
+                .Importer(ImportTypes.Csv)
+                .Setup(settings)
+                .Import()
+                .CastTo<Matrix<SphericGain>>(new SphericAntennaCasting());
+        }
+
+        public RuntimeController GetRuntime()
+        {
+            var runtime = new RuntimeController(new D3vS1mValidator());
+
+            return runtime;
+        }
+
         public AdaptedFriisArgs GetRadioArgs()
         {
             var min = new Vertex(-10, -10, -10);
@@ -47,7 +75,7 @@ namespace MSTests
             return radioArgs;
         }
 
-        public List<BasicDevice> ImportDevices(string filename)
+        public List<BasicDevice> ImportDevices(string filename = "devices.json")
         {
             // arrange
             var _setting = new FileSettings

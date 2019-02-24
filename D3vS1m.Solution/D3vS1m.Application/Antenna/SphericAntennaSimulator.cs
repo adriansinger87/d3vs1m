@@ -1,6 +1,7 @@
 ﻿using D3vS1m.Application.Data;
 using D3vS1m.Application.Network;
 using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
@@ -14,9 +15,16 @@ namespace D3vS1m.Application.Antenna
     public class SphericAntennaSimulator : SimulatorBase
     {
         SphericAntennaArgs _antennaArgs;
-        NetworkArgs _netArgs; 
+        NetworkArgs _netArgs;
 
-        public SphericAntennaSimulator()
+        /// <summary>
+        /// Baware: no runtime will be usable
+        /// </summary>
+        public SphericAntennaSimulator() : this(null)
+        {
+        }
+
+        public SphericAntennaSimulator(RuntimeBase runtime) : base (runtime)
         {
             Name = Models.SphericAntenna;
         }
@@ -83,7 +91,7 @@ namespace D3vS1m.Application.Antenna
 
         public override ArgumentsBase Arguments { get { return _antennaArgs; } }
         public override string Name { get; }
-        public override SimulationModels Model { get { return SimulationModels.Antenna; } }
+        public override SimulationModels Type { get { return SimulationModels.Antenna; } }
 
     }
 }

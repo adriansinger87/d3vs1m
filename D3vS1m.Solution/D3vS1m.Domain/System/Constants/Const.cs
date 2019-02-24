@@ -12,6 +12,11 @@ namespace D3vS1m.Domain.System.Constants
     /// </summary>
     public partial class Const
     {
-       // add basic constants or other stuff here...
+        // add basic constants or other stuff here...
+
+        public class Runtime
+        {
+            public const double IncrementSeconds = 10;
+        } 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
+using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Logging;
 using System;
@@ -8,6 +9,10 @@ namespace D3vS1m.Domain.Simulation
 {
     public abstract class SimulatorBase : ISimulatable
     {
+        // -- fields
+
+        private RuntimeBase _runtime;
+
         // -- events
 
         /// <summary>
@@ -19,6 +24,18 @@ namespace D3vS1m.Domain.Simulation
         /// Shall be fired at last, when the execution of the simulation model has finished 
         /// </summary>
         public event SimulatorEventHandler Executed;
+
+
+        // -- constructor
+
+        public SimulatorBase(RuntimeBase runtime)
+        {
+            if (runtime != null)
+            {
+                _runtime = runtime;
+                _runtime.Started += OnStarted;
+            }
+        }
 
         // -- methods
 
@@ -71,6 +88,11 @@ namespace D3vS1m.Domain.Simulation
             Executed?.Invoke(this, new SimulatorEventArgs(this.Arguments));
         }
 
+        protected virtual void OnStarted(object sender, SimulatorEventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// Returns the name property
         /// </summary>
@@ -86,8 +108,8 @@ namespace D3vS1m.Domain.Simulation
 
         public abstract string Name { get; }
 
-        public string Id { get { return $"{Model.ToString()}_{Name.Replace(' ', '_')}".ToLower(); } }
+        public string Id { get { return $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower(); } }
 
-        public abstract SimulationModels Model { get; }
+        public abstract SimulationModels Type { get; }
     }
 }

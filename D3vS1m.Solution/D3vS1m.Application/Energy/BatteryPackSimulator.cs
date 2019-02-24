@@ -1,4 +1,6 @@
-﻿using D3vS1m.Domain.Data.Arguments;
+﻿using D3vS1m.Application.Runtime;
+using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using System;
@@ -13,10 +15,18 @@ namespace D3vS1m.Application.Energy
         // -- fields
 
         private BatteryArgs _batteryArgs;
+        private RuntimeArgs _runArgs;
 
         // -- connstructor
 
-        public BatteryPackSimulator()
+        /// <summary>
+        /// Baware: no runtime will be usable
+        /// </summary>
+        public BatteryPackSimulator() : this(null)
+        {
+        }
+
+        public BatteryPackSimulator(RuntimeBase runtime) : base(runtime)
         {
         }
 
@@ -25,6 +35,7 @@ namespace D3vS1m.Application.Energy
         public override ISimulatable With(ArgumentsBase arguments)
         {
             if (ConvertArgs(arguments, ref _batteryArgs))   return this;
+            if (ConvertArgs(arguments, ref _runArgs))       return this;
             else                                            return ArgsNotAdded(arguments.Name);
         }
 
@@ -32,11 +43,10 @@ namespace D3vS1m.Application.Energy
         {
             base.BeforeExecution();
 
+            // TODO the discharge current should come from the energy consumption based on the device / comm. simulation 
             var current = 100;
-            var time = new TimeSpan(0, 0, 10);
 
-            _batteryArgs.Batteries.ForEach(b => Discharge(b, current, time));
-
+            _batteryArgs.Batteries.ForEach(b => Discharge(b, current, _runArgs.CycleDuration));
 
             base.AfterExecution();
         }
@@ -150,14 +160,19 @@ namespace D3vS1m.Application.Energy
             return v;
         }
 
+        /// <summary>
+        /// Check if the battery is out of energy or not
+        /// </summary>
+        /// <param name="battery"></param>
+        /// <returns></returns>
         private bool Check(BatteryPack battery)
         {
             if (battery.IsUnlimited == true)
             {
                 return true;
             }
-            else if (battery.State.Now.Charge >= battery.State.Initial.Charge ||	// verbrauchte Ladung
-                     battery.State.Now.Voltage <= battery.CutoffVoltage)		    // Spannung zu gering?
+            else if (battery.State.Now.Charge >= battery.State.Initial.Charge ||	// used charge
+                     battery.State.Now.Voltage <= battery.CutoffVoltage)		    // too low voltage
             {
                 //battery.State.Now.SoD = 1;
                 return false;
@@ -172,7 +187,7 @@ namespace D3vS1m.Application.Energy
 
         public override string Name { get { return _batteryArgs.Name; } }
 
-        public override SimulationModels Model { get { return SimulationModels.Energy; } }
+        public override SimulationModels Type { get { return SimulationModels.Energy; } }
 
         public override ArgumentsBase Arguments { get { return _batteryArgs; } }
     }

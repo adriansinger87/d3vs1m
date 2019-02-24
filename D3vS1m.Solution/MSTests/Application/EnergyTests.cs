@@ -50,7 +50,8 @@ namespace MSTests.Application
         public async Task RunBatterySimulation()
         {
             // arrange
-            
+            var runtime = new RuntimeController(new EnergyValidator());
+
             // TODO: seem to have a but when setting up a higher cutoff voltage --> test and fix it
             _battery.CutoffVoltage = 1.2F;
             _battery.State.Init(_battery);
@@ -60,12 +61,12 @@ namespace MSTests.Application
             batteryArgs.Batteries.Add(_battery);
 
             var batterySim = new BatteryPackSimulator();
-            batterySim.With(batteryArgs);
+            batterySim
+              .With(batteryArgs)
+              .With(runtime.Arguments);
 
             var repo = new SimulatorRepository();
             repo.Add(batterySim);
-
-            var runtime = new RuntimeController(new EnergyValidator());
             if (runtime.Setup(repo).Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");

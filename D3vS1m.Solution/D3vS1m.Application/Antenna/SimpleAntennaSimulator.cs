@@ -2,6 +2,7 @@
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Logging;
+using D3vS1m.Domain.Runtime;
 
 namespace D3vS1m.Application.Antenna
 {
@@ -13,7 +14,7 @@ namespace D3vS1m.Application.Antenna
 
         // -- constructor
 
-        public SimpleAntennaSimulator()
+        public SimpleAntennaSimulator(RuntimeBase runtime) : base(runtime)
         {
 
         }
@@ -38,7 +39,7 @@ namespace D3vS1m.Application.Antenna
 
         public override string Name { get { return _args.Name; } }
 
-        public override SimulationModels Model { get { return SimulationModels.Antenna; } }
+        public override SimulationModels Type { get { return SimulationModels.Antenna; } }
 
         public override ArgumentsBase Arguments { get { return _args; } }
 

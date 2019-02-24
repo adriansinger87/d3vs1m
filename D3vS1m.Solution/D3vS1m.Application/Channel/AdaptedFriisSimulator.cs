@@ -9,6 +9,7 @@ using D3vS1m.Application.Communication;
 using D3vS1m.Domain.System.Logging;
 using D3vS1m.Application.Scene;
 using System.Diagnostics;
+using D3vS1m.Domain.Runtime;
 
 namespace D3vS1m.Application.Channel
 {
@@ -20,7 +21,17 @@ namespace D3vS1m.Application.Channel
         private WirelessCommArgs _commArgs;
         private InvariantSceneArgs _sceneArgs;
 
-        public AdaptedFriisSimulator()
+        // -- constructors
+
+        /// <summary>
+        /// Baware: no runtime will be usable
+        /// </summary>
+        public AdaptedFriisSimulator() : this(null)
+        {
+
+        }
+
+        public AdaptedFriisSimulator(RuntimeBase runtime) : base(runtime)
         {
 
         }
@@ -101,7 +112,7 @@ namespace D3vS1m.Application.Channel
 
         public override string Name { get { return _radioArgs.Name; } }
 
-        public override SimulationModels Model { get { return SimulationModels.Channel; } }
+        public override SimulationModels Type { get { return SimulationModels.Channel; } }
 
         public override ArgumentsBase Arguments { get { return _radioArgs; } }
 

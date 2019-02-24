@@ -1,8 +1,13 @@
 ﻿using D3vS1m.Application.Network;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Validation;
+using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MSTests.Application
 {
@@ -25,27 +30,35 @@ namespace MSTests.Application
         }
 
         [TestMethod]
-        public void RunNetwork()
+        public async Task RunNetwork()
         {
             // arrange
-            var netSim = new PeerToPeerNetworkSimulator();
-            var netArgs = new NetworkArgs();
-            var devices = base.ImportDevices("devices.json").ToArray();
-            _network = netArgs.Network;
-            _network.AddRange(devices);
+            var runtime = new RuntimeController(new BasicValidator());
 
-            // act
+            var netSim = new PeerToPeerNetworkSimulator(runtime);
+            var netArgs = new NetworkArgs();
             netSim.OnExecuting += (o, e) =>
             {
-                _network.SetupMatrices();
                 _network.AssociationMatrix.Each(ApplyAssociations);
             };
-            netSim.With(netArgs).Run();
+            netSim.With(netArgs);
+            _network = netArgs.Network;
+            _network.AddRange(ImportDevices().ToArray());
+
+            runtime.Setup(new SimulatorRepository()
+            {
+                netSim
+            }).Validate();
+
+            // act one iteration 
+            await runtime.RunAsync(1);
 
             // assert
             netArgs.Network.DistanceMatrix.Each((r, c, v) => {
 
                 Assert.IsTrue(v > 0, $"position at row '{r}' and col '{c}' should not be '{v}'");
+
+                Log.Trace($"{r}:{c} -> distance: {v}");
                 return v;
             });
 
@@ -53,11 +66,13 @@ namespace MSTests.Application
 
                 Assert.IsTrue(float.IsNaN(v.Azimuth) == false, $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
                 Assert.IsTrue(float.IsNaN(v.Elevation) == false, $"Elevation at position at row '{r}' and col '{c}' should not be NaN");
+
+                Log.Trace($"{r}:{c} -> angle: {v.ToString()}");
                 return v;
             });
         }
 
-        private bool ApplyAssociations(int r, int c, bool v)
+        public bool ApplyAssociations(int r, int c, bool v)
         {
             var dev1 = _network[r];
             var dev2 = _network[c];
