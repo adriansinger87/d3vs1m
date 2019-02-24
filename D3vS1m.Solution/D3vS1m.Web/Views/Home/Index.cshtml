@@ -2,16 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="app">
-    {{ message }}
+<div id="app-vue">
+    <h1>{{ message }}</h1>
+
+    <a class="btn" v-on:click="getSimulators()">Lade Simulatoren</a>
+
+    <div v-for="sim in simulators">
+        <div>{{ sim.name }}</div>
+    </div>
 </div>
 
-<template>
-    <div>
-        <v-btn color="success">Success</v-btn>
-        <v-btn color="error">Error</v-btn>
-        <v-btn color="warning">Warning</v-btn>
-        <v-btn color="info">Info</v-btn>
-    </div>
-</template>
 

@@ -12,7 +12,11 @@ namespace D3vS1m.Web.Controllers.Api
 {
     public class ApiControllerBase : ControllerBase
     {
+        // -- fields
+
         private const string CONTEXT = "CONTEXT";
+
+        // -- methods
 
         private D3vS1mFacade GetContext()
         {
@@ -46,11 +50,11 @@ namespace D3vS1m.Web.Controllers.Api
             return data;
         }
 
-        public D3vS1mFacade Context
-        {
-            get 
-            { return GetContext(); }
-           
-        }
+        // -- properties
+
+        /// <summary>
+        /// Gets the data context (root model of the data) of the type D3vS1mFacade or creates one at the first call.
+        /// </summary>
+        public D3vS1mFacade Context { get { return GetContext(); } }
     }
 }
