@@ -7,12 +7,12 @@ using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
 using D3vS1m.Persistence;
 using D3vS1m.Persistence.Imports;
-using D3vS1m.Persistence.Logging;
 using D3vS1m.Persistence.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sin.Net.Domain.Logging;
+using Sin.Net.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +26,7 @@ namespace MSTests
         {
             if (Log.IsNotNull == false)
             {
-                Log.Inject(new TestsNLogger());
+                Log.Inject(new NLogger());
             }
         }
 
@@ -110,7 +110,7 @@ namespace MSTests
 
             }
         }
-        
+
         public string TestDataDirectory
         {
             get
@@ -122,7 +122,7 @@ namespace MSTests
         {
             get
             {
-                return Path.Combine(BaseDirectory,"data");
+                return Path.Combine(BaseDirectory, "data");
             }
         }
     }

@@ -1,16 +1,14 @@
 ﻿using D3vS1m.Application.Data;
 using D3vS1m.Domain.IO;
-using D3vS1m.Domain.System.Logging;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace D3vS1m.Persistence.Settings
 {
     public class SphericAntennaCasting : ICasteable
     {
-        DataTable _csvTable;
+        private DataTable _csvTable;
 
         public Tout CastTo<Tout, Tin>(Tin input) where Tout : new()
         {

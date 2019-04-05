@@ -2,10 +2,6 @@
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Communication
 {
@@ -17,7 +13,7 @@ namespace D3vS1m.Application.Communication
     {
         // -- fields
 
-        WirelessCommArgs _commArgs;
+        private WirelessCommArgs _commArgs;
 
         // -- constructor
 
@@ -30,8 +26,8 @@ namespace D3vS1m.Application.Communication
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (ConvertArgs(arguments, ref _commArgs))  return this;
-            else                                    return ArgsNotAdded(arguments.Name);
+            if (ConvertArgs(arguments, ref _commArgs)) return this;
+            else return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()

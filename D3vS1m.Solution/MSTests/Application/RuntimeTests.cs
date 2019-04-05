@@ -6,14 +6,12 @@ using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene;
 using D3vS1m.Application.Validation;
-using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace MSTests.Application
@@ -23,8 +21,8 @@ namespace MSTests.Application
     {
         // -- fields
 
-        RuntimeBase _runtime;
-        SimulatorRepository _repo;
+        private RuntimeBase _runtime;
+        private SimulatorRepository _repo;
 
         // -- inherits
 

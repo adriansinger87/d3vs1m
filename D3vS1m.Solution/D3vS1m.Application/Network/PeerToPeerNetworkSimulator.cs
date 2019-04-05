@@ -1,16 +1,10 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.Simulation;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using D3vS1m.Domain.Events;
-using D3vS1m.Application.Validation;
-using FluentValidation.Results;
 using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Domain.System.Constants;
-using D3vS1m.Domain.System.Logging;
+using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
+using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Constants;
+using D3vS1m.Domain.System.Enumerations;
 
 namespace D3vS1m.Application.Network
 {
@@ -51,7 +45,7 @@ namespace D3vS1m.Application.Network
 
         public override void Run()
         {
-            if (!_netArgs.NetworkOutdated)  return;
+            if (!_netArgs.NetworkOutdated) return;
 
             base.BeforeExecution();
 
@@ -75,7 +69,8 @@ namespace D3vS1m.Application.Network
         /// </summary>
         private void CalculateDistances()
         {
-            _net.DistanceMatrix.Each((r, c, v) => {
+            _net.DistanceMatrix.Each((r, c, v) =>
+            {
                 var pos1 = _net[r].Position;
                 var pos2 = _net[c].Position;
                 return Vertex.GetLength(pos1, pos2);
@@ -87,7 +82,8 @@ namespace D3vS1m.Application.Network
         /// </summary>
         private void CalculateOrientations()
         {
-            _net.AngleMatrix.Each((r, c, v) => {
+            _net.AngleMatrix.Each((r, c, v) =>
+            {
 
                 var txDev = _net[r];  // Tx - transmitter
                 var rxDev = _net[c];  // Rx - receiver
@@ -152,7 +148,7 @@ namespace D3vS1m.Application.Network
 
         public override SimulationModels Type { get { return SimulationModels.Network; } }
 
-       
+
 
     }
 }

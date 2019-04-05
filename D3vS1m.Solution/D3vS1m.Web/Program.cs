@@ -8,7 +8,7 @@ namespace D3vS1m.Web
     {
         public static void Main(string[] args)
         {
-            Log.Inject(new NLogger());
+            Log.Inject(new Sin.Net.Logging.NLogger());
 
             CreateWebHostBuilder(args).Build().Run();
         }

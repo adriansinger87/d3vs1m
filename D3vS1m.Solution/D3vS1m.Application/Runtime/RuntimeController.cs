@@ -2,10 +2,9 @@
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
-using D3vS1m.Domain.System.Logging;
 using FluentValidation.Results;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace D3vS1m.Application.Runtime

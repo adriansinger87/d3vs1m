@@ -1,18 +1,16 @@
-﻿using System;
+﻿using D3vS1m.Domain.IO;
+using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Persistence.Settings;
+using Sin.Net.Domain.Logging;
 using System.Data;
 using System.IO;
-using System.Collections.Generic;
-using D3vS1m.Domain.IO;
-using D3vS1m.Persistence.Settings;
-using D3vS1m.Domain.System.Logging;
-using D3vS1m.Domain.System.Enumerations;
 
 namespace D3vS1m.Persistence.Imports
 {
     /// <summary>
     /// Diese Klasse implementiert die IStrategyImportable Schnittstelle für den lesenden Zugriff auf CSV-Dateien
     /// </summary>
-    class CsvImport : IImportable
+    internal class CsvImport : IImportable
     {
         // -- fields
 
@@ -84,7 +82,7 @@ namespace D3vS1m.Persistence.Imports
                 for (int f = 0; f < fields.Length; f++)
                 {
                     Row[f] = fields[f];
-                    
+
                 }
                 _table.Rows.Add(Row);
             }
@@ -93,7 +91,7 @@ namespace D3vS1m.Persistence.Imports
             return this;
         }
 
-        public T CastTo<T>(ICasteable casting) where T: new()
+        public T CastTo<T>(ICasteable casting) where T : new()
         {
             return casting.CastTo<T, DataTable>(_table);
         }

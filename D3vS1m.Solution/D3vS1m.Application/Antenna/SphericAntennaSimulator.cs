@@ -5,17 +5,14 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Antenna
 {
     public class SphericAntennaSimulator : SimulatorBase
     {
-        SphericAntennaArgs _antennaArgs;
-        NetworkArgs _netArgs;
+        private SphericAntennaArgs _antennaArgs;
+        private NetworkArgs _netArgs;
 
         /// <summary>
         /// Baware: no runtime will be usable
@@ -24,7 +21,7 @@ namespace D3vS1m.Application.Antenna
         {
         }
 
-        public SphericAntennaSimulator(RuntimeBase runtime) : base (runtime)
+        public SphericAntennaSimulator(RuntimeBase runtime) : base(runtime)
         {
             Name = Models.SphericAntenna;
         }
@@ -36,18 +33,18 @@ namespace D3vS1m.Application.Antenna
         /// <returns>the calling instance</returns>
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (ConvertArgs(arguments, ref _antennaArgs))   return this;
-            else if (ConvertArgs(arguments, ref _netArgs))  return this;
-            else                                            return ArgsNotAdded(arguments.Name);
+            if (ConvertArgs(arguments, ref _antennaArgs)) return this;
+            else if (ConvertArgs(arguments, ref _netArgs)) return this;
+            else return ArgsNotAdded(arguments.Name);
         }
-        
+
         public override void Run()
         {
             base.BeforeExecution();
 
             // TODO iterate all network orientation informations and calculate resulting antenna gain
             // TODO remove test magic numbers
-            float gain = CalculateGain(45,45);
+            float gain = CalculateGain(45, 45);
 
             base.AfterExecution();
         }
@@ -78,13 +75,14 @@ namespace D3vS1m.Application.Antenna
              *	
              *	each gain gets multipied with the percentage influence
              */
-            var gain = new {
+            var gain = new
+            {
                 x = matrix[row_0, col_0].Gain * (1 - el_percent) * (1 - az_percent),
                 y = matrix[row_0, col_1].Gain * (1 - el_percent) * (az_percent),
                 z = matrix[row_1, col_0].Gain * (el_percent) * (1 - az_percent),
                 w = matrix[row_1, col_1].Gain * (el_percent) * (az_percent)
             };
-            
+
             // return the sum of all gain fractions
             return (gain.x + gain.y + gain.z + gain.w);
         }
