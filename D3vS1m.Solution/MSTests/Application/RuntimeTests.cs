@@ -78,7 +78,13 @@ namespace MSTests.Application
             // arrange
             var facade = new D3vS1mFacade();
             facade.RegisterPredefined(_runtime);
+
+            var antennaArgs = facade.SimulatorRepo[Models.SphericAntenna].Arguments as SphericAntennaArgs;
+            base.LoadAntennaData(antennaArgs);
             var netArgs = facade.SimulatorRepo[SimulationModels.Network].Arguments as NetworkArgs;
+            netArgs.Network.AddRange(
+               base.ImportDevices().ToArray());
+            facade.SimulatorRepo[SimulationModels.Network].With(netArgs);
 
             // special setup
             _runtime.Started += (o, e) =>
@@ -86,8 +92,7 @@ namespace MSTests.Application
                 facade.SimulatorRepo[SimulationModels.Channel].With(base.GetRadioArgs());
             };
 
-            netArgs.Network.AddRange(
-                base.ImportDevices().ToArray());
+           
 
             // act
             int iterations = 5;

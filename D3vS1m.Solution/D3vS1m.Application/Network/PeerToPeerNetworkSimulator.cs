@@ -24,7 +24,6 @@ namespace D3vS1m.Application.Network
 
         public PeerToPeerNetworkSimulator(RuntimeBase runtime) : base(runtime)
         {
-            runtime.Started += OnStart;
         }
 
         // -- methods
@@ -59,8 +58,9 @@ namespace D3vS1m.Application.Network
 
         // -- private method
 
-        private void OnStart(object sender, SimulatorEventArgs e)
+        protected override void OnStarted(object sender, SimulatorEventArgs e)
         {
+            base.OnStarted(sender, e);
             _netArgs.Network.SetupMatrices();
         }
 
@@ -139,8 +139,7 @@ namespace D3vS1m.Application.Network
                 return new Angle(azimuth, elevation);
             });
         }
-
-
+        
         // -- properties       
 
         public override ArgumentsBase Arguments { get { return _netArgs; } }

@@ -10,7 +10,7 @@ namespace D3vS1m.Web.Controllers.Api
     [ApiController]
     public class SimulatorsController : ApiControllerBase
     {
-        public SimulatorsController()
+        public SimulatorsController() : base()
         {
         }
 
