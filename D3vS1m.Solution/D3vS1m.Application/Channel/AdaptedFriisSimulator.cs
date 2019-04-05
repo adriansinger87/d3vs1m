@@ -1,15 +1,15 @@
-﻿using System;
-using System.Linq;
-using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.Events;
-using D3vS1m.Domain.Simulation;
-using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Application.Communication;
-using D3vS1m.Domain.System.Logging;
+﻿using D3vS1m.Application.Communication;
 using D3vS1m.Application.Scene;
-using System.Diagnostics;
+using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.Data.Scene;
+using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
+using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Enumerations;
+using Sin.Net.Domain.Logging;
+using System;
+using System.Diagnostics;
+using System.Linq;
 
 namespace D3vS1m.Application.Channel
 {
@@ -40,10 +40,10 @@ namespace D3vS1m.Application.Channel
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if      (ConvertArgs(arguments, ref _radioArgs))    return this;
-            else if (ConvertArgs(arguments, ref _commArgs))     return this;
-            else if (ConvertArgs(arguments, ref _sceneArgs))    return this;
-            else                                            return ArgsNotAdded(arguments.Name);
+            if (ConvertArgs(arguments, ref _radioArgs)) return this;
+            else if (ConvertArgs(arguments, ref _commArgs)) return this;
+            else if (ConvertArgs(arguments, ref _sceneArgs)) return this;
+            else return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()
@@ -121,6 +121,6 @@ namespace D3vS1m.Application.Channel
 
         public override ArgumentsBase Arguments { get { return _radioArgs; } }
 
-        
+
     }
 }

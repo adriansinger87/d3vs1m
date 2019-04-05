@@ -1,20 +1,16 @@
 ﻿using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
 using D3vS1m.Persistence.Settings;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Sin.Net.Domain.Logging;
 
 namespace D3vS1m.Persistence.Imports
 {
-    class JsonImport : IImportable
+    internal class JsonImport : IImportable
     {
         // -- fields
 
         private FileSettings _setting;
-
-        string _importJson;
+        private string _importJson;
 
         // -- methods
 

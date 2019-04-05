@@ -2,7 +2,7 @@
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
+using Sin.Net.Domain.Logging;
 using System;
 
 namespace D3vS1m.Domain.Simulation

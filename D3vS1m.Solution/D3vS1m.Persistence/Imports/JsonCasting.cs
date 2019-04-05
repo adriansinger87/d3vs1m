@@ -1,9 +1,7 @@
 ﻿using D3vS1m.Domain.IO;
-using D3vS1m.Domain.System.Logging;
 using Newtonsoft.Json;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Persistence.Imports
 {
@@ -17,12 +15,12 @@ namespace D3vS1m.Persistence.Imports
                 string json = input as string;
                 obj = JsonConvert.DeserializeObject<Tout>(json);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Error($"Could not cast from '{typeof(Tin).Name}' to '{typeof(Tout).Name}' ");
                 Log.Error(ex.Message);
             }
-            
+
             return obj;
         }
     }

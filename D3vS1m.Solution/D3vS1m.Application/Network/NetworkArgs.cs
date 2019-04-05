@@ -1,14 +1,4 @@
-﻿using D3vS1m.Application.Devices;
-using D3vS1m.Application.Validation;
-using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Domain.System.Constants;
-using D3vS1m.Domain.System.Logging;
-using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-
-using System.Text;
+﻿using D3vS1m.Domain.Data.Arguments;
 
 namespace D3vS1m.Application.Network
 {

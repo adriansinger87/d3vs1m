@@ -1,16 +1,11 @@
 ﻿using D3vS1m.Application.Channel;
+using D3vS1m.Application.Communication;
+using D3vS1m.Application.Network;
+using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Scene;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using Sin.Net.Domain.Logging;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using D3vS1m.Application.Communication;
-using System.Diagnostics;
-using D3vS1m.Domain.System.Logging;
-using D3vS1m.Domain.Simulation;
-using D3vS1m.Application.Scene;
-using D3vS1m.Application.Network;
 
 namespace MSTests.Application
 {
@@ -48,19 +43,21 @@ namespace MSTests.Application
                 .With(sceneArgs)
                 .With(netArgs);                     // false positive
 
-            sim.OnExecuting += (obj, e) => {
+            sim.OnExecuting += (obj, e) =>
+            {
                 Log.Trace($"{obj.ToString()} started");
             };
 
-            sim.Executed += (obj, e) => {
+            sim.Executed += (obj, e) =>
+            {
                 Log.Trace($"{obj.ToString()} finished");
             };
 
             // act
             sim.Run();
-            
+
             // assert
-            Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation"); 
+            Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation");
         }
 
         [TestMethod]

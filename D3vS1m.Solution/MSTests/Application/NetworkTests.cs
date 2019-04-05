@@ -2,11 +2,8 @@
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Simulation;
-using D3vS1m.Domain.System.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Sin.Net.Domain.Logging;
 using System.Threading.Tasks;
 
 namespace MSTests.Application
@@ -14,8 +11,7 @@ namespace MSTests.Application
     [TestClass]
     public class NetworkTests : BaseTests
     {
-
-        PeerToPeerNetwork _network;
+        private PeerToPeerNetwork _network;
 
         [TestInitialize]
         public override void Arrange()
@@ -54,7 +50,8 @@ namespace MSTests.Application
             await runtime.RunAsync(1);
 
             // assert
-            netArgs.Network.DistanceMatrix.Each((r, c, v) => {
+            netArgs.Network.DistanceMatrix.Each((r, c, v) =>
+            {
 
                 Assert.IsTrue(v > 0, $"position at row '{r}' and col '{c}' should not be '{v}'");
 
@@ -62,7 +59,8 @@ namespace MSTests.Application
                 return v;
             });
 
-            netArgs.Network.AngleMatrix.Each((r, c, v) => {
+            netArgs.Network.AngleMatrix.Each((r, c, v) =>
+            {
 
                 Assert.IsTrue(float.IsNaN(v.Azimuth) == false, $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
                 Assert.IsTrue(float.IsNaN(v.Elevation) == false, $"Elevation at position at row '{r}' and col '{c}' should not be NaN");

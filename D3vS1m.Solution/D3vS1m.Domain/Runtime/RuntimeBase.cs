@@ -1,7 +1,7 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
-using D3vS1m.Domain.System.Logging;
+using Sin.Net.Domain.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -13,7 +13,7 @@ namespace D3vS1m.Domain.Runtime
     public abstract class RuntimeBase
     {
         // -- fields
-        
+
         protected SimulatorRepository _simRepo;
 
         protected bool _isValid;
@@ -68,7 +68,7 @@ namespace D3vS1m.Domain.Runtime
             _stopping = true;
             Log.Trace("Simulation runtime stopping");
         }
-                
+
         #region RunAsync
         /// <summary>
         /// Start the iteration of the run method of all registered simulation models

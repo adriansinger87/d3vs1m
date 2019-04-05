@@ -1,8 +1,7 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.Simulation;
-using D3vS1m.Domain.System.Logging;
 using D3vS1m.Domain.Runtime;
+using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Enumerations;
 
 namespace D3vS1m.Application.Antenna
 {
@@ -10,7 +9,7 @@ namespace D3vS1m.Application.Antenna
     {
         // -- fields
 
-        SimpleAntennaArgs _args;
+        private SimpleAntennaArgs _args;
 
         // -- constructor
 
@@ -24,7 +23,7 @@ namespace D3vS1m.Application.Antenna
         public override ISimulatable With(ArgumentsBase arguments)
         {
             if (ConvertArgs(arguments, ref _args)) return this;
-            else                                   return ArgsNotAdded(arguments.Name);
+            else return ArgsNotAdded(arguments.Name);
 
         }
 

@@ -1,14 +1,11 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
-using D3vS1m.Domain.System.Logging;
 using D3vS1m.Web.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -37,7 +34,7 @@ namespace D3vS1m.Web.Controllers.Api
                 Log.Error($"create new data context after exception");
                 data = CreateContext();
             }
-           
+
             return data;
         }
 
@@ -50,9 +47,9 @@ namespace D3vS1m.Web.Controllers.Api
 
         public D3vS1mFacade Context
         {
-            get 
+            get
             { return GetContext(); }
-           
+
         }
     }
 }

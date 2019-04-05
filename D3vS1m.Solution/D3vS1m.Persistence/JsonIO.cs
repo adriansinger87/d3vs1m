@@ -1,11 +1,7 @@
-﻿using D3vS1m.Domain.System.Logging;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Web;
 
 namespace D3vS1m.Persistence
 {
@@ -13,7 +9,7 @@ namespace D3vS1m.Persistence
     /// Stellt statische Funktionalität für JSON Ex- und Import von beliebigen Objekten bereit.
     /// Sollte ggf. in die konkreten Ex- und Import-Klassen verschoben werden.
     /// </summary>
-    static class JsonIO
+    internal static class JsonIO
     {
         #region ToJsonString (2)
         /// <summary>
@@ -43,7 +39,7 @@ namespace D3vS1m.Persistence
                 json = "{method: 'MagnaPaintMvc.IO.JsonObjectConverter.ToJsonString()'. error: '" + ex.Message + "'}";
             }
             return json;
-        } 
+        }
         #endregion
 
         /// <summary>
@@ -88,10 +84,10 @@ namespace D3vS1m.Persistence
             {
                 Log.Fatal(ex);
             }
-            
+
             return result;
         }
 
-      
+
     }
 }

@@ -1,13 +1,11 @@
 ﻿using D3vS1m.Application.Scene.Geometries;
+using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.IO;
-using D3vS1m.Domain.System.Logging;
+using Sin.Net.Domain.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Linq;
-using D3vS1m.Domain.Data.Scene;
 
 namespace D3vS1m.Application.Scene
 {
@@ -69,7 +67,7 @@ namespace D3vS1m.Application.Scene
                 _vertices = null;
                 _normales = null;
             }
-           
+
             // final return
             return (Tout)Convert.ChangeType(_root, outType);
         }
@@ -178,7 +176,7 @@ namespace D3vS1m.Application.Scene
             float y = ParseF(vertexData[len - 2]);
             float z = ParseF(vertexData[len - 1]);
 
-            return new Vertex(x,y,z);
+            return new Vertex(x, y, z);
         }
 
         private float ParseF(string s)
@@ -197,7 +195,7 @@ namespace D3vS1m.Application.Scene
                 if (string.IsNullOrEmpty(data)) continue;
 
                 string[] triple = data.Split('/');
-                
+
                 int vex = SetIndex(triple[0]);      // vertex index
                 int vtx = -1;                       // vertex texture index
                 int vnx = -1;                       // vertex normale
@@ -207,7 +205,7 @@ namespace D3vS1m.Application.Scene
                 {
                     if (!string.IsNullOrEmpty(triple[1]))
                     {
-                        vtx = SetIndex(triple[1]);  
+                        vtx = SetIndex(triple[1]);
                     }
                     vnx = SetIndex(triple[2]);
                 }
@@ -215,7 +213,7 @@ namespace D3vS1m.Application.Scene
                 {
                     vtx = SetIndex(triple[1]);
                 }
-                
+
                 // push vertices 
                 f.Vertices.Add(_vertices[vex]);
 
@@ -243,8 +241,8 @@ namespace D3vS1m.Application.Scene
             {
                 Log.Error("Could not normalize face");
                 Log.Fatal(ex);
-            } 
-           
+            }
+
             return f;
         }
 

@@ -1,7 +1,6 @@
-﻿using D3vS1m.Domain.System.Logging;
-using D3vS1m.Persistence.Logging;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Sin.Net.Domain.Logging;
 
 namespace D3vS1m.Web
 {
@@ -9,7 +8,7 @@ namespace D3vS1m.Web
     {
         public static void Main(string[] args)
         {
-            Log.Inject(new NLogger());
+            Log.Inject(new Sin.Net.Logging.NLogger());
 
             CreateWebHostBuilder(args).Build().Run();
         }

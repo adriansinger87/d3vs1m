@@ -1,21 +1,17 @@
 ﻿using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Logging;
 using D3vS1m.Persistence.Settings;
-using System;
-using System.Collections.Generic;
+using Sin.Net.Domain.Logging;
 using System.IO;
-using System.Text;
 
 namespace D3vS1m.Persistence.Imports
 {
-    class ObjImport : IImportable
+    internal class ObjImport : IImportable
     {
         // -- fields
 
         private FileSettings _setting;
-
-        string _importObj;
+        private string _importObj;
 
         // -- methods
 
@@ -47,6 +43,6 @@ namespace D3vS1m.Persistence.Imports
         // -- properties
 
         public ImportTypes Type { get { return ImportTypes.WavefrontObj; } }
-   
+
     }
 }

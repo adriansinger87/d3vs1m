@@ -1,8 +1,6 @@
 ﻿using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Domain.System.Constants;
-using D3vS1m.Domain.System.Logging;
+using Sin.Net.Domain.Logging;
 using System;
-using System.Collections.Generic;
 
 namespace D3vS1m.Application.Channel
 {
@@ -29,7 +27,7 @@ namespace D3vS1m.Application.Channel
                  (int)Math.Ceiling((MaxCorner.Z - MinCorner.Z) / (Resolution))
              };
             TotalData = DataDimension[0] * DataDimension[1] * DataDimension[2];
-     
+
             Vertex[] positions = new Vertex[TotalData];
             float mid = Resolution / 2;
             // 'mid' pushes the data-point into the middle of an imaginary cube with half of the length of resolution
@@ -41,7 +39,7 @@ namespace D3vS1m.Application.Channel
                 {
                     for (float z = MinCorner.Z + mid; z < MaxCorner.Z; z = (float)Math.Round(z + Resolution, 3))
                     {
-                        positions[i] = new Vertex( x, y, z );
+                        positions[i] = new Vertex(x, y, z);
                         i++;
                     }
                 }
