@@ -5,14 +5,13 @@ using D3vS1m.Application.Devices;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Domain.IO;
-using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Persistence;
-using D3vS1m.Persistence.Imports;
-using D3vS1m.Persistence.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sin.Net.Domain.IO;
 using Sin.Net.Domain.Logging;
 using Sin.Net.Logging;
+using Sin.Net.Persistence;
+using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,17 +39,17 @@ namespace MSTests
         {
             var io = new IOController();
 
-            var settings = new CsvSettings
+            var settings = new CsvSetting
             {
                 Location = DataDirectory,
                 Name = file,
             };
 
             args.GainMatrix = io
-                .Importer(ImportTypes.Csv)
+                .Importer(Sin.Net.Persistence.Constants.Csv.Key)
                 .Setup(settings)
                 .Import()
-                .CastTo<Matrix<SphericGain>>(new SphericAntennaCasting());
+                .With<Matrix<SphericGain>>(new TableToAntennaAdapter());
         }
 
         public RuntimeController GetRuntime()
@@ -78,19 +77,18 @@ namespace MSTests
         public List<BasicDevice> ImportDevices(string filename = "devices.json")
         {
             // arrange
-            var _setting = new FileSettings
+            var _setting = new FileSetting
             {
                 Location = TestDataDirectory,
-                Name = filename //"devices.json"
+                Name = filename
             };
 
-
-            IOControllable io = new IOController();
+            IPersistenceControlable io = new PersistenceController();
             // act
-            List<BasicDevice> devices = io.Importer(ImportTypes.Json)
+            List<BasicDevice> devices = io.Importer(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(_setting)
                 .Import()
-                .CastTo<List<BasicDevice>>(new JsonCasting());
+                .Get<List<BasicDevice>>();
 
             return devices;
         }

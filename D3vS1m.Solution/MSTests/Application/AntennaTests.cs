@@ -1,12 +1,5 @@
 ﻿using D3vS1m.Application.Antenna;
-using D3vS1m.Application.Data;
-using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Persistence;
-using D3vS1m.Persistence.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MSTests.Application
 {
@@ -42,10 +35,6 @@ namespace MSTests.Application
 
             // assert
             Assert.IsNotNull(antennaSim.Arguments, $"args '{_antennaArgs.Name}' must not be null in simulator '{antennaSim.Name}'");
-
         }
-
-        // TODO remove refactore into another test
-        
     }
 }

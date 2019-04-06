@@ -1,17 +1,22 @@
 ﻿using D3vS1m.Application.Data;
-using D3vS1m.Domain.IO;
+using Sin.Net.Domain.IO.Adapter;
 using Sin.Net.Domain.Logging;
 using System;
 using System.Data;
 
-namespace D3vS1m.Persistence.Settings
+namespace D3vS1m.Application.Antenna
 {
-    public class SphericAntennaCasting : ICasteable
+    public class TableToAntennaAdapter : IAdaptable
     {
+        // -- fields
+
         private DataTable _csvTable;
 
-        public Tout CastTo<Tout, Tin>(Tin input) where Tout : new()
+        // -- methods
+
+        public Tout Adapt<Tin, Tout>(Tin input) where Tout : new()
         {
+
             // validation
             Type inType = typeof(Tin);
             Type outType = typeof(Tout);
@@ -36,6 +41,8 @@ namespace D3vS1m.Persistence.Settings
 
             return (Tout)Convert.ChangeType(gainMatrix, outType);
         }
+
+        // -- helper methods
 
         private int getAzimuthNumber(int cols)
         {

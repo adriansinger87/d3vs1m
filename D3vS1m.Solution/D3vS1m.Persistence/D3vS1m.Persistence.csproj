@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Exports\" />
+    <Compile Remove="Exports\**" />
+    <EmbeddedResource Remove="Exports\**" />
+    <None Remove="Exports\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Sin.Net.Persistence" Version="0.0.2" />
   </ItemGroup>
 
   <ItemGroup>

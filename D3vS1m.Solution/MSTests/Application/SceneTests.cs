@@ -1,13 +1,10 @@
 ﻿using D3vS1m.Application.Scene;
 using D3vS1m.Application.Scene.Geometries;
-using D3vS1m.Domain.IO;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Persistence;
-using D3vS1m.Persistence.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Sin.Net.Domain.IO;
+using Sin.Net.Persistence.Settings;
 
 namespace MSTests.Application
 {
@@ -15,7 +12,7 @@ namespace MSTests.Application
     public class SceneTests : BaseTests
     {
         GeometryRepository _geometries;
-        IOControllable _io;
+        IPersistenceControlable _io;
 
         [TestInitialize]
         public override void Arrange()
@@ -36,17 +33,18 @@ namespace MSTests.Application
         public void ImportGeometryFromObj()
         {
             // arrange
-            var _setting = new FileSettings
+            var key = D3vS1m.Persistence.Constants.Wavefront.Key;
+            var _setting = new FileSetting
             {
                 Location = base.DataDirectory,
                 Name = "WallTest5.obj"
             };
 
             // act
-            var sceneRoot = _io.Importer(ImportTypes.WavefrontObj)
+            var sceneRoot = _io.Importer(key)
                  .Setup(_setting)
                  .Import()
-                 .CastTo<Geometry>(new ObjCasting());
+                 .With<Geometry>(new ObjAdapter());
             _geometries.Add(sceneRoot, _setting.Name);
 
             // assert
@@ -54,7 +52,7 @@ namespace MSTests.Application
 
             var name = "Wand";
             var found = _geometries.FirstOrDefault(name, true);
-           
+
             Assert.IsTrue(sceneRoot.Children.Count == 2, "wrong children found");
             Assert.IsNotNull(found, $"The geometry '{name}' is missing");
 
@@ -71,7 +69,7 @@ namespace MSTests.Application
             sceneSim.Run();
 
             // assert
-            
+
         }
     }
 }

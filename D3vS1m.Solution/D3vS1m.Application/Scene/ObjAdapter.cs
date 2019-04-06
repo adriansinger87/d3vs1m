@@ -1,6 +1,6 @@
 ﻿using D3vS1m.Application.Scene.Geometries;
 using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Domain.IO;
+using Sin.Net.Domain.IO.Adapter;
 using Sin.Net.Domain.Logging;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace D3vS1m.Application.Scene
      * License of Original: MIT
      */
 
-    public class ObjCasting : ICasteable
+    public class ObjAdapter : IAdaptable
     {
         // -- fields
 
@@ -28,7 +28,7 @@ namespace D3vS1m.Application.Scene
 
         // -- methods
 
-        public Tout CastTo<Tout, Tin>(Tin input) where Tout : new()
+        public Tout Adapt<Tin, Tout>(Tin input) where Tout : new()
         {
             // validation
             Type inType = typeof(Tin);
@@ -259,5 +259,7 @@ namespace D3vS1m.Application.Scene
              */
             return (int.Parse(s) - 1);
         }
+
+
     }
 }
