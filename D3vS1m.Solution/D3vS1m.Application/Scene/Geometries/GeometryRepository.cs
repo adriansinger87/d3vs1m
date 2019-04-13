@@ -1,9 +1,5 @@
-﻿using D3vS1m.Application.Scene.Materials;
-using D3vS1m.Domain.Data.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using Sin.Net.Domain.Repository;
 using System.Linq;
-using System.Text;
 
 namespace D3vS1m.Application.Scene.Geometries
 {
@@ -20,7 +16,8 @@ namespace D3vS1m.Application.Scene.Geometries
 
             if (recursive)
             {
-                _items.ForEach((g) => {
+                Items.ForEach((g) =>
+                {
                     found = g.FirstByName(name, recursive);
                 });
             }
@@ -31,7 +28,8 @@ namespace D3vS1m.Application.Scene.Geometries
         public Geometry Add(Geometry item, string name)
         {
             item.Name = name;
-            return base.Add(item);
+            Items.Add(item);
+            return Items.Last();
         }
 
         // -- indexer 
@@ -46,7 +44,7 @@ namespace D3vS1m.Application.Scene.Geometries
         {
             get
             {
-                return _items.FirstOrDefault(g => g.Name == name);
+                return Items.FirstOrDefault(g => g.Name == name);
             }
         }
     }

@@ -41,7 +41,32 @@
     margin: 7px !important;
 }
 
-.chip {
-    background-color: rgba(51, 51, 51, 0.1) !important;
-}
 /* END ovf materializeCSS  */
+
+.header-logo {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+i {
+    font-size: x-large;
+}
+
+[v-load] {
+    display: none;
+}
+
+#code-modal {
+    height: 70%;
+}
+
+.code-editor {
+    font-size: larger;
+    position: absolute;
+    display: block;
+    /*height: -webkit-fill-available;*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

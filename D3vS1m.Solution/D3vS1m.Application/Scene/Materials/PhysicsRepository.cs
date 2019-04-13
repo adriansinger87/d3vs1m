@@ -1,8 +1,4 @@
-﻿using D3vS1m.Domain.Data.Repositories;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
+﻿using Sin.Net.Domain.Repository;
 
 namespace D3vS1m.Application.Scene.Materials
 {
@@ -28,19 +24,19 @@ namespace D3vS1m.Application.Scene.Materials
                 var found = new MaterialPhysics();
                 int index = -1;
                 float delta = float.MaxValue;
-                foreach (var fv in _items)
+                foreach (var fv in Items)
                 {
                     float d = fv.Frequency - freq;
                     if (d < delta)
                     {
                         delta = d;
-                        index = _items.IndexOf(fv);
+                        index = Items.IndexOf(fv);
                     }
                 }
                 // finish
                 if (index != -1)
                 {
-                    found = _items[index];
+                    found = Items[index];
                 }
                 return found;
             }

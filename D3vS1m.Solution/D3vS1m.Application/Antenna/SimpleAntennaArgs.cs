@@ -10,6 +10,11 @@ namespace D3vS1m.Application.Antenna
             Name = Models.SimpleAntenna;
         }
 
+        public override ArgumentsBase GetDefault()
+        {
+            return new SimpleAntennaArgs();
+        }
+
         /// <summary>
         /// Gets or sets the individual isotropic antenna gain for one device. 
         /// </summary>

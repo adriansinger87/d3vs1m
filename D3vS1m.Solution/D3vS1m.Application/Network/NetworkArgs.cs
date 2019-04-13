@@ -12,9 +12,16 @@ namespace D3vS1m.Application.Network
             Network = new PeerToPeerNetwork();
         }
 
+        // -- methods
+
         public void ApplyAssociations()
         {
 
+        }
+
+        public override ArgumentsBase GetDefault()
+        {
+            return new NetworkArgs();
         }
 
         // -- properties

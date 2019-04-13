@@ -129,7 +129,7 @@ namespace D3vS1m.Domain.Runtime
 
                 while (_isRunning)
                 {
-                    foreach (ISimulatable sim in _simRepo)
+                    foreach (ISimulatable sim in _simRepo.Items)
                     {
                         sim.Run();
                     }

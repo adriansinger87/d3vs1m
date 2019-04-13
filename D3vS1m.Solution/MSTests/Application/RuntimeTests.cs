@@ -79,7 +79,7 @@ namespace MSTests.Application
             var facade = new D3vS1mFacade();
             facade.RegisterPredefined(_runtime);
 
-            var antennaArgs = facade.SimulatorRepo[Models.SphericAntenna].Arguments as SphericAntennaArgs;
+            var antennaArgs = facade.SimulatorRepo.GetByName(Models.SphericAntenna).Arguments as SphericAntennaArgs;
             base.LoadAntennaData(antennaArgs);
             var netArgs = facade.SimulatorRepo[SimulationModels.Network].Arguments as NetworkArgs;
             netArgs.Network.AddRange(

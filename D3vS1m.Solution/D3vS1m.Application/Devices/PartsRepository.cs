@@ -1,7 +1,4 @@
-﻿using D3vS1m.Domain.Data.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Sin.Net.Domain.Repository;
 
 namespace D3vS1m.Application.Devices
 {

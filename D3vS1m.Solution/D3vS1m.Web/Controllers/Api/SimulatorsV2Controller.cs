@@ -29,7 +29,7 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public JsonResult Get()
         {
-            var list = _data.SimulatorRepo.Items.Select(s => new { s.Name, s.Id });
+            var list = _data.SimulatorRepo.Items.Select(s => new { s.Name, s.Id, Type = s.Type.ToString() });
             return new JsonResult(list);
 
         }

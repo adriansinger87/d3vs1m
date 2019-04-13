@@ -18,6 +18,15 @@ namespace D3vS1m.Application.Channel
             AttenuationOffset = Domain.System.Constants.Const.Channel.Radio.AttenuationOffset;
         }
 
+        // -- methods
+
+        public override ArgumentsBase GetDefault()
+        {
+            return new AdaptedFriisArgs();
+        }
+
+        // -- properties
+
         public float AttenuationExponent { get; set; }
         public float AttenuationOffset { get; set; }
         public bool UseObstacles { get; set; }

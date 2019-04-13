@@ -31,6 +31,16 @@
         "fonts/materialdesignicons-webfont.woff",
         "fonts/materialdesignicons-webfont.woff2"
       ]
+    },
+    {
+      "library": "ace@1.4.3",
+      "destination": "wwwroot/lib/ace",
+      "files": [
+        "ace.js",
+        "theme-dracula.js",
+        "worker-json.js",
+        "mode-json.js"
+      ]
     }
   ]
 }

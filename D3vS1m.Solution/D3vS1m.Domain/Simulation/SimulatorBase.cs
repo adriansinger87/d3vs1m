@@ -28,7 +28,12 @@ namespace D3vS1m.Domain.Simulation
 
         // -- constructor
 
-        public SimulatorBase(RuntimeBase runtime)
+        public SimulatorBase()
+        {
+
+        }
+
+        public SimulatorBase(RuntimeBase runtime) : this()
         {
             if (runtime != null)
             {

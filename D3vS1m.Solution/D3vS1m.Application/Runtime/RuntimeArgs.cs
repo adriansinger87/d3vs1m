@@ -23,6 +23,11 @@ namespace D3vS1m.Application.Runtime
             Iterations = 0;
         }
 
+        public override ArgumentsBase GetDefault()
+        {
+            return new RuntimeArgs();
+        }
+
         // -- properties
 
         /// <summary>

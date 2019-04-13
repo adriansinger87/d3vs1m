@@ -9,6 +9,11 @@ namespace D3vS1m.Application.Scene
             Name = Models.InvariantScene;
         }
 
+        public override ArgumentsBase GetDefault()
+        {
+            return new InvariantSceneArgs();
+        }
+
         public object[] Obstacles { get; }
 
         /// <summary>

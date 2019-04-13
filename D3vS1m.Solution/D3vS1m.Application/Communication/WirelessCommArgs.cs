@@ -8,12 +8,19 @@ namespace D3vS1m.Application.Communication
 {
     public class WirelessCommArgs : ArgumentsBase
     {
+        /// <summary>
+        /// Default constructor that creates a default instance.
+        /// </summary>
         public WirelessCommArgs()
         {
             Name = Models.WirelessCommunication;
-
             TxFrequencyMHz = 2405;
             TxPowerDBm = 1;
+        }
+
+        public override ArgumentsBase GetDefault()
+        {
+            return new WirelessCommArgs();
         }
 
         // --- properties
@@ -21,5 +28,7 @@ namespace D3vS1m.Application.Communication
         public float TxFrequencyMHz { get; set; }
         public float TxWavelength { get { return Const.Channel.Radio.FreqToMeter(this.TxFrequencyMHz); } }
         public float TxPowerDBm { get; set; }
+
+
     }
 }

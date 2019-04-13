@@ -13,6 +13,11 @@ namespace D3vS1m.Application.Antenna
             Name = Models.SphericAntenna;
         }
 
+        public override ArgumentsBase GetDefault()
+        {
+            return new SphericAntennaArgs();
+        }
+
         public Matrix<SphericGain> GainMatrix { get; set; }
     }
 }

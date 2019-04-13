@@ -9,13 +9,13 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
-    <PackageReference Include="Sin.Net.Logging" Version="0.0.2" />
-    <PackageReference Include="Sin.Net.Persistence" Version="0.0.2" />
+    <PackageReference Include="Sin.Net.Logging" Version="0.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
     <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
+    <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>

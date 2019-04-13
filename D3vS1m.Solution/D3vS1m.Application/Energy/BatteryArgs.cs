@@ -1,9 +1,5 @@
-﻿using D3vS1m.Application.Devices;
-using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Domain.Data.Repositories;
-using System;
+﻿using D3vS1m.Domain.Data.Arguments;
 using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Energy
 {
@@ -20,9 +16,9 @@ namespace D3vS1m.Application.Energy
 
         // -- methods
 
-        public override string ToString()
+        public override ArgumentsBase GetDefault()
         {
-            return base.ToString();
+            return new BatteryArgs();
         }
 
         // -- properties

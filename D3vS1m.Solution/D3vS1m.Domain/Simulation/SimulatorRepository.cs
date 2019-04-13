@@ -1,5 +1,5 @@
-﻿using D3vS1m.Domain.Data.Repositories;
-using D3vS1m.Domain.System.Enumerations;
+﻿using D3vS1m.Domain.System.Enumerations;
+using Sin.Net.Domain.Repository;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,40 +7,38 @@ namespace D3vS1m.Domain.Simulation
 {
     public class SimulatorRepository : RepositoryBase<ISimulatable>
     {
-        public SimulatorRepository()
+        public SimulatorRepository() : base()
         {
             base.Name = "simulation models";
+        }
 
+        // -- methods
 
+        public ISimulatable GetByName(string name)
+        {
+            return Items.FirstOrDefault(s => s.Name == name);
         }
 
         // -- properties
 
-        public List<ISimulatable> Items { get { return _items; } }
-
         // -- indexer
+
+        /// <summary>
+        /// index-based intexer to be able to get the instance at the index i
+        /// </summary>
+        /// <param name="index">The index of the item in the list</param>
+        /// <returns>The instance of T with the corresponding index</returns>
+        public ISimulatable this[int index] => Items[index];
 
         /// <summary>
         /// id-based intexer to be able to get the instance with the same id.
         /// </summary>
-        /// <param name="name">name field in the simulator instances</param>
+        /// <param name="id">id property in the simulator instances</param>
         /// <returns>the first instance of T with the matching Id property</returns>
-        public ISimulatable this[string name]
-        {
-            get
-            {
-                var found = _items.FirstOrDefault(s => s.Name == name);
-                return found;
-            }
-        }
+        public ISimulatable this[string id] => Items.FirstOrDefault(s => s.Id == id);
 
-        public ISimulatable this[SimulationModels type]
-        {
-            get
-            {
-                var found = _items.FirstOrDefault(s => s.Type == type);
-                return found;
-            }
-        }
+
+        public ISimulatable this[SimulationModels type] => Items.FirstOrDefault(s => s.Type == type);
+
     }
 }

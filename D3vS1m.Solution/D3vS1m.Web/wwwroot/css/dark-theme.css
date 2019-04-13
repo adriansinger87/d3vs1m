@@ -1,0 +1,19 @@
+﻿body {
+    background-color: #263238;
+}
+
+nav {
+    background-color: #006064;
+}
+
+.page-footer {
+    background-color: #212121;
+}
+
+footer a {
+    color: dimgrey;
+}
+
+.chip {
+    background-color: rgba(0, 0, 0, 0.20);
+}

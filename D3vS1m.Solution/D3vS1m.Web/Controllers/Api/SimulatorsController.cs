@@ -25,10 +25,18 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet("{id}", Name = "GetById")]
         public JsonResult Get(string id)
         {
-            
             var simulator = Context.SimulatorRepo[id];
             return new JsonResult(simulator);
-            
+        }
+
+        // GET: api/Simulators/id/args
+        [HttpGet("{id}", Name = "GetArgs")]
+        [Route("args")]
+        public JsonResult GetArgs([FromQuery(Name = "id")] string id)
+        {
+            var simulator = Context.SimulatorRepo[id];
+            // TODO: sort name as first property and then all other properties or create a view model 
+            return new JsonResult(simulator.Arguments);
         }
 
         // GET: api/Simulators/model/0

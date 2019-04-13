@@ -9,6 +9,11 @@ namespace D3vS1m.Application.Antenna
             base.Name = "flat antenna model";
         }
 
+        public override ArgumentsBase GetDefault()
+        {
+            return new FlatAntennaArgs();
+        }
+
         /// <summary>
         /// Gets or sets the antenna gain for all devices to the same value. 
         /// </summary>
