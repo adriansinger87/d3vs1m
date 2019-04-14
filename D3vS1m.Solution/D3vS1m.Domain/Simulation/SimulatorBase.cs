@@ -30,6 +30,7 @@ namespace D3vS1m.Domain.Simulation
 
         public SimulatorBase()
         {
+            Guid = global::System.Guid.NewGuid().ToString();
 
         }
 
@@ -113,7 +114,9 @@ namespace D3vS1m.Domain.Simulation
 
         public abstract string Name { get; }
 
-        public string Id { get { return $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower(); } }
+        public string Guid { get; private set; }
+
+        public string Id => $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower();
 
         public abstract SimulationModels Type { get; }
     }

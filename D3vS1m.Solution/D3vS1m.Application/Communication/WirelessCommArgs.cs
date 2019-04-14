@@ -13,14 +13,14 @@ namespace D3vS1m.Application.Communication
         /// </summary>
         public WirelessCommArgs()
         {
+            Reset();
+        }
+
+        public override void Reset()
+        {
             Name = Models.WirelessCommunication;
             TxFrequencyMHz = 2405;
             TxPowerDBm = 1;
-        }
-
-        public override ArgumentsBase GetDefault()
-        {
-            return new WirelessCommArgs();
         }
 
         // --- properties

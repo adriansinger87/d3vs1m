@@ -6,12 +6,12 @@ namespace D3vS1m.Application.Scene
     {
         public InvariantSceneArgs()
         {
-            Name = Models.InvariantScene;
+            Reset();
         }
 
-        public override ArgumentsBase GetDefault()
+        public override void Reset()
         {
-            return new InvariantSceneArgs();
+            Name = Models.InvariantScene;
         }
 
         public object[] Obstacles { get; }

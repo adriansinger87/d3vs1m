@@ -9,20 +9,20 @@ namespace D3vS1m.Application.Channel
     {
         public AdaptedFriisArgs()
         {
+            Reset();
+        }
+
+        // -- methods
+
+        public override void Reset()
+        {
             Name = Models.AdaptedFriisTransmission;
 
             // default settings
             RadioBox = new RadioCuboid();
 
             AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
-            AttenuationOffset = Domain.System.Constants.Const.Channel.Radio.AttenuationOffset;
-        }
-
-        // -- methods
-
-        public override ArgumentsBase GetDefault()
-        {
-            return new AdaptedFriisArgs();
+            AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
         }
 
         // -- properties

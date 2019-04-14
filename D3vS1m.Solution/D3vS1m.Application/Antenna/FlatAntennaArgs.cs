@@ -6,12 +6,12 @@ namespace D3vS1m.Application.Antenna
     {
         public FlatAntennaArgs()
         {
-            base.Name = "flat antenna model";
+            Reset();
         }
 
-        public override ArgumentsBase GetDefault()
+        public override void Reset()
         {
-            return new FlatAntennaArgs();
+            base.Name = "flat antenna model";
         }
 
         /// <summary>

@@ -42,6 +42,11 @@ namespace D3vS1m.Domain.Simulation
         string Name { get; }
 
         /// <summary>
+        /// Gets the global Identifier of the simulation model
+        /// </summary>
+        string Guid { get; }
+
+        /// <summary>
         /// Gets the Identifier of the simulation model
         /// </summary>
         string Id { get; }

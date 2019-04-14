@@ -9,16 +9,15 @@ namespace D3vS1m.Application.Energy
 
         public BatteryArgs()
         {
-            Name = Models.BatteryPack;
-
-            Batteries = new List<BatteryPack>();
+            Reset();
         }
 
         // -- methods
 
-        public override ArgumentsBase GetDefault()
+        public override void Reset()
         {
-            return new BatteryArgs();
+            Name = Models.BatteryPack;
+            Batteries = new List<BatteryPack>();
         }
 
         // -- properties

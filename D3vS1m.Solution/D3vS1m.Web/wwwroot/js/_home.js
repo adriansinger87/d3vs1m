@@ -35,11 +35,13 @@
             data: {
                 message: 'Hello',
                 simulators: null,
+                currentId: null,
                 arguments: null
             },
             methods: {
                 getSimulators: getSimulators,
-                getArguments: getArguments
+                getArguments: getArguments,
+                updateArguments: updateArguments
             }
         });
     }
@@ -65,7 +67,7 @@
     function getArguments(id) {
 
         $.ajax({
-            url: "/api/Simulators/args?id=" + id,
+            url: "/api/Arguments/" + id,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             datatype: 'json',
@@ -81,6 +83,26 @@
                 editor.clearSelection();
 
                 $("#code-modal").modal('open');
+            }
+        });
+    }
+
+    function updateArguments(id) {
+
+        var code = editor.getValue();
+
+        $.ajax({
+            url: "/api/Arguments/" + id,
+            type: 'PUT',
+            contentType: "application/json; charset=utf-8",
+            datatype: 'json',
+            data: JSON.stringify(code),
+            async: true,
+            error: function (result) {
+                console.error(result);
+            },
+            success: function (result) {
+                console.info(result);
             }
         });
     }

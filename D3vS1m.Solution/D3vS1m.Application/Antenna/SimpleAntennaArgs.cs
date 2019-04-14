@@ -7,12 +7,12 @@ namespace D3vS1m.Application.Antenna
 
         public SimpleAntennaArgs()
         {
-            Name = Models.SimpleAntenna;
+            Reset();
         }
 
-        public override ArgumentsBase GetDefault()
+        public override void Reset()
         {
-            return new SimpleAntennaArgs();
+            Name = Models.SimpleAntenna;
         }
 
         /// <summary>

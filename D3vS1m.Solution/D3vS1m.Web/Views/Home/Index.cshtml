@@ -14,24 +14,25 @@
                 <div class="card-content white-text">
                     <span class="card-title">{{ sim.name }}</span>
                     <p>
-                        I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.
+                        I am a description
                     </p>
                 </div>
                 <div class="card-action">
                     <a v-on:click="getArguments(sim.id)"><i class="mdi mdi-tune"></i></a>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal Structure -->
-<div id="code-modal" class="modal">
-    <div class="modal-content">
-        <div id="ace-editor" class="code-editor">
-
+    <!-- Modal Structure -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <div id="ace-editor" class="code-editor"></div>
+        </div>
+        <div class="modal-footer code-footer">
+            <a v-on:click="updateArguments(currentId)" class="modal-close waves-effect waves-green btn-flat">Send</a>
         </div>
     </div>
-</div>
 
+
+</div>

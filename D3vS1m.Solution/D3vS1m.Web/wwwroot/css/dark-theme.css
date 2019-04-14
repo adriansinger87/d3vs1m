@@ -17,3 +17,11 @@ footer a {
 .chip {
     background-color: rgba(0, 0, 0, 0.20);
 }
+
+.modal .modal-footer {
+    background-color: #37474f;
+}
+
+    .modal .modal-footer .btn-flat {
+        color: white;
+    }

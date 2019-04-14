@@ -8,8 +8,7 @@ namespace D3vS1m.Application.Network
 
         public NetworkArgs()
         {
-            Name = Models.PeerToPeerNetwork;
-            Network = new PeerToPeerNetwork();
+            Reset();
         }
 
         // -- methods
@@ -19,9 +18,10 @@ namespace D3vS1m.Application.Network
 
         }
 
-        public override ArgumentsBase GetDefault()
+        public override void Reset()
         {
-            return new NetworkArgs();
+            Name = Models.PeerToPeerNetwork;
+            Network = new PeerToPeerNetwork();
         }
 
         // -- properties

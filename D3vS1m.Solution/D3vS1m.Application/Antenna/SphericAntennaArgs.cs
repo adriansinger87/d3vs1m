@@ -10,12 +10,12 @@ namespace D3vS1m.Application.Antenna
     {
         public SphericAntennaArgs()
         {
-            Name = Models.SphericAntenna;
+            Reset();
         }
 
-        public override ArgumentsBase GetDefault()
+        public override void Reset()
         {
-            return new SphericAntennaArgs();
+            Name = Models.SphericAntenna;
         }
 
         public Matrix<SphericGain> GainMatrix { get; set; }

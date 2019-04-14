@@ -18,14 +18,14 @@ namespace D3vS1m.Application.Runtime
 
         public void ResetTime()
         {
+            Reset();
+        }
+
+        public override void Reset()
+        {
             StartTime = DateTime.Now;
             ElapsedTime = new TimeSpan();
             Iterations = 0;
-        }
-
-        public override ArgumentsBase GetDefault()
-        {
-            return new RuntimeArgs();
         }
 
         // -- properties
