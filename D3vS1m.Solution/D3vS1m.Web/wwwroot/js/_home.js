@@ -66,6 +66,7 @@
 
     function getArguments(id) {
 
+        appVue.currentId = id;
         $.ajax({
             url: "/api/Arguments/" + id,
             type: 'GET',

@@ -7,6 +7,7 @@ using System;
 
 namespace D3vS1m.Domain.Simulation
 {
+    [Serializable]
     public abstract class SimulatorBase : ISimulatable
     {
         // -- fields

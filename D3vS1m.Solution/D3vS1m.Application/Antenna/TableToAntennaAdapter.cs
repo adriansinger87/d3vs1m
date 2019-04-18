@@ -6,6 +6,7 @@ using System.Data;
 
 namespace D3vS1m.Application.Antenna
 {
+    [Serializable]
     public class TableToAntennaAdapter : IAdaptable
     {
         // -- fields

@@ -4,12 +4,14 @@ using D3vS1m.Domain.Data.Scene;
 using FluentValidation.Results;
 using Sin.Net.Domain.Logging;
 using Sin.Net.Domain.Repository;
+using System;
 
 namespace D3vS1m.Application.Network
 {
+    [Serializable]
     public class PeerToPeerNetwork : RepositoryBase<BasicDevice>
     {
-
+        [NonSerialized]
         private NetworkValidator _validator;
 
         public PeerToPeerNetwork()
@@ -76,11 +78,5 @@ namespace D3vS1m.Application.Network
         /// </summary>
         public NetworkMatrix<Angle> AngleMatrix { get; set; }
 
-        /// <summary>
-        /// index-based intexer to be able to get the instance at the index i
-        /// </summary>
-        /// <param name="index">The index of the item in the list</param>
-        /// <returns>The instance of T with the corresponding index</returns>
-        public BasicDevice this[int index] => Items[index];
     }
 }

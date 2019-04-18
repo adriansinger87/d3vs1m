@@ -4,6 +4,7 @@ using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sin.Net.Domain.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,6 +22,7 @@ namespace MSTests.Application
         {
             base.Arrange();
 
+            
             _battery = new BatteryPack();
         }
 
@@ -52,7 +54,7 @@ namespace MSTests.Application
             // arrange
             var runtime = new RuntimeController(new EnergyValidator());
 
-            // TODO: seem to have a but when setting up a higher cutoff voltage --> test and fix it
+            // TODO: seem to have a bug when setting up a higher cutoff voltage --> test and fix it
             _battery.CutoffVoltage = 1.2F;
             _battery.State.Init(_battery);
             BatteryState s = _battery.State;

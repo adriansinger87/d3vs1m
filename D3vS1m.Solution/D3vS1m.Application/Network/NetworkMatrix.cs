@@ -1,7 +1,5 @@
 ﻿using D3vS1m.Application.Data;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Network
 {
@@ -11,6 +9,7 @@ namespace D3vS1m.Application.Network
     /// during Each function calls the main diagonal is skipped, because it relates to the same device.
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    [Serializable]
     public class NetworkMatrix<T> : Matrix<T>
     {
         // -- constructors
@@ -55,7 +54,7 @@ namespace D3vS1m.Application.Network
         /// </summary>
         /// <param name="function">Die Delegatfunktion besitzt als Übergabe die Zeile [int], Spalte [int] und den aktuellen Wert vom Typ T der Matrix.
         /// Der Rückgabewert überschreibt das Matrixelement vom Typ T.</param>
-        public override sealed void Each(Func<int, int, T, T> function)
+        public sealed override void Each(Func<int, int, T, T> function)
         {
             for (int r = 0; r < base.RowsCount; r++)
             {

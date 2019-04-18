@@ -1,7 +1,9 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
+using System;
 
 namespace D3vS1m.Application.Network
 {
+    [Serializable]
     public class NetworkArgs : ArgumentsBase
     {
         // -- constructor

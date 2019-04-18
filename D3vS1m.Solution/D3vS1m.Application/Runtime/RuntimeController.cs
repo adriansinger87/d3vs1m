@@ -12,6 +12,7 @@ namespace D3vS1m.Application.Runtime
     /// <summary>
     /// Implements the abstract class RuntimeBase and adds some behavior for validation and conrete runtime arguments
     /// </summary>
+    [Serializable]
     public class RuntimeController : RuntimeBase
     {
         // -- fields
@@ -19,6 +20,7 @@ namespace D3vS1m.Application.Runtime
         /// <summary>
         /// injected concretion of the validation of the simulation models
         /// </summary>
+        [NonSerialized]
         private BasicValidator _validator;
 
         /// <summary>
@@ -34,6 +36,7 @@ namespace D3vS1m.Application.Runtime
         /// <param name="validator">The validator concretion could be of type BasicValidator or a derived class</param>
         public RuntimeController(BasicValidator validator)
         {
+            // HACK: remove DI per constructor and inject the D3vS1mValidator at run method
             _validator = validator;
             _args = new RuntimeArgs();
 

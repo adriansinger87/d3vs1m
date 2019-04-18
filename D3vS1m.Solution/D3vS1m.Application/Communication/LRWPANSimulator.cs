@@ -2,6 +2,7 @@
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using System;
 
 namespace D3vS1m.Application.Communication
 {
@@ -9,6 +10,7 @@ namespace D3vS1m.Application.Communication
     /// Simulates important parts of the communication of Low Range Wireless Personal Area Networks (LW-WPAN)
     /// Implements the Functionality of the IEEE 802.15.4 standard
     /// </summary>
+    [Serializable]
     public class LRWPANSimulator : SimulatorBase
     {
         // -- fields

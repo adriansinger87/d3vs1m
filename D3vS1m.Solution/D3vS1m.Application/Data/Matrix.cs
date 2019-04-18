@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Data
 {
     // TODO: make english comments
+    [Serializable]
     public class Matrix<T>
     {
 

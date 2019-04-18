@@ -1,10 +1,9 @@
 ﻿using D3vS1m.Domain.Data.Scene;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Data
 {
+    [Serializable]
     public class SphericGain : Angle
     {
         // --- constructor

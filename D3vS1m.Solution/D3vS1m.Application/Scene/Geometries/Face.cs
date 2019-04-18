@@ -1,10 +1,10 @@
 ﻿using D3vS1m.Domain.Data.Scene;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Scene.Geometries
 {
+    [Serializable]
     public class Face
     {
         public Face()

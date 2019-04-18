@@ -1,6 +1,7 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.System.Enumerations;
+using System;
 
 namespace D3vS1m.Domain.Simulation
 {

@@ -19,22 +19,22 @@ namespace D3vS1m.Application.Validation
             base.SetupRules();
 
             // channel
-            RuleFor(repo => repo.Cast<ISimulatable>())
+            RuleFor(repo => repo.Items.Cast<ISimulatable>())
                 .Must(list => list.Any(i => i.Type == SimulationModels.Channel))
                 .WithMessage("channel model not present");
 
-            RuleFor(repo => repo.Cast<ISimulatable>().FirstOrDefault(i => i.Type == SimulationModels.Channel))
+            RuleFor(repo => repo.Items.Cast<ISimulatable>().FirstOrDefault(i => i.Type == SimulationModels.Channel))
                 .Must(i => i.Arguments != null).WithMessage("channel model has no arguments")
                 .Must(i => i.Arguments is AdaptedFriisArgs).WithMessage("scene model has wrong argument type")
                 .Must(i => ValidateChannelArguments(i)).WithMessage("scene model arguments not valid");
 
             // network
-            RuleFor(repo => repo.Cast<ISimulatable>())
+            RuleFor(repo => repo.Items.Cast<ISimulatable>())
                 .Must(list => list.Any(i => i.Type == SimulationModels.Network))
                 .WithMessage("network model not present");
 
             // scene
-            RuleFor(repo => repo.Cast<ISimulatable>())
+            RuleFor(repo => repo.Items.Cast<ISimulatable>())
                 .Must(list => list.Any(i => i.Type == SimulationModels.Scene))
                 .WithMessage("scene model not present");
         }

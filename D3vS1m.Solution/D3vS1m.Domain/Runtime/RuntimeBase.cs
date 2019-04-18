@@ -10,6 +10,7 @@ namespace D3vS1m.Domain.Runtime
     /// <summary>
     /// Abstract class with some base functionality to setup and run the desired simulation models
     /// </summary>
+    [Serializable]
     public abstract class RuntimeBase
     {
         // -- fields

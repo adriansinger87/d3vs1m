@@ -31,7 +31,7 @@ namespace D3vS1m.Web
 
             // session
 #if DEBUG
-            TimeSpan ts = TimeSpan.FromSeconds(10);
+            TimeSpan ts = TimeSpan.FromSeconds(60);
 #else
             TimeSpan ts = TimeSpan.FromMinutes(10);
 #endif

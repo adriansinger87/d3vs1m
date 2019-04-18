@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Energy
 {
+    [Serializable]
     public class BatteryState
     {
         public StateFields Initial;
@@ -13,7 +12,7 @@ namespace D3vS1m.Application.Energy
 
         public BatteryState()
         {
-                
+
         }
 
         public void Init(BatteryPack battery)
@@ -126,7 +125,7 @@ namespace D3vS1m.Application.Energy
                 return $"SoD: {SoD}, time: {ElapsedTime}";
             }
 
-          
+
         }
     }
 }

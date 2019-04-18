@@ -1,11 +1,10 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Constants;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Communication
 {
+    [Serializable]
     public class WirelessCommArgs : ArgumentsBase
     {
         /// <summary>

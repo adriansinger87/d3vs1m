@@ -7,6 +7,7 @@ namespace D3vS1m.Application.Channel
     /// <summary>
     /// Stores the data of the cuboid that is used as input for the wireless radio channel simulation
     /// </summary>
+    [Serializable]
     public class RadioCuboid
     {
 

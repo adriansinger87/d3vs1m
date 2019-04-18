@@ -2,7 +2,6 @@
 using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
@@ -13,6 +12,7 @@ using System.Linq;
 
 namespace D3vS1m.Application.Channel
 {
+    [Serializable]
     public class AdaptedFriisSimulator : SimulatorBase
     {
         // -- fields

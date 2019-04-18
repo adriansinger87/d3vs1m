@@ -41,10 +41,10 @@ namespace MSTests.Application
             _network = netArgs.Network;
             _network.AddRange(ImportDevices().ToArray());
 
-            runtime.Setup(new SimulatorRepository()
-            {
-                netSim
-            }).Validate();
+            var simRepo = new SimulatorRepository();
+            simRepo.Add(netSim);
+            runtime.Setup(simRepo)
+                .Validate();
 
             // act one iteration 
             await runtime.RunAsync(1);

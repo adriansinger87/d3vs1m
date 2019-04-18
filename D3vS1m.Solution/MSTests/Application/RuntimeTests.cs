@@ -50,8 +50,8 @@ namespace MSTests.Application
             var netArgs = new NetworkArgs();
             var antennaArgs = new SimpleAntennaArgs();
 
-            _repo = new SimulatorRepository
-            {
+            _repo = new SimulatorRepository();
+            _repo.AddRange(new ISimulatable[] {
                 new SceneSimulator(runtime)
                     .With(sceneArgs),
                 new AdaptedFriisSimulator(runtime)
@@ -61,7 +61,7 @@ namespace MSTests.Application
                     .With(antennaArgs),
                 new PeerToPeerNetworkSimulator(runtime)
                     .With(netArgs)
-            };
+            });
         }
 
         [TestCleanup]
@@ -92,7 +92,7 @@ namespace MSTests.Application
                 facade.SimulatorRepo[SimulationModels.Channel].With(base.GetRadioArgs());
             };
 
-           
+
 
             // act
             int iterations = 5;

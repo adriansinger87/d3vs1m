@@ -8,9 +8,11 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using Sin.Net.Domain.Logging;
+using System;
 
 namespace D3vS1m.Application
 {
+    [Serializable]
     public class D3vS1mFacade : ISimulationFacadable
     {
         // -- fields
@@ -19,6 +21,11 @@ namespace D3vS1m.Application
 
         public D3vS1mFacade()
         {
+            // HACK: generic is not working for session state serialization based on json strings
+            /*
+             * TODO: make all models explicit and the facadew will cover the entire simulation
+             * the runtime needs the ability to acess the models through a list or so not a repo
+             */
             SimulatorRepo = new SimulatorRepository();
         }
 

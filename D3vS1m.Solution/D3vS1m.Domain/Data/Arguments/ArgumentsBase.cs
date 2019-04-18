@@ -5,6 +5,7 @@ namespace D3vS1m.Domain.Data.Arguments
     /// <summary>
     /// This class is an abstract base class for all concrete argument implementations used by the simulation models
     /// </summary>
+    [Serializable]
     public abstract class ArgumentsBase
     {
         public ArgumentsBase()

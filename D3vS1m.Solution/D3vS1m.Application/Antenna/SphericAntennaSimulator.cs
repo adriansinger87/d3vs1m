@@ -9,6 +9,7 @@ using System;
 
 namespace D3vS1m.Application.Antenna
 {
+    [Serializable]
     public class SphericAntennaSimulator : SimulatorBase
     {
         private SphericAntennaArgs _antennaArgs;

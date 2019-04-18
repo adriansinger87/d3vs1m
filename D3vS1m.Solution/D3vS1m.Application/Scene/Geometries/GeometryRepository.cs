@@ -1,8 +1,10 @@
 ﻿using Sin.Net.Domain.Repository;
+using System;
 using System.Linq;
 
 namespace D3vS1m.Application.Scene.Geometries
 {
+    [Serializable]
     public class GeometryRepository : RepositoryBase<Geometry>
     {
         public GeometryRepository()

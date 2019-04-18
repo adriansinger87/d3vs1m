@@ -1,10 +1,11 @@
 ﻿using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Domain.Repository;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 
 namespace D3vS1m.Domain.Simulation
 {
+    [Serializable]
     public class SimulatorRepository : RepositoryBase<ISimulatable>
     {
         public SimulatorRepository() : base()
@@ -22,13 +23,6 @@ namespace D3vS1m.Domain.Simulation
         // -- properties
 
         // -- indexer
-
-        /// <summary>
-        /// index-based intexer to be able to get the instance at the index i
-        /// </summary>
-        /// <param name="index">The index of the item in the list</param>
-        /// <returns>The instance of T with the corresponding index</returns>
-        public ISimulatable this[int index] => Items[index];
 
         /// <summary>
         /// id-based intexer to be able to get the instance with the same id.

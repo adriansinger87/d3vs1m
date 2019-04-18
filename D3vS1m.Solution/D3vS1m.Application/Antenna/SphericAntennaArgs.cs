@@ -1,11 +1,10 @@
 ﻿using D3vS1m.Application.Data;
 using D3vS1m.Domain.Data.Arguments;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Antenna
 {
+    [Serializable]
     public class SphericAntennaArgs : ArgumentsBase
     {
         public SphericAntennaArgs()

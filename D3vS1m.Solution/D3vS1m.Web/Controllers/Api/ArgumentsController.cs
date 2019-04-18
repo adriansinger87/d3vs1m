@@ -1,4 +1,6 @@
-﻿using D3vS1m.Domain.Data.Arguments;
+﻿using D3vS1m.Application;
+using D3vS1m.Domain.Data.Arguments;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -13,15 +15,18 @@ namespace D3vS1m.Web.Controllers.Api
     [ApiController]
     public class ArgumentsController : ApiControllerBase
     {
-        public ArgumentsController() : base()
+        public ArgumentsController(IHostingEnvironment env) : base(env)
         {
+
         }
 
         // GET: api/Arguments/id
         [HttpGet("{id}")]
         public JsonResult Get(string id)
         {
-            var simulator = Context.SimulatorRepo[id];
+            Load(out D3vS1mFacade context);
+
+            var simulator = context.SimulatorRepo[id];
             return new JsonResult(simulator.Arguments);
         }
 
@@ -33,7 +38,9 @@ namespace D3vS1m.Web.Controllers.Api
 
             try
             {
-                var simulator = Context.SimulatorRepo[id];
+                Load(out D3vS1mFacade context);
+
+                var simulator = context.SimulatorRepo[id];
                 var type = simulator.Arguments.GetType();
                 var args = JsonConvert.DeserializeObject(value, type);
 
@@ -42,6 +49,9 @@ namespace D3vS1m.Web.Controllers.Api
                     throw new Exception("value could not be deserialized");
                 }
                 simulator.With(args as ArgumentsBase);
+
+                // safe session
+                Save(context);
             }
             catch (Exception ex)
             {

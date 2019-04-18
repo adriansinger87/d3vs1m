@@ -1,7 +1,9 @@
 ﻿using Sin.Net.Domain.Repository;
+using System;
 
 namespace D3vS1m.Application.Scene.Materials
 {
+    [Serializable]
     public class PhysicsRepository : RepositoryBase<MaterialPhysics>
     {
         public PhysicsRepository()

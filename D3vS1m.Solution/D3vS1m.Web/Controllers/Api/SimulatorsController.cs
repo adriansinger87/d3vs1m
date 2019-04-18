@@ -3,6 +3,7 @@ using D3vS1m.Application;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace D3vS1m.Web.Controllers.Api
@@ -11,7 +12,7 @@ namespace D3vS1m.Web.Controllers.Api
     [ApiController]
     public class SimulatorsController : ApiControllerBase
     {
-        public SimulatorsController() : base()
+        public SimulatorsController(IHostingEnvironment env) : base(env)
         {
         }
 
@@ -19,14 +20,17 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public JsonResult Get()
         {
-            return new JsonResult(Context.SimulatorRepo);
+            Load(out D3vS1mFacade context);
+            return new JsonResult(context.SimulatorRepo);
         }
 
         // GET: api/Simulators/id
         [HttpGet("{id}", Name = "GetById")]
         public JsonResult Get(string id)
         {
-            var simulator = Context.SimulatorRepo[id];
+            Load(out D3vS1mFacade context);
+
+            var simulator = context.SimulatorRepo[id];
             return new JsonResult(simulator);
         }
 
@@ -35,7 +39,9 @@ namespace D3vS1m.Web.Controllers.Api
         [Route("args")]
         public JsonResult GetArgs([FromQuery(Name = "id")] string id)
         {
-            var simulator = Context.SimulatorRepo[id];
+            Load(out D3vS1mFacade context);
+            
+            var simulator = context.SimulatorRepo[id];
             // TODO: sort name as first property and then all other properties or create a view model 
             return new JsonResult(simulator.Arguments);
         }

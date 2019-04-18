@@ -4,12 +4,10 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace D3vS1m.Application.Energy
 {
+    [Serializable]
     public class BatteryPackSimulator : SimulatorBase
     {
         // -- fields
@@ -34,9 +32,9 @@ namespace D3vS1m.Application.Energy
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (ConvertArgs(arguments, ref _batteryArgs))   return this;
-            if (ConvertArgs(arguments, ref _runArgs))       return this;
-            else                                            return ArgsNotAdded(arguments.Name);
+            if (ConvertArgs(arguments, ref _batteryArgs)) return this;
+            if (ConvertArgs(arguments, ref _runArgs)) return this;
+            else return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()
@@ -115,7 +113,7 @@ namespace D3vS1m.Application.Energy
             */
             state.Now.SoD = state.Initial.SoD + ((1 - state.Initial.SoD) / state.Initial.Charge) * (qt + state.Now.Charge);
         }
-        
+
         /// <summary>
         /// Berechnet den für den Zeitschlitz zutreffenden Anteil der Selbstentladung des Energieträgers
         /// </summary>
@@ -182,7 +180,7 @@ namespace D3vS1m.Application.Energy
                 return true;
             }
         }
-        
+
         // -- properties
 
         public override string Name { get { return _batteryArgs.Name; } }

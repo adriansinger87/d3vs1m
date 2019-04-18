@@ -5,9 +5,11 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
+using System;
 
 namespace D3vS1m.Application.Network
 {
+    [Serializable]
     public class PeerToPeerNetworkSimulator : SimulatorBase
     {
         private NetworkArgs _netArgs;

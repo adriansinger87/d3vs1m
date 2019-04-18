@@ -1,13 +1,12 @@
 ﻿using D3vS1m.Domain.System.Constants;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace D3vS1m.Application.Scene.Materials
 {
     /// <summary>
     /// Describes some physical properties of a certain material instance for radio simulation.
     /// </summary>
+    [Serializable]
     public class MaterialPhysics
     {
         public MaterialPhysics()

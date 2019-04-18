@@ -7,6 +7,7 @@ using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,14 +15,12 @@ namespace D3vS1m.Web.Controllers.Api
 {
     [Route("api/v2/simulators")]
     [ApiController]
-    public class SimulatorsV2Controller : ControllerBase
+    public class SimulatorsV2Controller : ApiControllerBase
     {
-        D3vS1mFacade _data;
 
-        public SimulatorsV2Controller()
+        public SimulatorsV2Controller(IHostingEnvironment env) : base(env)
         {
-            _data = new D3vS1mFacade();
-            _data.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
+
         }
 
 
@@ -29,24 +28,27 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public JsonResult Get()
         {
-            var list = _data.SimulatorRepo.Items.Select(s => new {
+            Load(out D3vS1mFacade context);
+
+            // redefined view model
+            var list = context.SimulatorRepo.Items.Select(s => new {
                 s.Name,
                 s.Id,
                 Type = s.Type.ToString(),
                 s.Guid
             });
+
             return new JsonResult(list);
 
         }
 
         // GET: api/v2/Simulators/index
-        [HttpGet("{index}", Name = "v2_GetById")]
+        [HttpGet("{index}", Name = "v2_GetByIndex")]
         public JsonResult Get(int index)
         {
-            // TODO: try catch absicherung
-            var simulator = _data.SimulatorRepo[index];
+            Load(out D3vS1mFacade context);
+            var simulator = context.SimulatorRepo[index];
             return new JsonResult(simulator);
-
         }
 
     }

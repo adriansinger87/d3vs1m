@@ -1,10 +1,12 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.System.Constants;
+using System;
 using System.Collections.Generic;
 
 namespace D3vS1m.Application.Channel
 {
+    [Serializable]
     public class AdaptedFriisArgs : ArgumentsBase
     {
         public AdaptedFriisArgs()

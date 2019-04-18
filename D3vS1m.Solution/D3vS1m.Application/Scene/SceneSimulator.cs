@@ -2,9 +2,11 @@
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.Runtime;
+using System;
 
 namespace D3vS1m.Application.Scene
 {
+    [Serializable]
     public class SceneSimulator : SimulatorBase
     {
         // -- fields
