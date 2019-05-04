@@ -91,9 +91,7 @@ namespace MSTests.Application
             {
                 facade.SimulatorRepo[SimulationModels.Channel].With(base.GetRadioArgs());
             };
-
-
-
+            
             // act
             int iterations = 5;
             if (_runtime.Setup(facade.SimulatorRepo).Validate() == false)

@@ -34,8 +34,6 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpPut("{id}")]
         public void Put(string id, [FromBody] string value)
         {
-            // TODO: write data to a session
-
             try
             {
                 Load(out D3vS1mFacade context);

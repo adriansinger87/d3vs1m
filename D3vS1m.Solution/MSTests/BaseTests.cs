@@ -41,7 +41,7 @@ namespace MSTests
 
             var settings = new CsvSetting
             {
-                Location = DataDirectory,
+                Location = TestDataDirectory,
                 Name = file,
             };
 
