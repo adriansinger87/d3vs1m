@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Domain.System.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sin.Net.Domain.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,8 +8,20 @@ using System.Text;
 namespace MSTests.Domain
 {
     [TestClass]
-    public class ConstTests
+    public class ConstTests : BaseTests
     {
+        [TestInitialize]
+        public override void Arrange()
+        {
+            base.Arrange();
+        }
+
+        [TestCleanup]
+        public override void Cleanup()
+        {
+            base.Cleanup();
+
+        }
         [TestMethod]
         public void testRadDeg()
         {
@@ -34,13 +47,17 @@ namespace MSTests.Domain
             // Act
             float test1 = Const.Func.Fract(f1);
             float test2 = Const.Func.Fract(f2);
-
+            Log.Info($"test1 is {test1}");
+            Log.Info($"test2 is {test2}");
             var t1_1 = f1 - (float)Math.Truncate(f1);
 
+            // TODO: fix this on linux
             // Assert
-            Assert.IsTrue(test1 == 0.2f, "fract should be 0.2");
-            Assert.IsTrue(test2 == -0.7f, "fract should be -0.7");
+            Assert.IsTrue(test1 == 0.2f, $"fract should be 0.2, but it is {test1}");
+            Assert.IsTrue(test2 == -0.7f, $"fract should be -0.7, but it is {test2}");
 
         }
+
+    
     }
 }
