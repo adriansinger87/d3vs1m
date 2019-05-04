@@ -36,7 +36,7 @@ namespace MSTests.Application
             var key = D3vS1m.Persistence.Constants.Wavefront.Key;
             var _setting = new FileSetting
             {
-                Location = base.DataDirectory,
+                Location = base.TestDataDirectory,
                 Name = "WallTest5.obj"
             };
 
