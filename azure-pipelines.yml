@@ -37,7 +37,7 @@ steps:
 - task: CmdLine@2
   inputs:
    script:
-     'dotnet tool install -g Wyam.Tool'
+     'docu.cmd'
     #script: 'echo Write your commands here.' 
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
