@@ -33,11 +33,6 @@ steps:
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 # Command Line
-# Run a command line script using cmd.exe on Windows and bash on macOS and Linux.
-- task: CmdLine@2
+- task: Bash@3
   inputs:
-   script:
-     'docu.cmd'
-    #script: 'echo Write your commands here.' 
-    #workingDirectory: # Optional
-    #failOnStderr: false # Optional
+    filePath: './docu.sh'
