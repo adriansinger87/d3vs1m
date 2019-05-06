@@ -33,6 +33,6 @@ steps:
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 # Command Line
-- task: Bash@3
-  inputs:
-    filePath: './docu.sh'
+#- task: Bash@3
+#  inputs:
+#    filePath: './docu.sh'
