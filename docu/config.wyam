@@ -1,0 +1,8 @@
+#recipe Docs
+
+// Customize your settings and add new ones here
+Settings[Keys.Host] = "host.com";
+Settings[DocsKeys.Title] = "My Docs";
+
+// Add any pipeline customizations here
+Settings[DocsKeys.AssemblyFiles] = "src/D3vS1m.Domain/bin/Release/netstandard2.0/D3vS1m.Domain.dll";
