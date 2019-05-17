@@ -23,7 +23,7 @@ namespace D3vS1m.Application
         {
             // HACK: generic is not working for session state serialization based on json strings
             /*
-             * TODO: make all models explicit and the facadew will cover the entire simulation
+             * TODO: make all models explicit and the facade will cover the entire simulation
              * the runtime needs the ability to acess the models through a list or so not a repo
              */
             SimulatorRepo = new SimulatorRepository();

@@ -2,7 +2,6 @@
 
 namespace D3vS1m.Domain.Data
 {
-    // TODO: make english comments
     [Serializable]
     public class Matrix<T>
     {

@@ -1,4 +1,5 @@
-﻿using D3vS1m.Web.System.Enumerations;
+﻿using D3vS1m.Persistence;
+using D3vS1m.Web.System.Enumerations;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System.IO;
@@ -44,6 +45,8 @@ namespace D3vS1m.Web.Extensions
 
         private static void SetJson(ISession session, string key, object data)
         {
+            // TODO implement json binary with TypedSerializationBinder
+
             session.SetString(key, JsonConvert.SerializeObject(data));
         }
 
