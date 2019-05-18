@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace MSTests.Application
 {
     [TestClass]
-    public class RuntimeTests : BaseTests
+    public class RuntimeTests : TestBase
     {
         // -- fields
 
@@ -79,22 +79,22 @@ namespace MSTests.Application
             var facade = new D3vS1mFacade();
             facade.RegisterPredefined(_runtime);
 
-            var antennaArgs = facade.SimulatorRepo.GetByName(Models.SphericAntenna).Arguments as SphericAntennaArgs;
+            var antennaArgs = facade.Simulators.GetByName(Models.SphericAntenna).Arguments as SphericAntennaArgs;
             base.LoadAntennaData(antennaArgs);
-            var netArgs = facade.SimulatorRepo[SimulationModels.Network].Arguments as NetworkArgs;
+            var netArgs = facade.Simulators[SimulationModels.Network].Arguments as NetworkArgs;
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
-            facade.SimulatorRepo[SimulationModels.Network].With(netArgs);
+            facade.Simulators[SimulationModels.Network].With(netArgs);
 
             // special setup
             _runtime.Started += (o, e) =>
             {
-                facade.SimulatorRepo[SimulationModels.Channel].With(base.GetRadioArgs());
+                facade.Simulators[SimulationModels.Channel].With(base.GetRadioArgs());
             };
             
             // act
             int iterations = 5;
-            if (_runtime.Setup(facade.SimulatorRepo).Validate() == false)
+            if (_runtime.Setup(facade.Simulators).Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");
             }
@@ -117,7 +117,7 @@ namespace MSTests.Application
             facade.RegisterPredefined(_runtime);
 
             // assert
-            Assert.IsTrue(facade.SimulatorRepo.Count >= 4, "not enough simulators registered");
+            Assert.IsTrue(facade.Simulators.Count >= 4, "not enough simulators registered");
         }
 
         [TestMethod]

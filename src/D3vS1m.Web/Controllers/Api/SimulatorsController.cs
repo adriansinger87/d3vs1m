@@ -21,7 +21,7 @@ namespace D3vS1m.Web.Controllers.Api
         public JsonResult Get()
         {
             LoadContext(out D3vS1mFacade context);
-            return new JsonResult(context.SimulatorRepo);
+            return new JsonResult(context.Simulators);
         }
 
         // GET: api/Simulators/id
@@ -30,7 +30,7 @@ namespace D3vS1m.Web.Controllers.Api
         {
             LoadContext(out D3vS1mFacade context);
 
-            var simulator = context.SimulatorRepo[id];
+            var simulator = context.Simulators[id];
             return new JsonResult(simulator);
         }
 
@@ -41,7 +41,7 @@ namespace D3vS1m.Web.Controllers.Api
         {
             LoadContext(out D3vS1mFacade context);
             
-            var simulator = context.SimulatorRepo[id];
+            var simulator = context.Simulators[id];
             // TODO: sort name as first property and then all other properties or create a view model 
             return new JsonResult(simulator.Arguments);
         }

@@ -10,7 +10,7 @@ using System.Linq;
 namespace MSTests.Application
 {
     [TestClass]
-    public class ChannelTests : BaseTests
+    public class ChannelTests : TestBase
     {
         // -- inherits
 

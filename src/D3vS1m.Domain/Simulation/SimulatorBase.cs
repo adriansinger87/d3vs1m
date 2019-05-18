@@ -4,6 +4,7 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Domain.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace D3vS1m.Domain.Simulation
 {
@@ -12,6 +13,8 @@ namespace D3vS1m.Domain.Simulation
     {
         // -- fields
 
+        protected List<ArgumentsBase> _arguments;
+
         private RuntimeBase _runtime;
 
         // -- events
@@ -19,11 +22,13 @@ namespace D3vS1m.Domain.Simulation
         /// <summary>
         /// Shall be fired at first, when the execution of the simulation model starts 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler OnExecuting;
 
         /// <summary>
         /// Shall be fired at last, when the execution of the simulation model has finished 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler Executed;
 
 
@@ -32,7 +37,7 @@ namespace D3vS1m.Domain.Simulation
         public SimulatorBase()
         {
             Guid = global::System.Guid.NewGuid().ToString();
-
+            _arguments = new List<ArgumentsBase>();
         }
 
         public SimulatorBase(RuntimeBase runtime) : this()
@@ -50,6 +55,9 @@ namespace D3vS1m.Domain.Simulation
         {
             if (input is T)
             {
+                // store the input args in the protected list 
+                _arguments.Add(input);
+
                 Type type = typeof(T);
                 target = (T)Convert.ChangeType(input, type);
                 return true;
@@ -73,6 +81,12 @@ namespace D3vS1m.Domain.Simulation
         /// can be added several times depending on the needs of the simulator</param>
         /// <returns>the calling instance</returns>
         public abstract ISimulatable With(ArgumentsBase arguments);
+
+        public ArgumentsBase[] GetAllArguments()
+        {
+            // TODO !!! Safe only the DATA i.e. the arguments in sessions and create runtime and simulators out of it
+            return _arguments.ToArray();
+        }
 
         /// <summary>
         /// Main function to run the simulator 

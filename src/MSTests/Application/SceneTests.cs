@@ -9,7 +9,7 @@ using Sin.Net.Persistence.Settings;
 namespace MSTests.Application
 {
     [TestClass]
-    public class SceneTests : BaseTests
+    public class SceneTests : TestBase
     {
         GeometryRepository _geometries;
         IPersistenceControlable _io;

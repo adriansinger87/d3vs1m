@@ -31,7 +31,7 @@ namespace D3vS1m.Web.Controllers.Api
             LoadContext(out D3vS1mFacade context);
 
             // redefined view model
-            var list = context.SimulatorRepo.Items.Select(s => new {
+            var list = context.Simulators.Items.Select(s => new {
                 s.Name,
                 s.Id,
                 Type = s.Type.ToString(),
@@ -47,7 +47,7 @@ namespace D3vS1m.Web.Controllers.Api
         public JsonResult Get(int index)
         {
             LoadContext(out D3vS1mFacade context);
-            var simulator = context.SimulatorRepo[index];
+            var simulator = context.Simulators[index];
             return new JsonResult(simulator);
         }
 

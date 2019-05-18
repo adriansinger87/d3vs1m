@@ -26,7 +26,7 @@ namespace D3vS1m.Web.Controllers.Api
         {
             LoadContext(out D3vS1mFacade context);
 
-            var simulator = context.SimulatorRepo[id];
+            var simulator = context.Simulators[id];
             return new JsonResult(simulator.Arguments);
         }
 
@@ -38,7 +38,7 @@ namespace D3vS1m.Web.Controllers.Api
             {
                 LoadContext(out D3vS1mFacade context);
 
-                var simulator = context.SimulatorRepo[id];
+                var simulator = context.Simulators[id];
                 var type = simulator.Arguments.GetType();
                 var args = JsonConvert.DeserializeObject(value, type);
 

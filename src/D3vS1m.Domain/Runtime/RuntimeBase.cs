@@ -26,16 +26,19 @@ namespace D3vS1m.Domain.Runtime
         /// <summary>
         /// The event gets fired when the simulation starts the first iteration. 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler Started;
 
         /// <summary>
         /// The event gets fired when the simulation stoppes the last iteration. 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler Stopped;
 
         /// <summary>
         /// The event gets fired when the execution of all simulation models has finished one iteration 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler IterationPassed;
 
         // -- methods

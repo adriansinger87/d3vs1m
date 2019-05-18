@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace MSTests.Application
 {
     [TestClass]
-    public class EnergyTests : BaseTests
+    public class EnergyTests : TestBase
     {
         BatteryPack _battery;
 

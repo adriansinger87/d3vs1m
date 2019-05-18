@@ -10,8 +10,16 @@ namespace D3vS1m.Domain.Simulation
     {
         void RegisterPredefined(RuntimeBase runtime);
 
+        ISimulatable Register(ISimulatable simulator);
+
         ISimulatable Register(ISimulatable simulator, ArgumentsBase args);
 
-        SimulatorRepository SimulatorRepo { get; }
+        ISimulatable Register(ISimulatable simulator, ArgumentsBase[] argsArray);
+
+        // -- properties
+
+        SimulatorRepository Simulators { get; }
+
+        Dictionary<string, ArgumentsBase[]> Arguments { get; }
     }
 }

@@ -18,14 +18,14 @@ using System.IO;
 
 namespace MSTests
 {
-    public abstract class BaseTests
+    public abstract class TestBase
     {
         [TestInitialize]
         public virtual void Arrange()
         {
             if (Log.IsNotNull == false)
             {
-                Log.Inject(new NLogger());
+                Log.Inject(new TestLogger());
             }
         }
 

@@ -21,13 +21,13 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-    <PackageReference Include="Sin.Net.Persistence" Version="0.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
     <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
     <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
+    <ProjectReference Include="..\D3vS1m.Web\D3vS1m.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

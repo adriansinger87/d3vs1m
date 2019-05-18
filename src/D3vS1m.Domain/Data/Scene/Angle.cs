@@ -5,6 +5,7 @@ using System.Text;
 
 namespace D3vS1m.Domain.Data.Scene
 {
+    [Serializable]
     public class Angle
     {
         public Angle()

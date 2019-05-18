@@ -29,6 +29,12 @@ namespace D3vS1m.Domain.Simulation
         ISimulatable With(ArgumentsBase arguments);
 
         /// <summary>
+        /// Returns all collected arguments that are needed to calculate the simulator.
+        /// </summary>
+        /// <returns>array of arguments</returns>
+        ArgumentsBase[] GetAllArguments();
+
+        /// <summary>
         /// Runs the implementation of the simulation model
         /// </summary>
         void Run();
