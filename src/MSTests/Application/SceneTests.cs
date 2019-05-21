@@ -44,7 +44,7 @@ namespace MSTests.Application
             var sceneRoot = _io.Importer(key)
                  .Setup(_setting)
                  .Import()
-                 .With<Geometry>(new ObjAdapter());
+                 .As<Geometry>(new ObjAdapter());
             _geometries.Add(sceneRoot, _setting.Name);
 
             // assert

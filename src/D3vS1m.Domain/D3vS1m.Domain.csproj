@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sin.Net.Domain" Version="0.0.11" />
+    <PackageReference Include="Sin.Net.Domain" Version="0.0.12" />
   </ItemGroup>
 
 </Project>

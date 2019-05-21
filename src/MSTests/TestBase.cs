@@ -49,7 +49,7 @@ namespace MSTests
                 .Importer(Sin.Net.Persistence.Constants.Csv.Key)
                 .Setup(settings)
                 .Import()
-                .With<Matrix<SphericGain>>(new TableToAntennaAdapter());
+                .As<Matrix<SphericGain>>(new TableToAntennaAdapter());
         }
 
         public RuntimeController GetRuntime()
@@ -88,7 +88,7 @@ namespace MSTests
             List<BasicDevice> devices = io.Importer(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(_setting)
                 .Import()
-                .Get<List<BasicDevice>>();
+                .As<List<BasicDevice>>();
 
             return devices;
         }
