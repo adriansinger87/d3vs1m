@@ -77,7 +77,7 @@ namespace MSTests
         public List<BasicDevice> ImportDevices(string filename = "devices.json")
         {
             // arrange
-            var _setting = new FileSetting
+            var _setting = new JsonSetting
             {
                 Location = TestDataDirectory,
                 Name = filename
