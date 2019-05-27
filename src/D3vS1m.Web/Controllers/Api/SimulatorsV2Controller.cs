@@ -28,10 +28,10 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public JsonResult Get()
         {
-            Load(out D3vS1mFacade context);
+            LoadContext(out D3vS1mFacade context);
 
             // redefined view model
-            var list = context.SimulatorRepo.Items.Select(s => new {
+            var list = context.Simulators.Items.Select(s => new {
                 s.Name,
                 s.Id,
                 Type = s.Type.ToString(),
@@ -46,8 +46,8 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet("{index}", Name = "v2_GetByIndex")]
         public JsonResult Get(int index)
         {
-            Load(out D3vS1mFacade context);
-            var simulator = context.SimulatorRepo[index];
+            LoadContext(out D3vS1mFacade context);
+            var simulator = context.Simulators[index];
             return new JsonResult(simulator);
         }
 

@@ -9,7 +9,7 @@ using Sin.Net.Persistence.Settings;
 namespace MSTests.Application
 {
     [TestClass]
-    public class SceneTests : BaseTests
+    public class SceneTests : TestBase
     {
         GeometryRepository _geometries;
         IPersistenceControlable _io;
@@ -44,7 +44,7 @@ namespace MSTests.Application
             var sceneRoot = _io.Importer(key)
                  .Setup(_setting)
                  .Import()
-                 .With<Geometry>(new ObjAdapter());
+                 .As<Geometry>(new ObjAdapter());
             _geometries.Add(sceneRoot, _setting.Name);
 
             // assert

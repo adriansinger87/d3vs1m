@@ -14,7 +14,7 @@ namespace D3vS1m.Application.Antenna
 
         public override void Reset()
         {
-            Name = Models.SphericAntenna;
+            Name = Models.Antenna.Spheric.Key;
         }
 
         public Matrix<SphericGain> GainMatrix { get; set; }

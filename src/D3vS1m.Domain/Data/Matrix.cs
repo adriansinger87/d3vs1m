@@ -1,20 +1,15 @@
-﻿using D3vS1m.Domain.System.Exceptions;
-using System;
+﻿using System;
 
-namespace D3vS1m.Application.Data
+namespace D3vS1m.Domain.Data
 {
-    /// <summary>
-    /// A class to create a matrix data container with generic data type.
-    /// </summary>
-    /// <typeparam name="T">The concrete data type</typeparam>
     [Serializable]
     public class Matrix<T>
     {
 
         /*
          * generic jagged array:
-         * not a 2D-Array, because they are slower. In some cases. In some cases they need inner loops and jagged arrays don't.
-         * Jagged arreay also allow triangular matrices, because there are no depenencies between the rows.
+         * KEIN 2D-Array, weil diese langsamer sind, in manchen Fällen innere Schleifen benötigen, wo eine jagged array keins braucht UND
+         * weil man leicht eine 3-Ecks Matrix erstellen kann, da es keine zeilenweisen Abhängigkeiten gibt.
          */
         protected T[][] _matrix;
 
@@ -88,30 +83,20 @@ namespace D3vS1m.Application.Data
         /// Gets a single element from the matrix after a validation of the input parameters.
         /// </summary>
         /// <param name="rows">The index of the row.</param>
-        /// <param name="cols">The index of the column.</param>
-        /// <returns>The value of the matrix.</returns>
+        /// <param name="cols">The index of the columns.</param>
+        /// <returns>The value of the der Matrix</returns>
         public T Get(int row, int col)
         {
             validate(row, col);
             return _matrix[row][col];
         }
 
-        /// <summary>
-        /// Gets a complete row from the matrix after a validation of the input parameters.
-        /// </summary>
-        /// <param name="row">The index of the row.</param>
-        /// <returns>The value array of the matrix.</returns>
         public T[] GetRow(int row)
         {
             validateRow(row);
             return _matrix[row];
         }
 
-        /// <summary>
-        /// Gets a complete column from the matrix after a validation of the input parameters.
-        /// </summary>
-        /// <param name="col">The index of the column.</param>
-        /// <returns>The value array of the matrix.</returns>
         public T[] GetCol(int col)
         {
             validateCol(col);
@@ -125,11 +110,11 @@ namespace D3vS1m.Application.Data
         }
 
         /// <summary>
-        /// Sets a single value of the matrix. 
+        /// Ruft einen einzelnen Wert der Matrix ab. Die Hauptdiagonale beinhaltet stets die default(T) Werte des festgelegten Typs.
         /// </summary>
-        /// <param name="rows">The index of the row.</param>
-        /// <param name="cols">The index of the column.</param>
-        /// <param name="value">The new value that will be set./param>
+        /// <param name="row">Die Zeile</param>
+        /// <param name="col">Die Spalte</param>
+        /// <param name="value">Der zu setzende Wert vom Typ der Matrix</param>
         public void Set(int row, int col, T value)
         {
             validate(row, col);
@@ -137,9 +122,9 @@ namespace D3vS1m.Application.Data
         }
 
         /// <summary>
-        /// Checks, if the generic data type is a number or not.
+        /// Prüft, ob der generische Datentyp eine Zahl ist.
         /// </summary>
-        /// <returns>Returns 'true' T is a number, otherwise 'false'.</returns>
+        /// <returns>Bei Erfolg 'true', andernfalls 'false'</returns>
         public bool IsNumeric()
         {
             switch (Type.GetTypeCode(typeof(T)))
@@ -161,12 +146,10 @@ namespace D3vS1m.Application.Data
             }
         }
 
-        /// <summary>
-        /// Returns a string based on the number of rows an columns.
-        /// </summary>
-        /// <returns>The formatted string.</returns>
-        public override string ToString() => $"Matrix: {RowsCount} x {ColsCount}";
-
+        public override string ToString()
+        {
+            return string.Format("Rows: {0} x Cols: {1} Matrix", RowsCount, ColsCount);
+        }
 
         // --- private methods
 
@@ -180,7 +163,7 @@ namespace D3vS1m.Application.Data
         {
             if (row < 0 || row > RowsCount)
             {
-                throw new MatrixException("Die Zeile liegt außerhalb des gültigen Bereichs");
+                throw new Exception("Die Zeile liegt außerhalb des gültigen Bereichs");
             }
         }
 
@@ -188,37 +171,37 @@ namespace D3vS1m.Application.Data
         {
             if (col < 0 || col > ColsCount)
             {
-                throw new MatrixException("Die Spalte liegt außerhalb des gültigen Bereichs");
+                throw new Exception("Die Spalte liegt außerhalb des gültigen Bereichs");
             }
         }
 
         // --- properties
 
         /// <summary>
-        /// Gets the number of rows of the matrix. Set this with the Init method.
+        /// Gibt die Größe der Matrix aus. Diese kann nur über die Init-Methode verändert werden.
         /// </summary>
         public int RowsCount { get; private set; }
 
         /// <summary>
-        /// Gets the number of columns of the matrix. Set this with the Init method.
+        /// Gibt die Größe der Matrix aus. Diese kann nur über die Init-Methode verändert werden.
         /// </summary>
         public int ColsCount { get; private set; }
 
         // -- indexer 
 
         /// <summary>
-        /// Gets a single element from the matrix after a validation of the input parameters.
+        /// 
         /// </summary>
-        /// <param name="rows">The index of the row.</param>
-        /// <param name="cols">The index of the column.</param>
-        /// <returns>The value of the matrix.</returns>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         public T this[int row, int col]
         {
             get
             {
-                validate(row, col);
                 return _matrix[row][col];
             }
         }
+
     }
 }

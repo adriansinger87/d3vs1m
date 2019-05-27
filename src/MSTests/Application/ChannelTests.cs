@@ -10,7 +10,7 @@ using System.Linq;
 namespace MSTests.Application
 {
     [TestClass]
-    public class ChannelTests : BaseTests
+    public class ChannelTests : TestBase
     {
         // -- inherits
 
@@ -37,6 +37,7 @@ namespace MSTests.Application
             var sceneArgs = new InvariantSceneArgs();
             var netArgs = new NetworkArgs();
 
+            // TODO: add the runtime and secure the existence of needed arguments commArgs and sceneArgs
             var sim = new AdaptedFriisSimulator()
                 .With(radioArgs)                    // own arguments
                 .With(comArgs)                      // additional arguments...

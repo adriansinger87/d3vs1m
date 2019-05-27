@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Application
 {
     [TestClass]
-    public class AntennaTests : BaseTests
+    public class AntennaTests : TestBase
     {
         SphericAntennaArgs _antennaArgs;
 

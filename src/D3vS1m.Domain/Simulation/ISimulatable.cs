@@ -28,6 +28,7 @@ namespace D3vS1m.Domain.Simulation
         /// <returns>the calling instance of the simulator</returns>
         ISimulatable With(ArgumentsBase arguments);
 
+
         /// <summary>
         /// Runs the implementation of the simulation model
         /// </summary>

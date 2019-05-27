@@ -26,16 +26,19 @@ namespace D3vS1m.Domain.Runtime
         /// <summary>
         /// The event gets fired when the simulation starts the first iteration. 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler Started;
 
         /// <summary>
         /// The event gets fired when the simulation stoppes the last iteration. 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler Stopped;
 
         /// <summary>
         /// The event gets fired when the execution of all simulation models has finished one iteration 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler IterationPassed;
 
         // -- methods
@@ -176,5 +179,19 @@ namespace D3vS1m.Domain.Runtime
         /// Gets the information, if the simulation is running or not. 
         /// </summary>
         public bool IsRunning { get { return _isRunning; } }
+
+        // -- indexer
+
+
+        /// <summary>
+        /// Gets the specific arguments object from the list of registered simulators.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ArgumentsBase GetArguments(string id)
+        {
+            return _simRepo[id].Arguments;
+        }
     }
 }

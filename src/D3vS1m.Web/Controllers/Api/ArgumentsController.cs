@@ -24,9 +24,9 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet("{id}")]
         public JsonResult Get(string id)
         {
-            Load(out D3vS1mFacade context);
+            LoadContext(out D3vS1mFacade context);
 
-            var simulator = context.SimulatorRepo[id];
+            var simulator = context.Simulators[id];
             return new JsonResult(simulator.Arguments);
         }
 
@@ -36,9 +36,9 @@ namespace D3vS1m.Web.Controllers.Api
         {
             try
             {
-                Load(out D3vS1mFacade context);
+                LoadContext(out D3vS1mFacade context);
 
-                var simulator = context.SimulatorRepo[id];
+                var simulator = context.Simulators[id];
                 var type = simulator.Arguments.GetType();
                 var args = JsonConvert.DeserializeObject(value, type);
 
@@ -49,7 +49,7 @@ namespace D3vS1m.Web.Controllers.Api
                 simulator.With(args as ArgumentsBase);
 
                 // safe session
-                Save(context);
+                SaveContext(context);
             }
             catch (Exception ex)
             {

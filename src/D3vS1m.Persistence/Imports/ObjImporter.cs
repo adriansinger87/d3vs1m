@@ -43,14 +43,19 @@ namespace D3vS1m.Persistence.Imports
         /// </summary>
         /// <typeparam name="T">T should be a string</typeparam>
         /// <returns>The string of the stream data converted to string</returns>
-        public T Get<T>() where T : new()
+        public T As<T>() where T : new()
         {
             return (T)Convert.ChangeType(_importObj, typeof(T));
         }
 
-        public T With<T>(IAdaptable adapter) where T : new()
+        public T As<T>(IAdaptable adapter) where T : new()
         {
             return adapter.Adapt<string, T>(_importObj);
+        }
+
+        public object AsItIs()
+        {
+            return _importObj;
         }
 
         // -- properties

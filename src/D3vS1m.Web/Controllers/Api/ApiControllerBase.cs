@@ -19,7 +19,6 @@ namespace D3vS1m.Web.Controllers.Api
         protected readonly IHostingEnvironment _hostingEnvironment;
         private readonly string _webRootPath;
         private readonly string _dataPath;
-        private readonly string _jobsPath;
 
         // -- constructor
 
@@ -32,7 +31,6 @@ namespace D3vS1m.Web.Controllers.Api
             _hostingEnvironment = env;
             _webRootPath = Path.Combine(_hostingEnvironment.WebRootPath);
             _dataPath = Path.Combine(_hostingEnvironment.ContentRootPath, "App_Data");
-            _jobsPath = Path.Combine(_dataPath, "jobs");
         }
 
         // -- methods
@@ -68,7 +66,8 @@ namespace D3vS1m.Web.Controllers.Api
         }
 
         /// <summary>
-        /// Gets a data object from the session by its key or returns a new instance of the type T
+        /// Gets a data object from the session by its key or returns a new instance of the type T.
+        /// If a new object is created it will not automatically safed.
         /// </summary>
         /// <typeparam name="T">The target type T</typeparam>
         /// <param name="key">The key as an accesor to the session</param>
@@ -82,7 +81,6 @@ namespace D3vS1m.Web.Controllers.Api
                 if (HttpContext.Session.Keys.Contains(key) == false)
                 {
                     data = new T();
-                    HttpContext.Session.SetData(key, data);
                     created = true;
                 }
                 else
@@ -118,35 +116,28 @@ namespace D3vS1m.Web.Controllers.Api
         }
         #endregion
 
-        public void Load(out D3vS1mFacade context)
+        /// <summary>
+        /// Loads the context objcet from the session or creates a new one and saves it
+        /// </summary>
+        /// <param name="context">The loaded or created context</param>
+        protected void LoadContext(out D3vS1mFacade context)
         {
-            context = GetContext();
-        }
-
-        protected void Save(D3vS1mFacade context)
-        {
-            SetContext(context);
-        }
-
-        // -- private methods
-
-        private D3vS1mFacade GetContext()
-        {
-            var context = GetOrNew<D3vS1mFacade>(CONTEXT, out bool created);
+            context = GetOrNew<D3vS1mFacade>(CONTEXT, out bool created);
 
             if (created)
             {
                 context.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
-                SetContext(context);
+                SaveContext(context);
             }
-
-            return context;
         }
 
-        private void SetContext(D3vS1mFacade context)
+        /// <summary>
+        /// Saves the context object to the current session
+        /// </summary>
+        /// <param name="context"></param>
+        protected void SaveContext(D3vS1mFacade context)
         {
             Set(CONTEXT, context);
         }
-
     }
 }
