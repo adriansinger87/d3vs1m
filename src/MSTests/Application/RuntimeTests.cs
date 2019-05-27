@@ -60,7 +60,9 @@ namespace MSTests.Application
                 new SimpleAntennaSimulator(runtime)
                     .With(antennaArgs),
                 new PeerToPeerNetworkSimulator(runtime)
-                    .With(netArgs)
+                    .With(netArgs),
+                new LRWPANSimulator(runtime)
+                    .With(comArgs)
             });
         }
 
@@ -78,8 +80,7 @@ namespace MSTests.Application
             // arrange
             var facade = new D3vS1mFacade();
             facade.RegisterPredefined(_runtime);
-
-            var antennaArgs = facade.Simulators.GetByName(Models.SphericAntenna).Arguments as SphericAntennaArgs;
+            var antennaArgs = facade.Simulators.GetByName(Models.Antenna.Spheric.Key).Arguments as SphericAntennaArgs;
             base.LoadAntennaData(antennaArgs);
             var netArgs = facade.Simulators[SimulationModels.Network].Arguments as NetworkArgs;
             netArgs.Network.AddRange(

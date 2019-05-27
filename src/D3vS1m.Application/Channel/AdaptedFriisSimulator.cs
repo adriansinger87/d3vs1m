@@ -2,6 +2,7 @@
 using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Data.Scene;
+using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
@@ -40,10 +41,22 @@ namespace D3vS1m.Application.Channel
 
         public override ISimulatable With(ArgumentsBase arguments)
         {
+            // other args are loaded on runtime
             if (ConvertArgs(arguments, ref _radioArgs)) return this;
             else if (ConvertArgs(arguments, ref _commArgs)) return this;
             else if (ConvertArgs(arguments, ref _sceneArgs)) return this;
             else return ArgsNotAdded(arguments.Name);
+        }
+
+        protected override void BeforeExecution()
+        {
+            base.BeforeExecution();
+        }
+
+        protected override void AfterExecution()
+        {
+            base.AfterExecution();
+
         }
 
         public override void Run()
@@ -102,14 +115,29 @@ namespace D3vS1m.Application.Channel
             return 20 * (float)Math.Log10((4 * Math.PI / wavelength));
         }
 
+        // -- event moethods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected sealed override void OnStarted(object sender, SimulatorEventArgs e)
+        {
+            ConvertArgs(
+                _runtime.GetArguments(Models.Communication.LrWpan.Key),
+                ref _commArgs);
+
+            ConvertArgs(
+                _runtime.GetArguments(Models.Scene.Key),
+                ref _sceneArgs);
+        }
+
         // -- properties
 
-        public override string Name { get { return _radioArgs.Name; } }
-
-        public override SimulationModels Type { get { return SimulationModels.Channel; } }
-
-        public override ArgumentsBase Arguments { get { return _radioArgs; } }
-
-
+        public override string Id => Models.Channel.AdaptedFriis.Key;
+        public override string Name => Models.Channel.AdaptedFriis.Key;
+        public override SimulationModels Type => SimulationModels.Channel;
+        public override ArgumentsBase Arguments => _radioArgs;
     }
 }

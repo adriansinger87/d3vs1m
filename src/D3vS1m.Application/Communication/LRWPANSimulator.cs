@@ -41,11 +41,10 @@ namespace D3vS1m.Application.Communication
 
         // -- properties
 
-        public override string Name { get { return _commArgs.Name; } }
-
-        public override SimulationModels Type { get { return SimulationModels.Communication; } }
-
-        public override ArgumentsBase Arguments { get { return _commArgs; } }
+        public override string Id => Models.Communication.LrWpan.Key;
+        public override string Name => Models.Communication.LrWpan.Key;
+        public override SimulationModels Type => SimulationModels.Communication;
+        public override ArgumentsBase Arguments => _commArgs;
 
     }
 }

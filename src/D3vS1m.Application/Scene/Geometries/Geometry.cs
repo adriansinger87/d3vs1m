@@ -9,7 +9,7 @@ namespace D3vS1m.Application.Scene.Geometries
     {
         public Geometry()
         {
-            Name = Models.DefaultGeometry;
+            Name = Models.Scene.DefaultGeometry;
             Faces = new List<Face>();
             Vertices = new List<Vertex>();
             Normales = new List<Vertex>();

@@ -20,6 +20,5 @@ namespace D3vS1m.Domain.Simulation
 
         SimulatorRepository Simulators { get; }
 
-        Dictionary<string, ArgumentsBase[]> Arguments { get; }
     }
 }

@@ -179,5 +179,19 @@ namespace D3vS1m.Domain.Runtime
         /// Gets the information, if the simulation is running or not. 
         /// </summary>
         public bool IsRunning { get { return _isRunning; } }
+
+        // -- indexer
+
+
+        /// <summary>
+        /// Gets the specific arguments object from the list of registered simulators.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ArgumentsBase GetArguments(string id)
+        {
+            return _simRepo[id].Arguments;
+        }
     }
 }

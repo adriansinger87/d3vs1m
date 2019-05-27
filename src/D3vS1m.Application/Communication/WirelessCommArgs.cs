@@ -17,7 +17,7 @@ namespace D3vS1m.Application.Communication
 
         public override void Reset()
         {
-            Name = Models.WirelessCommunication;
+            Name = Models.Communication.LrWpan.Key;
             TxFrequencyMHz = 2405;
             TxPowerDBm = 1;
         }

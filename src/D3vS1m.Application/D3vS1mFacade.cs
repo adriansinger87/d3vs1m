@@ -28,8 +28,6 @@ namespace D3vS1m.Application
              * the runtime needs the ability to acess the models through a list or so not a repo
              */
             Simulators = new SimulatorRepository();
-
-            Arguments = new Dictionary<string, ArgumentsBase[]>();
         }
 
         // -- methods

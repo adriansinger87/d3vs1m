@@ -182,11 +182,9 @@ namespace D3vS1m.Application.Energy
         }
 
         // -- properties
-
-        public override string Name { get { return _batteryArgs.Name; } }
-
-        public override SimulationModels Type { get { return SimulationModels.Energy; } }
-
-        public override ArgumentsBase Arguments { get { return _batteryArgs; } }
+        public override string Id => Models.Energy.Battery.Key;
+        public override string Name => Models.Energy.Battery.Key;
+        public override SimulationModels Type => SimulationModels.Energy;
+        public override ArgumentsBase Arguments => _batteryArgs;
     }
 }

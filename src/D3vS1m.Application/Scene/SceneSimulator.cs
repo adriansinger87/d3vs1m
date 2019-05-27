@@ -44,11 +44,10 @@ namespace D3vS1m.Application.Scene
 
         // -- properties
 
-        public override string Name { get { return _sceneArgs.Name; } }
-
-        public override SimulationModels Type { get { return SimulationModels.Scene; } }
-
-        public override ArgumentsBase Arguments { get { return _sceneArgs; } }
+        public override string Id => Models.Scene.Key;
+        public override string Name => Models.Scene.Key;
+        public override SimulationModels Type => SimulationModels.Scene;
+        public override ArgumentsBase Arguments => _sceneArgs;
 
     }
 }

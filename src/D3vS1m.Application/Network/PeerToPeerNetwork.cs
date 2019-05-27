@@ -18,7 +18,7 @@ namespace D3vS1m.Application.Network
         {
             _validator = new NetworkValidator();
 
-            Name = Models.PeerToPeerNetwork;
+            Name = Models.Network.Key;
 
             AssociationMatrix = new NetworkMatrix<bool>();
             DistanceMatrix = new NetworkMatrix<float>();
