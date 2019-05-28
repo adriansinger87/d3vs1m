@@ -18,14 +18,14 @@ using System.IO;
 
 namespace MSTests
 {
-    public abstract class BaseTests
+    public abstract class TestBase
     {
         [TestInitialize]
         public virtual void Arrange()
         {
             if (Log.IsNotNull == false)
             {
-                Log.Inject(new NLogger());
+                Log.Inject(new TestLogger());
             }
         }
 
@@ -49,7 +49,7 @@ namespace MSTests
                 .Importer(Sin.Net.Persistence.Constants.Csv.Key)
                 .Setup(settings)
                 .Import()
-                .With<Matrix<SphericGain>>(new TableToAntennaAdapter());
+                .As<Matrix<SphericGain>>(new TableToAntennaAdapter());
         }
 
         public RuntimeController GetRuntime()
@@ -77,7 +77,7 @@ namespace MSTests
         public List<BasicDevice> ImportDevices(string filename = "devices.json")
         {
             // arrange
-            var _setting = new FileSetting
+            var _setting = new JsonSetting
             {
                 Location = TestDataDirectory,
                 Name = filename
@@ -88,7 +88,7 @@ namespace MSTests
             List<BasicDevice> devices = io.Importer(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(_setting)
                 .Import()
-                .Get<List<BasicDevice>>();
+                .As<List<BasicDevice>>();
 
             return devices;
         }

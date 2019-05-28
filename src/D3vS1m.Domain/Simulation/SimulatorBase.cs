@@ -4,6 +4,7 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Domain.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace D3vS1m.Domain.Simulation
 {
@@ -12,18 +13,20 @@ namespace D3vS1m.Domain.Simulation
     {
         // -- fields
 
-        private RuntimeBase _runtime;
+        protected RuntimeBase _runtime;
 
         // -- events
 
         /// <summary>
         /// Shall be fired at first, when the execution of the simulation model starts 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler OnExecuting;
 
         /// <summary>
         /// Shall be fired at last, when the execution of the simulation model has finished 
         /// </summary>
+        [field: NonSerialized]
         public event SimulatorEventHandler Executed;
 
 
@@ -32,7 +35,6 @@ namespace D3vS1m.Domain.Simulation
         public SimulatorBase()
         {
             Guid = global::System.Guid.NewGuid().ToString();
-
         }
 
         public SimulatorBase(RuntimeBase runtime) : this()
@@ -50,8 +52,7 @@ namespace D3vS1m.Domain.Simulation
         {
             if (input is T)
             {
-                Type type = typeof(T);
-                target = (T)Convert.ChangeType(input, type);
+                target = (T)Convert.ChangeType(input, typeof(T));
                 return true;
             }
             else
@@ -82,7 +83,7 @@ namespace D3vS1m.Domain.Simulation
         /// <summary>
         /// The method shall be called in the Run method before the run of the concrete simulator
         /// </summary>
-        protected void BeforeExecution()
+        protected virtual void BeforeExecution()
         {
             OnExecuting?.Invoke(this, new SimulatorEventArgs(this.Arguments));
         }
@@ -90,7 +91,7 @@ namespace D3vS1m.Domain.Simulation
         /// <summary>
         /// The method shall be called in the Run method after the run of the concrete simulator
         /// </summary>
-        protected void AfterExecution()
+        protected virtual void AfterExecution()
         {
             Executed?.Invoke(this, new SimulatorEventArgs(this.Arguments));
         }
@@ -117,7 +118,7 @@ namespace D3vS1m.Domain.Simulation
 
         public string Guid { get; private set; }
 
-        public string Id => $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower();
+        public abstract string Id { get; } // => $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower();
 
         public abstract SimulationModels Type { get; }
     }

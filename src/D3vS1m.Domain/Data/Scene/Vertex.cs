@@ -5,6 +5,7 @@ namespace D3vS1m.Domain.Data.Scene
     /// <summary>
     /// The Vector represents a 3D-vector in the cartesian coordinate system with a float type for the x, y and z dimension.
     /// </summary>
+    [Serializable]
     public class Vertex
     {
         #region Constructors (2)

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MSTests.Application
 {
     [TestClass]
-    public class NetworkTests : BaseTests
+    public class NetworkTests : TestBase
     {
         private PeerToPeerNetwork _network;
 

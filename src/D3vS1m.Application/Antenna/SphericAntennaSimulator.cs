@@ -24,7 +24,6 @@ namespace D3vS1m.Application.Antenna
 
         public SphericAntennaSimulator(RuntimeBase runtime) : base(runtime)
         {
-            Name = Models.SphericAntenna;
         }
 
         /// <summary>
@@ -87,10 +86,10 @@ namespace D3vS1m.Application.Antenna
             // return the sum of all gain fractions
             return (gain.x + gain.y + gain.z + gain.w);
         }
-
-        public override ArgumentsBase Arguments { get { return _antennaArgs; } }
-        public override string Name { get; }
-        public override SimulationModels Type { get { return SimulationModels.Antenna; } }
-
+        
+        public override string Id => Models.Antenna.Spheric.Key;
+        public override string Name => Models.Antenna.Spheric.Key;
+        public override ArgumentsBase Arguments => _antennaArgs;
+        public override SimulationModels Type => SimulationModels.Antenna;
     }
 }

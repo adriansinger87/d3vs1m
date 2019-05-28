@@ -141,16 +141,13 @@ namespace D3vS1m.Application.Network
                 return new Angle(azimuth, elevation);
             });
         }
-        
+
         // -- properties       
 
-        public override ArgumentsBase Arguments { get { return _netArgs; } }
-
-        public override string Name { get { return _netArgs.Name; } }
-
-        public override SimulationModels Type { get { return SimulationModels.Network; } }
-
-
+        public override string Id => Models.Network.Key;
+        public override string Name => Models.Network.Key;
+        public override ArgumentsBase Arguments => _netArgs;
+        public override SimulationModels Type => SimulationModels.Network;
 
     }
 }

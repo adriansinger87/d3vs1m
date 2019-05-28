@@ -9,6 +9,7 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using Sin.Net.Domain.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace D3vS1m.Application
 {
@@ -23,10 +24,9 @@ namespace D3vS1m.Application
         {
             // HACK: generic is not working for session state serialization based on json strings
             /*
-             * TODO: make all models explicit and the facadew will cover the entire simulation
-             * the runtime needs the ability to acess the models through a list or so not a repo
+             * TODO: safe only the args in the session of a web-app
              */
-            SimulatorRepo = new SimulatorRepository();
+            Simulators = new SimulatorRepository();
         }
 
         // -- methods
@@ -84,13 +84,12 @@ namespace D3vS1m.Application
         /// <returns>Gives the model back</returns>
         public ISimulatable Register(ISimulatable simulator)
         {
-            if (SimulatorRepo.Contains(simulator))
+            if (Simulators.Contains(simulator))
             {
                 Log.Error($"The Simulation model '{simulator.Name}' must not registered twice.");
                 return simulator;
             }
-
-            SimulatorRepo.Add(simulator);
+            Simulators.Add(simulator);
             return simulator;
         }
 
@@ -124,6 +123,8 @@ namespace D3vS1m.Application
 
         // -- properties
 
-        public SimulatorRepository SimulatorRepo { get; }
+        public SimulatorRepository Simulators { get; }
+
+        public Dictionary<string, ArgumentsBase[]> Arguments { get; }
     }
 }

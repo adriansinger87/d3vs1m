@@ -8,7 +8,7 @@ using System.Text;
 namespace MSTests.Domain
 {
     [TestClass]
-    public class ConstTests : BaseTests
+    public class ConstTests : TestBase
     {
         [TestInitialize]
         public override void Arrange()

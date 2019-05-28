@@ -14,7 +14,7 @@ namespace D3vS1m.Application.Antenna
 
         public override void Reset()
         {
-            Name = Models.SimpleAntenna;
+            Name = Models.Antenna.Simple.Key;
         }
 
         /// <summary>

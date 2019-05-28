@@ -1,13 +1,11 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
-using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Web.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Sin.Net.Domain.Logging;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -17,7 +15,7 @@ namespace D3vS1m.Web.Controllers.Api
     {
         // -- fields
 
-        private const string CONTEXT = "Arguments";
+        private const string CONTEXT = "CONTEXT";
         protected readonly IHostingEnvironment _hostingEnvironment;
         private readonly string _webRootPath;
         private readonly string _dataPath;
@@ -68,7 +66,8 @@ namespace D3vS1m.Web.Controllers.Api
         }
 
         /// <summary>
-        /// Gets a data object from the session by its key or returns a new instance of the type T
+        /// Gets a data object from the session by its key or returns a new instance of the type T.
+        /// If a new object is created it will not automatically safed.
         /// </summary>
         /// <typeparam name="T">The target type T</typeparam>
         /// <param name="key">The key as an accesor to the session</param>
@@ -82,7 +81,6 @@ namespace D3vS1m.Web.Controllers.Api
                 if (HttpContext.Session.Keys.Contains(key) == false)
                 {
                     data = new T();
-                    HttpContext.Session.SetData(key, data);
                     created = true;
                 }
                 else
@@ -118,34 +116,28 @@ namespace D3vS1m.Web.Controllers.Api
         }
         #endregion
 
-        public void Load(out D3vS1mFacade context)
+        /// <summary>
+        /// Loads the context objcet from the session or creates a new one and saves it
+        /// </summary>
+        /// <param name="context">The loaded or created context</param>
+        protected void LoadContext(out D3vS1mFacade context)
         {
-            context = GetContext();
-        }
-
-        protected void Save(D3vS1mFacade context)
-        {
-            SetContext(context);
-        }
-
-        // -- private methods
-
-        private List<ArgumentsBase> GetContext()
-        {          
-            var context = GetOrNew<List<ArgumentsBase>>(CONTEXT, out bool created);
+            context = GetOrNew<D3vS1mFacade>(CONTEXT, out bool created);
 
             if (created)
             {
-
+                context.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
+                SaveContext(context);
             }
-
-            return context;
         }
 
-        private void SetContext(List<ArgumentsBase> arguments)
+        /// <summary>
+        /// Saves the context object to the current session
+        /// </summary>
+        /// <param name="context"></param>
+        protected void SaveContext(D3vS1mFacade context)
         {
-            Set(CONTEXT, arguments);
+            Set(CONTEXT, context);
         }
-
     }
 }

@@ -1,6 +1,16 @@
-﻿using D3vS1m.Web.System.Enumerations;
+﻿using D3vS1m.Application.Antenna;
+using D3vS1m.Application.Channel;
+using D3vS1m.Application.Communication;
+using D3vS1m.Application.Energy;
+using D3vS1m.Application.Network;
+using D3vS1m.Application.Scene;
+using D3vS1m.Web.System.Enumerations;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Sin.Net.Persistence.IO;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Runtime.Serialization;
@@ -11,7 +21,7 @@ namespace D3vS1m.Web.Extensions
     public static class SessionExtensions
     {
 
-        public static void SetData(this ISession session, string key, object data, SessionStorages storage = SessionStorages.Json)
+        public static void SetData(this ISession session, string key, object data, SessionStorages storage = SessionStorages.Binary)
         {
             switch (storage)
             {
@@ -27,7 +37,7 @@ namespace D3vS1m.Web.Extensions
             }
         }
 
-        public static T GetData<T>(this ISession session, string key, SessionStorages storage = SessionStorages.Json)
+        public static T GetData<T>(this ISession session, string key, SessionStorages storage = SessionStorages.Binary)
         {
             switch (storage)
             {
@@ -44,30 +54,20 @@ namespace D3vS1m.Web.Extensions
 
         private static void SetJson(ISession session, string key, object data)
         {
-            session.SetString(key, JsonConvert.SerializeObject(data));
+            session.SetString(key, JsonIO.ToJsonString(data, ContextBinder));
         }
 
         private static T GetJson<T>(ISession session, string key)
         {
-            var data = session.GetString(key);
-            return data == null ? default(T) : JsonConvert.DeserializeObject<T>(data);
+            var json = session.GetString(key);
+            return (json ==null ? default(T) : JsonIO.FromJsonString<T>(json, ContextBinder));
         }
 
         // -- binary
 
         private static void SetBinary(this ISession session, string key, object data)
         {
-            byte[] bytes;
-            IFormatter formatter = new BinaryFormatter();
-            using (MemoryStream stream = new MemoryStream())
-            {
-                using (var ds = new DeflateStream(stream, CompressionMode.Compress, true))
-                {
-                    formatter.Serialize(ds, data);
-                }
-                bytes = stream.ToArray();
-            }
-
+            byte[] bytes = BinaryIO.ToBytes(data);
             session.Set(key, bytes);
         }
 
@@ -76,16 +76,38 @@ namespace D3vS1m.Web.Extensions
             T data = default(T);
             var bytes = session.Get(key);
 
-            IFormatter formatter = new BinaryFormatter();
-            using (var stream = new MemoryStream(bytes))
-            {
-                using (var ds = new DeflateStream(stream, CompressionMode.Decompress, true))
-                {
-                    data = (T)formatter.Deserialize(ds);
-                }
-            }
+            data = BinaryIO.FromBytes<T>(bytes);
 
             return data;
+        }
+
+        private static ISerializationBinder _binder;
+
+        private static ISerializationBinder ContextBinder
+        {
+            get
+            {
+                if (_binder == null)
+                {
+                    _binder = new TypedSerializationBinder(new List<Type> {
+                        typeof(AdaptedFriisArgs),
+                        typeof(AdaptedFriisSimulator),
+                        typeof(SimpleAntennaArgs),
+                        typeof(SimpleAntennaSimulator),
+                        typeof(SphericAntennaArgs),
+                        typeof(SphericAntennaSimulator),
+                        typeof(WirelessCommArgs),
+                        typeof(LRWPANSimulator),
+                        typeof(BatteryArgs),
+                        typeof(BatteryPackSimulator),
+                        typeof(NetworkArgs),
+                        typeof(PeerToPeerNetworkSimulator),
+                        typeof(InvariantSceneArgs),
+                        typeof(SceneSimulator)
+                    });
+                }
+                return _binder;
+            }
         }
     }
 }

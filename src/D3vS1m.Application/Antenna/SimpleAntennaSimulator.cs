@@ -38,11 +38,10 @@ namespace D3vS1m.Application.Antenna
 
         // -- properties
 
-        public override string Name { get { return _args.Name; } }
-
-        public override SimulationModels Type { get { return SimulationModels.Antenna; } }
-
-        public override ArgumentsBase Arguments { get { return _args; } }
+        public override string Id => Models.Antenna.Simple.Key;
+        public override string Name => Models.Antenna.Simple.Key;
+        public override SimulationModels Type => SimulationModels.Antenna;
+        public override ArgumentsBase Arguments => _args;
 
     }
 }
