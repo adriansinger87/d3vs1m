@@ -1,11 +1,13 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Web.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Sin.Net.Domain.Logging;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -15,11 +17,10 @@ namespace D3vS1m.Web.Controllers.Api
     {
         // -- fields
 
-        private const string CONTEXT = "CONTEXT";
+        private const string CONTEXT = "Arguments";
         protected readonly IHostingEnvironment _hostingEnvironment;
         private readonly string _webRootPath;
         private readonly string _dataPath;
-        private readonly string _jobsPath;
 
         // -- constructor
 
@@ -32,7 +33,6 @@ namespace D3vS1m.Web.Controllers.Api
             _hostingEnvironment = env;
             _webRootPath = Path.Combine(_hostingEnvironment.WebRootPath);
             _dataPath = Path.Combine(_hostingEnvironment.ContentRootPath, "App_Data");
-            _jobsPath = Path.Combine(_dataPath, "jobs");
         }
 
         // -- methods
@@ -130,22 +130,21 @@ namespace D3vS1m.Web.Controllers.Api
 
         // -- private methods
 
-        private D3vS1mFacade GetContext()
-        {
-            var context = GetOrNew<D3vS1mFacade>(CONTEXT, out bool created);
+        private List<ArgumentsBase> GetContext()
+        {          
+            var context = GetOrNew<List<ArgumentsBase>>(CONTEXT, out bool created);
 
             if (created)
             {
-                context.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
-                SetContext(context);
+
             }
 
             return context;
         }
 
-        private void SetContext(D3vS1mFacade context)
+        private void SetContext(List<ArgumentsBase> arguments)
         {
-            Set(CONTEXT, context);
+            Set(CONTEXT, arguments);
         }
 
     }

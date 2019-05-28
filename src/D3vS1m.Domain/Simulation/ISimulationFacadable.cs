@@ -12,6 +12,8 @@ namespace D3vS1m.Domain.Simulation
 
         ISimulatable Register(ISimulatable simulator, ArgumentsBase args);
 
+        // -- properties
+
         SimulatorRepository SimulatorRepo { get; }
     }
 }

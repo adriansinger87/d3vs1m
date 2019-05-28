@@ -1,6 +1,8 @@
-﻿using D3vS1m.Domain.System.Enumerations;
+﻿using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Domain.Repository;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace D3vS1m.Domain.Simulation
@@ -15,12 +17,19 @@ namespace D3vS1m.Domain.Simulation
 
         // -- methods
 
+        public void SetArguments(string id, ArgumentsBase args)
+        {
+            this[id].With(args);
+        }
+
         public ISimulatable GetByName(string name)
         {
             return Items.FirstOrDefault(s => s.Name == name);
         }
 
         // -- properties
+
+        public ArgumentsBase[] AllArguments => Items.Select(s => s.Arguments).ToArray();
 
         // -- indexer
 
@@ -30,7 +39,6 @@ namespace D3vS1m.Domain.Simulation
         /// <param name="id">id property in the simulator instances</param>
         /// <returns>the first instance of T with the matching Id property</returns>
         public ISimulatable this[string id] => Items.FirstOrDefault(s => s.Id == id);
-
 
         public ISimulatable this[SimulationModels type] => Items.FirstOrDefault(s => s.Type == type);
 

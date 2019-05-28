@@ -32,7 +32,7 @@ namespace D3vS1m.Application.Scene
         public override ISimulatable With(ArgumentsBase arguments)
         {
             if (ConvertArgs(arguments, ref _sceneArgs))     return this;
-            else                                        return ArgsNotAdded(arguments.Name);
+            else                                            return ArgsNotAdded(arguments.Name);
         }
 
         public override void Run()
