@@ -15,8 +15,14 @@ The provided simulation models are shown in the following list The checked model
 - [ ] communication model
 - [x] energy model
  
+## Prerequisites
+
+coming soon...
+
 ## Development
 
-**Visual Studio**
+Coming soon for **Visual Studio** nad for **VS Code**
 
-**VS Code**
+## Running
+
+coming soon...
