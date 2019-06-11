@@ -26,5 +26,3 @@ Coming soon for **Visual Studio** nad for **VS Code**
 ## Running
 
 coming soon...
-
-
