@@ -10,23 +10,28 @@ using D3vS1m.Domain.Simulation;
 using Sin.Net.Domain.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace D3vS1m.Application
 {
-    [Serializable]
-    public class D3vS1mFacade : ISimulationFacadable
+    /// <summary>
+    /// This is the implementation of the factory-pattern to create simulator-objects and attach arguments to it.
+    /// </summary>
+    public class D3vS1mFactory : FactoryBase
     {
         // -- fields
 
+        private RuntimeBase _runtime;
+
         // -- constructors
 
-        public D3vS1mFacade()
+        public D3vS1mFactory(RuntimeBase runtime) : base(runtime)
         {
             // HACK: generic is not working for session state serialization based on json strings
             /*
              * TODO: safe only the args in the session of a web-app
              */
-            Simulators = new SimulatorRepository();
+            base.Simulators = new SimulatorRepository();
         }
 
         // -- methods
@@ -35,46 +40,31 @@ namespace D3vS1m.Application
         /// Registers all relevant simulation models in the repository and
         /// sets up all simulator arguments.
         /// </summary>
-        public void RegisterPredefined(RuntimeBase runtime)
+        public override void RegisterPredefined()
         {
             Log.Trace("Register simulation models for D3vS1m Application");
 
-            // arguments
-            var netArgs = new NetworkArgs();
-            var sceneArgs = new InvariantSceneArgs();
-            var simpleAntennaArgs = new SimpleAntennaArgs();
-            var sphericAntennaArgs = new SphericAntennaArgs();
-            var radioArgs = new AdaptedFriisArgs();
-            var comArgs = new WirelessCommArgs();
-            var energyArgs = new BatteryArgs();
 
             // network
-            Register(new PeerToPeerNetworkSimulator(runtime), netArgs);
+            Register(new PeerToPeerNetworkSimulator(_runtime));
 
             // scene
-            Register(new SceneSimulator(runtime), sceneArgs);
+            Register(new SceneSimulator(_runtime));
 
             // radio channel
-            Register(new AdaptedFriisSimulator(runtime), new ArgumentsBase[] {
-                radioArgs,
-                comArgs,
-                sceneArgs
-            });
+            Register(new AdaptedFriisSimulator(_runtime));
 
             // anntenna
-            Register(new SimpleAntennaSimulator(runtime), simpleAntennaArgs);
-            Register(new SphericAntennaSimulator(runtime), sphericAntennaArgs);
+            Register(new SimpleAntennaSimulator(_runtime));
+            Register(new SphericAntennaSimulator(_runtime));
 
             // devices
 
             // communication
-            Register(new LRWPANSimulator(runtime), comArgs);
+            Register(new LRWPANSimulator(_runtime));
 
             // energy
-            Register(new BatteryPackSimulator(runtime), new ArgumentsBase[] {
-                energyArgs,
-                runtime.Arguments
-            });
+            Register(new BatteryPackSimulator(_runtime));
         }
 
         /// <summary>
@@ -82,7 +72,7 @@ namespace D3vS1m.Application
         /// </summary>
         /// <param name="simulator">simulation model instance</param>
         /// <returns>Gives the model back</returns>
-        public ISimulatable Register(ISimulatable simulator)
+        public override ISimulatable Register(ISimulatable simulator)
         {
             if (Simulators.Contains(simulator))
             {
@@ -100,7 +90,7 @@ namespace D3vS1m.Application
         /// <param name="simulator">simulation model instance</param>
         /// <param name="args">The argument instance for the model</param>
         /// <returns>Gives the model back</returns>
-        public ISimulatable Register(ISimulatable simulator, ArgumentsBase args)
+        public override ISimulatable Register(ISimulatable simulator, ArgumentsBase args)
         {
             simulator.With(args);
             return Register(simulator);
@@ -112,7 +102,7 @@ namespace D3vS1m.Application
         /// <param name="simulator">simulation model instance</param>
         /// <param name="argsArray">The array of argument instances for the model</param>
         /// <returns>Gives the model back</returns>
-        public ISimulatable Register(ISimulatable simulator, ArgumentsBase[] argsArray)
+        public override ISimulatable Register(ISimulatable simulator, ArgumentsBase[] argsArray)
         {
             foreach (var a in argsArray)
             {
@@ -123,8 +113,5 @@ namespace D3vS1m.Application
 
         // -- properties
 
-        public SimulatorRepository Simulators { get; }
-
-        public Dictionary<string, ArgumentsBase[]> Arguments { get; }
     }
 }

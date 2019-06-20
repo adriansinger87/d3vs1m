@@ -49,7 +49,7 @@
     function getSimulators() {
 
         $.ajax({
-            url: "/api/v2/Simulators",
+            url: "/api/Arguments",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             datatype: 'json',

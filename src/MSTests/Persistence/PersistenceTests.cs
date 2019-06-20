@@ -26,16 +26,15 @@ namespace MSTests.Persistence
         public void ConvertContextToByteArray()
         {
             // arrange
-            var context = new D3vS1mFacade();
-            context.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
+            var factory = new D3vS1mFactory(new RuntimeController(new D3vS1mValidator()));
+            factory.RegisterPredefined();
 
             // act
-            var bytes = BinaryIO.ToBytes(context);
-
-            var result = BinaryIO.FromBytes<D3vS1mFacade>(bytes);
+            var bytes = BinaryIO.ToBytes(factory);
+            var result = BinaryIO.FromBytes<D3vS1mFactory>(bytes);
 
             // assert
-            Assert.AreEqual(result.Simulators.Count, context.Simulators.Count);
+            Assert.AreEqual(result.Simulators.Count, factory.Simulators.Count);
         }
     }
 }

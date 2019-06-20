@@ -78,24 +78,24 @@ namespace MSTests.Application
         public async Task RunPredefinedSimulation()
         {
             // arrange
-            var facade = new D3vS1mFacade();
-            facade.RegisterPredefined(_runtime);
-            var antennaArgs = facade.Simulators.GetByName(Models.Antenna.Spheric.Key).Arguments as SphericAntennaArgs;
+            var factory = new D3vS1mFactory(_runtime);
+            factory.RegisterPredefined();
+            var antennaArgs = factory.Simulators.GetByName(Models.Antenna.Spheric.Key).Arguments as SphericAntennaArgs;
             base.LoadAntennaData(antennaArgs);
-            var netArgs = facade.Simulators[SimulationModels.Network].Arguments as NetworkArgs;
+            var netArgs = factory.Simulators[SimulationModels.Network].Arguments as NetworkArgs;
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
-            facade.Simulators[SimulationModels.Network].With(netArgs);
+            factory.Simulators[SimulationModels.Network].With(netArgs);
 
             // special setup
             _runtime.Started += (o, e) =>
             {
-                facade.Simulators[SimulationModels.Channel].With(base.GetRadioArgs());
+                factory.Simulators[SimulationModels.Channel].With(base.GetRadioArgs());
             };
             
             // act
             int iterations = 5;
-            if (_runtime.Setup(facade.Simulators).Validate() == false)
+            if (_runtime.Setup(factory.Simulators).Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");
             }
@@ -112,10 +112,10 @@ namespace MSTests.Application
         public void RegisterSimulation()
         {
             // arrange
-            var facade = new D3vS1mFacade();
+            var facade = new D3vS1mFactory(_runtime);
 
             // act
-            facade.RegisterPredefined(_runtime);
+            facade.RegisterPredefined();
 
             // assert
             Assert.IsTrue(facade.Simulators.Count >= 4, "not enough simulators registered");

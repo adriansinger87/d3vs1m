@@ -10,7 +10,8 @@ namespace D3vS1m.Domain.Data.Arguments
     {
         public ArgumentsBase()
         {
-             Guid = global::System.Guid.NewGuid().ToString();
+            Guid = global::System.Guid.NewGuid().ToString();
+            Active = false;
         }
 
         // -- methods
@@ -38,6 +39,11 @@ namespace D3vS1m.Domain.Data.Arguments
         /// Gets the global Identifier of the arguments instance
         /// </summary>
         public string Guid { get; set; }
+
+        /// <summary>
+        /// Gets or sets if the corresponding simulator shall be used in the runtime or not.
+        /// </summary>
+        public bool Active { get; set; }
 
     }
 }

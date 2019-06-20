@@ -1,6 +1,7 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Web.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +16,14 @@ namespace D3vS1m.Web.Controllers.Api
     {
         // -- fields
 
-        private const string CONTEXT = "CONTEXT";
         protected readonly IHostingEnvironment _hostingEnvironment;
+        protected FactoryBase _factory;
+
+        private const string CONTEXT = "CONTEXT";
         private readonly string _webRootPath;
         private readonly string _dataPath;
+
+
 
         // -- constructor
 
@@ -26,9 +31,11 @@ namespace D3vS1m.Web.Controllers.Api
         /// Constructor that initializes the paths on the web server for perstence access
         /// </summary>
         /// <param name="p_env">hosting environemnt with path information</param>
-        public ApiControllerBase(IHostingEnvironment env)
+        public ApiControllerBase(IHostingEnvironment env, FactoryBase factory)
         {
             _hostingEnvironment = env;
+            _factory = factory;
+
             _webRootPath = Path.Combine(_hostingEnvironment.WebRootPath);
             _dataPath = Path.Combine(_hostingEnvironment.ContentRootPath, "App_Data");
         }
@@ -120,14 +127,14 @@ namespace D3vS1m.Web.Controllers.Api
         /// Loads the context objcet from the session or creates a new one and saves it
         /// </summary>
         /// <param name="context">The loaded or created context</param>
-        protected void LoadContext(out D3vS1mFacade context)
+        protected void LoadContext(out ArgumentsBase[] args)
         {
-            context = GetOrNew<D3vS1mFacade>(CONTEXT, out bool created);
+            args = GetOrNew<object>(CONTEXT, out bool created) as ArgumentsBase[];
 
             if (created)
             {
-                context.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
-                SaveContext(context);
+                args = _factory.Arguments;
+                SaveContext(args);
             }
         }
 
@@ -135,9 +142,9 @@ namespace D3vS1m.Web.Controllers.Api
         /// Saves the context object to the current session
         /// </summary>
         /// <param name="context"></param>
-        protected void SaveContext(D3vS1mFacade context)
+        protected void SaveContext(ArgumentsBase[] args)
         {
-            Set(CONTEXT, context);
+            Set(CONTEXT, args);
         }
     }
 }

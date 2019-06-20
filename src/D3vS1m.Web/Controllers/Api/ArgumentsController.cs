@@ -15,19 +15,25 @@ namespace D3vS1m.Web.Controllers.Api
     [ApiController]
     public class ArgumentsController : ApiControllerBase
     {
-        public ArgumentsController(IHostingEnvironment env) : base(env)
+        public ArgumentsController(IHostingEnvironment env, D3vS1mFactory factory) : base(env, factory)
         {
 
+        }
+
+        // GET: api/Arguments
+        [HttpGet]
+        public JsonResult Get()
+        {
+            LoadContext(out ArgumentsBase[] args);
+            return new JsonResult(args);
         }
 
         // GET: api/Arguments/id
         [HttpGet("{id}")]
         public JsonResult Get(string id)
         {
-            LoadContext(out D3vS1mFacade context);
-
-            var simulator = context.Simulators[id];
-            return new JsonResult(simulator.Arguments);
+            LoadContext(out ArgumentsBase[] args);
+            return new JsonResult(args);
         }
 
         // PUT: api/Arguments/id
@@ -36,9 +42,9 @@ namespace D3vS1m.Web.Controllers.Api
         {
             try
             {
-                LoadContext(out D3vS1mFacade context);
+                LoadContext(out ArgumentsBase[] arguments);
 
-                var simulator = context.Simulators[id];
+                var simulator = _factory.Simulators[id];
                 var type = simulator.Arguments.GetType();
                 var args = JsonConvert.DeserializeObject(value, type);
 
@@ -46,10 +52,11 @@ namespace D3vS1m.Web.Controllers.Api
                 {
                     throw new Exception("value could not be deserialized");
                 }
+
                 simulator.With(args as ArgumentsBase);
 
                 // safe session
-                SaveContext(context);
+                SaveContext(arguments);
             }
             catch (Exception ex)
             {

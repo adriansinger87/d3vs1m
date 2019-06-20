@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Simulation\ISimulationFacadable.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Sin.Net.Domain" Version="0.0.12" />
   </ItemGroup>
 

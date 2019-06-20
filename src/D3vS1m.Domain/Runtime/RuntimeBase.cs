@@ -133,6 +133,7 @@ namespace D3vS1m.Domain.Runtime
 
                 while (_isRunning)
                 {
+                    // iterate all active simulation models
                     foreach (ISimulatable sim in _simRepo.Items)
                     {
                         sim.Run();
