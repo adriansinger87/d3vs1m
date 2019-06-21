@@ -7,7 +7,7 @@ namespace D3vS1m.Application.Antenna
     [Serializable]
     public class SphericAntennaArgs : ArgumentsBase
     {
-        public SphericAntennaArgs()
+        public SphericAntennaArgs() : base()
         {
             Reset();
         }

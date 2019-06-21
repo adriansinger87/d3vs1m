@@ -9,7 +9,7 @@ namespace D3vS1m.Application.Channel
     [Serializable]
     public class AdaptedFriisArgs : ArgumentsBase
     {
-        public AdaptedFriisArgs()
+        public AdaptedFriisArgs() : base()
         {
             Reset();
         }

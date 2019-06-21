@@ -8,9 +8,7 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using Sin.Net.Domain.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace D3vS1m.Application
 {
@@ -22,6 +20,7 @@ namespace D3vS1m.Application
         // -- fields
 
         private RuntimeBase _runtime;
+
 
         // -- constructors
 
@@ -35,6 +34,59 @@ namespace D3vS1m.Application
         }
 
         // -- methods
+
+
+
+        public override ArgumentsBase GetArgument(string name)
+        {
+            switch (name)
+            {
+                case Models.Network.Key:
+                    return new NetworkArgs();
+
+                case Models.Scene.Key:
+                    return new InvariantSceneArgs();
+
+                case Models.Channel.AdaptedFriis.Key:
+                    return new AdaptedFriisArgs();
+
+                case Models.Antenna.Spheric.Key:
+                    return new SphericAntennaArgs();
+
+                case Models.Antenna.Simple.Key:
+                    return new SimpleAntennaArgs();
+
+                case Models.Antenna.Flat.Key:
+                    return new FlatAntennaArgs();
+
+                case Models.Communication.LrWpan.Key:
+                    return new WirelessCommArgs();
+
+                case Models.Energy.Battery.Key:
+                    return new BatteryArgs();
+
+                default:
+                    return null;
+            }
+        }
+
+        public override ArgumentsBase[] GetPredefinedArguemnts()
+        {
+            var args = new List<ArgumentsBase>
+            {
+                GetArgument(Models.Network.Key),
+                GetArgument(Models.Scene.Key),
+                GetArgument(Models.Channel.AdaptedFriis.Key),
+                GetArgument(Models.Antenna.Spheric.Key),
+                GetArgument(Models.Antenna.Simple.Key),
+                GetArgument(Models.Antenna.Flat.Key),
+                GetArgument(Models.Communication.LrWpan.Key),
+                GetArgument(Models.Energy.Battery.Key)
+
+            };
+            return args.ToArray();
+        }
+
 
         /// <summary>
         /// Registers all relevant simulation models in the repository and
@@ -111,7 +163,12 @@ namespace D3vS1m.Application
             return Register(simulator);
         }
 
+
+
+
         // -- properties
+
+        public override ArgumentsBase[] Arguments => base.Simulators.AllArguments;
 
     }
 }

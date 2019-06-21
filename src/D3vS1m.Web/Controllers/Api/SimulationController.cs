@@ -11,11 +11,14 @@ namespace D3vS1m.Web.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SimulationController : ApiControllerBase
+    public class SimulationController : ControllerBase
     {
+        IHostingEnvironment _env;
+        FactoryBase _factory;
 
-        public SimulationController(IHostingEnvironment env, FactoryBase factory) : base(env, factory)
+        public SimulationController(IHostingEnvironment env, FactoryBase factory)
         {
+            _env = env;
             _factory = factory;
         }
 

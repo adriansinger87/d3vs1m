@@ -18,7 +18,7 @@
     function initActions() {
 
         $(document).ready(function () {
-            appVue.getSimulators();
+            appVue.getArguments();
         });
     }
 
@@ -33,20 +33,19 @@
         appVue = new Vue({
             el: '#app-vue',
             data: {
-                message: 'Hello',
-                simulators: null,
-                currentId: null,
-                arguments: null
+                currentGuid: null,
+                arguments: null,
+                arg: null
             },
             methods: {
-                getSimulators: getSimulators,
                 getArguments: getArguments,
-                updateArguments: updateArguments
+                getArgument: getArgument,
+                updateArgument: updateArgument
             }
         });
     }
 
-    function getSimulators() {
+    function getArguments () {
 
         $.ajax({
             url: "/api/Arguments",
@@ -59,14 +58,14 @@
             },
             success: function (result) {
                 console.info(result);
-                appVue.simulators = result;
+                appVue.arguments = result;
             }
         });
     }
 
-    function getArguments(id) {
+    function getArgument(id) {
 
-        appVue.currentId = id;
+        appVue.currentGuid = id;
         $.ajax({
             url: "/api/Arguments/" + id,
             type: 'GET',
@@ -78,8 +77,8 @@
             },
             success: function (result) {    
                 console.debug(result);
-                appVue.arguments = result;
-                var str = JSON.stringify(appVue.arguments, null, 2);
+                appVue.arg = result;
+                var str = JSON.stringify(appVue.arg, null, 2);
                 editor.setValue(str);
                 editor.clearSelection();
 
@@ -88,7 +87,7 @@
         });
     }
 
-    function updateArguments(id) {
+    function updateArgument(id) {
 
         var code = editor.getValue();
 

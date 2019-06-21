@@ -7,7 +7,7 @@ namespace D3vS1m.Application.Antenna
     public class SimpleAntennaArgs : ArgumentsBase
     {
 
-        public SimpleAntennaArgs()
+        public SimpleAntennaArgs() : base()
         {
             Reset();
         }

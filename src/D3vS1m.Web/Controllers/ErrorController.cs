@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.AspNetCore.WebUtilities;
 using D3vS1m.Web.Models;
+using Sin.Net.Domain.Logging;
 
 namespace MPM.Web.Injection.Controllers
 {
@@ -25,6 +26,12 @@ namespace MPM.Web.Injection.Controllers
                 StatusMessage = ReasonPhrases.GetReasonPhrase(Response.StatusCode),
                 Exception = feature?.Error
             };
+
+            Log.Error($"An error occured with status {error.StatusCode} - {error.StatusMessage}", this);
+            if (error.Exception != null)
+            {
+                Log.Fatal(error.Exception);
+            }
 
             return View(error);
         }

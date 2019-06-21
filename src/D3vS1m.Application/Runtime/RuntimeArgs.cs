@@ -7,7 +7,7 @@ namespace D3vS1m.Application.Runtime
     [Serializable]
     public class RuntimeArgs : ArgumentsBase
     {
-        public RuntimeArgs()
+        public RuntimeArgs() : base()
         {
             Name = Models.Runtime.Key;
             CycleDuration = TimeSpan.FromSeconds(Const.Runtime.IncrementSeconds);

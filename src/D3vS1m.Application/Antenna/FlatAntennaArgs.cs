@@ -6,14 +6,14 @@ namespace D3vS1m.Application.Antenna
     [Serializable]
     public class FlatAntennaArgs : ArgumentsBase
     {
-        public FlatAntennaArgs()
+        public FlatAntennaArgs() : base()
         {
             Reset();
         }
 
         public override void Reset()
         {
-            base.Name = "flat antenna model";
+            base.Name = Models.Antenna.Flat.Key;
         }
 
         /// <summary>

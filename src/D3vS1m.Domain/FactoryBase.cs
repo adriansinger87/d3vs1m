@@ -19,6 +19,9 @@ namespace D3vS1m.Application
 
         // -- methods
 
+        public abstract ArgumentsBase GetArgument(string name);
+        public abstract ArgumentsBase[] GetPredefinedArguemnts();
+
         public abstract ISimulatable Register(ISimulatable simulator);
         public abstract ISimulatable Register(ISimulatable simulator, ArgumentsBase args);
         public abstract ISimulatable Register(ISimulatable simulator, ArgumentsBase[] argsArray);
@@ -26,7 +29,7 @@ namespace D3vS1m.Application
 
         // -- properties
 
-        public ArgumentsBase[] Arguments { get; }
+        public abstract ArgumentsBase[] Arguments { get; }
         public SimulatorRepository Simulators { get; protected set; }
     }
 }

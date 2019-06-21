@@ -9,7 +9,7 @@ namespace D3vS1m.Application.Energy
     {
         // 
 
-        public BatteryArgs()
+        public BatteryArgs() : base()
         {
             Reset();
         }
