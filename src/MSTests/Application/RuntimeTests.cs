@@ -124,31 +124,5 @@ namespace MSTests.Application
             var runArgs = _runtime.Arguments as RuntimeArgs;
             Assert.IsTrue(runArgs.Iterations == 5, $"simulation should have passed {iterations} iterations");
         }
-
-        [TestMethod]
-        public async Task RunAsync()
-        {
-            // arrange
-            int timing;
-            if (_runtime.Setup(_repo).Validate() == false)
-            {
-                Assert.Fail("error on validating the simulation");
-            }
-
-            // act 3 iterations
-            timing = 3;
-            Log.Trace($"RunAsync for {timing} times");
-            await _runtime.RunAsync(timing);
-
-            // act 3 seconds of running simulation
-            timing = 3000;
-            Log.Trace($"RunAsync for {timing} ms");
-            await _runtime.RunAsync((runtime) =>
-            {
-                var args = runtime.Arguments as RuntimeArgs;
-                return (DateTime.Now - args.StartTime).TotalMilliseconds <= timing ? true : false;
-            });
-
-        }
     }
 }
