@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace D3vS1m.Web.Extensions
+namespace D3vS1m.Domain.System.Extensions
 {
     public static class ArgumentsBaseArrayExtensions
     {

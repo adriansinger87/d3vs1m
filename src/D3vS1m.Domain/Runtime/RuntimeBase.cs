@@ -183,16 +183,17 @@ namespace D3vS1m.Domain.Runtime
 
         // -- indexer
 
+        public SimulatorRepository Simulators => _simRepo;
 
-        /// <summary>
-        /// Gets the specific arguments object from the list of registered simulators.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public ArgumentsBase GetArguments(string id)
-        {
-            return _simRepo[id].Arguments;
-        }
+        ///// <summary>
+        ///// Gets the specific arguments object from the list of registered simulators.
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //public ArgumentsBase GetArguments(string id)
+        //{
+        //    return _simRepo.AllArguments[id].Arguments;
+        //}
     }
 }

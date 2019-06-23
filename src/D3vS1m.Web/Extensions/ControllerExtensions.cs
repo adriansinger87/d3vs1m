@@ -6,11 +6,6 @@ namespace D3vS1m.Web.Extensions
 {
     public static class ControllerExtensions
     {
-        public static void LoadArguments(this ControllerBase controller)
-        {
-            //HttpSession().Get
-        }
-
         public static ISession HttpSession(this ControllerBase controller)
         {
             if (controller.HttpContext == null)

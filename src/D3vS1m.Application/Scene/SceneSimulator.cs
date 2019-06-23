@@ -15,13 +15,6 @@ namespace D3vS1m.Application.Scene
 
         // -- constructors
 
-        /// <summary>
-        /// Baware: no runtime will be usable
-        /// </summary>
-        public SceneSimulator() : this(null)
-        {
-        }
-
         public SceneSimulator(RuntimeBase runtime) : base(runtime)
         {
 

@@ -62,6 +62,9 @@ namespace D3vS1m.Application.Runtime
                     string property = (!string.IsNullOrEmpty(failure.PropertyName) ? $" property: {failure.PropertyName}" : "");
                     Log.Error($"failed validation: {failure.ErrorMessage}{property}");
                 }
+            } else
+            {
+                Log.Info("Validation passed");
             }
 
             // store and return total result

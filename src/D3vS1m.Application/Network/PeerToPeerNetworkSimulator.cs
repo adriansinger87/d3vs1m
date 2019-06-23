@@ -17,13 +17,6 @@ namespace D3vS1m.Application.Network
 
         // -- constructor
 
-        /// <summary>
-        /// Baware: no runtime will be usable
-        /// </summary>
-        public PeerToPeerNetworkSimulator() : this(null)
-        {
-        }
-
         public PeerToPeerNetworkSimulator(RuntimeBase runtime) : base(runtime)
         {
         }

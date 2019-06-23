@@ -19,13 +19,15 @@ namespace D3vS1m.Application
 
         // -- methods
 
-        public abstract ArgumentsBase GetArgument(string name);
+        public abstract ArgumentsBase NewArgument(string name);
+
+        public abstract ISimulatable NewSimulator(string name);
+
         public abstract ArgumentsBase[] GetPredefinedArguemnts();
 
-        public abstract ISimulatable Register(ISimulatable simulator);
-        public abstract ISimulatable Register(ISimulatable simulator, ArgumentsBase args);
-        public abstract ISimulatable Register(ISimulatable simulator, ArgumentsBase[] argsArray);
-        public abstract void RegisterPredefined();
+        public abstract ISimulatable RegisterSimulator(ISimulatable simulator, ArgumentsBase args);
+
+        public abstract SimulatorRepository CreateSimulation(ArgumentsBase[] args);
 
         // -- properties
 

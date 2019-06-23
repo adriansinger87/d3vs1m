@@ -6,6 +6,7 @@ using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Domain.System.Extensions;
 using Sin.Net.Domain.Logging;
 using System;
 using System.Diagnostics;
@@ -125,12 +126,15 @@ namespace D3vS1m.Application.Channel
         protected sealed override void OnStarted(object sender, SimulatorEventArgs e)
         {
             ConvertArgs(
-                _runtime.GetArguments(Models.Communication.LrWpan.Key),
+                _runtime?.Simulators.AllArguments.GetByName(Models.Communication.LrWpan.Key),
                 ref _commArgs);
 
             ConvertArgs(
-                _runtime.GetArguments(Models.Scene.Key),
+                _runtime?.Simulators.AllArguments.GetByName(Models.Scene.Key),
                 ref _sceneArgs);
+
+            // override the rx positions field
+            _radioArgs.RxPositions = _radioArgs.RadioBox.CreateRxPositions();
         }
 
         // -- properties

@@ -32,13 +32,15 @@ namespace D3vS1m.Domain.Simulation
 
         // -- constructor
 
-        public SimulatorBase()
+        //public SimulatorBase()
+        //{
+        //    Guid = global::System.Guid.NewGuid().ToString();
+        //}
+
+        public SimulatorBase(RuntimeBase runtime)
         {
             Guid = global::System.Guid.NewGuid().ToString();
-        }
 
-        public SimulatorBase(RuntimeBase runtime) : this()
-        {
             if (runtime != null)
             {
                 _runtime = runtime;
@@ -50,14 +52,16 @@ namespace D3vS1m.Domain.Simulation
 
         protected bool ConvertArgs<T>(ArgumentsBase input, ref T target)
         {
-            if (input is T)
+            if (input == null ||
+                input is T == false)
             {
-                target = (T)Convert.ChangeType(input, typeof(T));
-                return true;
+                ArgsNotAdded(input?.Name);
+                return false;
             }
             else
             {
-                return false;
+                target = (T)Convert.ChangeType(input, typeof(T));
+                return true;
             }
         }
 
@@ -112,6 +116,9 @@ namespace D3vS1m.Domain.Simulation
 
         // --properties
 
+        /// <summary>
+        /// The settings that are specific for the runtime environment.
+        /// </summary>
         public abstract ArgumentsBase Arguments { get; }
 
         public abstract string Name { get; }

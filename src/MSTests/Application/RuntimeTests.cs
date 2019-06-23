@@ -6,9 +6,11 @@ using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene;
 using D3vS1m.Application.Validation;
+using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Domain.System.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Logging;
 using System;
@@ -39,7 +41,7 @@ namespace MSTests.Application
                 Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
             };
 
-            SetupDemoRepo(_runtime);
+            //SetupDemoRepo(_runtime);
         }
 
         private void SetupDemoRepo(RuntimeBase runtime)
@@ -78,19 +80,34 @@ namespace MSTests.Application
         public async Task RunPredefinedSimulation()
         {
             // arrange
+
+            // create the simulation-factory
             var factory = new D3vS1mFactory(_runtime);
-            factory.RegisterPredefined();
-            var antennaArgs = factory.Simulators.GetByName(Models.Antenna.Spheric.Key).Arguments as SphericAntennaArgs;
+
+            // load all relevant arguments
+            var simArgs = factory.GetPredefinedArguemnts();
+
+            // setup radio channel
+            var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Key) as AdaptedFriisArgs;
+            var min = new Vertex(-10, -10, -10);
+            var max = new Vertex(10, 10, 10);
+            radioArgs.RadioBox.Resolution = 0.25F;
+            radioArgs.RadioBox.MinCorner = min;
+            radioArgs.RadioBox.MaxCorner = max;
+
+            // fill antenna data
+            var antennaArgs = simArgs.GetByName(Models.Antenna.Spheric.Key) as SphericAntennaArgs;
             base.LoadAntennaData(antennaArgs);
-            var netArgs = factory.Simulators[SimulationModels.Network].Arguments as NetworkArgs;
+            
+            // fill network data
+            var netArgs = simArgs.GetByName(Models.Network.Key) as NetworkArgs;
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
-            factory.Simulators[SimulationModels.Network].With(netArgs);
 
-            // special setup
+            // final setup, cross-bind some arguments
+            factory.CreateSimulation(simArgs);
             _runtime.Started += (o, e) =>
             {
-                factory.Simulators[SimulationModels.Channel].With(base.GetRadioArgs());
             };
             
             // act
@@ -106,19 +123,6 @@ namespace MSTests.Application
             // assert
             var runArgs = _runtime.Arguments as RuntimeArgs;
             Assert.IsTrue(runArgs.Iterations == 5, $"simulation should have passed {iterations} iterations");
-        }
-
-        [TestMethod]
-        public void RegisterSimulation()
-        {
-            // arrange
-            var facade = new D3vS1mFactory(_runtime);
-
-            // act
-            facade.RegisterPredefined();
-
-            // assert
-            Assert.IsTrue(facade.Simulators.Count >= 4, "not enough simulators registered");
         }
 
         [TestMethod]

@@ -19,9 +19,6 @@ namespace D3vS1m.Application
     {
         // -- fields
 
-        private RuntimeBase _runtime;
-
-
         // -- constructors
 
         public D3vS1mFactory(RuntimeBase runtime) : base(runtime)
@@ -35,9 +32,7 @@ namespace D3vS1m.Application
 
         // -- methods
 
-
-
-        public override ArgumentsBase GetArgument(string name)
+        public override ArgumentsBase NewArgument(string name)
         {
             switch (name)
             {
@@ -70,62 +65,66 @@ namespace D3vS1m.Application
             }
         }
 
+        public override ISimulatable NewSimulator(string name)
+        {
+            switch (name)
+            {
+                case Models.Network.Key:
+                    return new PeerToPeerNetworkSimulator(_runtime);
+
+                case Models.Scene.Key:
+                    return new SceneSimulator(_runtime);
+
+                case Models.Channel.AdaptedFriis.Key:
+                    return new AdaptedFriisSimulator(_runtime);
+
+                case Models.Antenna.Spheric.Key:
+                    return new SphericAntennaSimulator(_runtime);
+
+                case Models.Antenna.Simple.Key:
+                    return new SimpleAntennaSimulator(_runtime);
+
+                case Models.Antenna.Flat.Key:
+                    return new SimpleAntennaSimulator(_runtime);
+
+                case Models.Communication.LrWpan.Key:
+                    return new LRWPANSimulator(_runtime);
+
+                case Models.Energy.Battery.Key:
+                    return new BatteryPackSimulator(_runtime);
+
+                default:
+                    return null;
+            }
+        }
+
         public override ArgumentsBase[] GetPredefinedArguemnts()
         {
             var args = new List<ArgumentsBase>
             {
-                GetArgument(Models.Network.Key),
-                GetArgument(Models.Scene.Key),
-                GetArgument(Models.Channel.AdaptedFriis.Key),
-                GetArgument(Models.Antenna.Spheric.Key),
-                GetArgument(Models.Antenna.Simple.Key),
-                GetArgument(Models.Antenna.Flat.Key),
-                GetArgument(Models.Communication.LrWpan.Key),
-                GetArgument(Models.Energy.Battery.Key)
+                NewArgument(Models.Network.Key),
+                NewArgument(Models.Scene.Key),
+                NewArgument(Models.Channel.AdaptedFriis.Key),
+                NewArgument(Models.Antenna.Spheric.Key),
+                //NewArgument(Models.Antenna.Simple.Key),
+                //(Models.Antenna.Flat.Key),
+                NewArgument(Models.Communication.LrWpan.Key),
+                NewArgument(Models.Energy.Battery.Key)
 
             };
             return args.ToArray();
         }
-
-
-        /// <summary>
-        /// Registers all relevant simulation models in the repository and
-        /// sets up all simulator arguments.
-        /// </summary>
-        public override void RegisterPredefined()
-        {
-            Log.Trace("Register simulation models for D3vS1m Application");
-
-
-            // network
-            Register(new PeerToPeerNetworkSimulator(_runtime));
-
-            // scene
-            Register(new SceneSimulator(_runtime));
-
-            // radio channel
-            Register(new AdaptedFriisSimulator(_runtime));
-
-            // anntenna
-            Register(new SimpleAntennaSimulator(_runtime));
-            Register(new SphericAntennaSimulator(_runtime));
-
-            // devices
-
-            // communication
-            Register(new LRWPANSimulator(_runtime));
-
-            // energy
-            Register(new BatteryPackSimulator(_runtime));
-        }
-
+        
         /// <summary>
         /// Adds a concretion of ISimulatable to the repository of simulation models
+        /// and adds the argument instance
         /// </summary>
         /// <param name="simulator">simulation model instance</param>
+        /// <param name="args">The argument instance for the model</param>
         /// <returns>Gives the model back</returns>
-        public override ISimulatable Register(ISimulatable simulator)
+        public override ISimulatable RegisterSimulator(ISimulatable simulator, ArgumentsBase args)
         {
+            simulator.With(args);
             if (Simulators.Contains(simulator))
             {
                 Log.Error($"The Simulation model '{simulator.Name}' must not registered twice.");
@@ -135,36 +134,15 @@ namespace D3vS1m.Application
             return simulator;
         }
 
-        /// <summary>
-        /// Adds a concretion of ISimulatable to the repository of simulation models
-        /// and adds the argument instance
-        /// </summary>
-        /// <param name="simulator">simulation model instance</param>
-        /// <param name="args">The argument instance for the model</param>
-        /// <returns>Gives the model back</returns>
-        public override ISimulatable Register(ISimulatable simulator, ArgumentsBase args)
+        public override SimulatorRepository CreateSimulation(ArgumentsBase[] args)
         {
-            simulator.With(args);
-            return Register(simulator);
-        }
-
-        /// <summary>
-        /// Adds a concretion of ISimulatable to the repository of simulation models
-        /// </summary>
-        /// <param name="simulator">simulation model instance</param>
-        /// <param name="argsArray">The array of argument instances for the model</param>
-        /// <returns>Gives the model back</returns>
-        public override ISimulatable Register(ISimulatable simulator, ArgumentsBase[] argsArray)
-        {
-            foreach (var a in argsArray)
+            foreach (var arg in args)
             {
-                simulator.With(a);
+                RegisterSimulator(NewSimulator(arg.Name), arg);
             }
-            return Register(simulator);
+
+            return base.Simulators;
         }
-
-
-
 
         // -- properties
 
