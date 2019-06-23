@@ -8,7 +8,7 @@ namespace D3vS1m.Application.Network
     {
         // -- constructor
 
-        public NetworkArgs()
+        public NetworkArgs() : base()
         {
             Reset();
         }

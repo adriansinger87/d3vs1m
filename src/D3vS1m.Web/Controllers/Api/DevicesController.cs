@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using D3vS1m.Web.Extensions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,6 +16,7 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            
             // get all devices
             return new string[] { "value1", "value2" };
         }

@@ -63,7 +63,7 @@ namespace MSTests.Application
         {
             // arrange
             var sceneArgs = new InvariantSceneArgs();
-            var sceneSim = new SceneSimulator().With(sceneArgs);
+            var sceneSim = new SceneSimulator(null).With(sceneArgs);
 
             // act
             sceneSim.Run();

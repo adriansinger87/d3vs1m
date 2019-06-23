@@ -10,7 +10,7 @@ namespace D3vS1m.Application.Communication
         /// <summary>
         /// Default constructor that creates a default instance.
         /// </summary>
-        public WirelessCommArgs()
+        public WirelessCommArgs() : base()
         {
             Reset();
         }

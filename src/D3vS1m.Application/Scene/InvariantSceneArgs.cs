@@ -6,7 +6,7 @@ namespace D3vS1m.Application.Scene
     [Serializable]
     public class InvariantSceneArgs : ArgumentsBase
     {
-        public InvariantSceneArgs()
+        public InvariantSceneArgs() : base()
         {
             Reset();
         }

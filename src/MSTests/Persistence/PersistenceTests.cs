@@ -21,21 +21,5 @@ namespace MSTests.Persistence
         {
             base.Cleanup();
         }
-
-        [TestMethod]
-        public void ConvertContextToByteArray()
-        {
-            // arrange
-            var context = new D3vS1mFacade();
-            context.RegisterPredefined(new RuntimeController(new D3vS1mValidator()));
-
-            // act
-            var bytes = BinaryIO.ToBytes(context);
-
-            var result = BinaryIO.FromBytes<D3vS1mFacade>(bytes);
-
-            // assert
-            Assert.AreEqual(result.Simulators.Count, context.Simulators.Count);
-        }
     }
 }

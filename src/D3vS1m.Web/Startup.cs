@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using D3vS1m.Application;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Validation;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +13,18 @@ namespace D3vS1m.Web
 {
     public class Startup
     {
+        // -- fields
+
+        private IHostingEnvironment _env;
+
+        public IConfiguration Configuration { get; }
+
+        // -- constructor
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -29,6 +38,12 @@ namespace D3vS1m.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            // HACK: re-work this approach to add a singleton for entire runtime
+            var factory = new D3vS1mFactory(
+                new RuntimeController(
+                    new D3vS1mValidator()));
+
+            services.AddSingleton<FactoryBase>(factory);
             // session
 #if DEBUG
             TimeSpan ts = TimeSpan.FromSeconds(60);
@@ -47,19 +62,20 @@ namespace D3vS1m.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            _env = env;
+
+            // error handling fowarded to ErrorController
+            app.UseStatusCodePagesWithReExecute("/error");
+            app.UseExceptionHandler("/error");
+
+            if (_env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseCookiePolicy();
             app.UseSession();
 
             app.UseMvc(routes =>
