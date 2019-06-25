@@ -102,7 +102,9 @@ namespace D3vS1m.Application.Channel
         private float GetAdaptedFriisAttenuation(float c, float r, float a)
         {
             // adapted friis transmission = c + 20 * log( r ^ a)
-            return c + 20 * (float)(Math.Log10(Math.Pow(r, a)));
+            var result = c + 20 * (float)(Math.Log10(Math.Pow(r, a)));
+            //Log.Info($"RSSI: {result}");
+            return result;
         }
 
         /// <summary>

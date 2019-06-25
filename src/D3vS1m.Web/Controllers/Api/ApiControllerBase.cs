@@ -5,7 +5,9 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Web.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Sin.Net.Domain.IO;
 using Sin.Net.Domain.Logging;
+using Sin.Net.Persistence;
 using System;
 using System.IO;
 using System.Linq;
@@ -18,6 +20,8 @@ namespace D3vS1m.Web.Controllers.Api
 
         protected readonly IHostingEnvironment _hostingEnvironment;
         protected FactoryBase _factory;
+
+        private IPersistenceControlable _io;
 
         protected readonly string _webRootPath;
         protected readonly string _dataPath;
@@ -35,6 +39,26 @@ namespace D3vS1m.Web.Controllers.Api
 
             _webRootPath = Path.Combine(_hostingEnvironment.WebRootPath);
             _dataPath = Path.Combine(_hostingEnvironment.ContentRootPath, "App_Data");
+        }
+
+        protected ArgumentsBase[] SessionArguments()
+        {
+            return this.HttpSession().GetArguments();
+        }
+
+
+       
+
+        public IPersistenceControlable Persistence
+        {
+            get
+            {
+                if (_io == null)
+                {
+                    _io = new PersistenceController();
+                }
+                return _io;
+            }
         }
     }
 }

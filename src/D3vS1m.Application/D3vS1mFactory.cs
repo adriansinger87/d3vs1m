@@ -134,14 +134,16 @@ namespace D3vS1m.Application
             return simulator;
         }
 
-        public override SimulatorRepository CreateSimulation(ArgumentsBase[] args)
+        public override RuntimeBase SetupSimulation(ArgumentsBase[] args)
         {
+            base.Simulators.Clear();
             foreach (var arg in args)
             {
                 RegisterSimulator(NewSimulator(arg.Name), arg);
             }
 
-            return base.Simulators;
+            _runtime.Setup(Simulators);
+            return _runtime;
         }
 
         // -- properties

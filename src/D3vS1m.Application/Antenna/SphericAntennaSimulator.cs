@@ -42,9 +42,12 @@ namespace D3vS1m.Application.Antenna
         {
             base.BeforeExecution();
 
-            // TODO iterate all network orientation informations and calculate resulting antenna gain
-            // TODO remove test magic numbers
-            float gain = CalculateGain(45, 45);
+            if (_antennaArgs.GainMatrix != null)
+            {
+                // TODO iterate all network orientation informations and calculate resulting antenna gain
+                // TODO remove test magic numbers
+                //float gain = CalculateGain(45, 45);
+            }
 
             base.AfterExecution();
         }

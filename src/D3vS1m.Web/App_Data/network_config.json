@@ -1,0 +1,2788 @@
+{
+  "Name": "Netzwerk",
+  "DefaultDeviceID": "4e26d5af-4eaf-4ba4-8a8d-ed432cc679b7",
+  "Items": [
+    {
+      "UUID": "f5494434-0546-4477-98ab-e6bcb08325ba",
+      "Name": "Gerät",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "130709e6-d16e-4afa-844f-64db90f16c00",
+      "Name": "Gerät",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "4e26d5af-4eaf-4ba4-8a8d-ed432cc679b7",
+      "Name": "Anchor_1",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 22.1,
+        "Y": 8.5,
+        "Z": 20.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "fad0f46e-305f-47c0-8c9b-f9f9a1b3c468",
+      "Name": "Anchor_2",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 22.1,
+        "Y": 8.5,
+        "Z": 0.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "ebf1c787-ba75-42d1-ac37-451acab75c95",
+      "Name": "Anchor_3",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 0.0,
+        "Y": 8.5,
+        "Z": 40.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "a6ab44d4-ac87-4b60-93b7-f92f350c5f53",
+      "Name": "Anchor_4",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 0.2,
+        "Y": 8.5,
+        "Z": 0.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "8d9f6abb-2733-4a8e-ac36-1bc68ebbc69b",
+      "Name": "Anchor_5",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 22.1,
+        "Y": 8.5,
+        "Z": 40.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "52eeb472-b55c-4b41-988e-31ecada6d9b7",
+      "Name": "Anchor_6",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 0.0,
+        "Y": 8.5,
+        "Z": 60.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "cc481b89-db2b-495f-9dfe-4a192abb90c3",
+      "Name": "Anchor_7",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 0.0,
+        "Y": 8.5,
+        "Z": 20.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "ed830ca2-4a76-4978-80e8-ed74c76d763e",
+      "Name": "Anchor_8",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 22.1,
+        "Y": 8.5,
+        "Z": 60.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "bce26d66-9acd-4a54-8f94-4f6726a6b4f4",
+      "Name": "Tag_0x08",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 14.5,
+        "Y": 3.25,
+        "Z": 56.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "28db89b0-bd15-4ae6-a3f6-559d27f214a8",
+      "Name": "Tag_0x09",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 16.0,
+        "Y": 2.5,
+        "Z": 20.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "b6d1426c-adf0-47de-934f-eca8337e7900",
+      "Name": "Tag_0x0A",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 10.5,
+        "Y": 3.5,
+        "Z": 36.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "733d1b60-3444-46e3-bff5-3d8c9f84ce66",
+      "Name": "Tag_0x0B",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 6.5,
+        "Y": 3.25,
+        "Z": 55.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "f546da92-a98a-484b-b37b-34b3fd4457bd",
+      "Name": "Tag_0x0C",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 15.4,
+        "Y": 2.5,
+        "Z": 35.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "8650dfe4-7579-4838-b9a4-488f3abc79c0",
+      "Name": "Tag_0x0D",
+      "DeviceType": "standard",
+      "Position": {
+        "X": -0.5,
+        "Y": 7.6,
+        "Z": 10.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "ef7fc5f7-6198-40e5-b0ad-d7d0b0a3d376",
+      "Name": "Tag_0x0E",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 10.0,
+        "Y": 3.35,
+        "Z": 10.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "6e30e377-14ae-4166-b985-909a6c515aa1",
+      "Name": "Tag_0x0F",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 16.0,
+        "Y": 3.0,
+        "Z": 45.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "8e6770ad-f22b-47c0-bb17-6a101ef228ca",
+      "Name": "Tag_0x10",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 11.5,
+        "Y": 2.25,
+        "Z": 15.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    },
+    {
+      "UUID": "e9c060c2-2528-44ce-b7ce-96653b32160e",
+      "Name": "Tag_0x11",
+      "DeviceType": "standard",
+      "Position": {
+        "X": 12.0,
+        "Y": 3.2,
+        "Z": 47.0
+      },
+      "Orientation": {
+        "Azimuth": 0.0,
+        "Elevation": 0.0
+      },
+      "Items": {}
+    }
+  ],
+  "AssicationMatrix": {
+    "Size": 20,
+    "RowsCount": 20,
+    "ColsCount": 20,
+    "Matrix": [
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ]
+  },
+  "DistanceMatrix": {
+    "Size": 20,
+    "RowsCount": 20,
+    "ColsCount": 20,
+    "Matrix": [
+      [
+        0.0,
+        0.0,
+        30.9945164,
+        23.67826,
+        40.8931541,
+        8.502353,
+        46.4829,
+        60.59909,
+        21.7313137,
+        64.50318,
+        57.9380074,
+        25.7342186,
+        37.66298,
+        55.478035,
+        38.31984,
+        12.5702028,
+        14.5334959,
+        47.8539429,
+        19.0345078,
+        48.6131668
+      ],
+      [
+        0.0,
+        0.0,
+        30.9945164,
+        23.67826,
+        40.8931541,
+        8.502353,
+        46.4829,
+        60.59909,
+        21.7313137,
+        64.50318,
+        57.9380074,
+        25.7342186,
+        37.66298,
+        55.478035,
+        38.31984,
+        12.5702028,
+        14.5334959,
+        47.8539429,
+        19.0345078,
+        48.6131668
+      ],
+      [
+        30.9945164,
+        30.9945164,
+        0.0,
+        20.0,
+        29.8062077,
+        29.65822,
+        20.0,
+        45.6991234,
+        22.1,
+        40.0,
+        37.16615,
+        8.556285,
+        20.3852882,
+        38.67716,
+        17.4897118,
+        24.7299423,
+        16.52067,
+        26.3146343,
+        13.2824135,
+        29.3104076
+      ],
+      [
+        23.67826,
+        23.67826,
+        20.0,
+        0.0,
+        45.6991234,
+        21.9,
+        40.0,
+        63.9406776,
+        29.8062077,
+        60.0,
+        56.7566948,
+        21.7533913,
+        38.1518021,
+        57.4101257,
+        36.1371,
+        24.7299423,
+        16.52067,
+        45.7434158,
+        19.4016113,
+        48.3642426
+      ],
+      [
+        40.8931541,
+        40.8931541,
+        29.8062077,
+        45.6991234,
+        0.0,
+        40.0005,
+        22.1,
+        20.0,
+        20.0,
+        29.8062077,
+        22.2218933,
+        26.3058929,
+        12.2983742,
+        17.170105,
+        17.26731,
+        30.017662,
+        32.03939,
+        17.6422787,
+        28.21901,
+        14.8690958
+      ],
+      [
+        8.502353,
+        8.502353,
+        29.65822,
+        21.9,
+        40.0005,
+        0.0,
+        45.60274,
+        60.00033,
+        20.001,
+        63.8718262,
+        58.0349236,
+        26.1847286,
+        37.776844,
+        55.6080246,
+        38.6269341,
+        10.06479,
+        14.9185286,
+        48.00927,
+        19.792738,
+        48.7476158
+      ],
+      [
+        46.4829,
+        46.4829,
+        20.0,
+        40.0,
+        22.1,
+        45.60274,
+        0.0,
+        29.8062077,
+        29.8062077,
+        20.0,
+        18.4749165,
+        21.7533913,
+        13.2499056,
+        22.2693176,
+        10.290287,
+        37.5708656,
+        32.75565,
+        9.615613,
+        27.8643589,
+        13.3828249
+      ],
+      [
+        60.59909,
+        60.59909,
+        45.6991234,
+        63.9406776,
+        20.0,
+        60.00033,
+        29.8062077,
+        0.0,
+        40.0,
+        22.1,
+        15.9314938,
+        43.4971275,
+        26.6692715,
+        9.737171,
+        29.9693184,
+        50.0105972,
+        51.24961,
+        22.6108379,
+        46.8648338,
+        18.4686222
+      ],
+      [
+        21.7313137,
+        21.7313137,
+        22.1,
+        29.8062077,
+        20.0,
+        20.001,
+        29.8062077,
+        40.0,
+        0.0,
+        45.6991234,
+        39.1639175,
+        17.088007,
+        19.78004,
+        35.9835,
+        22.3194981,
+        10.05286,
+        15.0506649,
+        30.1869183,
+        14.0111561,
+        30.0181618
+      ],
+      [
+        64.50318,
+        64.50318,
+        40.0,
+        60.0,
+        29.8062077,
+        63.8718262,
+        20.0,
+        22.1,
+        45.6991234,
+        0.0,
+        10.0659084,
+        40.90489,
+        27.12121,
+        17.2023983,
+        26.56859,
+        54.8777733,
+        51.7004128,
+        17.1014614,
+        46.6521454,
+        17.294508
+      ],
+      [
+        57.9380074,
+        57.9380074,
+        37.16615,
+        56.7566948,
+        22.2218933,
+        58.0349236,
+        18.4749165,
+        15.9314938,
+        39.1639175,
+        10.0659084,
+        0.0,
+        36.03904,
+        20.39761,
+        8.062258,
+        21.0326538,
+        48.5790329,
+        46.2196922,
+        11.1046162,
+        41.12177,
+        9.340904
+      ],
+      [
+        25.7342186,
+        25.7342186,
+        8.556285,
+        21.7533913,
+        26.3058929,
+        26.1847286,
+        21.7533913,
+        43.4971275,
+        17.088007,
+        40.90489,
+        36.03904,
+        0.0,
+        16.948452,
+        36.27413,
+        15.0119953,
+        19.9564533,
+        11.69284,
+        25.005,
+        6.731456,
+        27.3036633
+      ],
+      [
+        37.66298,
+        37.66298,
+        20.3852882,
+        38.1518021,
+        12.2983742,
+        37.776844,
+        13.2499056,
+        26.6692715,
+        19.78004,
+        27.12121,
+        20.39761,
+        16.948452,
+        0.0,
+        19.4180965,
+        5.09999943,
+        28.5273552,
+        26.00524,
+        10.5593557,
+        21.0609226,
+        11.105854
+      ],
+      [
+        55.478035,
+        55.478035,
+        38.67716,
+        57.4101257,
+        17.170105,
+        55.6080246,
+        22.2693176,
+        9.737171,
+        35.9835,
+        17.2023983,
+        8.062258,
+        36.27413,
+        19.4180965,
+        0.0,
+        21.90371,
+        45.74847,
+        45.1360168,
+        13.79538,
+        40.32369,
+        9.708373
+      ],
+      [
+        38.31984,
+        38.31984,
+        17.4897118,
+        36.1371,
+        17.26731,
+        38.6269341,
+        10.290287,
+        29.9693184,
+        22.3194981,
+        26.56859,
+        21.0326538,
+        15.0119953,
+        5.09999943,
+        21.90371,
+        0.0,
+        30.0635986,
+        25.5906715,
+        10.0304537,
+        20.3782368,
+        12.4919977
+      ],
+      [
+        12.5702028,
+        12.5702028,
+        24.7299423,
+        24.7299423,
+        30.017662,
+        10.06479,
+        37.5708656,
+        50.0105972,
+        10.05286,
+        54.8777733,
+        48.5790329,
+        19.9564533,
+        28.5273552,
+        45.74847,
+        30.0635986,
+        0.0,
+        11.3275108,
+        38.96678,
+        14.057827,
+        39.3015251
+      ],
+      [
+        14.5334959,
+        14.5334959,
+        16.52067,
+        16.52067,
+        32.03939,
+        14.9185286,
+        32.75565,
+        51.24961,
+        15.0506649,
+        51.7004128,
+        46.2196922,
+        11.69284,
+        26.00524,
+        45.1360168,
+        25.5906715,
+        11.3275108,
+        0.0,
+        35.5122871,
+        5.33479166,
+        37.0543175
+      ],
+      [
+        47.8539429,
+        47.8539429,
+        26.3146343,
+        45.7434158,
+        17.6422787,
+        48.00927,
+        9.615613,
+        22.6108379,
+        30.1869183,
+        17.1014614,
+        11.1046162,
+        25.005,
+        10.5593557,
+        13.79538,
+        10.0304537,
+        38.96678,
+        35.5122871,
+        0.0,
+        30.3448925,
+        4.476606
+      ],
+      [
+        19.0345078,
+        19.0345078,
+        13.2824135,
+        19.4016113,
+        28.21901,
+        19.792738,
+        27.8643589,
+        46.8648338,
+        14.0111561,
+        46.6521454,
+        41.12177,
+        6.731456,
+        21.0609226,
+        40.32369,
+        20.3782368,
+        14.057827,
+        5.33479166,
+        30.3448925,
+        0.0,
+        32.018
+      ],
+      [
+        48.6131668,
+        48.6131668,
+        29.3104076,
+        48.3642426,
+        14.8690958,
+        48.7476158,
+        13.3828249,
+        18.4686222,
+        30.0181618,
+        17.294508,
+        9.340904,
+        27.3036633,
+        11.105854,
+        9.708373,
+        12.4919977,
+        39.3015251,
+        37.0543175,
+        4.476606,
+        32.018,
+        0.0
+      ]
+    ]
+  },
+  "RssMatrix": null,
+  "AngleMatrix": {
+    "Size": 20,
+    "RowsCount": 20,
+    "ColsCount": 20,
+    "Matrix": [
+      [
+        null,
+        {
+          "Azimuth": 0.0,
+          "Elevation": NaN
+        },
+        {
+          "Azimuth": 47.85562,
+          "Elevation": 74.0831451
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 68.96249
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 78.0031
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 1.34784591
+        },
+        {
+          "Azimuth": 28.9206524,
+          "Elevation": 79.46344
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 81.93675
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 66.9745
+        },
+        {
+          "Azimuth": 20.2204323,
+          "Elevation": 82.42774
+        },
+        {
+          "Azimuth": 14.5166988,
+          "Elevation": 86.78433
+        },
+        {
+          "Azimuth": 38.65981,
+          "Elevation": 84.4250946
+        },
+        {
+          "Azimuth": 16.2602043,
+          "Elevation": 84.66784
+        },
+        {
+          "Azimuth": 6.740056,
+          "Elevation": 86.64159
+        },
+        {
+          "Azimuth": 23.7494926,
+          "Elevation": 86.259346
+        },
+        {
+          "Azimuth": 357.1376,
+          "Elevation": 52.7996178
+        },
+        {
+          "Azimuth": 44.9999962,
+          "Elevation": 76.67336
+        },
+        {
+          "Azimuth": 19.5731258,
+          "Elevation": 86.40572
+        },
+        {
+          "Azimuth": 37.47618,
+          "Elevation": 83.2114
+        },
+        {
+          "Azimuth": 14.3227205,
+          "Elevation": 86.22572
+        }
+      ],
+      [
+        {
+          "Azimuth": 0.0,
+          "Elevation": NaN
+        },
+        null,
+        {
+          "Azimuth": 47.85562,
+          "Elevation": 74.0831451
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 68.96249
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 78.0031
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 1.34784591
+        },
+        {
+          "Azimuth": 28.9206524,
+          "Elevation": 79.46344
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 81.93675
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 66.9745
+        },
+        {
+          "Azimuth": 20.2204323,
+          "Elevation": 82.42774
+        },
+        {
+          "Azimuth": 14.5166988,
+          "Elevation": 86.78433
+        },
+        {
+          "Azimuth": 38.65981,
+          "Elevation": 84.4250946
+        },
+        {
+          "Azimuth": 16.2602043,
+          "Elevation": 84.66784
+        },
+        {
+          "Azimuth": 6.740056,
+          "Elevation": 86.64159
+        },
+        {
+          "Azimuth": 23.7494926,
+          "Elevation": 86.259346
+        },
+        {
+          "Azimuth": 357.1376,
+          "Elevation": 52.7996178
+        },
+        {
+          "Azimuth": 44.9999962,
+          "Elevation": 76.67336
+        },
+        {
+          "Azimuth": 19.5731258,
+          "Elevation": 86.40572
+        },
+        {
+          "Azimuth": 37.47618,
+          "Elevation": 83.2114
+        },
+        {
+          "Azimuth": 14.3227205,
+          "Elevation": 86.22572
+        }
+      ],
+      [
+        {
+          "Azimuth": 227.855621,
+          "Elevation": 105.916847
+        },
+        {
+          "Azimuth": 227.855621,
+          "Elevation": 105.916847
+        },
+        null,
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 312.144379,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 227.596359,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 331.079346,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 348.079254,
+          "Elevation": 98.12062
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 134.526489
+        },
+        {
+          "Azimuth": 324.0579,
+          "Elevation": 104.198074
+        },
+        {
+          "Azimuth": 335.976776,
+          "Elevation": 97.80135
+        },
+        {
+          "Azimuth": 335.931274,
+          "Elevation": 110.063339
+        },
+        {
+          "Azimuth": 246.131683,
+          "Elevation": 92.08563
+        },
+        {
+          "Azimuth": 230.4281,
+          "Elevation": 108.163559
+        },
+        {
+          "Azimuth": 346.28775,
+          "Elevation": 102.064293
+        },
+        {
+          "Azimuth": 244.746826,
+          "Elevation": 118.0698
+        },
+        {
+          "Azimuth": 339.490479,
+          "Elevation": 100.4177
+        }
+      ],
+      [
+        {
+          "Azimuth": 270.0,
+          "Elevation": 111.037506
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 111.037506
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 331.079346,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 339.779572,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 312.144379,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 352.271362,
+          "Elevation": 95.30745
+        },
+        {
+          "Azimuth": 343.0383,
+          "Elevation": 106.010834
+        },
+        {
+          "Azimuth": 342.1399,
+          "Elevation": 97.53059
+        },
+        {
+          "Azimuth": 344.164734,
+          "Elevation": 95.24687
+        },
+        {
+          "Azimuth": 349.163055,
+          "Elevation": 99.55733
+        },
+        {
+          "Azimuth": 293.868317,
+          "Elevation": 92.08563
+        },
+        {
+          "Azimuth": 309.5719,
+          "Elevation": 108.163559
+        },
+        {
+          "Azimuth": 352.2803,
+          "Elevation": 96.90571
+        },
+        {
+          "Azimuth": 324.7524,
+          "Elevation": 108.792282
+        },
+        {
+          "Azimuth": 347.871948,
+          "Elevation": 96.2914
+        }
+      ],
+      [
+        {
+          "Azimuth": 180.0,
+          "Elevation": 101.9969
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 101.9969
+        },
+        {
+          "Azimuth": 132.144379,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 151.079346,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 179.713516,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 47.85562,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 42.18444,
+          "Elevation": 103.66552
+        },
+        {
+          "Azimuth": 141.3402,
+          "Elevation": 103.184395
+        },
+        {
+          "Azimuth": 110.854462,
+          "Elevation": 113.988777
+        },
+        {
+          "Azimuth": 23.4286919,
+          "Elevation": 107.804131
+        },
+        {
+          "Azimuth": 107.987328,
+          "Elevation": 110.3331
+        },
+        {
+          "Azimuth": 180.954834,
+          "Elevation": 91.71812
+        },
+        {
+          "Azimuth": 161.565048,
+          "Elevation": 99.2498245
+        },
+        {
+          "Azimuth": 72.64598,
+          "Elevation": 108.164787
+        },
+        {
+          "Azimuth": 155.297577,
+          "Elevation": 102.796089
+        },
+        {
+          "Azimuth": 59.74357,
+          "Elevation": 110.881966
+        }
+      ],
+      [
+        {
+          "Azimuth": 270.0,
+          "Elevation": 178.652145
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 178.652145
+        },
+        {
+          "Azimuth": 47.59636,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 359.713531,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 28.7007027,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 359.809021,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 359.427063,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 20.0520821,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 14.3247643,
+          "Elevation": 95.19022
+        },
+        {
+          "Azimuth": 38.3087349,
+          "Elevation": 103.246506
+        },
+        {
+          "Azimuth": 15.9664135,
+          "Elevation": 97.6057739
+        },
+        {
+          "Azimuth": 6.53449154,
+          "Elevation": 95.4174042
+        },
+        {
+          "Azimuth": 23.474617,
+          "Elevation": 98.93605
+        },
+        {
+          "Azimuth": 355.995819,
+          "Elevation": 95.13028
+        },
+        {
+          "Azimuth": 44.4212761,
+          "Elevation": 110.194511
+        },
+        {
+          "Azimuth": 19.34674,
+          "Elevation": 96.5783157
+        },
+        {
+          "Azimuth": 36.9919319,
+          "Elevation": 108.407448
+        },
+        {
+          "Azimuth": 14.0935965,
+          "Elevation": 96.24172
+        }
+      ],
+      [
+        {
+          "Azimuth": 208.920654,
+          "Elevation": 100.53656
+        },
+        {
+          "Azimuth": 208.920654,
+          "Elevation": 100.53656
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 208.7007,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 312.144379,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 227.855621,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 334.5923,
+          "Elevation": 106.509178
+        },
+        {
+          "Azimuth": 196.9617,
+          "Elevation": 106.010834
+        },
+        {
+          "Azimuth": 250.9744,
+          "Elevation": 112.170319
+        },
+        {
+          "Azimuth": 313.8767,
+          "Elevation": 103.635857
+        },
+        {
+          "Azimuth": 233.267181,
+          "Elevation": 125.667046
+        },
+        {
+          "Azimuth": 216.991928,
+          "Elevation": 91.3726349
+        },
+        {
+          "Azimuth": 201.965866,
+          "Elevation": 99.045845
+        },
+        {
+          "Azimuth": 309.3405,
+          "Elevation": 124.888855
+        },
+        {
+          "Azimuth": 202.976944,
+          "Elevation": 102.961769
+        },
+        {
+          "Azimuth": 304.72464,
+          "Elevation": 113.330223
+        }
+      ],
+      [
+        {
+          "Azimuth": 180.0,
+          "Elevation": 98.06324
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 98.06324
+        },
+        {
+          "Azimuth": 151.079346,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 159.779572,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 179.809021,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 132.144379,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 105.422157,
+          "Elevation": 109.240608
+        },
+        {
+          "Azimuth": 158.1986,
+          "Elevation": 97.9286652
+        },
+        {
+          "Azimuth": 156.370621,
+          "Elevation": 100.805847
+        },
+        {
+          "Azimuth": 127.568588,
+          "Elevation": 122.62722
+        },
+        {
+          "Azimuth": 148.366928,
+          "Elevation": 101.548927
+        },
+        {
+          "Azimuth": 180.572937,
+          "Elevation": 91.03116
+        },
+        {
+          "Azimuth": 168.690063,
+          "Elevation": 95.7673
+        },
+        {
+          "Azimuth": 133.15239,
+          "Elevation": 104.078209
+        },
+        {
+          "Azimuth": 165.664566,
+          "Elevation": 97.6639252
+        },
+        {
+          "Azimuth": 137.290619,
+          "Elevation": 106.676826
+        }
+      ],
+      [
+        {
+          "Azimuth": 180.0,
+          "Elevation": 113.02549
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 113.02549
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 132.144379,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 179.427063,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 47.85562,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 28.9206524,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 21.93848,
+          "Elevation": 97.7038
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 110.556038
+        },
+        {
+          "Azimuth": 33.2748871,
+          "Elevation": 104.642082
+        },
+        {
+          "Azimuth": 10.5207844,
+          "Elevation": 98.38941
+        },
+        {
+          "Azimuth": 45.75385,
+          "Elevation": 105.594254
+        },
+        {
+          "Azimuth": 182.862411,
+          "Elevation": 95.1363754
+        },
+        {
+          "Azimuth": 135.0,
+          "Elevation": 110.0096
+        },
+        {
+          "Azimuth": 32.61924,
+          "Elevation": 100.497818
+        },
+        {
+          "Azimuth": 113.498558,
+          "Elevation": 116.492012
+        },
+        {
+          "Azimuth": 23.9624863,
+          "Elevation": 100.169441
+        }
+      ],
+      [
+        {
+          "Azimuth": 200.220428,
+          "Elevation": 97.57226
+        },
+        {
+          "Azimuth": 200.220428,
+          "Elevation": 97.57226
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 227.855621,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 200.052078,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 208.920654,
+          "Elevation": 90.0
+        },
+        null,
+        {
+          "Azimuth": 242.241455,
+          "Elevation": 121.437111
+        },
+        {
+          "Azimuth": 188.6708,
+          "Elevation": 98.43468
+        },
+        {
+          "Azimuth": 205.796021,
+          "Elevation": 100.623672
+        },
+        {
+          "Azimuth": 252.228683,
+          "Elevation": 107.769592
+        },
+        {
+          "Azimuth": 195.002716,
+          "Elevation": 103.05172
+        },
+        {
+          "Azimuth": 204.322968,
+          "Elevation": 90.9397
+        },
+        {
+          "Azimuth": 193.604034,
+          "Elevation": 95.71685
+        },
+        {
+          "Azimuth": 202.129944,
+          "Elevation": 108.760307
+        },
+        {
+          "Azimuth": 193.254715,
+          "Elevation": 97.69908
+        },
+        {
+          "Azimuth": 217.844467,
+          "Elevation": 107.845764
+        }
+      ],
+      [
+        {
+          "Azimuth": 194.5167,
+          "Elevation": 93.21566
+        },
+        {
+          "Azimuth": 194.5167,
+          "Elevation": 93.21566
+        },
+        {
+          "Azimuth": 168.079254,
+          "Elevation": 81.87938
+        },
+        {
+          "Azimuth": 172.271362,
+          "Elevation": 84.69255
+        },
+        {
+          "Azimuth": 222.184448,
+          "Elevation": 76.33447
+        },
+        {
+          "Azimuth": 194.324768,
+          "Elevation": 84.80977
+        },
+        {
+          "Azimuth": 154.592285,
+          "Elevation": 73.4908142
+        },
+        {
+          "Azimuth": 285.42215,
+          "Elevation": 70.7593842
+        },
+        {
+          "Azimuth": 201.938477,
+          "Elevation": 82.296196
+        },
+        {
+          "Azimuth": 62.2414551,
+          "Elevation": 58.56288
+        },
+        null,
+        {
+          "Azimuth": 177.614059,
+          "Elevation": 91.19246
+        },
+        {
+          "Azimuth": 191.309937,
+          "Elevation": 89.29774
+        },
+        {
+          "Azimuth": 262.874969,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 177.545975,
+          "Elevation": 92.04353
+        },
+        {
+          "Azimuth": 198.060471,
+          "Elevation": 84.86258
+        },
+        {
+          "Azimuth": 185.58725,
+          "Elevation": 89.87603
+        },
+        {
+          "Azimuth": 172.234833,
+          "Elevation": 91.2900162
+        },
+        {
+          "Azimuth": 184.184921,
+          "Elevation": 91.3934555
+        },
+        {
+          "Azimuth": 195.524109,
+          "Elevation": 90.30669
+        }
+      ],
+      [
+        {
+          "Azimuth": 218.6598,
+          "Elevation": 95.5749
+        },
+        {
+          "Azimuth": 218.6598,
+          "Elevation": 95.5749
+        },
+        {
+          "Azimuth": 90.0,
+          "Elevation": 45.47351
+        },
+        {
+          "Azimuth": 163.0383,
+          "Elevation": 73.98917
+        },
+        {
+          "Azimuth": 321.340179,
+          "Elevation": 76.8156
+        },
+        {
+          "Azimuth": 218.308731,
+          "Elevation": 76.75349
+        },
+        {
+          "Azimuth": 16.9617062,
+          "Elevation": 73.98917
+        },
+        {
+          "Azimuth": 338.198578,
+          "Elevation": 82.0713348
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 69.4439545
+        },
+        {
+          "Azimuth": 8.670803,
+          "Elevation": 81.5653152
+        },
+        {
+          "Azimuth": 357.614044,
+          "Elevation": 88.80754
+        },
+        null,
+        {
+          "Azimuth": 341.0296,
+          "Elevation": 86.61745
+        },
+        {
+          "Azimuth": 344.814178,
+          "Elevation": 88.81527
+        },
+        {
+          "Azimuth": 357.709381,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 238.7816,
+          "Elevation": 75.19344
+        },
+        {
+          "Azimuth": 210.963745,
+          "Elevation": 85.83125
+        },
+        {
+          "Azimuth": 0.0,
+          "Elevation": 88.85423
+        },
+        {
+          "Azimuth": 221.987213,
+          "Elevation": 92.1283951
+        },
+        {
+          "Azimuth": 351.573029,
+          "Elevation": 88.53091
+        }
+      ],
+      [
+        {
+          "Azimuth": 196.260208,
+          "Elevation": 95.33216
+        },
+        {
+          "Azimuth": 196.260208,
+          "Elevation": 95.33216
+        },
+        {
+          "Azimuth": 144.057892,
+          "Elevation": 75.80192
+        },
+        {
+          "Azimuth": 162.139908,
+          "Elevation": 82.46941
+        },
+        {
+          "Azimuth": 290.854462,
+          "Elevation": 66.0112152
+        },
+        {
+          "Azimuth": 195.966415,
+          "Elevation": 82.3942261
+        },
+        {
+          "Azimuth": 70.9743958,
+          "Elevation": 67.82968
+        },
+        {
+          "Azimuth": 336.3706,
+          "Elevation": 79.1941452
+        },
+        {
+          "Azimuth": 213.274887,
+          "Elevation": 75.35791
+        },
+        {
+          "Azimuth": 25.7960281,
+          "Elevation": 79.37632
+        },
+        {
+          "Azimuth": 11.3099327,
+          "Elevation": 90.7022552
+        },
+        {
+          "Azimuth": 161.029587,
+          "Elevation": 93.38255
+        },
+        null,
+        {
+          "Azimuth": 348.111328,
+          "Elevation": 90.73767
+        },
+        {
+          "Azimuth": 101.534615,
+          "Elevation": 101.307724
+        },
+        {
+          "Azimuth": 202.9321,
+          "Elevation": 81.73673
+        },
+        {
+          "Azimuth": 181.1017,
+          "Elevation": 90.33048
+        },
+        {
+          "Azimuth": 31.4295654,
+          "Elevation": 92.71404
+        },
+        {
+          "Azimuth": 177.273682,
+          "Elevation": 93.4025955
+        },
+        {
+          "Azimuth": 7.76516676,
+          "Elevation": 91.547905
+        }
+      ],
+      [
+        {
+          "Azimuth": 186.740051,
+          "Elevation": 93.3584061
+        },
+        {
+          "Azimuth": 186.740051,
+          "Elevation": 93.3584061
+        },
+        {
+          "Azimuth": 155.976791,
+          "Elevation": 82.19864
+        },
+        {
+          "Azimuth": 164.164734,
+          "Elevation": 84.75312
+        },
+        {
+          "Azimuth": 203.4287,
+          "Elevation": 72.19586
+        },
+        {
+          "Azimuth": 186.534485,
+          "Elevation": 84.58259
+        },
+        {
+          "Azimuth": 133.876709,
+          "Elevation": 76.3641357
+        },
+        {
+          "Azimuth": 307.5686,
+          "Elevation": 57.372776
+        },
+        {
+          "Azimuth": 190.520782,
+          "Elevation": 81.61059
+        },
+        {
+          "Azimuth": 72.22868,
+          "Elevation": 72.2304
+        },
+        {
+          "Azimuth": 82.87497,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 164.814163,
+          "Elevation": 91.18472
+        },
+        {
+          "Azimuth": 168.111343,
+          "Elevation": 89.26232
+        },
+        null,
+        {
+          "Azimuth": 156.010941,
+          "Elevation": 91.9622345
+        },
+        {
+          "Azimuth": 188.841812,
+          "Elevation": 84.54378
+        },
+        {
+          "Azimuth": 175.552612,
+          "Elevation": 89.8730545
+        },
+        {
+          "Azimuth": 136.468811,
+          "Elevation": 91.03837
+        },
+        {
+          "Azimuth": 172.874985,
+          "Elevation": 91.42104
+        },
+        {
+          "Azimuth": 145.49147,
+          "Elevation": 90.29508
+        }
+      ],
+      [
+        {
+          "Azimuth": 203.7495,
+          "Elevation": 93.74065
+        },
+        {
+          "Azimuth": 203.7495,
+          "Elevation": 93.74065
+        },
+        {
+          "Azimuth": 155.931274,
+          "Elevation": 69.93665
+        },
+        {
+          "Azimuth": 169.163055,
+          "Elevation": 80.4426651
+        },
+        {
+          "Azimuth": 287.987335,
+          "Elevation": 69.66689
+        },
+        {
+          "Azimuth": 203.474609,
+          "Elevation": 81.06395
+        },
+        {
+          "Azimuth": 53.2671738,
+          "Elevation": 54.3329468
+        },
+        {
+          "Azimuth": 328.366943,
+          "Elevation": 78.4510651
+        },
+        {
+          "Azimuth": 225.753845,
+          "Elevation": 74.40575
+        },
+        {
+          "Azimuth": 15.002718,
+          "Elevation": 76.94827
+        },
+        {
+          "Azimuth": 357.545959,
+          "Elevation": 87.95646
+        },
+        {
+          "Azimuth": 177.709381,
+          "Elevation": 90.0
+        },
+        {
+          "Azimuth": 281.5346,
+          "Elevation": 78.69227
+        },
+        {
+          "Azimuth": 336.010925,
+          "Elevation": 88.0377655
+        },
+        null,
+        {
+          "Azimuth": 212.45636,
+          "Elevation": 80.2330856
+        },
+        {
+          "Azimuth": 192.188629,
+          "Elevation": 88.09656
+        },
+        {
+          "Azimuth": 3.43363237,
+          "Elevation": 87.14272
+        },
+        {
+          "Azimuth": 191.03421,
+          "Elevation": 90.70292
+        },
+        {
+          "Azimuth": 344.180817,
+          "Elevation": 86.7877
+        }
+      ],
+      [
+        {
+          "Azimuth": 177.137589,
+          "Elevation": 127.200371
+        },
+        {
+          "Azimuth": 177.137589,
+          "Elevation": 127.200371
+        },
+        {
+          "Azimuth": 66.1316757,
+          "Elevation": 87.91436
+        },
+        {
+          "Azimuth": 113.868324,
+          "Elevation": 87.91436
+        },
+        {
+          "Azimuth": 0.9548412,
+          "Elevation": 88.28188
+        },
+        {
+          "Azimuth": 175.995834,
+          "Elevation": 84.86972
+        },
+        {
+          "Azimuth": 36.9919319,
+          "Elevation": 88.6273651
+        },
+        {
+          "Azimuth": 0.57293874,
+          "Elevation": 88.96884
+        },
+        {
+          "Azimuth": 2.8624053,
+          "Elevation": 84.86362
+        },
+        {
+          "Azimuth": 24.3229713,
+          "Elevation": 89.0603
+        },
+        {
+          "Azimuth": 18.0604725,
+          "Elevation": 95.13741
+        },
+        {
+          "Azimuth": 58.7815971,
+          "Elevation": 104.806557
+        },
+        {
+          "Azimuth": 22.9321,
+          "Elevation": 98.26326
+        },
+        {
+          "Azimuth": 8.841814,
+          "Elevation": 95.4562149
+        },
+        {
+          "Azimuth": 32.45636,
+          "Elevation": 99.76691
+        },
+        null,
+        {
+          "Azimuth": 90.0,
+          "Elevation": 112.036224
+        },
+        {
+          "Azimuth": 25.2405281,
+          "Elevation": 96.7795258
+        },
+        {
+          "Azimuth": 67.3801346,
+          "Elevation": 112.369049
+        },
+        {
+          "Azimuth": 18.6669159,
+          "Elevation": 96.4280243
+        }
+      ],
+      [
+        {
+          "Azimuth": 225.0,
+          "Elevation": 103.32663
+        },
+        {
+          "Azimuth": 225.0,
+          "Elevation": 103.32663
+        },
+        {
+          "Azimuth": 50.4280968,
+          "Elevation": 71.83644
+        },
+        {
+          "Azimuth": 129.5719,
+          "Elevation": 71.83644
+        },
+        {
+          "Azimuth": 341.565063,
+          "Elevation": 80.75017
+        },
+        {
+          "Azimuth": 224.42128,
+          "Elevation": 69.80549
+        },
+        {
+          "Azimuth": 21.9658642,
+          "Elevation": 80.95415
+        },
+        {
+          "Azimuth": 348.690063,
+          "Elevation": 84.23269
+        },
+        {
+          "Azimuth": 315.0,
+          "Elevation": 69.9904
+        },
+        {
+          "Azimuth": 13.6040344,
+          "Elevation": 84.28314
+        },
+        {
+          "Azimuth": 5.587244,
+          "Elevation": 90.12396
+        },
+        {
+          "Azimuth": 30.9637527,
+          "Elevation": 94.16874
+        },
+        {
+          "Azimuth": 1.101706,
+          "Elevation": 89.66951
+        },
+        {
+          "Azimuth": 355.5526,
+          "Elevation": 90.12694
+        },
+        {
+          "Azimuth": 12.188632,
+          "Elevation": 91.9034348
+        },
+        {
+          "Azimuth": 270.0,
+          "Elevation": 67.96377
+        },
+        null,
+        {
+          "Azimuth": 9.727577,
+          "Elevation": 90.5647
+        },
+        {
+          "Azimuth": 16.6992435,
+          "Elevation": 101.899376
+        },
+        {
+          "Azimuth": 3.09405756,
+          "Elevation": 90.23194
+        }
+      ],
+      [
+        {
+          "Azimuth": 199.57312,
+          "Elevation": 93.59427
+        },
+        {
+          "Azimuth": 199.57312,
+          "Elevation": 93.59427
+        },
+        {
+          "Azimuth": 166.287766,
+          "Elevation": 77.93571
+        },
+        {
+          "Azimuth": 172.280289,
+          "Elevation": 83.0942841
+        },
+        {
+          "Azimuth": 252.645981,
+          "Elevation": 71.8352051
+        },
+        {
+          "Azimuth": 199.346741,
+          "Elevation": 83.4216843
+        },
+        {
+          "Azimuth": 129.340515,
+          "Elevation": 55.1111336
+        },
+        {
+          "Azimuth": 313.1524,
+          "Elevation": 75.92178
+        },
+        {
+          "Azimuth": 212.619232,
+          "Elevation": 79.5021744
+        },
+        {
+          "Azimuth": 22.1299362,
+          "Elevation": 71.2396851
+        },
+        {
+          "Azimuth": 352.234833,
+          "Elevation": 88.7099838
+        },
+        {
+          "Azimuth": 180.0,
+          "Elevation": 91.14576
+        },
+        {
+          "Azimuth": 211.429565,
+          "Elevation": 87.28595
+        },
+        {
+          "Azimuth": 316.4688,
+          "Elevation": 88.9616241
+        },
+        {
+          "Azimuth": 183.43364,
+          "Elevation": 92.85727
+        },
+        {
+          "Azimuth": 205.240524,
+          "Elevation": 83.22047
+        },
+        {
+          "Azimuth": 189.72757,
+          "Elevation": 89.4352951
+        },
+        null,
+        {
+          "Azimuth": 188.530762,
+          "Elevation": 91.41625
+        },
+        {
+          "Azimuth": 296.565063,
+          "Elevation": 87.4393539
+        }
+      ],
+      [
+        {
+          "Azimuth": 217.476181,
+          "Elevation": 96.78859
+        },
+        {
+          "Azimuth": 217.476181,
+          "Elevation": 96.78859
+        },
+        {
+          "Azimuth": 64.74683,
+          "Elevation": 61.93019
+        },
+        {
+          "Azimuth": 144.752426,
+          "Elevation": 71.20771
+        },
+        {
+          "Azimuth": 335.297577,
+          "Elevation": 77.20391
+        },
+        {
+          "Azimuth": 216.991928,
+          "Elevation": 71.59255
+        },
+        {
+          "Azimuth": 22.9769459,
+          "Elevation": 77.03823
+        },
+        {
+          "Azimuth": 345.664551,
+          "Elevation": 82.33607
+        },
+        {
+          "Azimuth": 293.498566,
+          "Elevation": 63.5079765
+        },
+        {
+          "Azimuth": 13.2547121,
+          "Elevation": 82.30092
+        },
+        {
+          "Azimuth": 4.184916,
+          "Elevation": 88.60654
+        },
+        {
+          "Azimuth": 41.9872131,
+          "Elevation": 87.8716
+        },
+        {
+          "Azimuth": 357.273682,
+          "Elevation": 86.5974
+        },
+        {
+          "Azimuth": 352.874969,
+          "Elevation": 88.57896
+        },
+        {
+          "Azimuth": 11.0342083,
+          "Elevation": 89.29708
+        },
+        {
+          "Azimuth": 247.380127,
+          "Elevation": 67.63094
+        },
+        {
+          "Azimuth": 196.699249,
+          "Elevation": 78.10062
+        },
+        {
+          "Azimuth": 8.530766,
+          "Elevation": 88.58374
+        },
+        null,
+        {
+          "Azimuth": 0.8951736,
+          "Elevation": 88.299736
+        }
+      ],
+      [
+        {
+          "Azimuth": 194.322723,
+          "Elevation": 93.77427
+        },
+        {
+          "Azimuth": 194.322723,
+          "Elevation": 93.77427
+        },
+        {
+          "Azimuth": 159.490479,
+          "Elevation": 79.58229
+        },
+        {
+          "Azimuth": 167.871948,
+          "Elevation": 83.7085953
+        },
+        {
+          "Azimuth": 239.743561,
+          "Elevation": 69.11803
+        },
+        {
+          "Azimuth": 194.0936,
+          "Elevation": 83.75827
+        },
+        {
+          "Azimuth": 124.72464,
+          "Elevation": 66.66977
+        },
+        {
+          "Azimuth": 317.290619,
+          "Elevation": 73.3231659
+        },
+        {
+          "Azimuth": 203.9625,
+          "Elevation": 79.83056
+        },
+        {
+          "Azimuth": 37.8444633,
+          "Elevation": 72.1542358
+        },
+        {
+          "Azimuth": 15.5241108,
+          "Elevation": 89.693306
+        },
+        {
+          "Azimuth": 171.573029,
+          "Elevation": 91.4690857
+        },
+        {
+          "Azimuth": 187.765167,
+          "Elevation": 88.45209
+        },
+        {
+          "Azimuth": 325.4915,
+          "Elevation": 89.70492
+        },
+        {
+          "Azimuth": 164.1808,
+          "Elevation": 93.2123
+        },
+        {
+          "Azimuth": 198.666916,
+          "Elevation": 83.5719757
+        },
+        {
+          "Azimuth": 183.094055,
+          "Elevation": 89.76806
+        },
+        {
+          "Azimuth": 116.565056,
+          "Elevation": 92.56064
+        },
+        {
+          "Azimuth": 180.895172,
+          "Elevation": 91.70026
+        },
+        null
+      ]
+    ]
+  }
+}

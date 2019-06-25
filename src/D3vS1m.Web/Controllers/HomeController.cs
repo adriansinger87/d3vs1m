@@ -5,29 +5,11 @@ using D3vS1m.Web.Extensions;
 
 namespace D3vS1m.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ViewControllerBase
     {
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
+            base.SetViewBag();
             return View();
         }
     }

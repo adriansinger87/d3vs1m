@@ -19,6 +19,8 @@
 
         $(document).ready(function () {
             appVue.getArguments();
+
+            $("#start-sim-link").on("click", startSimulation);
         });
     }
 
@@ -41,6 +43,22 @@
                 getArguments: getArguments,
                 getArgument: getArgument,
                 updateArgument: updateArgument
+            }
+        });
+    }
+
+    function startSimulation() {
+        $.ajax({
+            url: "/api/simulation/run",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            datatype: 'json',
+            async: true,
+            error: function (result) {
+                console.error(result);
+            },
+            success: function (result) {
+                console.info(result);
             }
         });
     }

@@ -9,7 +9,7 @@ namespace D3vS1m.Application
         // -- fields
 
         protected RuntimeBase _runtime;
-        
+
         // -- constructors
 
         public FactoryBase(RuntimeBase runtime)
@@ -27,11 +27,14 @@ namespace D3vS1m.Application
 
         public abstract ISimulatable RegisterSimulator(ISimulatable simulator, ArgumentsBase args);
 
-        public abstract SimulatorRepository CreateSimulation(ArgumentsBase[] args);
+        public abstract RuntimeBase SetupSimulation(ArgumentsBase[] args);
 
         // -- properties
 
         public abstract ArgumentsBase[] Arguments { get; }
-        public SimulatorRepository Simulators { get; protected set; }
+
+        protected SimulatorRepository Simulators { get; set; }
+
+
     }
 }
