@@ -5,6 +5,7 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Domain.System.Exceptions;
 using System;
 
 namespace D3vS1m.Application.Antenna

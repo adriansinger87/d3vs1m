@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using D3vS1m.Web.Models;
 using D3vS1m.Web.Extensions;
+using System;
 
 namespace D3vS1m.Web.Controllers
 {
@@ -11,6 +12,11 @@ namespace D3vS1m.Web.Controllers
         {
             base.SetViewBag();
             return View();
+        }
+
+        public IActionResult Foo()
+        {
+            throw new Exception("exception in Foo()");
         }
     }
 }

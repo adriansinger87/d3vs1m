@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sin.Net.Domain.Logging;
 using System;
 
 namespace D3vS1m.Web
@@ -84,6 +85,8 @@ namespace D3vS1m.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            Log.Trace("server-app startup finished");
         }
     }
 }

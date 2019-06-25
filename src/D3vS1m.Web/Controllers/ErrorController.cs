@@ -18,7 +18,6 @@ namespace D3vS1m.Web.Controllers
 
         public IActionResult Index()
         {
-            base.SetViewBag();
             var feature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
             var error = new ErrorViewModel
             {
@@ -33,7 +32,7 @@ namespace D3vS1m.Web.Controllers
             {
                 Log.Fatal(error.Exception);
             }
-
+            base.SetViewBag();
             return View(error);
         }
     }

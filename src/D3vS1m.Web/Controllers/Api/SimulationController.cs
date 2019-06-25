@@ -1,13 +1,8 @@
 ﻿using D3vS1m.Application;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using D3vS1m.Web.Extensions;
-using System.Threading.Tasks;
-using D3vS1m.Domain.Runtime;
-using D3vS1m.Application.Runtime;
-using D3vS1m.Application.Validation;
-using Sin.Net.Domain.Logging;
 using System;
+using System.Threading.Tasks;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -17,7 +12,6 @@ namespace D3vS1m.Web.Controllers.Api
     {
         public SimulationController(IHostingEnvironment env, FactoryBase factory) : base(env, factory)
         {
-
         }
 
         /// <summary>
@@ -39,10 +33,18 @@ namespace D3vS1m.Web.Controllers.Api
             }
 
             // run only once
-            await runtime.RunAsync(1);
+            var task = runtime.RunAsync(1);
+
+            try
+            {
+                task.Wait();
+            }
+            catch (Exception aex)
+            {
+                throw aex;
+            }
+
             return new JsonResult(runtime.Arguments);
         }
-
-
     }
 }
