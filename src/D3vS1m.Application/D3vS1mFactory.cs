@@ -98,7 +98,7 @@ namespace D3vS1m.Application
             }
         }
 
-        public override ArgumentsBase[] GetPredefinedArguemnts()
+        public override ArgumentsBase[] GetPredefinedArguments()
         {
             var args = new List<ArgumentsBase>
             {

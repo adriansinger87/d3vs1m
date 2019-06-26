@@ -23,7 +23,7 @@ namespace D3vS1m.Application
 
         public abstract ISimulatable NewSimulator(string name);
 
-        public abstract ArgumentsBase[] GetPredefinedArguemnts();
+        public abstract ArgumentsBase[] GetPredefinedArguments();
 
         public abstract ISimulatable RegisterSimulator(ISimulatable simulator, ArgumentsBase args);
 

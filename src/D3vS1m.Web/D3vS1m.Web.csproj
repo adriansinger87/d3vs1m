@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
 	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	<UserSecretsId>2a6ce7ad-f787-418f-b9d5-b5091d197ff9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -42,7 +42,7 @@ namespace D3vS1m.Web.Controllers.Api
 
             if (args == null)
             {
-                args = _factory.GetPredefinedArguemnts();
+                args = _factory.GetPredefinedArguments();
 
                 // --- individual arguments setups
 

@@ -85,8 +85,7 @@ namespace MSTests.Application
             var factory = new D3vS1mFactory(_runtime);
 
             // load all relevant arguments
-            // TODO remove typo
-            var simArgs = factory.GetPredefinedArguemnts();
+            var simArgs = factory.GetPredefinedArguments();
 
             // setup radio channel
             var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Key) as AdaptedFriisArgs;
