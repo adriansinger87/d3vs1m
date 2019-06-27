@@ -1,6 +1,8 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
+using D3vS1m.Domain.Infrastructure.Mqtt;
+using D3vS1m.Infrastructure.Mqtt;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +19,7 @@ namespace D3vS1m.Web
         // -- fields
 
         private IHostingEnvironment _env;
+        private IMqttControlable _mqtt;
 
         public IConfiguration Configuration { get; }
 
@@ -39,12 +42,13 @@ namespace D3vS1m.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            // HACK: re-work this approach to add a singleton for entire runtime
+            services.AddSingleton<IMqttControlable, MqttNetController>();
+
             var factory = new D3vS1mFactory(
                 new RuntimeController(
                     new D3vS1mValidator()));
-
             services.AddSingleton<FactoryBase>(factory);
+
             // session
 #if DEBUG
             TimeSpan ts = TimeSpan.FromSeconds(60);
@@ -61,10 +65,13 @@ namespace D3vS1m.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMqttControlable mqtt)
         {
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             _env = env;
+
+            _mqtt = mqtt;
+            ConfigureMqtt();
 
             // error handling fowarded to ErrorController
             app.UseStatusCodePagesWithReExecute("/error");
@@ -88,5 +95,42 @@ namespace D3vS1m.Web
 
             Log.Trace("server-app startup finished");
         }
+
+        private void ConfigureMqtt()
+        {
+            _mqtt.Connected += (o, e) =>
+            {
+                Log.Info($"Connected to '{e.Broker}' with id '{e.ClientID}'", this);
+            };
+
+            _mqtt.MessageReceived += (o, e) =>
+            {
+                Log.Trace($"{e.Topic}: {e.Message}", this);
+            };
+
+            if (_mqtt.CreateClient(GetConfig()))
+            {
+                _mqtt.ConnectAsync();
+            }
+            else
+            {
+                Log.Error("Client was not created", this);
+            }
+        }
+
+        private MqttConfig GetConfig()
+        {
+            return new MqttConfig
+            {
+                Broker = "broker.hivemq.com",
+                Port = 1883,
+                // TODO: setup config with client for each browser session or something like that
+                // TODO: integrate client id in the topic to send data only to one browser
+                ClientID = "D3vS1m-Client",
+                QoS = 2
+            };
+        }
+
+        // -- event methods
     }
 }

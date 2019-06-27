@@ -18,10 +18,12 @@
     function onConnect() {
         // Once a connection has been made, make a subscription and send a message.
         console.log("onConnect");
-        client.subscribe("World");
-        message = new Paho.Message("hello d3vs1m");
-        message.destinationName = "d3vs1m";
-        client.send(message);
+        client.subscribe("d3vs1m/console");
+
+        // send messages like this
+        //message = new Paho.Message("hello d3vs1m");   // message
+        //message.destinationName = "d3vs1m";           // topic
+        //client.send(message);
     }
 
     // called when the client loses its connection
