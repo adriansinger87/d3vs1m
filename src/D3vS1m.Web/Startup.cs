@@ -126,7 +126,7 @@ namespace D3vS1m.Web
                 Port = 1883,
                 // TODO: setup config with client for each browser session or something like that
                 // TODO: integrate client id in the topic to send data only to one browser
-                ClientID = "D3vS1m-Client",
+                ClientID = "d3vs1m-server-side",
                 QoS = 2
             };
         }

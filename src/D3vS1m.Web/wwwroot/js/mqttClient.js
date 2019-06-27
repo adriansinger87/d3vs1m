@@ -4,7 +4,7 @@
     var port = "8000";              // websocket port
 
     // Create a client instance
-    client = new Paho.Client(host, Number(port), "d3vs1m-clientId");
+    client = new Paho.Client(host, Number(port), "d3vs1m-client-side");
 
     // set callback handlers
     client.onConnectionLost = onConnectionLost;
@@ -35,7 +35,9 @@
 
     // called when a message arrives
     function onMessageArrived(message) {
-        console.log("onMessageArrived:" + message.payloadString);
-    }
+        var html = $("#console-content").html() + "<br />";
+        $("#console-content").html(html + message.payloadString);
+        $("#console-modal").scrollTop($("#console-content")[0].clientHeight);
+    } 
 
 });

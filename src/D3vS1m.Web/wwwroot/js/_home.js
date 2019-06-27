@@ -61,6 +61,10 @@
                 console.info(result);
             }
         });
+
+        // clear console
+        $("#console-content").html("");
+        $('#console-modal').modal('open');
     }
 
     function getArguments () {
