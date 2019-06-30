@@ -19,7 +19,7 @@ namespace D3vS1m.Web.Controllers
         public IActionResult Index()
         {
             var feature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
-            var error = new ErrorViewModel
+            var error = new ErrorResponse
             {
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
                 StatusCode = Response.StatusCode,

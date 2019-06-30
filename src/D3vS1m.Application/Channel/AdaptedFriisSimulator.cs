@@ -136,7 +136,7 @@ namespace D3vS1m.Application.Channel
                 ref _sceneArgs);
 
             // override the rx positions field
-            _radioArgs.RxPositions = _radioArgs.RadioBox.CreateRxPositions();
+            _radioArgs.UpdatePositions();
         }
 
         // -- properties

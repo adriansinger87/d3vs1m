@@ -33,17 +33,17 @@ namespace D3vS1m.Domain.Data.Arguments
         /// <summary>
         /// Gets or sets the name of the specific arguments class
         /// </summary>
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets the global Identifier of the arguments instance
         /// </summary>
-        public string Guid { get; set; }
+        public virtual string Guid { get; set; }
 
         /// <summary>
         /// Gets or sets if the corresponding simulator shall be used in the runtime or not.
         /// </summary>
-        public bool Active { get; set; }
+        public virtual bool Active { get; set; }
 
     }
 }

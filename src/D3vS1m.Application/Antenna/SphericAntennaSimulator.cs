@@ -62,8 +62,8 @@ namespace D3vS1m.Application.Antenna
             float az_step = 360.0f / (float)nAz;
             float el_step = 180.0f / (float)(nEl - 1);
 
-            float az_percent = Const.Func.Fract((azimuthDegree / az_step));
-            float el_percent = Const.Func.Fract((elevationDegree / el_step));
+            float az_percent = Const.Math.Fract((azimuthDegree / az_step));
+            float el_percent = Const.Math.Fract((elevationDegree / el_step));
 
             int row_0 = (int)Math.Floor((elevationDegree / el_step));
             int row_1 = row_0 + 1;

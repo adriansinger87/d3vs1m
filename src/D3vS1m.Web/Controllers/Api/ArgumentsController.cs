@@ -1,9 +1,11 @@
 ﻿using D3vS1m.Application;
+using D3vS1m.Application.Channel;
 using D3vS1m.Application.Devices;
 using D3vS1m.Application.Network;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Extensions;
 using D3vS1m.Web.Extensions;
+using D3vS1m.Web.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -11,6 +13,7 @@ using Sin.Net.Domain.Logging;
 using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -30,7 +33,7 @@ namespace D3vS1m.Web.Controllers.Api
         {
 
         }
-        
+
         /// <summary>
         /// GET: api/Arguments
         /// </summary>
@@ -52,6 +55,11 @@ namespace D3vS1m.Web.Controllers.Api
                 this.HttpSession().SetArguments(args);
             }
 
+            var result = args.Select(a =>
+            {
+                return new { a.Name, a.Guid, a.Active };
+            });
+
             return new JsonResult(args);
         }
 
@@ -65,9 +73,18 @@ namespace D3vS1m.Web.Controllers.Api
         {
             var arg = SessionArguments().GetByGuid(guid);
 
-            return new JsonResult(arg);
+            if (arg is AdaptedFriisArgs)
+            {
+                var ca = arg as AdaptedFriisArgs;
+                var channelArg = new AdaptedFriisArgsView(ca);
+                return new JsonResult(channelArg);
+            }
+            else
+            {
+                return new JsonResult(arg);
+            }
         }
-        
+
         /// <summary>
         /// PUT: api/Arguments/id
         /// </summary>
@@ -84,10 +101,13 @@ namespace D3vS1m.Web.Controllers.Api
             {
                 throw new Exception("value could not be deserialized");
             }
-            else
+            else if (clientArg is AdaptedFriisArgs)
             {
-                args.SetByGuid(guid, clientArg);
+                (clientArg as AdaptedFriisArgs).UpdatePositions();
             }
+
+            args.SetByGuid(guid, clientArg);
+
 
             // safe session
             this.HttpSession().SetArguments(args);

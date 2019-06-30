@@ -36,7 +36,6 @@ namespace D3vS1m.Application.Runtime
         /// <param name="validator">The validator concretion could be of type BasicValidator or a derived class</param>
         public RuntimeController(BasicValidator validator)
         {
-            // HACK: question: should I rmove DI per constructor and inject the D3vS1mValidator at run method?
             _validator = validator;
             _args = new RuntimeArgs();
 

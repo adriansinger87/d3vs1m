@@ -17,6 +17,7 @@ namespace D3vS1m.Domain.System.Constants
         public class Runtime
         {
             public const double IncrementSeconds = 10;
-        } 
+        }
+
     }
 }

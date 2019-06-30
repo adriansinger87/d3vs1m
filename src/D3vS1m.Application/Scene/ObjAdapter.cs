@@ -168,8 +168,7 @@ namespace D3vS1m.Application.Scene
 
             if (len < 4 || len > 5)
             {
-                // TODO: get more specfic
-                throw new InvalidDataException("could not load obj-file");
+                throw new InvalidDataException($"Could not load obj-file. The length of the vertices line '{len}' is invalid.");
             }
 
             float x = ParseF(vertexData[len - 3]);

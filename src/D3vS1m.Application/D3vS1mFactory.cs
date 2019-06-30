@@ -23,10 +23,6 @@ namespace D3vS1m.Application
 
         public D3vS1mFactory(RuntimeBase runtime) : base(runtime)
         {
-            // HACK: generic is not working for session state serialization based on json strings
-            /*
-             * TODO: safe only the args in the session of a web-app
-             */
             base.Simulators = new SimulatorRepository();
         }
 

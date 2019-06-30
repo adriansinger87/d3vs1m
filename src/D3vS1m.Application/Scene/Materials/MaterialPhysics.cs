@@ -11,13 +11,12 @@ namespace D3vS1m.Application.Scene.Materials
     {
         public MaterialPhysics()
         {
-            // TODO: Decide what values a default instance should have
-            Frequency = 0;
-            PenetrationLoss = 0;
-            RelativePermeability = 0;
-            RelativePermittivity = 0;
-            ReflectionFactor = 1;
-            ReflectionLoss = 0;
+            Frequency = Const.Scene.Frequency;
+            PenetrationLoss = Const.Scene.PenetrationLoss;
+            RelativePermeability = Const.Scene.RelativePermeability;
+            RelativePermittivity = Const.Scene.RelativePermittivity;
+
+            CalcReflectionValues();
         }
 
         /// <summary>

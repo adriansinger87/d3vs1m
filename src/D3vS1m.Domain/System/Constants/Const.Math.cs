@@ -15,21 +15,21 @@ namespace D3vS1m.Domain.System.Constants
         /// <summary>
         /// Container class for basic an simple mathematical constant functions
         /// </summary>
-        public class Func
+        public class Math
         {
             /// <summary>
             /// Calculates the Degree from a given float the represents an angle as Radian
             /// </summary>
             /// <param name="rad">the input angle as Radian value</param>
             /// <returns>The Degree value</returns>
-            public static float ToDegree(float rad) => ((rad * 180) / (float)Math.PI);
+            public static float ToDegree(float rad) => ((rad * 180) / (float)global::System.Math.PI);
 
             /// <summary>
             /// Calculates the Radian from a given float the represents an angle as Degree
             /// </summary>
             /// <param name="deg">the input angle as Degree value</param>
             /// <returns>The Radian value</returns>
-            public static float ToRadian(float deg) => ((deg * (float)Math.PI) / 180);
+            public static float ToRadian(float deg) => ((deg * (float)global::System.Math.PI) / 180);
 
             /// <summary>
             /// Gets the fractional part of a floating point number.

@@ -13,6 +13,9 @@ using System.Linq;
 
 namespace D3vS1m.Web.Extensions
 {
+    // TODO: Issue! long arrays are stored as json string in the session that makes the load and save procedure very long
+    // - #1 try to store the string as compressed binary code
+    // - #2 safe long data array on disk and never in session
     public static class HttpSessionExtensions
     {
         public static readonly string ARGUMENTS_KEY = "ARGUMENTS_KEY";

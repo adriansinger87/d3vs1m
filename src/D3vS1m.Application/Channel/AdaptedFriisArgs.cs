@@ -7,11 +7,17 @@ using System.Collections.Generic;
 namespace D3vS1m.Application.Channel
 {
     [Serializable]
-    public class AdaptedFriisArgs : ArgumentsBase
+    public class AdaptedFriisArgs : ArgumentsBase, IAdaptedFriisArgsDecorable
     {
         public AdaptedFriisArgs() : base()
         {
-            Reset();
+            Name = Models.Channel.AdaptedFriis.Key;
+
+            // default settings
+            this.RadioBox = new RadioCuboid();
+
+            AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
+            AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
         }
 
         // -- methods
@@ -27,14 +33,27 @@ namespace D3vS1m.Application.Channel
             AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
         }
 
+        public virtual void UpdatePositions()
+        {
+            RxPositions = RadioBox.CreateRxPositions();
+        }
+
         // -- properties
 
-        public float AttenuationExponent { get; set; }
-        public float AttenuationOffset { get; set; }
-        public bool UseObstacles { get; set; }
+        public override string Guid { get => base.Guid; set => base.Guid = value; }
+        public override string Name { get => base.Name; set => base.Name = value; }
+
+        public virtual float AttenuationExponent { get; set; }
+        public virtual float AttenuationOffset { get; set; }
+        public virtual bool UseObstacles { get; set; }
         public RadioCuboid RadioBox { get; set; }
-        public Vertex[] RxPositions { get; set; }
-        public float[] RxValues { get; set; }
-        public List<float[]> RxColors { get; set; }
+
+
+        public virtual Vertex[] RxPositions { get; set; }
+        
+        public virtual float[] RxValues { get; set; }
+        
+        public virtual List<float[]> RxColors { get; set; }
+
     }
 }

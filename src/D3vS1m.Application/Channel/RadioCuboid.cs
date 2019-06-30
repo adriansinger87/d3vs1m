@@ -16,6 +16,8 @@ namespace D3vS1m.Application.Channel
             MinCorner = Domain.System.Constants.Const.Channel.Radio.Space.MinCorner;
             MaxCorner = Domain.System.Constants.Const.Channel.Radio.Space.MaxCorner;
             Resolution = Domain.System.Constants.Const.Channel.Radio.Space.Resolution;
+
+            CreateRxPositions();
         }
 
         // --- public methoden
@@ -31,8 +33,10 @@ namespace D3vS1m.Application.Channel
 
             Vertex[] positions = new Vertex[TotalData];
             float mid = Resolution / 2;
-            // 'mid' pushes the data-point into the middle of an imaginary cube with half of the length of resolution
-            // prevent the point to reach the edges of box
+            /*
+             * 'mid' pushes the data-point into the middle of an imaginary cube with half of the length of resolution 
+             * to prevent the point to reach the edges of the box
+             */
             int i = 0;
             for (float x = MinCorner.X + mid; x < MaxCorner.X; x = (float)Math.Round(x + Resolution, 3))
             {
