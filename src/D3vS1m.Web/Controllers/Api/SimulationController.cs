@@ -17,6 +17,7 @@ namespace D3vS1m.Web.Controllers.Api
     [ApiController]
     public class SimulationController : ApiControllerBase
     {
+        private const int ITERATIONS = 10;
         private const string CONSOLE_TOPIC = "d3vs1m/console";
 
         RuntimeBase _runtime;
@@ -70,7 +71,7 @@ namespace D3vS1m.Web.Controllers.Api
             }
 
             // run until break condition
-            var task = _runtime.RunAsync(3);
+            var task = _runtime.RunAsync(ITERATIONS);
         }
 
         private void OnStarted(object sender, SimulatorEventArgs e)

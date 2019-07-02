@@ -59,6 +59,11 @@ namespace MSTests.Application
 
             // assert
             Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation");
+
+            radioArgs.RxPositions
+                .Zip(radioArgs.RxValues, (a,b) => $"Pos: {a.ToString()} with {b} dBm")
+                .ToList()
+                .ForEach(s => Log.Debug(s));
         }
 
         [TestMethod]
