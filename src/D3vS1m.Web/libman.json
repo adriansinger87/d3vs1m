@@ -41,6 +41,13 @@
         "worker-json.js",
         "mode-json.js"
       ]
+    },
+    {
+      "library": "paho-mqtt@1.1.0",
+      "destination": "wwwroot/lib/paho-mqtt",
+      "files": [
+        "paho-mqtt.min.js"
+      ]
     }
   ]
 }

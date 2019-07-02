@@ -23,6 +23,7 @@
         @RenderBody()
     </div>
     <partial name="_Footer" />
+    <partial name="_ConsoleModal" />
 
     @* JS lib settings *@
 
@@ -31,8 +32,11 @@
         <script src="~/lib/vue/vue.min.js"></script>
         <script src="~/lib/materialize/js/materialize.min.js"></script>
         <script src="~/lib/ace/ace.js"></script>
+        <script src="~/lib/paho-mqtt/paho-mqtt.min.js"></script>
         <script src="~/js/main.js" asp-append-version="true"></script>
+        <script src="~/js/mqttClient.js"></script>
     </environment>
+
     <environment exclude="Development">
         <script src="~/lib/vue/vue.min.js"
                 asp-fallback-src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.3/vue.min.js"></script>
@@ -42,6 +46,7 @@
                 asp-fallback-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="~/lib/ace/ace.js"></script>
         <script src="~/js/main.js" asp-append-version="true"></script>
+        <script src="~/js/mqttClient.js"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)

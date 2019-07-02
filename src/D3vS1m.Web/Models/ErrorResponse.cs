@@ -5,12 +5,12 @@ namespace D3vS1m.Web.Models
     /// <summary>
     /// 
     /// </summary>
-    public class ErrorViewModel
+    public class ErrorResponse
     {
         /// <summary>
         /// 
         /// </summary>
-        public ErrorViewModel()
+        public ErrorResponse()
         {
             StatusCode = 500;
         }

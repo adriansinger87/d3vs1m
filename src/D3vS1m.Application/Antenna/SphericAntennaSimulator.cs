@@ -5,6 +5,7 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Domain.System.Exceptions;
 using System;
 
 namespace D3vS1m.Application.Antenna
@@ -42,9 +43,12 @@ namespace D3vS1m.Application.Antenna
         {
             base.BeforeExecution();
 
-            // TODO iterate all network orientation informations and calculate resulting antenna gain
-            // TODO remove test magic numbers
-            float gain = CalculateGain(45, 45);
+            if (_antennaArgs.GainMatrix != null)
+            {
+                // TODO iterate all network orientation informations and calculate resulting antenna gain
+                // TODO remove test magic numbers
+                //float gain = CalculateGain(45, 45);
+            }
 
             base.AfterExecution();
         }
@@ -58,8 +62,8 @@ namespace D3vS1m.Application.Antenna
             float az_step = 360.0f / (float)nAz;
             float el_step = 180.0f / (float)(nEl - 1);
 
-            float az_percent = Const.Func.Fract((azimuthDegree / az_step));
-            float el_percent = Const.Func.Fract((elevationDegree / el_step));
+            float az_percent = Const.Math.Fract((azimuthDegree / az_step));
+            float el_percent = Const.Math.Fract((elevationDegree / el_step));
 
             int row_0 = (int)Math.Floor((elevationDegree / el_step));
             int row_1 = row_0 + 1;

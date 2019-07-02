@@ -85,7 +85,7 @@ namespace MSTests.Application
             var factory = new D3vS1mFactory(_runtime);
 
             // load all relevant arguments
-            var simArgs = factory.GetPredefinedArguemnts();
+            var simArgs = factory.GetPredefinedArguments();
 
             // setup radio channel
             var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Key) as AdaptedFriisArgs;
@@ -105,14 +105,14 @@ namespace MSTests.Application
                base.ImportDevices().ToArray());
 
             // final setup, cross-bind some arguments
-            factory.CreateSimulation(simArgs);
+            var runtime = factory.SetupSimulation(simArgs);
             _runtime.Started += (o, e) =>
             {
             };
             
             // act
             int iterations = 5;
-            if (_runtime.Setup(factory.Simulators).Validate() == false)
+            if (runtime.Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");
             }

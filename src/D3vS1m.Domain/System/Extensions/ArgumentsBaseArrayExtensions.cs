@@ -8,8 +8,12 @@ namespace D3vS1m.Domain.System.Extensions
 {
     public static class ArgumentsBaseArrayExtensions
     {
-
         // -- Name
+
+        public static bool ContainsName(this ArgumentsBase[] args, string name)
+        {
+            return args.Any(a => a.Name == name);
+        }
 
         public static ArgumentsBase GetByName(this ArgumentsBase[] args, string name)
         {
@@ -28,6 +32,11 @@ namespace D3vS1m.Domain.System.Extensions
         }
 
         // -- Guid
+
+        public static bool ContainsGuid(this ArgumentsBase[] args, string guid)
+        {
+            return args.Any(a => a.Guid == guid);
+        }
 
         public static ArgumentsBase GetByGuid(this ArgumentsBase[] args, string guid)
         {

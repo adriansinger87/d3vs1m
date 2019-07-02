@@ -2,33 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using D3vS1m.Web.Models;
 using D3vS1m.Web.Extensions;
+using System;
 
 namespace D3vS1m.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ViewControllerBase
     {
         public IActionResult Index()
         {
+            base.SetViewBag();
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Foo()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            throw new Exception("exception in Foo()");
         }
     }
 }

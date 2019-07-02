@@ -23,10 +23,6 @@ namespace D3vS1m.Application
 
         public D3vS1mFactory(RuntimeBase runtime) : base(runtime)
         {
-            // HACK: generic is not working for session state serialization based on json strings
-            /*
-             * TODO: safe only the args in the session of a web-app
-             */
             base.Simulators = new SimulatorRepository();
         }
 
@@ -98,7 +94,7 @@ namespace D3vS1m.Application
             }
         }
 
-        public override ArgumentsBase[] GetPredefinedArguemnts()
+        public override ArgumentsBase[] GetPredefinedArguments()
         {
             var args = new List<ArgumentsBase>
             {
@@ -134,14 +130,16 @@ namespace D3vS1m.Application
             return simulator;
         }
 
-        public override SimulatorRepository CreateSimulation(ArgumentsBase[] args)
+        public override RuntimeBase SetupSimulation(ArgumentsBase[] args)
         {
+            base.Simulators.Clear();
             foreach (var arg in args)
             {
                 RegisterSimulator(NewSimulator(arg.Name), arg);
             }
 
-            return base.Simulators;
+            _runtime.Setup(Simulators);
+            return _runtime;
         }
 
         // -- properties

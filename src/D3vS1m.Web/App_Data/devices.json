@@ -1,0 +1,74 @@
+﻿[
+	{
+		"Name": "Anchor_1",
+		"Position": {"X": 22.1, "Y": 8.5, "Z": 20 }
+	},
+	{
+		"Name": "Anchor_2",
+		"Position": {"X": 22.1, "Y": 8.5, "Z": 0 }
+	},
+	{
+		"Name": "Anchor_3",
+		"Position": {"X": 0, "Y": 8.5, "Z": 40 }
+	},
+	{
+		"Name": "Anchor_4",
+		"Position": {"X": 0.2, "Y": 8.5, "Z": 0 }
+	},
+	{
+		"Name": "Anchor_5",
+		"Position": {"X": 22.1, "Y": 8.5, "Z": 40 }
+	},
+	{
+		"Name": "Anchor_6",
+		"Position": {"X": 0, "Y": 8.5, "Z": 60 }
+	},
+	{
+		"Name": "Anchor_7",
+		"Position": {"X": 0, "Y": 8.5, "Z": 20 }
+	},
+	{
+		"Name": "Anchor_8",
+		"Position": {"X": 22.1, "Y": 8.5, "Z": 60 }
+	},
+	{
+		"Name": "Tag_0x08",
+		"Position": {"X": 14.5, "Y": 3.25, "Z": 56 }
+	},
+	{
+		"Name": "Tag_0x09",
+		"Position": {"X": 16, "Y": 2.5,"Z": 20 }
+	},
+	{
+		"Name": "Tag_0x0A",
+		"Position": {"X": 10.5, "Y": 3.5, "Z": 36 }
+	},
+	{
+		"Name": "Tag_0x0B",
+		"Position": {"X": 6.5, "Y": 3.25, "Z": 55 }
+	},
+	{
+		"Name": "Tag_0x0C",
+		"Position": {"X": 15.4, "Y": 2.5, "Z": 35 }
+	},
+	{
+		"Name": "Tag_0x0D",
+		"Position": {"X": -0.5, "Y": 7.6, "Z": 10 }
+	},
+	{
+		"Name": "Tag_0x0E",
+		"Position": {"X": 10, "Y": 3.35, "Z": 10 }
+	},
+	{
+		"Name": "Tag_0x0F",
+		"Position": {"X": 16, "Y": 3, "Z": 45 }
+	},
+	{
+		"Name": "Tag_0x10",
+		"Position": {"X": 11.5, "Y": 2.25, "Z": 15 }
+	},
+	{
+		"Name": "Tag_0x11",
+		"Position": {"X": 12, "Y": 3.2, "Z": 47 }
+	},
+]

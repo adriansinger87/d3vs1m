@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.WebUtilities;
 using D3vS1m.Web.Models;
 using Sin.Net.Domain.Logging;
 
-namespace MPM.Web.Injection.Controllers
+namespace D3vS1m.Web.Controllers
 {
     [Route("Error")]
-    public class ErrorController : Controller
+    public class ErrorController : ViewControllerBase
     {
         public ErrorController()
         {
@@ -19,7 +19,7 @@ namespace MPM.Web.Injection.Controllers
         public IActionResult Index()
         {
             var feature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
-            var error = new ErrorViewModel
+            var error = new ErrorResponse
             {
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
                 StatusCode = Response.StatusCode,
@@ -32,7 +32,7 @@ namespace MPM.Web.Injection.Controllers
             {
                 Log.Fatal(error.Exception);
             }
-
+            base.SetViewBag();
             return View(error);
         }
     }

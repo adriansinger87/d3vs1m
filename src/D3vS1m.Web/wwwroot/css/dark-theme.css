@@ -30,3 +30,9 @@ footer a {
     .modal .modal-footer .btn-flat {
         color: white;
     }
+
+#console-modal > .modal-content {
+    background: black;
+    font-family: monospace;
+    font-size: 1.2em;
+}

@@ -3,7 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
 	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	<UserSecretsId>2a6ce7ad-f787-418f-b9d5-b5091d197ff9</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="App_Data\devices.json" />
+    <Content Remove="App_Data\network_config.json" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -16,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
     <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
+    <ProjectReference Include="..\D3vS1m.Infrastructure\D3vS1m.Infrastructure.csproj" />
     <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
   </ItemGroup>
 
@@ -36,6 +43,15 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App_Data\devices.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\network_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties libman_1json__JSONSchema="http://json.schemastore.org/bukkit-plugin" /></VisualStudio></ProjectExtensions>

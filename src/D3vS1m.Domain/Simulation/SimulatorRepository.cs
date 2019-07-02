@@ -17,6 +17,18 @@ namespace D3vS1m.Domain.Simulation
 
         // -- methods
 
+        public override void Clear()
+        {
+            if (Items == null)
+            {
+                Items = new List<ISimulatable>();
+            }
+            else
+            {
+                Items.Clear();
+            }
+        }
+
         public void SetArguments(string id, ArgumentsBase args)
         {
             this[id].With(args);

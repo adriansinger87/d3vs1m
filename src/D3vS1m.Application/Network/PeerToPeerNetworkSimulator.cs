@@ -96,19 +96,19 @@ namespace D3vS1m.Application.Network
                  * Einheitsvektor 'e_ELEVATION' (0°) ist (0, 1, 0) -> OpenGL (+y)-Richtung
                  * Winkelberechnung zwischen den Vektoren wie sie gerendert werden
                  */
-                tx_EL = Vertex.RotateRadX(Const.Func.ToRadian(txDev.Orientation.Elevation), e_EL);
-                tx_EL = Vertex.RotateRadY(Const.Func.ToRadian(txDev.Orientation.Azimuth), tx_EL);
-                float elevation = Const.Func.ToDegree(Vertex.ACosRad(line, tx_EL));
+                tx_EL = Vertex.RotateRadX(Const.Math.ToRadian(txDev.Orientation.Elevation), e_EL);
+                tx_EL = Vertex.RotateRadY(Const.Math.ToRadian(txDev.Orientation.Azimuth), tx_EL);
+                float elevation = Const.Math.ToDegree(Vertex.ACosRad(line, tx_EL));
 
                 /*
                  * AZIMUT
                  * Normale 'n' auf Ebene zwischen rxPos, txPos und Elevationsstab
                  * ACHTUNG der Elevationsstab vom Sender muss ausgehend von der Sendeposition gemessen werden, daher die Addition
                  */
-                tx_AZ = Vertex.RotateRadX(Const.Func.ToRadian(txDev.Orientation.Elevation), e_AZ);       // erst rotatiom um Elevation-Winkel
-                tx_AZ = Vertex.RotateRadY(Const.Func.ToRadian(txDev.Orientation.Azimuth), tx_AZ);        // dann Azimut-Winkel der Antenne
+                tx_AZ = Vertex.RotateRadX(Const.Math.ToRadian(txDev.Orientation.Elevation), e_AZ);       // erst rotatiom um Elevation-Winkel
+                tx_AZ = Vertex.RotateRadY(Const.Math.ToRadian(txDev.Orientation.Azimuth), tx_AZ);        // dann Azimut-Winkel der Antenne
                 Vertex n = Vertex.Normalize(rxDev.Position, txDev.Position, (txDev.Position + tx_EL));
-                float azimuth = Const.Func.ToDegree(Vertex.ASinRad(n, tx_AZ));
+                float azimuth = Const.Math.ToDegree(Vertex.ASinRad(n, tx_AZ));
 
                 // Azimut-Korrekturen
                 if (float.IsNaN(azimuth))   // -> is not-a-number ?

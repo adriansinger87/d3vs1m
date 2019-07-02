@@ -20,7 +20,7 @@ namespace D3vS1m.Domain.System.Constants
                     public static readonly Vertex MaxCorner = new Vertex(5, 5, 5);
                     public const float Resolution = 1;
                 }
-
+                
                 public const float AttenuationExponent = 1.25F;
                 public const float AttenuationOffset = 0;
 
