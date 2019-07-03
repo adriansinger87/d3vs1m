@@ -17,6 +17,8 @@
 
     // -- functions
 
+    // TODO @ AS: provide a session bound guid for personal topics
+
     function connectMqtt(event, id) {
         var guid = id == undefined ? "" : "-" + id;
         client = new Paho.Client(host, Number(port), "d3vs1m-browser" + guid);
