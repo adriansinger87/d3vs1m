@@ -17,14 +17,15 @@ namespace D3vS1m.Application.Runtime
 
         public void ResetTime()
         {
-            Reset();
+            StartTime = DateTime.Now;
+            ElapsedTime = new TimeSpan();
+            Iterations = 0;
         }
 
         public override void Reset()
         {
-            StartTime = DateTime.Now;
-            ElapsedTime = new TimeSpan();
-            Iterations = 0;
+            base.Guid = global::System.Guid.NewGuid().ToString();
+            ResetTime();
         }
 
         // -- properties

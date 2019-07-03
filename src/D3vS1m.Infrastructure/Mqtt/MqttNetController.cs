@@ -110,6 +110,7 @@ namespace D3vS1m.Infrastructure.Mqtt
             MqttApplicationMessage msg = new MqttApplicationMessageBuilder()
                .WithTopic(topic)
                .WithPayload(message)
+               .WithRetainFlag(false)
                .Build();
 
             if (qos >= 0 &&

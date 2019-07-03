@@ -144,7 +144,5 @@ namespace D3vS1m.Application
 
         // -- properties
 
-        public override ArgumentsBase[] Arguments => base.Simulators.AllArguments;
-
     }
 }

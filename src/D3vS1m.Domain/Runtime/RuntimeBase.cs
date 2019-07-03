@@ -3,6 +3,7 @@ using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
 using Sin.Net.Domain.Logging;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace D3vS1m.Domain.Runtime

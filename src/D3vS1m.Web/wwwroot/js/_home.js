@@ -2,6 +2,7 @@
 
     // -- fields
 
+    var apiPath = PATH + "api/";
     var appVue;
     var editor;
 
@@ -20,13 +21,14 @@
         $(document).ready(function () {
             appVue.getArguments();
 
-            $("#start-sim-link").on("click", startSimulation);
+            $("#start-sim-link").safeBind("click", startSimulation);
+
+            $(document).safeBind(RUN_SIMULATION, runSimulation);
         });
     }
 
     function initAce() {
         editor = ace.edit("ace-editor");
-        //ace.config.set("workerPath", "lib/ace/")
         editor.setTheme("ace/theme/dracula");
         editor.session.setMode("ace/mode/json");;
     }
@@ -35,9 +37,10 @@
         appVue = new Vue({
             el: '#app-vue',
             data: {
-                currentGuid: null,
-                arguments: null,
-                arg: null
+                runtimeArg : null,  // the loaded runtime arg before the simulation
+                currentGuid: null,  // guid of current simulator argument
+                arguments: null,    // list of all arguments objects
+                arg: null           // the last loaded simulator argument
             },
             methods: {
                 getArguments: getArguments,
@@ -47,9 +50,31 @@
         });
     }
 
+    // starts the server side prcedure, but the actual async run will startet when RUN_SIMULATION will be fired
+    // this depends on the ready connection of the mqtt async message pipeline
     function startSimulation() {
+
         $.ajax({
-            url: "/api/simulation/run",
+            url: apiPath + "Simulation",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            datatype: 'json',
+            async: true,
+            error: function (result) {
+                console.error(result);
+            },
+            success: function (result) {
+                console.debug(result);
+                appVue.runtimeArg = result;
+                //$(document).trigger(CONNECT_MQTT, appVue.runtimeArg.guid);
+                runSimulation();
+            }
+        });       
+    }
+
+    function runSimulation() {
+        $.ajax({
+            url: apiPath + "simulation/run/" + appVue.runtimeArg.guid,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             datatype: 'json',
@@ -68,9 +93,8 @@
     }
 
     function getArguments () {
-
         $.ajax({
-            url: "/api/Arguments",
+            url: apiPath + "Arguments",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             datatype: 'json',
@@ -89,7 +113,7 @@
 
         appVue.currentGuid = id;
         $.ajax({
-            url: "/api/Arguments/" + id,
+            url: apiPath + "Arguments/" + id,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             datatype: 'json',
@@ -114,7 +138,7 @@
         var code = editor.getValue();
 
         $.ajax({
-            url: "/api/Arguments/" + id,
+            url: apiPath + "Arguments/" + id,
             type: 'PUT',
             contentType: "application/json; charset=utf-8",
             datatype: 'json',
