@@ -43,6 +43,7 @@ namespace D3vS1m.Web.Controllers.Api
 
         protected ArgumentsBase[] SessionArguments()
         {
+            // TODO @ AS: When the session returns nothing create new arguments
             return this.HttpSession().GetArguments();
         }
 

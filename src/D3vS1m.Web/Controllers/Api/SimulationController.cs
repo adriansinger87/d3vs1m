@@ -76,9 +76,6 @@ namespace D3vS1m.Web.Controllers.Api
 
         // -- private methods
 
- 
-      
-
         private void SetupSimulation()
         {
             // fetch the array of arguments for each simulator 
@@ -128,6 +125,7 @@ namespace D3vS1m.Web.Controllers.Api
             // TODO @ AS: dont manipulate arguments during simulation this data should be moved and persisted into results data container
             //this.HttpSession().SetArguments(_factory.SimulationArguments);
             PublishConsoleTopic("### Simulation stopped");
+            _mqtt.PublishAsync(_disconnectTopic, BuildMessage(DateTime.Now), 2);
         }
 
         private void OnSimulatorExecuted(object sender, SimulatorEventArgs e)

@@ -78,3 +78,8 @@ i {
     position: absolute;
     bottom: 0px;
 }
+
+#console-progress {
+    margin: 0px;
+    display: none;
+}

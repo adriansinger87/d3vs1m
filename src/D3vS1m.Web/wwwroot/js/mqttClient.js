@@ -1,36 +1,37 @@
 ﻿$(function () {
 
     // -- fields
+    
+    const host = "broker.hivemq.com"; // borker url
+    const port = "8000";              // websocket port
+
+    const baseTopic = "d3vs1m";
+    const consoleTopic = "console";
+    const disconnectTopic = "disconnect";
 
     var client;
-    var host = "broker.hivemq.com"; // borker url
-    var port = "8000";              // websocket port
     var guid = "";
 
     // - -procedure
 
     $(document).ready(function () {
 
-        // connect the client on event base
+        $(document).safeBind(SUBSCRIBE_MQTT, subscribe);
+        $(document).safeBind(UNSUBSCRIBE_MQTT, unsubscribe);
         connectMqtt();
     });
 
     // -- functions
 
-    // TODO @ AS: provide a session bound guid for personal topics
-
-    function connectMqtt(event, id) {
-        var guid = id == undefined ? "" : "-" + id;
-        client = new Paho.Client(host, Number(port), "d3vs1m-browser" + guid);
+    function connectMqtt() {
+        client = new Paho.Client(host, Number(port), "d3vs1m-browser"); // TODO @ AS: add session or something to distinguish every client
         client.onConnectionLost = onConnectionLost;
         client.onMessageArrived = onMessageArrived;
         client.connect({
             cleanSession: true,
             reconnect: true,
             onSuccess: function () {
-                console.log("onConnected() with guid:" + guid);
-                client.subscribe("d3vs1m/" + guid + "/console");
-                client.subscribe("d3vs1m/" + guid + "/disconnect");
+                console.log("Mqtt is connected");
             },
             onFailure: function () {
                 console.error("mqtt connection failed to host: " + host + " port: " + port);
@@ -40,6 +41,21 @@
 
     function disconnectMqtt() {
         client.disconnect();
+    }
+
+    function subscribe(event, id) {
+        $("#console-progress").show();
+        guid = id == undefined ? "" : id;
+        console.log("Mqtt subscribing with guid:" + guid);
+        client.subscribe(baseTopic + "/" + guid + "/" + consoleTopic);
+        client.subscribe(baseTopic + "/" + guid + "/" + disconnectTopic);
+    }
+
+    function unsubscribe() {
+        $("#console-progress").hide();
+        console.log("Mqtt unsubscribing with guid:" + guid);
+        client.unsubscribe(baseTopic + "/" + guid + "/" + consoleTopic);
+        client.unsubscribe(baseTopic + "/" + guid + "/" + disconnectTopic);
     }
     
     function onConnectionLost(responseObject) {
@@ -51,9 +67,21 @@
         
     function onMessageArrived(message) {
         // called when a message arrives
-        var html = $("#console-content").html() + "<br />";
-        $("#console-content").html(html + message.payloadString);
-        $("#console-modal").scrollTop($("#console-content")[0].clientHeight);
+        var currentTopic = message.topic.split('/').last();
+
+        if (currentTopic == consoleTopic) {
+            // console
+            var html = $("#console-content").html() + "<br />";
+            $("#console-content").html(html + message.payloadString);
+            $("#console-modal").scrollTop($("#console-content")[0].clientHeight);
+        } else if (currentTopic == disconnectTopic) {
+            // disconnect
+            unsubscribe();
+        } else {
+            // everything else
+            console.log("Topic " + currentTopic + " with message " + message.payloadString);
+        }
+       
     } 
 
 });

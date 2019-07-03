@@ -66,7 +66,7 @@
             success: function (result) {
                 console.debug(result);
                 appVue.runtimeArg = result;
-                //$(document).trigger(CONNECT_MQTT, appVue.runtimeArg.guid);
+                $(document).trigger(SUBSCRIBE_MQTT, appVue.runtimeArg.guid);
                 runSimulation();
             }
         });       
