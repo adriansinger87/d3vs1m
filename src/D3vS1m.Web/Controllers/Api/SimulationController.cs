@@ -118,7 +118,7 @@ namespace D3vS1m.Web.Controllers.Api
 
         private void OnStarted(object sender, SimulatorEventArgs e)
         {
-            PublishConsoleTopic("### Simulation started");
+            PublishConsoleTopic("### Simulation started<br />");
         }
 
         private void OnStopped(object sender, SimulatorEventArgs e)
@@ -143,7 +143,7 @@ namespace D3vS1m.Web.Controllers.Api
         private void OnIterationPassed(object sender, SimulatorEventArgs e)
         {
             var runArgs = e.Arguments as RuntimeArgs;
-            PublishConsoleTopic($"Iteration {runArgs.Iterations} done.<br />");
+            PublishConsoleTopic($"Iteration {runArgs.Iterations} done<br />");
         }
 
         // -- helper
@@ -155,8 +155,8 @@ namespace D3vS1m.Web.Controllers.Api
 
         private void BuildTopics(string guid)
         {
-            _consoleTopic = $"{BASE_TOPIC}/{CONSOLE_TOPIC}";         // $"{BASE_TOPIC}/{guid}/{CONSOLE_TOPIC}"
-            _disconnectTopic = $"{BASE_TOPIC}/{DISCONNECT_TOPIC}";   //  $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}"
+            _consoleTopic = $"{BASE_TOPIC}/{guid}/{CONSOLE_TOPIC}";
+            _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
         }
 
         private string BuildMessage(DateTime timestamp, string message = null)

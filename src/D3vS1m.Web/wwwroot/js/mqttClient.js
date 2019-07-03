@@ -27,8 +27,8 @@
             reconnect: true,
             onSuccess: function () {
                 console.log("onConnected() with guid:" + guid);
-                client.subscribe("d3vs1m/console");        // "d3vs1m/" + guid + "/console"
-                client.subscribe("d3vs1m/disconnect");     // "d3vs1m/" + guid + "/disconnect"
+                client.subscribe("d3vs1m/" + guid + "/console");
+                client.subscribe("d3vs1m/" + guid + "/disconnect");
             },
             onFailure: function () {
                 console.error("mqtt connection failed to host: " + host + " port: " + port);
