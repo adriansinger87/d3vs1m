@@ -1,4 +1,4 @@
-﻿using Sin.Net.Domain.IO.Adapter;
+﻿using Sin.Net.Domain.Persistence.Adapter;
 using System;
 
 namespace D3vS1m.Domain.Infrastructure.Mqtt

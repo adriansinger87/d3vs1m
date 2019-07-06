@@ -1,7 +1,7 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

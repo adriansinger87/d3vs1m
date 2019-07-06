@@ -11,7 +11,7 @@ using D3vS1m.Application.Channel;
 using D3vS1m.Web.Extensions;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Exceptions;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 
 namespace D3vS1m.Web.Controllers.Api
 {

@@ -9,7 +9,7 @@ using D3vS1m.Web.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;

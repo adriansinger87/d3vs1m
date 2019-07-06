@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 
 namespace D3vS1m.Web
@@ -122,7 +122,7 @@ namespace D3vS1m.Web
         {
             return new MqttConfig
             {
-                Broker = "broker.hivemq.com",
+                Broker ="broker.hivemq.com",
                 Port = 1883,
                 // TODO: setup config with client for each browser session or something like that
                 // TODO: integrate client id in the topic to send data only to one browser

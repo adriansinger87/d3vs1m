@@ -2,9 +2,8 @@
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
-using System.Collections.Generic;
 
 namespace D3vS1m.Domain.Simulation
 {

@@ -1,7 +1,7 @@
 ﻿using D3vS1m.Domain.Infrastructure.Mqtt;
 using D3vS1m.Infrastructure.Mqtt;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System.Threading.Tasks;
 
 namespace MSTests.Infrastructure

@@ -2,8 +2,8 @@
 
     // -- fields
     
-    const host = "broker.hivemq.com"; // borker url
-    const port = "8000";              // websocket port
+    const host = "broker.hivemq.com";    // borker url
+    const port = "8000";                 // websocket port
 
     const baseTopic = "d3vs1m";
     const consoleTopic = "console";

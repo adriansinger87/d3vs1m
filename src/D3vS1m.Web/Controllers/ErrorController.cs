@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using D3vS1m.Web.Models;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 using Microsoft.AspNetCore.WebUtilities;
-using D3vS1m.Web.Models;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
+using System.Diagnostics;
 
 namespace D3vS1m.Web.Controllers
 {

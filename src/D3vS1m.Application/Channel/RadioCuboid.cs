@@ -1,5 +1,5 @@
 ﻿using D3vS1m.Domain.Data.Scene;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 
 namespace D3vS1m.Application.Channel
