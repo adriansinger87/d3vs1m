@@ -2,7 +2,7 @@
 
     // -- fields
     
-    const host = "x"; //"broker.hivemq.com";    // borker url
+    const host = "broker.hivemq.com";    // borker url
     const port = "8000";                 // websocket port
 
     const baseTopic = "d3vs1m";
@@ -33,12 +33,12 @@
             onSuccess: function () {
                 var msg = "Mqtt connected";
                 console.log(msg);
-                showToast({ html: msg, classes: 'toast-success' });
+                showSuccessToast(msg);
             },
             onFailure: function () {
                 var msg = "Mqtt connection failed to host: " + host + " port: " + port
                 console.error(msg);
-                showToast({ html: msg, classes: 'toast-error', displayLength : 6000 });
+                showErrorToast(msg);
             }
         });
     }

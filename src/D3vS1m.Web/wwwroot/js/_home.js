@@ -23,6 +23,8 @@
 
             $("#start-sim-link").safeBind("click", startSimulation);
 
+            $("#copy-console-link").safeBind("click", copyConsole);
+
             $(document).safeBind(RUN_SIMULATION, runSimulation);
         });
     }
@@ -153,4 +155,8 @@
         });
     }
 
+    function copyConsole() {
+
+        copyTextToClipboard($("#console-content").html());
+    }
 });
