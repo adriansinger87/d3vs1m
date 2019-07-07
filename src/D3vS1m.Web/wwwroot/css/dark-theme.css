@@ -44,3 +44,8 @@ footer a {
 .toast-error {
     background-color: #d32f2f;
 }
+
+.badge-active {
+    background-color: #00e676 !important;
+    color: #004d40 !important;
+}

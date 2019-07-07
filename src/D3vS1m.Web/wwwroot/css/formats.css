@@ -45,6 +45,14 @@
     max-height: 85%;
 }
 
+span.badge.new {
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 /* END ovf materializeCSS  */
 
 .header-logo {
@@ -82,4 +90,11 @@ i {
 #console-progress {
     margin: 0px;
     display: none;
+}
+
+.vertical-separator {
+    width: 1px;
+    height: 20px;
+    display: inline-block;
+    border: solid 1px rgba(160,160,160,0.2);
 }

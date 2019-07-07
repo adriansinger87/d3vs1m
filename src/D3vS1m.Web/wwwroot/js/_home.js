@@ -21,10 +21,10 @@
         $(document).ready(function () {
             appVue.getArguments();
 
-            $("#start-sim-link").safeBind("click", startSimulation);
-
+            $("#clear-console-link").safeBind("click", clearConsole);
             $("#copy-console-link").safeBind("click", copyConsole);
 
+            $("#start-sim-link").safeBind("click", startSimulation);
             $(document).safeBind(RUN_SIMULATION, runSimulation);
         });
     }
@@ -155,8 +155,11 @@
         });
     }
 
-    function copyConsole() {
+    function clearConsole() {
+        $("#console-content").html(">_");
+    }
 
+    function copyConsole() {
         copyTextToClipboard($("#console-content").html());
     }
 });

@@ -55,7 +55,7 @@ function copyTextToClipboard(text) {
         }
     );
 
-    // -- 
+    // -- inner function
 
     function fallbackCopyTextToClipboard(text) {
         var textArea = document.createElement("textarea");
@@ -67,9 +67,11 @@ function copyTextToClipboard(text) {
         try {
             var successful = document.execCommand("copy");
             var msg = successful ? "successful" : "unsuccessful";
-            console.log("Fallback: Copying text command was " + msg);
+            showToast({ html: "Copied" });
         } catch (err) {
-            console.error("Fallback: Oops, unable to copy", err);
+            var msg = "Could not copy text: " + err;
+            console.error(msg);
+            showErrorToast(msg);
         }
 
         document.body.removeChild(textArea);
