@@ -1,6 +1,6 @@
 ﻿using D3vS1m.Application.Data;
-using Sin.Net.Domain.IO.Adapter;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Adapter;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Data;
 

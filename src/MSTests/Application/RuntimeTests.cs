@@ -12,7 +12,7 @@ using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Threading.Tasks;
 

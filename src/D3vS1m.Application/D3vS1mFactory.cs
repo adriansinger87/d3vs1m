@@ -7,7 +7,7 @@ using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System.Collections.Generic;
 
 namespace D3vS1m.Application
@@ -110,7 +110,7 @@ namespace D3vS1m.Application
             };
             return args.ToArray();
         }
-        
+
         /// <summary>
         /// Adds a concretion of ISimulatable to the repository of simulation models
         /// and adds the argument instance
@@ -143,8 +143,6 @@ namespace D3vS1m.Application
         }
 
         // -- properties
-
-        public override ArgumentsBase[] Arguments => base.Simulators.AllArguments;
 
     }
 }

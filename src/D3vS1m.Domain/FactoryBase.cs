@@ -31,7 +31,9 @@ namespace D3vS1m.Application
 
         // -- properties
 
-        public abstract ArgumentsBase[] Arguments { get; }
+        public virtual RuntimeBase Runtime => _runtime;
+
+        public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments;
 
         protected SimulatorRepository Simulators { get; set; }
 

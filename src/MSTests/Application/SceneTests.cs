@@ -1,9 +1,8 @@
 ﻿using D3vS1m.Application.Scene;
 using D3vS1m.Application.Scene.Geometries;
-using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.IO;
+using Sin.Net.Domain.Persistence;
 using Sin.Net.Persistence.Settings;
 
 namespace MSTests.Application

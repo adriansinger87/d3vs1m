@@ -1,6 +1,6 @@
 ﻿using D3vS1m.Domain.System.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;

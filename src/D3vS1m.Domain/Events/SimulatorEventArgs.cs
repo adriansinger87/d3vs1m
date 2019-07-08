@@ -4,7 +4,7 @@ using System;
 namespace D3vS1m.Domain.Events
 {
     public delegate void SimulatorEventHandler(object sender, SimulatorEventArgs e);
-
+    
     public class SimulatorEventArgs : EventArgs
     {
         // -- constructor

@@ -1,7 +1,7 @@
 ﻿using D3vS1m.Application.Scene.Geometries;
 using D3vS1m.Domain.Data.Scene;
-using Sin.Net.Domain.IO.Adapter;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Adapter;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;

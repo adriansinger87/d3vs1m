@@ -5,7 +5,7 @@ using MQTTnet.Client;
 using MQTTnet.Client.Connecting;
 using MQTTnet.Client.Options;
 using MQTTnet.Protocol;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,6 +110,7 @@ namespace D3vS1m.Infrastructure.Mqtt
             MqttApplicationMessage msg = new MqttApplicationMessageBuilder()
                .WithTopic(topic)
                .WithPayload(message)
+               .WithRetainFlag(false)
                .Build();
 
             if (qos >= 0 &&

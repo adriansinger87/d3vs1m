@@ -4,7 +4,7 @@ using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;

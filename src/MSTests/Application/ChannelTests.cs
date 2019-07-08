@@ -4,7 +4,7 @@ using D3vS1m.Application.Network;
 using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Scene;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Logging;
+using Sin.Net.Domain.Persistence.Logging;
 using System.Linq;
 
 namespace MSTests.Application
@@ -59,6 +59,11 @@ namespace MSTests.Application
 
             // assert
             Assert.IsTrue(radioArgs.RxValues.All(f => f != 0), "float should contain a attenuation");
+
+            radioArgs.RxPositions
+                .Zip(radioArgs.RxValues, (a, b) => $"Pos: {a.ToString()} with {b} dBm")
+                .ToList()
+                .ForEach(s => Log.Debug(s));
         }
 
         [TestMethod]

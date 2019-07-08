@@ -1,6 +1,5 @@
-﻿using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Persistence.Imports;
-using Sin.Net.Domain.IO;
+﻿using D3vS1m.Persistence.Imports;
+using Sin.Net.Domain.Persistence;
 using Sin.Net.Persistence;
 
 namespace D3vS1m.Persistence
