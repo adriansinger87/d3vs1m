@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env ASPNETCORE_ENVIRONMENT=Development NODE_ENV=development dotnet run",
+    "build": "npm run build-vendor:prod && npm run build:prod",
+    "build:prod": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build-vendor:prod": "cross-env NODE_ENV=production webpack --config webpack.config.vendor.js --progress",
+    "build-vendor:dev": "cross-env NODE_ENV=development webpack --config webpack.config.vendor.js --progress",
+    "lint": "eslint -c ./.eslintrc.js ClientApp/**/*.js  ClientApp/**/*.vue  ClientApp/**/*.json webpack*.js",
+    "install": "npm run build-vendor:dev",
+    "update-packages": "npx npm-check -u"
   },
   "author": "Adrian Singer | TK Nguyen",
   "license": "ISC",
@@ -60,7 +67,7 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.6.2",
-    "webpack": "^4.29.0",
+    "webpack": "^4.35.3",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14",
     "webpack-hot-middleware": "^2.21.2"

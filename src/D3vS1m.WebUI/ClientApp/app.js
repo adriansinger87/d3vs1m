@@ -1,8 +1,24 @@
 import Vue from 'vue'
-import App from './App.vue'
+import router from './router/index'
+import store from './store'
+import { sync } from 'vuex-router-sync'
+import App from 'components/app-root'
+import { FontAwesomeIcon } from './icons'
 
-Vue.config.productionTip = false
+// Registration of global components
+Vue.component('icon', FontAwesomeIcon)
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+
+sync(store, router)
+
+const app = new Vue({
+  store,
+  router,
+  ...App
+})
+
+export {
+  app,
+  router,
+  store
+}
