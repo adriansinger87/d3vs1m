@@ -10,17 +10,14 @@
 
 <script>
     import homepage from './home-page'
-
     export default {
       components: {
         homepage: homepage        
       },
-
       data () {
         return {}
+      }, 
+      mounted() {
       }
     }
 </script>
-
-<style>
-</style>

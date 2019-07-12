@@ -22,6 +22,13 @@ module.exports = () => {
       rules: [
         { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' },
         { test: /\.css(\?|$)/, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
+      ],
+      loaders: [
+        { test: /\.woff(\d*)\??(\d*)$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+        { test: /\.ttf\??(\d*)$/,    loader: "file-loader" },
+        { test: /\.eot\??(\d*)$/,    loader: "file-loader" },
+        { test: /\.svg\??(\d*)$/,    loader: "file-loader" },
+        { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
       ]
     },
     entry: {
