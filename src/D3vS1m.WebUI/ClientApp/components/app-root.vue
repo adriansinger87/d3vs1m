@@ -9,11 +9,11 @@
 </template>
 
 <script>
-    import NavMenu from './nav-menu'
+    import homepage from './home-page'
 
     export default {
       components: {
-        'nav-menu': NavMenu
+        homepage: homepage        
       },
 
       data () {
