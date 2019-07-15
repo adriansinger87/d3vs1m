@@ -1,10 +1,14 @@
 <template>
-  <h1>hello</h1>
+  <nav-bar> </nav-bar>
 </template>
 
 
 <script>
+import Navbar from './nav-bar'
 export default {
+  components: {
+    'nav-bar': Navbar
+  },
   data () {
     return {}
   }

@@ -48,6 +48,7 @@ module.exports = () => {
     },
     plugins: [
       new VueLoaderPlugin(),
+      
       new webpack.DllReferencePlugin({
         context: __dirname,
         manifest: require('./wwwroot/dist/vendor-manifest.json')
