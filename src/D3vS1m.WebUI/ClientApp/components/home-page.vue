@@ -1,13 +1,17 @@
 <template>
-  <nav-bar> </nav-bar>
+  <div>
+    <nav-bar></nav-bar>
+    <argument></argument> 
+  </div>
 </template>
-
 
 <script>
 import Navbar from './nav-bar'
+import Argument from './templates/argument-template'
 export default {
   components: {
-    'nav-bar': Navbar
+    'nav-bar': Navbar,
+    'argument': Argument 
   },
   data () {
     return {}

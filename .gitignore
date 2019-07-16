@@ -329,3 +329,7 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /D3vS1m.Solution/D3vS1m.Web/wwwroot/lib
+
+src/D3vS1m\.Web/\.vscode/
+
+src/D3vS1m\.WebUI/wwwroot/dist/
