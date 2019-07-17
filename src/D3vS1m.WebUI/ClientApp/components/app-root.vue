@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import homepage from "./pages/home-page";
+import homepage from "./pages/home";
 import navbar from './app-header'
 import footer from "./app-footer";
 export default {

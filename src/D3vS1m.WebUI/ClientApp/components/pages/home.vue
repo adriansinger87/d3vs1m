@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Argument from '../templates/argument-template'
+import Argument from '../templates/argument'
 export default {
   components: {
     'argument': Argument 
