@@ -6,12 +6,23 @@
 
 <script>
 import Argument from '../templates/argument'
+import axios from 'axios';
+
 export default {
   components: {
     'argument': Argument 
   },
   data () {
     return {}
+  },
+  created() {
+    axios.get('http://localhost:51410/api/arguments')
+    .then(response => {
+      console.log(response)
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 </script>
