@@ -36,26 +36,26 @@
 
         <div class="col s12 m12 l4">
           <h5>Technologies</h5>
-          <div class="chip">
-            <img src="" />
-            <a href="https://www.w3.org/TR/html5/" target="_blank">HTML 5</a>
-          </div>
-          <div class="chip">
-            <img src="" />
-            <a href="http://materializecss.com/" target="_blank">MaterializeCSS</a>
-          </div>
-          <div class="chip">
-            <img src="" />
-            <a href="https://vuejs.org/" target="_blank">Vue.js</a>
-          </div>
-          <div class="chip">
-            <img src="" />
-            <a href="https://momentjs.com/" target="_blank">Moment.js</a>
-          </div>
-          <div class="chip">
-            <img src="" />
-            <a href="http://www.asp.net/mvc" target="_blank">ASP.NET Core</a>
-          </div>
+                <div class="chip">
+                    <img src="../images/html5.jpg" />
+                    <a href="https://www.w3.org/TR/html5/" target="_blank">HTML 5</a>
+                </div>
+                <div class="chip">
+                    <img src="../images/materialize.jpg" />
+                    <a href="http://materializecss.com/" target="_blank">MaterializeCSS</a>
+                </div>
+                <div class="chip">
+                    <img src="../images/vuejs-logo.png" />
+                    <a href="https://vuejs.org/" target="_blank">Vue.js</a>
+                </div>
+                <div class="chip">
+                    <img src="../images/moment.jpg" />
+                    <a href="https://momentjs.com/" target="_blank">Moment.js</a>
+                </div>
+                <div class="chip">
+                    <img src="../images/visual-studio.jpg" />
+                    <a href="http://www.asp.net/mvc" target="_blank">ASP.NET Core</a>
+                </div> 
         </div>
       </div>
     </div>
@@ -78,5 +78,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang='css'>
+
+.page-footer {
+    background-color: #212121;
+}
+
+footer a {
+    color: dimgrey;
+}
+
+.chip {
+    background-color: rgba(0, 0, 0, 0.20);
+}
+
 </style>
