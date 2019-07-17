@@ -41,6 +41,7 @@ module.exports = () => {
     module: {
       rules: [
         { test: /\.vue$/, include: /ClientApp/, use: 'vue-loader' },
+        { test: /\.(png|woff|woff2|eot|ttf)(\?|$)/, use: 'url-loader?limit=100000' },
         { test: /\.js$/, include: /ClientApp/, use: 'babel-loader' },
         { test: /\.css$/, use: isDevBuild ? ['style-loader', 'css-loader'] : [MiniCssExtractPlugin.loader, 'css-loader'] },
         { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
