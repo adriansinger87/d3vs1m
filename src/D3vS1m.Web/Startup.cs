@@ -87,7 +87,9 @@ namespace D3vS1m.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
+            // TODO: Need to be handled by Dev or Prod Env
             app.UseCors(options => options.AllowAnyOrigin());   
+
 
             app.UseMvc(routes =>
             {

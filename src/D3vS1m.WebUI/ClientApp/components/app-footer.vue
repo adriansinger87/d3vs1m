@@ -62,17 +62,21 @@
     <div class="footer-copyright">
       <div class="container grey-text text-lighten-2">
         <div class="row">
-          <div class="col s8">@ViewBag.AppTitle © 2019 Adrian Singer</div>
-          <div class="col s4 right-align">Version: @this.GetType().Assembly.GetName().Version</div>
+          <div class="col s8"> {{ AppInfo.AppName }} © 2019 Adrian Singer</div>
+          <div class="col s4 right-align">Version: {{ AppInfo.AppVersion }}</div>
         </div>
       </div>
     </div>
   </footer>
 </template>
 <script>
+import appInfo from '../appInfo.json'
+
 export default {
   data() {
-    return {};
+    return {
+      AppInfo: appInfo
+    };
   },
   methods: {}
 };

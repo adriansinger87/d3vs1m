@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
+using System.Reflection;
+using D3vS1m.WebUI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace D3vS1m.WebUI
 {
@@ -57,12 +56,25 @@ namespace D3vS1m.WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            
+
+            // Passing AppInfo to Vue Project
+            // TODO: Need to refactor 
+            var appInfo = new AppInfoModel
+            {
+                AppVersion = Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                    .InformationalVersion,
+                AppName = Assembly.GetEntryAssembly()?.GetName().Name
+            };
+
+            string jsonString = JsonConvert.SerializeObject(appInfo);
+            System.IO.File.WriteAllText( Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/appInfo.json"),jsonString);
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
