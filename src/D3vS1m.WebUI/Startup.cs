@@ -68,7 +68,7 @@ namespace D3vS1m.WebUI
             };
 
             string jsonString = JsonConvert.SerializeObject(appInfo);
-            System.IO.File.WriteAllText( Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/appInfo.json"),jsonString);
+            System.IO.File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/appInfo.json"),jsonString);
 
             app.UseMvc(routes =>
             {
