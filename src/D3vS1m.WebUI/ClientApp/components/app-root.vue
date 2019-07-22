@@ -1,8 +1,7 @@
 <template>
-  <div id="app" class="container-fluid" style="height: 100%; display: flex;
-	flex-direction: column;">
+  <div id="app" class="container-fluid">
     <app-header></app-header>
-    <div class="row" style="flex: 1" > 
+    <div class="row" style="flex: 1">
       <div class="container">
         <router-view></router-view>
       </div>
@@ -13,16 +12,16 @@
 </template>
 
 <script>
-import modalConsole from './templates/modal/console'
+import modalConsole from "./templates/modal/console";
 import homepage from "./pages/home";
-import navbar from './app-header'
+import navbar from "./app-header";
 import footer from "./app-footer";
 export default {
   components: {
     homepage: homepage,
     "app-header": navbar,
     "app-footer": footer,
-    "modal-console": modalConsole,
+    "modal-console": modalConsole
   },
   data() {
     return {};
@@ -30,3 +29,11 @@ export default {
   mounted() {}
 };
 </script>
+
+<style scoped lang="css">
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+</style>
