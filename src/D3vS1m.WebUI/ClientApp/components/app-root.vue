@@ -26,7 +26,10 @@ export default {
   data() {
     return {};
   },
-  mounted() {}
+  mounted() {
+      let currentPath = this.$route.path
+      console.log(currentPath)
+  }
 };
 </script>
 

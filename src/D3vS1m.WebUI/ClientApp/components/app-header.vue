@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     startSimulation: function(event) {
+
     }
   }
 };
