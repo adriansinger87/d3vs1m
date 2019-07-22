@@ -7,13 +7,16 @@
 </template>
 
 <script>
+// info: Component Import
 import Argument from '../templates/argument'
+
+// info: REPOSITORY IMPORT 
 import RepositoryFactory from '../../services/RepositoryFactory'
 const argumentsRepository = RepositoryFactory.get('arguments')
 
 export default {
   components: {
-    'argument': Argument 
+    'argument': Argument
   },
   data () {
     return {

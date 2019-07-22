@@ -16,7 +16,7 @@
 
       <ul class="right">
         <li>
-          <a id="start-sim-link" class="waves-effect waves-light">
+          <a v-on:click="startSimulation" class="waves-effect waves-light">
             <i class="mdi mdi-play right"></i> Start
           </a>
         </li>
@@ -35,7 +35,10 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    startSimulation: function(event) {
+    }
+  }
 };
 </script>
 
