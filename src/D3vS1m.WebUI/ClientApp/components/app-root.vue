@@ -1,18 +1,14 @@
 <template>
   <div id="app" class="container-fluid">
     <app-header></app-header>
-    <div class="row" style="flex: 1">
-      <div class="container">
+    <div style="flex: 1">
         <router-view></router-view>
-      </div>
     </div>
-    <modal-console></modal-console>
     <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import modalConsole from "./templates/modal/console";
 import homepage from "./pages/home";
 import navbar from "./app-header";
 import footer from "./app-footer";
@@ -21,14 +17,11 @@ export default {
     homepage: homepage,
     "app-header": navbar,
     "app-footer": footer,
-    "modal-console": modalConsole
   },
   data() {
     return {};
   },
   mounted() {
-      let currentPath = this.$route.path
-      console.log(currentPath)
   }
 };
 </script>

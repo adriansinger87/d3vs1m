@@ -1,17 +1,17 @@
 <template>
-  <div id="console-modal" class="bottom-sheet z-depth-2">
+  <div id="console-modal" class="modal bottom-sheet z-depth-2">
     <div id="console-content" class="modal-content">>_</div>
     <div id="console-progress" class="progress">
       <div class="indeterminate"></div>
     </div>
-    <div class="modal-footer" style="color: white">
+    <div class="modal-footer">
       <a id="clear-console-link" href="#!" class="waves-effect waves-red btn-flat left">
         <i class="mdi mdi-playlist-remove left"></i> Clear
       </a>
       <a id="copy-console-link" href="#!" class="waves-effect waves-light btn-flat left">
         <i class="mdi mdi-clipboard-text-outline left"></i> Copy
       </a>
-      <a v-on:click="closeModal" class="waves-effect waves-light btn-flat">
+      <a href="#!" class="modal-close waves-effect waves-light btn-flat">
         <i class="mdi mdi-close left"></i>Close
       </a>
     </div>
@@ -35,12 +35,9 @@ export default {
 </script>
 
 <style scoped lang='css'>
-
 .btn-flat {
   color: white;
 }
-
-
 
 .code-footer {
   position: absolute;
@@ -68,5 +65,4 @@ export default {
 .modal .modal-footer {
   background-color: #37474f;
 }
-
 </style>
