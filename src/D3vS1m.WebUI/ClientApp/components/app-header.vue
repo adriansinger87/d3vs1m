@@ -37,7 +37,6 @@ export default {
   },
   methods: {
     startSimulation: function(event) {
-      console.log(this.$el)
     }
   }
 };
