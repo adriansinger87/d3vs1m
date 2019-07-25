@@ -31,11 +31,6 @@
 </template>
 
 <script>
-
-// info: IMPORT Libraries
-import jquery from "jquery";
-let $ = jquery
-
 export default {
   data() {
     return {};
