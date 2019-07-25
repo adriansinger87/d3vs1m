@@ -31,12 +31,24 @@
 </template>
 
 <script>
+
+// info: IMPORT Libraries
+import jquery from "jquery";
+let $ = jquery
+
 export default {
   data() {
     return {};
   },
+  mounted() {
+    
+  },
   methods: {
     startSimulation: function(event) {
+      //todo: will create a global function to use and call all MODAL in the page
+      var elems= document.querySelector('.modal'); 
+      var instances = M.Modal.init(elems);
+      instances.open()
     }
   }
 };

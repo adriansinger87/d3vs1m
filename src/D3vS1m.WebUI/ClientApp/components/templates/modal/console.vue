@@ -19,17 +19,16 @@
 </template>
 
 <script>
+
+// info: IMPORT library
 export default {
   data() {
     return {};
   },
+  mounted() {
+   
+  },
   methods: {
-    showModal: function() {
-      // Logic to show
-    },
-    closeModal: function() {
-      // Logic to close
-    }
   }
 };
 </script>

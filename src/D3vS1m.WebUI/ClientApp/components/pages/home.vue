@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <modal-console v-if="true"></modal-console>
+    <modal-console></modal-console>
   </div>
 </template>
 
