@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
     <app-header></app-header>
+    <pre-loader></pre-loader>
     <div style="flex: 1">
         <router-view></router-view>
     </div>
@@ -18,6 +19,7 @@ export default {
     homepage: homepage,
     "app-header": navbar,
     "app-footer": footer,
+    "pre-loader": preloader
   },
   data() {
     return {};
