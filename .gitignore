@@ -333,3 +333,5 @@ ASALocalRun/
 src/D3vS1m\.Web/\.vscode/
 
 src/D3vS1m\.WebUI/wwwroot/dist/
+
+src/D3vS1m\.WebUI/wwwroot/

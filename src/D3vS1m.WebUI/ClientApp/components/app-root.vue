@@ -10,6 +10,7 @@
 
 <script>
 import homepage from "./pages/home";
+import preloader from './templates/preload'
 import navbar from "./app-header";
 import footer from "./app-footer";
 export default {
