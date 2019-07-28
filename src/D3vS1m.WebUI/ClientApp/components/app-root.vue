@@ -1,7 +1,8 @@
 <template>
   <div id="app" class="container-fluid">
     <app-header></app-header>
-    <pre-loader></pre-loader>
+<!--    <pre-loader></pre-loader> -->
+    <pro-loader v-bind:width="percentage"></pro-loader>
     <div style="flex: 1">
         <router-view></router-view>
     </div>
@@ -12,6 +13,7 @@
 <script>
 import homepage from "./pages/home";
 import preloader from './templates/preload'
+import progressLoader from './templates/progress'
 import navbar from "./app-header";
 import footer from "./app-footer";
 export default {
@@ -19,10 +21,13 @@ export default {
     homepage: homepage,
     "app-header": navbar,
     "app-footer": footer,
-    "pre-loader": preloader
+    "pre-loader": preloader,
+    "pro-loader": progressLoader
   },
   data() {
-    return {};
+    return {
+      percentage: "73%"
+    };
   },
   mounted() {
   }

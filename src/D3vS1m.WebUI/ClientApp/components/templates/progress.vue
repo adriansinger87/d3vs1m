@@ -1,12 +1,12 @@
 <template>
-    <div class="progress">
-      <div class="indeterminate"></div>
-    </div>
+  <div class="progress preLoad">
+      <div class="determinate" :style="{ width }"></div>
+  </div>
 </template>
-
 
 <script>
 export default {
+    props: ['width'],
     data() {
        return {
        } 
