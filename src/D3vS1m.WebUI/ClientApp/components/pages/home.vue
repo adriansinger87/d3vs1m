@@ -20,10 +20,17 @@ import modalConsole from "../templates/modal/console";
 import RepositoryFactory from "../../services/RepositoryFactory";
 const argumentsRepository = RepositoryFactory.get("arguments");
 
+
+// info: Service import
+import mqttClient from "../../services/mqttClient";
+
 export default {
   components: {
     argument: Argument,
     "modal-console": modalConsole
+  },
+  mounted() {
+    mqttClient.connectMQTT()
   },
   data() {
     return {
