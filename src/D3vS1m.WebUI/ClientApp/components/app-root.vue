@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="container-fluid">
     <app-header></app-header>
-<!--    <pre-loader></pre-loader> -->
-    <pro-loader v-bind:width="percentage"></pro-loader>
+    <pre-loader v-if="isPreLoad"></pre-loader>
+    <pro-loader v-if="isProLoad" v-bind:width="percentage"></pro-loader>
     <div style="flex: 1">
         <router-view></router-view>
     </div>
@@ -26,6 +26,8 @@ export default {
   },
   data() {
     return {
+      isPreLoad: false,
+      isProLoad: false,
       percentage: "73%"
     };
   },

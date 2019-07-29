@@ -1,5 +1,5 @@
 <template>
-    <div class="progress">
+    <div class="progress preLoad">
       <div class="indeterminate"></div>
     </div>
 </template>
