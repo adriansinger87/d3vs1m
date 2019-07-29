@@ -7,39 +7,16 @@ body {
     
 }
 
-
-.page-footer {
-    background-color: #212121;
-}
-
-footer a {
-    color: dimgrey;
-}
-
 .chip {
     background-color: rgba(0, 0, 0, 0.20);
 }
 
-.modal .modal-footer {
-    background-color: #37474f;
-}
-
-    .modal .modal-footer .btn-flat {
-        color: white;
-    }
-
-#console-modal > .modal-content {
-    background: black;
-    font-family: monospace;
-    font-size: 1.2em;
-}
-
 .toast-success {
-    background-color: #388e3c;
+    background-color: #388e3c !important;
 }
 
 .toast-error {
-    background-color: #d32f2f;
+    background-color: #d32f2f !important;
 }
 
 .badge-active {

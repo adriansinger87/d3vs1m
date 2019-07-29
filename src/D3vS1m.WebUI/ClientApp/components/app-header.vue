@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          <a id="console-link" class="modal-trigger waves-effect waves-light" href="#console-modal">
+          <a id="console-link" v-on:click="showConsole" class="modal-trigger waves-effect waves-light" href="#console-modal">
             <i class="mdi mdi-console left"></i> Console
           </a>
         </li>
@@ -44,6 +44,11 @@ export default {
       var elems= document.querySelector('.modal'); 
       var instances = M.Modal.init(elems);
       instances.open()
+    },
+    showConsole: function(event) {
+       var toastHTML = '<span>I am toast content</span>'
+       M.toast({ html: toastHTML, classes: 'toast-success',  displayLength: 4000})
+
     }
   }
 };
@@ -57,4 +62,6 @@ nav {
     margin-top: 10px;
     margin-right: 10px;
 }
+
+
 </style>
