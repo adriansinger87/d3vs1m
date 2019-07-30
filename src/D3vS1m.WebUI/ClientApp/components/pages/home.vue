@@ -30,6 +30,7 @@ export default {
     "modal-console": modalConsole
   },
   mounted() {
+    //TODO: should be started when startSimualtion call
     mqttClient.connectMQTT()
   },
   data() {
