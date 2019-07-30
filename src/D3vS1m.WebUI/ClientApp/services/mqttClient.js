@@ -23,14 +23,12 @@ function connectMQTT() {
         cleanSession: true,
         reconnect: true,
         onSuccess: function () {
-            var msg = "Mqtt connected";
-            console.log(msg);
-            //showSuccessToast(msg);
+            var msg = "<span>Mqtt connected</span>";
+            M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
         },
         onFailure: function () {
-            var msg = "Mqtt connection failed to host: " + host + " port: " + port
-            console.error(msg);
-            //showErrorToast(msg);
+            var msg = "<span> Mqtt connection failed to host: " + host + " port: " + port + "</span>"
+            M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
         }
     });
 }
