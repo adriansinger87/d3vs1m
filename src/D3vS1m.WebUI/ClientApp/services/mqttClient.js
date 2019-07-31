@@ -1,8 +1,9 @@
 import paho from "paho-mqtt";
 
 //TODO: Put it in GLOBAL VARIBLE Setting
-const host = "test.mosquitto.org"; // borker url
-const port = "8081";
+//TODO: if HTTPS, broker should be WSS
+const host = "broker.hivemq.com"; // borker url
+const port = "8000";
 
 
 const baseTopic = "d3vs1m";
@@ -19,7 +20,7 @@ function connectMQTT() {
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
     client.connect({
-        useSSL: true,
+        //useSSL: true,
         cleanSession: true,
         reconnect: true,
         onSuccess: function () {
@@ -28,7 +29,7 @@ function connectMQTT() {
         },
         onFailure: function () {
             var msg = "<span> Mqtt connection failed to host: " + host + " port: " + port + "</span>"
-            M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
+            M.toast({ html: msg, classes: 'toast-error',  displayLength: 4000})
         }
     });
 }

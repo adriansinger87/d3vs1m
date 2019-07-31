@@ -31,6 +31,9 @@
 </template>
 
 <script>
+
+import RepositoryFactory from "../services/RepositoryFactory";
+const  simulationRepository = RepositoryFactory.get("simulation")
 export default {
   data() {
     return {};
@@ -39,14 +42,17 @@ export default {
     
   },
   methods: {
-    startSimulation: function(event) {
+    startSimulation: async function(event) {
       //todo: will create a global function to use and call all MODAL in the page
       var elems= document.querySelector('.modal'); 
       var instances = M.Modal.init(elems);
       instances.open()
 
       //todo: call startSimulation
-
+      const { data } = await simulationRepository.get()
+      console.log(data)
+      const simluationData = simulationRepository.runSimulation(data.guid)
+      console.log(simluationData)
     },
   }
 };
