@@ -31,7 +31,7 @@ export default {
   },
   mounted() {
     //TODO: should be started when startSimualtion call
-    mqttClient.connectMQTT()
+    //mqttClient.connectMQTT()
   },
   data() {
     return {
