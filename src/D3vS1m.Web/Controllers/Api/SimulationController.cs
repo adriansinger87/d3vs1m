@@ -5,12 +5,17 @@ using D3vS1m.Domain.Infrastructure.Mqtt;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using D3vS1m.Domain.System.Extensions;
 using D3vS1m.Application.Channel;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Web.Extensions;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Exceptions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Sin.Net.Domain.Persistence.Logging;
 
 namespace D3vS1m.Web.Controllers.Api
@@ -53,8 +58,8 @@ namespace D3vS1m.Web.Controllers.Api
         /// GET: api/simulation/run
         /// </summary>
         /// <returns></returns>
-        [HttpGet("run/{guid}")]
-        public async Task<JsonResult> Run(string guid)
+        [HttpPost("run/{guid}")]
+        public async Task<JsonResult> Run(string guid,[FromBody] JObject[] args)
         {
             try
             {
@@ -63,7 +68,18 @@ namespace D3vS1m.Web.Controllers.Api
                     throw new RuntimeException($"Runtime guid '{_factory.Runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
                 }
                 BuildTopics(guid);
-                SetupSimulation();
+               
+                List<ArgumentsBase> argumentsList = new List<ArgumentsBase>();
+
+                foreach (var argJobject in args)
+                {
+                    var obj = JsonConvert.DeserializeObject<ArgumentsBase>(argJobject.ToString());
+                    //argumentsList.Add(argJobject.ToObject<ArgumentsBase>());
+                }
+                
+              //  var arguments = JsonConvert.DeserializeObject<List<ArgumentsBase>>(args.ToString());
+
+                //SetupSimulation(arguments.ToArray());
                 RunSimulationAsync();
             }
             catch(Exception ex)
@@ -76,10 +92,10 @@ namespace D3vS1m.Web.Controllers.Api
 
         // -- private methods
 
-        private void SetupSimulation()
+        private void SetupSimulation(ArgumentsBase[] args)
         {
             // fetch the array of arguments for each simulator 
-            var args = SessionArguments();
+            //var args = SessionArguments();
 
             // setup the simulators and attach them to the runtime, based on the existent args
             _runtime = _factory.SetupSimulation(args);

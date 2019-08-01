@@ -7,7 +7,8 @@ export default {
         return Repository.get(`${resource}`)
     },
 
-    runSimulation(guid) {
-        return Repository.get(`${resource}` + "/run/" + guid)
+    runSimulation(guid, data) {
+        console.log(data)
+        return Repository.post(`${resource}` + "/run/" + guid, data)
     }
 }
