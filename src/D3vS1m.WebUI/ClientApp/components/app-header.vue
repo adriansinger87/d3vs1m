@@ -51,8 +51,9 @@ export default {
       //todo: call startSimulation
       const { data } = await simulationRepository.get()
       console.log(data)
-      const simluationData = simulationRepository.runSimulation(data.guid)
-      console.log(simluationData)
+      //const simluationData = simulationRepository.runSimulation(data.guid)
+      console.log(this.$store.getters.allArguments)
+      //console.log(simluationData)
     },
   }
 };
