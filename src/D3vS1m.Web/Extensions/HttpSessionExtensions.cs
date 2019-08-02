@@ -86,7 +86,7 @@ namespace D3vS1m.Web.Extensions
         /// <summary>
         /// Gets the binder for the concrete types for json-serialization.
         /// </summary>
-        private static TypedSerializationBinder ArgumentsBinder
+        public static TypedSerializationBinder ArgumentsBinder
         {
             get
             {
