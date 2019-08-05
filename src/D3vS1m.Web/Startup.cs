@@ -51,7 +51,8 @@ namespace D3vS1m.Web
             services.AddSingleton<FactoryBase>(factory);
 
             // CORS
-            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()); });
+            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+                                                                        ); });
 
 
             // session
@@ -89,7 +90,10 @@ namespace D3vS1m.Web
             app.UseSession();
             // TODO: Need to be handled by Dev or Prod Env
             app.UseCors(options => options.AllowAnyOrigin()
-                                          .AllowAnyMethod());   
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                
+                                          );   
 
 
             app.UseMvc(routes =>

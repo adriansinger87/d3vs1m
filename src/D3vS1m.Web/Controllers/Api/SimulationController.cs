@@ -60,6 +60,13 @@ namespace D3vS1m.Web.Controllers.Api
             return new JsonResult(_factory.Runtime.Arguments);
         }
 
+        [HttpPost("test")]
+        public JsonResult PostTest([FromBody] JObject[] name)
+        {
+            return new JsonResult("OK");
+        }
+
+
         /// <summary>
         ///     GET: api/simulation/run
         /// </summary>
@@ -102,7 +109,7 @@ namespace D3vS1m.Web.Controllers.Api
 
 
 
-                JsonConvert.DeserializeObject<ArgumentsBase>(args[3].ToString(),new JsonSerializerSettings
+                var objs = JsonConvert.DeserializeObject<ArgumentsBase>(args[3].ToString(),new JsonSerializerSettings
                 {
                     TypeNameHandling = TypeNameHandling.Objects,
                     SerializationBinder = knownTypesBinder
@@ -118,9 +125,9 @@ namespace D3vS1m.Web.Controllers.Api
 
                 var argVal = "[" + argValStr + "]";
                 //var arguments = JsonIO.FromJsonString<ArgumentsBase>(args[3].ToString(), HttpSessionExtensions.ArgumentsBinder);
-
+                return new JsonResult(objs);
                 //SetupSimulation(arguments.ToArray());
-                RunSimulationAsync();
+                //RunSimulationAsync();
             }
             catch (Exception ex)
             {
