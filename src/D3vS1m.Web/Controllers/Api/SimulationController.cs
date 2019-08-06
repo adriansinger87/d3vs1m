@@ -80,7 +80,7 @@ namespace D3vS1m.Web.Controllers.Api
             {
                 // Reset runtime to get new guid
                 (_factory.Runtime.Arguments as RuntimeArgs).Reset();
-                string guid =  _factory.Runtime.Arguments.ToString();
+                string guid = _factory.Runtime.Arguments.Guid;
 
 
                 //TODO: redundant code?
@@ -175,7 +175,7 @@ namespace D3vS1m.Web.Controllers.Api
         private void BuildTopics(string guid)
         {
             _consoleTopic = $"{BASE_TOPIC}/{guid}/{CONSOLE_TOPIC}";
-            _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
+                _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
         }
 
         private string BuildMessage(DateTime timestamp, string message = null)

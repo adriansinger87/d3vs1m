@@ -34,6 +34,10 @@
 
 import RepositoryFactory from "../services/RepositoryFactory";
 const  simulationRepository = RepositoryFactory.get("simulation")
+
+// info: Service import
+import mqttClient from "../services/mqttClient"
+
 export default {
   data() {
     return {};
@@ -48,8 +52,11 @@ export default {
       var instances = M.Modal.init(elems);
       instances.open()
 
-      //todo: call startSimulation
-      const simluationData = simulationRepository.runSimulation(this.$store.getters.allArguments)
+      const {data}= await simulationRepository.runSimulation(this.$store.getters.allArguments)
+
+
+      //TODO: Get the simulation and call MQTT to get the messages
+      await mqttClient.connectMQTT(data.guid)
     },
   }
 };

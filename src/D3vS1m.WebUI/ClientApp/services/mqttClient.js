@@ -14,9 +14,9 @@ const disconnectTopic = "disconnect";
 var client;
 var guid = "";
 
-function connectMQTT() {
+function connectMQTT(id) {
     //TODO: Handle Valid input?
-    client = new paho.Client(host, Number(port), "d3vs1m-browser")
+    client = new paho.Client(host, Number(port), "d3vs1m-browser-dfsadf")
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
     client.connect({
@@ -26,6 +26,7 @@ function connectMQTT() {
         onSuccess: function () {
             var msg = "<span>Mqtt connected</span>";
             M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
+            subscribe(id)
         },
         onFailure: function () {
             var msg = "<span> Mqtt connection failed to host: " + host + " port: " + port + "</span>"
@@ -39,10 +40,12 @@ function disconnectMQTT() {
 }
 
 
-function subscribe(event, id) {
-    $("#console-progress").show();
+function subscribe(id) {
+    //$("#console-progress").show();
+    console.log("subscribe")
     guid = id == undefined ? "" : id;
     console.log("Mqtt subscribing with guid:" + guid);
+    console.log(baseTopic + "/" + guid + "/" + consoleTopic)
     client.subscribe(baseTopic + "/" + guid + "/" + consoleTopic);
     client.subscribe(baseTopic + "/" + guid + "/" + disconnectTopic);
 }
@@ -65,21 +68,11 @@ function onConnectionLost(responseObject) {
 
 function onMessageArrived(message) {
     // called when a message arrives
-    var currentTopic = message.topic.split('/').last();
-
-    if (currentTopic == consoleTopic) {
-        // console
-        var html = $("#console-content").html() + "<br />";
-        $("#console-content").html(html + message.payloadString);
-        $("#console-modal").scrollTop($("#console-content")[0].clientHeight);
-    } else if (currentTopic == disconnectTopic) {
-        // disconnect
-        unsubscribe();
-    } else {
-        // everything else
-        console.log("Topic " + currentTopic + " with message " + message.payloadString);
-    }
-
+    
+    console.log(message.payloadString)
+    var consoleContent = document.getElementById("console-content")
+    consoleContent.innerHTML += "<br />"
+    consoleContent.innerHTML +=  message.payloadString
 }
 
-export default { connectMQTT, disconnectMQTT}
+export default { connectMQTT, disconnectMQTT, subscribe }
