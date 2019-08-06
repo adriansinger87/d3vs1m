@@ -73,6 +73,7 @@ function onMessageArrived(message) {
     var consoleContent = document.getElementById("console-content")
     consoleContent.innerHTML += "<br />"
     consoleContent.innerHTML +=  message.payloadString
+    //TODO: need to close the socket
 }
 
 export default { connectMQTT, disconnectMQTT, subscribe }
