@@ -49,11 +49,7 @@ export default {
       instances.open()
 
       //todo: call startSimulation
-      const { data } = await simulationRepository.get()
-      console.log(data)
-      console.log(this.$store.getters.allArguments)
-      const simluationData = simulationRepository.runSimulation(data.guid, this.$store.getters.allArguments)
-      //console.log(simluationData)
+      const simluationData = simulationRepository.runSimulation(this.$store.getters.allArguments)
     },
   }
 };
