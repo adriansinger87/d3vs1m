@@ -21,7 +21,6 @@ if (!Array.prototype.last) {
 }
 
 function copyTextToClipboard(text) {
-
     var myText = text.replaceAll("<br>", "\r\n").replaceAll("<br />", "\r\n").replaceAll("&gt;_" ,"");
 
     if (!navigator.clipboard) {
@@ -31,6 +30,9 @@ function copyTextToClipboard(text) {
     navigator.clipboard.writeText(myText).then(
         function () {
             //showToast({ html: "Copied" });
+            //TODO: refactor 
+            var msg = "<span>Copied</span>";
+            M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
         },
         function (err) {
             var msg = "Could not copy text: " + err;
