@@ -1,4 +1,5 @@
 import paho from "paho-mqtt";
+import utils from "../services/ultis"
 
 //TODO: Put it in GLOBAL VARIBLE Setting
 //TODO: if HTTPS, broker should be WSS
@@ -16,8 +17,7 @@ var guid = "";
 
 function connectMQTT(id) {
     //TODO: Handle Valid input?
-    //TODO: Handle ClientID -> it should be unique
-    client = new paho.Client(host, Number(port), "d3vs1m-browser-dfsadf")
+    client = new paho.Client(host, Number(port), "d3vs1m-browser-" + utils.guid())
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
     client.connect({
