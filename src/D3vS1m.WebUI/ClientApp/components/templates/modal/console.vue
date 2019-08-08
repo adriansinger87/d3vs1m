@@ -5,10 +5,10 @@
       <div class="indeterminate"></div>
     </div>
     <div class="modal-footer">
-      <a id="clear-console-link" href="#!" class="waves-effect waves-red btn-flat left">
+      <a id="clear-console-link"  v-on:click="clearConsole" class="waves-effect waves-red btn-flat left">
         <i class="mdi mdi-playlist-remove left"></i> Clear
       </a>
-      <a id="copy-console-link" href="#!" class="waves-effect waves-light btn-flat left">
+      <a id="copy-console-link" v-on:click="copyConsole" class="waves-effect waves-light btn-flat left">
         <i class="mdi mdi-clipboard-text-outline left"></i> Copy
       </a>
       <a href="#!" class="modal-close waves-effect waves-light btn-flat">
@@ -19,8 +19,10 @@
 </template>
 
 <script>
-
 // info: IMPORT library
+import $ from 'jquery'
+import utils from '../../../services/ultis'
+
 export default {
   data() {
     return {};
@@ -29,6 +31,12 @@ export default {
    
   },
   methods: {
+    clearConsole() {
+      $("#console-content").html(">_");
+    },
+    copyConsole() {
+      utils.copyTextToClipboard($("#console-content").html());
+    }
   }
 };
 </script>
