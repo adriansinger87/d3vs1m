@@ -1,6 +1,6 @@
 import paho from "paho-mqtt";
 import utils from "../services/ultis"
-
+import $ from 'jquery'
 //TODO: Put it in GLOBAL VARIBLE Setting
 //TODO: if HTTPS, broker should be WSS
 const host = "broker.hivemq.com"; // borker url
@@ -70,11 +70,11 @@ function onMessageArrived(message) {
     var mesSplit = message.topic.split('/')
     var currentTopic = mesSplit[mesSplit.length -1]
 
+
     if (currentTopic == consoleTopic) {
-        console.log(message)
-        var consoleContent = document.getElementById("console-content")
-        consoleContent.innerHTML += "<br />"
-        consoleContent.innerHTML +=  message.payloadString
+        var html = $("#console-content").html() + "<br />";
+        $("#console-content").html(html + message.payloadString);
+        $("#console-modal").scrollTop($("#console-content")[0].clientHeight);
     } else if (currentTopic == disconnectTopic){
         unsubscribe() 
     } else {

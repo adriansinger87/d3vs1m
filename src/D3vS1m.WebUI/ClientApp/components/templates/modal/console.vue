@@ -54,6 +54,11 @@ export default {
   border: solid 1px rgba(160, 160, 160, 0.2);
 }
 
+#console-content {
+  max-height: 400px; 
+  overflow-y: scroll;
+}
+
 #console-modal > .modal-content {
   background: black;
   font-family: monospace;
