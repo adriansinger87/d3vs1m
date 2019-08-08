@@ -14,6 +14,7 @@ const disconnectTopic = "disconnect";
 
 var client;
 var guid = "";
+var currentHeight = 0;
 
 function connectMQTT(id) {
     //TODO: Handle Valid input?
@@ -69,14 +70,15 @@ function onMessageArrived(message) {
     // called when a message arrives
     var mesSplit = message.topic.split('/')
     var currentTopic = mesSplit[mesSplit.length -1]
-
+    var html = $("#console-content").html() + "<br />";
 
     if (currentTopic == consoleTopic) {
-        var html = $("#console-content").html() + "<br />";
         $("#console-content").html(html + message.payloadString);
-        $("#console-modal").scrollTop($("#console-content")[0].clientHeight);
     } else if (currentTopic == disconnectTopic){
         unsubscribe() 
+        $("#console-content").delay(200).html(html + "================")
+        currentHeight = currentHeight + $("#console-content").height()
+        $("#console-content").scrollTop(currentHeight)
     } else {
         // everything else
         console.log("Topic " + currentTopic + " with message " + message.payloadString);
