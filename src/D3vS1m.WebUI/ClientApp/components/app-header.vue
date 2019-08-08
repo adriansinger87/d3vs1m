@@ -52,11 +52,12 @@ export default {
       var instances = M.Modal.init(elems);
       instances.open()
 
-      const {data}= await simulationRepository.runSimulation(this.$store.getters.allArguments)
+      const simulationRes = await simulationRepository.get();
 
+      mqttClient.subscribe(simulationRes.data.guid) 
 
-      //TODO: Get the simulation and call MQTT to get the messages
-      await mqttClient.connectMQTT(data.guid)
+      const {data}= await simulationRepository.runSimulation(simulationRes.data.guid,this.$store.getters.allArguments)
+
     },
   }
 };

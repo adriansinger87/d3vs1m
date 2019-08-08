@@ -16,6 +16,7 @@ var guid = "";
 
 function connectMQTT(id) {
     //TODO: Handle Valid input?
+    //TODO: Handle ClientID -> it should be unique
     client = new paho.Client(host, Number(port), "d3vs1m-browser-dfsadf")
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
@@ -26,7 +27,6 @@ function connectMQTT(id) {
         onSuccess: function () {
             var msg = "<span>Mqtt connected</span>";
             M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
-            subscribe(id)
         },
         onFailure: function () {
             var msg = "<span> Mqtt connection failed to host: " + host + " port: " + port + "</span>"
@@ -52,7 +52,6 @@ function subscribe(id) {
 
 
 function unsubscribe() {
-    $("#console-progress").hide();
     console.log("Mqtt unsubscribing with guid:" + guid);
     client.unsubscribe(baseTopic + "/" + guid + "/" + consoleTopic);
     client.unsubscribe(baseTopic + "/" + guid + "/" + disconnectTopic);
@@ -68,12 +67,20 @@ function onConnectionLost(responseObject) {
 
 function onMessageArrived(message) {
     // called when a message arrives
-    
-    console.log(message.payloadString)
-    var consoleContent = document.getElementById("console-content")
-    consoleContent.innerHTML += "<br />"
-    consoleContent.innerHTML +=  message.payloadString
-    //TODO: need to close the socket
+    var mesSplit = message.topic.split('/')
+    var currentTopic = mesSplit[mesSplit.length -1]
+
+    if (currentTopic == consoleTopic) {
+        console.log(message)
+        var consoleContent = document.getElementById("console-content")
+        consoleContent.innerHTML += "<br />"
+        consoleContent.innerHTML +=  message.payloadString
+    } else if (currentTopic == disconnectTopic){
+        unsubscribe() 
+    } else {
+        // everything else
+        console.log("Topic " + currentTopic + " with message " + message.payloadString);
+    }
 }
 
 export default { connectMQTT, disconnectMQTT, subscribe }

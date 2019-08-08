@@ -73,22 +73,14 @@ namespace D3vS1m.Web.Controllers.Api
         ///     GET: api/simulation/run
         /// </summary>
         /// <returns></returns>
-        [HttpPost("run")]
-        public async Task<JsonResult> Run([FromBody] dynamic args)
+        [HttpPost("run/{guid}")]
+        public async Task<JsonResult> Run(string guid,[FromBody] dynamic args)
         {
             try
             {
-                // Reset runtime to get new guid
-                (_factory.Runtime.Arguments as RuntimeArgs).Reset();
-                string guid = _factory.Runtime.Arguments.Guid;
-
-
-                //TODO: redundant code?
-                /*
                 if (_factory.Runtime.Arguments.Guid != guid)
                     throw new RuntimeException(
                         $"Runtime guid '{_factory.Runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
-                */
                 
                 BuildTopics(guid);
                 SetupSimulation(JsonIO.FromJsonString<ArgumentsBase[]>(args.ToString(),HttpSessionExtensions.ArgumentsBinder));
@@ -175,7 +167,7 @@ namespace D3vS1m.Web.Controllers.Api
         private void BuildTopics(string guid)
         {
             _consoleTopic = $"{BASE_TOPIC}/{guid}/{CONSOLE_TOPIC}";
-                _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
+            _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
         }
 
         private string BuildMessage(DateTime timestamp, string message = null)
