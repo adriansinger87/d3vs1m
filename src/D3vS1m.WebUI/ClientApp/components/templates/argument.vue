@@ -19,7 +19,11 @@ export default {
     return {
     };
   },
-  methods: {},
+  methods: {
+    getArgument(guid) {
+      console.log(guid)
+    }
+  },
   props: ['arg']
 };
 </script>

@@ -138,6 +138,7 @@ namespace D3vS1m.Web.Controllers.Api
             // TODO @ AS: dont manipulate arguments during simulation this data should be moved and persisted into results data container
             //this.HttpSession().SetArguments(_factory.SimulationArguments);
             PublishConsoleTopic("### Simulation stopped");
+            PublishConsoleTopic("================");
             _mqtt.PublishAsync(_disconnectTopic, BuildMessage(DateTime.Now), 2);
         }
 

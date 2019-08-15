@@ -76,7 +76,6 @@ function onMessageArrived(message) {
         $("#console-content").html(html + message.payloadString);
     } else if (currentTopic == disconnectTopic){
         unsubscribe() 
-        $("#console-content").delay(200).html(html + "================")
         currentHeight = currentHeight + $("#console-content").height()
         $("#console-content").scrollTop(currentHeight)
     } else {
