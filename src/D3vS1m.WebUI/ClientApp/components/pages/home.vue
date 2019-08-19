@@ -8,6 +8,7 @@
       </div>
     </div>
     <modal-console></modal-console>
+    <modal-editor></modal-editor>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 // info: Component Import
 import Argument from "../templates/argument";
 import modalConsole from "../templates/modal/console";
+import modalCodeEditor from '../templates/modal/code-editor';
 
 // info: REPOSITORY IMPORT
 import RepositoryFactory from "../../services/RepositoryFactory";
@@ -23,18 +25,21 @@ const argumentsRepository = RepositoryFactory.get("arguments");
 
 // info: Service import
 import mqttClient from "../../services/mqttClient";
-
+import $ from 'jquery'
 
 // Vuex 
 import { mapGetters, mapActions } from "vuex";
+import consoleVue from '../templates/modal/console.vue';
 
 export default {
   components: {
     argument: Argument,
-    "modal-console": modalConsole
+    "modal-console": modalConsole, 
+    "modal-editor" : modalCodeEditor
   },
   mounted() {
     mqttClient.connectMQTT()
+    
   },
   data() {
     return {
@@ -43,6 +48,10 @@ export default {
   },
   created() {
     this.fetch();
+    
+  }, 
+  updated() {
+    this.initModal();
   },
   computed: mapGetters(['allArguments']),
   methods: {
@@ -51,7 +60,13 @@ export default {
       this.isLoading = true;
       this.GET_ARG()
       this.isLoading = false;
-    }
+
+  
+    },
+    initModal() {
+      var elems= document.querySelector('.modal'); 
+      var instances = M.Modal.init(elems);
+    } 
   }
 };
 </script>

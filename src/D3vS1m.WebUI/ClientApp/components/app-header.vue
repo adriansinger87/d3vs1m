@@ -16,7 +16,7 @@
 
       <ul class="right">
         <li>
-          <a v-on:click="startSimulation" class="waves-effect waves-light">
+          <a v-on:click="startSimulation" class="waves-effect waves-light" href="#console-modal">
             <i class="mdi mdi-play right"></i> Start
           </a>
         </li>
@@ -43,14 +43,16 @@ export default {
     return {};
   },
   mounted() {
-    
+   
+
+
   },
   methods: {
     startSimulation: async function(event) {
       //todo: will create a global function to use and call all MODAL in the page
-      var elems= document.querySelector('.modal'); 
-      var instances = M.Modal.init(elems);
-      instances.open()
+      var consolelElem = document.getElementById("console-modal"); 
+      var instance = M.Modal.getInstance(consolelElem);
+      instance.open()
 
       const simulationRes = await simulationRepository.get();
 
