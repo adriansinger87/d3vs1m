@@ -65,4 +65,16 @@ function copyTextToClipboard(text) {
 }
 
 
-export default { guid, copyTextToClipboard }
+function initModal() {
+    var elems= document.querySelector('.modal'); 
+    var instances = M.Modal.init(elems);
+    return instances;
+}
+
+function getModalInstance(ElementName) {
+    var consolelElem = document.getElementById(ElementName); 
+    var instance = M.Modal.getInstance(consolelElem);
+    return instance;
+}
+
+export default { guid, copyTextToClipboard, initModal, getModalInstance }

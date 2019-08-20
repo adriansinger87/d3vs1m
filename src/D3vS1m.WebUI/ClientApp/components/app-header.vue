@@ -38,20 +38,18 @@ const  simulationRepository = RepositoryFactory.get("simulation")
 // info: Service import
 import mqttClient from "../services/mqttClient"
 
+import utils from '../services/ultis'
+
 export default {
   data() {
     return {};
   },
   mounted() {
-   
-
-
   },
   methods: {
     startSimulation: async function(event) {
       //todo: will create a global function to use and call all MODAL in the page
-      var consolelElem = document.getElementById("console-modal"); 
-      var instance = M.Modal.getInstance(consolelElem);
+      var instance = utils.getModalInstance("console-modal")
       instance.open()
 
       const simulationRes = await simulationRepository.get();

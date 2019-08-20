@@ -25,7 +25,7 @@ const argumentsRepository = RepositoryFactory.get("arguments");
 
 // info: Service import
 import mqttClient from "../../services/mqttClient";
-import $ from 'jquery'
+import utils from '../../services/ultis'
 
 // Vuex 
 import { mapGetters, mapActions } from "vuex";
@@ -51,7 +51,7 @@ export default {
     
   }, 
   updated() {
-    this.initModal();
+    utils.initModal();
   },
   computed: mapGetters(['allArguments']),
   methods: {
@@ -63,10 +63,7 @@ export default {
 
   
     },
-    initModal() {
-      var elems= document.querySelector('.modal'); 
-      var instances = M.Modal.init(elems);
-    } 
+  
   }
 };
 </script>
