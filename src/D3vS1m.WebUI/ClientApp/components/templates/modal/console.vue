@@ -46,11 +46,6 @@ export default {
   color: white;
 }
 
-.code-footer {
-  position: absolute;
-  bottom: 0px;
-}
-
 #console-progress {
   margin: 0px;
 }

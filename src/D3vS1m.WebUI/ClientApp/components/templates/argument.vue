@@ -14,6 +14,9 @@
 </template>
 
 <script>
+
+import utils  from '../../services/ultis'
+
 export default {
   data() {
     return {
@@ -22,6 +25,11 @@ export default {
   methods: {
     getArgument(guid) {
       console.log(guid)
+
+      var instance = utils.getModalInstance("code-modal") 
+      console.log(instance)
+      instance.open()
+
     }
   },
   props: ['arg']

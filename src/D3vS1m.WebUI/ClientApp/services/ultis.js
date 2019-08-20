@@ -66,9 +66,10 @@ function copyTextToClipboard(text) {
 
 
 function initModal() {
-    var elems= document.querySelector('.modal'); 
-    var instances = M.Modal.init(elems);
-    return instances;
+    var elems= document.getElementsByClassName("modal"); 
+    for (let index = 0; index < elems.length; index++) {
+        M.Modal.init(elems[index]);
+    }
 }
 
 function getModalInstance(ElementName) {

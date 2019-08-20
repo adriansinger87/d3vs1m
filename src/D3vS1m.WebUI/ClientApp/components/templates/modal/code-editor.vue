@@ -25,6 +25,33 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+#code-modal {
+    height: 85%;
+}
+
+.code-editor {
+    font-size: larger;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 56px;
+    left: 0;
+}
+
+.code-footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+.modal .modal-footer {
+    background-color: #37474f;
+}
+.btn-flat {
+    color: white;
+}
+
 
 </style>
