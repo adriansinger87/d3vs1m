@@ -24,10 +24,8 @@ export default {
   },
   methods: {
     getArgument(guid) {
-      console.log(guid)
 
       var instance = utils.getModalInstance("code-modal") 
-      console.log(instance)
       instance.open()
 
     }

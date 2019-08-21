@@ -15,6 +15,7 @@
   "author": "Adrian Singer | TK Nguyen",
   "license": "ISC",
   "dependencies": {
+    "ace-builds": "^1.4.5",
     "axios": "^0.19.0",
     "core-js": "^2.5.3",
     "materialize-css": "^1.0.0-rc.2",

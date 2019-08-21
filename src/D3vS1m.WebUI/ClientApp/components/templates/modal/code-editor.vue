@@ -1,7 +1,8 @@
 <template>
     <div id="code-modal" class="modal">
         <div class="modal-content">
-            <div id="ace-editor" class="code-editor"></div>
+            <div id="editor" class="code-editor">
+            </div>
         </div>
         <div class="modal-footer code-footer">
             <a v-on:click="updateArgument(currentGuid)" class="modal-close waves-effect waves-green btn-flat">Send</a>
@@ -10,13 +11,24 @@
 </template>
 
 <script>
+
+import ace from "ace-builds/src-min-noconflict/ace";
+import aceDraculaTheme from "ace-builds/src-min-noconflict/theme-dracula";
+import aceWorkerJson from 'ace-builds/src-min-noconflict/worker-json'
+import aceJsonMode from 'ace-builds/src-min-noconflict/mode-json'
+
+
 export default {
     data() {
-        return {};
+        return {
+        };
     },
     mounted() {
-        
-    },
+        var editor = ace.edit("editor");
+        editor.getSession().setUseWorker(false);
+        editor.setTheme(aceDraculaTheme);
+        editor.getSession().setMode("ace/mode/json");
+    }, 
     methods: {
         updateArgument(id) {
 
@@ -52,6 +64,5 @@ export default {
 .btn-flat {
     color: white;
 }
-
 
 </style>
