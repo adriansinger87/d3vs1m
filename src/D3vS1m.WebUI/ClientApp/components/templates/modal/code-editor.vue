@@ -12,13 +12,13 @@
 </template>
 
 <script>
-
+/*
 import ace from "ace-builds/src-noconflict/ace";
 import aceDraculaTheme from "ace-builds/src-noconflict/theme-dracula";
 import aceWorkerJson from 'ace-builds/src-noconflict/worker-json'
 import aceJsonMode from 'ace-builds/src-noconflict/mode-json'
 import aceWebPack from 'ace-builds/webpack-resolver'
-
+*/
 export default {
     data() {
         return {
@@ -26,11 +26,12 @@ export default {
         };
     },
     mounted() {
+        /*
         var editor = ace.edit("editor");
         editor.getSession().setUseWorker(false);
         editor.setTheme(aceDraculaTheme);
         editor.getSession().setMode("ace/mode/json");
-
+        */
     }, 
     updated() {
     },
