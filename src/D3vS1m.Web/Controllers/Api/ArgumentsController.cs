@@ -14,6 +14,7 @@ using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sin.Net.Persistence.IO;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -39,7 +40,7 @@ namespace D3vS1m.Web.Controllers.Api
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public JsonResult Get()
+        public string Get()
         {
             var args = SessionArguments();
 
@@ -53,14 +54,22 @@ namespace D3vS1m.Web.Controllers.Api
                 SetNetworkFromJson(args);
 
                 this.HttpSession().SetArguments(args);
-            }
 
+               
+
+            }
+            
+            var argsJson = JsonIO.ToJsonString(args, HttpSessionExtensions.ArgumentsBinder);
+
+
+            //TODO: redundance code? 
             var result = args.Select(a =>
             {
                 return new { a.Name, a.Guid, a.Active };
             });
 
-            return new JsonResult(args);
+            return argsJson;
+            //return new JsonResult(args);
         }
 
         /// <summary>
@@ -143,4 +152,8 @@ namespace D3vS1m.Web.Controllers.Api
             netArgs.Network.AddRange(devices);
         }
     }
+
+
+
+
 }

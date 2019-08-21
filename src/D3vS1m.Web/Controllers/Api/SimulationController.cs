@@ -1,17 +1,28 @@
-﻿using D3vS1m.Application;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using D3vS1m.Application;
+using D3vS1m.Application.Antenna;
+using D3vS1m.Application.Channel;
+using D3vS1m.Application.Communication;
+using D3vS1m.Application.Energy;
+using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Scene;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Infrastructure.Mqtt;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using D3vS1m.Domain.System.Extensions;
-using D3vS1m.Application.Channel;
-using D3vS1m.Web.Extensions;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Exceptions;
+using D3vS1m.Web.Extensions;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using Sin.Net.Domain.Persistence.Logging;
+using Sin.Net.Persistence.IO;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -26,21 +37,23 @@ namespace D3vS1m.Web.Controllers.Api
         private const string DISCONNECT_TOPIC = "disconnect";
 
         private const int ITERATIONS = 10;
-
-        private RuntimeBase _runtime;
-        private IMqttControlable _mqtt;
         private string _consoleTopic;
         private string _disconnectTopic;
+        private readonly IMqttControlable _mqtt;
+
+        private RuntimeBase _runtime;
 
         // -- constructor
 
-        public SimulationController(IHostingEnvironment env, FactoryBase factory, IMqttControlable mqtt) : base(env, factory)
+        public SimulationController(IHostingEnvironment env, FactoryBase factory, IMqttControlable mqtt) : base(env,
+            factory)
         {
             _mqtt = mqtt;
         }
 
         // -- methods
-
+        
+        //TODO: Maybe redundant code?
         // GET: api/<controller>
         [HttpGet]
         public JsonResult Get()
@@ -49,26 +62,34 @@ namespace D3vS1m.Web.Controllers.Api
             return new JsonResult(_factory.Runtime.Arguments);
         }
 
+        [HttpPost("test")]
+        public JsonResult PostTest([FromBody] dynamic name)
+        {
+            return new JsonResult("OK");
+        }
+
+
         /// <summary>
-        /// GET: api/simulation/run
+        ///     GET: api/simulation/run
         /// </summary>
         /// <returns></returns>
-        [HttpGet("run/{guid}")]
-        public async Task<JsonResult> Run(string guid)
+        [HttpPost("run/{guid}")]
+        public async Task<JsonResult> Run(string guid,[FromBody] dynamic args)
         {
             try
             {
                 if (_factory.Runtime.Arguments.Guid != guid)
-                {
-                    throw new RuntimeException($"Runtime guid '{_factory.Runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
-                }
+                    throw new RuntimeException(
+                        $"Runtime guid '{_factory.Runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
+                
                 BuildTopics(guid);
-                SetupSimulation();
+                SetupSimulation(JsonIO.FromJsonString<ArgumentsBase[]>(args.ToString(),HttpSessionExtensions.ArgumentsBinder));
                 RunSimulationAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                await _mqtt.PublishAsync(_consoleTopic, BuildMessage(DateTime.Now, $"The Simulation had an exception: {ex.Message}"), 2);
+                await _mqtt.PublishAsync(_consoleTopic,
+                    BuildMessage(DateTime.Now, $"The Simulation had an exception: {ex.Message}"), 2);
             }
 
             return new JsonResult(_runtime.Arguments);
@@ -76,28 +97,20 @@ namespace D3vS1m.Web.Controllers.Api
 
         // -- private methods
 
-        private void SetupSimulation()
+        private void SetupSimulation(ArgumentsBase[] args)
         {
-            // fetch the array of arguments for each simulator 
-            var args = SessionArguments();
-
             // setup the simulators and attach them to the runtime, based on the existent args
             _runtime = _factory.SetupSimulation(args);
 
             _runtime.Started += OnStarted;
             _runtime.Stopped += OnStopped;
             _runtime.IterationPassed += OnIterationPassed;
-            _runtime.Simulators.Items.ForEach(s => {
-                s.Executed += OnSimulatorExecuted;
-            });
+            _runtime.Simulators.Items.ForEach(s => { s.Executed += OnSimulatorExecuted; });
         }
 
         private void RunSimulationAsync()
         {
-            if (_runtime.Validate() == false)
-            {
-                throw new Exception("The validation of the simulation failed");
-            }
+            if (_runtime.Validate() == false) throw new Exception("The validation of the simulation failed");
 
             // run until break condition
             var task = _runtime.RunAsync(1);
@@ -125,6 +138,7 @@ namespace D3vS1m.Web.Controllers.Api
             // TODO @ AS: dont manipulate arguments during simulation this data should be moved and persisted into results data container
             //this.HttpSession().SetArguments(_factory.SimulationArguments);
             PublishConsoleTopic("### Simulation stopped");
+            PublishConsoleTopic("================");
             _mqtt.PublishAsync(_disconnectTopic, BuildMessage(DateTime.Now), 2);
         }
 
@@ -149,7 +163,7 @@ namespace D3vS1m.Web.Controllers.Api
         private void PublishConsoleTopic(string message)
         {
             _mqtt.PublishAsync(_consoleTopic, BuildMessage(DateTime.Now, message), 2);
-        } 
+        }
 
         private void BuildTopics(string guid)
         {
