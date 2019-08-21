@@ -2,6 +2,7 @@
     <div id="code-modal" class="modal">
         <div class="modal-content">
             <div id="editor" class="code-editor">
+            {{ jsonData }} 
             </div>
         </div>
         <div class="modal-footer code-footer">
@@ -12,15 +13,16 @@
 
 <script>
 
-import ace from "ace-builds/src-min-noconflict/ace";
-import aceDraculaTheme from "ace-builds/src-min-noconflict/theme-dracula";
-import aceWorkerJson from 'ace-builds/src-min-noconflict/worker-json'
-import aceJsonMode from 'ace-builds/src-min-noconflict/mode-json'
-
+import ace from "ace-builds/src-noconflict/ace";
+import aceDraculaTheme from "ace-builds/src-noconflict/theme-dracula";
+import aceWorkerJson from 'ace-builds/src-noconflict/worker-json'
+import aceJsonMode from 'ace-builds/src-noconflict/mode-json'
+import aceWebPack from 'ace-builds/webpack-resolver'
 
 export default {
     data() {
         return {
+            jsonData: this.$store.getters.allArguments
         };
     },
     mounted() {
@@ -28,10 +30,12 @@ export default {
         editor.getSession().setUseWorker(false);
         editor.setTheme(aceDraculaTheme);
         editor.getSession().setMode("ace/mode/json");
+
     }, 
+    updated() {
+    },
     methods: {
         updateArgument(id) {
-
         }
     } 
 }

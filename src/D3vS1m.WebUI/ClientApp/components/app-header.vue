@@ -56,6 +56,7 @@ export default {
 
       mqttClient.subscribe(simulationRes.data.guid) 
 
+
       const {data}= await simulationRepository.runSimulation(simulationRes.data.guid,this.$store.getters.allArguments)
 
     },
