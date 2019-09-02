@@ -10,7 +10,7 @@ namespace D3vS1m.Application.Scene.Materials
 
         public Material()
         {
-            UUID = Guid.NewGuid().ToString();
+            Uuid = Guid.NewGuid().ToString();
             Name = "Material";
 
             Physics = new PhysicsRepository();
@@ -32,7 +32,7 @@ namespace D3vS1m.Application.Scene.Materials
         /// <summary>
         /// Gets the unique identifier
         /// </summary>
-        public string UUID { get; private set; }
+        public string Uuid { get; private set; }
 
         /// <summary>
         /// Gets all frequency dependend material physic properties of type PhysicsRepository

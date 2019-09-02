@@ -23,6 +23,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Persistence.IO;
+using Sin.Net.Persistence.IO.Json;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -60,12 +61,6 @@ namespace D3vS1m.Web.Controllers.Api
         {
             (_factory.Runtime.Arguments as RuntimeArgs).Reset();
             return new JsonResult(_factory.Runtime.Arguments);
-        }
-
-        [HttpPost("test")]
-        public JsonResult PostTest([FromBody] dynamic name)
-        {
-            return new JsonResult("OK");
         }
 
 
