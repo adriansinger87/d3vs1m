@@ -16,6 +16,8 @@
 <script>
 
 import utils  from '../../services/ultis'
+import EventBus from '../../services/CodeEditorEventBus'
+
 
 export default {
   data() {
@@ -25,6 +27,20 @@ export default {
   methods: {
     getArgument(guid) {
 
+
+      //TODO: get the config from Store
+    var args = this.$store.getters.allArguments
+
+    var argumentData = args.filter(x => x.guid == guid)
+
+    EventBus.$emit('open-code-editor', argumentData)
+
+      //TODO: set the code-editor-value to Store 
+      //info: code-editor-value can check the state? 3 types: edited-send, edited-notsend, nochange
+
+
+
+      //info: open Modal 
       var instance = utils.getModalInstance("code-modal") 
       instance.open()
 

@@ -2,7 +2,6 @@
     <div id="code-modal" class="modal">
         <div class="modal-content">
             <div id="editor" class="code-editor">
-            {{ jsonData }}
             </div>
         </div>
         <div class="modal-footer code-footer">
@@ -15,14 +14,17 @@
 //info: lib  
 import ultis from "../../../services/ultis";
 
+
+import EventBus from "../../../services/CodeEditorEventBus";
+
 export default {
-    data() {
-        return {
-            jsonData: this.$store.getters.allArguments
-        };
-    },
     mounted() {
         var editor = ultis.initAceEditor();
+
+        EventBus.$on('open-code-editor', (argData) => {
+            editor.setValue(JSON.stringify(argData, null, '\t'))
+            editor.clearSelection(); 
+        })
     }, 
     updated() {
     },

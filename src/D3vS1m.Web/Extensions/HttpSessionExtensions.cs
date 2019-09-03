@@ -84,6 +84,9 @@ namespace D3vS1m.Web.Extensions
             session.SetString(ARGUMENTS_KEY, json);
         }
 
+
+
+        //TODO: should be checked again
         /// <summary>
         /// Gets the binder for the concrete types for json-serialization.
         /// </summary>

@@ -43,6 +43,11 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public string Get()
         {
+
+            //info: always get the new Arguments when call 
+
+
+
             var args = SessionArguments();
 
             if (args == null)
