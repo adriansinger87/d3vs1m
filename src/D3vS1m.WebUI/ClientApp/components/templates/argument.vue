@@ -39,7 +39,7 @@ export default {
       //info: open Modal 
       var instance = utils.getModalInstance("code-modal") 
 
-      instance.options.onCloseStart= function() {
+      instance.options.onCloseStart = function() {
         //TODO: check if the value changed or not
         //info: code-editor-value can check the state? 3 types: edited-send, edited-notsend, nochange
       }

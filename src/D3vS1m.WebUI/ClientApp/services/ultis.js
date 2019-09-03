@@ -88,6 +88,11 @@ function getModalInstance(ElementName) {
     return instance;
 }
 
+function initSideNav() {
+    var elem = document.getElementById('slide-out');
+    var instance = M.Sidenav.init(elem);
+    return instance;
+}
 
 function initAceEditor() {
     var editor = ace.edit("editor");
@@ -105,4 +110,4 @@ function closeModal() {
 
 
 
-export default { guid, copyTextToClipboard, initModal, getModalInstance, initAceEditor  }
+export default { guid, copyTextToClipboard, initModal, getModalInstance, initAceEditor, initSideNav  }

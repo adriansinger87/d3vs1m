@@ -7,6 +7,7 @@
         </div>
       </div>
     </div>
+    <side-nav></side-nav>
     <modal-console></modal-console>
     <modal-editor></modal-editor>
   </div>
@@ -17,6 +18,7 @@
 import Argument from "../templates/argument";
 import modalConsole from "../templates/modal/console";
 import modalCodeEditor from '../templates/modal/code-editor';
+import sideNav from '../templates/modal/side-nav';
 
 // info: REPOSITORY IMPORT
 import RepositoryFactory from "../../services/RepositoryFactory";
@@ -35,7 +37,8 @@ export default {
   components: {
     argument: Argument,
     "modal-console": modalConsole, 
-    "modal-editor" : modalCodeEditor
+    "modal-editor" : modalCodeEditor,
+    "side-nav" : sideNav
   },
   mounted() {
     mqttClient.connectMQTT()

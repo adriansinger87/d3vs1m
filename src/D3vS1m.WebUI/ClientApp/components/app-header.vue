@@ -3,7 +3,7 @@
     <div class="nav-wrapper container">
       <ul class="left">
         <li>
-          <a id="side-nav-btn" data-activates="slide-out" class="pointer left" style="width: 55px;">
+          <a v-on:click="openSideNav" id="side-nav-btn" data-activates="slide-out" class="pointer left" style="width: 55px;">
             <i class="mdi mdi-menu"></i>
           </a>
         </li>
@@ -23,6 +23,11 @@
         <li>
           <a id="console-link" class="modal-trigger waves-effect waves-light" href="#console-modal">
             <i class="mdi mdi-console left"></i> Console
+          </a>
+        </li>
+        <li>
+          <a id="3D-link" class="waves-effect waves-light" href="#">
+            <i class="mdi mdi-cube-outline left"></i> 3D Scene 
           </a>
         </li>
       </ul>
@@ -48,7 +53,7 @@ export default {
   },
   methods: {
     startSimulation: async function(event) {
-      //todo: will create a global function to use and call all MODAL in the page
+      //TODO: will create a global function to use and call all MODAL in the page
       var instance = utils.getModalInstance("console-modal")
       instance.open()
 
@@ -60,6 +65,11 @@ export default {
       const {data}= await simulationRepository.runSimulation(simulationRes.data.guid,this.$store.getters.allArguments)
 
     },
+    openSideNav: function() {
+      //var instance = utils.getModalInstance("slide-out")
+      var instance = utils.initSideNav()
+      instance.open()
+    }
   }
 };
 </script>
