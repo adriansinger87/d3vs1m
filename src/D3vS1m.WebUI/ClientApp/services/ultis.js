@@ -7,7 +7,6 @@ import aceWebPack from 'ace-builds/webpack-resolver'
 
 
 
-
 function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -84,6 +83,8 @@ function initModal() {
 function getModalInstance(ElementName) {
     var consolelElem = document.getElementById(ElementName); 
     var instance = M.Modal.getInstance(consolelElem);
+
+
     return instance;
 }
 
@@ -96,6 +97,12 @@ function initAceEditor() {
     editor.getSession().setMode("ace/mode/json");
     return editor;
 }
+
+
+function closeModal() {
+
+}
+
 
 
 export default { guid, copyTextToClipboard, initModal, getModalInstance, initAceEditor  }

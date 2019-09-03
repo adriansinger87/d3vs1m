@@ -18,6 +18,7 @@
 import utils  from '../../services/ultis'
 import EventBus from '../../services/CodeEditorEventBus'
 
+import $ from 'jquery'
 
 export default {
   data() {
@@ -35,15 +36,15 @@ export default {
 
     EventBus.$emit('open-code-editor', argumentData)
 
-      //TODO: set the code-editor-value to Store 
-      //info: code-editor-value can check the state? 3 types: edited-send, edited-notsend, nochange
-
-
-
       //info: open Modal 
       var instance = utils.getModalInstance("code-modal") 
-      instance.open()
 
+      instance.options.onCloseStart= function() {
+        //TODO: check if the value changed or not
+        //info: code-editor-value can check the state? 3 types: edited-send, edited-notsend, nochange
+      }
+      console.log(instance)
+      instance.open()
     }
   },
   props: ['arg']
