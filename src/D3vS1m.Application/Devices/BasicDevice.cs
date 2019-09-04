@@ -9,7 +9,7 @@ namespace D3vS1m.Application.Devices
     {
         public BasicDevice()
         {
-            UUID = Guid.NewGuid().ToString();
+            Uuid = Guid.NewGuid().ToString();
 
             Parts = new PartsRepository();
 
@@ -31,7 +31,7 @@ namespace D3vS1m.Application.Devices
         public string Name { get; set; }
         public Vertex Position { get; set; }
 
-        public string UUID { get; set; }
+        public string Uuid { get; set; }
         public string Description { get; set; }
         public Angle Orientation { get; set; }
 

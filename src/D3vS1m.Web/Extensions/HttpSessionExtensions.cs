@@ -10,6 +10,7 @@ using Sin.Net.Persistence.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sin.Net.Persistence.IO.Json;
 
 namespace D3vS1m.Web.Extensions
 {
@@ -83,6 +84,9 @@ namespace D3vS1m.Web.Extensions
             session.SetString(ARGUMENTS_KEY, json);
         }
 
+
+
+        //TODO: should be checked again
         /// <summary>
         /// Gets the binder for the concrete types for json-serialization.
         /// </summary>

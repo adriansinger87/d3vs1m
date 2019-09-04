@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sin.Net.Persistence.IO;
+using Sin.Net.Persistence.IO.Json;
 
 namespace D3vS1m.Web.Controllers.Api
 {
@@ -42,6 +43,11 @@ namespace D3vS1m.Web.Controllers.Api
         [HttpGet]
         public string Get()
         {
+
+            //info: always get the new Arguments when call 
+
+
+
             var args = SessionArguments();
 
             if (args == null)
@@ -58,7 +64,8 @@ namespace D3vS1m.Web.Controllers.Api
                
 
             }
-            
+
+            JsonIO.EnableCaseResolver = true; 
             var argsJson = JsonIO.ToJsonString(args, HttpSessionExtensions.ArgumentsBinder);
 
 

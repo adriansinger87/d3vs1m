@@ -1,10 +1,19 @@
+//info: import required Lib 
+import ace from "ace-builds/src-noconflict/ace";
+import aceDraculaTheme from "ace-builds/src-noconflict/theme-dracula";
+import aceWorkerJson from 'ace-builds/src-noconflict/worker-json'
+import aceJsonMode from 'ace-builds/src-noconflict/mode-json'
+import aceWebPack from 'ace-builds/webpack-resolver'
+
+
+
 function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  }
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
     s4() + '-' + s4() + s4() + s4();
 }
 
@@ -64,7 +73,6 @@ function copyTextToClipboard(text) {
     }
 }
 
-
 function initModal() {
     var elems= document.getElementsByClassName("modal"); 
     for (let index = 0; index < elems.length; index++) {
@@ -75,7 +83,31 @@ function initModal() {
 function getModalInstance(ElementName) {
     var consolelElem = document.getElementById(ElementName); 
     var instance = M.Modal.getInstance(consolelElem);
+
+
     return instance;
 }
 
-export default { guid, copyTextToClipboard, initModal, getModalInstance }
+function initSideNav() {
+    var elem = document.getElementById('slide-out');
+    var instance = M.Sidenav.init(elem);
+    return instance;
+}
+
+function initAceEditor() {
+    var editor = ace.edit("editor");
+    editor.getSession().setUseWorker(false);
+    editor.setTheme(aceDraculaTheme);
+    editor.setShowPrintMargin(false);
+    editor.getSession().setMode("ace/mode/json");
+    return editor;
+}
+
+
+function closeModal() {
+
+}
+
+
+
+export default { guid, copyTextToClipboard, initModal, getModalInstance, initAceEditor, initSideNav  }
