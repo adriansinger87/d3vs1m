@@ -27,7 +27,7 @@
         </li>
         <li>
           <a id="3D-link" class="waves-effect waves-light" href="#">
-            <i class="mdi mdi-cube-outline left"></i> 3D Scene 
+            <router-link :to="{ name: 'scene' }"><i class="mdi mdi-cube-outline left"></i> 3D Scene </router-link>
           </a>
         </li>
       </ul>
