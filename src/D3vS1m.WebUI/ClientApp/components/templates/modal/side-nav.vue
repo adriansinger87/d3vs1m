@@ -16,13 +16,11 @@
       </div>
     </li>
     <li>
-      <a href="#!" class="white-text">Second Link</a>
+      <a class="subheader white-text" style="display: inline">Simualtion Tasks</a>
+      <a class="waves-effect waves-light btn-small red" v-on:click="addArgumentTest()" style="display: inline">+</a>
     </li>
     <li>
-      <div class="divider"></div>
-    </li>
-    <li>
-      <a class="subheader white-text">Subheader</a>
+      <div class="divider" style="background-color: gray"></div>
     </li>
     <li>
       <a class="waves-effect white-text" href="#!">Third Link With Waves</a>
@@ -32,7 +30,22 @@
 
 <script>
 export default {
+  mounted() {
 
+  },
+  methods: {
+    addArgumentTest() {
+
+      console.log("add button is clicked")
+
+
+      //TODO: call API to generate ID
+
+      //TODO: add to global varible  
+      
+      //TODO: Binding 
+    }
+  }
 };
 </script>
 

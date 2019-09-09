@@ -54,7 +54,7 @@ namespace D3vS1m.Web
             services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
                                                                         ); });
 
-
+            //TODO: will be removed 
             // session
 #if DEBUG
             var ts = TimeSpan.FromSeconds(60);
@@ -63,6 +63,7 @@ namespace D3vS1m.Web
 #endif
 
             services.AddDistributedMemoryCache();
+            //TODO: will be removed 
             services.AddSession(options =>
             {
                 options.IdleTimeout = ts;
@@ -87,6 +88,7 @@ namespace D3vS1m.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //TODO: Remove the session
             app.UseSession();
             // TODO: Need to be handled by Dev or Prod Env
             app.UseCors(options => options.AllowAnyOrigin()
