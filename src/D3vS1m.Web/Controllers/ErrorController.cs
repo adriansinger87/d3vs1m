@@ -11,11 +11,14 @@ namespace D3vS1m.Web.Controllers
     [Route("Error")]
     public class ErrorController : ViewControllerBase
     {
+
+
+       
         public ErrorController()
         {
 
         }
-
+        /*
         public IActionResult Index()
         {
             var feature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
@@ -35,5 +38,6 @@ namespace D3vS1m.Web.Controllers
             base.SetViewBag();
             return View(error);
         }
+        */
     }
 }

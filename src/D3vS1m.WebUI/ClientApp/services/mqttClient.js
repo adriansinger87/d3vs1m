@@ -83,13 +83,11 @@ function onMessageArrived(message) {
         unsubscribe() 
         currentHeight = currentHeight + $("#console-content").height()
         $("#console-content").scrollTop(currentHeight)
-        console.log('off')
         ArgumentEventBus.$emit('isLoading', false)
     } else {
         // everything else
         console.log("Topic " + currentTopic + " with message " + message.payloadString);
         ArgumentEventBus.$emit('isLoading', false)
-        console.log('off')
     }
 }
 

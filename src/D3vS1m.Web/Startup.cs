@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace D3vS1m.Web
 {
@@ -69,6 +70,13 @@ namespace D3vS1m.Web
                 options.IdleTimeout = ts;
                 options.Cookie.HttpOnly = true;
             });
+
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DEVS1M", Version = "v1" });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,9 +92,20 @@ namespace D3vS1m.Web
             app.UseStatusCodePagesWithReExecute("/error");
             app.UseExceptionHandler("/error");
 
-            if (_env.IsDevelopment()) app.UseHsts();
+            if (_env.IsDevelopment())
+            {
+                app.UseHsts();
 
-            app.UseHttpsRedirection();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "DEVS1M v1");
+                    c.RoutePrefix = string.Empty;
+                });
+
+            }
+
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             //TODO: Remove the session
             app.UseSession();
@@ -95,15 +114,10 @@ namespace D3vS1m.Web
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 
-                                          );   
+            );
 
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    "default",
-                    "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
 
             Log.Trace("server-app startup finished");
         }

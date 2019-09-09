@@ -8,15 +8,12 @@ namespace D3vS1m.Web.Controllers
 {
     public class HomeController : ViewControllerBase
     {
+        /*
         public IActionResult Index()
         {
             base.SetViewBag();
             return View();
         }
-
-        public IActionResult Foo()
-        {
-            throw new Exception("exception in Foo()");
-        }
+        */
     }
 }

@@ -20,9 +20,9 @@ namespace D3vS1m.Web.Controllers.Api
             // get all devices
             return new string[] { "value1", "value2" };
         }
-
+        /*
         // GET api/<controller>/5
-        [HttpGet("{id}")]
+        [HttpGet()]
         public JsonResult Get(int id)
         {
             // get single device
@@ -31,7 +31,7 @@ namespace D3vS1m.Web.Controllers.Api
                 new { Device = $"my id is {id}" }
             );
         }
-
+        */
         // POST api/<controller>
         [HttpPost]
         public void Post([FromBody]string value)

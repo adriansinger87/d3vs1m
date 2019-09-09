@@ -34,7 +34,6 @@ export default {
   },
   mounted() {
       ArgumentEventBus.$on('isLoading', (value) => {
-        console.log(value)
         this.isLoading = value
       })
   },

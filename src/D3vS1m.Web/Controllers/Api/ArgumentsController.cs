@@ -84,7 +84,8 @@ namespace D3vS1m.Web.Controllers.Api
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
-        [HttpGet("{guid}")]
+        /*
+        [HttpGet]
         public JsonResult Get(string guid)
         {
             var arg = SessionArguments().GetByGuid(guid);
@@ -100,7 +101,7 @@ namespace D3vS1m.Web.Controllers.Api
                 return new JsonResult(arg);
             }
         }
-
+        */
         /// <summary>
         /// PUT: api/Arguments/id
         /// </summary>
