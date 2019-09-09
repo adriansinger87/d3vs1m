@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using D3vS1m.Application;
 using D3vS1m.Application.Antenna;
@@ -124,6 +125,7 @@ namespace D3vS1m.Web.Controllers.Api
         private void OnStarted(object sender, SimulatorEventArgs e)
         {
             PublishConsoleTopic("### Simulation started<br />");
+            Thread.Sleep(1000);
         }
 
         private void OnStopped(object sender, SimulatorEventArgs e)

@@ -16,7 +16,7 @@
 <script>
 
 import utils  from '../../services/ultis'
-import EventBus from '../../services/CodeEditorEventBus'
+import CodeEditorEventBus from '../../services/EventBus/CodeEditorEventBus'
 
 import $ from 'jquery'
 
@@ -34,7 +34,7 @@ export default {
 
     var argumentData = args.filter(x => x.guid == guid)
 
-    EventBus.$emit('open-code-editor', argumentData)
+    CodeEditorEventBus.$emit('open-code-editor', argumentData)
 
       //info: open Modal 
       var instance = utils.getModalInstance("code-modal") 

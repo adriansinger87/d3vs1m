@@ -16,6 +16,9 @@ var client;
 var guid = "";
 var currentHeight = 0;
 
+//info: EventBus
+import ArgumentEventBus from '../services/EventBus/ArgumentEventBus'
+
 function connectMQTT(id) {
     //TODO: Handle Valid input?
     client = new paho.Client(host, Number(port), "d3vs1m-browser-" + utils.guid())
@@ -72,15 +75,21 @@ function onMessageArrived(message) {
     var currentTopic = mesSplit[mesSplit.length -1]
     var html = $("#console-content").html() + "<br />";
 
+    console.log(message)
     if (currentTopic == consoleTopic) {
+        ArgumentEventBus.$emit('isLoading', true)
         $("#console-content").html(html + message.payloadString);
     } else if (currentTopic == disconnectTopic){
         unsubscribe() 
         currentHeight = currentHeight + $("#console-content").height()
         $("#console-content").scrollTop(currentHeight)
+        console.log('off')
+        ArgumentEventBus.$emit('isLoading', false)
     } else {
         // everything else
         console.log("Topic " + currentTopic + " with message " + message.payloadString);
+        ArgumentEventBus.$emit('isLoading', false)
+        console.log('off')
     }
 }
 
