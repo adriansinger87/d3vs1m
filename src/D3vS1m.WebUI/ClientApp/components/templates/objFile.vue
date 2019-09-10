@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import utils from '../../services/ultis'
+import utils from '../../services/loadObjFile'
 export default {
     props: ['objFile'],
     methods: {
