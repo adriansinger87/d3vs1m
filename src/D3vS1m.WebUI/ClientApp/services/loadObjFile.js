@@ -1,5 +1,4 @@
 
-
 function loadObjFile(objLink) {
     {
         const canvas = document.querySelector('#c');

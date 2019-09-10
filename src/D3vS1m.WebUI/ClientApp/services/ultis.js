@@ -22,13 +22,13 @@ String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-
+/*
 if (!Array.prototype.last) {
     Array.prototype.last = function () {
         return this[this.length - 1];
     };
 }
-
+*/
 function copyTextToClipboard(text) {
     var myText = text.replaceAll("<br>", "\r\n").replaceAll("<br />", "\r\n").replaceAll("&gt;_", "");
 
