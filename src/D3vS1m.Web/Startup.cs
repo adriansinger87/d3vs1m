@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Sin.Net.Domain.Persistence.Logging;
 using Microsoft.OpenApi.Models;
 
@@ -103,6 +105,15 @@ namespace D3vS1m.Web
                     c.RoutePrefix = string.Empty;
                 });
 
+
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    ServeUnknownFileTypes = true,
+                    FileProvider = new PhysicalFileProvider(
+                        Path.Combine(Directory.GetCurrentDirectory(), @"data")),
+
+                    RequestPath = new PathString("/data")
+                });
             }
 
             //app.UseHttpsRedirection();

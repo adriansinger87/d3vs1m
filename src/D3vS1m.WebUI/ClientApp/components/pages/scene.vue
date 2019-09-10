@@ -44,6 +44,14 @@ export default {
         return {
             objFiles: null
         }
+    },
+    created() {
+        //TODO: get File from API
+    },
+    methods: {
+        getObjFiles() {
+            
+        }
     }
 };
 </script>
