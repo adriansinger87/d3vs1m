@@ -2,8 +2,8 @@
     <div style="height: 100%" class="contain">
         <div class="row" style="width: 100%; flex: 1;padding: 0px !important; margin-bottom: 0px !important; "> 
             <!--File Panel-->
-            <div class="col s6" style="height: 100%; background-color: #323232"> 
-                <div id="folder" style="height: 400px; overflow-y: auto">
+            <div class="col s6" style="height: 100%; padding: 0px !important; background-color: #323232"> 
+                <div id="folder" style="height: 50%; overflow-y: auto">
                     <ul>
                         <!--v-for="objFile in objFiles"-->
                         <li>
@@ -18,7 +18,7 @@
                         </li>
                     </ul>
                 </div> 
-                <div id="console" style="height: 450px;background-color: red; overflow-y: auto">
+                <div id="console" style="height: 50%;background-color: red; overflow-y: auto">
                 </div>
             </div>
             <div class="col s6" style="height: 100%; display: inline-block; background-color: gray;padding: 0px !important"> 
