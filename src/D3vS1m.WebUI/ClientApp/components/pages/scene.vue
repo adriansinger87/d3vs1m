@@ -5,20 +5,12 @@
             <div class="col s6" style="height: 100%; padding: 0px !important; background-color: #323232"> 
                 <div id="folder" style="height: 50%; overflow-y: auto">
                     <ul>
-                        <!--v-for="objFile in objFiles"-->
-                        <li>
-                            <div style="display: flex; align-items:center;" >
-                                <div class="objFileItem" style="display: flex;  align-items:center; width: 100%; margin-right: 10px">  
-                                    <img src="../../images/objIcon.png" style="width: 50px"  />
-                                    <!--{{objFile.fileName}}-->
-                                    <div style="font-size: 25px"></div>
-                                </div>
-                                <a class="btn-floating waves-effect waves-light btn-small" v-on:click="runSimulation(objFile)" style="margin-right: 20px"> <i class="material-icons">play_arrow</i></a>
-                            </div>
+                        <li v-for="objFile in objFiles" v-bind:key="objFile.fileName">
+                            <obj-file v-bind:objFile="objFile"></obj-file>
                         </li>
                     </ul>
                 </div> 
-                <div id="console" style="height: 50%;background-color: red; overflow-y: auto">
+                <div id="console" style="height: 50%;background-color: black; overflow-y: auto">
                 </div>
             </div>
             <div class="col s6" style="height: 100%; display: inline-block; background-color: gray;padding: 0px !important"> 
@@ -32,13 +24,18 @@
 </template>
 
 <script>
+
 import modalConsole from "../templates/modal/console";
 import sideNav from "../templates/modal/side-nav";
+import objFile from "../templates/objFile";
+import RepositoryFactory from '../../services/RepositoryFactory'
+const objFilesRepository = RepositoryFactory.get("objFiles");
 
 export default {
     components: {
         "modal-console": modalConsole,
-        "side-nav": sideNav
+        "side-nav": sideNav,
+        "obj-file": objFile
     },
     data() {
         return {
@@ -46,11 +43,12 @@ export default {
         }
     },
     created() {
-        //TODO: get File from API
+        this.getObjFiles();
     },
     methods: {
-        getObjFiles() {
-            
+        async getObjFiles() {
+            const {data} = await objFilesRepository.get()
+            this.objFiles = data
         }
     }
 };
@@ -89,8 +87,6 @@ export default {
                                             transparent)
 }
 
-.objFileItem:hover { 
-    border: 2px solid #006064;
-}
+
 
 </style>
