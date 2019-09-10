@@ -42,6 +42,8 @@ export default {
             objFiles: null
         }
     },
+    mounted() {
+    },
     created() {
         this.getObjFiles();
     },

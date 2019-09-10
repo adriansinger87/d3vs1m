@@ -117,6 +117,10 @@ namespace D3vS1m.Web
 
                 app.UseStaticFiles(new StaticFileOptions
                 {
+                    OnPrepareResponse = ctx => {
+                        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+                        ctx.Context.Response.Headers.Append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                    },
                     ServeUnknownFileTypes = true,
                     FileProvider = new PhysicalFileProvider(
                         Path.Combine(Directory.GetCurrentDirectory(), @"data")),

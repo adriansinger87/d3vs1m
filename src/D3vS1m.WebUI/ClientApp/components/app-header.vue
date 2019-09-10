@@ -9,9 +9,11 @@
         </li>
       </ul>
 
-      <a class="brand-logo center">
-        <img class="header-logo left" src="../images/d3vs1m_logo.svg" />
-        <span class="hide-on-small-only">D3V S1M</span>
+      <a class="brand-logo center" href="#">
+        <router-link :to="{ name: 'home' }">
+          <img class="header-logo left" src="../images/d3vs1m_logo.svg" />
+          <span class="hide-on-small-only">D3V S1M</span>
+        </router-link>
       </a>
 
       <ul class="right">

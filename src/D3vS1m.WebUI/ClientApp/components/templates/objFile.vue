@@ -18,12 +18,12 @@
 </template>
 
 <script>
+import utils from '../../services/ultis'
 export default {
     props: ['objFile'],
     methods: {
         runSimulation: function (objFile) {
-            console.log(objFile.link);
-            //loadObjFile("http://"+objFile.link);
+            utils.loadObjFile("http://"+objFile.link);
         }
     }
 };
