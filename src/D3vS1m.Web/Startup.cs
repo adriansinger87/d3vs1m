@@ -106,6 +106,15 @@ namespace D3vS1m.Web
                 });
 
 
+                //TODO: should be in Utils Class
+                var path = Path.Combine(Directory.GetCurrentDirectory(), @"data");
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+
                 app.UseStaticFiles(new StaticFileOptions
                 {
                     ServeUnknownFileTypes = true,
