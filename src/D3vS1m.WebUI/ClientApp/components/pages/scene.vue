@@ -11,6 +11,7 @@
                     </ul>
                 </div> 
                 <div id="console" style="height: 50%;background-color: black; overflow-y: auto">
+                    <div class="console-content">>_ Console is starting ...</div>
                 </div>
             </div>
             <div class="col s6" style="height: 100%; display: inline-block; background-color: gray;padding: 0px !important"> 
@@ -64,6 +65,13 @@ export default {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+#console > .console-content {
+  background: black;
+  font-family: monospace;
+  font-size: 1.2em;
+  color: white;
 }
 
 

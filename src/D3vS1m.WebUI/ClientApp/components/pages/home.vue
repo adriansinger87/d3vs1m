@@ -31,7 +31,6 @@ import utils from '../../services/ultis'
 
 // Vuex 
 import { mapGetters, mapActions } from "vuex";
-import consoleVue from '../templates/modal/console.vue';
 
 export default {
   components: {
