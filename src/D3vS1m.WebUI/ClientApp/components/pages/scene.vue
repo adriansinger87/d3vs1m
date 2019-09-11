@@ -8,6 +8,9 @@
                         <li v-for="objFile in objFiles" v-bind:key="objFile.fileName">
                             <obj-file v-bind:objFile="objFile"></obj-file>
                         </li>
+                        <li style="color: white; font-size: 20px;" v-on:click="addNewObjFile()">
+                            Add
+                        </li>
                     </ul>
                 </div> 
                 <div id="console" style="height: 50%;background-color: black; overflow-y: auto">
@@ -52,6 +55,9 @@ export default {
         async getObjFiles() {
             const {data} = await objFilesRepository.get()
             this.objFiles = data
+        },
+        addNewObjFile() {
+            
         }
     }
 };
