@@ -15,7 +15,7 @@
             </div>
             <div class="col s6" style="height: 100%; display: inline-block; background-color: gray;padding: 0px !important"> 
                 <!--Obj Screen-->
-                <canvas id="c" style="width: 100%; height: 100%;"></canvas> 
+                <canvas id="c" style="width: 100%; height: 99%;"></canvas> 
             </div>
         </div>
         <side-nav></side-nav>
@@ -57,6 +57,16 @@ export default {
 </script>
 
 <style scoped>
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
 .contain {
     display: flex;
     flex-direction: column;
