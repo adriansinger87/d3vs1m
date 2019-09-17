@@ -11,6 +11,9 @@
                     </ul>
                     <div style="width:100%; padding: 10px">
                         <a v-on:click="addNewObjFile()" style="width:100%; background-color: #006064" class="waves-effect waves-light btn">Upload</a>
+                        <form id='formid' method="POST" enctype="multipart/form-data">
+                            <input id='fileid' type='file' accept=".obj" name='filename' hidden/>
+                        </form>
                     </div>
                 </div> 
                 <div id="console" style="height: 50%;background-color: black; overflow-y: auto">
@@ -57,7 +60,7 @@ export default {
             this.objFiles = data
         },
         addNewObjFile() {
-            
+            document.getElementById('fileid').click();
         }
     }
 };
