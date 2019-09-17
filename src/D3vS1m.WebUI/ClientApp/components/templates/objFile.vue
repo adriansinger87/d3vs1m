@@ -10,7 +10,7 @@
         <a
             class="btn-floating waves-effect waves-light btn-small"
             v-on:click="runSimulation(objFile)"
-            style="margin-right: 20px"
+            style="margin-right: 20px; background-color: #006064"
         >
             <i class="material-icons">play_arrow</i>
         </a>

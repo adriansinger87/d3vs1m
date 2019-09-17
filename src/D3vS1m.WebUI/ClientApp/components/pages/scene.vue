@@ -8,10 +8,10 @@
                         <li v-for="objFile in objFiles" v-bind:key="objFile.fileName">
                             <obj-file v-bind:objFile="objFile"></obj-file>
                         </li>
-                        <li style="color: white; font-size: 20px;" v-on:click="addNewObjFile()">
-                            Add
-                        </li>
                     </ul>
+                    <div style="width:100%; padding: 10px">
+                        <a v-on:click="addNewObjFile()" style="width:100%; background-color: #006064" class="waves-effect waves-light btn">Upload</a>
+                    </div>
                 </div> 
                 <div id="console" style="height: 50%;background-color: black; overflow-y: auto">
                     <div class="console-content">>_ Console is starting ...</div>
