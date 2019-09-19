@@ -35,6 +35,7 @@ import sideNav from "../templates/modal/side-nav";
 import objFile from "../templates/objFile";
 import RepositoryFactory from '../../services/RepositoryFactory'
 const objFilesRepository = RepositoryFactory.get("objFiles");
+import EventBus from '../../services/EventBus/EventBus'
 
 export default {
     components: {
@@ -64,8 +65,7 @@ export default {
         async fileUploadChanged(e) {
             this.$emit('onProLoadVisibleChange', true)
             // Upload Progress
-            
-            this.$emit('onProLoadPercentageChange', "12%")
+        
             var files = e.target.files || e.dataTransfer.files;
             
             if (!files.length)
@@ -76,6 +76,13 @@ export default {
             formData.append('file', files[0]);
 
             const { data} = await objFilesRepository.uploadFile(formData)
+            
+            EventBus.$on('onProLoadPercentageChange', (progressValue) => {
+                console.log('value:'+ progressValue)
+                //TODO: smooth progess
+                this.$emit('onProLoadPercentageChange', progressValue + "%")
+            })
+            
             this.$emit('onProLoadVisibleChange', false)
         }
     }
