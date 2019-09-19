@@ -11,9 +11,7 @@
                     </ul>
                     <div style="width:100%; padding: 10px">
                         <a v-on:click="addNewObjFile()" style="width:100%; background-color: #006064" class="waves-effect waves-light btn">Upload</a>
-                        <form id='formid' method="POST" enctype="multipart/form-data">
-                            <input id='fileid' type='file' accept=".obj" name='filename' hidden/>
-                        </form>
+                        <input id='fileUpload' type='file' accept=".obj" name='filename' @change="fileUploadChanged" hidden/>
                     </div>
                 </div> 
                 <div id="console" style="height: 50%;background-color: black; overflow-y: auto">
@@ -46,10 +44,11 @@ export default {
     },
     data() {
         return {
-            objFiles: null
+            objFiles: null,
         }
     },
     mounted() {
+
     },
     created() {
         this.getObjFiles();
@@ -60,7 +59,24 @@ export default {
             this.objFiles = data
         },
         addNewObjFile() {
-            document.getElementById('fileid').click();
+            document.getElementById('fileUpload').click();
+        },
+        async fileUploadChanged(e) {
+            this.$emit('onProLoadVisibleChange', true)
+            // Upload Progress
+            
+            this.$emit('onProLoadPercentageChange', "12%")
+            var files = e.target.files || e.dataTransfer.files;
+            
+            if (!files.length)
+                return;
+            
+            let formData = new FormData();
+            //TODO: Multiple later
+            formData.append('file', files[0]);
+
+            const { data} = await objFilesRepository.uploadFile(formData)
+            this.$emit('onProLoadVisibleChange', false)
         }
     }
 };

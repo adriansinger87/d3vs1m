@@ -23,6 +23,8 @@ import $ from 'jquery'
 export default {
   data() {
     return {
+      percentage: "",
+      isProLoad: false
     };
   },
   methods: {

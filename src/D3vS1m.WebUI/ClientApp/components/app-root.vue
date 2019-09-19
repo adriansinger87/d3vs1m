@@ -2,9 +2,9 @@
   <div id="app" class="container-fluid">
     <app-header></app-header>
     <pre-loader v-if="isPreLoad"></pre-loader>
-    <pro-loader v-if="isProLoad" v-bind:width="percentage"></pro-loader>
+    <pro-loader v-if="isProLoad"  v-bind:width="percentage"></pro-loader>
     <div style="flex: 1">
-        <router-view></router-view>
+        <router-view @onProLoadPercentageChange="onProLoadPercentageChange" @onProLoadVisibleChange="onProLoadVisibleChange"></router-view>
     </div>
     <app-footer></app-footer>
   </div>
@@ -32,6 +32,14 @@ export default {
     };
   },
   mounted() {
+  },
+  methods: {
+    onProLoadVisibleChange(isProLoadValue) {
+      this.isProLoad = isProLoadValue
+    },
+    onProLoadPercentageChange(percentageValue) { 
+      this.percentage = percentageValue 
+    }
   }
 };
 </script>
