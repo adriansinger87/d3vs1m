@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sin.Net.Domain.Persistence.Logging;
 
-namespace D3vS1m.Web
+namespace D3vS1m.WebAPI
 {
     public class Startup
     {

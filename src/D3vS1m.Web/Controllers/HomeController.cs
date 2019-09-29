@@ -1,10 +1,7 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using D3vS1m.Web.Models;
-using D3vS1m.Web.Extensions;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace D3vS1m.Web.Controllers
+namespace D3vS1m.WebAPI.Controllers
 {
     public class HomeController : ViewControllerBase
     {

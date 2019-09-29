@@ -4,20 +4,19 @@ using D3vS1m.Application.Devices;
 using D3vS1m.Application.Network;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Extensions;
-using D3vS1m.Web.Extensions;
-using D3vS1m.Web.Models;
+using D3vS1m.WebAPI.Extensions;
+using D3vS1m.WebAPI.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Sin.Net.Domain.Persistence.Logging;
+using Sin.Net.Persistence.IO.Json;
 using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Sin.Net.Persistence.IO;
-using Sin.Net.Persistence.IO.Json;
 
-namespace D3vS1m.Web.Controllers.Api
+namespace D3vS1m.WebAPI.Controllers.Api
 {
     /// <summary>
     /// This class represents the rest-api for loading and manipulating a list of arguments.
@@ -61,11 +60,11 @@ namespace D3vS1m.Web.Controllers.Api
 
                 this.HttpSession().SetArguments(args);
 
-               
+
 
             }
 
-            JsonIO.EnableCaseResolver = true; 
+            JsonIO.EnableCaseResolver = true;
             var argsJson = JsonIO.ToJsonString(args, HttpSessionExtensions.ArgumentsBinder);
 
 

@@ -1,13 +1,13 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Domain.Data.Arguments;
-using D3vS1m.Web.Extensions;
+using D3vS1m.WebAPI.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Sin.Net.Domain.Persistence;
 using Sin.Net.Persistence;
 using System.IO;
 
-namespace D3vS1m.Web.Controllers.Api
+namespace D3vS1m.WebAPI.Controllers.Api
 {
     public class ApiControllerBase : ControllerBase
     {

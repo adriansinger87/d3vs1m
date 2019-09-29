@@ -1,4 +1,4 @@
-﻿using D3vS1m.Web.Models;
+﻿using D3vS1m.WebAPI.Models;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Sin.Net.Domain.Persistence.Logging;
 using System.Diagnostics;
 
-namespace D3vS1m.Web.Controllers
+namespace D3vS1m.WebAPI.Controllers
 {
     [Route("Error")]
     public class ErrorController : ViewControllerBase

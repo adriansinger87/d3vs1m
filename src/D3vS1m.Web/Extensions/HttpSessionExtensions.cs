@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sin.Net.Persistence.IO.Json;
 
-namespace D3vS1m.Web.Extensions
+namespace D3vS1m.WebAPI.Extensions
 {
     // TODO: Issue! long arrays are stored as json string in the session that makes the load and save procedure very long
     // - #1 try to store the string as compressed binary code

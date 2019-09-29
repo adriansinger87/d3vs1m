@@ -1,0 +1,960 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SimulatorBase
+   | D3vS1m API Reference </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SimulatorBase
+   | D3vS1m API Reference ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="D3vS1m.Domain.Simulation.SimulatorBase">
+  <h1 id="D3vS1m_Domain_Simulation_SimulatorBase" data-uid="D3vS1m.Domain.Simulation.SimulatorBase">Class SimulatorBase
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SimulatorBase</span></div>
+  </div>
+  
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Antenna.SimpleAntennaSimulator.html">SimpleAntennaSimulator</a></div>
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Antenna.SphericAntennaSimulator.html">SphericAntennaSimulator</a></div>
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Channel.AdaptedFriisSimulator.html">AdaptedFriisSimulator</a></div>
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Communication.LRWPANSimulator.html">LRWPANSimulator</a></div>
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Energy.BatteryPackSimulator.html">BatteryPackSimulator</a></div>
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Network.PeerToPeerNetworkSimulator.html">PeerToPeerNetworkSimulator</a></div>
+      <div class="level2"><a class="xref" href="D3vS1m.Application.Scene.SceneSimulator.html">SceneSimulator</a></div>
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Assembly</strong>: D3vS1m.Domain.dll</h6>
+  
+  <h5 id="D3vS1m_Domain_Simulation_SimulatorBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public abstract class SimulatorBase : ISimulatable</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase__ctor_D3vS1m_Domain_Runtime_RuntimeBase_.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.%23ctor(D3vS1m.Domain.Runtime.RuntimeBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L39" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase__ctor_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.#ctor*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase__ctor_D3vS1m_Domain_Runtime_RuntimeBase_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.#ctor(D3vS1m.Domain.Runtime.RuntimeBase)"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase__ctor_D3vS1m_Domain_Runtime_RuntimeBase_" class="expander" data-toggle="collapse">SimulatorBase(RuntimeBase)</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase__ctor_D3vS1m_Domain_Runtime_RuntimeBase_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SimulatorBase(RuntimeBase runtime)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="D3vS1m.Domain.Runtime.RuntimeBase.html">RuntimeBase</a></span>
+        <span class="parametername">runtime</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase__runtime.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase._runtime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase__runtime" data-uid="D3vS1m.Domain.Simulation.SimulatorBase._runtime"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase__runtime" class="expander" data-toggle="collapse">_runtime</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase__runtime" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected RuntimeBase _runtime</code></pre>
+  </div>
+
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.Runtime.RuntimeBase.html">RuntimeBase</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Arguments.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Arguments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L121" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_Arguments_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Arguments*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Arguments" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Arguments"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Arguments" class="expander" data-toggle="collapse">Arguments</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Arguments" class="collapse in">
+  <div class="markdown level1 summary"><p>The settings that are specific for the runtime environment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract ArgumentsBase Arguments { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.Data.Arguments.ArgumentsBase.html">ArgumentsBase</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Arguments">ISimulatable.Arguments</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Guid.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Guid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L125" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_Guid_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Guid*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Guid" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Guid"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Guid" class="expander" data-toggle="collapse">Guid</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Guid" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Guid { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Guid">ISimulatable.Guid</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Id.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L127" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_Id_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Id*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Id" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Id"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Id" class="expander" data-toggle="collapse">Id</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Id" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string Id { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Id">ISimulatable.Id</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Name.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L123" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_Name_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Name*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Name" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Name"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Name" class="expander" data-toggle="collapse">Name</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Name" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string Name { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Name">ISimulatable.Name</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Type.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L129" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_Type_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Type*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Type" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Type"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Type" class="expander" data-toggle="collapse">Type</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Type" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract SimulationModels Type { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.System.Enumerations.SimulationModels.html">SimulationModels</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Type">ISimulatable.Type</a></div>
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_AfterExecution.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.AfterExecution%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L97" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_AfterExecution_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.AfterExecution*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_AfterExecution" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.AfterExecution"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_AfterExecution" class="expander" data-toggle="collapse">AfterExecution()</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_AfterExecution" class="collapse in">
+  <div class="markdown level1 summary"><p>The method shall be called in the Run method after the run of the concrete simulator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void AfterExecution()</code></pre>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_ArgsNotAdded_System_String_.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.ArgsNotAdded(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L67" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_ArgsNotAdded_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.ArgsNotAdded*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_ArgsNotAdded_System_String_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.ArgsNotAdded(System.String)"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_ArgsNotAdded_System_String_" class="expander" data-toggle="collapse">ArgsNotAdded(String)</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_ArgsNotAdded_System_String_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ISimulatable ArgsNotAdded(string argsName)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">argsName</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html">ISimulatable</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_BeforeExecution.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.BeforeExecution%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L89" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_BeforeExecution_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.BeforeExecution*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_BeforeExecution" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.BeforeExecution"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_BeforeExecution" class="expander" data-toggle="collapse">BeforeExecution()</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_BeforeExecution" class="collapse in">
+  <div class="markdown level1 summary"><p>The method shall be called in the Run method before the run of the concrete simulator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void BeforeExecution()</code></pre>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_ConvertArgs__1_D3vS1m_Domain_Data_Arguments_ArgumentsBase___0__.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.ConvertArgs%60%601(D3vS1m.Domain.Data.Arguments.ArgumentsBase%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L52" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_ConvertArgs_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.ConvertArgs*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_ConvertArgs__1_D3vS1m_Domain_Data_Arguments_ArgumentsBase___0__" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.ConvertArgs``1(D3vS1m.Domain.Data.Arguments.ArgumentsBase,``0@)"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_ConvertArgs__1_D3vS1m_Domain_Data_Arguments_ArgumentsBase___0__" class="expander" data-toggle="collapse">ConvertArgs&lt;T&gt;(ArgumentsBase, ref T)</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_ConvertArgs__1_D3vS1m_Domain_Data_Arguments_ArgumentsBase___0__" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool ConvertArgs&lt;T&gt;(ArgumentsBase input, ref T target)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="D3vS1m.Domain.Data.Arguments.ArgumentsBase.html">ArgumentsBase</a></span>
+        <span class="parametername">input</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">T</span></span>
+        <span class="parametername">target</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="parametername">T</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_OnStarted_System_Object_D3vS1m_Domain_Events_SimulatorEventArgs_.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.OnStarted(System.Object%2CD3vS1m.Domain.Events.SimulatorEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L102" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_OnStarted_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.OnStarted*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_OnStarted_System_Object_D3vS1m_Domain_Events_SimulatorEventArgs_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.OnStarted(System.Object,D3vS1m.Domain.Events.SimulatorEventArgs)"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_OnStarted_System_Object_D3vS1m_Domain_Events_SimulatorEventArgs_" class="expander" data-toggle="collapse">OnStarted(Object, SimulatorEventArgs)</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_OnStarted_System_Object_D3vS1m_Domain_Events_SimulatorEventArgs_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnStarted(object sender, SimulatorEventArgs e)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">sender</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="D3vS1m.Domain.Events.SimulatorEventArgs.html">SimulatorEventArgs</a></span>
+        <span class="parametername">e</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Run.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Run%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L84" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_Run_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Run*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Run" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Run"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Run" class="expander" data-toggle="collapse">Run()</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Run" class="collapse in">
+  <div class="markdown level1 summary"><p>Main function to run the simulator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Run()</code></pre>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Run">ISimulatable.Run()</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_ToString.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L111" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_ToString_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.ToString*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_ToString" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.ToString"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_ToString" class="expander" data-toggle="collapse">ToString()</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_ToString" class="collapse in">
+  <div class="markdown level1 summary"><p>Returns the name property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p><p>result string</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_With_D3vS1m_Domain_Data_Arguments_ArgumentsBase_.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.With(D3vS1m.Domain.Data.Arguments.ArgumentsBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L79" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="D3vS1m_Domain_Simulation_SimulatorBase_With_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.With*"></a>
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_With_D3vS1m_Domain_Data_Arguments_ArgumentsBase_" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.With(D3vS1m.Domain.Data.Arguments.ArgumentsBase)"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_With_D3vS1m_Domain_Data_Arguments_ArgumentsBase_" class="expander" data-toggle="collapse">With(ArgumentsBase)</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_With_D3vS1m_Domain_Data_Arguments_ArgumentsBase_" class="collapse in">
+  <div class="markdown level1 summary"><p>Adds a concrete argument object to the simulator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract ISimulatable With(ArgumentsBase arguments)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="D3vS1m.Domain.Data.Arguments.ArgumentsBase.html">ArgumentsBase</a></span>
+        <span class="parametername">arguments</span>
+        <p><p>the arguments object,
+can be added several times depending on the needs of the simulator</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html">ISimulatable</a>
+        <p><p>the calling instance</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_With_D3vS1m_Domain_Data_Arguments_ArgumentsBase_">ISimulatable.With(ArgumentsBase)</a></div>
+  
+  
+  
+  
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_Executed.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.Executed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L29" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_Executed" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.Executed"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Executed" class="expander" data-toggle="collapse">Executed</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_Executed" class="collapse in">
+  <div class="markdown level1 summary"><p>Shall be fired at last, when the execution of the simulation model has finished</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SimulatorEventHandler Executed</code></pre>
+  </div>
+
+  
+  
+  
+  
+  
+  <h5 class="eventType">Event Type</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.Events.SimulatorEventHandler.html">SimulatorEventHandler</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_Executed">ISimulatable.Executed</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase_OnExecuting.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase.OnExecuting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L23" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="D3vS1m_Domain_Simulation_SimulatorBase_OnExecuting" data-uid="D3vS1m.Domain.Simulation.SimulatorBase.OnExecuting"><a href="#collapsible-D3vS1m_Domain_Simulation_SimulatorBase_OnExecuting" class="expander" data-toggle="collapse">OnExecuting</a></h4>
+  
+  <div id="collapsible-D3vS1m_Domain_Simulation_SimulatorBase_OnExecuting" class="collapse in">
+  <div class="markdown level1 summary"><p>Shall be fired at first, when the execution of the simulation model starts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SimulatorEventHandler OnExecuting</code></pre>
+  </div>
+
+  
+  
+  
+  
+  
+  <h5 class="eventType">Event Type</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="D3vS1m.Domain.Events.SimulatorEventHandler.html">SimulatorEventHandler</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="D3vS1m.Domain.Simulation.ISimulatable.html#D3vS1m_Domain_Simulation_ISimulatable_OnExecuting">ISimulatable.OnExecuting</a></div>
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Domain_Simulation_SimulatorBase.md&amp;value=---%0Auid%3A%20D3vS1m.Domain.Simulation.SimulatorBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Domain/Simulation/SimulatorBase.cs/#L10" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright 2019 <strong>Adrian Singer</strong>. Generated by <strong>DocFX</strong>.
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
