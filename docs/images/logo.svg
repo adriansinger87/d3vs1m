@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50px" height="50px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 50 50"
- xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Creator: CorelDRAW 2019 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="13mm" height="13mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1187.03 1187.03"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <defs>
   <style type="text/css">
    <![CDATA[
-    .fil0 {fill:#D7D7D7}
+    .fil5 {fill:none}
+    .fil1 {fill:#4F4F4F}
+    .fil3 {fill:#777777}
+    .fil0 {fill:#8B8C8C}
+    .fil2 {fill:#BFBFC0}
+    .fil4 {fill:#DEDEDE}
    ]]>
   </style>
  </defs>
  <g id="Ebene_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <path class="fil0" d="M26 16l17 0 -17 -11 0 11zm0 2l17 0 -9 5 -8 -5zm-2 -13l-17 11 17 12c0,-8 0,-15 0,-23zm0 27l-17 0 9 -5 8 5zm2 13l17 -11 -17 -12c0,8 0,15 0,23zm-2 -11l-17 0 17 11 0 -11z"/>
+  <g id="_2399500870512">
+   <rect class="fil0" x="77.16" y="462.2" width="279.62" height="279.62" rx="76.4" ry="76.4"/>
+   <rect class="fil1" x="430.05" y="462.2" width="279.62" height="279.62" rx="76.4" ry="76.4"/>
+   <rect class="fil2" x="782.94" y="462.2" width="279.62" height="279.62" rx="76.4" ry="76.4"/>
+   <rect class="fil3" transform="matrix(1.47695E-14 -0.557786 0.557786 1.47695E-14 430.046 388.933)" width="501.3" height="501.3" rx="136.97" ry="136.97"/>
+   <rect class="fil4" x="782.94" y="815.09" width="279.62" height="279.62" rx="76.4" ry="76.4"/>
+  </g>
+  <rect class="fil5" x="-0.01" y="-0.01" width="1187.03" height="1187.03"/>
  </g>
 </svg>
