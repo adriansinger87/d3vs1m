@@ -33,7 +33,9 @@ namespace D3vS1m.Web.Controllers.Api
     public class SimulationController : ApiControllerBase
     {
         // -- fields
+        
 
+        // TODO: should be changed to static file.
         private const string BASE_TOPIC = "d3vs1m";
         private const string CONSOLE_TOPIC = "console";
         private const string DISCONNECT_TOPIC = "disconnect";

@@ -40,20 +40,6 @@ namespace D3vS1m.Web.Controllers.Api
             return new JsonResult(files);
         }
 
-
-        // POST api/<controller>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
@@ -65,10 +51,12 @@ namespace D3vS1m.Web.Controllers.Api
         {
             if (file == null || file.Length == 0)
                 return new JsonResult("");
-            var getCurrentFolder = Directory.GetCurrentDirectory();
+            
+            //TODO: should be in File Services
             var path = Path.Combine(
                 Directory.GetCurrentDirectory(), "data",
                 file.FileName);
+
             var fileInfo = new FileModel();
 
             using (var stream = new FileStream(path, FileMode.Create))

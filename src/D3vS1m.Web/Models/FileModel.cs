@@ -7,7 +7,6 @@ namespace D3vS1m.Web.Models
 {
     public class FileModel
     {
-
         public String FileName { get; set; }
         public String Link { get; set; }
     }
