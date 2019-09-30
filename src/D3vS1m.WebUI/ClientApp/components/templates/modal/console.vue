@@ -1,5 +1,5 @@
 <template>
-  <div id="console-modal" class="modal bottom-sheet z-depth-2">
+  <div id="console-modal" class="modal bottom-sheet" style="max-height: 100% !important;">
     <div id="console-content" class="modal-content">>_</div>
     <div id="console-progress" v-show="isLoading" class="progress">
       <div class="indeterminate"></div>
