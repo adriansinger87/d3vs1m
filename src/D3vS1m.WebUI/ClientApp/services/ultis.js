@@ -10,11 +10,11 @@ import aceWebPack from 'ace-builds/webpack-resolver'
 function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
-                    .toString(16)
-                    .substring(1);
+            .toString(16)
+            .substring(1);
     }
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-    s4() + '-' + s4() + s4() + s4();
+        s4() + '-' + s4() + s4() + s4();
 }
 
 
@@ -22,15 +22,15 @@ String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-
+/*
 if (!Array.prototype.last) {
     Array.prototype.last = function () {
         return this[this.length - 1];
     };
 }
-
+*/
 function copyTextToClipboard(text) {
-    var myText = text.replaceAll("<br>", "\r\n").replaceAll("<br />", "\r\n").replaceAll("&gt;_" ,"");
+    var myText = text.replaceAll("<br>", "\r\n").replaceAll("<br />", "\r\n").replaceAll("&gt;_", "");
 
     if (!navigator.clipboard) {
         fallbackCopyTextToClipboard(myText);
@@ -41,7 +41,11 @@ function copyTextToClipboard(text) {
             //showToast({ html: "Copied" });
             //TODO: refactor 
             var msg = "<span>Copied</span>";
-            M.toast({ html: msg, classes: 'toast-success',  displayLength: 4000})
+            M.toast({
+                html: msg,
+                classes: 'toast-success',
+                displayLength: 4000
+            })
         },
         function (err) {
             var msg = "Could not copy text: " + err;
@@ -62,7 +66,9 @@ function copyTextToClipboard(text) {
         try {
             var successful = document.execCommand("copy");
             var msg = successful ? "successful" : "unsuccessful";
-            showToast({ html: "Copied" });
+            showToast({
+                html: "Copied"
+            });
         } catch (err) {
             var msg = "Could not copy text: " + err;
             console.error(msg);
@@ -74,17 +80,15 @@ function copyTextToClipboard(text) {
 }
 
 function initModal() {
-    var elems= document.getElementsByClassName("modal"); 
+    var elems = document.getElementsByClassName("modal");
     for (let index = 0; index < elems.length; index++) {
         M.Modal.init(elems[index]);
     }
 }
 
 function getModalInstance(ElementName) {
-    var consolelElem = document.getElementById(ElementName); 
+    var consolelElem = document.getElementById(ElementName);
     var instance = M.Modal.getInstance(consolelElem);
-
-
     return instance;
 }
 
@@ -103,11 +107,11 @@ function initAceEditor() {
     return editor;
 }
 
-
-function closeModal() {
-
+export default {
+    guid,
+    copyTextToClipboard,
+    initModal,
+    getModalInstance,
+    initAceEditor,
+    initSideNav,
 }
-
-
-
-export default { guid, copyTextToClipboard, initModal, getModalInstance, initAceEditor, initSideNav  }

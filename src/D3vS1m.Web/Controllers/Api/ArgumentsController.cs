@@ -4,19 +4,22 @@ using D3vS1m.Application.Devices;
 using D3vS1m.Application.Network;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Extensions;
-using D3vS1m.WebAPI.Extensions;
-using D3vS1m.WebAPI.Models;
+using D3vS1m.Web.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Sin.Net.Domain.Persistence.Logging;
-using Sin.Net.Persistence.IO.Json;
 using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using D3vS1m.Web.Extensions;
+using Newtonsoft.Json.Linq;
+using Sin.Net.Persistence.IO;
+using Sin.Net.Persistence.IO.Json;
 
-namespace D3vS1m.WebAPI.Controllers.Api
+namespace D3vS1m.Web.Controllers.Api
 {
     /// <summary>
     /// This class represents the rest-api for loading and manipulating a list of arguments.
@@ -40,94 +43,18 @@ namespace D3vS1m.WebAPI.Controllers.Api
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public string Get()
+        public ActionResult Get()
         {
+            var args = _factory.GetPredefinedArguments();
+            SetNetworkFromJson(args);
 
-            //info: always get the new Arguments when call 
-
-
-
-            var args = SessionArguments();
-
-            if (args == null)
-            {
-                args = _factory.GetPredefinedArguments();
-
-                // --- individual arguments setups
-
-                // -- network
-                SetNetworkFromJson(args);
-
-                this.HttpSession().SetArguments(args);
-
-
-
-            }
-
-            JsonIO.EnableCaseResolver = true;
+            JsonIO.EnableCaseResolver = true; 
             var argsJson = JsonIO.ToJsonString(args, HttpSessionExtensions.ArgumentsBinder);
 
-
-            //TODO: redundance code? 
-            var result = args.Select(a =>
-            {
-                return new { a.Name, a.Guid, a.Active };
-            });
-
-            return argsJson;
-            //return new JsonResult(args);
+            return Content(argsJson, "application/json");
         }
-
-        /// <summary>
-        /// GET: api/Arguments/{id}
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        [HttpGet("{guid}")]
-        public JsonResult Get(string guid)
-        {
-            var arg = SessionArguments().GetByGuid(guid);
-
-            if (arg is AdaptedFriisArgs)
-            {
-                var ca = arg as AdaptedFriisArgs;
-                var channelArg = new AdaptedFriisArgsView(ca);
-                return new JsonResult(channelArg);
-            }
-            else
-            {
-                return new JsonResult(arg);
-            }
-        }
-
-        /// <summary>
-        /// PUT: api/Arguments/id
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        [HttpPut("{guid}")]
-        public void Put(string guid, [FromBody] string value)
-        {
-            var args = SessionArguments();
-            var currentArg = args.GetByGuid(guid);
-            var clientArg = JsonConvert.DeserializeObject(value, currentArg.GetType()) as ArgumentsBase;
-
-            if (clientArg == null)
-            {
-                throw new Exception("value could not be deserialized");
-            }
-            else if (clientArg is AdaptedFriisArgs)
-            {
-                (clientArg as AdaptedFriisArgs).UpdatePositions();
-            }
-
-            args.SetByGuid(guid, clientArg);
-
-
-            // safe session
-            this.HttpSession().SetArguments(args);
-        }
-
+        
+        //TODO: should ask Adrian to change location
         private void SetNetworkFromJson(ArgumentsBase[] args)
         {
             var netKey = D3vS1m.Application.Models.Network.Key;

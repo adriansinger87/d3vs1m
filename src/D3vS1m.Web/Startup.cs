@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.IO;
 using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
@@ -10,13 +10,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.OpenApi.Models;
 using Sin.Net.Domain.Persistence.Logging;
 
 namespace D3vS1m.WebAPI
 {
     public class Startup
     {
-        private readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // -- fields
 
         private IHostingEnvironment _env;
@@ -34,12 +35,12 @@ namespace D3vS1m.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            //    options.CheckConsentNeeded = context => true;
+            //    options.MinimumSameSitePolicy = SameSiteMode.None;
+            //});
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -51,23 +52,17 @@ namespace D3vS1m.WebAPI
             services.AddSingleton<FactoryBase>(factory);
 
             // CORS
-            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
-                                                                        ); });
-
-
-            // session
-#if DEBUG
-            var ts = TimeSpan.FromSeconds(60);
-#else
-            TimeSpan ts = TimeSpan.FromMinutes(10);
-#endif
-
-            services.AddDistributedMemoryCache();
-            services.AddSession(options =>
+            services.AddCors(c =>
             {
-                options.IdleTimeout = ts;
-                options.Cookie.HttpOnly = true;
+                c.AddPolicy("AllowOrigin", 
+                                options => options.AllowAnyOrigin()
+                                                  .AllowAnyHeader()
+                                                  .AllowAnyMethod()
+                );
             });
+
+
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "DEVS1M", Version = "v1"}); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,29 +78,57 @@ namespace D3vS1m.WebAPI
             app.UseStatusCodePagesWithReExecute("/error");
             app.UseExceptionHandler("/error");
 
-            if (_env.IsDevelopment()) app.UseHsts();
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseSession();
-            // TODO: Need to be handled by Dev or Prod Env
-            app.UseCors(options => options.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                
-                                          );   
-
-
-            app.UseMvc(routes =>
+            if (_env.IsDevelopment())
             {
-                routes.MapRoute(
-                    "default",
-                    "{controller=Home}/{action=Index}/{id?}");
-            });
+                app.UseHsts();
+
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "DEVS1M v1");
+                    c.RoutePrefix = string.Empty;
+                });
+
+
+                //TODO: should be in Utils Class
+                var path = Path.Combine(Directory.GetCurrentDirectory(), @"data");
+
+                if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+
+
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    OnPrepareResponse = ctx =>
+                    {
+                        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+                        ctx.Context.Response.Headers.Append("Access-Control-Allow-Headers",
+                            "Origin, X-Requested-With, Content-Type, Accept");
+                    },
+                    ServeUnknownFileTypes = true,
+                    FileProvider = new PhysicalFileProvider(
+                        Path.Combine(Directory.GetCurrentDirectory(), @"data")),
+
+                    RequestPath = new PathString("/data")
+                });
+
+                app.UseCors(options => options.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                );
+            }
+            else
+            {
+                //TODO: prod env
+
+                app.UseHttpsRedirection();
+            }
+
+            app.UseMvc();
 
             Log.Trace("server-app startup finished");
         }
-
+        
+        // TODO: should be moved to Utils 
         private void ConfigureMqtt()
         {
             _mqtt.Connected += (o, e) => { Log.Info($"Connected to '{e.Broker}' with id '{e.ClientID}'", this); };
