@@ -1,39 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using D3vS1m.Application;
-using D3vS1m.Application.Antenna;
+﻿using D3vS1m.Application;
 using D3vS1m.Application.Channel;
-using D3vS1m.Application.Communication;
-using D3vS1m.Application.Energy;
-using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
-using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Infrastructure.Mqtt;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Exceptions;
-using D3vS1m.Web.Extensions;
+using D3vS1m.WebAPI.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 using Sin.Net.Domain.Persistence.Logging;
-using Sin.Net.Persistence.IO;
 using Sin.Net.Persistence.IO.Json;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace D3vS1m.Web.Controllers.Api
+namespace D3vS1m.WebAPI.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
     public class SimulationController : ApiControllerBase
     {
         // -- fields
-        
+
 
         // TODO: should be changed to static file.
         private const string BASE_TOPIC = "d3vs1m";
@@ -56,7 +45,7 @@ namespace D3vS1m.Web.Controllers.Api
         }
 
         // -- methods
-        
+
         //TODO: Maybe redundant code?
         // GET: api/<controller>
         [HttpGet]
@@ -72,16 +61,18 @@ namespace D3vS1m.Web.Controllers.Api
         /// </summary>
         /// <returns></returns>
         [HttpPost("run/{guid}")]
-        public async Task<JsonResult> Run(string guid,[FromBody] dynamic args)
+        public async Task<JsonResult> Run(string guid, [FromBody] dynamic args)
         {
             try
             {
                 if (_factory.Runtime.Arguments.Guid != guid)
+                {
                     throw new RuntimeException(
                         $"Runtime guid '{_factory.Runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
-                
+                }
+
                 BuildTopics(guid);
-                SetupSimulation(JsonIO.FromJsonString<ArgumentsBase[]>(args.ToString(),HttpSessionExtensions.ArgumentsBinder));
+                SetupSimulation(JsonIO.FromJsonString<ArgumentsBase[]>(args.ToString(), HttpSessionExtensions.ArgumentsBinder));
                 RunSimulationAsync();
             }
             catch (Exception ex)
@@ -108,7 +99,10 @@ namespace D3vS1m.Web.Controllers.Api
 
         private void RunSimulationAsync()
         {
-            if (_runtime.Validate() == false) throw new Exception("The validation of the simulation failed");
+            if (_runtime.Validate() == false)
+            {
+                throw new Exception("The validation of the simulation failed");
+            }
 
             // run until break condition
             var task = _runtime.RunAsync(1);

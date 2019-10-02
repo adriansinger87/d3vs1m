@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using D3vS1m.Application;
+﻿using D3vS1m.Application;
 using D3vS1m.Web.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace D3vS1m.Web.Controllers.Api
+namespace D3vS1m.WebAPI.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -24,7 +24,7 @@ namespace D3vS1m.Web.Controllers.Api
         public JsonResult Get()
         {
             // Check Current File 
-            var currentFolderStr = Path.Combine(Directory.GetCurrentDirectory(), "data" );
+            var currentFolderStr = Path.Combine(Directory.GetCurrentDirectory(), "data");
             var listItemNames = Directory.GetFileSystemEntries(currentFolderStr);
             var hostStr = HttpContext.Request.Host.ToString();
             var files = new List<FileModel>();
@@ -50,8 +50,10 @@ namespace D3vS1m.Web.Controllers.Api
         public async Task<JsonResult> UploadFile(IFormFile file)
         {
             if (file == null || file.Length == 0)
+            {
                 return new JsonResult("");
-            
+            }
+
             //TODO: should be in File Services
             var path = Path.Combine(
                 Directory.GetCurrentDirectory(), "data",
