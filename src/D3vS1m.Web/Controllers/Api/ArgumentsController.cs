@@ -51,63 +51,8 @@ namespace D3vS1m.Web.Controllers.Api
             JsonIO.EnableCaseResolver = true; 
             var argsJson = JsonIO.ToJsonString(args, HttpSessionExtensions.ArgumentsBinder);
 
-            return Content(argsJson, "application/json");  ;
+            return Content(argsJson, "application/json");
         }
-
-        /// TODO: will be remove after code review
-        /// <summary>
-        /// GET: api/Arguments/{id}
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        /*
-        [HttpGet]
-        public JsonResult Get(string guid)
-        {
-            var arg = SessionArguments().GetByGuid(guid);
-
-            if (arg is AdaptedFriisArgs)
-            {
-                var ca = arg as AdaptedFriisArgs;
-                var channelArg = new AdaptedFriisArgsView(ca);
-                return new JsonResult(channelArg);
-            }
-            else
-            {
-                return new JsonResult(arg);
-            }
-        }
-        */
-
-
-        /// TODO: will be remove after code review
-        /// <summary>
-        /// PUT: api/Arguments/id
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
-        //[HttpPut("{guid}")]
-        //public void Put(string guid, [FromBody] string value)
-        //{
-        //    var args = SessionArguments();
-        //    var currentArg = args.GetByGuid(guid);
-        //    var clientArg = JsonConvert.DeserializeObject(value, currentArg.GetType()) as ArgumentsBase;
-
-        //    if (clientArg == null)
-        //    {
-        //        throw new Exception("value could not be deserialized");
-        //    }
-        //    else if (clientArg is AdaptedFriisArgs)
-        //    {
-        //        (clientArg as AdaptedFriisArgs).UpdatePositions();
-        //    }
-
-        //    args.SetByGuid(guid, clientArg);
-
-
-        //    // safe session
-        //    this.HttpSession().SetArguments(args);
-        //}
         
         //TODO: should ask Adrian to change location
         private void SetNetworkFromJson(ArgumentsBase[] args)

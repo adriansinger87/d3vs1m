@@ -38,11 +38,8 @@ export default {
 
       console.log("add button is clicked")
 
-
       //TODO: call API to generate ID
-
       //TODO: add to global varible  
-      
       //TODO: Binding 
     }
   }

@@ -30,7 +30,6 @@ export default {
   methods: {
     getArgument(guid) {
 
-
       //TODO: get the config from Store
     var args = this.$store.getters.allArguments
 

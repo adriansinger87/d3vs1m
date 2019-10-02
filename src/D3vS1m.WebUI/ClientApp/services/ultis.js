@@ -89,8 +89,6 @@ function initModal() {
 function getModalInstance(ElementName) {
     var consolelElem = document.getElementById(ElementName);
     var instance = M.Modal.getInstance(consolelElem);
-
-
     return instance;
 }
 
@@ -108,10 +106,6 @@ function initAceEditor() {
     editor.getSession().setMode("ace/mode/json");
     return editor;
 }
-
-
-
-
 
 export default {
     guid,
