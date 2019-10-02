@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using D3vS1m.Application;
 using D3vS1m.Application.Antenna;
@@ -32,7 +33,9 @@ namespace D3vS1m.Web.Controllers.Api
     public class SimulationController : ApiControllerBase
     {
         // -- fields
+        
 
+        // TODO: should be changed to static file.
         private const string BASE_TOPIC = "d3vs1m";
         private const string CONSOLE_TOPIC = "console";
         private const string DISCONNECT_TOPIC = "disconnect";
@@ -124,6 +127,7 @@ namespace D3vS1m.Web.Controllers.Api
         private void OnStarted(object sender, SimulatorEventArgs e)
         {
             PublishConsoleTopic("### Simulation started<br />");
+            Thread.Sleep(1000);
         }
 
         private void OnStopped(object sender, SimulatorEventArgs e)

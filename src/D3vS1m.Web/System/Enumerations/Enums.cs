@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace D3vS1m.Web.System.Enumerations
 {
+    //TODO: wil be removed after code review
     public enum SessionStorages
     {
         Binary,

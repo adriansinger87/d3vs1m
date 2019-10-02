@@ -17,6 +17,6 @@ export default {
 <style scoped>
 .preLoad {
     height: 4px;
-    margin-top: 0;
+    margin: 0;
 }
 </style>

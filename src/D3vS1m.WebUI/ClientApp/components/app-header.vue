@@ -9,9 +9,11 @@
         </li>
       </ul>
 
-      <a class="brand-logo center">
-        <img class="header-logo left" src="../images/d3vs1m_logo.svg" />
-        <span class="hide-on-small-only">D3V S1M</span>
+      <a class="brand-logo center" href="#">
+        <router-link :to="{ name: 'home' }" >
+          <img class="header-logo left" src="../images/d3vs1m_logo.svg" />
+          <span class="hide-on-small-only">D3V S1M</span>
+        </router-link>
       </a>
 
       <ul class="right">
@@ -26,9 +28,7 @@
           </a>
         </li>
         <li>
-          <a id="3D-link" class="waves-effect waves-light" href="#">
-            <i class="mdi mdi-cube-outline left"></i> 3D Scene 
-          </a>
+            <router-link active-class="router-link-active-3d" :to="{ name: 'scene' }"><i class="mdi mdi-cube-outline left"></i> 3D Scene </router-link>
         </li>
       </ul>
     </div>
@@ -83,5 +83,7 @@ nav {
     margin-right: 10px;
 }
 
-
+.router-link-active-3d{
+  background-color: rgb(0, 86, 90)
+}
 </style>

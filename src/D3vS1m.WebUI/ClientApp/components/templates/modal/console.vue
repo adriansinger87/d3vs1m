@@ -1,7 +1,7 @@
 <template>
-  <div id="console-modal" class="modal bottom-sheet z-depth-2">
+  <div id="console-modal" class="modal bottom-sheet z-depth-2" style="max-height: 100% !important;">
     <div id="console-content" class="modal-content">>_</div>
-    <div id="console-progress" class="progress">
+    <div id="console-progress" v-show="isLoading" class="progress">
       <div class="indeterminate"></div>
     </div>
     <div class="modal-footer">
@@ -23,12 +23,19 @@
 import $ from 'jquery'
 import utils from '../../../services/ultis'
 
+
+import ArgumentEventBus from '../../../services/EventBus/ArgumentEventBus'
+
 export default {
   data() {
-    return {};
+    return {
+      isLoading: false
+    };
   },
   mounted() {
-   
+      ArgumentEventBus.$on('isLoading', (value) => {
+        this.isLoading = value
+      })
   },
   methods: {
     clearConsole() {

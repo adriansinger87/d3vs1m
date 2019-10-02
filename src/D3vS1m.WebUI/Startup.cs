@@ -31,7 +31,11 @@ namespace D3vS1m.WebUI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            // CORS
+            services.AddCors(c => {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+                );
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -56,7 +60,11 @@ namespace D3vS1m.WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            
+            app.UseCors(options => options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+
+            );
 
             // Passing AppInfo to Vue Project
             // TODO: Need to refactor 
