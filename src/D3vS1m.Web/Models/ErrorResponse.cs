@@ -1,6 +1,6 @@
 using System;
 
-namespace D3vS1m.Web.Models
+namespace D3vS1m.WebAPI.Models
 {
     /// <summary>
     /// 

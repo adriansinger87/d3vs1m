@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace D3vS1m.Web.Extensions
+namespace D3vS1m.WebAPI.Extensions
 {
     public static class ControllerExtensions
     {

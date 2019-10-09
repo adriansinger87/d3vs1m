@@ -1,0 +1,2015 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Adrian_w7nb0422/_Projekte/github/d3vs1m/src/D3vS1m.Docu",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "Readme.html",
+          "hash": "VxnEaK4Gpc5K14MAjMMrtw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.FlatAntennaArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.FlatAntennaArgs.html",
+          "hash": "qCAsJwVxJbExplascPO59g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.SimpleAntennaArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.SimpleAntennaArgs.html",
+          "hash": "hiJqgxmUz8MqTThxAin4Og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.SimpleAntennaSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.SimpleAntennaSimulator.html",
+          "hash": "DT4o/eoyalbOPLD2jThj8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.SphericAntennaArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.SphericAntennaArgs.html",
+          "hash": "vIHBKjtofGuZpDA++FbCBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.SphericAntennaSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.SphericAntennaSimulator.html",
+          "hash": "G9iKFkXT3lRX2TjEr7xnYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.TableToAntennaAdapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.TableToAntennaAdapter.html",
+          "hash": "RbvZIdfy7rPJxsSoimv3Yg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Antenna.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Antenna.html",
+          "hash": "WmaLNgHUF/OWHDo5wKWi1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Channel.AdaptedFriisArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Channel.AdaptedFriisArgs.html",
+          "hash": "PdQVfgB+ISomwZs1esa8IQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Channel.AdaptedFriisSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Channel.AdaptedFriisSimulator.html",
+          "hash": "00sl4r6f/MOKv4gVkVSQzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Channel.IAdaptedFriisArgsDecorable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Channel.IAdaptedFriisArgsDecorable.html",
+          "hash": "ymMYEevbwR7Yueu6lKsXdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Channel.RadioCuboid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Channel.RadioCuboid.html",
+          "hash": "DBzsrmg/3D9AXgG9zSi6/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Channel.html",
+          "hash": "LiK8apn4nA4IWhQBAf2Iog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Communication.LRWPANSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Communication.LRWPANSimulator.html",
+          "hash": "rNpOgZ2q/2HQpnoeWhgz7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Communication.WirelessCommArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Communication.WirelessCommArgs.html",
+          "hash": "Jxd+yodWqwetNRx81pcX1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Communication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Communication.html",
+          "hash": "VCdm0ytQOd8j5kPppudMGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.D3vS1mFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.D3vS1mFactory.html",
+          "hash": "Hb/3f/5vQoGKzVeYTmctvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Data.Matrix-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Data.Matrix-1.html",
+          "hash": "QID7YN5OXx1mUMBu9WZDOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Data.SphericGain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Data.SphericGain.html",
+          "hash": "slebwNJZzjvTYXb2vBGFGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Data.html",
+          "hash": "eoXtJ6z0sM5SM/bGgnrUKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Devices.BasicDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Devices.BasicDevice.html",
+          "hash": "t3tpTZlPNKcvuo40/wSYFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Devices.PartBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Devices.PartBase.html",
+          "hash": "Zivu42qnHfo0BJfqyjcurQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Devices.PartsRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Devices.PartsRepository.html",
+          "hash": "lUt9U4wBD8AXKn24Jr29DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Devices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Devices.html",
+          "hash": "r1dDrCQZZkv4zllOW2P6rQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.BatteryArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.BatteryArgs.html",
+          "hash": "uMuj26PvMQkH9E19HVRpPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.BatteryPack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.BatteryPack.html",
+          "hash": "uWutprTJxige6LjN3iUa+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.BatteryPackSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.BatteryPackSimulator.html",
+          "hash": "8853S7vEUSfIe0MwoixKYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.BatteryState.StateFields.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.BatteryState.StateFields.html",
+          "hash": "LqLvo5bDt4c1w5AWa6wl6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.BatteryState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.BatteryState.html",
+          "hash": "Z6Nm2tP2J3I0ijztLH37cQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.IEnergySupplyable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.IEnergySupplyable.html",
+          "hash": "XuKrvLv37KKOAg9vpbkOcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Energy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Energy.html",
+          "hash": "dkyGA16/DnZYrqHUVJ2GSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.FactoryBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.FactoryBase.html",
+          "hash": "WID1qsV4GH/zX+k9p7m/aw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Antenna.Flat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Antenna.Flat.html",
+          "hash": "P615bQzh/jiaXTNhM4Am6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Antenna.Simple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Antenna.Simple.html",
+          "hash": "3I+QfJfmreXn3nAhfEy0fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Antenna.Spheric.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Antenna.Spheric.html",
+          "hash": "FtCWpscb7BYWcGNFeOYdCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Antenna.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Antenna.html",
+          "hash": "h9DqGUwWC/uytZ+8mP+LRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Channel.AdaptedFriis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Channel.AdaptedFriis.html",
+          "hash": "YuEtKccFr9z42UytVigLZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Channel.html",
+          "hash": "YeHENzOhHoGjscM9vgfHRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Communication.LrWpan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Communication.LrWpan.html",
+          "hash": "fdfaT61KMDku2eJucR6SEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Communication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Communication.html",
+          "hash": "dQaa+AAcL3wGg2VIWgFfcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Energy.Battery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Energy.Battery.html",
+          "hash": "PMT0oQWaQvch+p8ezk+y0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Energy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Energy.html",
+          "hash": "HfEZdyo7H822escFABXLDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Network.html",
+          "hash": "m6aSWIHUtJpLEs2aNXkKnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Runtime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Runtime.html",
+          "hash": "qOc7OWyyzX2AE8ALbZElew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.Scene.html",
+          "hash": "7Vym/kb5V5MNPX0DAZfvcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Models.html",
+          "hash": "bDJ1IJorJJI+9oXazbMUWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Network.NetworkArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Network.NetworkArgs.html",
+          "hash": "c7dGjLdGUdTyJbfx2QxM2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Network.NetworkMatrix-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Network.NetworkMatrix-1.html",
+          "hash": "/FSz80cjmZuxH8UH2sRr/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Network.PeerToPeerNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Network.PeerToPeerNetwork.html",
+          "hash": "9WXdn2+Trji5ILvyKRTPbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Network.PeerToPeerNetworkSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Network.PeerToPeerNetworkSimulator.html",
+          "hash": "wrVg1hrQYcgZ/bj/OoHYYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Network.html",
+          "hash": "7GyGn46ELRATXneksnZbqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Runtime.RuntimeArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Runtime.RuntimeArgs.html",
+          "hash": "gl0FVzjl3l6KRDbuJEDq7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Runtime.RuntimeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Runtime.RuntimeController.html",
+          "hash": "eP6qvt2/b5LOmARApPYe9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Runtime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Runtime.html",
+          "hash": "V06YgI2BXFfi0/BSvD2M9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Geometries.Face.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Geometries.Face.html",
+          "hash": "YljupTg/wVV7+aWMgl9PxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Geometries.Geometry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Geometries.Geometry.html",
+          "hash": "01ZWeY18rUzrVLxdG2pNrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Geometries.GeometryRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Geometries.GeometryRepository.html",
+          "hash": "9Um4Tss0Uf9D27IZicW0cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Geometries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Geometries.html",
+          "hash": "iSAvgaGoO0McMlnn114N+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.InvariantSceneArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.InvariantSceneArgs.html",
+          "hash": "hyvOYTDKqh0rgiMZiIyc6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Materials.Material.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Materials.Material.html",
+          "hash": "BFCMQGsCoN1wApXV34i9ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Materials.MaterialPhysics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Materials.MaterialPhysics.html",
+          "hash": "Sbb4r2ZirpRULHzy2dIHJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Materials.PhysicsRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Materials.PhysicsRepository.html",
+          "hash": "WPcUzwm0Gx9eslWBKzh0xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.Materials.html",
+          "hash": "WnYpoJVX4JnWT1Mc/KdVSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.ObjAdapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.ObjAdapter.html",
+          "hash": "t7FjpE8Q6LRYF9TIPdBKCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.SceneSimulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.SceneSimulator.html",
+          "hash": "scLrDANZmxQ3Yadnfbz0nQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Scene.html",
+          "hash": "qmWfAmg5mrufsv0U7E9fVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Validation.BasicValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Validation.BasicValidator.html",
+          "hash": "+SmyCfohJvybw+McbpbwHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Validation.D3vS1mValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Validation.D3vS1mValidator.html",
+          "hash": "xEl719U17NqJN4jbNqy+YA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Validation.EnergyValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Validation.EnergyValidator.html",
+          "hash": "hpuXDQMcLHv9SOcNDMDBkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Validation.NetworkValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Validation.NetworkValidator.html",
+          "hash": "mWTYrAXqBkggQHTeRcXgqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Validation.ValidationBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Validation.ValidationBase.html",
+          "hash": "F4B7hat3n/5y+UW/w5oD+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.Validation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.Validation.html",
+          "hash": "BGBHnzAnMXHIefsge1ValA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Application.html",
+          "hash": "08qrqe2Ielx+2/Sxd1lMcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Config.ConfigBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Config.ConfigBase.html",
+          "hash": "2wLc8ATU5l1D1aHn8F6IBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Config.html",
+          "hash": "DWXGKZncm1b9cukju4ZLCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.html",
+          "hash": "C9hH/fMZej7HVD5ZmH29xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.Arguments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.Arguments.html",
+          "hash": "YpxQWTVoLxZbgJOkZF9a+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.Matrix-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.Matrix-1.html",
+          "hash": "kJAArQXU6JlIcwDEnuuFfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.Scene.Angle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.Scene.Angle.html",
+          "hash": "2FZ8Cc1Sqlgka1t2ZLrMow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.Scene.Vertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.Scene.Vertex.html",
+          "hash": "wXEO7IkqHO75YA7PIWTiBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.Scene.html",
+          "hash": "ygvjvaVzrLr144CHE82hjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Data.html",
+          "hash": "FJ2lNFMqYHK2a38DU43pKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Events.SimulatorEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Events.SimulatorEventArgs.html",
+          "hash": "hd1izPLgBFpAlkqqEvmg7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Events.SimulatorEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Events.SimulatorEventHandler.html",
+          "hash": "oRZlhG24B3WBGINSEcfMkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Events.html",
+          "hash": "HloLCAa3Bb3as0GehiYuFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html",
+          "hash": "wFLGTSh4PMaMEpB/4CEiPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html",
+          "hash": "EGsbpE3wkkAFI2vV4K/gHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventHandler.html",
+          "hash": "mFv+1hR8XTIHOQ2qczfnCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttMessageReceivedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttMessageReceivedEventHandler.html",
+          "hash": "IZQlg3snlhVq59biWFhebg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html",
+          "hash": "EaBC7WiG7oB9iOSW0uMmGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Infrastructure.Mqtt.html",
+          "hash": "o3Q71JZDO+Rk6coIJHaN+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Runtime.RuntimeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Runtime.RuntimeBase.html",
+          "hash": "bmhBpxeCdLoiFvvw7KCu+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Runtime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Runtime.html",
+          "hash": "/H/9o4ocvcQ9ZnaBuxJ31A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Simulation.ISimulatable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Simulation.ISimulatable.html",
+          "hash": "cO/l9PIfIfd04YCUaeifag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Simulation.SimulatorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Simulation.SimulatorBase.html",
+          "hash": "LZLQr2C5rBQeexEjjMDDig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Simulation.SimulatorRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Simulation.SimulatorRepository.html",
+          "hash": "GCkeBj/wLeEDG+hmAE6cvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.Simulation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.Simulation.html",
+          "hash": "jKjefAQHRzuE+Ye4vYyvuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Antenna.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Antenna.html",
+          "hash": "40O/e6ly2pkdJBfIYqhBGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Channel.Radio.Space.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Channel.Radio.Space.html",
+          "hash": "MvVGq44lfS5Rr/7/NvrCMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Channel.Radio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Channel.Radio.html",
+          "hash": "KHowFxXe1MAwXl+CREfB+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Channel.html",
+          "hash": "66c+Ok+TGAJ18+G0BEmsTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Device.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Device.html",
+          "hash": "lXMu9fccXRWRf8AnsJ5YHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Math.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Math.html",
+          "hash": "XohY6X2Vbs2JWHF639poog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Runtime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Runtime.html",
+          "hash": "UG5WjuggQcNcZxE3Q/TvPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.Scene.html",
+          "hash": "a1y8xFzoievKV6NHSPzRAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.Const.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.Const.html",
+          "hash": "zy3ai2MCkPFVE7YUnnyX9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Constants.html",
+          "hash": "2Wik3XX4Pr2sGaVGwgaL5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Enumerations.ExportTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Enumerations.ExportTypes.html",
+          "hash": "q15VITLwVL9dG2BcN/gDuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Enumerations.ImportTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Enumerations.ImportTypes.html",
+          "hash": "StADYev45/lXEkjgZsZCeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Enumerations.PartTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Enumerations.PartTypes.html",
+          "hash": "onWPzjxT1w2q0K4fcx60ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Enumerations.SimulationModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Enumerations.SimulationModels.html",
+          "hash": "UiguIchsnuR+G1EEUf9a+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Enumerations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Enumerations.html",
+          "hash": "FDPy+bMh+nHAh+NShZIpbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Exceptions.MatrixException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Exceptions.MatrixException.html",
+          "hash": "Qnxorz1uC7jCTLiFHh6stQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Exceptions.RuntimeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Exceptions.RuntimeException.html",
+          "hash": "lQwy3jAzTfE86RHls5Y08A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Exceptions.SimulatorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Exceptions.SimulatorException.html",
+          "hash": "1jmckAy13DyikS73e5ZfHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Exceptions.html",
+          "hash": "yKC0eLiaZSndTr1KJ5CTWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Extensions.ArgumentsBaseArrayExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Extensions.ArgumentsBaseArrayExtensions.html",
+          "hash": "1Xki65PQLW95Ymf4IJoUcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Domain.System.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Domain.System.Extensions.html",
+          "hash": "kLenzFkdAp+8hS7EZ3/Yaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Infrastructure.Class1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Infrastructure.Class1.html",
+          "hash": "BJtSoaXP1eM5jVa+bHs7tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Infrastructure.Mqtt.MqttConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html",
+          "hash": "RayIJ1VWss6fR7O8SUvD+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Infrastructure.Mqtt.MqttNetController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html",
+          "hash": "E8gaj+ZKu2kNf2IaXlbV3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Infrastructure.Mqtt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Infrastructure.Mqtt.html",
+          "hash": "Rh0H5FXgqYZ43Y7klebiFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Infrastructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Infrastructure.html",
+          "hash": "JKFdbB0KKWg7hZ8sxn2Zpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Persistence.Constants.Wavefront.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Persistence.Constants.Wavefront.html",
+          "hash": "xUdoaF30jxBQP9oPTkPj/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Persistence.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Persistence.Constants.html",
+          "hash": "wDdaio53e048xJxo3KPPlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Persistence.IOController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Persistence.IOController.html",
+          "hash": "jbaB0CBEVPeSu4K8Wtg7/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.Persistence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.Persistence.html",
+          "hash": "VPeI+eN7q9WSwteuZPAWbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html",
+          "hash": "Dhzig0kbc44gW2R33m3XEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html",
+          "hash": "vcn8vA3hGSk8uIHGTHqWkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.Api.DevicesController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html",
+          "hash": "tRAjJtml1h9cVSG3ZJV8NQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.Api.SimulationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html",
+          "hash": "/Ts1z4EuvcVM1+5AeyRkfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.Api.html",
+          "hash": "HvhNVS/eCBmfW50WCjf6Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.ErrorController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.ErrorController.html",
+          "hash": "DJ8k2sl7bB0hO9Uu/t+Pew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.HomeController.html",
+          "hash": "iHXTkDS271uDPbLSHH0jHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.ViewControllerBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.ViewControllerBase.html",
+          "hash": "oyvIFhJvDINRBgNTrljjgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Controllers.html",
+          "hash": "pPc+d7qrp1RV3GT2WnU4iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Extensions.ControllerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Extensions.ControllerExtensions.html",
+          "hash": "m/qC+Vh6RLNwNJQ8IfXBPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html",
+          "hash": "JUjeJrm5ARIDvjQLpIPcLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Extensions.html",
+          "hash": "jUptgzY8j7kIU134zRGBVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html",
+          "hash": "rq2fhXi5xRBCkYMakpvX3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Models.ErrorResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Models.ErrorResponse.html",
+          "hash": "+A4Koxqu7bEizi6PhA9Vlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Models.html",
+          "hash": "NEELGmAuSNY2pgOCmauaeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Program.html",
+          "hash": "cVqp/IKcqGPNWt7UoVfaOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.Startup.html",
+          "hash": "Tr8bvyNJo1X6Z/2tVVv3og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.System.Enumerations.SessionStorages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.System.Enumerations.SessionStorages.html",
+          "hash": "P4xJrNzz1J2oiRSzL1grnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.System.Enumerations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.System.Enumerations.html",
+          "hash": "maoY47TA2y948uMoW20E/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebAPI.html",
+          "hash": "W5AE6okI7tqAmZMITsg/7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Controllers.HomeController.html",
+          "hash": "HOpi4AFNq8waGQiiFUlcqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Controllers.html",
+          "hash": "kSMlNz+QSDsI4ZGzKH4YCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Models.AppInfoModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Models.AppInfoModel.html",
+          "hash": "AQBUool5S2MjC9/jHRMzWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Models.ErrorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Models.ErrorViewModel.html",
+          "hash": "xZ0AUJPggrlIYZzX/xgMjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Models.html",
+          "hash": "+NpPiox1v5UJ5edBdOV/YA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Program.html",
+          "hash": "VDSqvLjpYvUWGmlbtmX4TA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.Startup.html",
+          "hash": "3Do7bN8PV/bZT/MkbDxSMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/D3vS1m.WebUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/D3vS1m.WebUI.html",
+          "hash": "TgwGLUfTqKfbZ18W8unntQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "+Ui2KohZ2Xl8aH6KtNJQaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "anBBGNNOpMuC/cm+RaWRgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "4EMZl3o0+c0z1powVCz7lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "8yKlInaPGy+6PNQB1SZtvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 4
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 154,
+          "skipped_file_count": 154
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

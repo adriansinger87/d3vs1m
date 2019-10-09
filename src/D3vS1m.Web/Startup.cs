@@ -14,7 +14,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Sin.Net.Domain.Persistence.Logging;
 
-namespace D3vS1m.Web
+namespace D3vS1m.WebAPI
 {
     public class Startup
     {
@@ -82,6 +82,8 @@ namespace D3vS1m.Web
             {
                 app.UseHsts();
 
+
+                
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {

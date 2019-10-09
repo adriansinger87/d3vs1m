@@ -3,7 +3,7 @@ using D3vS1m.Domain.Data.Scene;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace D3vS1m.Web.Models
+namespace D3vS1m.WebAPI.Models
 {
     public class AdaptedFriisArgsView : IAdaptedFriisArgsDecorable
     {
