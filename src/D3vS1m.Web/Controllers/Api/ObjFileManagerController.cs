@@ -24,7 +24,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
         public JsonResult Get()
         {
             // Check Current File 
-            var currentFolderStr = Path.Combine(Directory.GetCurrentDirectory(), "data");
+            var currentFolderStr = Path.Combine(Directory.GetCurrentDirectory(), @"App_Data\ObjFiles");
             var listItemNames = Directory.GetFileSystemEntries(currentFolderStr);
             var hostStr = HttpContext.Request.Host.ToString();
             var files = new List<FileModel>();
@@ -56,7 +56,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
 
             //TODO: should be in File Services
             var path = Path.Combine(
-                Directory.GetCurrentDirectory(), "data",
+                Directory.GetCurrentDirectory(), @"App_Data\ObjFiles",
                 file.FileName);
 
             var fileInfo = new FileModel();
