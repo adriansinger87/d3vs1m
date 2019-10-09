@@ -82,6 +82,8 @@ namespace D3vS1m.WebAPI
             {
                 app.UseHsts();
 
+
+                
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {

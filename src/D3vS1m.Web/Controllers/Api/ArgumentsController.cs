@@ -3,13 +3,13 @@ using D3vS1m.Application.Devices;
 using D3vS1m.Application.Network;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Extensions;
-using D3vS1m.WebAPI.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Persistence.IO.Json;
 using Sin.Net.Persistence.Settings;
 using System.Collections.Generic;
+using D3vS1m.WebAPI.Extensions;
 
 namespace D3vS1m.WebAPI.Controllers.Api
 {
