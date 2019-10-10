@@ -14,7 +14,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Sin.Net.Domain.Persistence.Logging;
 
-namespace D3vS1m.Web
+namespace D3vS1m.WebAPI
 {
     public class Startup
     {
@@ -82,6 +82,8 @@ namespace D3vS1m.Web
             {
                 app.UseHsts();
 
+
+                
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
@@ -91,7 +93,7 @@ namespace D3vS1m.Web
 
 
                 //TODO: should be in Utils Class
-                var path = Path.Combine(Directory.GetCurrentDirectory(), @"data");
+                var path = Path.Combine(Directory.GetCurrentDirectory(), @"App_Data\ObjFiles");
 
                 if (!Directory.Exists(path)) Directory.CreateDirectory(path);
 
@@ -106,7 +108,7 @@ namespace D3vS1m.Web
                     },
                     ServeUnknownFileTypes = true,
                     FileProvider = new PhysicalFileProvider(
-                        Path.Combine(Directory.GetCurrentDirectory(), @"data")),
+                        Path.Combine(Directory.GetCurrentDirectory(), @"App_Data\ObjFiles")),
 
                     RequestPath = new PathString("/data")
                 });

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Sin.Net.Domain.Persistence.Logging;
 
-namespace D3vS1m.Web
+namespace D3vS1m.WebAPI
 {
     public class Program
     {

@@ -39,25 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\js\main.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\lib\materialize\css\materialize.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\lib\materialize\js\materialize.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\lib\vue\vue.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\lib\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="App_Data\devices.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

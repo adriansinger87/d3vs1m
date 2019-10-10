@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace D3vS1m.Web.Models
+namespace D3vS1m.WebAPI.Models
 {
     public class FileModel
     {
