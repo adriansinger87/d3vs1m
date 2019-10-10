@@ -53,7 +53,7 @@ namespace MSTests
 
             var settings = new CsvSetting
             {
-                Location = TestDataDirectory,
+                Location = APP_LOCATION,
                 Name = file,
             };
 
@@ -91,7 +91,7 @@ namespace MSTests
             // arrange
             var _setting = new JsonSetting
             {
-                Location = TestDataDirectory,
+                Location = APP_LOCATION,
                 Name = filename
             };
 
@@ -118,21 +118,6 @@ namespace MSTests
 
                 return dir;
 
-            }
-        }
-
-        public string TestDataDirectory
-        {
-            get
-            {
-                return "Test_Data";
-            }
-        }
-        public string DataDirectory
-        {
-            get
-            {
-                return Path.Combine(BaseDirectory, "data");
             }
         }
     }
