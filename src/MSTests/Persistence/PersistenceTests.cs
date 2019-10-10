@@ -1,12 +1,7 @@
-﻿using D3vS1m.Application;
-using D3vS1m.Application.Runtime;
-using D3vS1m.Application.Scene.Materials;
-using D3vS1m.Application.Validation;
+﻿using D3vS1m.Application.Scene.Materials;
 using D3vS1m.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Persistence;
-using Sin.Net.Domain.Repository;
-using Sin.Net.Persistence.IO;
 using Sin.Net.Persistence.Settings;
 using System.Collections.Generic;
 
@@ -15,7 +10,7 @@ namespace MSTests.Persistence
     [TestClass]
     public class PersistenceTests : TestBase
     {
-        IPersistenceControlable _io;
+        private IPersistenceControlable _io;
 
         [TestInitialize]
         public override void Arrange()
@@ -42,7 +37,7 @@ namespace MSTests.Persistence
 
             var result = _io.Exporter(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(setting)
-                .Build(Material.CreateDemoMaterials())
+                .Build(CreateDemoMaterials())
                 .Export();
 
             Assert.IsTrue(!string.IsNullOrEmpty(result), "export should not be null.");
@@ -60,7 +55,6 @@ namespace MSTests.Persistence
             };
 
             // act
-
             var materials = _io.Importer(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(setting)
                 .Import()
@@ -69,6 +63,70 @@ namespace MSTests.Persistence
             // assert
             Assert.IsNotNull(materials, "Materials should be present");
             Assert.IsTrue(materials.Count > 0, "Materials should be more than zero.");
+        }
+
+        protected static List<Material> CreateDemoMaterials()
+        {
+            var freq = 2405.0F;
+            var list = new List<Material>
+            {
+                new Material("Beton", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 3,
+                    RelativePermeability = 1.0F,
+                    RelativePermittivity = 9.0F }
+                    .CalcReflectionValues()),
+                new Material("Gips", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 1.5F,
+                    RelativePermeability = 1,
+                    RelativePermittivity = 1 }
+                    .CalcReflectionValues()),
+                new Material("Holzfassade", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 10.0F,
+                    RelativePermeability = 1.0F,
+                    RelativePermittivity = 2.3345F }
+                    .CalcReflectionValues()),
+                new Material("Holz mittel", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 3.44F,
+                    RelativePermeability = 1,
+                    RelativePermittivity = 1.5905F }
+                    .CalcReflectionValues()),
+                new Material("Holz dünn", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 1.5F,
+                    RelativePermeability = 1,
+                    RelativePermittivity = 2.33F }
+                    .CalcReflectionValues()),
+                new Material("Stahl", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 7.0F,
+                    RelativePermeability = 100000.0F,
+                    RelativePermittivity = 2.3345F }
+                    .CalcReflectionValues()),
+                new Material("Metall Kleinteile", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 7,
+                    RelativePermeability = 1,
+                    RelativePermittivity = 100000.0F }
+                    .CalcReflectionValues()),
+                new Material("Aussenglas", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 0.77F,
+                    RelativePermeability = 1,
+                    RelativePermittivity = 6 }
+                    .CalcReflectionValues()),
+                new Material("Innenglas", new MaterialPhysics {
+                    Frequency = freq,
+                    PenetrationLoss = 0.77F,
+                    RelativePermeability = 1,
+                    RelativePermittivity = 19 }
+                    .CalcReflectionValues())
+            };
+
+            return list;
         }
     }
 }
