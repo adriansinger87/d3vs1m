@@ -33,10 +33,11 @@ namespace D3vS1m.Application
 
         public virtual RuntimeBase Runtime => _runtime;
 
-        public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments;
+        public ArgumentsBase[] SimulationArguments { get; set; }
 
         protected SimulatorRepository Simulators { get; set; }
 
+        // --- indexer
 
     }
 }

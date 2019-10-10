@@ -37,7 +37,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
         [HttpGet]
         public ActionResult Get()
         {
-            var args = _factory.GetPredefinedArguments();
+            var args = _factory.SimulationArguments;
             SetNetworkFromJson(args);
 
             JsonIO.EnableCaseResolver = true;

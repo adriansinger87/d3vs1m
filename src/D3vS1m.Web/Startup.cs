@@ -13,6 +13,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Sin.Net.Domain.Persistence.Logging;
+using D3vS1m.Domain.System.Extensions;
+using D3vS1m.Application.Scene;
+using Sin.Net.Persistence.Settings;
+using D3vS1m.Persistence;
+using System.Collections.Generic;
+using D3vS1m.Application.Scene.Materials;
 
 namespace D3vS1m.WebAPI
 {
@@ -35,21 +41,11 @@ namespace D3vS1m.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => true;
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSingleton<IMqttControlable, MqttNetController>();
 
-            var factory = new D3vS1mFactory(
-                new RuntimeController(
-                    new D3vS1mValidator()));
-            services.AddSingleton<FactoryBase>(factory);
+            services.AddSingleton<FactoryBase>(ConfigureFactory());
 
             // CORS
             services.AddCors(c =>
@@ -60,9 +56,33 @@ namespace D3vS1m.WebAPI
                                                   .AllowAnyMethod()
                 );
             });
-
-
+            
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "DEVS1M", Version = "v1"}); });
+        }
+
+        private FactoryBase ConfigureFactory()
+        {
+            var factory = new D3vS1mFactory(
+              new RuntimeController(
+                  new D3vS1mValidator()));
+            factory.GetPredefinedArguments();
+
+            var setting = new JsonSetting
+            {
+                // TODO: remove magic strings
+                Name = "material_config.json",
+                Location = "App_Data",
+                Binder = JsonHelper.Binder
+            };
+
+            var sceneArgs = factory.SimulationArguments.GetByName(D3vS1m.Application.Models.Scene.Key) as InvariantSceneArgs;
+
+            sceneArgs.Materials = new IOController().Importer(Sin.Net.Persistence.Constants.Json.Key)
+                .Setup(setting)
+                .Import()
+                .As<List<Material>>();
+
+            return factory;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

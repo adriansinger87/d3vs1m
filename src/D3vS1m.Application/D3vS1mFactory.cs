@@ -19,6 +19,7 @@ namespace D3vS1m.Application
     {
         // -- fields
 
+
         // -- constructors
 
         public D3vS1mFactory(RuntimeBase runtime) : base(runtime)
@@ -96,19 +97,18 @@ namespace D3vS1m.Application
 
         public override ArgumentsBase[] GetPredefinedArguments()
         {
-            var args = new List<ArgumentsBase>
+            SimulationArguments = new List<ArgumentsBase>
             {
                 NewArgument(Models.Network.Key),
                 NewArgument(Models.Scene.Key),
                 NewArgument(Models.Channel.AdaptedFriis.Key),
                 NewArgument(Models.Antenna.Spheric.Key),
-                //NewArgument(Models.Antenna.Simple.Key),
-                //(Models.Antenna.Flat.Key),
                 NewArgument(Models.Communication.LrWpan.Key),
                 NewArgument(Models.Energy.Battery.Key)
 
-            };
-            return args.ToArray();
+            }.ToArray();
+
+            return SimulationArguments;
         }
 
         /// <summary>
