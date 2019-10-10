@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Test_Data\WallTest5.obj" />
+    <None Remove="App_Data\WallTest5.obj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Test_Data\WallTest5.obj">
+    <Content Include="App_Data\WallTest5.obj">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -32,16 +32,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Test_Data\devices.json">
+    <None Update="App_Data\devices.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Test_Data\material_config.json">
+    <None Update="App_Data\material_config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Test_Data\network_config.json">
+    <None Update="App_Data\network_config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Test_Data\PCB_868_tot.csv">
+    <None Update="App_Data\PCB_868_tot.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

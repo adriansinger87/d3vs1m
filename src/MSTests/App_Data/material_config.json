@@ -1,0 +1,137 @@
+[
+  {
+    "Name": "Beton",
+    "Uuid": "2b0a0ccc-1398-49ac-8e66-375956a26b81",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 3.0,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 9.0,
+        "ReflectionFactor": 0.50000006,
+        "ReflectionLoss": 3.01029944
+      }
+    ]
+  },
+  {
+    "Name": "Gips",
+    "Uuid": "7f55fe6b-c160-4005-83cc-ce661f6c0964",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 1.5,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 1.0,
+        "ReflectionFactor": 0.0,
+        "ReflectionLoss": "Infinity"
+      }
+    ]
+  },
+  {
+    "Name": "Holzfassade",
+    "Uuid": "3a98fde1-3f47-4134-9e9d-175103c44154",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 10.0,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 2.3345,
+        "ReflectionFactor": 0.208831668,
+        "ReflectionLoss": 6.80203629
+      }
+    ]
+  },
+  {
+    "Name": "Holz mittel",
+    "Uuid": "e0e75e2f-9dc0-4d2c-b745-941024813198",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 3.44,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 1.5905,
+        "ReflectionFactor": 0.115494452,
+        "ReflectionLoss": 9.374389
+      }
+    ]
+  },
+  {
+    "Name": "Holz dünn",
+    "Uuid": "70dbe435-0975-46c2-86c3-90c442ec9106",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 1.5,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 2.33,
+        "ReflectionFactor": 0.2083703,
+        "ReflectionLoss": 6.81164169
+      }
+    ]
+  },
+  {
+    "Name": "Stahl",
+    "Uuid": "c3af0336-376d-407e-981c-ebf9e791b265",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 7.0,
+        "RelativePermeability": 100000.0,
+        "RelativePermittivity": 2.3345,
+        "ReflectionFactor": 0.9903832,
+        "ReflectionLoss": 0.0419673175
+      }
+    ]
+  },
+  {
+    "Name": "Metall Kleinteile",
+    "Uuid": "18bb4011-2165-480f-8c4e-6abce7624a26",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 7.0,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 100000.0,
+        "ReflectionFactor": 0.993695438,
+        "ReflectionLoss": 0.02746704
+      }
+    ]
+  },
+  {
+    "Name": "Aussenglas",
+    "Uuid": "c3055c1d-278e-4058-8474-aefc27e30294",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 0.77,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 6.0,
+        "ReflectionFactor": 0.420204073,
+        "ReflectionLoss": 3.76539731
+      }
+    ]
+  },
+  {
+    "Name": "Innenglas",
+    "Uuid": "8ab59884-2b08-4c9c-93ac-22f2ad9f9f49",
+    "Physics": [
+      {
+        "$type": "MaterialPhysics",
+        "Frequency": 2405.0,
+        "PenetrationLoss": 0.77,
+        "RelativePermeability": 1.0,
+        "RelativePermittivity": 19.0,
+        "ReflectionFactor": 0.626789,
+        "ReflectionLoss": 2.02878642
+      }
+    ]
+  }
+]

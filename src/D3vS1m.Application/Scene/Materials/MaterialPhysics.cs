@@ -23,7 +23,7 @@ namespace D3vS1m.Application.Scene.Materials
         /// Calculates the reflexion factor and reflection loss based on its input properties and
         /// stores the values in the regarding properites.
         /// </summary>
-        public void CalcReflectionValues()
+        public MaterialPhysics CalcReflectionValues()
         {
             /*
              * Z0 -> ~377 ohm
@@ -40,6 +40,7 @@ namespace D3vS1m.Application.Scene.Materials
             float zm = (float)(z0 * Math.Sqrt(RelativePermeability / RelativePermittivity));
             ReflectionFactor = Math.Abs((zm - z0) / (zm + z0));
             ReflectionLoss = (float)(-10 * Math.Log10(ReflectionFactor));
+            return this;
         }
 
         // --- methods
@@ -74,11 +75,11 @@ namespace D3vS1m.Application.Scene.Materials
         /// <summary>
         /// Gets the reflection factor in [0..1] of the material at the regarding frequency.
         /// </summary>
-        public float ReflectionFactor { get; private set; }
+        public float ReflectionFactor { get; set; }
 
         /// <summary>
         /// Gets the reflexion loss in [dBm] of the material at the regarding frequency.
         /// </summary>
-        public float ReflectionLoss { get; private set; }
+        public float ReflectionLoss { get; set; }
     }
 }
