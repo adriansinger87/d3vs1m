@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
+    <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
   </ItemGroup>
 
 </Project>

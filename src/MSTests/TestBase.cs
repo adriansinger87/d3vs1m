@@ -20,6 +20,13 @@ namespace MSTests
 {
     public abstract class TestBase
     {
+        // -- fields
+
+        protected const string APP_LOCATION = "App_Data";
+
+        // -- basic methods
+
+
         [TestInitialize]
         public virtual void Arrange()
         {
@@ -33,6 +40,11 @@ namespace MSTests
         public virtual void Cleanup()
         {
             Log.Stop();
+        }
+
+        protected IPersistenceControlable ArrangeIOController()
+        {
+            return new IOController();
         }
 
         public void LoadAntennaData(SphericAntennaArgs args, string file = "PCB_868_tot.csv")
