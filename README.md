@@ -42,4 +42,4 @@ The project can be developed with
 ## Acknowledgement
 
 I want to thank all collaborators and the [Fraunhofer IWU](https://www.iwu.fraunhofer.de/)
-for the support on this project. :beers:
+for the support on this project. :beers: :beers:
