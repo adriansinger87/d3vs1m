@@ -5,7 +5,7 @@
             </div>
         </div>
         <div class="modal-footer code-footer">
-            <a v-on:click="updateArgument(currentGuid)" class="modal-close waves-effect waves-green btn-flat">Send</a>
+            <a v-on:click="updateArgument()" class="modal-close waves-effect waves-green btn-flat">Send</a>
         </div>
     </div>
 </template>
@@ -28,7 +28,14 @@ export default {
     updated() {
     },
     methods: {
-        updateArgument(id) {
+        updateArgument() {
+            var editor = ace.edit("editor")
+            
+            //updated value 
+            var updatedArgValue = JSON.parse(editor.getValue()) 
+
+            // send back to Argument Component
+            CodeEditorEventBus.$emit('updated-ArgData', updatedArgValue)
         }
     } 
 }

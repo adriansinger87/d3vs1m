@@ -30,7 +30,7 @@ import mqttClient from "../../services/mqttClient";
 import utils from '../../services/ultis'
 
 // Vuex 
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters , mapActions } from "vuex";
 
 export default {
   components: {

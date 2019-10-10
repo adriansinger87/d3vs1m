@@ -19,6 +19,7 @@ import utils  from '../../services/ultis'
 import CodeEditorEventBus from '../../services/EventBus/CodeEditorEventBus'
 
 import $ from 'jquery'
+import { mapGetters , mapActions } from "vuex";
 
 export default {
   data() {
@@ -27,7 +28,9 @@ export default {
       isProLoad: false
     };
   },
+  computed: mapGetters(['allArguments']),
   methods: {
+    ...mapActions(['UPDATE']),
     getArgument(guid) {
 
       //TODO: get the config from Store
@@ -43,8 +46,21 @@ export default {
       instance.options.onCloseStart = function() {
         //TODO: check if the value changed or not
         //info: code-editor-value can check the state? 3 types: edited-send, edited-notsend, nochange
+
+        // compare data change 
+        //console.log(argumentData)
       }
-      console.log(instance)
+
+      CodeEditorEventBus.$on('updated-ArgData', (updatedArgData) => {
+        // compare 
+        //TODO: should be in the Utils (compare 2 objects)
+        if((JSON.stringify(argumentData) != JSON.stringify(updatedArgData))) {          
+          // update current 
+          this.UPDATE(updatedArgData)
+        }
+        console.log(this.$store.getters.allArguments)
+      })
+
       instance.open()
     }
   },
