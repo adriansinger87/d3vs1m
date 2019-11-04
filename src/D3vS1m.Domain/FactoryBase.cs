@@ -8,30 +8,25 @@ namespace D3vS1m.Application
     {
         // -- fields
 
-        protected RuntimeBase _runtime;
-
         // -- constructors
 
-        public FactoryBase(RuntimeBase runtime)
+        public FactoryBase()
         {
-            _runtime = runtime;
         }
 
         // -- methods
 
         public abstract ArgumentsBase NewArgument(string name);
 
-        public abstract ISimulatable NewSimulator(string name);
+        public abstract ISimulatable NewSimulator(string name, RuntimeBase runtime);
 
         public abstract ArgumentsBase[] GetPredefinedArguments();
 
         public abstract ISimulatable RegisterSimulator(ISimulatable simulator, ArgumentsBase args);
 
-        public abstract RuntimeBase SetupSimulation(ArgumentsBase[] args);
+        public abstract RuntimeBase SetupSimulation(ArgumentsBase[] args, RuntimeBase runtime);
 
         // -- properties
-
-        public virtual RuntimeBase Runtime => _runtime;
 
         public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments;
 

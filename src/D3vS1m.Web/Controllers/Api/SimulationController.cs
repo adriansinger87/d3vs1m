@@ -38,9 +38,14 @@ namespace D3vS1m.WebAPI.Controllers.Api
 
         // -- constructor
 
-        public SimulationController(IHostingEnvironment env, FactoryBase factory, IMqttControlable mqtt) : base(env,
+        /*
+         * TODO @ AS: Test new scoped DI for RuntimeBase and Singleton for FactoryBase
+         */
+
+        public SimulationController(IHostingEnvironment env, RuntimeBase runtime, FactoryBase factory, IMqttControlable mqtt) : base(env,
             factory)
         {
+            _runtime = runtime;
             _mqtt = mqtt;
         }
 
@@ -51,8 +56,8 @@ namespace D3vS1m.WebAPI.Controllers.Api
         [HttpGet]
         public JsonResult Get()
         {
-            (_factory.Runtime.Arguments as RuntimeArgs).Reset();
-            return new JsonResult(_factory.Runtime.Arguments);
+            (_runtime.Arguments as RuntimeArgs).Reset();
+            return new JsonResult(_runtime.Arguments);
         }
 
 
@@ -65,10 +70,10 @@ namespace D3vS1m.WebAPI.Controllers.Api
         {
             try
             {
-                if (_factory.Runtime.Arguments.Guid != guid)
+                if (_runtime.Arguments.Guid != guid)
                 {
                     throw new RuntimeException(
-                        $"Runtime guid '{_factory.Runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
+                        $"Runtime guid '{_runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
                 }
 
                 BuildTopics(guid);
@@ -89,7 +94,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
         private void SetupSimulation(ArgumentsBase[] args)
         {
             // setup the simulators and attach them to the runtime, based on the existent args
-            _runtime = _factory.SetupSimulation(args);
+            _runtime = _factory.SetupSimulation(args, _runtime);
 
             _runtime.Started += OnStarted;
             _runtime.Stopped += OnStopped;
@@ -111,9 +116,9 @@ namespace D3vS1m.WebAPI.Controllers.Api
         private void CleanupSimulation()
         {
             Log.Info("Cleaning runtime events");
-            _factory.Runtime.Started -= OnStarted;
-            _factory.Runtime.Stopped -= OnStopped;
-            _factory.Runtime.IterationPassed -= OnIterationPassed;
+            _runtime.Started -= OnStarted;
+            _runtime.Stopped -= OnStopped;
+            _runtime.IterationPassed -= OnIterationPassed;
         }
 
         // -- event methods

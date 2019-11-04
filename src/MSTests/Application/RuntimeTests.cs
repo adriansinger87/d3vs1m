@@ -82,7 +82,7 @@ namespace MSTests.Application
             // arrange
 
             // create the simulation-factory
-            var factory = new D3vS1mFactory(_runtime);
+            var factory = new D3vS1mFactory();
 
             // load all relevant arguments
             var simArgs = factory.GetPredefinedArguments();
@@ -105,7 +105,7 @@ namespace MSTests.Application
                base.ImportDevices().ToArray());
 
             // final setup, cross-bind some arguments
-            var runtime = factory.SetupSimulation(simArgs);
+            var runtime = factory.SetupSimulation(simArgs, _runtime);
             _runtime.Started += (o, e) =>
             {
             };

@@ -3,6 +3,7 @@ using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Infrastructure.Mqtt;
+using D3vS1m.Domain.Runtime;
 using D3vS1m.Infrastructure.Mqtt;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,11 +46,12 @@ namespace D3vS1m.WebAPI
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSingleton<IMqttControlable, MqttNetController>();
+            
+            services.AddSingleton<FactoryBase>(new D3vS1mFactory());
 
-            var factory = new D3vS1mFactory(
-                new RuntimeController(
-                    new D3vS1mValidator()));
-            services.AddSingleton<FactoryBase>(factory);
+            services.AddScoped<RuntimeBase>((s) => {
+                return new RuntimeController(new D3vS1mValidator());
+            });
 
             // CORS
             services.AddCors(c =>

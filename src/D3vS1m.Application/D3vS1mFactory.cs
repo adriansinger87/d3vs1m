@@ -21,7 +21,7 @@ namespace D3vS1m.Application
 
         // -- constructors
 
-        public D3vS1mFactory(RuntimeBase runtime) : base(runtime)
+        public D3vS1mFactory() : base()
         {
             base.Simulators = new SimulatorRepository();
         }
@@ -61,33 +61,33 @@ namespace D3vS1m.Application
             }
         }
 
-        public override ISimulatable NewSimulator(string name)
+        public override ISimulatable NewSimulator(string name, RuntimeBase runtime)
         {
             switch (name)
             {
                 case Models.Network.Key:
-                    return new PeerToPeerNetworkSimulator(_runtime);
+                    return new PeerToPeerNetworkSimulator(runtime);
 
                 case Models.Scene.Key:
-                    return new SceneSimulator(_runtime);
+                    return new SceneSimulator(runtime);
 
                 case Models.Channel.AdaptedFriis.Key:
-                    return new AdaptedFriisSimulator(_runtime);
+                    return new AdaptedFriisSimulator(runtime);
 
                 case Models.Antenna.Spheric.Key:
-                    return new SphericAntennaSimulator(_runtime);
+                    return new SphericAntennaSimulator(runtime);
 
                 case Models.Antenna.Simple.Key:
-                    return new SimpleAntennaSimulator(_runtime);
+                    return new SimpleAntennaSimulator(runtime);
 
                 case Models.Antenna.Flat.Key:
-                    return new SimpleAntennaSimulator(_runtime);
+                    return new SimpleAntennaSimulator(runtime);
 
                 case Models.Communication.LrWpan.Key:
-                    return new LRWPANSimulator(_runtime);
+                    return new LRWPANSimulator(runtime);
 
                 case Models.Energy.Battery.Key:
-                    return new BatteryPackSimulator(_runtime);
+                    return new BatteryPackSimulator(runtime);
 
                 default:
                     return null;
@@ -130,16 +130,17 @@ namespace D3vS1m.Application
             return simulator;
         }
 
-        public override RuntimeBase SetupSimulation(ArgumentsBase[] args)
+        public override RuntimeBase SetupSimulation(ArgumentsBase[] args, RuntimeBase runtime)
         {
             base.Simulators.Clear();
             foreach (var arg in args)
             {
-                RegisterSimulator(NewSimulator(arg.Name), arg);
+                RegisterSimulator(
+                    NewSimulator(arg.Name, runtime), arg);
             }
 
-            _runtime.Setup(Simulators);
-            return _runtime;
+            runtime.Setup(Simulators);
+            return runtime;
         }
 
         // -- properties
