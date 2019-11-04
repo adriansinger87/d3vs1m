@@ -23,7 +23,6 @@ namespace D3vS1m.WebAPI.Controllers.Api
     {
         // -- fields
 
-
         // TODO: should be changed to static file.
         private const string BASE_TOPIC = "d3vs1m";
         private const string CONSOLE_TOPIC = "console";
@@ -62,7 +61,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
 
 
         /// <summary>
-        ///     GET: api/simulation/run
+        /// GET: api/simulation/run
         /// </summary>
         /// <returns></returns>
         [HttpPost("run/{guid}")]
@@ -70,6 +69,11 @@ namespace D3vS1m.WebAPI.Controllers.Api
         {
             try
             {
+                /*
+                 * TODO @ AS: Resolve logic error with guid.
+                 * Because the runtime is scoped via DI, the guid changes every time.
+                 * The guid-concept should be refactored somehow.
+                 */
                 if (_runtime.Arguments.Guid != guid)
                 {
                     throw new RuntimeException(
