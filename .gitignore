@@ -333,4 +333,4 @@ ASALocalRun/
 src/D3vS1m/.WebUI/wwwroot/
 src/D3vS1m/.WebUI/.vscode/
 /src/D3vS1m.WebUI/wwwroot/dist
-/src
+/src/D3vS1m.Web/wwwroot/lib
