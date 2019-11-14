@@ -15,6 +15,7 @@
   "author": "Adrian Singer | TK Nguyen",
   "license": "ISC",
   "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
     "ace-builds": "^1.4.5",
     "axios": "^0.19.0",
     "core-js": "^2.5.3",

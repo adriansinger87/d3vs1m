@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Sin.Net.Domain.Persistence.Logging;
+using D3vS1m.WebAPI.Hubs;
 
 namespace D3vS1m.WebAPI
 {
@@ -42,6 +43,8 @@ namespace D3vS1m.WebAPI
             //    options.CheckConsentNeeded = context => true;
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
+
+            services.AddSignalR();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -83,9 +86,6 @@ namespace D3vS1m.WebAPI
             if (_env.IsDevelopment())
             {
                 app.UseHsts();
-
-
-                
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
@@ -98,7 +98,6 @@ namespace D3vS1m.WebAPI
                 var path = Path.Combine(Directory.GetCurrentDirectory(), @"App_Data\ObjFiles");
 
                 if (!Directory.Exists(path)) Directory.CreateDirectory(path);
-
 
                 app.UseStaticFiles(new StaticFileOptions
                 {
@@ -127,7 +126,10 @@ namespace D3vS1m.WebAPI
                 app.UseHttpsRedirection();
             }
 
-            app.UseMvc();
+            app.UseSignalR((routes) =>
+            {
+                routes.MapHub<ConsoleHub>("/hubs/console");
+            });
 
             Log.Trace("server-app startup finished");
         }

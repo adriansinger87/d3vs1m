@@ -14,6 +14,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using D3vS1m.WebAPI.Extensions;
+using D3vS1m.WebAPI.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace D3vS1m.WebAPI.Controllers.Api
 {
@@ -31,7 +33,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
         private const int ITERATIONS = 10;
         private string _consoleTopic;
         private string _disconnectTopic;
-        private readonly IMqttControlable _mqtt;
+        private readonly IHubContext<ConsoleHub> _hub;
 
         private RuntimeBase _runtime;
 
@@ -41,11 +43,14 @@ namespace D3vS1m.WebAPI.Controllers.Api
          * TODO @ AS: Test new scoped DI for RuntimeBase and Singleton for FactoryBase
          */
 
-        public SimulationController(IHostingEnvironment env, RuntimeBase runtime, FactoryBase factory, IMqttControlable mqtt) : base(env,
+        public SimulationController(IHostingEnvironment env,
+            RuntimeBase runtime, FactoryBase factory,
+            IHubContext<ConsoleHub> hub) : base(env,
             factory)
         {
+            JsonIO.Binder = HttpSessionExtensions.ArgumentsBinder;
             _runtime = runtime;
-            _mqtt = mqtt;
+            _hub = hub;
         }
 
         // -- methods
@@ -65,29 +70,20 @@ namespace D3vS1m.WebAPI.Controllers.Api
         /// </summary>
         /// <returns></returns>
         [HttpPost("run/{guid}")]
-        public async Task<JsonResult> Run(string guid, [FromBody] dynamic args)
+        public JsonResult Run([FromBody] dynamic args)
         {
+            _hub.Clients.All.SendAsync("SendMessage", "sim started");
+
             try
             {
-                /*
-                 * TODO @ AS: Resolve logic error with guid.
-                 * Because the runtime is scoped via DI, the guid changes every time.
-                 * The guid-concept should be refactored somehow.
-                 */
-                if (_runtime.Arguments.Guid != guid)
-                {
-                    throw new RuntimeException(
-                        $"Runtime guid '{_runtime.Arguments.Guid}' does not match to the client guid '{guid}'");
-                }
-
-                BuildTopics(guid);
-                SetupSimulation(JsonIO.FromJsonString<ArgumentsBase[]>(args.ToString(), HttpSessionExtensions.ArgumentsBinder));
+                SetupSimulation(JsonIO.FromJsonString<ArgumentsBase[]>(args.ToString()));
                 RunSimulationAsync();
             }
             catch (Exception ex)
             {
-                await _mqtt.PublishAsync(_consoleTopic,
-                    BuildMessage(DateTime.Now, $"The Simulation had an exception: {ex.Message}"), 2);
+                Log.Fatal(ex);
+                //await _mqtt.PublishAsync(_consoleTopic,
+                //    BuildMessage(DateTime.Now, $"The Simulation had an exception: {ex.Message}"), 2);
             }
 
             return new JsonResult(_runtime.Arguments);
@@ -129,8 +125,8 @@ namespace D3vS1m.WebAPI.Controllers.Api
 
         private void OnStarted(object sender, SimulatorEventArgs e)
         {
-            PublishConsoleTopic("### Simulation started<br />");
-            Thread.Sleep(1000);
+            //PublishConsoleTopic("### Simulation started<br />");
+            //Thread.Sleep(1000);
         }
 
         private void OnStopped(object sender, SimulatorEventArgs e)
@@ -139,43 +135,43 @@ namespace D3vS1m.WebAPI.Controllers.Api
 
             // TODO @ AS: dont manipulate arguments during simulation this data should be moved and persisted into results data container
             //this.HttpSession().SetArguments(_factory.SimulationArguments);
-            PublishConsoleTopic("### Simulation stopped");
-            PublishConsoleTopic("================");
-            _mqtt.PublishAsync(_disconnectTopic, BuildMessage(DateTime.Now), 2);
+            //PublishConsoleTopic("### Simulation stopped");
+            //PublishConsoleTopic("================");
+            //_mqtt.PublishAsync(_disconnectTopic, BuildMessage(DateTime.Now), 2);
         }
 
         private void OnSimulatorExecuted(object sender, SimulatorEventArgs e)
         {
-            PublishConsoleTopic($"{e.Arguments.Name} passed");
+            //PublishConsoleTopic($"{e.Arguments.Name} passed");
             if (e.Arguments is AdaptedFriisArgs)
             {
                 var channelArgs = e.Arguments as AdaptedFriisArgs;
-                PublishConsoleTopic($"{channelArgs.RadioBox.TotalData} data points calculated");
+                //PublishConsoleTopic($"{channelArgs.RadioBox.TotalData} data points calculated");
             }
         }
 
         private void OnIterationPassed(object sender, SimulatorEventArgs e)
         {
             var runArgs = e.Arguments as RuntimeArgs;
-            PublishConsoleTopic($"Iteration {runArgs.Iterations} done<br />");
+            //PublishConsoleTopic($"Iteration {runArgs.Iterations} done<br />");
         }
 
         // -- helper
 
-        private void PublishConsoleTopic(string message)
-        {
-            _mqtt.PublishAsync(_consoleTopic, BuildMessage(DateTime.Now, message), 2);
-        }
+        //private void PublishConsoleTopic(string message)
+        //{
+        //    _mqtt.PublishAsync(_consoleTopic, BuildMessage(DateTime.Now, message), 2);
+        //}
 
-        private void BuildTopics(string guid)
-        {
-            _consoleTopic = $"{BASE_TOPIC}/{guid}/{CONSOLE_TOPIC}";
-            _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
-        }
+        //private void BuildTopics(string guid)
+        //{
+        //    _consoleTopic = $"{BASE_TOPIC}/{guid}/{CONSOLE_TOPIC}";
+        //    _disconnectTopic = $"{BASE_TOPIC}/{guid}/{DISCONNECT_TOPIC}";
+        //}
 
-        private string BuildMessage(DateTime timestamp, string message = null)
-        {
-            return $"{timestamp}{(string.IsNullOrEmpty(message) ? "" : $" - {message}")}";
-        }
+        //private string BuildMessage(DateTime timestamp, string message = null)
+        //{
+        //    return $"{timestamp}{(string.IsNullOrEmpty(message) ? "" : $" - {message}")}";
+        //}
     }
 }

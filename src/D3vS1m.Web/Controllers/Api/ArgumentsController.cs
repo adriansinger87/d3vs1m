@@ -27,7 +27,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
         /// <param name="factory"></param>
         public ArgumentsController(IHostingEnvironment env, FactoryBase factory) : base(env, factory)
         {
-
+            JsonIO.Binder = HttpSessionExtensions.ArgumentsBinder;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
             SetNetworkFromJson(args);
 
             JsonIO.EnableCaseResolver = true;
-            var argsJson = JsonIO.ToJsonString(args, HttpSessionExtensions.ArgumentsBinder);
+            var argsJson = JsonIO.ToJsonString(args);
 
             return Content(argsJson, "application/json");
         }

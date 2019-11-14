@@ -67,10 +67,11 @@ namespace D3vS1m.WebAPI.Extensions
         /// <param name="session">The calling session isntance.</param>
         public static ArgumentsBase[] GetArguments(this ISession session)
         {
+            JsonIO.Binder = ArgumentsBinder;
             var value = session.GetString(ARGUMENTS_KEY);
 
             return value == null ? default(ArgumentsBase[]) :
-                JsonIO.FromJsonString<ArgumentsBase[]>(value, ArgumentsBinder);
+                JsonIO.FromJsonString<ArgumentsBase[]>(value);
         }
 
         /// <summary>
@@ -80,13 +81,14 @@ namespace D3vS1m.WebAPI.Extensions
         /// <param name="args">The new array to save.</param>
         public static void SetArguments(this ISession session, ArgumentsBase[] args)
         {
-            var json = JsonIO.ToJsonString(args, ArgumentsBinder);
+            JsonIO.Binder = ArgumentsBinder;
+            var json = JsonIO.ToJsonString(args);
             session.SetString(ARGUMENTS_KEY, json);
         }
 
 
 
-        //TODO: should be checked again
+        // TODO: should be checked and refactored again,
         /// <summary>
         /// Gets the binder for the concrete types for json-serialization.
         /// </summary>
