@@ -8,7 +8,7 @@ namespace D3vS1m.WebAPI
     {
         public static void Main(string[] args)
         {
-            Log.Inject(new Sin.Net.Logging.NLogger());
+            Log.Inject(new Sin.Net.Logging.NLogger().Start());
 
             CreateWebHostBuilder(args).Build().Run();
         }

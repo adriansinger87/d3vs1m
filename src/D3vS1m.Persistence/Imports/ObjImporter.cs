@@ -8,7 +8,7 @@ using System.IO;
 
 namespace D3vS1m.Persistence.Imports
 {
-    internal class ObjImporter : IImportable
+    public class ObjImporter : IImportable
     {
         // -- fields
 

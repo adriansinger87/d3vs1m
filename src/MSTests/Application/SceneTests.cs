@@ -3,6 +3,7 @@ using D3vS1m.Application.Scene.Geometries;
 using D3vS1m.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Persistence;
+using Sin.Net.Persistence;
 using Sin.Net.Persistence.Settings;
 
 namespace MSTests.Application
@@ -18,7 +19,7 @@ namespace MSTests.Application
         {
             base.Arrange();
 
-            _io = new IOController();
+            _io = ArrangeIOController();
             _geometries = new GeometryRepository();
         }
 

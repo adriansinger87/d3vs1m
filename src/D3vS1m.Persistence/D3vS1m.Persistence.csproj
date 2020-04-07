@@ -11,7 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sin.Net.Persistence" Version="0.2.0" />
+    <Compile Remove="IOController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sin.Net.Persistence" Version="0.2.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,7 +6,9 @@ using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Persistence;
+using D3vS1m.Persistence.Imports;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NLog;
 using Sin.Net.Domain.Persistence;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Logging;
@@ -32,7 +34,7 @@ namespace MSTests
         {
             if (Log.IsNotNull == false)
             {
-                Log.Inject(new TestLogger());
+                Log.Inject(new TestLogger().Start());
             }
         }
 
@@ -44,12 +46,15 @@ namespace MSTests
 
         protected IPersistenceControlable ArrangeIOController()
         {
-            return new IOController();
+            var io = new PersistenceController();
+            io.Add(D3vS1m.Persistence.Constants.Wavefront.Key, new ObjImporter());
+
+            return io; 
         }
 
         public void LoadAntennaData(SphericAntennaArgs args, string file = "PCB_868_tot.csv")
         {
-            var io = new IOController();
+            var io = ArrangeIOController();
 
             var settings = new CsvSetting
             {

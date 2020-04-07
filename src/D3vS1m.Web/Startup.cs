@@ -1,10 +1,9 @@
-﻿using System.IO;
-using D3vS1m.Application;
+﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Infrastructure.Mqtt;
 using D3vS1m.Domain.Runtime;
-using D3vS1m.Infrastructure.Mqtt;
+using D3vS1m.WebAPI.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Sin.Net.Domain.Persistence.Logging;
-using D3vS1m.WebAPI.Hubs;
+using System.IO;
 
 namespace D3vS1m.WebAPI
 {
@@ -37,29 +36,21 @@ namespace D3vS1m.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => true;
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
-
             services.AddSignalR();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddSingleton<IMqttControlable, MqttNetController>();
-            
             services.AddSingleton<FactoryBase>(new D3vS1mFactory());
 
-            services.AddScoped<RuntimeBase>((s) => {
+            services.AddScoped<RuntimeBase>((s) =>
+            {
                 return new RuntimeController(new D3vS1mValidator());
             });
 
             // CORS
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowOrigin", 
+                c.AddPolicy("AllowOrigin",
                                 options => options.AllowAnyOrigin()
                                                   .AllowAnyHeader()
                                                   .AllowAnyMethod()
@@ -67,7 +58,7 @@ namespace D3vS1m.WebAPI
             });
 
 
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "DEVS1M", Version = "v1"}); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "DEVS1M", Version = "v1" }); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,7 +68,6 @@ namespace D3vS1m.WebAPI
             _env = env;
 
             _mqtt = mqtt;
-            ConfigureMqtt();
 
             // error handling fowarded to ErrorController
             app.UseStatusCodePagesWithReExecute("/error");
@@ -97,7 +87,10 @@ namespace D3vS1m.WebAPI
                 //TODO: should be in Utils Class
                 var path = Path.Combine(Directory.GetCurrentDirectory(), @"App_Data\ObjFiles");
 
-                if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
 
                 app.UseStaticFiles(new StaticFileOptions
                 {
@@ -132,32 +125,6 @@ namespace D3vS1m.WebAPI
             });
 
             Log.Trace("server-app startup finished");
-        }
-        
-        // TODO: should be moved to Utils 
-        private void ConfigureMqtt()
-        {
-            _mqtt.Connected += (o, e) => { Log.Info($"Connected to '{e.Broker}' with id '{e.ClientID}'", this); };
-
-            _mqtt.MessageReceived += (o, e) => { Log.Trace($"{e.Topic}: {e.Message}", this); };
-
-            if (_mqtt.CreateClient(GetConfig()))
-                _mqtt.ConnectAsync();
-            else
-                Log.Error("Client was not created", this);
-        }
-
-        private MqttConfig GetConfig()
-        {
-            return new MqttConfig
-            {
-                Broker = "broker.hivemq.com",
-                Port = 1883,
-                // TODO: setup config with client for each browser session or something like that
-                // TODO: integrate client id in the topic to send data only to one browser
-                ClientID = "d3vs1m-server-side",
-                QoS = 2
-            };
         }
 
         // -- event methods
