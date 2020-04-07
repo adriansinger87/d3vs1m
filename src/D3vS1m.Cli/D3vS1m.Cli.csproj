@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
+    <ProjectReference Include="..\D3vS1m.Infrastructure\D3vS1m.Infrastructure.csproj" />
+    <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

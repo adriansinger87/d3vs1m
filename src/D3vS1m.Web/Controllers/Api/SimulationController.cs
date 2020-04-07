@@ -3,19 +3,15 @@ using D3vS1m.Application.Channel;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
-using D3vS1m.Domain.Infrastructure.Mqtt;
 using D3vS1m.Domain.Runtime;
-using D3vS1m.Domain.System.Exceptions;
+using D3vS1m.WebAPI.Extensions;
+using D3vS1m.WebAPI.Hubs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Persistence.IO.Json;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using D3vS1m.WebAPI.Extensions;
-using D3vS1m.WebAPI.Hubs;
-using Microsoft.AspNetCore.SignalR;
 
 namespace D3vS1m.WebAPI.Controllers.Api
 {

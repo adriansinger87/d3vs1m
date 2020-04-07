@@ -1,7 +1,6 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
-using D3vS1m.Domain.Infrastructure.Mqtt;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.WebAPI.Hubs;
 using Microsoft.AspNetCore.Builder;
@@ -22,7 +21,6 @@ namespace D3vS1m.WebAPI
         // -- fields
 
         private IHostingEnvironment _env;
-        private IMqttControlable _mqtt;
 
         // -- constructor
 
@@ -61,13 +59,9 @@ namespace D3vS1m.WebAPI
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "DEVS1M", Version = "v1" }); });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMqttControlable mqtt)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             _env = env;
-
-            _mqtt = mqtt;
 
             // error handling fowarded to ErrorController
             app.UseStatusCodePagesWithReExecute("/error");
