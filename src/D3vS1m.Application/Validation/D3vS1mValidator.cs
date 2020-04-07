@@ -37,6 +37,11 @@ namespace D3vS1m.Application.Validation
             RuleFor(repo => repo.Items.Cast<ISimulatable>())
                 .Must(list => list.Any(i => i.Type == SimulationModels.Scene))
                 .WithMessage("scene model not present");
+
+            // commuication
+            RuleFor(repo => repo.Items.Cast<ISimulatable>())
+                .Must(list => list.Any(i => i.Type == SimulationModels.Communication))
+                .WithMessage("communication model not present");
         }
 
         private bool ValidateChannelArguments(ISimulatable sim)

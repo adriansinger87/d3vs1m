@@ -22,7 +22,7 @@ namespace D3vS1m.Application.Network
 
         public override void Reset()
         {
-            Name = Models.Network.Key;
+            Name = Models.Network.Name;
             Network = new PeerToPeerNetwork();
         }
 

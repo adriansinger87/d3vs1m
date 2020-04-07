@@ -11,7 +11,7 @@ namespace D3vS1m.Application.Channel
     {
         public AdaptedFriisArgs() : base()
         {
-            Name = Models.Channel.AdaptedFriis.Key;
+            Name = Models.Channel.AdaptedFriis.Name;
 
             // default settings
             this.RadioBox = new RadioCuboid();
@@ -24,7 +24,7 @@ namespace D3vS1m.Application.Channel
 
         public override void Reset()
         {
-            Name = Models.Channel.AdaptedFriis.Key;
+            Name = Models.Channel.AdaptedFriis.Name;
 
             // default settings
             RadioBox = new RadioCuboid();

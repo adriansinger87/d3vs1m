@@ -28,7 +28,10 @@ namespace MSTests.Application
             _antennaArgs = new SphericAntennaArgs();
             LoadAntennaData(_antennaArgs);
 
+            DumpToJson(_antennaArgs, "spheric_antenna_args.json");
             antennaSim.With(_antennaArgs);
+
+            
 
             // act
             antennaSim.Run();

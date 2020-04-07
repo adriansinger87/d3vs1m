@@ -88,7 +88,7 @@ namespace MSTests.Application
             var simArgs = factory.GetPredefinedArguments();
 
             // setup radio channel
-            var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Key) as AdaptedFriisArgs;
+            var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Name) as AdaptedFriisArgs;
             var min = new Vertex(-10, -10, -10);
             var max = new Vertex(10, 10, 10);
             radioArgs.RadioBox.Resolution = 0.25F;
@@ -96,11 +96,11 @@ namespace MSTests.Application
             radioArgs.RadioBox.MaxCorner = max;
 
             // fill antenna data
-            var antennaArgs = simArgs.GetByName(Models.Antenna.Spheric.Key) as SphericAntennaArgs;
+            var antennaArgs = simArgs.GetByName(Models.Antenna.Spheric.Name) as SphericAntennaArgs;
             base.LoadAntennaData(antennaArgs);
             
             // fill network data
-            var netArgs = simArgs.GetByName(Models.Network.Key) as NetworkArgs;
+            var netArgs = simArgs.GetByName(Models.Network.Name) as NetworkArgs;
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
 

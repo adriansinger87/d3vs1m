@@ -49,7 +49,7 @@ namespace D3vS1m.WebAPI.Controllers.Api
         //TODO: should ask Adrian to change location
         private void SetNetworkFromJson(ArgumentsBase[] args)
         {
-            var netKey = D3vS1m.Application.Models.Network.Key;
+            var netKey = D3vS1m.Application.Models.Network.Name;
             if (!args.ContainsName(netKey))
             {
                 Log.Error($"Could not find the network arguments with the key '{netKey}'");

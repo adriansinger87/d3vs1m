@@ -13,7 +13,7 @@ namespace D3vS1m.Application.Antenna
 
         public override void Reset()
         {
-            base.Name = Models.Antenna.Flat.Key;
+            base.Name = Models.Antenna.Flat.Name;
         }
 
         /// <summary>

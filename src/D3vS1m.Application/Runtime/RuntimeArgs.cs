@@ -9,7 +9,7 @@ namespace D3vS1m.Application.Runtime
     {
         public RuntimeArgs() : base()
         {
-            Name = Models.Runtime.Key;
+            Name = Models.Runtime.Name;
             CycleDuration = TimeSpan.FromSeconds(Const.Runtime.IncrementSeconds);
         }
 

@@ -13,6 +13,7 @@ using Sin.Net.Domain.Persistence;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Logging;
 using Sin.Net.Persistence;
+using Sin.Net.Persistence.IO.Json;
 using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
@@ -85,6 +86,8 @@ namespace MSTests
             radioArgs.RadioBox.Resolution = 0.25F;
             radioArgs.RadioBox.MinCorner = min;
             radioArgs.RadioBox.MaxCorner = max;
+
+            DumpToJson(radioArgs, "adapted_friis_Args.json");
             // update the positions always when the box changes
             radioArgs.RxPositions = radioArgs.RadioBox.CreateRxPositions();
 
@@ -108,6 +111,12 @@ namespace MSTests
                 .As<List<BasicDevice>>();
 
             return devices;
+        }
+
+        public void DumpToJson(object obj, string file)
+        {
+            var success = JsonIO.SaveToJson(obj, file);
+            if (!success) Log.Error($"Saving the file '{file}' has failed.");
         }
 
         // -- properties

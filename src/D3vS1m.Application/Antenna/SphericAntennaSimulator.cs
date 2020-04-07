@@ -91,8 +91,8 @@ namespace D3vS1m.Application.Antenna
             return (gain.x + gain.y + gain.z + gain.w);
         }
         
-        public override string Id => Models.Antenna.Spheric.Key;
-        public override string Name => Models.Antenna.Spheric.Key;
+        public override string Id => Models.Antenna.Spheric.Name;
+        public override string Name => Models.Antenna.Spheric.Name;
         public override ArgumentsBase Arguments => _antennaArgs;
         public override SimulationModels Type => SimulationModels.Antenna;
     }

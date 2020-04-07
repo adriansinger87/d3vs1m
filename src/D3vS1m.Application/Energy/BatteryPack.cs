@@ -17,7 +17,7 @@ namespace D3vS1m.Application.Energy
         /// </summary>
         public BatteryPack()
         {
-            Name = Models.Energy.Battery.Key;
+            Name = Models.Energy.Battery.Name;
             Type = PartTypes.PowerSupply;
 
             State = new BatteryState();

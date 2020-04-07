@@ -32,28 +32,28 @@ namespace D3vS1m.Application
         {
             switch (name)
             {
-                case Models.Network.Key:
+                case Models.Network.Name:
                     return new NetworkArgs();
 
-                case Models.Scene.Key:
+                case Models.Scene.Name:
                     return new InvariantSceneArgs();
 
-                case Models.Channel.AdaptedFriis.Key:
+                case Models.Channel.AdaptedFriis.Name:
                     return new AdaptedFriisArgs();
 
-                case Models.Antenna.Spheric.Key:
+                case Models.Antenna.Spheric.Name:
                     return new SphericAntennaArgs();
 
-                case Models.Antenna.Simple.Key:
+                case Models.Antenna.Simple.Name:
                     return new SimpleAntennaArgs();
 
-                case Models.Antenna.Flat.Key:
+                case Models.Antenna.Flat.Name:
                     return new FlatAntennaArgs();
 
-                case Models.Communication.LrWpan.Key:
+                case Models.Communication.LrWpan.Name:
                     return new WirelessCommArgs();
 
-                case Models.Energy.Battery.Key:
+                case Models.Energy.Battery.Name:
                     return new BatteryArgs();
 
                 default:
@@ -65,28 +65,28 @@ namespace D3vS1m.Application
         {
             switch (name)
             {
-                case Models.Network.Key:
+                case Models.Network.Name:
                     return new PeerToPeerNetworkSimulator(runtime);
 
-                case Models.Scene.Key:
+                case Models.Scene.Name:
                     return new SceneSimulator(runtime);
 
-                case Models.Channel.AdaptedFriis.Key:
+                case Models.Channel.AdaptedFriis.Name:
                     return new AdaptedFriisSimulator(runtime);
 
-                case Models.Antenna.Spheric.Key:
+                case Models.Antenna.Spheric.Name:
                     return new SphericAntennaSimulator(runtime);
 
-                case Models.Antenna.Simple.Key:
+                case Models.Antenna.Simple.Name:
                     return new SimpleAntennaSimulator(runtime);
 
-                case Models.Antenna.Flat.Key:
+                case Models.Antenna.Flat.Name:
                     return new SimpleAntennaSimulator(runtime);
 
-                case Models.Communication.LrWpan.Key:
+                case Models.Communication.LrWpan.Name:
                     return new LRWPANSimulator(runtime);
 
-                case Models.Energy.Battery.Key:
+                case Models.Energy.Battery.Name:
                     return new BatteryPackSimulator(runtime);
 
                 default:
@@ -98,14 +98,14 @@ namespace D3vS1m.Application
         {
             var args = new List<ArgumentsBase>
             {
-                NewArgument(Models.Network.Key),
-                NewArgument(Models.Scene.Key),
-                NewArgument(Models.Channel.AdaptedFriis.Key),
-                NewArgument(Models.Antenna.Spheric.Key),
+                NewArgument(Models.Network.Name),
+                NewArgument(Models.Scene.Name),
+                NewArgument(Models.Channel.AdaptedFriis.Name),
+                NewArgument(Models.Antenna.Spheric.Name),
                 //NewArgument(Models.Antenna.Simple.Key),
                 //(Models.Antenna.Flat.Key),
-                NewArgument(Models.Communication.LrWpan.Key),
-                NewArgument(Models.Energy.Battery.Key)
+                NewArgument(Models.Communication.LrWpan.Name),
+                NewArgument(Models.Energy.Battery.Name)
 
             };
             return args.ToArray();

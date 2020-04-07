@@ -37,8 +37,8 @@ namespace D3vS1m.Application.Scene
 
         // -- properties
 
-        public override string Id => Models.Scene.Key;
-        public override string Name => Models.Scene.Key;
+        public override string Id => Models.Scene.Name;
+        public override string Name => Models.Scene.Name;
         public override SimulationModels Type => SimulationModels.Scene;
         public override ArgumentsBase Arguments => _sceneArgs;
 

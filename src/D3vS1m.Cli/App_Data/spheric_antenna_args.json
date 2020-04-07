@@ -1,0 +1,7 @@
+﻿{
+  "GainMatrix": null,
+  "Name": "spheric antenna",
+  "Guid": "9118a5a1-29f7-4758-bd1c-ecdbc8a6d3ae",
+  "Active": true,
+  "DataSource": "PCB_868_tot.csv"
+}
