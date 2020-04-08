@@ -143,7 +143,7 @@ namespace D3vS1m.Application.Channel
 
         public override string Id => Models.Channel.AdaptedFriis.Name;
         public override string Name => Models.Channel.AdaptedFriis.Name;
-        public override SimulationModels Type => SimulationModels.Channel;
+        public override SimulationTypes Type => SimulationTypes.Channel;
         public override ArgumentsBase Arguments => _radioArgs;
     }
 }

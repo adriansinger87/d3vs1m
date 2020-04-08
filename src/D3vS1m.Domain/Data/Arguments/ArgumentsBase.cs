@@ -30,7 +30,7 @@ namespace D3vS1m.Domain.Data.Arguments
 
         // -- properties
 
-        public string Key { get; protected set; }
+        public string Key { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the specific arguments class

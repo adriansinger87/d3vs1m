@@ -140,7 +140,7 @@ namespace D3vS1m.Application.Network
         public override string Id => Models.Network.Name;
         public override string Name => Models.Network.Name;
         public override ArgumentsBase Arguments => _netArgs;
-        public override SimulationModels Type => SimulationModels.Network;
+        public override SimulationTypes Type => SimulationTypes.Network;
 
     }
 }

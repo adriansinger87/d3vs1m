@@ -1,24 +1,18 @@
 ﻿using D3vS1m.Application;
-using D3vS1m.Application.Antenna;
-using D3vS1m.Application.Channel;
-using D3vS1m.Application.Devices;
-using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
-using D3vS1m.Application.Scene.Materials;
 using D3vS1m.Application.Validation;
+using D3vS1m.Cli.Options;
+using D3vS1m.Cli.Reader;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
-using D3vS1m.Persistence.Imports;
 using NLog;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Logging;
 using Sin.Net.Persistence;
-using Sin.Net.Persistence.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace D3vS1m.Cli
@@ -31,28 +25,30 @@ namespace D3vS1m.Cli
         private static PersistenceController _io;
         private static D3vS1mFactory _factory;
         private static RuntimeController _runtime;
-        private static Dictionary<string, ArgumentsBase> _simArgs;
+        private static Dictionary<SimulationTypes, ArgumentsBase> _simArgs;
 
         // -- main
 
         private static async Task Main(string[] args)
         {
             Console.WriteLine("Starting D3vS1m command line tool...");
+
             try
             {
-                Log.Inject(new NLogger { MinRule = LogLevel.Debug }.Start());
+                var options = new OptionParser().ReadArguments(args);
 
-                // -- setup arguments
+                var logger = new NLogger { MinRule = options.Verbose ? LogLevel.Trace : LogLevel.Info };
+                Log.Inject(logger.Start());
 
-                SimArgs.Add(Models.Scene.Key, Factory.NewArgument(Models.Scene.Name));
-                SimArgs.Add(Models.Communication.LrWpan.Key, Factory.NewArgument(Models.Communication.LrWpan.Name));
-                ReadArgs(args);
+                // -- read arguments
+
+                ReadArgs(options);
 
                 // -- setup simulation
 
-                Factory.SetupSimulation(_simArgs.Values.ToArray(), Runtime);
+                Factory.SetupSimulation(SimArgs.Values.ToArray(), Runtime);
 
-                Runtime.Simulators[SimulationModels.Antenna].With(SimArgs[Models.Network.Key]);
+                Runtime.Simulators[SimulationTypes.Antenna].With(SimArgs[SimulationTypes.Network]);
                 Runtime.Stopped += (o, e) =>
                 {
                     WaitForExit();
@@ -87,81 +83,25 @@ namespace D3vS1m.Cli
             Console.ReadKey();
         }
 
-        private static void ReadArgs(string[] args)
+        private static void ReadArgs(CliOptions options)
         {
-            for (int i = 0; i < args.Length; i += 2)
-            {
-                var key = feedKey(args[i]);
-                var val = args[i + 1];
-                feedArg(key, val, IO);
-            }
+            Log.Info("Processing cli options");
 
-            Log.Trace("Reading cli arguments completed.");
+            // HACK: the order is the order of the simulation
+            // TODO: should add a field 'Index' to the args to order them before simulation 
+            SimArgs = new ArgumentsReader(options, Factory, Runtime)
+                .Run(new RuntimeReader())
+                .Run(new DevicesReader())
+                .Run(new SceneReader())
+                .Run(new ChannelReader())
+                .Run(new AntennaReader())
+                .Run(new CommunicationReader())
+                .Arguments;
 
-            // -- local functions
-
-            string feedKey(string arg)
-            {
-                return Regex.Replace(arg, @"[^0-9a-zA-Z]+", "").ToLower();
-            }
-
-            void feedArg(string key, string file, PersistenceController io)
-            {
-                Log.Debug($"Reading cli argument '{key}' with '{file}'.");
-
-                // HACK: fixed magic string that all configs are in the subfolder "App_Data"
-                var location = "App_Data";
-                var setting = new JsonSetting
-                {
-                    Location = location,
-                    Name = file
-                };
-
-                var importer = io.Importer(Constants.Json.Key).Setup(setting);
-
-                // TODO: complete the reading of cli args
-                switch (key)
-                {
-                    case Models.Runtime.Key:
-                        var runArgs = importer.Import().As<RuntimeArgs>();
-                        Runtime.SetArgruments(runArgs);
-                        break;
-                    case Models.Network.Key:
-                        SimArgs.Add(key,
-                            importer.Import().As<NetworkArgs>());
-                        break;
-                    case Models.Devices.Key:
-                        var netArgs = new NetworkArgs();
-                        var devices = importer.Import().As<List<BasicDevice>>();
-                        netArgs.Network.AddRange(devices.ToArray());
-                        SimArgs.Add(Models.Network.Key, netArgs);
-                        break;
-                    case Models.Antenna.Spheric.Key:
-                        var antArgs = importer.Import().As<SphericAntennaArgs>();
-                        var csvSettings = new CsvSetting
-                        {
-                            Location = location,
-                            Name = antArgs.DataSource,
-                        };
-                        antArgs.LoadData(io, csvSettings, Constants.Csv.Key);
-                        SimArgs.Add(key, antArgs);
-                        break;
-                    case Models.Channel.AdaptedFriis.Key:
-                        SimArgs.Add(key,
-                            importer.Import().As<AdaptedFriisArgs>());
-                        break;
-                    case Models.Scene.Materials.Key:
-                        importer.Import().As<List<Material>>();
-                        break;
-                    default:
-                        Log.Warn($"Cannot convert the key '{key}' into an arguemnts class.");
-                        break;
-                }
-            }
+            Log.Info("Cli options processed");
         }
 
         // -- properties
-
 
         private static D3vS1mFactory Factory
         {
@@ -187,28 +127,19 @@ namespace D3vS1m.Cli
             }
         }
 
-        private static PersistenceController IO
-        {
-            get
-            {
-                if (_io == null)
-                {
-                    _io = new PersistenceController();
-                    _io.Add(D3vS1m.Persistence.Constants.Wavefront.Key, new ObjImporter());
-                }
-                return _io;
-            }
-        }
-
-        private static Dictionary<string, ArgumentsBase> SimArgs
+        private static Dictionary<SimulationTypes, ArgumentsBase> SimArgs
         {
             get
             {
                 if (_simArgs == null)
                 {
-                    _simArgs = new Dictionary<string, ArgumentsBase>();
+                    _simArgs = new Dictionary<SimulationTypes, ArgumentsBase>();
                 }
                 return _simArgs;
+            }
+            set
+            {
+                _simArgs = value;
             }
         }
     }

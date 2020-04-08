@@ -40,7 +40,7 @@ namespace D3vS1m.Application.Antenna
 
         public override string Id => Models.Antenna.Simple.Name;
         public override string Name => Models.Antenna.Simple.Name;
-        public override SimulationModels Type => SimulationModels.Antenna;
+        public override SimulationTypes Type => SimulationTypes.Antenna;
         public override ArgumentsBase Arguments => _args;
 
     }

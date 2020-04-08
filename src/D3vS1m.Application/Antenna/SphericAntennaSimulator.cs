@@ -111,6 +111,6 @@ namespace D3vS1m.Application.Antenna
         public override string Id => Models.Antenna.Spheric.Name;
         public override string Name => Models.Antenna.Spheric.Name;
         public override ArgumentsBase Arguments => _antennaArgs;
-        public override SimulationModels Type => SimulationModels.Antenna;
+        public override SimulationTypes Type => SimulationTypes.Antenna;
     }
 }

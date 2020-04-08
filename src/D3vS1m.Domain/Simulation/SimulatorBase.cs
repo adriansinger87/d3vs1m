@@ -125,6 +125,6 @@ namespace D3vS1m.Domain.Simulation
 
         public abstract string Id { get; } // => $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower();
 
-        public abstract SimulationModels Type { get; }
+        public abstract SimulationTypes Type { get; }
     }
 }

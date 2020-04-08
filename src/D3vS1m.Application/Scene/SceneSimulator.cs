@@ -39,7 +39,7 @@ namespace D3vS1m.Application.Scene
 
         public override string Id => Models.Scene.Name;
         public override string Name => Models.Scene.Name;
-        public override SimulationModels Type => SimulationModels.Scene;
+        public override SimulationTypes Type => SimulationTypes.Scene;
         public override ArgumentsBase Arguments => _sceneArgs;
 
     }

@@ -56,6 +56,6 @@ namespace D3vS1m.Domain.Simulation
         /// <summary>
         /// Gets the type of the simulation model
         /// </summary>
-        SimulationModels Type { get; }
+        SimulationTypes Type { get; }
     }
 }

@@ -52,7 +52,7 @@ namespace D3vS1m.Domain.Simulation
         /// <returns>the first instance of T with the matching Id property</returns>
         public ISimulatable this[string id] => Items.FirstOrDefault(s => s.Id == id);
 
-        public ISimulatable this[SimulationModels type] => Items.FirstOrDefault(s => s.Type == type);
+        public ISimulatable this[SimulationTypes type] => Items.FirstOrDefault(s => s.Type == type);
 
     }
 }
