@@ -40,30 +40,23 @@ namespace D3vS1m.Cli
             Console.WriteLine("Starting D3vS1m command line tool...");
             try
             {
-                // -- instantiate
-
-                // TODO: adjust log level for cli app
-                Log.Inject(new NLogger { MinRule = LogLevel.Debug, Suffix = "-suffix" }.Start());
-
-             
-                Runtime.Stopped += (o,e) =>
-                {
-                    WaitForExit();
-                };
-
-                _factory = new D3vS1mFactory();
+                Log.Inject(new NLogger { MinRule = LogLevel.Debug }.Start());
 
                 // -- setup arguments
 
-                SimArgs.Add(Models.Scene.Key, _factory.NewArgument(Models.Scene.Name));
-                SimArgs.Add(Models.Communication.LrWpan.Key, _factory.NewArgument(Models.Communication.LrWpan.Name));
+                SimArgs.Add(Models.Scene.Key, Factory.NewArgument(Models.Scene.Name));
+                SimArgs.Add(Models.Communication.LrWpan.Key, Factory.NewArgument(Models.Communication.LrWpan.Name));
                 ReadArgs(args);
 
                 // -- setup simulation
 
-                _factory.SetupSimulation(_simArgs.Values.ToArray(), Runtime);
+                Factory.SetupSimulation(_simArgs.Values.ToArray(), Runtime);
 
                 Runtime.Simulators[SimulationModels.Antenna].With(SimArgs[Models.Network.Key]);
+                Runtime.Stopped += (o, e) =>
+                {
+                    WaitForExit();
+                };
 
                 // -- run
 
@@ -75,7 +68,7 @@ namespace D3vS1m.Cli
                 Runtime.RunAsync(2);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Fatal(ex);
                 WaitForExit();
@@ -102,6 +95,8 @@ namespace D3vS1m.Cli
                 var val = args[i + 1];
                 feedArg(key, val, IO);
             }
+
+            Log.Trace("Reading cli arguments completed.");
 
             // -- local functions
 
@@ -166,6 +161,19 @@ namespace D3vS1m.Cli
         }
 
         // -- properties
+
+
+        private static D3vS1mFactory Factory
+        {
+            get
+            {
+                if (_factory == null)
+                {
+                    _factory = new D3vS1mFactory();
+                }
+                return _factory;
+            }
+        }
 
         private static RuntimeController Runtime
         {

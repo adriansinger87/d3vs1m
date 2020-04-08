@@ -50,7 +50,7 @@ namespace D3vS1m.Application.Channel
                 }
             }
 
-            Log.Info($"{positions.Length} rx positions created");
+            Log.Trace($"{positions.Length} rx positions created");
             return positions;
         }
 

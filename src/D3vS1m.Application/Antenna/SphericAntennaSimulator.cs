@@ -5,7 +5,6 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Exceptions;
 using Sin.Net.Domain.Persistence.Logging;
 using System;
 
@@ -35,9 +34,18 @@ namespace D3vS1m.Application.Antenna
         /// <returns>the calling instance</returns>
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (ConvertArgs(arguments, ref _antennaArgs)) return this;
-            else if (ConvertArgs(arguments, ref _netArgs)) return this;
-            else return ArgsNotAdded(arguments.Name);
+            if (ConvertArgs(arguments, ref _antennaArgs))
+            {
+                return this;
+            }
+            else if (ConvertArgs(arguments, ref _netArgs))
+            {
+                return this;
+            }
+            else
+            {
+                return ArgsNotAdded(arguments.Name);
+            }
         }
 
         public override void Run()
@@ -99,7 +107,7 @@ namespace D3vS1m.Application.Antenna
             // return the sum of all gain fractions
             return (gain.x + gain.y + gain.z + gain.w);
         }
-        
+
         public override string Id => Models.Antenna.Spheric.Name;
         public override string Name => Models.Antenna.Spheric.Name;
         public override ArgumentsBase Arguments => _antennaArgs;
