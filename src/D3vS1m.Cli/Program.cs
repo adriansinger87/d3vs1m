@@ -7,6 +7,7 @@ using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Scene.Materials;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
 using D3vS1m.Persistence.Imports;
 using NLog;
@@ -39,46 +40,59 @@ namespace D3vS1m.Cli
             Console.WriteLine("Starting D3vS1m command line tool...");
             try
             {
-                // -- init
+                // -- instantiate
 
                 // TODO: adjust log level for cli app
                 Log.Inject(new NLogger { MinRule = LogLevel.Debug, Suffix = "-suffix" }.Start());
 
-                _runtime = new RuntimeController(new D3vS1mValidator());
+             
+                Runtime.Stopped += (o,e) =>
+                {
+                    WaitForExit();
+                };
+
                 _factory = new D3vS1mFactory();
+
+                // -- setup arguments
 
                 SimArgs.Add(Models.Scene.Key, _factory.NewArgument(Models.Scene.Name));
                 SimArgs.Add(Models.Communication.LrWpan.Key, _factory.NewArgument(Models.Communication.LrWpan.Name));
                 ReadArgs(args);
 
-                // -- setup
+                // -- setup simulation
 
-                _factory.SetupSimulation(_simArgs.Values.ToArray(), _runtime);
+                _factory.SetupSimulation(_simArgs.Values.ToArray(), Runtime);
+
+                Runtime.Simulators[SimulationModels.Antenna].With(SimArgs[Models.Network.Key]);
 
                 // -- run
 
-                if (_runtime.Validate() == false)
+                if (Runtime.Validate() == false)
                 {
                     throw new RuntimeException("The runtime validation failed.");
                 }
-                await _runtime.RunAsync(1);
 
-                // -- Finished
+                Runtime.RunAsync(2);
 
-                Console.WriteLine("Simulation successfull!");
             }
             catch(Exception ex)
             {
                 Log.Fatal(ex);
+                WaitForExit();
             }
             finally
             {
-                Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
         }
 
         // -- methods
+
+        private static void WaitForExit()
+        {
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
 
         private static void ReadArgs(string[] args)
         {
@@ -113,6 +127,10 @@ namespace D3vS1m.Cli
                 // TODO: complete the reading of cli args
                 switch (key)
                 {
+                    case Models.Runtime.Key:
+                        var runArgs = importer.Import().As<RuntimeArgs>();
+                        Runtime.SetArgruments(runArgs);
+                        break;
                     case Models.Network.Key:
                         SimArgs.Add(key,
                             importer.Import().As<NetworkArgs>());
@@ -121,7 +139,7 @@ namespace D3vS1m.Cli
                         var netArgs = new NetworkArgs();
                         var devices = importer.Import().As<List<BasicDevice>>();
                         netArgs.Network.AddRange(devices.ToArray());
-                        SimArgs.Add(key, netArgs);
+                        SimArgs.Add(Models.Network.Key, netArgs);
                         break;
                     case Models.Antenna.Spheric.Key:
                         var antArgs = importer.Import().As<SphericAntennaArgs>();
@@ -148,6 +166,18 @@ namespace D3vS1m.Cli
         }
 
         // -- properties
+
+        private static RuntimeController Runtime
+        {
+            get
+            {
+                if (_runtime == null)
+                {
+                    _runtime = new RuntimeController(new D3vS1mValidator());
+                }
+                return _runtime;
+            }
+        }
 
         private static PersistenceController IO
         {

@@ -10,6 +10,7 @@ namespace D3vS1m.Application.Network
 
         public NetworkArgs() : base()
         {
+            Key = Models.Network.Key;
             Reset();
         }
 

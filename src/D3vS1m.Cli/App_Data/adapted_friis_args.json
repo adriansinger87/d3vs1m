@@ -6,18 +6,18 @@
   "UseObstacles": false,
   "RadioBox": {
     "MinCorner": {
-      "X": -10.0,
-      "Y": -10.0,
-      "Z": -10.0,
+      "X": -5.0,
+      "Y": -5.0,
+      "Z": -5.0,
       "Length": 17.320509
     },
     "MaxCorner": {
-      "X": 10.0,
-      "Y": 10.0,
-      "Z": 10.0,
+      "X": 5.0,
+      "Y": 5.0,
+      "Z": 5.0,
       "Length": 17.320509
     },
-    "Resolution": 0.25,
+    "Resolution": 0.2,
     "DataDimension": [
       10,
       10,

@@ -42,6 +42,11 @@ namespace D3vS1m.Application.Runtime
 
         // -- methods
 
+        public void SetArgruments(RuntimeArgs args)
+        {
+            _args = args;
+        }
+
         /// <summary>
         /// Validate the simulation models and their arguments
         /// </summary>
@@ -59,7 +64,8 @@ namespace D3vS1m.Application.Runtime
                     string property = (!string.IsNullOrEmpty(failure.PropertyName) ? $" property: {failure.PropertyName}" : "");
                     Log.Error($"failed validation: {failure.ErrorMessage}{property}");
                 }
-            } else
+            }
+            else
             {
                 Log.Info("Validation passed");
             }

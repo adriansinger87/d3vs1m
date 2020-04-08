@@ -6,6 +6,7 @@ using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 
 namespace D3vS1m.Application.Antenna
@@ -43,12 +44,20 @@ namespace D3vS1m.Application.Antenna
         {
             base.BeforeExecution();
 
-            if (_antennaArgs.GainMatrix != null)
+            if (_antennaArgs.GainMatrix == null)
             {
-                // TODO iterate all network orientation informations and calculate resulting antenna gain
-                // TODO remove test magic numbers
-                //float gain = CalculateGain(45, 45);
+                Log.Warn($"{Arguments.Name} has no gain matrix so the run method is canceled.");
+                base.AfterExecution();
+                return;
             }
+
+            _netArgs.Network.AngleMatrix.Each((r, c, angle) =>
+            {
+                // TODO: Bug on angles or internal indices
+                float gain = _netArgs.Network.RssMatrix[r, c]; // + CalculateGain(angle.Azimuth, angle.Elevation);
+                _netArgs.Network.RssMatrix.Set(r, c, gain);
+                return angle;
+            });
 
             base.AfterExecution();
         }

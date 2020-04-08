@@ -11,6 +11,7 @@ namespace D3vS1m.Application.Channel
     {
         public AdaptedFriisArgs() : base()
         {
+            Key = Models.Channel.AdaptedFriis.Key;
             Name = Models.Channel.AdaptedFriis.Name;
 
             // default settings

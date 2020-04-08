@@ -12,6 +12,7 @@ namespace D3vS1m.Application.Communication
         /// </summary>
         public WirelessCommArgs() : base()
         {
+            Key = Models.Communication.LrWpan.Key;
             Reset();
         }
 

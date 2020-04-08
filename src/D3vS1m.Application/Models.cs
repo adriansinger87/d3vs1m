@@ -5,7 +5,7 @@
         // runtime
         public static class Runtime
         {
-            public const string Key = "rt";
+            public const string Key = "run";
             public const string Name = "D3vS1m runtime";
         }
 

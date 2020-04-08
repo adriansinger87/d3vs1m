@@ -11,6 +11,7 @@ namespace D3vS1m.Application.Energy
 
         public BatteryArgs() : base()
         {
+            Key = Models.Energy.Battery.Key;
             Reset();
         }
 

@@ -106,8 +106,11 @@ namespace MSTests.Application
 
             // final setup, cross-bind some arguments
             var runtime = factory.SetupSimulation(simArgs, _runtime);
+            DumpToJson(runtime.Arguments, "runtime_args.json");
+
             _runtime.Started += (o, e) =>
             {
+               
             };
             
             // act

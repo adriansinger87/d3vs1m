@@ -8,6 +8,7 @@ namespace D3vS1m.Application.Antenna
     {
         public FlatAntennaArgs() : base()
         {
+            Key = Models.Antenna.Flat.Key;
             Reset();
         }
 

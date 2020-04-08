@@ -11,6 +11,7 @@ namespace D3vS1m.Application.Antenna
     {
         public SphericAntennaArgs() : base()
         {
+            Key = Models.Antenna.Spheric.Key;
             Reset();
         }
 

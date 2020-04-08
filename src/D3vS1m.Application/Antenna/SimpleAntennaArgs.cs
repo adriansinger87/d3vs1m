@@ -9,6 +9,7 @@ namespace D3vS1m.Application.Antenna
 
         public SimpleAntennaArgs() : base()
         {
+            Key = Models.Antenna.Simple.Key;
             Reset();
         }
 

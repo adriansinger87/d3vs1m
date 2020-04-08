@@ -126,7 +126,7 @@ namespace D3vS1m.Domain.Runtime
 
             await Task.Run(() =>
             {
-                Log.Trace($"Start simulation");
+                Log.Info($"# Start of simulation");
                 _isRunning = condition(this);
 
                 // fire event on iteration starts
@@ -148,10 +148,19 @@ namespace D3vS1m.Domain.Runtime
                         _isRunning = condition(this);
                     }
                 }
+            })
+            .ContinueWith((t) => {
+                if (t.Status == TaskStatus.Faulted)
+                {
+                    Log.Error($"{t.Exception.InnerExceptions.Count} exception occured during simulation.");
+                    foreach (var e in t.Exception.InnerExceptions)
+                    {
+                        Log.Fatal(e);
+                    }
+                }
 
-                // fire event on iteration stopps
+                Log.Info($"# End of simulation");
                 Stopped?.Invoke(this, new SimulatorEventArgs(Arguments));
-                Log.Trace($"End simulation");
             });
         }
         #endregion

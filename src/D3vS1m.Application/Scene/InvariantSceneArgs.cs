@@ -8,6 +8,7 @@ namespace D3vS1m.Application.Scene
     {
         public InvariantSceneArgs() : base()
         {
+            Key = Models.Scene.Key;
             Reset();
         }
 
