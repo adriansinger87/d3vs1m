@@ -53,8 +53,8 @@ namespace D3vS1m.Application.Antenna
 
             _netArgs.Network.AngleMatrix.Each((r, c, angle) =>
             {
-                // TODO: Bug on angles or internal indices
-                float gain = _netArgs.Network.RssMatrix[r, c]; // + CalculateGain(angle.Azimuth, angle.Elevation);
+                float gain = _netArgs.Network.RssMatrix[r, c];
+                gain += CalculateAntennaGain(angle.Azimuth, angle.Elevation);
                 _netArgs.Network.RssMatrix.Set(r, c, gain);
                 return angle;
             });
@@ -62,7 +62,7 @@ namespace D3vS1m.Application.Antenna
             base.AfterExecution();
         }
 
-        private float CalculateGain(float azimuthDegree, float elevationDegree)
+        private float CalculateAntennaGain(float azimuthDegree, float elevationDegree)
         {
             Matrix<SphericGain> matrix = _antennaArgs.GainMatrix;
             int nAz = matrix.ColsCount;     // number of azimuth values (orizontal)
@@ -75,7 +75,7 @@ namespace D3vS1m.Application.Antenna
             float el_percent = Const.Math.Fract((elevationDegree / el_step));
 
             int row_0 = (int)Math.Floor((elevationDegree / el_step));
-            int row_1 = row_0 + 1;
+            int row_1 = row_0 < nEl - 1 ? row_0 + 1 : row_0 - 1;
 
             int col_0 = (int)Math.Floor((azimuthDegree / az_step));
             int col_1 = col_0 + 1;
