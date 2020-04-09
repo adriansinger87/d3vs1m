@@ -87,6 +87,7 @@ namespace D3vS1m.Domain.Simulation
         /// </summary>
         protected virtual void BeforeExecution()
         {
+            Log.Trace($"- execute {this.Arguments.Name}");
             OnExecuting?.Invoke(this, new SimulatorEventArgs(this.Arguments));
         }
 

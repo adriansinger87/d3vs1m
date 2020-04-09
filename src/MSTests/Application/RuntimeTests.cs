@@ -97,17 +97,21 @@ namespace MSTests.Application
 
             // fill antenna data
             var antennaArgs = simArgs.GetByName(Models.Antenna.Spheric.Name) as SphericAntennaArgs;
+            antennaArgs.Index = 20;
             base.LoadAntennaData(antennaArgs);
             
             // fill network data
             var netArgs = simArgs.GetByName(Models.Network.Name) as NetworkArgs;
+            netArgs.Index = 10;
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
 
             // final setup, cross-bind some arguments
             var runtime = factory.SetupSimulation(simArgs, _runtime);
-            DumpToJson(runtime.Arguments, "runtime_args.json");
 
+            runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
+
+            DumpToJson(runtime.Arguments, "runtime_args.json");
             _runtime.Started += (o, e) =>
             {
                

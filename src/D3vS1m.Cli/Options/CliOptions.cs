@@ -8,7 +8,7 @@
         public CliOptions()
         {
             // HACK: The workspace should be empty so that no specific workspace folder is assumed.
-            Workspace = "App_Data";
+            Workspace = "";
         }
 
         // properties

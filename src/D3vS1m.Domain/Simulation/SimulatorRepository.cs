@@ -29,6 +29,13 @@ namespace D3vS1m.Domain.Simulation
             }
         }
 
+        public List<ISimulatable> SortActiveSimulators()
+        {
+            return Items
+                .Where(s => s.Arguments.Active)
+                .OrderBy(s => s.Arguments.Index).ToList();
+        }
+
         public void SetArguments(string id, ArgumentsBase args)
         {
             this[id].With(args);

@@ -9,7 +9,6 @@ using D3vS1m.Domain.System.Exceptions;
 using NLog;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Logging;
-using Sin.Net.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +21,6 @@ namespace D3vS1m.Cli
 
         // -- fields
 
-        private static PersistenceController _io;
         private static D3vS1mFactory _factory;
         private static RuntimeController _runtime;
         private static Dictionary<SimulationTypes, ArgumentsBase> _simArgs;
@@ -61,7 +59,7 @@ namespace D3vS1m.Cli
                     throw new RuntimeException("The runtime validation failed.");
                 }
 
-                Runtime.RunAsync(2);
+                await Runtime.RunAsync(5);
 
             }
             catch (Exception ex)
@@ -71,7 +69,6 @@ namespace D3vS1m.Cli
             }
             finally
             {
-                Console.ReadKey();
             }
         }
 
@@ -87,10 +84,9 @@ namespace D3vS1m.Cli
         {
             Log.Info("Processing cli options");
 
-            // HACK: the order is the order of the simulation
-            // TODO: should add a field 'Index' to the args to order them before simulation 
             SimArgs = new ArgumentsReader(options, Factory, Runtime)
                 .Run(new RuntimeReader())
+                .Run(new EnergyReader())
                 .Run(new DevicesReader())
                 .Run(new SceneReader())
                 .Run(new ChannelReader())

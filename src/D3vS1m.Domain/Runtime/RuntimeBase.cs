@@ -3,6 +3,7 @@ using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
 using Sin.Net.Domain.Persistence.Logging;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -132,10 +133,10 @@ namespace D3vS1m.Domain.Runtime
                 // fire event on iteration starts
                 Started?.Invoke(this, new SimulatorEventArgs(Arguments));
 
+                var list = _simRepo.SortActiveSimulators();
                 while (_isRunning)
                 {
-                    // iterate all active simulation models
-                    foreach (ISimulatable sim in _simRepo.Items)
+                    foreach (ISimulatable sim in list)
                     {
                         sim.Run();
                     }
@@ -143,7 +144,8 @@ namespace D3vS1m.Domain.Runtime
                     // fire event that one iteration of all simulation models has finished
                     IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
 
-                    if (!_stopping) // separate flag to ensure that the condition method does not overwrite the stop action
+                    // separate flag to ensure that the condition method does not overwrite the stop action
+                    if (!_stopping) 
                     {
                         _isRunning = condition(this);
                     }

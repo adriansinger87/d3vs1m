@@ -33,9 +33,7 @@ namespace D3vS1m.Cli.Options
 
                 SetOption(arg, i, args);
             }
-
             return _options;
-
         }
 
         private void SetOption(string arg, int index, string[] args)

@@ -3,6 +3,7 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 
 namespace D3vS1m.Application.Energy
@@ -15,7 +16,7 @@ namespace D3vS1m.Application.Energy
         private BatteryArgs _batteryArgs;
         private RuntimeArgs _runArgs;
 
-        // -- connstructor
+        // -- connstructor 
 
         /// <summary>
         /// Baware: no runtime will be usable

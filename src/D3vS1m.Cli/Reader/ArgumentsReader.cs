@@ -17,9 +17,9 @@ namespace D3vS1m.Cli.Reader
     public class ArgumentsReader
     {
         // --fields
-        
+
         private PersistenceController _io;
-        
+
         // -- constructor
 
         public ArgumentsReader(CliOptions options, FactoryBase factory, RuntimeBase runtime)

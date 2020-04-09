@@ -1,6 +1,7 @@
 {
   "Guid": "0eba63e0-31b1-4747-a2b7-f1a9e4a232b4",
   "Name": "adapted friis transmission",
+  "Index":  10,
   "AttenuationExponent": 1.25,
   "AttenuationOffset": 0.0,
   "UseObstacles": false,

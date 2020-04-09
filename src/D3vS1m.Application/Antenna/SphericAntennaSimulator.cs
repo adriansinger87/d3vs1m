@@ -52,9 +52,11 @@ namespace D3vS1m.Application.Antenna
         {
             base.BeforeExecution();
 
-            if (_antennaArgs.GainMatrix == null)
+            if (_antennaArgs.GainMatrix == null ||
+                _netArgs == null ||
+                _netArgs.Network != null)
             {
-                Log.Warn($"{Arguments.Name} has no gain matrix so the run method is canceled.");
+                Log.Warn($"{Arguments.Name} has not all needed arguments so the run method is canceled.");
                 base.AfterExecution();
                 return;
             }
