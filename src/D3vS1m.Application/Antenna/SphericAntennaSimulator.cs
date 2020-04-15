@@ -54,7 +54,7 @@ namespace D3vS1m.Application.Antenna
 
             if (_antennaArgs.GainMatrix == null ||
                 _netArgs == null ||
-                _netArgs.Network != null)
+                _netArgs.Network == null)
             {
                 Log.Warn($"{Arguments.Name} has not all needed arguments so the run method is canceled.");
                 base.AfterExecution();

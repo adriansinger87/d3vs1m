@@ -1,5 +1,6 @@
 ﻿using D3vS1m.Application.Scene.Materials;
 using D3vS1m.Persistence;
+using D3vS1m.Persistence.Exports;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Persistence;
 using Sin.Net.Persistence.Settings;
@@ -23,6 +24,27 @@ namespace MSTests.Persistence
         public override void Cleanup()
         {
             base.Cleanup();
+        }
+
+        // -- test methods
+
+        [TestMethod]
+        public void ExportParquet()
+        {
+            // arrange
+            var setting = new FileSetting
+            {
+                Location = "App_Data",
+                Name = "demo.parquet",
+            };
+
+            // act
+            var result = new ParquetExporter()
+                .Setup(setting)
+                .Export();
+
+            // assert
+            Assert.IsTrue(!string.IsNullOrEmpty(result), "There is no file result");
         }
 
         [TestMethod]

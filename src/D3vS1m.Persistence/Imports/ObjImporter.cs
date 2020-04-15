@@ -25,7 +25,7 @@ namespace D3vS1m.Persistence.Imports
             }
             else
             {
-                Log.Error("The json import setting has the wrong type and was not accepted.");
+                Log.Error($"The {this.Type} import setting has the wrong type '{setting.GetType()}' and was not accepted.");
             }
             return this;
         }
@@ -59,6 +59,6 @@ namespace D3vS1m.Persistence.Imports
 
         // -- properties
 
-        string IImportable.Type => D3vS1m.Persistence.Constants.Wavefront.Key;
+        public string Type => D3vS1m.Persistence.Constants.Wavefront.Key;
     }
 }
