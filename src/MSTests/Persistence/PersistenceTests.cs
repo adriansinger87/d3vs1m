@@ -1,10 +1,18 @@
-﻿using D3vS1m.Application.Scene.Materials;
+﻿using D3vS1m.Application;
+using D3vS1m.Application.Network;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Scene.Materials;
+using D3vS1m.Application.Validation;
+using D3vS1m.Domain.System.Enumerations;
+using D3vS1m.Domain.System.Extensions;
 using D3vS1m.Persistence;
 using D3vS1m.Persistence.Exports;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Persistence;
 using Sin.Net.Persistence.Settings;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MSTests.Persistence
 {
@@ -29,18 +37,37 @@ namespace MSTests.Persistence
         // -- test methods
 
         [TestMethod]
-        public void ExportParquet()
+        public async Task ExportParquet()
         {
             // arrange
             var setting = new FileSetting
             {
                 Location = "App_Data",
-                Name = "demo.parquet",
+                Name = "spheric-antenna-args.parquet",
             };
+
+            var runtime = new RuntimeController(new D3vS1mValidator());
+            var factory = new D3vS1mFactory();
+
+            // load all relevant arguments
+            var simArgs = factory.GetPredefinedArguments();
+            var netArgs = simArgs.GetByName(Models.Network.Name) as NetworkArgs;
+            netArgs.Index = 10;
+            netArgs.Network.AddRange(
+               base.ImportDevices().ToArray());
+
+            factory.SetupSimulation(simArgs, runtime);
+            runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
+            if (runtime.Validate() == false)
+            {
+                Assert.Fail("error on validating the simulation");
+            }
+            await runtime.RunAsync(1);
 
             // act
             var result = new ParquetExporter()
                 .Setup(setting)
+                .Build(simArgs.ToList(), new ToParquetAdapter())
                 .Export();
 
             // assert

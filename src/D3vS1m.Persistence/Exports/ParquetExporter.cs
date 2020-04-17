@@ -1,12 +1,16 @@
-﻿using Parquet;
+﻿using D3vS1m.Domain.Data.Arguments;
+using Parquet;
 using Parquet.Data;
+using Parquet.Data.Rows;
 using Sin.Net.Domain.Persistence;
 using Sin.Net.Domain.Persistence.Adapter;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Domain.Persistence.Settings;
 using Sin.Net.Persistence.Settings;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace D3vS1m.Persistence.Exports
 {
@@ -16,6 +20,9 @@ namespace D3vS1m.Persistence.Exports
         // -- fields
 
         private FileSetting _setting;
+
+        private List<ArgumentsBase> _input;
+        private List<DataColumn> _output;
 
         // -- constructors
 
@@ -41,26 +48,21 @@ namespace D3vS1m.Persistence.Exports
 
         public IExportable Build<T>(T data)
         {
-            throw new NotImplementedException();
+            _output = data as List<DataColumn>;
+            return this;
         }
 
         public IExportable Build<T>(T data, IAdaptable adapter)
         {
-            throw new NotImplementedException();
-        }
+            _input = data as List<ArgumentsBase>;
+            _output = adapter.Adapt<List<ArgumentsBase>, List<DataColumn>>(_input);
+            return this;
+        }  
 
         public string Export()
         {
-            var idColumn = new DataColumn(
-            new DataField<int>("id"),
-            new int[] { 1, 2 });
-
-            var cityColumn = new DataColumn(
-               new DataField<string>("city"),
-               new string[] { "London", "Derby" });
-
             // create file schema
-            var schema = new Schema(idColumn.Field, cityColumn.Field);
+            var schema = new Schema(_output.Select(c => c.Field).ToArray());
 
             using (Stream fileStream = System.IO.File.OpenWrite(_setting.FullPath))
             {
@@ -69,8 +71,10 @@ namespace D3vS1m.Persistence.Exports
                     // create a new row group in the file
                     using (ParquetRowGroupWriter groupWriter = parquetWriter.CreateRowGroup())
                     {
-                        groupWriter.WriteColumn(idColumn);
-                        groupWriter.WriteColumn(cityColumn);
+                        foreach (var c in _output)
+                        {
+                            groupWriter.WriteColumn(c);
+                        }
                     }
                 }
             }

@@ -15,6 +15,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Threading.Tasks;
+using D3vS1m.Domain.System.Extensions;
 
 namespace MSTests.Application
 {
