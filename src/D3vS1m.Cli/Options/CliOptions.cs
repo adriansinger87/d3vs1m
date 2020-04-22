@@ -7,37 +7,39 @@
     {
         public CliOptions()
         {
-            // HACK: The workspace should be empty so that no specific workspace folder is assumed.
             Workspace = "";
         }
 
         // properties
 
-        [Options(Short = "w", Long = "workspace")]
+        [Cli(Short = "w", Long = "workspace")]
         public string Workspace { get; set; }
 
-        [Options(Short = "v", Long = "verbose")]
+        [Cli(Short = "v", Long = "verbose")]
         public bool Verbose { get; set; }
 
-        [Options(Short = "t", Long = "runtime")]
+        [Cli(Short = "t", Long = "runtime")]
         public string RuntimeFile { get; set; }
 
-        [Options(Short = "d", Long = "devices")]
+        [Cli(Short = "d", Long = "devices")]
         public string DevicesFile { get; set; }
 
-        [Options(Short = "a", Long = "antenna")]
+        [Cli(Short = "a", Long = "antenna")]
         public string AntennaFile { get; set; }
 
-        [Options(Short = "r", Long = "radio")]
+        [Cli(Short = "r", Long = "radio")]
         public string ChannelFile { get; set; }
 
-        [Options(Short = "c", Long = "comm")]
+        [Cli(Short = "c", Long = "comm")]
         public string CommunicationlFile { get; set; }
 
-        [Options(Short = "e", Long = "energy")]
+        [Cli(Short = "e", Long = "energy")]
         public string EnergyFile { get; set; }
 
-        [Options(Short = "s", Long = "scene")]
+        [Cli(Short = "s", Long = "scene")]
         public string SceneFile { get; set; }
+
+        [Cli(Short = "b", Long = "break")]
+        public bool Break { get; set; }
     }
 }

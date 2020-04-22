@@ -42,7 +42,7 @@ namespace D3vS1m.Cli.Options
 
             foreach (var prop in _options.GetType().GetProperties())
             {
-                var attr = prop.GetCustomAttributes<OptionsAttribute>().First();
+                var attr = prop.GetCustomAttributes<CliAttribute>().First();
 
                 if (!attr.Short.Equals(arg) && !attr.Long.Equals(arg))
                 {

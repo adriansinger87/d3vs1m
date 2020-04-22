@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
+    <ProjectReference Include="..\D3vS1m.Cli\D3vS1m.Cli.csproj" />
     <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
     <ProjectReference Include="..\D3vS1m.Infrastructure\D3vS1m.Infrastructure.csproj" />
     <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />

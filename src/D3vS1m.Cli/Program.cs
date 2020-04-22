@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace D3vS1m.Cli
 {
-    internal class Program
+    public class Program
     {
 
         // -- fields
@@ -27,13 +27,13 @@ namespace D3vS1m.Cli
 
         // -- main
 
-        private static async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             Console.WriteLine("Starting D3vS1m command line tool...");
-
+            var options = new CliOptions();
             try
             {
-                var options = new OptionParser().ReadArguments(args);
+                options = new OptionParser().ReadArguments(args);
 
                 var logger = new NLogger { MinRule = options.Verbose ? LogLevel.Trace : LogLevel.Info };
                 Log.Inject(logger.Start());
@@ -49,7 +49,7 @@ namespace D3vS1m.Cli
                 Runtime.Simulators[SimulationTypes.Antenna].With(SimArgs[SimulationTypes.Network]);
                 Runtime.Stopped += (o, e) =>
                 {
-                    WaitForExit();
+                    WaitAndExit(options.Break);
                 };
 
                 // -- run
@@ -65,7 +65,7 @@ namespace D3vS1m.Cli
             catch (Exception ex)
             {
                 Log.Fatal(ex);
-                WaitForExit();
+                WaitAndExit(options.Break);
             }
             finally
             {
@@ -74,10 +74,17 @@ namespace D3vS1m.Cli
 
         // -- methods
 
-        private static void WaitForExit()
+        private static void WaitAndExit(bool wait = false)
         {
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            if (wait)
+            {
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Goodby!");
+            }
         }
 
         private static void ReadArgs(CliOptions options)

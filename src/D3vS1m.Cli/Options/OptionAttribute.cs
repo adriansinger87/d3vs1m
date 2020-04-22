@@ -6,14 +6,14 @@ namespace D3vS1m.Cli.Options
     /// Attribute class...
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    public class OptionsAttribute : Attribute
+    public class CliAttribute : Attribute
     {
-        public OptionsAttribute()
+        public CliAttribute()
         {
 
         }
 
-        public OptionsAttribute(string shortTerm, string longTerm) : this()
+        public CliAttribute(string shortTerm, string longTerm) : this()
         {
             Short = shortTerm;
             Long = longTerm;
