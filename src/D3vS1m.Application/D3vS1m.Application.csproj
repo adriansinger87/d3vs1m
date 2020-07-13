@@ -13,6 +13,7 @@
     <PackageTags>Simulation IIoT</PackageTags>
     <PackageReleaseNotes>first release</PackageReleaseNotes>
     <PackageIcon>d3vs1m-logo-v2.png</PackageIcon>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="FluentValidation" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
