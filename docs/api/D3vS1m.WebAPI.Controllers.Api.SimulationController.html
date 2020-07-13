@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SimulationController
    | D3vS1m API Reference ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.47.0.0">
     
-    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
@@ -373,6 +373,9 @@
       <span class="xref">Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized()</span>
     </div>
     <div>
+      <span class="xref">Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized(System.Object)</span>
+    </div>
+    <div>
       <span class="xref">Microsoft.AspNetCore.Mvc.ControllerBase.NotFound()</span>
     </div>
     <div>
@@ -625,18 +628,18 @@ public class SimulationController : ApiControllerBase</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Application_FactoryBase_D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController.%23ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment%2CD3vS1m.Application.FactoryBase%2CD3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Domain_Runtime_RuntimeBase_D3vS1m_Application_FactoryBase_Microsoft_AspNetCore_SignalR_IHubContext_D3vS1m_WebAPI_Hubs_ConsoleHub__.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController.%23ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment%2CD3vS1m.Domain.Runtime.RuntimeBase%2CD3vS1m.Application.FactoryBase%2CMicrosoft.AspNetCore.SignalR.IHubContext%7BD3vS1m.WebAPI.Hubs.ConsoleHub%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L38">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L42">View Source</a>
   </span>
   <a id="D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor*"></a>
-  <h4 id="D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Application_FactoryBase_D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase,D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)">SimulationController(IHostingEnvironment, FactoryBase, IMqttControlable)</h4>
+  <h4 id="D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Domain_Runtime_RuntimeBase_D3vS1m_Application_FactoryBase_Microsoft_AspNetCore_SignalR_IHubContext_D3vS1m_WebAPI_Hubs_ConsoleHub__" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Domain.Runtime.RuntimeBase,D3vS1m.Application.FactoryBase,Microsoft.AspNetCore.SignalR.IHubContext{D3vS1m.WebAPI.Hubs.ConsoleHub})">SimulationController(IHostingEnvironment, RuntimeBase, FactoryBase, IHubContext&lt;ConsoleHub&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SimulationController(IHostingEnvironment env, FactoryBase factory, IMqttControlable mqtt)</code></pre>
+    <pre><code class="lang-csharp hljs">public SimulationController(IHostingEnvironment env, RuntimeBase runtime, FactoryBase factory, IHubContext&lt;ConsoleHub&gt; hub)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -654,13 +657,18 @@ public class SimulationController : ApiControllerBase</code></pre>
         <td></td>
       </tr>
       <tr>
+        <td><a class="xref" href="D3vS1m.Domain.Runtime.RuntimeBase.html">RuntimeBase</a></td>
+        <td><span class="parametername">runtime</span></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><a class="xref" href="D3vS1m.Application.FactoryBase.html">FactoryBase</a></td>
         <td><span class="parametername">factory</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html">IMqttControlable</a></td>
-        <td><span class="parametername">mqtt</span></td>
+        <td><span class="xref">Microsoft.AspNetCore.SignalR.IHubContext</span>&lt;<a class="xref" href="D3vS1m.WebAPI.Hubs.ConsoleHub.html">ConsoleHub</a>&gt;</td>
+        <td><span class="parametername">hub</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -669,10 +677,10 @@ public class SimulationController : ApiControllerBase</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController_Get.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController_Get.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L48">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L56">View Source</a>
   </span>
   <a id="D3vS1m_WebAPI_Controllers_Api_SimulationController_Get_" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.Get*"></a>
   <h4 id="D3vS1m_WebAPI_Controllers_Api_SimulationController_Get" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.Get">Get()</h4>
@@ -700,20 +708,20 @@ public JsonResult Get()</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_System_String_System_Object_.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_System_Object_.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L60">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L68">View Source</a>
   </span>
   <a id="D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.Run*"></a>
-  <h4 id="D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_System_String_System_Object_" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.String,System.Object)">Run(String, Object)</h4>
+  <h4 id="D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_System_Object_" data-uid="D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.Object)">Run(Object)</h4>
   <div class="markdown level1 summary"><p>GET: api/simulation/run</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpPost(&quot;run/{guid}&quot;)]
-public Task&lt;JsonResult&gt; Run(string guid, [FromBody] dynamic args)</code></pre>
+public JsonResult Run([FromBody] dynamic args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -725,11 +733,6 @@ public Task&lt;JsonResult&gt; Run(string guid, [FromBody] dynamic args)</code></
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">guid</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">args</span></td>
@@ -747,7 +750,7 @@ public Task&lt;JsonResult&gt; Run(string guid, [FromBody] dynamic args)</code></
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.JsonResult</span>&gt;</td>
+        <td><span class="xref">Microsoft.AspNetCore.Mvc.JsonResult</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -764,10 +767,10 @@ public Task&lt;JsonResult&gt; Run(string guid, [FromBody] dynamic args)</code></
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_WebAPI_Controllers_Api_SimulationController.md&amp;value=---%0Auid%3A%20D3vS1m.WebAPI.Controllers.Api.SimulationController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L19" class="contribution-link">View Source</a>
+                    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Web/Controllers/Api/SimulationController.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
