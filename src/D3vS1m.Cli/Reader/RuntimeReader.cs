@@ -5,7 +5,7 @@ namespace D3vS1m.Cli.Reader
 {
     internal class RuntimeReader : IReadable
     {
-        public void Read(ArgumentsReader reader)
+        public void Read(ReaderPipeline reader)
         {
             if (string.IsNullOrEmpty(reader.Options.RuntimeFile) == false)
             {
@@ -20,7 +20,7 @@ namespace D3vS1m.Cli.Reader
                     .Import()
                     .As<RuntimeArgs>();
 
-                (reader.Runtime as RuntimeController).SetArgruments(args);
+                reader.Runtime.With(args);
             }
         }
     }

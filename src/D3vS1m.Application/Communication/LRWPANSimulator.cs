@@ -41,7 +41,7 @@ namespace D3vS1m.Application.Communication
 
         // -- properties
 
-        public override string Id => Models.Communication.LrWpan.Name;
+        public override string Key => Models.Communication.LrWpan.Name;
         public override string Name => Models.Communication.LrWpan.Name;
         public override SimulationTypes Type => SimulationTypes.Communication;
         public override ArgumentsBase Arguments => _commArgs;

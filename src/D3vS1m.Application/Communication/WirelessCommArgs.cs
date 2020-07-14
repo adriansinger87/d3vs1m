@@ -13,12 +13,12 @@ namespace D3vS1m.Application.Communication
         public WirelessCommArgs() : base()
         {
             Key = Models.Communication.LrWpan.Key;
+            Name = Models.Communication.LrWpan.Name;
             Reset();
         }
 
         public override void Reset()
         {
-            Name = Models.Communication.LrWpan.Name;
             TxFrequencyMHz = 2405;
             TxPowerDBm = 1;
         }

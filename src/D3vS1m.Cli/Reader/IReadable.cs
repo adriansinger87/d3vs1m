@@ -6,6 +6,6 @@ namespace D3vS1m.Cli.Reader
 {
     public interface IReadable
     {
-        void Read(ArgumentsReader reader);
+        void Read(ReaderPipeline reader);
     }
 }

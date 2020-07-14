@@ -137,7 +137,7 @@ namespace D3vS1m.Application.Network
 
         // -- properties       
 
-        public override string Id => Models.Network.Name;
+        public override string Key => Models.Network.Name;
         public override string Name => Models.Network.Name;
         public override ArgumentsBase Arguments => _netArgs;
         public override SimulationTypes Type => SimulationTypes.Network;

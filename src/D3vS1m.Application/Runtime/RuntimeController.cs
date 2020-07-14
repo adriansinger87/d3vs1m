@@ -47,9 +47,15 @@ namespace D3vS1m.Application.Runtime
 
         // -- methods
 
-        public void SetArgruments(RuntimeArgs args)
+        /// <summary>
+        /// The arguments must be of type RuntimeArgs.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public override RuntimeBase With(ArgumentsBase args)
         {
-            _args = args;
+            _args = args as RuntimeArgs;
+            return this;
         }
 
         /// <summary>

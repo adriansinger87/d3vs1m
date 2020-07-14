@@ -183,7 +183,7 @@ namespace D3vS1m.Application.Energy
         }
 
         // -- properties
-        public override string Id => Models.Energy.Battery.Name;
+        public override string Key => Models.Energy.Battery.Name;
         public override string Name => Models.Energy.Battery.Name;
         public override SimulationTypes Type => SimulationTypes.Energy;
         public override ArgumentsBase Arguments => _batteryArgs;

@@ -1,6 +1,7 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Diagnostics;
@@ -45,18 +46,27 @@ namespace D3vS1m.Domain.Runtime
 
         // -- methods
 
+        public abstract RuntimeBase With(ArgumentsBase args);
+
         /// <summary>
         /// Takes the Simulator Repository instance with all ready-to-go simulators and sets the internal valid-state to invalid.
         /// This ensures that the concretion of this base class implements a validation method and runs it before the simulation. 
         /// </summary>
         /// <param name="simulatorRepo">The repository instance</param>
         /// <returns>Returns the calling instance for method chaining</returns>
-        public RuntimeBase Setup(SimulatorRepository simulatorRepo)
+        public RuntimeBase BindSimulators(SimulatorRepository simulatorRepo)
         {
             _isValid = false;
             _simRepo = simulatorRepo;
             return this;
         }
+
+        public RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
+		{
+            action(_simRepo);
+            return this;
+		}
+
 
         /// <summary>
         /// The conrete runtime implementation implements the validation of all simulation models here.

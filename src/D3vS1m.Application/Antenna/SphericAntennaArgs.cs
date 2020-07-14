@@ -12,12 +12,13 @@ namespace D3vS1m.Application.Antenna
         public SphericAntennaArgs() : base()
         {
             Key = Models.Antenna.Spheric.Key;
+            Name = Models.Antenna.Spheric.Name;
             Reset();
         }
 
         public override void Reset()
         {
-            Name = Models.Antenna.Spheric.Name;
+           
         }
 
         public void LoadData(IPersistenceControlable io, SettingsBase setting, string key)

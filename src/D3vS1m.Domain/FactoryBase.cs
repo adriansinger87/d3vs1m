@@ -24,7 +24,7 @@ namespace D3vS1m.Application
 
         public abstract ISimulatable RegisterSimulator(ISimulatable simulator, ArgumentsBase args);
 
-        public abstract RuntimeBase SetupSimulation(ArgumentsBase[] args, RuntimeBase runtime);
+        public abstract RuntimeBase SetupRuntime(ArgumentsBase[] args, RuntimeBase runtime);
 
         // -- properties
 

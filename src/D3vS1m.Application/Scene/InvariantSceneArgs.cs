@@ -9,12 +9,13 @@ namespace D3vS1m.Application.Scene
         public InvariantSceneArgs() : base()
         {
             Key = Models.Scene.Key;
+            Name = Models.Scene.Name;
             Reset();
         }
 
         public override void Reset()
         {
-            Name = Models.Scene.Name;
+            
         }
 
         public object[] Obstacles { get; }

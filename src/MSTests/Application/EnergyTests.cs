@@ -69,7 +69,7 @@ namespace MSTests.Application
 
             var repo = new SimulatorRepository();
             repo.Add(batterySim);
-            if (runtime.Setup(repo).Validate() == false)
+            if (runtime.BindSimulators(repo).Validate() == false)
             {
                 Assert.Fail("error on validating the simulation");
             }

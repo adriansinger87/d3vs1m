@@ -1,3 +1,3 @@
-# Examples and Articles
+# Tutorials and Articles
 
-Some introductions will follow with the next releases.
+The articles on the left menu provide further information about the framework.

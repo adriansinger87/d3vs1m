@@ -124,7 +124,7 @@ namespace D3vS1m.Domain.Simulation
 
         public string Guid { get; private set; }
 
-        public abstract string Id { get; } // => $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower();
+        public abstract string Key { get; }
 
         public abstract SimulationTypes Type { get; }
     }

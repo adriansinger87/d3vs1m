@@ -108,7 +108,7 @@ namespace MSTests.Application
                base.ImportDevices().ToArray());
 
             // final setup, cross-bind some arguments
-            var runtime = factory.SetupSimulation(simArgs, _runtime);
+            var runtime = factory.SetupRuntime(simArgs, _runtime);
 
             runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
 

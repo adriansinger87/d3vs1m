@@ -56,7 +56,7 @@ namespace MSTests.Persistence
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
 
-            factory.SetupSimulation(simArgs, runtime);
+            factory.SetupRuntime(simArgs, runtime);
             runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
             if (runtime.Validate() == false)
             {

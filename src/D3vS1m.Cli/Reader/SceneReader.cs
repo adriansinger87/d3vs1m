@@ -8,7 +8,7 @@ namespace D3vS1m.Cli.Reader
 {
     public class SceneReader : IReadable
     {
-        public void Read(ArgumentsReader reader)
+        public void Read(ReaderPipeline reader)
         {
             var args = reader.Factory.NewArgument(Models.Scene.Name);
             reader.Arguments.Add(SimulationTypes.Scene, args);

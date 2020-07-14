@@ -43,7 +43,7 @@ namespace MSTests.Application
 
             var simRepo = new SimulatorRepository();
             simRepo.Add(netSim);
-            runtime.Setup(simRepo)
+            runtime.BindSimulators(simRepo)
                 .Validate();
 
             // act one iteration 

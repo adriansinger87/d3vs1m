@@ -141,7 +141,7 @@ namespace D3vS1m.Application.Channel
 
         // -- properties
 
-        public override string Id => Models.Channel.AdaptedFriis.Name;
+        public override string Key => Models.Channel.AdaptedFriis.Key;
         public override string Name => Models.Channel.AdaptedFriis.Name;
         public override SimulationTypes Type => SimulationTypes.Channel;
         public override ArgumentsBase Arguments => _radioArgs;

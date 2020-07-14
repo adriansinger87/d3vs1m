@@ -130,7 +130,7 @@ namespace D3vS1m.Application
             return simulator;
         }
 
-        public override RuntimeBase SetupSimulation(ArgumentsBase[] args, RuntimeBase runtime)
+        public override RuntimeBase SetupRuntime(ArgumentsBase[] args, RuntimeBase runtime)
         {
             base.Simulators.Clear();
             foreach (var arg in args)
@@ -139,7 +139,7 @@ namespace D3vS1m.Application
                     NewSimulator(arg.Name, runtime), arg);
             }
 
-            runtime.Setup(Simulators);
+            runtime.BindSimulators(Simulators);
             return runtime;
         }
 

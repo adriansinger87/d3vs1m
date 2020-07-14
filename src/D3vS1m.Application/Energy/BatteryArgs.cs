@@ -12,6 +12,8 @@ namespace D3vS1m.Application.Energy
         public BatteryArgs() : base()
         {
             Key = Models.Energy.Battery.Key;
+            Name = Models.Energy.Battery.Name;
+            Batteries = new List<BatteryPack>();
             Reset();
         }
 
@@ -19,8 +21,7 @@ namespace D3vS1m.Application.Energy
 
         public override void Reset()
         {
-            Name = Models.Energy.Battery.Name;
-            Batteries = new List<BatteryPack>();
+           
         }
 
         // -- properties

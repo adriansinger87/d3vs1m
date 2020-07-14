@@ -14,22 +14,15 @@ namespace D3vS1m.Application.Channel
             Key = Models.Channel.AdaptedFriis.Key;
             Name = Models.Channel.AdaptedFriis.Name;
 
-            // default settings
-            this.RadioBox = new RadioCuboid();
-
-            AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
-            AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
+            Reset();
         }
 
         // -- methods
 
         public override void Reset()
         {
-            Name = Models.Channel.AdaptedFriis.Name;
-
             // default settings
             RadioBox = new RadioCuboid();
-
             AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
             AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
         }

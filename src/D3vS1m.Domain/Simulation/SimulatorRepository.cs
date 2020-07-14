@@ -53,11 +53,11 @@ namespace D3vS1m.Domain.Simulation
         // -- indexer
 
         /// <summary>
-        /// id-based intexer to be able to get the instance with the same id.
+        /// Key-based intexer to be able to get the instance with the same Key.
         /// </summary>
-        /// <param name="id">id property in the simulator instances</param>
+        /// <param name="key">The key property in the simulator instances</param>
         /// <returns>the first instance of T with the matching Id property</returns>
-        public ISimulatable this[string id] => Items.FirstOrDefault(s => s.Id == id);
+        public ISimulatable this[string key] => Items.FirstOrDefault(s => s.Key == key);
 
         public ISimulatable this[SimulationTypes type] => Items.FirstOrDefault(s => s.Type == type);
 

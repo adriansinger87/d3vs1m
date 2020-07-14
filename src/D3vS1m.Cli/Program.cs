@@ -4,6 +4,7 @@ using D3vS1m.Application.Validation;
 using D3vS1m.Cli.Options;
 using D3vS1m.Cli.Reader;
 using D3vS1m.Domain.Data.Arguments;
+using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
 using NLog;
@@ -42,11 +43,15 @@ namespace D3vS1m.Cli
 
                 ReadArgs(options);
 
-                // -- setup simulation
+                // -- setup
 
-                Factory.SetupSimulation(SimArgs.Values.ToArray(), Runtime);
+                Factory.SetupRuntime(SimArgs.Values.ToArray(), Runtime);
 
-                Runtime.Simulators[SimulationTypes.Antenna].With(SimArgs[SimulationTypes.Network]);
+                Runtime.SetupSimulators((repo) => {
+
+                    repo[SimulationTypes.Antenna].With(SimArgs[SimulationTypes.Network]);
+                });
+
                 Runtime.Stopped += (o, e) =>
                 {
                     WaitAndExit(options.Break);
@@ -91,7 +96,7 @@ namespace D3vS1m.Cli
         {
             Log.Info("Processing cli options");
 
-            SimArgs = new ArgumentsReader(options, Factory, Runtime)
+            SimArgs = new ReaderPipeline(options, Factory, Runtime)
                 .Run(new RuntimeReader())
                 .Run(new EnergyReader())
                 .Run(new DevicesReader())

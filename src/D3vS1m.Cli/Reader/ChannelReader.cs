@@ -10,7 +10,7 @@ namespace D3vS1m.Cli.Reader
 {
     internal class ChannelReader : IReadable
     {
-        public void Read(ArgumentsReader reader)
+        public void Read(ReaderPipeline reader)
         {
             var args = reader.Factory.NewArgument(Models.Channel.AdaptedFriis.Name) as AdaptedFriisArgs;
 

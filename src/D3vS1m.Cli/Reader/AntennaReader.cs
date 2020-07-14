@@ -9,14 +9,14 @@ namespace D3vS1m.Cli.Reader
 {
     internal class AntennaReader : IReadable
     {
-        private ArgumentsReader _reader;
+        private ReaderPipeline _reader;
 
         public AntennaReader()
         {
 
         }
 
-        public void Read(ArgumentsReader reader)
+        public void Read(ReaderPipeline reader)
         {
             _reader = reader;
 
@@ -24,7 +24,7 @@ namespace D3vS1m.Cli.Reader
 
             if (string.IsNullOrEmpty(reader.Options.AntennaFile))
             {
-                // no antenna option alias a file present
+                // There is no antenna option or a file present
                 reader.Arguments.Add(SimulationTypes.Antenna, arg);
                 return; 
             }
