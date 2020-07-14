@@ -5,37 +5,37 @@ using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Persistence.IO.Json;
 using Sin.Net.Persistence.Settings;
 
-namespace D3vS1m.Cli.Reader
+namespace D3vS1m.Persistence.Imports.Reader
 {
-    internal class AntennaReader : IReadable
+    public class AntennaReader : IReadable
     {
-        private ReaderPipeline _reader;
+        private ImportPipeline _pipe;
 
         public AntennaReader()
         {
 
         }
 
-        public void Read(ReaderPipeline reader)
+        public void Read(ImportPipeline pipe)
         {
-            _reader = reader;
+            _pipe = pipe;
 
-            ArgumentsBase arg = reader.Factory.NewArgument(Models.Antenna.Simple.Name);
+            ArgumentsBase arg = pipe.Factory.NewArgument(Models.Antenna.Simple.Name);
 
-            if (string.IsNullOrEmpty(reader.Options.AntennaFile))
+            if (string.IsNullOrEmpty(pipe.Options.AntennaFile))
             {
                 // There is no antenna option or a file present
-                reader.Arguments.Add(SimulationTypes.Antenna, arg);
+                pipe.Arguments.Add(SimulationTypes.Antenna, arg);
                 return; 
             }
 
             var setting = new JsonSetting
             {
-                Location = reader.Options.Workspace,
-                Name = reader.Options.AntennaFile
+                Location = pipe.Options.Workspace,
+                Name = pipe.Options.AntennaFile
             };
 
-            string json = reader.IO.Importer(Sin.Net.Persistence.Constants.Json.Key)
+            string json = pipe.IO.Importer(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(setting)
                 .Import()
                 .AsItIs().ToString();
@@ -58,7 +58,7 @@ namespace D3vS1m.Cli.Reader
             }
 
             // arguments file loaded
-            reader.Arguments.Add(SimulationTypes.Antenna, arg);
+            pipe.Arguments.Add(SimulationTypes.Antenna, arg);
         }
 
         private ArgumentsBase ReadSphericAntenna(string json)
@@ -69,7 +69,7 @@ namespace D3vS1m.Cli.Reader
                 Name = spa.DataSource
             };
             var csvKey = Sin.Net.Persistence.Constants.Csv.Key;
-            spa.LoadData(_reader.IO, csvSetting, csvKey);
+            spa.LoadData(_pipe.IO, csvSetting, csvKey);
 
             return spa;
         }

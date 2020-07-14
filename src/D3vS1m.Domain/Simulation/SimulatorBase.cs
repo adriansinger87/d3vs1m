@@ -28,13 +28,7 @@ namespace D3vS1m.Domain.Simulation
         [field: NonSerialized]
         public event SimulatorEventHandler Executed;
 
-
         // -- constructor
-
-        //public SimulatorBase()
-        //{
-        //    Guid = global::System.Guid.NewGuid().ToString();
-        //}
 
         public SimulatorBase(RuntimeBase runtime)
         {

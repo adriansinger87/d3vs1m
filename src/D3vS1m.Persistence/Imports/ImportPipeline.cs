@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using D3vS1m.Application;
-using D3vS1m.Cli.Options;
+using D3vS1m.Application.Runtime.Options;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Persistence.Imports;
+using D3vS1m.Persistence.Imports.Reader;
 using Sin.Net.Persistence;
 
-namespace D3vS1m.Cli.Reader
+namespace D3vS1m.Persistence.Imports
 {
-	public class ReaderPipeline
+	public class ImportPipeline
 	{
 		// --fields
 
@@ -17,7 +17,7 @@ namespace D3vS1m.Cli.Reader
 
 		// -- constructor
 
-		public ReaderPipeline(CliOptions options, FactoryBase factory, RuntimeBase runtime)
+		public ImportPipeline(OptionsBase options, FactoryBase factory, RuntimeBase runtime)
 		{
 			Arguments = new Dictionary<SimulationTypes, ArgumentsBase>();
 			Options = options;
@@ -27,7 +27,7 @@ namespace D3vS1m.Cli.Reader
 
 		// -- methods;
 
-		public ReaderPipeline Run(IReadable reader)
+		public ImportPipeline Run(IReadable reader)
 		{
 			reader.Read(this);
 			return this;
@@ -37,7 +37,7 @@ namespace D3vS1m.Cli.Reader
 
 		public Dictionary<SimulationTypes, ArgumentsBase> Arguments { get; private set; }
 
-		public CliOptions Options { get; private set; }
+		public OptionsBase Options { get; private set; }
 
 		public FactoryBase Factory { get; private set; }
 
