@@ -67,11 +67,24 @@ namespace MSTests.Persistence
             // act
             var result = new ParquetExporter()
                 .Setup(setting)
-                .Build(simArgs.ToList(), new ToParquetAdapter())
+                .Build(simArgs.ToList(), new SimArgsToParquetAdapter())
                 .Export();
 
             // assert
             Assert.IsTrue(!string.IsNullOrEmpty(result), "There is no file result");
+        }
+
+        [TestMethod] 
+        public void MultipleWritesToParquet()
+		{
+            //var adapter = new 
+            //var result = new ParquetExporter()
+            //   .Setup(setting)
+            //   .Build(simArgs.ToList(), new SimArgsToParquetAdapter())
+            //   .Export();
+
+            //// assert
+            //Assert.IsTrue(!string.IsNullOrEmpty(result), "There is no file result");
         }
 
         [TestMethod]

@@ -2,7 +2,10 @@
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using Sin.Net.Domain.Persistence;
+using Sin.Net.Domain.Persistence.Adapter;
 using Sin.Net.Domain.Persistence.Logging;
+using Sin.Net.Domain.Persistence.Settings;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -64,6 +67,16 @@ namespace D3vS1m.Domain.Runtime
         public RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
 		{
             action(_simRepo);
+            return this;
+        }
+
+        public RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
+		{
+            exporter
+                .Setup(setting)
+                .Build(_simRepo.AllArguments, adapter)
+                .Export();
+
             return this;
 		}
 

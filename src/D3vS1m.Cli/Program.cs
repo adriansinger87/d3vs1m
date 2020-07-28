@@ -12,6 +12,8 @@ using D3vS1m.Domain.System.Exceptions;
 using D3vS1m.Persistence.Imports;
 using D3vS1m.Persistence.Imports.Reader;
 using NLog;
+using Sin.Net.Domain.Persistence;
+using Sin.Net.Domain.Persistence.Adapter;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Logging;
 

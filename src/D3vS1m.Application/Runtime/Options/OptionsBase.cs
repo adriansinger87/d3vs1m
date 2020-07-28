@@ -23,14 +23,14 @@ namespace D3vS1m.Application.Runtime.Options
 
         public abstract string AntennaFile { get; set; }
 
-        public string ChannelFile { get; set; }
+        public abstract string ChannelFile { get; set; }
 
-        public string CommunicationlFile { get; set; }
+        public abstract string CommunicationlFile { get; set; }
 
-        public string EnergyFile { get; set; }
+        public abstract string EnergyFile { get; set; }
 
-        public string SceneFile { get; set; }
+        public abstract string SceneFile { get; set; }
 
-        public bool Break { get; set; }
+        public abstract bool Break { get; set; }
     }
 }

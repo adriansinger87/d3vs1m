@@ -1,14 +1,16 @@
-﻿using Sin.Net.Domain.Persistence;
+﻿using Sin.Net.Domain.Exeptions;
+using Sin.Net.Domain.Persistence;
 using Sin.Net.Domain.Persistence.Adapter;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Domain.Persistence.Settings;
+using Sin.Net.Persistence.Imports;
 using Sin.Net.Persistence.Settings;
 using System;
 using System.IO;
 
 namespace D3vS1m.Persistence.Imports
 {
-    public class ObjImporter : IImportable
+    public class ObjImporter : ImporterBase
     {
         // -- fields
 
@@ -17,20 +19,21 @@ namespace D3vS1m.Persistence.Imports
 
         // -- methods
 
-        public IImportable Setup(SettingsBase setting)
+        public override IImportable Setup(SettingsBase setting)
         {
-            if (setting is FileSetting)
+            try
             {
                 _setting = setting as FileSetting;
             }
-            else
+            catch (Exception ex)
             {
                 Log.Error($"The {this.Type} import setting has the wrong type '{setting.GetType()}' and was not accepted.");
+                base.HandleException(ex);
             }
             return this;
         }
 
-        public IImportable Import()
+        public override IImportable Import()
         {
             StreamReader reader = new StreamReader(_setting.FullPath);
             _importObj = reader.ReadToEnd();
@@ -42,23 +45,23 @@ namespace D3vS1m.Persistence.Imports
         /// </summary>
         /// <typeparam name="T">T should be a string</typeparam>
         /// <returns>The string of the stream data converted to string</returns>
-        public T As<T>() where T : new()
+        public override T As<T>()
         {
             return (T)Convert.ChangeType(_importObj, typeof(T));
         }
 
-        public T As<T>(IAdaptable adapter) where T : new()
+        public override T As<T>(IAdaptable adapter)
         {
             return adapter.Adapt<string, T>(_importObj);
         }
 
-        public object AsItIs()
+        public override object AsItIs()
         {
             return _importObj;
         }
 
-        // -- properties
+		// -- properties
 
-        public string Type => D3vS1m.Persistence.Constants.Wavefront.Key;
-    }
+		public override string Type => D3vS1m.Persistence.Constants.Wavefront.Key;
+	}
 }

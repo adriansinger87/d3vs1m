@@ -8,7 +8,7 @@ using System.Text;
 
 namespace D3vS1m.Persistence.Exports
 {
-    public class ToParquetAdapter : AdapterBase
+    public class SimArgsToParquetAdapter : AdapterBase
     {
 
         // -- fields
@@ -32,8 +32,6 @@ namespace D3vS1m.Persistence.Exports
             foreach(var arg in args)
             {
                 if (arg is NetworkArgs) Adapt(arg as NetworkArgs);
-
-                
             }
 
             return ConvertOutput<Tout>(_columns);
