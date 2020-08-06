@@ -35,7 +35,7 @@ namespace D3vS1m.Application.Runtime
         /// The constructor gets the concrete validator injected and instanciates the concrete arguments of RuntimeArgs type
         /// </summary>
         /// <param name="validator">The validator concretion could be of type BasicValidator or a derived class</param>
-        public RuntimeController(BasicValidator validator)
+        public RuntimeController(BasicValidator validator) :base()
         {
             _validator = validator;
             _args = new RuntimeArgs();

@@ -16,7 +16,6 @@ namespace D3vS1m.Domain.Runtime
     /// <summary>
     /// Abstract class with some base functionality to setup and run the desired simulation models
     /// </summary>
-    [Serializable]
     public abstract class RuntimeBase
     {
         // -- fields
@@ -32,20 +31,25 @@ namespace D3vS1m.Domain.Runtime
         /// <summary>
         /// The event gets fired when the simulation starts the first iteration. 
         /// </summary>
-        [field: NonSerialized]
         public event SimulatorEventHandler Started;
 
         /// <summary>
         /// The event gets fired when the simulation stoppes the last iteration. 
         /// </summary>
-        [field: NonSerialized]
         public event SimulatorEventHandler Stopped;
 
         /// <summary>
         /// The event gets fired when the execution of all simulation models has finished one iteration 
         /// </summary>
-        [field: NonSerialized]
         public event SimulatorEventHandler IterationPassed;
+
+		// -- constructor
+
+		public RuntimeBase()
+		{
+            _simRepo = new SimulatorRepository();
+
+        }
 
         // -- methods
 
@@ -57,20 +61,20 @@ namespace D3vS1m.Domain.Runtime
         /// </summary>
         /// <param name="simulatorRepo">The repository instance</param>
         /// <returns>Returns the calling instance for method chaining</returns>
-        public RuntimeBase BindSimulators(SimulatorRepository simulatorRepo)
+        public virtual RuntimeBase BindSimulators(SimulatorRepository simulatorRepo)
         {
             _isValid = false;
             _simRepo = simulatorRepo;
             return this;
         }
 
-        public RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
+        public virtual RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
 		{
             action(_simRepo);
             return this;
         }
 
-        public RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
+        public virtual RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
 		{
             exporter
                 .Setup(setting)
@@ -79,7 +83,6 @@ namespace D3vS1m.Domain.Runtime
 
             return this;
 		}
-
 
         /// <summary>
         /// The conrete runtime implementation implements the validation of all simulation models here.
