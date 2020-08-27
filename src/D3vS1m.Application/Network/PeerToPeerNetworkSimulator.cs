@@ -1,4 +1,5 @@
-﻿using D3vS1m.Domain.Data.Arguments;
+﻿using D3vS1m.Application.Energy;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;

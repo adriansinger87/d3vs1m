@@ -92,7 +92,7 @@ namespace MSTests
 			return radioArgs;
 		}
 
-		public List<BasicDevice> ImportDevices(string filename = "devices.json")
+		public List<SimpleDevice> ImportDevices(string filename = "devices.json")
 		{
 			// arrange
 			var _setting = new JsonSetting
@@ -103,10 +103,10 @@ namespace MSTests
 
 			IPersistenceControlable io = new PersistenceController();
 			// act
-			List<BasicDevice> devices = io.Importer(Sin.Net.Persistence.Constants.Json.Key)
+			List<SimpleDevice> devices = io.Importer(Sin.Net.Persistence.Constants.Json.Key)
 				.Setup(_setting)
 				.Import()
-				.As<List<BasicDevice>>();
+				.As<List<SimpleDevice>>();
 
 			return devices;
 		}

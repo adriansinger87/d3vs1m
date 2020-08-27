@@ -1,4 +1,6 @@
-﻿using D3vS1m.Application.Energy;
+﻿using D3vS1m.Application.Devices;
+using D3vS1m.Application.Energy;
+using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Runtime;
@@ -62,9 +64,15 @@ namespace MSTests.Application
             var batteryArgs = new BatteryArgs();
             batteryArgs.Batteries.Add(_battery);
 
+            var netArgs = new NetworkArgs();
+            var device = new SimpleDevice();
+            device.Parts.Add(_battery);
+            netArgs.Network.Add(device);
+
             var batterySim = new BatteryPackSimulator();
             batterySim
               .With(batteryArgs)
+              .With(netArgs)
               .With(runtime.Arguments);
 
             var repo = new SimulatorRepository();

@@ -5,9 +5,9 @@ using System;
 namespace D3vS1m.Application.Devices
 {
     [Serializable]
-    public class BasicDevice
+    public class SimpleDevice
     {
-        public BasicDevice()
+        public SimpleDevice()
         {
             Uuid = Guid.NewGuid().ToString();
 

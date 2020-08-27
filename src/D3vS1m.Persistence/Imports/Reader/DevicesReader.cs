@@ -31,7 +31,7 @@ namespace D3vS1m.Persistence.Imports.Reader
             var devices = pipe.IO.Importer(Sin.Net.Persistence.Constants.Json.Key)
                 .Setup(setting)
                 .Import()
-                .As<List<BasicDevice>>();
+                .As<List<SimpleDevice>>();
 
             args.Network.AddRange(devices.ToArray());
             pipe.Arguments.Add(SimulationTypes.Network, args);

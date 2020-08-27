@@ -111,6 +111,7 @@ namespace MSTests.Application
             var runtime = factory.SetupRuntime(simArgs, _runtime);
 
             runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
+            runtime.Simulators[SimulationTypes.Energy].With(netArgs);
 
             DumpToJson(runtime.Arguments, "runtime_args.json");
             _runtime.Started += (o, e) =>
