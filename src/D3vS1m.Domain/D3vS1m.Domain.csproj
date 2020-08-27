@@ -13,9 +13,9 @@
     <RepositoryUrl>https://github.com/adriansinger87/d3vs1m</RepositoryUrl>
     <PackageTags>Simulation IIoT</PackageTags>
     <PackageReleaseNotes>first release</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
