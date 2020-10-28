@@ -3,25 +3,29 @@ on:
   push:
     branches:
       - master # Default release branch
+env:
+  working-dir: src
+
 jobs:
   publish:
     name: build, pack & publish
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{env.working-dir}}
+    strategy:
+      matrix: 
+        Projects: [D3vS1m.Domain/D3vS1m.Domain.csproj, D3vS1m.Application/D3vS1m.Application.csproj]
     steps:
       - uses: actions/checkout@v2
-
-      #- name: Setup dotnet
-      #  uses: actions/setup-dotnet@v1
-      #  with:
-      #    dotnet-version: 3.1.200
-          
+        
       # Publish
       - name: publish on version change
         id: publish_nuget
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: src/D3vS1m.Domain/D3vS1m.Domain.csproj
+          PROJECT_FILE_PATH: ${{matrix.projects}}
           
           # NuGet package id, used for version detection & defaults to project name
           # PACKAGE_NAME: Core
