@@ -4,13 +4,14 @@ on: push
 env:
   working-dir: ./src
 
-defaults:
-  run:
-    working-directory: ${{env.working-dir}}
-
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: ${{env.working-dir}}
+        
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
