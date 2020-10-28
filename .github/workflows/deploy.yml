@@ -3,19 +3,14 @@ on:
   push:
     branches:
       - master # Default release branch
-env:
-  working-dir: src
 
 jobs:
   publish:
     name: build, pack & publish
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{env.working-dir}}
     strategy:
       matrix: 
-        Projects: [D3vS1m.Domain/D3vS1m.Domain.csproj, D3vS1m.Application/D3vS1m.Application.csproj]
+        Projects: [src/D3vS1m.Domain/D3vS1m.Domain.csproj, src/D3vS1m.Application/D3vS1m.Application.csproj]
     steps:
       - uses: actions/checkout@v2
         
