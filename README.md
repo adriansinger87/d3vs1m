@@ -3,7 +3,7 @@
 
 ##### d3vs1m - discrete events & development for network device simulation
 
-[![Build Status](https://dev.azure.com/adriansinger87/adriansinger87/_apis/build/status/adriansinger87.d3vs1m?branchName=master)](https://dev.azure.com/adriansinger87/adriansinger87/_build/latest?definitionId=2&branchName=master)
+![.NET Core](https://github.com/adriansinger87/d3vs1m/workflows/.NET%20Core/badge.svg)
 
 ## Introduction
 This solultion will provide an extensible and highly configuralbe **discrete event simulator**. The current implementation of different simulators are supposed to realize a simulation for wireless sensor networks in a 3D environment.
