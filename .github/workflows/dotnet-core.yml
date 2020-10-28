@@ -4,9 +4,9 @@ on: push
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    env:
+      working-dir: ./src
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -14,6 +14,7 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
+      working-directory: ${{env.working-dir}}
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
