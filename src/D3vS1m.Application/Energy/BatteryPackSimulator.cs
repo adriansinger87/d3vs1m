@@ -64,7 +64,7 @@ namespace D3vS1m.Application.Energy
             base.AfterExecution();
         }
 
-        private void Discharge(BatteryPack battery, float current, TimeSpan time)
+        public void Discharge(BatteryPack battery, float current, TimeSpan time)
         {
             if (Check(battery) == false)
             {

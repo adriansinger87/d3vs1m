@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Infrastructure\**" />
+    <EmbeddedResource Remove="Infrastructure\**" />
+    <None Remove="Infrastructure\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="App_Data\WallTest5.obj" />
   </ItemGroup>
 
@@ -27,7 +33,6 @@
     <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
     <ProjectReference Include="..\D3vS1m.Cli\D3vS1m.Cli.csproj" />
     <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
-    <ProjectReference Include="..\D3vS1m.Infrastructure\D3vS1m.Infrastructure.csproj" />
     <ProjectReference Include="..\D3vS1m.Persistence\D3vS1m.Persistence.csproj" />
   </ItemGroup>
 
@@ -44,10 +49,6 @@
     <None Update="App_Data\PCB_868_tot.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
   </ItemGroup>
 
 </Project>

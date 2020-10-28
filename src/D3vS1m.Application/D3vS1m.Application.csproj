@@ -12,13 +12,13 @@
     <RepositoryUrl>https://github.com/adriansinger87/d3vs1m</RepositoryUrl>
     <PackageTags>Simulation IIoT</PackageTags>
     <PackageReleaseNotes>first release</PackageReleaseNotes>
-    <PackageIcon>d3vs1m-logo-v2.png</PackageIcon>
-    <Version>1.0.3</Version>
+    <PackageIcon>d3vs1m-logo.png</PackageIcon>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="CustomDocWell.vsix" />
-    <None Include="..\..\images\d3vs1m-logo-v2.png">
+    <None Include="..\..\images\d3vs1m-logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
