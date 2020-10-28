@@ -1,5 +1,5 @@
-name: .NET Core
-on: push
+name: Build and Test
+on: pull_request
 
 env:
   working-dir: src
