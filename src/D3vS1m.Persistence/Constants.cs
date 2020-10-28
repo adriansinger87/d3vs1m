@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace D3vS1m.Persistence
+﻿namespace D3vS1m.Persistence
 {
     public class Constants
     {
@@ -10,6 +6,12 @@ namespace D3vS1m.Persistence
         {
             public const string Key = "obj";
             public const string Extension = "obj";
+        }
+
+        public class Parquet
+        {
+            public const string Key = "parquet.net";
+            public const string Extension = "parquet";
         }
     }
 }

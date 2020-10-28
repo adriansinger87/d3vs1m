@@ -1,8 +1,13 @@
 ﻿using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
+using D3vS1m.Domain.System.Enumerations;
+using Sin.Net.Domain.Persistence;
+using Sin.Net.Domain.Persistence.Adapter;
 using Sin.Net.Domain.Persistence.Logging;
+using Sin.Net.Domain.Persistence.Settings;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,7 +16,6 @@ namespace D3vS1m.Domain.Runtime
     /// <summary>
     /// Abstract class with some base functionality to setup and run the desired simulation models
     /// </summary>
-    [Serializable]
     public abstract class RuntimeBase
     {
         // -- fields
@@ -27,22 +31,29 @@ namespace D3vS1m.Domain.Runtime
         /// <summary>
         /// The event gets fired when the simulation starts the first iteration. 
         /// </summary>
-        [field: NonSerialized]
         public event SimulatorEventHandler Started;
 
         /// <summary>
         /// The event gets fired when the simulation stoppes the last iteration. 
         /// </summary>
-        [field: NonSerialized]
         public event SimulatorEventHandler Stopped;
 
         /// <summary>
         /// The event gets fired when the execution of all simulation models has finished one iteration 
         /// </summary>
-        [field: NonSerialized]
         public event SimulatorEventHandler IterationPassed;
 
+		// -- constructor
+
+		public RuntimeBase()
+		{
+            _simRepo = new SimulatorRepository();
+
+        }
+
         // -- methods
+
+        public abstract RuntimeBase With(ArgumentsBase args);
 
         /// <summary>
         /// Takes the Simulator Repository instance with all ready-to-go simulators and sets the internal valid-state to invalid.
@@ -50,12 +61,28 @@ namespace D3vS1m.Domain.Runtime
         /// </summary>
         /// <param name="simulatorRepo">The repository instance</param>
         /// <returns>Returns the calling instance for method chaining</returns>
-        public RuntimeBase Setup(SimulatorRepository simulatorRepo)
+        public virtual RuntimeBase BindSimulators(SimulatorRepository simulatorRepo)
         {
             _isValid = false;
             _simRepo = simulatorRepo;
             return this;
         }
+
+        public virtual RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
+		{
+            action(_simRepo);
+            return this;
+        }
+
+        public virtual RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
+		{
+            exporter
+                .Setup(setting)
+                .Build(_simRepo.AllArguments, adapter)
+                .Export();
+
+            return this;
+		}
 
         /// <summary>
         /// The conrete runtime implementation implements the validation of all simulation models here.
@@ -126,16 +153,16 @@ namespace D3vS1m.Domain.Runtime
 
             await Task.Run(() =>
             {
-                Log.Trace($"Start simulation");
+                Log.Info($"# Start of simulation");
                 _isRunning = condition(this);
 
                 // fire event on iteration starts
                 Started?.Invoke(this, new SimulatorEventArgs(Arguments));
 
+                var list = _simRepo.SortActiveSimulators();
                 while (_isRunning)
                 {
-                    // iterate all active simulation models
-                    foreach (ISimulatable sim in _simRepo.Items)
+                    foreach (ISimulatable sim in list)
                     {
                         sim.Run();
                     }
@@ -143,15 +170,25 @@ namespace D3vS1m.Domain.Runtime
                     // fire event that one iteration of all simulation models has finished
                     IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
 
-                    if (!_stopping) // separate flag to ensure that the condition method does not overwrite the stop action
+                    // separate flag to ensure that the condition method does not overwrite the stop action
+                    if (!_stopping) 
                     {
                         _isRunning = condition(this);
                     }
                 }
+            })
+            .ContinueWith((t) => {
+                if (t.Status == TaskStatus.Faulted)
+                {
+                    Log.Error($"{t.Exception.InnerExceptions.Count} exception occured during simulation.");
+                    foreach (var e in t.Exception.InnerExceptions)
+                    {
+                        Log.Fatal(e);
+                    }
+                }
 
-                // fire event on iteration stopps
+                Log.Info($"# End of simulation");
                 Stopped?.Invoke(this, new SimulatorEventArgs(Arguments));
-                Log.Trace($"End simulation");
             });
         }
         #endregion

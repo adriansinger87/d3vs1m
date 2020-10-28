@@ -5,7 +5,7 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
-using D3vS1m.Domain.System.Exceptions;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 
 namespace D3vS1m.Application.Antenna
@@ -34,26 +34,45 @@ namespace D3vS1m.Application.Antenna
         /// <returns>the calling instance</returns>
         public override ISimulatable With(ArgumentsBase arguments)
         {
-            if (ConvertArgs(arguments, ref _antennaArgs)) return this;
-            else if (ConvertArgs(arguments, ref _netArgs)) return this;
-            else return ArgsNotAdded(arguments.Name);
+            if (ConvertArgs(arguments, ref _antennaArgs))
+            {
+                return this;
+            }
+            else if (ConvertArgs(arguments, ref _netArgs))
+            {
+                return this;
+            }
+            else
+            {
+                return ArgsNotAdded(arguments.Name);
+            }
         }
 
         public override void Run()
         {
             base.BeforeExecution();
 
-            if (_antennaArgs.GainMatrix != null)
+            if (_antennaArgs.GainMatrix == null ||
+                _netArgs == null ||
+                _netArgs.Network == null)
             {
-                // TODO iterate all network orientation informations and calculate resulting antenna gain
-                // TODO remove test magic numbers
-                //float gain = CalculateGain(45, 45);
+                Log.Warn($"{Arguments.Name} has not all needed arguments so the run method is canceled.");
+                base.AfterExecution();
+                return;
             }
+
+            _netArgs.Network.AngleMatrix.Each((r, c, angle) =>
+            {
+                float gain = _netArgs.Network.RssMatrix[r, c];
+                gain += CalculateAntennaGain(angle.Azimuth, angle.Elevation);
+                _netArgs.Network.RssMatrix.Set(r, c, gain);
+                return angle;
+            });
 
             base.AfterExecution();
         }
 
-        private float CalculateGain(float azimuthDegree, float elevationDegree)
+        private float CalculateAntennaGain(float azimuthDegree, float elevationDegree)
         {
             Matrix<SphericGain> matrix = _antennaArgs.GainMatrix;
             int nAz = matrix.ColsCount;     // number of azimuth values (orizontal)
@@ -66,7 +85,7 @@ namespace D3vS1m.Application.Antenna
             float el_percent = Const.Math.Fract((elevationDegree / el_step));
 
             int row_0 = (int)Math.Floor((elevationDegree / el_step));
-            int row_1 = row_0 + 1;
+            int row_1 = row_0 < nEl - 1 ? row_0 + 1 : row_0 - 1;
 
             int col_0 = (int)Math.Floor((azimuthDegree / az_step));
             int col_1 = col_0 + 1;
@@ -90,10 +109,10 @@ namespace D3vS1m.Application.Antenna
             // return the sum of all gain fractions
             return (gain.x + gain.y + gain.z + gain.w);
         }
-        
-        public override string Id => Models.Antenna.Spheric.Key;
-        public override string Name => Models.Antenna.Spheric.Key;
+
+        public override string Key => Models.Antenna.Spheric.Name;
+        public override string Name => Models.Antenna.Spheric.Name;
         public override ArgumentsBase Arguments => _antennaArgs;
-        public override SimulationModels Type => SimulationModels.Antenna;
+        public override SimulationTypes Type => SimulationTypes.Antenna;
     }
 }

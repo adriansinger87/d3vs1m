@@ -9,7 +9,7 @@ using System;
 namespace D3vS1m.Application.Network
 {
     [Serializable]
-    public class PeerToPeerNetwork : RepositoryBase<BasicDevice>
+    public class PeerToPeerNetwork : RepositoryBase<SimpleDevice>
     {
         [NonSerialized]
         private NetworkValidator _validator;
@@ -18,7 +18,7 @@ namespace D3vS1m.Application.Network
         {
             _validator = new NetworkValidator();
 
-            Name = Models.Network.Key;
+            Name = Models.Network.Name;
 
             AssociationMatrix = new NetworkMatrix<bool>();
             DistanceMatrix = new NetworkMatrix<float>();

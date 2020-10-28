@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Validation
             base.SetupRules();
 
             RuleFor(repo => repo.Items.Cast<ISimulatable>())
-                .Must(list => list.Any(i => i.Type == SimulationModels.Energy))
+                .Must(list => list.Any(i => i.Type == SimulationTypes.Energy))
                 .WithMessage("energy model not present");
         }
     }

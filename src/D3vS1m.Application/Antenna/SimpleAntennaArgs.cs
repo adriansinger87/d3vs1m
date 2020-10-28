@@ -9,12 +9,14 @@ namespace D3vS1m.Application.Antenna
 
         public SimpleAntennaArgs() : base()
         {
+            Key = Models.Antenna.Simple.Key;
+            Name = Models.Antenna.Simple.Name;
             Reset();
         }
 
         public override void Reset()
         {
-            Name = Models.Antenna.Simple.Key;
+            
         }
 
         /// <summary>

@@ -128,11 +128,11 @@ namespace D3vS1m.Application.Channel
         protected sealed override void OnStarted(object sender, SimulatorEventArgs e)
         {
             ConvertArgs(
-                _runtime?.Simulators.AllArguments.GetByName(Models.Communication.LrWpan.Key),
+                _runtime?.Simulators.AllArguments.GetByName(Models.Communication.LrWpan.Name),
                 ref _commArgs);
 
             ConvertArgs(
-                _runtime?.Simulators.AllArguments.GetByName(Models.Scene.Key),
+                _runtime?.Simulators.AllArguments.GetByName(Models.Scene.Name),
                 ref _sceneArgs);
 
             // override the rx positions field
@@ -141,9 +141,9 @@ namespace D3vS1m.Application.Channel
 
         // -- properties
 
-        public override string Id => Models.Channel.AdaptedFriis.Key;
-        public override string Name => Models.Channel.AdaptedFriis.Key;
-        public override SimulationModels Type => SimulationModels.Channel;
+        public override string Key => Models.Channel.AdaptedFriis.Key;
+        public override string Name => Models.Channel.AdaptedFriis.Name;
+        public override SimulationTypes Type => SimulationTypes.Channel;
         public override ArgumentsBase Arguments => _radioArgs;
     }
 }

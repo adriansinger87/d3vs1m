@@ -38,9 +38,9 @@ namespace D3vS1m.Application.Antenna
 
         // -- properties
 
-        public override string Id => Models.Antenna.Simple.Key;
-        public override string Name => Models.Antenna.Simple.Key;
-        public override SimulationModels Type => SimulationModels.Antenna;
+        public override string Key => Models.Antenna.Simple.Name;
+        public override string Name => Models.Antenna.Simple.Name;
+        public override SimulationTypes Type => SimulationTypes.Antenna;
         public override ArgumentsBase Arguments => _args;
 
     }

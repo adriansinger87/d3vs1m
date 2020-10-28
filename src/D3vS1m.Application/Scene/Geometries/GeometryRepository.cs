@@ -4,29 +4,50 @@ using System.Linq;
 
 namespace D3vS1m.Application.Scene.Geometries
 {
+    /// <summary>
+    /// This class aggregates all Geometry objects and provides additional functions or properties. 
+    /// </summary>
     [Serializable]
     public class GeometryRepository : RepositoryBase<Geometry>
     {
-        public GeometryRepository()
+        /// <summary>
+        /// default empty constructor
+        /// </summary>
+        public GeometryRepository() : base()
         {
 
         }
 
+        // -- methods
+
+        /// <summary>
+        /// This search method returns the first element that matches the name property.
+        /// 
+        /// </summary>
+        /// <param name="name">The name that will searched for.</param>
+        /// <param name="recursive">If true this method will be called recursively on all children.</param>
+        /// <returns>Returns the first instance with a matching name or null.</returns>
         public Geometry FirstOrDefault(string name, bool recursive)
         {
-            Geometry found = this[name];
-
-            if (recursive)
+            var found = default(Geometry);
+            foreach(var g in Items)
             {
-                Items.ForEach((g) =>
+                found = g.FirstByName(name, recursive);
+                if (found != null)
                 {
-                    found = g.FirstByName(name, recursive);
-                });
+                    return found;
+                }
             }
 
             return found;
         }
 
+        /// <summary>
+        /// Adds a new element and returns it.
+        /// </summary>
+        /// <param name="item">The new Geometry instance</param>
+        /// <param name="name">The name of the instance.</param>
+        /// <returns></returns>
         public Geometry Add(Geometry item, string name)
         {
             item.Name = name;
@@ -38,7 +59,7 @@ namespace D3vS1m.Application.Scene.Geometries
 
         /// <summary>
         /// Name-based intexer to be able to find items by Name property without recursive search.
-        /// For recursive search use FirstOrDefault method.
+        /// For recursive search use FirstByName method of the items.
         /// </summary>
         /// <param name="name">name-based index</param>
         /// <returns>the instance of T or default type that is null.</returns>

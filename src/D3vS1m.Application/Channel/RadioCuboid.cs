@@ -17,7 +17,7 @@ namespace D3vS1m.Application.Channel
             MaxCorner = Domain.System.Constants.Const.Channel.Radio.Space.MaxCorner;
             Resolution = Domain.System.Constants.Const.Channel.Radio.Space.Resolution;
 
-            CreateRxPositions();
+            //CreateRxPositions();
         }
 
         // --- public methoden
@@ -50,7 +50,7 @@ namespace D3vS1m.Application.Channel
                 }
             }
 
-            Log.Info($"{positions.Length} rx positions created");
+            Log.Trace($"{positions.Length} rx positions created");
             return positions;
         }
 

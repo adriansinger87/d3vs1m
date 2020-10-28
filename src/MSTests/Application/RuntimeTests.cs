@@ -15,6 +15,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Threading.Tasks;
+using D3vS1m.Domain.System.Extensions;
 
 namespace MSTests.Application
 {
@@ -82,13 +83,13 @@ namespace MSTests.Application
             // arrange
 
             // create the simulation-factory
-            var factory = new D3vS1mFactory(_runtime);
+            var factory = new D3vS1mFactory();
 
             // load all relevant arguments
             var simArgs = factory.GetPredefinedArguments();
 
             // setup radio channel
-            var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Key) as AdaptedFriisArgs;
+            var radioArgs = simArgs.GetByName(Models.Channel.AdaptedFriis.Name) as AdaptedFriisArgs;
             var min = new Vertex(-10, -10, -10);
             var max = new Vertex(10, 10, 10);
             radioArgs.RadioBox.Resolution = 0.25F;
@@ -96,18 +97,26 @@ namespace MSTests.Application
             radioArgs.RadioBox.MaxCorner = max;
 
             // fill antenna data
-            var antennaArgs = simArgs.GetByName(Models.Antenna.Spheric.Key) as SphericAntennaArgs;
+            var antennaArgs = simArgs.GetByName(Models.Antenna.Spheric.Name) as SphericAntennaArgs;
+            antennaArgs.Index = 20;
             base.LoadAntennaData(antennaArgs);
             
             // fill network data
-            var netArgs = simArgs.GetByName(Models.Network.Key) as NetworkArgs;
+            var netArgs = simArgs.GetByName(Models.Network.Name) as NetworkArgs;
+            netArgs.Index = 10;
             netArgs.Network.AddRange(
                base.ImportDevices().ToArray());
 
             // final setup, cross-bind some arguments
-            var runtime = factory.SetupSimulation(simArgs);
+            var runtime = factory.SetupRuntime(simArgs, _runtime);
+
+            runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
+            runtime.Simulators[SimulationTypes.Energy].With(netArgs);
+
+            DumpToJson(runtime.Arguments, "runtime_args.json");
             _runtime.Started += (o, e) =>
             {
+               
             };
             
             // act

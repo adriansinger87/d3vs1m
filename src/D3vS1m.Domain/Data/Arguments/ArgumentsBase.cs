@@ -11,7 +11,8 @@ namespace D3vS1m.Domain.Data.Arguments
         public ArgumentsBase()
         {
             Guid = global::System.Guid.NewGuid().ToString();
-            Active = false;
+            Active = true;
+            Index = -1;
         }
 
         // -- methods
@@ -30,6 +31,8 @@ namespace D3vS1m.Domain.Data.Arguments
 
         // -- properties
 
+        public string Key { get; set; }
+
         /// <summary>
         /// Gets or sets the name of the specific arguments class
         /// </summary>
@@ -44,6 +47,11 @@ namespace D3vS1m.Domain.Data.Arguments
         /// Gets or sets if the corresponding simulator shall be used in the runtime or not.
         /// </summary>
         public virtual bool Active { get; set; }
+
+        /// <summary>
+        /// Gets or sets the index of the argument. This defines the order of the simulation steps.
+        /// </summary>
+        public int Index { get; set; }
 
     }
 }

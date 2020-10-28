@@ -11,24 +11,18 @@ namespace D3vS1m.Application.Channel
     {
         public AdaptedFriisArgs() : base()
         {
-            Name = Models.Channel.AdaptedFriis.Key;
+            Key = Models.Channel.AdaptedFriis.Key;
+            Name = Models.Channel.AdaptedFriis.Name;
 
-            // default settings
-            this.RadioBox = new RadioCuboid();
-
-            AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
-            AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
+            Reset();
         }
 
         // -- methods
 
         public override void Reset()
         {
-            Name = Models.Channel.AdaptedFriis.Key;
-
             // default settings
             RadioBox = new RadioCuboid();
-
             AttenuationExponent = Const.Channel.Radio.AttenuationExponent;
             AttenuationOffset = Const.Channel.Radio.AttenuationOffset;
         }

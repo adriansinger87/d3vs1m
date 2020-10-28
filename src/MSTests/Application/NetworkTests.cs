@@ -43,7 +43,7 @@ namespace MSTests.Application
 
             var simRepo = new SimulatorRepository();
             simRepo.Add(netSim);
-            runtime.Setup(simRepo)
+            runtime.BindSimulators(simRepo)
                 .Validate();
 
             // act one iteration 
@@ -52,19 +52,15 @@ namespace MSTests.Application
             // assert
             netArgs.Network.DistanceMatrix.Each((r, c, v) =>
             {
-
                 Assert.IsTrue(v > 0, $"position at row '{r}' and col '{c}' should not be '{v}'");
-
                 Log.Trace($"{r}:{c} -> distance: {v}");
                 return v;
             });
 
             netArgs.Network.AngleMatrix.Each((r, c, v) =>
             {
-
                 Assert.IsTrue(float.IsNaN(v.Azimuth) == false, $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
                 Assert.IsTrue(float.IsNaN(v.Elevation) == false, $"Elevation at position at row '{r}' and col '{c}' should not be NaN");
-
                 Log.Trace($"{r}:{c} -> angle: {v.ToString()}");
                 return v;
             });

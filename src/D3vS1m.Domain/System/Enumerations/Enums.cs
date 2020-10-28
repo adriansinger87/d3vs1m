@@ -3,7 +3,7 @@
     /// <summary>
     /// It describes the executed simulation model in the state machine
     /// </summary>
-    public enum SimulationModels {
+    public enum SimulationTypes {
         Antenna,
         Channel,
         Devices,

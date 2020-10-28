@@ -1,4 +1,5 @@
-﻿using D3vS1m.Domain.Data.Arguments;
+﻿using D3vS1m.Application.Energy;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
@@ -137,10 +138,10 @@ namespace D3vS1m.Application.Network
 
         // -- properties       
 
-        public override string Id => Models.Network.Key;
-        public override string Name => Models.Network.Key;
+        public override string Key => Models.Network.Name;
+        public override string Name => Models.Network.Name;
         public override ArgumentsBase Arguments => _netArgs;
-        public override SimulationModels Type => SimulationModels.Network;
+        public override SimulationTypes Type => SimulationTypes.Network;
 
     }
 }

@@ -2,14 +2,34 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Adrian Singer</Copyright>
+    <Authors>Adrian Singer</Authors>
+    <Company>Adrian Singer</Company>
+    <Description>D3vS1m means discrete events &amp; development for network device simulation. This is the application layer that contains all basic simulators to implement and run a network simulation.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/adriansinger87/d3vs1m</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/adriansinger87/d3vs1m</RepositoryUrl>
+    <PackageTags>Simulation IIoT</PackageTags>
+    <PackageReleaseNotes>first release</PackageReleaseNotes>
+    <PackageIcon>d3vs1m-logo-v2.png</PackageIcon>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="CustomDocWell.vsix" />
+    <None Include="..\..\images\d3vs1m-logo-v2.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="8.5.0" />
+    <PackageReference Include="FluentValidation" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>

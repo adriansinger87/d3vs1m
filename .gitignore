@@ -333,3 +333,6 @@ ASALocalRun/
 src/D3vS1m/.WebUI/wwwroot/
 src/D3vS1m/.WebUI/.vscode/
 /src/D3vS1m.WebUI/wwwroot/dist
+/src/D3vS1m.Web/wwwroot/lib
+/src/D3vS1m.Blazor
+/src/D3vS1m.BlazorWasm

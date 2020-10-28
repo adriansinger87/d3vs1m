@@ -1,8 +1,11 @@
-﻿using D3vS1m.Application.Runtime;
+﻿using D3vS1m.Application.Communication;
+using D3vS1m.Application.Network;
+using D3vS1m.Application.Runtime;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
+using Sin.Net.Domain.Persistence.Logging;
 using System;
 
 namespace D3vS1m.Application.Energy
@@ -13,9 +16,11 @@ namespace D3vS1m.Application.Energy
         // -- fields
 
         private BatteryArgs _batteryArgs;
+        private NetworkArgs _networkArgs;
+        private WirelessCommArgs _commArgs;
         private RuntimeArgs _runArgs;
 
-        // -- connstructor
+        // -- connstructor 
 
         /// <summary>
         /// Baware: no runtime will be usable
@@ -33,6 +38,8 @@ namespace D3vS1m.Application.Energy
         public override ISimulatable With(ArgumentsBase arguments)
         {
             if (ConvertArgs(arguments, ref _batteryArgs)) return this;
+            if (ConvertArgs(arguments, ref _networkArgs)) return this;
+            if (ConvertArgs(arguments, ref _commArgs)) return this;
             if (ConvertArgs(arguments, ref _runArgs)) return this;
             else return ArgsNotAdded(arguments.Name);
         }
@@ -44,7 +51,15 @@ namespace D3vS1m.Application.Energy
             // TODO the discharge current should come from the energy consumption based on the device / comm. simulation 
             var current = 100;
 
-            _batteryArgs.Batteries.ForEach(b => Discharge(b, current, _runArgs.CycleDuration));
+            _networkArgs.Network.Items.ForEach(d =>
+            {
+                var powerSupply = d.Parts.GetPowerSupply();
+                if (powerSupply != null)
+				{
+                    var battery = powerSupply as BatteryPack;
+                    Discharge(battery, current, _runArgs.CycleDuration);
+                }
+            });
 
             base.AfterExecution();
         }
@@ -109,7 +124,7 @@ namespace D3vS1m.Application.Energy
             *
             * SOD      -> aktuell berechneter State-of-Discharge
             * SOD_0	-> initiale Selbstentladung "init_sod"
-            * Q_0		-> initiale el. Ladung des BatteriePacks "init_charge"
+            * Q_0		-> initiale el. Ladung des BatteriePacks "Initial.Charge"
             */
             state.Now.SoD = state.Initial.SoD + ((1 - state.Initial.SoD) / state.Initial.Charge) * (qt + state.Now.Charge);
         }
@@ -182,9 +197,9 @@ namespace D3vS1m.Application.Energy
         }
 
         // -- properties
-        public override string Id => Models.Energy.Battery.Key;
-        public override string Name => Models.Energy.Battery.Key;
-        public override SimulationModels Type => SimulationModels.Energy;
+        public override string Key => Models.Energy.Battery.Name;
+        public override string Name => Models.Energy.Battery.Name;
+        public override SimulationTypes Type => SimulationTypes.Energy;
         public override ArgumentsBase Arguments => _batteryArgs;
     }
 }

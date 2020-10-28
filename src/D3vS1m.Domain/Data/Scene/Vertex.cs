@@ -67,6 +67,11 @@ namespace D3vS1m.Domain.Data.Scene
         // -- static methods
 
         /// <summary>
+        /// Returns a new instance with zero values in all cartesian directions.
+        /// </summary>
+        public static Vertex Origin => new Vertex();
+
+        /// <summary>
         /// Calculates teh euclidic distance between two vectors
         /// </summary>
         /// <param name="a"></param>
@@ -204,6 +209,16 @@ namespace D3vS1m.Domain.Data.Scene
             else if (f1 < -1) f1 = -1;
 
             return (float)Math.Asin(f1);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 612420109;
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y.GetHashCode();
+            hashCode = hashCode * -1521134295 + Z.GetHashCode();
+            hashCode = hashCode * -1521134295 + Length.GetHashCode();
+            return hashCode;
         }
 
         // -- operators

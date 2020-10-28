@@ -9,7 +9,8 @@ namespace D3vS1m.Application.Runtime
     {
         public RuntimeArgs() : base()
         {
-            Name = Models.Runtime.Key;
+            Key = Models.Runtime.Key;
+            Name = Models.Runtime.Name;
             CycleDuration = TimeSpan.FromSeconds(Const.Runtime.IncrementSeconds);
         }
 
@@ -18,7 +19,7 @@ namespace D3vS1m.Application.Runtime
         public void ResetTime()
         {
             StartTime = DateTime.Now;
-            ElapsedTime = new TimeSpan();
+            SimulatedTime = new TimeSpan();
             Iterations = 0;
         }
 
@@ -38,6 +39,11 @@ namespace D3vS1m.Application.Runtime
 
         /// <summary>
         /// Gets or sets the theoretical realtime that has passed.
+        /// </summary>
+        public TimeSpan SimulatedTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the time the simulation was running.
         /// </summary>
         public TimeSpan ElapsedTime { get; set; }
 

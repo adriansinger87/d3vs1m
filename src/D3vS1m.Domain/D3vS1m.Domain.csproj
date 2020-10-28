@@ -2,6 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageIcon>d3vs1m-logo-v2.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/adriansinger87/d3vs1m</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Adrian Singer</Company>
+    <Authors>Adrian Singer</Authors>
+    <Description>D3vS1m means discrete events &amp; development for network device simulation. The assembly D3vS1m.Domain contains the domain layer of this framework.</Description>
+    <Copyright>Adrian Singer</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/adriansinger87/d3vs1m</RepositoryUrl>
+    <PackageTags>Simulation IIoT</PackageTags>
+    <PackageReleaseNotes>first release</PackageReleaseNotes>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,7 +23,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sin.Net.Domain" Version="0.1.6" />
+    <PackageReference Include="Sin.Net.Domain" Version="0.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\D3vS1m Logos\d3vs1m-logo-v2.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

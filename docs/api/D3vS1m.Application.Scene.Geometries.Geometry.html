@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Geometry
    | D3vS1m API Reference ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.1.0">
     
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,11 @@
   
   <h1 id="D3vS1m_Application_Scene_Geometries_Geometry" data-uid="D3vS1m.Application.Scene.Geometries.Geometry" class="text-break">Class Geometry
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>The Geometry class composes a lists of faces unattached vertices and normals.
+This class follows the composite-pattern so it has a list of children of the same time
+in order to create trees of geometries.
+Empty geometries for grouping purposes can exsist as well.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -112,14 +116,15 @@ public class Geometry</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry__ctor.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry__ctor.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L10">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L19">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry__ctor_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.#ctor*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry__ctor" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.#ctor">Geometry()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The default constructor instantiates all list properties and a default name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -127,14 +132,15 @@ public class Geometry</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry__ctor_System_String_.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry__ctor_System_String_.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L19">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L32">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry__ctor_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.#ctor*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry__ctor_System_String_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.#ctor(System.String)">Geometry(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The constructor calls the default constructor and defines the name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -153,7 +159,8 @@ public class Geometry</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>The specific name of the instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -161,14 +168,15 @@ public class Geometry</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Children.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Children%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Children.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Children%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L57">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L97">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_Children_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Children*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_Children" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Children">Children</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets a list of child geometries.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -191,14 +199,15 @@ public class Geometry</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Faces.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Faces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Faces.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Faces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L54">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L85">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_Faces_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Faces*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_Faces" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Faces">Faces</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the list of faces that create the surface of the geometry.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -221,18 +230,19 @@ public class Geometry</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Material.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Material%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_MaterialGuid.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L53">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L81">View Source</a>
   </span>
-  <a id="D3vS1m_Application_Scene_Geometries_Geometry_Material_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Material*"></a>
-  <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_Material" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Material">Material</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="D3vS1m_Application_Scene_Geometries_Geometry_MaterialGuid_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid*"></a>
+  <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_MaterialGuid" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid">MaterialGuid</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the material GUID to look for in a channel simulation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Material { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string MaterialGuid { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -251,14 +261,15 @@ public class Geometry</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Name.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Name.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L51">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L77">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_Name_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Name*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_Name" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -281,14 +292,15 @@ public class Geometry</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Normales.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Normales%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Normales.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Normales%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L56">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L93">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_Normales_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Normales*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_Normales" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Normales">Normales</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets a list unattached normals.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -311,14 +323,15 @@ public class Geometry</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Vertices.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Vertices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_Vertices.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.Vertices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L55">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L89">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_Vertices_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Vertices*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_Vertices" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.Vertices">Vertices</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets a list unattached vertices.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -343,14 +356,15 @@ public class Geometry</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_FirstByName_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.FirstByName(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_FirstByName_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.FirstByName(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L26">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L45">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_FirstByName_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.FirstByName*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_FirstByName_System_String_System_Boolean_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.FirstByName(System.String,System.Boolean)">FirstByName(String, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>A search method that returns the first match by the name property.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -369,12 +383,14 @@ public class Geometry</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>The name that will searched for.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">recursive</span></td>
-        <td></td>
+        <td><p>If true this method will be called recursively on all children.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -389,20 +405,22 @@ public class Geometry</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="D3vS1m.Application.Scene.Geometries.Geometry.html">Geometry</a></td>
-        <td></td>
+        <td><p>Returns the first instance with a matching name or null.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_ToString.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry_ToString.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L44">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L67">View Source</a>
   </span>
   <a id="D3vS1m_Application_Scene_Geometries_Geometry_ToString_" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.ToString*"></a>
   <h4 id="D3vS1m_Application_Scene_Geometries_Geometry_ToString" data-uid="D3vS1m.Application.Scene.Geometries.Geometry.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Overridden method that returns important properties.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -433,10 +451,10 @@ public class Geometry</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/adriansinger87/d3vs1m/new/docu-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Application_Scene_Geometries_Geometry.md&amp;value=---%0Auid%3A%20D3vS1m.Application.Scene.Geometries.Geometry%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/adriansinger87/d3vs1m/blob/docu-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Application/Scene/Geometries/Geometry.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

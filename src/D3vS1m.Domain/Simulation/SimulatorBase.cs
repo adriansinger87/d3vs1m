@@ -28,13 +28,7 @@ namespace D3vS1m.Domain.Simulation
         [field: NonSerialized]
         public event SimulatorEventHandler Executed;
 
-
         // -- constructor
-
-        //public SimulatorBase()
-        //{
-        //    Guid = global::System.Guid.NewGuid().ToString();
-        //}
 
         public SimulatorBase(RuntimeBase runtime)
         {
@@ -54,7 +48,6 @@ namespace D3vS1m.Domain.Simulation
             if (input == null ||
                 input is T == false)
             {
-                ArgsNotAdded(input?.Name);
                 return false;
             }
             else
@@ -66,7 +59,7 @@ namespace D3vS1m.Domain.Simulation
 
         protected ISimulatable ArgsNotAdded(string argsName)
         {
-            Log.Warn($"'{argsName}' arguments were not added to the model '{Name}'");
+            Log.Warn($"The unnecessary arguments '{argsName}' were not added to the simulation model '{Name}'");
             return this;
         }
 
@@ -88,6 +81,7 @@ namespace D3vS1m.Domain.Simulation
         /// </summary>
         protected virtual void BeforeExecution()
         {
+            Log.Trace($"- execute {this.Arguments.Name}");
             OnExecuting?.Invoke(this, new SimulatorEventArgs(this.Arguments));
         }
 
@@ -124,8 +118,8 @@ namespace D3vS1m.Domain.Simulation
 
         public string Guid { get; private set; }
 
-        public abstract string Id { get; } // => $"{Type.ToString()}_{Name.Replace(' ', '_')}".ToLower();
+        public abstract string Key { get; }
 
-        public abstract SimulationModels Type { get; }
+        public abstract SimulationTypes Type { get; }
     }
 }

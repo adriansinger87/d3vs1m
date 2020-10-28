@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MQTTnet.NETStandard" Version="3.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
   </ItemGroup>
 

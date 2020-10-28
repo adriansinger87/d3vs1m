@@ -5,17 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Exports\**" />
-    <EmbeddedResource Remove="Exports\**" />
-    <None Remove="Exports\**" />
+    <Compile Remove="IOController.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sin.Net.Persistence" Version="0.1.4" />
+    <PackageReference Include="Parquet.Net" Version="3.6.0" />
+    <PackageReference Include="Sin.Net.Persistence" Version="0.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
+    <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
   </ItemGroup>
 
 </Project>

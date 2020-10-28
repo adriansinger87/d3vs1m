@@ -1,0 +1,12 @@
+﻿{
+  "GainMatrix": {
+    "RowsCount": 13,
+    "ColsCount": 24
+  },
+  "DataSource": "PCB_868_tot.csv",
+  "Key": "spa",
+  "Name": "spheric antenna",
+  "Index": 20,
+  "Guid": "a2cc9310-489b-47ba-97ae-218a0887b96a",
+  "Active": true
+}

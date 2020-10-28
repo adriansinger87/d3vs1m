@@ -219,6 +219,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Antenna.SphericAntennaArgs.SphericAntennaArgs
   nameWithType: SphericAntennaArgs.SphericAntennaArgs
+- uid: D3vS1m.Application.Antenna.SphericAntennaArgs.DataSource
+  name: DataSource
+  href: api/D3vS1m.Application.Antenna.SphericAntennaArgs.html#D3vS1m_Application_Antenna_SphericAntennaArgs_DataSource
+  commentId: P:D3vS1m.Application.Antenna.SphericAntennaArgs.DataSource
+  fullName: D3vS1m.Application.Antenna.SphericAntennaArgs.DataSource
+  nameWithType: SphericAntennaArgs.DataSource
+- uid: D3vS1m.Application.Antenna.SphericAntennaArgs.DataSource*
+  name: DataSource
+  href: api/D3vS1m.Application.Antenna.SphericAntennaArgs.html#D3vS1m_Application_Antenna_SphericAntennaArgs_DataSource_
+  commentId: Overload:D3vS1m.Application.Antenna.SphericAntennaArgs.DataSource
+  isSpec: "True"
+  fullName: D3vS1m.Application.Antenna.SphericAntennaArgs.DataSource
+  nameWithType: SphericAntennaArgs.DataSource
 - uid: D3vS1m.Application.Antenna.SphericAntennaArgs.GainMatrix
   name: GainMatrix
   href: api/D3vS1m.Application.Antenna.SphericAntennaArgs.html#D3vS1m_Application_Antenna_SphericAntennaArgs_GainMatrix
@@ -232,6 +245,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Antenna.SphericAntennaArgs.GainMatrix
   nameWithType: SphericAntennaArgs.GainMatrix
+- uid: D3vS1m.Application.Antenna.SphericAntennaArgs.LoadData(Sin.Net.Domain.Persistence.IPersistenceControlable,Sin.Net.Domain.Persistence.Settings.SettingsBase,System.String)
+  name: LoadData(IPersistenceControlable, SettingsBase, String)
+  href: api/D3vS1m.Application.Antenna.SphericAntennaArgs.html#D3vS1m_Application_Antenna_SphericAntennaArgs_LoadData_Sin_Net_Domain_Persistence_IPersistenceControlable_Sin_Net_Domain_Persistence_Settings_SettingsBase_System_String_
+  commentId: M:D3vS1m.Application.Antenna.SphericAntennaArgs.LoadData(Sin.Net.Domain.Persistence.IPersistenceControlable,Sin.Net.Domain.Persistence.Settings.SettingsBase,System.String)
+  fullName: D3vS1m.Application.Antenna.SphericAntennaArgs.LoadData(Sin.Net.Domain.Persistence.IPersistenceControlable, Sin.Net.Domain.Persistence.Settings.SettingsBase, System.String)
+  nameWithType: SphericAntennaArgs.LoadData(IPersistenceControlable, SettingsBase, String)
+- uid: D3vS1m.Application.Antenna.SphericAntennaArgs.LoadData*
+  name: LoadData
+  href: api/D3vS1m.Application.Antenna.SphericAntennaArgs.html#D3vS1m_Application_Antenna_SphericAntennaArgs_LoadData_
+  commentId: Overload:D3vS1m.Application.Antenna.SphericAntennaArgs.LoadData
+  isSpec: "True"
+  fullName: D3vS1m.Application.Antenna.SphericAntennaArgs.LoadData
+  nameWithType: SphericAntennaArgs.LoadData
 - uid: D3vS1m.Application.Antenna.SphericAntennaArgs.Reset
   name: Reset()
   href: api/D3vS1m.Application.Antenna.SphericAntennaArgs.html#D3vS1m_Application_Antenna_SphericAntennaArgs_Reset
@@ -1132,12 +1158,12 @@ references:
   commentId: T:D3vS1m.Application.D3vS1mFactory
   fullName: D3vS1m.Application.D3vS1mFactory
   nameWithType: D3vS1mFactory
-- uid: D3vS1m.Application.D3vS1mFactory.#ctor(D3vS1m.Domain.Runtime.RuntimeBase)
-  name: D3vS1mFactory(RuntimeBase)
-  href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory__ctor_D3vS1m_Domain_Runtime_RuntimeBase_
-  commentId: M:D3vS1m.Application.D3vS1mFactory.#ctor(D3vS1m.Domain.Runtime.RuntimeBase)
-  fullName: D3vS1m.Application.D3vS1mFactory.D3vS1mFactory(D3vS1m.Domain.Runtime.RuntimeBase)
-  nameWithType: D3vS1mFactory.D3vS1mFactory(RuntimeBase)
+- uid: D3vS1m.Application.D3vS1mFactory.#ctor
+  name: D3vS1mFactory()
+  href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory__ctor
+  commentId: M:D3vS1m.Application.D3vS1mFactory.#ctor
+  fullName: D3vS1m.Application.D3vS1mFactory.D3vS1mFactory()
+  nameWithType: D3vS1mFactory.D3vS1mFactory()
 - uid: D3vS1m.Application.D3vS1mFactory.#ctor*
   name: D3vS1mFactory
   href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory__ctor_
@@ -1171,12 +1197,12 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.D3vS1mFactory.NewArgument
   nameWithType: D3vS1mFactory.NewArgument
-- uid: D3vS1m.Application.D3vS1mFactory.NewSimulator(System.String)
-  name: NewSimulator(String)
-  href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory_NewSimulator_System_String_
-  commentId: M:D3vS1m.Application.D3vS1mFactory.NewSimulator(System.String)
-  fullName: D3vS1m.Application.D3vS1mFactory.NewSimulator(System.String)
-  nameWithType: D3vS1mFactory.NewSimulator(String)
+- uid: D3vS1m.Application.D3vS1mFactory.NewSimulator(System.String,D3vS1m.Domain.Runtime.RuntimeBase)
+  name: NewSimulator(String, RuntimeBase)
+  href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory_NewSimulator_System_String_D3vS1m_Domain_Runtime_RuntimeBase_
+  commentId: M:D3vS1m.Application.D3vS1mFactory.NewSimulator(System.String,D3vS1m.Domain.Runtime.RuntimeBase)
+  fullName: D3vS1m.Application.D3vS1mFactory.NewSimulator(System.String, D3vS1m.Domain.Runtime.RuntimeBase)
+  nameWithType: D3vS1mFactory.NewSimulator(String, RuntimeBase)
 - uid: D3vS1m.Application.D3vS1mFactory.NewSimulator*
   name: NewSimulator
   href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory_NewSimulator_
@@ -1197,15 +1223,15 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.D3vS1mFactory.RegisterSimulator
   nameWithType: D3vS1mFactory.RegisterSimulator
-- uid: D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  name: SetupSimulation(ArgumentsBase[])
-  href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory_SetupSimulation_D3vS1m_Domain_Data_Arguments_ArgumentsBase___
-  commentId: M:D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  name.vb: SetupSimulation(ArgumentsBase())
-  fullName: D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  fullName.vb: D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase())
-  nameWithType: D3vS1mFactory.SetupSimulation(ArgumentsBase[])
-  nameWithType.vb: D3vS1mFactory.SetupSimulation(ArgumentsBase())
+- uid: D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[],D3vS1m.Domain.Runtime.RuntimeBase)
+  name: SetupSimulation(ArgumentsBase[], RuntimeBase)
+  href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory_SetupSimulation_D3vS1m_Domain_Data_Arguments_ArgumentsBase___D3vS1m_Domain_Runtime_RuntimeBase_
+  commentId: M:D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[],D3vS1m.Domain.Runtime.RuntimeBase)
+  name.vb: SetupSimulation(ArgumentsBase(), RuntimeBase)
+  fullName: D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[], D3vS1m.Domain.Runtime.RuntimeBase)
+  fullName.vb: D3vS1m.Application.D3vS1mFactory.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase(), D3vS1m.Domain.Runtime.RuntimeBase)
+  nameWithType: D3vS1mFactory.SetupSimulation(ArgumentsBase[], RuntimeBase)
+  nameWithType.vb: D3vS1mFactory.SetupSimulation(ArgumentsBase(), RuntimeBase)
 - uid: D3vS1m.Application.D3vS1mFactory.SetupSimulation*
   name: SetupSimulation
   href: api/D3vS1m.Application.D3vS1mFactory.html#D3vS1m_Application_D3vS1mFactory_SetupSimulation_
@@ -2176,12 +2202,12 @@ references:
   commentId: T:D3vS1m.Application.FactoryBase
   fullName: D3vS1m.Application.FactoryBase
   nameWithType: FactoryBase
-- uid: D3vS1m.Application.FactoryBase.#ctor(D3vS1m.Domain.Runtime.RuntimeBase)
-  name: FactoryBase(RuntimeBase)
-  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase__ctor_D3vS1m_Domain_Runtime_RuntimeBase_
-  commentId: M:D3vS1m.Application.FactoryBase.#ctor(D3vS1m.Domain.Runtime.RuntimeBase)
-  fullName: D3vS1m.Application.FactoryBase.FactoryBase(D3vS1m.Domain.Runtime.RuntimeBase)
-  nameWithType: FactoryBase.FactoryBase(RuntimeBase)
+- uid: D3vS1m.Application.FactoryBase.#ctor
+  name: FactoryBase()
+  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase__ctor
+  commentId: M:D3vS1m.Application.FactoryBase.#ctor
+  fullName: D3vS1m.Application.FactoryBase.FactoryBase()
+  nameWithType: FactoryBase.FactoryBase()
 - uid: D3vS1m.Application.FactoryBase.#ctor*
   name: FactoryBase
   href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase__ctor_
@@ -2189,12 +2215,6 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.FactoryBase.FactoryBase
   nameWithType: FactoryBase.FactoryBase
-- uid: D3vS1m.Application.FactoryBase._runtime
-  name: _runtime
-  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase__runtime
-  commentId: F:D3vS1m.Application.FactoryBase._runtime
-  fullName: D3vS1m.Application.FactoryBase._runtime
-  nameWithType: FactoryBase._runtime
 - uid: D3vS1m.Application.FactoryBase.GetPredefinedArguments
   name: GetPredefinedArguments()
   href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_GetPredefinedArguments
@@ -2221,12 +2241,12 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.FactoryBase.NewArgument
   nameWithType: FactoryBase.NewArgument
-- uid: D3vS1m.Application.FactoryBase.NewSimulator(System.String)
-  name: NewSimulator(String)
-  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_NewSimulator_System_String_
-  commentId: M:D3vS1m.Application.FactoryBase.NewSimulator(System.String)
-  fullName: D3vS1m.Application.FactoryBase.NewSimulator(System.String)
-  nameWithType: FactoryBase.NewSimulator(String)
+- uid: D3vS1m.Application.FactoryBase.NewSimulator(System.String,D3vS1m.Domain.Runtime.RuntimeBase)
+  name: NewSimulator(String, RuntimeBase)
+  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_NewSimulator_System_String_D3vS1m_Domain_Runtime_RuntimeBase_
+  commentId: M:D3vS1m.Application.FactoryBase.NewSimulator(System.String,D3vS1m.Domain.Runtime.RuntimeBase)
+  fullName: D3vS1m.Application.FactoryBase.NewSimulator(System.String, D3vS1m.Domain.Runtime.RuntimeBase)
+  nameWithType: FactoryBase.NewSimulator(String, RuntimeBase)
 - uid: D3vS1m.Application.FactoryBase.NewSimulator*
   name: NewSimulator
   href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_NewSimulator_
@@ -2247,28 +2267,15 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.FactoryBase.RegisterSimulator
   nameWithType: FactoryBase.RegisterSimulator
-- uid: D3vS1m.Application.FactoryBase.Runtime
-  name: Runtime
-  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_Runtime
-  commentId: P:D3vS1m.Application.FactoryBase.Runtime
-  fullName: D3vS1m.Application.FactoryBase.Runtime
-  nameWithType: FactoryBase.Runtime
-- uid: D3vS1m.Application.FactoryBase.Runtime*
-  name: Runtime
-  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_Runtime_
-  commentId: Overload:D3vS1m.Application.FactoryBase.Runtime
-  isSpec: "True"
-  fullName: D3vS1m.Application.FactoryBase.Runtime
-  nameWithType: FactoryBase.Runtime
-- uid: D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  name: SetupSimulation(ArgumentsBase[])
-  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_SetupSimulation_D3vS1m_Domain_Data_Arguments_ArgumentsBase___
-  commentId: M:D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  name.vb: SetupSimulation(ArgumentsBase())
-  fullName: D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  fullName.vb: D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase())
-  nameWithType: FactoryBase.SetupSimulation(ArgumentsBase[])
-  nameWithType.vb: FactoryBase.SetupSimulation(ArgumentsBase())
+- uid: D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[],D3vS1m.Domain.Runtime.RuntimeBase)
+  name: SetupSimulation(ArgumentsBase[], RuntimeBase)
+  href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_SetupSimulation_D3vS1m_Domain_Data_Arguments_ArgumentsBase___D3vS1m_Domain_Runtime_RuntimeBase_
+  commentId: M:D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[],D3vS1m.Domain.Runtime.RuntimeBase)
+  name.vb: SetupSimulation(ArgumentsBase(), RuntimeBase)
+  fullName: D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase[], D3vS1m.Domain.Runtime.RuntimeBase)
+  fullName.vb: D3vS1m.Application.FactoryBase.SetupSimulation(D3vS1m.Domain.Data.Arguments.ArgumentsBase(), D3vS1m.Domain.Runtime.RuntimeBase)
+  nameWithType: FactoryBase.SetupSimulation(ArgumentsBase[], RuntimeBase)
+  nameWithType.vb: FactoryBase.SetupSimulation(ArgumentsBase(), RuntimeBase)
 - uid: D3vS1m.Application.FactoryBase.SetupSimulation*
   name: SetupSimulation
   href: api/D3vS1m.Application.FactoryBase.html#D3vS1m_Application_FactoryBase_SetupSimulation_
@@ -2326,6 +2333,12 @@ references:
   commentId: F:D3vS1m.Application.Models.Antenna.Flat.Key
   fullName: D3vS1m.Application.Models.Antenna.Flat.Key
   nameWithType: Models.Antenna.Flat.Key
+- uid: D3vS1m.Application.Models.Antenna.Flat.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Antenna.Flat.html#D3vS1m_Application_Models_Antenna_Flat_Name
+  commentId: F:D3vS1m.Application.Models.Antenna.Flat.Name
+  fullName: D3vS1m.Application.Models.Antenna.Flat.Name
+  nameWithType: Models.Antenna.Flat.Name
 - uid: D3vS1m.Application.Models.Antenna.Simple
   name: Models.Antenna.Simple
   href: api/D3vS1m.Application.Models.Antenna.Simple.html
@@ -2338,6 +2351,12 @@ references:
   commentId: F:D3vS1m.Application.Models.Antenna.Simple.Key
   fullName: D3vS1m.Application.Models.Antenna.Simple.Key
   nameWithType: Models.Antenna.Simple.Key
+- uid: D3vS1m.Application.Models.Antenna.Simple.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Antenna.Simple.html#D3vS1m_Application_Models_Antenna_Simple_Name
+  commentId: F:D3vS1m.Application.Models.Antenna.Simple.Name
+  fullName: D3vS1m.Application.Models.Antenna.Simple.Name
+  nameWithType: Models.Antenna.Simple.Name
 - uid: D3vS1m.Application.Models.Antenna.Spheric
   name: Models.Antenna.Spheric
   href: api/D3vS1m.Application.Models.Antenna.Spheric.html
@@ -2350,6 +2369,12 @@ references:
   commentId: F:D3vS1m.Application.Models.Antenna.Spheric.Key
   fullName: D3vS1m.Application.Models.Antenna.Spheric.Key
   nameWithType: Models.Antenna.Spheric.Key
+- uid: D3vS1m.Application.Models.Antenna.Spheric.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Antenna.Spheric.html#D3vS1m_Application_Models_Antenna_Spheric_Name
+  commentId: F:D3vS1m.Application.Models.Antenna.Spheric.Name
+  fullName: D3vS1m.Application.Models.Antenna.Spheric.Name
+  nameWithType: Models.Antenna.Spheric.Name
 - uid: D3vS1m.Application.Models.Channel
   name: Models.Channel
   href: api/D3vS1m.Application.Models.Channel.html
@@ -2368,6 +2393,12 @@ references:
   commentId: F:D3vS1m.Application.Models.Channel.AdaptedFriis.Key
   fullName: D3vS1m.Application.Models.Channel.AdaptedFriis.Key
   nameWithType: Models.Channel.AdaptedFriis.Key
+- uid: D3vS1m.Application.Models.Channel.AdaptedFriis.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Channel.AdaptedFriis.html#D3vS1m_Application_Models_Channel_AdaptedFriis_Name
+  commentId: F:D3vS1m.Application.Models.Channel.AdaptedFriis.Name
+  fullName: D3vS1m.Application.Models.Channel.AdaptedFriis.Name
+  nameWithType: Models.Channel.AdaptedFriis.Name
 - uid: D3vS1m.Application.Models.Communication
   name: Models.Communication
   href: api/D3vS1m.Application.Models.Communication.html
@@ -2386,6 +2417,30 @@ references:
   commentId: F:D3vS1m.Application.Models.Communication.LrWpan.Key
   fullName: D3vS1m.Application.Models.Communication.LrWpan.Key
   nameWithType: Models.Communication.LrWpan.Key
+- uid: D3vS1m.Application.Models.Communication.LrWpan.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Communication.LrWpan.html#D3vS1m_Application_Models_Communication_LrWpan_Name
+  commentId: F:D3vS1m.Application.Models.Communication.LrWpan.Name
+  fullName: D3vS1m.Application.Models.Communication.LrWpan.Name
+  nameWithType: Models.Communication.LrWpan.Name
+- uid: D3vS1m.Application.Models.Devices
+  name: Models.Devices
+  href: api/D3vS1m.Application.Models.Devices.html
+  commentId: T:D3vS1m.Application.Models.Devices
+  fullName: D3vS1m.Application.Models.Devices
+  nameWithType: Models.Devices
+- uid: D3vS1m.Application.Models.Devices.Key
+  name: Key
+  href: api/D3vS1m.Application.Models.Devices.html#D3vS1m_Application_Models_Devices_Key
+  commentId: F:D3vS1m.Application.Models.Devices.Key
+  fullName: D3vS1m.Application.Models.Devices.Key
+  nameWithType: Models.Devices.Key
+- uid: D3vS1m.Application.Models.Devices.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Devices.html#D3vS1m_Application_Models_Devices_Name
+  commentId: F:D3vS1m.Application.Models.Devices.Name
+  fullName: D3vS1m.Application.Models.Devices.Name
+  nameWithType: Models.Devices.Name
 - uid: D3vS1m.Application.Models.Energy
   name: Models.Energy
   href: api/D3vS1m.Application.Models.Energy.html
@@ -2404,19 +2459,12 @@ references:
   commentId: F:D3vS1m.Application.Models.Energy.Battery.Key
   fullName: D3vS1m.Application.Models.Energy.Battery.Key
   nameWithType: Models.Energy.Battery.Key
-- uid: D3vS1m.Application.Models.GetID(System.String)
-  name: GetID(String)
-  href: api/D3vS1m.Application.Models.html#D3vS1m_Application_Models_GetID_System_String_
-  commentId: M:D3vS1m.Application.Models.GetID(System.String)
-  fullName: D3vS1m.Application.Models.GetID(System.String)
-  nameWithType: Models.GetID(String)
-- uid: D3vS1m.Application.Models.GetID*
-  name: GetID
-  href: api/D3vS1m.Application.Models.html#D3vS1m_Application_Models_GetID_
-  commentId: Overload:D3vS1m.Application.Models.GetID
-  isSpec: "True"
-  fullName: D3vS1m.Application.Models.GetID
-  nameWithType: Models.GetID
+- uid: D3vS1m.Application.Models.Energy.Battery.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Energy.Battery.html#D3vS1m_Application_Models_Energy_Battery_Name
+  commentId: F:D3vS1m.Application.Models.Energy.Battery.Name
+  fullName: D3vS1m.Application.Models.Energy.Battery.Name
+  nameWithType: Models.Energy.Battery.Name
 - uid: D3vS1m.Application.Models.Network
   name: Models.Network
   href: api/D3vS1m.Application.Models.Network.html
@@ -2429,6 +2477,12 @@ references:
   commentId: F:D3vS1m.Application.Models.Network.Key
   fullName: D3vS1m.Application.Models.Network.Key
   nameWithType: Models.Network.Key
+- uid: D3vS1m.Application.Models.Network.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Network.html#D3vS1m_Application_Models_Network_Name
+  commentId: F:D3vS1m.Application.Models.Network.Name
+  fullName: D3vS1m.Application.Models.Network.Name
+  nameWithType: Models.Network.Name
 - uid: D3vS1m.Application.Models.Runtime
   name: Models.Runtime
   href: api/D3vS1m.Application.Models.Runtime.html
@@ -2441,24 +2495,48 @@ references:
   commentId: F:D3vS1m.Application.Models.Runtime.Key
   fullName: D3vS1m.Application.Models.Runtime.Key
   nameWithType: Models.Runtime.Key
+- uid: D3vS1m.Application.Models.Runtime.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Runtime.html#D3vS1m_Application_Models_Runtime_Name
+  commentId: F:D3vS1m.Application.Models.Runtime.Name
+  fullName: D3vS1m.Application.Models.Runtime.Name
+  nameWithType: Models.Runtime.Name
 - uid: D3vS1m.Application.Models.Scene
   name: Models.Scene
   href: api/D3vS1m.Application.Models.Scene.html
   commentId: T:D3vS1m.Application.Models.Scene
   fullName: D3vS1m.Application.Models.Scene
   nameWithType: Models.Scene
-- uid: D3vS1m.Application.Models.Scene.DefaultGeometry
-  name: DefaultGeometry
-  href: api/D3vS1m.Application.Models.Scene.html#D3vS1m_Application_Models_Scene_DefaultGeometry
-  commentId: F:D3vS1m.Application.Models.Scene.DefaultGeometry
-  fullName: D3vS1m.Application.Models.Scene.DefaultGeometry
-  nameWithType: Models.Scene.DefaultGeometry
 - uid: D3vS1m.Application.Models.Scene.Key
   name: Key
   href: api/D3vS1m.Application.Models.Scene.html#D3vS1m_Application_Models_Scene_Key
   commentId: F:D3vS1m.Application.Models.Scene.Key
   fullName: D3vS1m.Application.Models.Scene.Key
   nameWithType: Models.Scene.Key
+- uid: D3vS1m.Application.Models.Scene.Materials
+  name: Models.Scene.Materials
+  href: api/D3vS1m.Application.Models.Scene.Materials.html
+  commentId: T:D3vS1m.Application.Models.Scene.Materials
+  fullName: D3vS1m.Application.Models.Scene.Materials
+  nameWithType: Models.Scene.Materials
+- uid: D3vS1m.Application.Models.Scene.Materials.DefaultGeometry
+  name: DefaultGeometry
+  href: api/D3vS1m.Application.Models.Scene.Materials.html#D3vS1m_Application_Models_Scene_Materials_DefaultGeometry
+  commentId: F:D3vS1m.Application.Models.Scene.Materials.DefaultGeometry
+  fullName: D3vS1m.Application.Models.Scene.Materials.DefaultGeometry
+  nameWithType: Models.Scene.Materials.DefaultGeometry
+- uid: D3vS1m.Application.Models.Scene.Materials.Key
+  name: Key
+  href: api/D3vS1m.Application.Models.Scene.Materials.html#D3vS1m_Application_Models_Scene_Materials_Key
+  commentId: F:D3vS1m.Application.Models.Scene.Materials.Key
+  fullName: D3vS1m.Application.Models.Scene.Materials.Key
+  nameWithType: Models.Scene.Materials.Key
+- uid: D3vS1m.Application.Models.Scene.Name
+  name: Name
+  href: api/D3vS1m.Application.Models.Scene.html#D3vS1m_Application_Models_Scene_Name
+  commentId: F:D3vS1m.Application.Models.Scene.Name
+  fullName: D3vS1m.Application.Models.Scene.Name
+  nameWithType: Models.Scene.Name
 - uid: D3vS1m.Application.Network
   name: D3vS1m.Application.Network
   href: api/D3vS1m.Application.Network.html
@@ -2914,6 +2992,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Runtime.RuntimeArgs.ResetTime
   nameWithType: RuntimeArgs.ResetTime
+- uid: D3vS1m.Application.Runtime.RuntimeArgs.SimulatedTime
+  name: SimulatedTime
+  href: api/D3vS1m.Application.Runtime.RuntimeArgs.html#D3vS1m_Application_Runtime_RuntimeArgs_SimulatedTime
+  commentId: P:D3vS1m.Application.Runtime.RuntimeArgs.SimulatedTime
+  fullName: D3vS1m.Application.Runtime.RuntimeArgs.SimulatedTime
+  nameWithType: RuntimeArgs.SimulatedTime
+- uid: D3vS1m.Application.Runtime.RuntimeArgs.SimulatedTime*
+  name: SimulatedTime
+  href: api/D3vS1m.Application.Runtime.RuntimeArgs.html#D3vS1m_Application_Runtime_RuntimeArgs_SimulatedTime_
+  commentId: Overload:D3vS1m.Application.Runtime.RuntimeArgs.SimulatedTime
+  isSpec: "True"
+  fullName: D3vS1m.Application.Runtime.RuntimeArgs.SimulatedTime
+  nameWithType: RuntimeArgs.SimulatedTime
 - uid: D3vS1m.Application.Runtime.RuntimeArgs.StartTime
   name: StartTime
   href: api/D3vS1m.Application.Runtime.RuntimeArgs.html#D3vS1m_Application_Runtime_RuntimeArgs_StartTime
@@ -2975,6 +3066,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Runtime.RuntimeController.RunAsync
   nameWithType: RuntimeController.RunAsync
+- uid: D3vS1m.Application.Runtime.RuntimeController.SetArgruments(D3vS1m.Application.Runtime.RuntimeArgs)
+  name: SetArgruments(RuntimeArgs)
+  href: api/D3vS1m.Application.Runtime.RuntimeController.html#D3vS1m_Application_Runtime_RuntimeController_SetArgruments_D3vS1m_Application_Runtime_RuntimeArgs_
+  commentId: M:D3vS1m.Application.Runtime.RuntimeController.SetArgruments(D3vS1m.Application.Runtime.RuntimeArgs)
+  fullName: D3vS1m.Application.Runtime.RuntimeController.SetArgruments(D3vS1m.Application.Runtime.RuntimeArgs)
+  nameWithType: RuntimeController.SetArgruments(RuntimeArgs)
+- uid: D3vS1m.Application.Runtime.RuntimeController.SetArgruments*
+  name: SetArgruments
+  href: api/D3vS1m.Application.Runtime.RuntimeController.html#D3vS1m_Application_Runtime_RuntimeController_SetArgruments_
+  commentId: Overload:D3vS1m.Application.Runtime.RuntimeController.SetArgruments
+  isSpec: "True"
+  fullName: D3vS1m.Application.Runtime.RuntimeController.SetArgruments
+  nameWithType: RuntimeController.SetArgruments
 - uid: D3vS1m.Application.Runtime.RuntimeController.Validate
   name: Validate()
   href: api/D3vS1m.Application.Runtime.RuntimeController.html#D3vS1m_Application_Runtime_RuntimeController_Validate
@@ -3213,19 +3317,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Scene.Geometries.Geometry.FirstByName
   nameWithType: Geometry.FirstByName
-- uid: D3vS1m.Application.Scene.Geometries.Geometry.Material
-  name: Material
-  href: api/D3vS1m.Application.Scene.Geometries.Geometry.html#D3vS1m_Application_Scene_Geometries_Geometry_Material
-  commentId: P:D3vS1m.Application.Scene.Geometries.Geometry.Material
-  fullName: D3vS1m.Application.Scene.Geometries.Geometry.Material
-  nameWithType: Geometry.Material
-- uid: D3vS1m.Application.Scene.Geometries.Geometry.Material*
-  name: Material
-  href: api/D3vS1m.Application.Scene.Geometries.Geometry.html#D3vS1m_Application_Scene_Geometries_Geometry_Material_
-  commentId: Overload:D3vS1m.Application.Scene.Geometries.Geometry.Material
+- uid: D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid
+  name: MaterialGuid
+  href: api/D3vS1m.Application.Scene.Geometries.Geometry.html#D3vS1m_Application_Scene_Geometries_Geometry_MaterialGuid
+  commentId: P:D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid
+  fullName: D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid
+  nameWithType: Geometry.MaterialGuid
+- uid: D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid*
+  name: MaterialGuid
+  href: api/D3vS1m.Application.Scene.Geometries.Geometry.html#D3vS1m_Application_Scene_Geometries_Geometry_MaterialGuid_
+  commentId: Overload:D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid
   isSpec: "True"
-  fullName: D3vS1m.Application.Scene.Geometries.Geometry.Material
-  nameWithType: Geometry.Material
+  fullName: D3vS1m.Application.Scene.Geometries.Geometry.MaterialGuid
+  nameWithType: Geometry.MaterialGuid
 - uid: D3vS1m.Application.Scene.Geometries.Geometry.Name
   name: Name
   href: api/D3vS1m.Application.Scene.Geometries.Geometry.html#D3vS1m_Application_Scene_Geometries_Geometry_Name
@@ -3371,19 +3475,6 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Scene.InvariantSceneArgs.Obstacles
   nameWithType: InvariantSceneArgs.Obstacles
-- uid: D3vS1m.Application.Scene.InvariantSceneArgs.RenderRadioMap
-  name: RenderRadioMap
-  href: api/D3vS1m.Application.Scene.InvariantSceneArgs.html#D3vS1m_Application_Scene_InvariantSceneArgs_RenderRadioMap
-  commentId: P:D3vS1m.Application.Scene.InvariantSceneArgs.RenderRadioMap
-  fullName: D3vS1m.Application.Scene.InvariantSceneArgs.RenderRadioMap
-  nameWithType: InvariantSceneArgs.RenderRadioMap
-- uid: D3vS1m.Application.Scene.InvariantSceneArgs.RenderRadioMap*
-  name: RenderRadioMap
-  href: api/D3vS1m.Application.Scene.InvariantSceneArgs.html#D3vS1m_Application_Scene_InvariantSceneArgs_RenderRadioMap_
-  commentId: Overload:D3vS1m.Application.Scene.InvariantSceneArgs.RenderRadioMap
-  isSpec: "True"
-  fullName: D3vS1m.Application.Scene.InvariantSceneArgs.RenderRadioMap
-  nameWithType: InvariantSceneArgs.RenderRadioMap
 - uid: D3vS1m.Application.Scene.InvariantSceneArgs.Reset
   name: Reset()
   href: api/D3vS1m.Application.Scene.InvariantSceneArgs.html#D3vS1m_Application_Scene_InvariantSceneArgs_Reset
@@ -3428,6 +3519,22 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Scene.Materials.Material.Material
   nameWithType: Material.Material
+- uid: D3vS1m.Application.Scene.Materials.Material.Item(System.Single)
+  name: Item[Single]
+  href: api/D3vS1m.Application.Scene.Materials.Material.html#D3vS1m_Application_Scene_Materials_Material_Item_System_Single_
+  commentId: P:D3vS1m.Application.Scene.Materials.Material.Item(System.Single)
+  name.vb: Item(Single)
+  fullName: D3vS1m.Application.Scene.Materials.Material.Item[System.Single]
+  fullName.vb: D3vS1m.Application.Scene.Materials.Material.Item(System.Single)
+  nameWithType: Material.Item[Single]
+  nameWithType.vb: Material.Item(Single)
+- uid: D3vS1m.Application.Scene.Materials.Material.Item*
+  name: Item
+  href: api/D3vS1m.Application.Scene.Materials.Material.html#D3vS1m_Application_Scene_Materials_Material_Item_
+  commentId: Overload:D3vS1m.Application.Scene.Materials.Material.Item
+  isSpec: "True"
+  fullName: D3vS1m.Application.Scene.Materials.Material.Item
+  nameWithType: Material.Item
 - uid: D3vS1m.Application.Scene.Materials.Material.Name
   name: Name
   href: api/D3vS1m.Application.Scene.Materials.Material.html#D3vS1m_Application_Scene_Materials_Material_Name
@@ -3454,6 +3561,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Scene.Materials.Material.Physics
   nameWithType: Material.Physics
+- uid: D3vS1m.Application.Scene.Materials.Material.ToString
+  name: ToString()
+  href: api/D3vS1m.Application.Scene.Materials.Material.html#D3vS1m_Application_Scene_Materials_Material_ToString
+  commentId: M:D3vS1m.Application.Scene.Materials.Material.ToString
+  fullName: D3vS1m.Application.Scene.Materials.Material.ToString()
+  nameWithType: Material.ToString()
+- uid: D3vS1m.Application.Scene.Materials.Material.ToString*
+  name: ToString
+  href: api/D3vS1m.Application.Scene.Materials.Material.html#D3vS1m_Application_Scene_Materials_Material_ToString_
+  commentId: Overload:D3vS1m.Application.Scene.Materials.Material.ToString
+  isSpec: "True"
+  fullName: D3vS1m.Application.Scene.Materials.Material.ToString
+  nameWithType: Material.ToString
 - uid: D3vS1m.Application.Scene.Materials.Material.Uuid
   name: Uuid
   href: api/D3vS1m.Application.Scene.Materials.Material.html#D3vS1m_Application_Scene_Materials_Material_Uuid
@@ -3590,41 +3710,6 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Application.Scene.Materials.MaterialPhysics.ToString
   nameWithType: MaterialPhysics.ToString
-- uid: D3vS1m.Application.Scene.Materials.PhysicsRepository
-  name: PhysicsRepository
-  href: api/D3vS1m.Application.Scene.Materials.PhysicsRepository.html
-  commentId: T:D3vS1m.Application.Scene.Materials.PhysicsRepository
-  fullName: D3vS1m.Application.Scene.Materials.PhysicsRepository
-  nameWithType: PhysicsRepository
-- uid: D3vS1m.Application.Scene.Materials.PhysicsRepository.#ctor
-  name: PhysicsRepository()
-  href: api/D3vS1m.Application.Scene.Materials.PhysicsRepository.html#D3vS1m_Application_Scene_Materials_PhysicsRepository__ctor
-  commentId: M:D3vS1m.Application.Scene.Materials.PhysicsRepository.#ctor
-  fullName: D3vS1m.Application.Scene.Materials.PhysicsRepository.PhysicsRepository()
-  nameWithType: PhysicsRepository.PhysicsRepository()
-- uid: D3vS1m.Application.Scene.Materials.PhysicsRepository.#ctor*
-  name: PhysicsRepository
-  href: api/D3vS1m.Application.Scene.Materials.PhysicsRepository.html#D3vS1m_Application_Scene_Materials_PhysicsRepository__ctor_
-  commentId: Overload:D3vS1m.Application.Scene.Materials.PhysicsRepository.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.Application.Scene.Materials.PhysicsRepository.PhysicsRepository
-  nameWithType: PhysicsRepository.PhysicsRepository
-- uid: D3vS1m.Application.Scene.Materials.PhysicsRepository.Item(System.Single)
-  name: Item[Single]
-  href: api/D3vS1m.Application.Scene.Materials.PhysicsRepository.html#D3vS1m_Application_Scene_Materials_PhysicsRepository_Item_System_Single_
-  commentId: P:D3vS1m.Application.Scene.Materials.PhysicsRepository.Item(System.Single)
-  name.vb: Item(Single)
-  fullName: D3vS1m.Application.Scene.Materials.PhysicsRepository.Item[System.Single]
-  fullName.vb: D3vS1m.Application.Scene.Materials.PhysicsRepository.Item(System.Single)
-  nameWithType: PhysicsRepository.Item[Single]
-  nameWithType.vb: PhysicsRepository.Item(Single)
-- uid: D3vS1m.Application.Scene.Materials.PhysicsRepository.Item*
-  name: Item
-  href: api/D3vS1m.Application.Scene.Materials.PhysicsRepository.html#D3vS1m_Application_Scene_Materials_PhysicsRepository_Item_
-  commentId: Overload:D3vS1m.Application.Scene.Materials.PhysicsRepository.Item
-  isSpec: "True"
-  fullName: D3vS1m.Application.Scene.Materials.PhysicsRepository.Item
-  nameWithType: PhysicsRepository.Item
 - uid: D3vS1m.Application.Scene.ObjAdapter
   name: ObjAdapter
   href: api/D3vS1m.Application.Scene.ObjAdapter.html
@@ -3871,57 +3956,601 @@ references:
   commentId: T:D3vS1m.Application.Validation.ValidationBase
   fullName: D3vS1m.Application.Validation.ValidationBase
   nameWithType: ValidationBase
-- uid: D3vS1m.Domain.Config
-  name: D3vS1m.Domain.Config
-  href: api/D3vS1m.Domain.Config.html
-  commentId: N:D3vS1m.Domain.Config
-  fullName: D3vS1m.Domain.Config
-  nameWithType: D3vS1m.Domain.Config
-- uid: D3vS1m.Domain.Config.ConfigBase
-  name: ConfigBase
-  href: api/D3vS1m.Domain.Config.ConfigBase.html
-  commentId: T:D3vS1m.Domain.Config.ConfigBase
-  fullName: D3vS1m.Domain.Config.ConfigBase
-  nameWithType: ConfigBase
-- uid: D3vS1m.Domain.Config.ConfigBase.#ctor(System.String)
-  name: ConfigBase(String)
-  href: api/D3vS1m.Domain.Config.ConfigBase.html#D3vS1m_Domain_Config_ConfigBase__ctor_System_String_
-  commentId: M:D3vS1m.Domain.Config.ConfigBase.#ctor(System.String)
-  fullName: D3vS1m.Domain.Config.ConfigBase.ConfigBase(System.String)
-  nameWithType: ConfigBase.ConfigBase(String)
-- uid: D3vS1m.Domain.Config.ConfigBase.#ctor*
-  name: ConfigBase
-  href: api/D3vS1m.Domain.Config.ConfigBase.html#D3vS1m_Domain_Config_ConfigBase__ctor_
-  commentId: Overload:D3vS1m.Domain.Config.ConfigBase.#ctor
+- uid: D3vS1m.Blazor
+  name: D3vS1m.Blazor
+  href: api/D3vS1m.Blazor.html
+  commentId: N:D3vS1m.Blazor
+  fullName: D3vS1m.Blazor
+  nameWithType: D3vS1m.Blazor
+- uid: D3vS1m.Blazor.Data
+  name: D3vS1m.Blazor.Data
+  href: api/D3vS1m.Blazor.Data.html
+  commentId: N:D3vS1m.Blazor.Data
+  fullName: D3vS1m.Blazor.Data
+  nameWithType: D3vS1m.Blazor.Data
+- uid: D3vS1m.Blazor.Data.WeatherForecast
+  name: WeatherForecast
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html
+  commentId: T:D3vS1m.Blazor.Data.WeatherForecast
+  fullName: D3vS1m.Blazor.Data.WeatherForecast
+  nameWithType: WeatherForecast
+- uid: D3vS1m.Blazor.Data.WeatherForecast.Date
+  name: Date
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_Date
+  commentId: P:D3vS1m.Blazor.Data.WeatherForecast.Date
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.Date
+  nameWithType: WeatherForecast.Date
+- uid: D3vS1m.Blazor.Data.WeatherForecast.Date*
+  name: Date
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_Date_
+  commentId: Overload:D3vS1m.Blazor.Data.WeatherForecast.Date
   isSpec: "True"
-  fullName: D3vS1m.Domain.Config.ConfigBase.ConfigBase
-  nameWithType: ConfigBase.ConfigBase
-- uid: D3vS1m.Domain.Config.ConfigBase.Name
-  name: Name
-  href: api/D3vS1m.Domain.Config.ConfigBase.html#D3vS1m_Domain_Config_ConfigBase_Name
-  commentId: P:D3vS1m.Domain.Config.ConfigBase.Name
-  fullName: D3vS1m.Domain.Config.ConfigBase.Name
-  nameWithType: ConfigBase.Name
-- uid: D3vS1m.Domain.Config.ConfigBase.Name*
-  name: Name
-  href: api/D3vS1m.Domain.Config.ConfigBase.html#D3vS1m_Domain_Config_ConfigBase_Name_
-  commentId: Overload:D3vS1m.Domain.Config.ConfigBase.Name
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.Date
+  nameWithType: WeatherForecast.Date
+- uid: D3vS1m.Blazor.Data.WeatherForecast.Summary
+  name: Summary
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_Summary
+  commentId: P:D3vS1m.Blazor.Data.WeatherForecast.Summary
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.Summary
+  nameWithType: WeatherForecast.Summary
+- uid: D3vS1m.Blazor.Data.WeatherForecast.Summary*
+  name: Summary
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_Summary_
+  commentId: Overload:D3vS1m.Blazor.Data.WeatherForecast.Summary
   isSpec: "True"
-  fullName: D3vS1m.Domain.Config.ConfigBase.Name
-  nameWithType: ConfigBase.Name
-- uid: D3vS1m.Domain.Config.ConfigBase.ToString
-  name: ToString()
-  href: api/D3vS1m.Domain.Config.ConfigBase.html#D3vS1m_Domain_Config_ConfigBase_ToString
-  commentId: M:D3vS1m.Domain.Config.ConfigBase.ToString
-  fullName: D3vS1m.Domain.Config.ConfigBase.ToString()
-  nameWithType: ConfigBase.ToString()
-- uid: D3vS1m.Domain.Config.ConfigBase.ToString*
-  name: ToString
-  href: api/D3vS1m.Domain.Config.ConfigBase.html#D3vS1m_Domain_Config_ConfigBase_ToString_
-  commentId: Overload:D3vS1m.Domain.Config.ConfigBase.ToString
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.Summary
+  nameWithType: WeatherForecast.Summary
+- uid: D3vS1m.Blazor.Data.WeatherForecast.TemperatureC
+  name: TemperatureC
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_TemperatureC
+  commentId: P:D3vS1m.Blazor.Data.WeatherForecast.TemperatureC
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.TemperatureC
+  nameWithType: WeatherForecast.TemperatureC
+- uid: D3vS1m.Blazor.Data.WeatherForecast.TemperatureC*
+  name: TemperatureC
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_TemperatureC_
+  commentId: Overload:D3vS1m.Blazor.Data.WeatherForecast.TemperatureC
   isSpec: "True"
-  fullName: D3vS1m.Domain.Config.ConfigBase.ToString
-  nameWithType: ConfigBase.ToString
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.TemperatureC
+  nameWithType: WeatherForecast.TemperatureC
+- uid: D3vS1m.Blazor.Data.WeatherForecast.TemperatureF
+  name: TemperatureF
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_TemperatureF
+  commentId: P:D3vS1m.Blazor.Data.WeatherForecast.TemperatureF
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.TemperatureF
+  nameWithType: WeatherForecast.TemperatureF
+- uid: D3vS1m.Blazor.Data.WeatherForecast.TemperatureF*
+  name: TemperatureF
+  href: api/D3vS1m.Blazor.Data.WeatherForecast.html#D3vS1m_Blazor_Data_WeatherForecast_TemperatureF_
+  commentId: Overload:D3vS1m.Blazor.Data.WeatherForecast.TemperatureF
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Data.WeatherForecast.TemperatureF
+  nameWithType: WeatherForecast.TemperatureF
+- uid: D3vS1m.Blazor.Data.WeatherForecastService
+  name: WeatherForecastService
+  href: api/D3vS1m.Blazor.Data.WeatherForecastService.html
+  commentId: T:D3vS1m.Blazor.Data.WeatherForecastService
+  fullName: D3vS1m.Blazor.Data.WeatherForecastService
+  nameWithType: WeatherForecastService
+- uid: D3vS1m.Blazor.Data.WeatherForecastService.GetForecastAsync(DateTime)
+  name: GetForecastAsync(DateTime)
+  href: api/D3vS1m.Blazor.Data.WeatherForecastService.html#D3vS1m_Blazor_Data_WeatherForecastService_GetForecastAsync_DateTime_
+  commentId: M:D3vS1m.Blazor.Data.WeatherForecastService.GetForecastAsync(DateTime)
+  fullName: D3vS1m.Blazor.Data.WeatherForecastService.GetForecastAsync(DateTime)
+  nameWithType: WeatherForecastService.GetForecastAsync(DateTime)
+- uid: D3vS1m.Blazor.Data.WeatherForecastService.GetForecastAsync*
+  name: GetForecastAsync
+  href: api/D3vS1m.Blazor.Data.WeatherForecastService.html#D3vS1m_Blazor_Data_WeatherForecastService_GetForecastAsync_
+  commentId: Overload:D3vS1m.Blazor.Data.WeatherForecastService.GetForecastAsync
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Data.WeatherForecastService.GetForecastAsync
+  nameWithType: WeatherForecastService.GetForecastAsync
+- uid: D3vS1m.Blazor.Program
+  name: Program
+  href: api/D3vS1m.Blazor.Program.html
+  commentId: T:D3vS1m.Blazor.Program
+  fullName: D3vS1m.Blazor.Program
+  nameWithType: Program
+- uid: D3vS1m.Blazor.Program.CreateHostBuilder(System.String[])
+  name: CreateHostBuilder(String[])
+  href: api/D3vS1m.Blazor.Program.html#D3vS1m_Blazor_Program_CreateHostBuilder_System_String___
+  commentId: M:D3vS1m.Blazor.Program.CreateHostBuilder(System.String[])
+  name.vb: CreateHostBuilder(String())
+  fullName: D3vS1m.Blazor.Program.CreateHostBuilder(System.String[])
+  fullName.vb: D3vS1m.Blazor.Program.CreateHostBuilder(System.String())
+  nameWithType: Program.CreateHostBuilder(String[])
+  nameWithType.vb: Program.CreateHostBuilder(String())
+- uid: D3vS1m.Blazor.Program.CreateHostBuilder*
+  name: CreateHostBuilder
+  href: api/D3vS1m.Blazor.Program.html#D3vS1m_Blazor_Program_CreateHostBuilder_
+  commentId: Overload:D3vS1m.Blazor.Program.CreateHostBuilder
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Program.CreateHostBuilder
+  nameWithType: Program.CreateHostBuilder
+- uid: D3vS1m.Blazor.Program.Main(System.String[])
+  name: Main(String[])
+  href: api/D3vS1m.Blazor.Program.html#D3vS1m_Blazor_Program_Main_System_String___
+  commentId: M:D3vS1m.Blazor.Program.Main(System.String[])
+  name.vb: Main(String())
+  fullName: D3vS1m.Blazor.Program.Main(System.String[])
+  fullName.vb: D3vS1m.Blazor.Program.Main(System.String())
+  nameWithType: Program.Main(String[])
+  nameWithType.vb: Program.Main(String())
+- uid: D3vS1m.Blazor.Program.Main*
+  name: Main
+  href: api/D3vS1m.Blazor.Program.html#D3vS1m_Blazor_Program_Main_
+  commentId: Overload:D3vS1m.Blazor.Program.Main
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Program.Main
+  nameWithType: Program.Main
+- uid: D3vS1m.Blazor.Startup
+  name: Startup
+  href: api/D3vS1m.Blazor.Startup.html
+  commentId: T:D3vS1m.Blazor.Startup
+  fullName: D3vS1m.Blazor.Startup
+  nameWithType: Startup
+- uid: D3vS1m.Blazor.Startup.#ctor(IConfiguration)
+  name: Startup(IConfiguration)
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup__ctor_IConfiguration_
+  commentId: M:D3vS1m.Blazor.Startup.#ctor(IConfiguration)
+  fullName: D3vS1m.Blazor.Startup.Startup(IConfiguration)
+  nameWithType: Startup.Startup(IConfiguration)
+- uid: D3vS1m.Blazor.Startup.#ctor*
+  name: Startup
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup__ctor_
+  commentId: Overload:D3vS1m.Blazor.Startup.#ctor
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Startup.Startup
+  nameWithType: Startup.Startup
+- uid: D3vS1m.Blazor.Startup.Configuration
+  name: Configuration
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup_Configuration
+  commentId: P:D3vS1m.Blazor.Startup.Configuration
+  fullName: D3vS1m.Blazor.Startup.Configuration
+  nameWithType: Startup.Configuration
+- uid: D3vS1m.Blazor.Startup.Configuration*
+  name: Configuration
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup_Configuration_
+  commentId: Overload:D3vS1m.Blazor.Startup.Configuration
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Startup.Configuration
+  nameWithType: Startup.Configuration
+- uid: D3vS1m.Blazor.Startup.Configure(IApplicationBuilder,IWebHostEnvironment)
+  name: Configure(IApplicationBuilder, IWebHostEnvironment)
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup_Configure_IApplicationBuilder_IWebHostEnvironment_
+  commentId: M:D3vS1m.Blazor.Startup.Configure(IApplicationBuilder,IWebHostEnvironment)
+  fullName: D3vS1m.Blazor.Startup.Configure(IApplicationBuilder, IWebHostEnvironment)
+  nameWithType: Startup.Configure(IApplicationBuilder, IWebHostEnvironment)
+- uid: D3vS1m.Blazor.Startup.Configure*
+  name: Configure
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup_Configure_
+  commentId: Overload:D3vS1m.Blazor.Startup.Configure
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Startup.Configure
+  nameWithType: Startup.Configure
+- uid: D3vS1m.Blazor.Startup.ConfigureServices(IServiceCollection)
+  name: ConfigureServices(IServiceCollection)
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup_ConfigureServices_IServiceCollection_
+  commentId: M:D3vS1m.Blazor.Startup.ConfigureServices(IServiceCollection)
+  fullName: D3vS1m.Blazor.Startup.ConfigureServices(IServiceCollection)
+  nameWithType: Startup.ConfigureServices(IServiceCollection)
+- uid: D3vS1m.Blazor.Startup.ConfigureServices*
+  name: ConfigureServices
+  href: api/D3vS1m.Blazor.Startup.html#D3vS1m_Blazor_Startup_ConfigureServices_
+  commentId: Overload:D3vS1m.Blazor.Startup.ConfigureServices
+  isSpec: "True"
+  fullName: D3vS1m.Blazor.Startup.ConfigureServices
+  nameWithType: Startup.ConfigureServices
+- uid: D3vS1m.Cli
+  name: D3vS1m.Cli
+  href: api/D3vS1m.Cli.html
+  commentId: N:D3vS1m.Cli
+  fullName: D3vS1m.Cli
+  nameWithType: D3vS1m.Cli
+- uid: D3vS1m.Cli.Options
+  name: D3vS1m.Cli.Options
+  href: api/D3vS1m.Cli.Options.html
+  commentId: N:D3vS1m.Cli.Options
+  fullName: D3vS1m.Cli.Options
+  nameWithType: D3vS1m.Cli.Options
+- uid: D3vS1m.Cli.Options.CliAttribute
+  name: CliAttribute
+  href: api/D3vS1m.Cli.Options.CliAttribute.html
+  commentId: T:D3vS1m.Cli.Options.CliAttribute
+  fullName: D3vS1m.Cli.Options.CliAttribute
+  nameWithType: CliAttribute
+- uid: D3vS1m.Cli.Options.CliAttribute.#ctor
+  name: CliAttribute()
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute__ctor
+  commentId: M:D3vS1m.Cli.Options.CliAttribute.#ctor
+  fullName: D3vS1m.Cli.Options.CliAttribute.CliAttribute()
+  nameWithType: CliAttribute.CliAttribute()
+- uid: D3vS1m.Cli.Options.CliAttribute.#ctor(System.String,System.String)
+  name: CliAttribute(String, String)
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute__ctor_System_String_System_String_
+  commentId: M:D3vS1m.Cli.Options.CliAttribute.#ctor(System.String,System.String)
+  fullName: D3vS1m.Cli.Options.CliAttribute.CliAttribute(System.String, System.String)
+  nameWithType: CliAttribute.CliAttribute(String, String)
+- uid: D3vS1m.Cli.Options.CliAttribute.#ctor*
+  name: CliAttribute
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute__ctor_
+  commentId: Overload:D3vS1m.Cli.Options.CliAttribute.#ctor
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliAttribute.CliAttribute
+  nameWithType: CliAttribute.CliAttribute
+- uid: D3vS1m.Cli.Options.CliAttribute.Long
+  name: Long
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute_Long
+  commentId: P:D3vS1m.Cli.Options.CliAttribute.Long
+  fullName: D3vS1m.Cli.Options.CliAttribute.Long
+  nameWithType: CliAttribute.Long
+- uid: D3vS1m.Cli.Options.CliAttribute.Long*
+  name: Long
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute_Long_
+  commentId: Overload:D3vS1m.Cli.Options.CliAttribute.Long
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliAttribute.Long
+  nameWithType: CliAttribute.Long
+- uid: D3vS1m.Cli.Options.CliAttribute.Short
+  name: Short
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute_Short
+  commentId: P:D3vS1m.Cli.Options.CliAttribute.Short
+  fullName: D3vS1m.Cli.Options.CliAttribute.Short
+  nameWithType: CliAttribute.Short
+- uid: D3vS1m.Cli.Options.CliAttribute.Short*
+  name: Short
+  href: api/D3vS1m.Cli.Options.CliAttribute.html#D3vS1m_Cli_Options_CliAttribute_Short_
+  commentId: Overload:D3vS1m.Cli.Options.CliAttribute.Short
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliAttribute.Short
+  nameWithType: CliAttribute.Short
+- uid: D3vS1m.Cli.Options.CliOptions
+  name: CliOptions
+  href: api/D3vS1m.Cli.Options.CliOptions.html
+  commentId: T:D3vS1m.Cli.Options.CliOptions
+  fullName: D3vS1m.Cli.Options.CliOptions
+  nameWithType: CliOptions
+- uid: D3vS1m.Cli.Options.CliOptions.#ctor
+  name: CliOptions()
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions__ctor
+  commentId: M:D3vS1m.Cli.Options.CliOptions.#ctor
+  fullName: D3vS1m.Cli.Options.CliOptions.CliOptions()
+  nameWithType: CliOptions.CliOptions()
+- uid: D3vS1m.Cli.Options.CliOptions.#ctor*
+  name: CliOptions
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions__ctor_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.#ctor
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.CliOptions
+  nameWithType: CliOptions.CliOptions
+- uid: D3vS1m.Cli.Options.CliOptions.AntennaFile
+  name: AntennaFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_AntennaFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.AntennaFile
+  fullName: D3vS1m.Cli.Options.CliOptions.AntennaFile
+  nameWithType: CliOptions.AntennaFile
+- uid: D3vS1m.Cli.Options.CliOptions.AntennaFile*
+  name: AntennaFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_AntennaFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.AntennaFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.AntennaFile
+  nameWithType: CliOptions.AntennaFile
+- uid: D3vS1m.Cli.Options.CliOptions.Break
+  name: Break
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_Break
+  commentId: P:D3vS1m.Cli.Options.CliOptions.Break
+  fullName: D3vS1m.Cli.Options.CliOptions.Break
+  nameWithType: CliOptions.Break
+- uid: D3vS1m.Cli.Options.CliOptions.Break*
+  name: Break
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_Break_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.Break
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.Break
+  nameWithType: CliOptions.Break
+- uid: D3vS1m.Cli.Options.CliOptions.ChannelFile
+  name: ChannelFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_ChannelFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.ChannelFile
+  fullName: D3vS1m.Cli.Options.CliOptions.ChannelFile
+  nameWithType: CliOptions.ChannelFile
+- uid: D3vS1m.Cli.Options.CliOptions.ChannelFile*
+  name: ChannelFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_ChannelFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.ChannelFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.ChannelFile
+  nameWithType: CliOptions.ChannelFile
+- uid: D3vS1m.Cli.Options.CliOptions.CommunicationlFile
+  name: CommunicationlFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_CommunicationlFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.CommunicationlFile
+  fullName: D3vS1m.Cli.Options.CliOptions.CommunicationlFile
+  nameWithType: CliOptions.CommunicationlFile
+- uid: D3vS1m.Cli.Options.CliOptions.CommunicationlFile*
+  name: CommunicationlFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_CommunicationlFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.CommunicationlFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.CommunicationlFile
+  nameWithType: CliOptions.CommunicationlFile
+- uid: D3vS1m.Cli.Options.CliOptions.DevicesFile
+  name: DevicesFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_DevicesFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.DevicesFile
+  fullName: D3vS1m.Cli.Options.CliOptions.DevicesFile
+  nameWithType: CliOptions.DevicesFile
+- uid: D3vS1m.Cli.Options.CliOptions.DevicesFile*
+  name: DevicesFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_DevicesFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.DevicesFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.DevicesFile
+  nameWithType: CliOptions.DevicesFile
+- uid: D3vS1m.Cli.Options.CliOptions.EnergyFile
+  name: EnergyFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_EnergyFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.EnergyFile
+  fullName: D3vS1m.Cli.Options.CliOptions.EnergyFile
+  nameWithType: CliOptions.EnergyFile
+- uid: D3vS1m.Cli.Options.CliOptions.EnergyFile*
+  name: EnergyFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_EnergyFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.EnergyFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.EnergyFile
+  nameWithType: CliOptions.EnergyFile
+- uid: D3vS1m.Cli.Options.CliOptions.RuntimeFile
+  name: RuntimeFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_RuntimeFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.RuntimeFile
+  fullName: D3vS1m.Cli.Options.CliOptions.RuntimeFile
+  nameWithType: CliOptions.RuntimeFile
+- uid: D3vS1m.Cli.Options.CliOptions.RuntimeFile*
+  name: RuntimeFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_RuntimeFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.RuntimeFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.RuntimeFile
+  nameWithType: CliOptions.RuntimeFile
+- uid: D3vS1m.Cli.Options.CliOptions.SceneFile
+  name: SceneFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_SceneFile
+  commentId: P:D3vS1m.Cli.Options.CliOptions.SceneFile
+  fullName: D3vS1m.Cli.Options.CliOptions.SceneFile
+  nameWithType: CliOptions.SceneFile
+- uid: D3vS1m.Cli.Options.CliOptions.SceneFile*
+  name: SceneFile
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_SceneFile_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.SceneFile
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.SceneFile
+  nameWithType: CliOptions.SceneFile
+- uid: D3vS1m.Cli.Options.CliOptions.Verbose
+  name: Verbose
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_Verbose
+  commentId: P:D3vS1m.Cli.Options.CliOptions.Verbose
+  fullName: D3vS1m.Cli.Options.CliOptions.Verbose
+  nameWithType: CliOptions.Verbose
+- uid: D3vS1m.Cli.Options.CliOptions.Verbose*
+  name: Verbose
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_Verbose_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.Verbose
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.Verbose
+  nameWithType: CliOptions.Verbose
+- uid: D3vS1m.Cli.Options.CliOptions.Workspace
+  name: Workspace
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_Workspace
+  commentId: P:D3vS1m.Cli.Options.CliOptions.Workspace
+  fullName: D3vS1m.Cli.Options.CliOptions.Workspace
+  nameWithType: CliOptions.Workspace
+- uid: D3vS1m.Cli.Options.CliOptions.Workspace*
+  name: Workspace
+  href: api/D3vS1m.Cli.Options.CliOptions.html#D3vS1m_Cli_Options_CliOptions_Workspace_
+  commentId: Overload:D3vS1m.Cli.Options.CliOptions.Workspace
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.CliOptions.Workspace
+  nameWithType: CliOptions.Workspace
+- uid: D3vS1m.Cli.Options.OptionParser
+  name: OptionParser
+  href: api/D3vS1m.Cli.Options.OptionParser.html
+  commentId: T:D3vS1m.Cli.Options.OptionParser
+  fullName: D3vS1m.Cli.Options.OptionParser
+  nameWithType: OptionParser
+- uid: D3vS1m.Cli.Options.OptionParser.#ctor
+  name: OptionParser()
+  href: api/D3vS1m.Cli.Options.OptionParser.html#D3vS1m_Cli_Options_OptionParser__ctor
+  commentId: M:D3vS1m.Cli.Options.OptionParser.#ctor
+  fullName: D3vS1m.Cli.Options.OptionParser.OptionParser()
+  nameWithType: OptionParser.OptionParser()
+- uid: D3vS1m.Cli.Options.OptionParser.#ctor*
+  name: OptionParser
+  href: api/D3vS1m.Cli.Options.OptionParser.html#D3vS1m_Cli_Options_OptionParser__ctor_
+  commentId: Overload:D3vS1m.Cli.Options.OptionParser.#ctor
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.OptionParser.OptionParser
+  nameWithType: OptionParser.OptionParser
+- uid: D3vS1m.Cli.Options.OptionParser.ReadArguments(System.String[])
+  name: ReadArguments(String[])
+  href: api/D3vS1m.Cli.Options.OptionParser.html#D3vS1m_Cli_Options_OptionParser_ReadArguments_System_String___
+  commentId: M:D3vS1m.Cli.Options.OptionParser.ReadArguments(System.String[])
+  name.vb: ReadArguments(String())
+  fullName: D3vS1m.Cli.Options.OptionParser.ReadArguments(System.String[])
+  fullName.vb: D3vS1m.Cli.Options.OptionParser.ReadArguments(System.String())
+  nameWithType: OptionParser.ReadArguments(String[])
+  nameWithType.vb: OptionParser.ReadArguments(String())
+- uid: D3vS1m.Cli.Options.OptionParser.ReadArguments*
+  name: ReadArguments
+  href: api/D3vS1m.Cli.Options.OptionParser.html#D3vS1m_Cli_Options_OptionParser_ReadArguments_
+  commentId: Overload:D3vS1m.Cli.Options.OptionParser.ReadArguments
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Options.OptionParser.ReadArguments
+  nameWithType: OptionParser.ReadArguments
+- uid: D3vS1m.Cli.Program
+  name: Program
+  href: api/D3vS1m.Cli.Program.html
+  commentId: T:D3vS1m.Cli.Program
+  fullName: D3vS1m.Cli.Program
+  nameWithType: Program
+- uid: D3vS1m.Cli.Program.Main(System.String[])
+  name: Main(String[])
+  href: api/D3vS1m.Cli.Program.html#D3vS1m_Cli_Program_Main_System_String___
+  commentId: M:D3vS1m.Cli.Program.Main(System.String[])
+  name.vb: Main(String())
+  fullName: D3vS1m.Cli.Program.Main(System.String[])
+  fullName.vb: D3vS1m.Cli.Program.Main(System.String())
+  nameWithType: Program.Main(String[])
+  nameWithType.vb: Program.Main(String())
+- uid: D3vS1m.Cli.Program.Main*
+  name: Main
+  href: api/D3vS1m.Cli.Program.html#D3vS1m_Cli_Program_Main_
+  commentId: Overload:D3vS1m.Cli.Program.Main
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Program.Main
+  nameWithType: Program.Main
+- uid: D3vS1m.Cli.Reader
+  name: D3vS1m.Cli.Reader
+  href: api/D3vS1m.Cli.Reader.html
+  commentId: N:D3vS1m.Cli.Reader
+  fullName: D3vS1m.Cli.Reader
+  nameWithType: D3vS1m.Cli.Reader
+- uid: D3vS1m.Cli.Reader.ArgumentsReader
+  name: ArgumentsReader
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html
+  commentId: T:D3vS1m.Cli.Reader.ArgumentsReader
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader
+  nameWithType: ArgumentsReader
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.#ctor(D3vS1m.Cli.Options.CliOptions,D3vS1m.Application.FactoryBase,D3vS1m.Domain.Runtime.RuntimeBase)
+  name: ArgumentsReader(CliOptions, FactoryBase, RuntimeBase)
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader__ctor_D3vS1m_Cli_Options_CliOptions_D3vS1m_Application_FactoryBase_D3vS1m_Domain_Runtime_RuntimeBase_
+  commentId: M:D3vS1m.Cli.Reader.ArgumentsReader.#ctor(D3vS1m.Cli.Options.CliOptions,D3vS1m.Application.FactoryBase,D3vS1m.Domain.Runtime.RuntimeBase)
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.ArgumentsReader(D3vS1m.Cli.Options.CliOptions, D3vS1m.Application.FactoryBase, D3vS1m.Domain.Runtime.RuntimeBase)
+  nameWithType: ArgumentsReader.ArgumentsReader(CliOptions, FactoryBase, RuntimeBase)
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.#ctor*
+  name: ArgumentsReader
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader__ctor_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.#ctor
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.ArgumentsReader
+  nameWithType: ArgumentsReader.ArgumentsReader
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Arguments
+  name: Arguments
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Arguments
+  commentId: P:D3vS1m.Cli.Reader.ArgumentsReader.Arguments
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Arguments
+  nameWithType: ArgumentsReader.Arguments
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Arguments*
+  name: Arguments
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Arguments_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.Arguments
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Arguments
+  nameWithType: ArgumentsReader.Arguments
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Factory
+  name: Factory
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Factory
+  commentId: P:D3vS1m.Cli.Reader.ArgumentsReader.Factory
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Factory
+  nameWithType: ArgumentsReader.Factory
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Factory*
+  name: Factory
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Factory_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.Factory
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Factory
+  nameWithType: ArgumentsReader.Factory
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.IO
+  name: IO
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_IO
+  commentId: P:D3vS1m.Cli.Reader.ArgumentsReader.IO
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.IO
+  nameWithType: ArgumentsReader.IO
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.IO*
+  name: IO
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_IO_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.IO
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.IO
+  nameWithType: ArgumentsReader.IO
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Options
+  name: Options
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Options
+  commentId: P:D3vS1m.Cli.Reader.ArgumentsReader.Options
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Options
+  nameWithType: ArgumentsReader.Options
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Options*
+  name: Options
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Options_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.Options
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Options
+  nameWithType: ArgumentsReader.Options
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Run(D3vS1m.Cli.Reader.IReadable)
+  name: Run(IReadable)
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Run_D3vS1m_Cli_Reader_IReadable_
+  commentId: M:D3vS1m.Cli.Reader.ArgumentsReader.Run(D3vS1m.Cli.Reader.IReadable)
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Run(D3vS1m.Cli.Reader.IReadable)
+  nameWithType: ArgumentsReader.Run(IReadable)
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Run*
+  name: Run
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Run_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.Run
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Run
+  nameWithType: ArgumentsReader.Run
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Runtime
+  name: Runtime
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Runtime
+  commentId: P:D3vS1m.Cli.Reader.ArgumentsReader.Runtime
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Runtime
+  nameWithType: ArgumentsReader.Runtime
+- uid: D3vS1m.Cli.Reader.ArgumentsReader.Runtime*
+  name: Runtime
+  href: api/D3vS1m.Cli.Reader.ArgumentsReader.html#D3vS1m_Cli_Reader_ArgumentsReader_Runtime_
+  commentId: Overload:D3vS1m.Cli.Reader.ArgumentsReader.Runtime
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.ArgumentsReader.Runtime
+  nameWithType: ArgumentsReader.Runtime
+- uid: D3vS1m.Cli.Reader.IReadable
+  name: IReadable
+  href: api/D3vS1m.Cli.Reader.IReadable.html
+  commentId: T:D3vS1m.Cli.Reader.IReadable
+  fullName: D3vS1m.Cli.Reader.IReadable
+  nameWithType: IReadable
+- uid: D3vS1m.Cli.Reader.IReadable.Read(D3vS1m.Cli.Reader.ArgumentsReader)
+  name: Read(ArgumentsReader)
+  href: api/D3vS1m.Cli.Reader.IReadable.html#D3vS1m_Cli_Reader_IReadable_Read_D3vS1m_Cli_Reader_ArgumentsReader_
+  commentId: M:D3vS1m.Cli.Reader.IReadable.Read(D3vS1m.Cli.Reader.ArgumentsReader)
+  fullName: D3vS1m.Cli.Reader.IReadable.Read(D3vS1m.Cli.Reader.ArgumentsReader)
+  nameWithType: IReadable.Read(ArgumentsReader)
+- uid: D3vS1m.Cli.Reader.IReadable.Read*
+  name: Read
+  href: api/D3vS1m.Cli.Reader.IReadable.html#D3vS1m_Cli_Reader_IReadable_Read_
+  commentId: Overload:D3vS1m.Cli.Reader.IReadable.Read
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.IReadable.Read
+  nameWithType: IReadable.Read
+- uid: D3vS1m.Cli.Reader.SceneReader
+  name: SceneReader
+  href: api/D3vS1m.Cli.Reader.SceneReader.html
+  commentId: T:D3vS1m.Cli.Reader.SceneReader
+  fullName: D3vS1m.Cli.Reader.SceneReader
+  nameWithType: SceneReader
+- uid: D3vS1m.Cli.Reader.SceneReader.Read(D3vS1m.Cli.Reader.ArgumentsReader)
+  name: Read(ArgumentsReader)
+  href: api/D3vS1m.Cli.Reader.SceneReader.html#D3vS1m_Cli_Reader_SceneReader_Read_D3vS1m_Cli_Reader_ArgumentsReader_
+  commentId: M:D3vS1m.Cli.Reader.SceneReader.Read(D3vS1m.Cli.Reader.ArgumentsReader)
+  fullName: D3vS1m.Cli.Reader.SceneReader.Read(D3vS1m.Cli.Reader.ArgumentsReader)
+  nameWithType: SceneReader.Read(ArgumentsReader)
+- uid: D3vS1m.Cli.Reader.SceneReader.Read*
+  name: Read
+  href: api/D3vS1m.Cli.Reader.SceneReader.html#D3vS1m_Cli_Reader_SceneReader_Read_
+  commentId: Overload:D3vS1m.Cli.Reader.SceneReader.Read
+  isSpec: "True"
+  fullName: D3vS1m.Cli.Reader.SceneReader.Read
+  nameWithType: SceneReader.Read
 - uid: D3vS1m.Domain.Data
   name: D3vS1m.Domain.Data
   href: api/D3vS1m.Domain.Data.html
@@ -3979,6 +4608,32 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Guid
   nameWithType: ArgumentsBase.Guid
+- uid: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Index
+  name: Index
+  href: api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.html#D3vS1m_Domain_Data_Arguments_ArgumentsBase_Index
+  commentId: P:D3vS1m.Domain.Data.Arguments.ArgumentsBase.Index
+  fullName: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Index
+  nameWithType: ArgumentsBase.Index
+- uid: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Index*
+  name: Index
+  href: api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.html#D3vS1m_Domain_Data_Arguments_ArgumentsBase_Index_
+  commentId: Overload:D3vS1m.Domain.Data.Arguments.ArgumentsBase.Index
+  isSpec: "True"
+  fullName: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Index
+  nameWithType: ArgumentsBase.Index
+- uid: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Key
+  name: Key
+  href: api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.html#D3vS1m_Domain_Data_Arguments_ArgumentsBase_Key
+  commentId: P:D3vS1m.Domain.Data.Arguments.ArgumentsBase.Key
+  fullName: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Key
+  nameWithType: ArgumentsBase.Key
+- uid: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Key*
+  name: Key
+  href: api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.html#D3vS1m_Domain_Data_Arguments_ArgumentsBase_Key_
+  commentId: Overload:D3vS1m.Domain.Data.Arguments.ArgumentsBase.Key
+  isSpec: "True"
+  fullName: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Key
+  nameWithType: ArgumentsBase.Key
 - uid: D3vS1m.Domain.Data.Arguments.ArgumentsBase.Name
   name: Name
   href: api/D3vS1m.Domain.Data.Arguments.ArgumentsBase.html#D3vS1m_Domain_Data_Arguments_ArgumentsBase_Name
@@ -4018,6 +4673,25 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Domain.Data.Arguments.ArgumentsBase.ToString
   nameWithType: ArgumentsBase.ToString
+- uid: D3vS1m.Domain.Data.Arguments.EmptyArgs
+  name: EmptyArgs
+  href: api/D3vS1m.Domain.Data.Arguments.EmptyArgs.html
+  commentId: T:D3vS1m.Domain.Data.Arguments.EmptyArgs
+  fullName: D3vS1m.Domain.Data.Arguments.EmptyArgs
+  nameWithType: EmptyArgs
+- uid: D3vS1m.Domain.Data.Arguments.EmptyArgs.Reset
+  name: Reset()
+  href: api/D3vS1m.Domain.Data.Arguments.EmptyArgs.html#D3vS1m_Domain_Data_Arguments_EmptyArgs_Reset
+  commentId: M:D3vS1m.Domain.Data.Arguments.EmptyArgs.Reset
+  fullName: D3vS1m.Domain.Data.Arguments.EmptyArgs.Reset()
+  nameWithType: EmptyArgs.Reset()
+- uid: D3vS1m.Domain.Data.Arguments.EmptyArgs.Reset*
+  name: Reset
+  href: api/D3vS1m.Domain.Data.Arguments.EmptyArgs.html#D3vS1m_Domain_Data_Arguments_EmptyArgs_Reset_
+  commentId: Overload:D3vS1m.Domain.Data.Arguments.EmptyArgs.Reset
+  isSpec: "True"
+  fullName: D3vS1m.Domain.Data.Arguments.EmptyArgs.Reset
+  nameWithType: EmptyArgs.Reset
 - uid: D3vS1m.Domain.Data.Matrix`1
   name: Matrix<T>
   href: api/D3vS1m.Domain.Data.Matrix-1.html
@@ -4391,6 +5065,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Domain.Data.Scene.Vertex.Equals
   nameWithType: Vertex.Equals
+- uid: D3vS1m.Domain.Data.Scene.Vertex.GetHashCode
+  name: GetHashCode()
+  href: api/D3vS1m.Domain.Data.Scene.Vertex.html#D3vS1m_Domain_Data_Scene_Vertex_GetHashCode
+  commentId: M:D3vS1m.Domain.Data.Scene.Vertex.GetHashCode
+  fullName: D3vS1m.Domain.Data.Scene.Vertex.GetHashCode()
+  nameWithType: Vertex.GetHashCode()
+- uid: D3vS1m.Domain.Data.Scene.Vertex.GetHashCode*
+  name: GetHashCode
+  href: api/D3vS1m.Domain.Data.Scene.Vertex.html#D3vS1m_Domain_Data_Scene_Vertex_GetHashCode_
+  commentId: Overload:D3vS1m.Domain.Data.Scene.Vertex.GetHashCode
+  isSpec: "True"
+  fullName: D3vS1m.Domain.Data.Scene.Vertex.GetHashCode
+  nameWithType: Vertex.GetHashCode
 - uid: D3vS1m.Domain.Data.Scene.Vertex.GetLength(D3vS1m.Domain.Data.Scene.Vertex,D3vS1m.Domain.Data.Scene.Vertex)
   name: GetLength(Vertex, Vertex)
   href: api/D3vS1m.Domain.Data.Scene.Vertex.html#D3vS1m_Domain_Data_Scene_Vertex_GetLength_D3vS1m_Domain_Data_Scene_Vertex_D3vS1m_Domain_Data_Scene_Vertex_
@@ -4469,6 +5156,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Domain.Data.Scene.Vertex.Subtraction
   nameWithType: Vertex.Subtraction
+- uid: D3vS1m.Domain.Data.Scene.Vertex.Origin
+  name: Origin
+  href: api/D3vS1m.Domain.Data.Scene.Vertex.html#D3vS1m_Domain_Data_Scene_Vertex_Origin
+  commentId: P:D3vS1m.Domain.Data.Scene.Vertex.Origin
+  fullName: D3vS1m.Domain.Data.Scene.Vertex.Origin
+  nameWithType: Vertex.Origin
+- uid: D3vS1m.Domain.Data.Scene.Vertex.Origin*
+  name: Origin
+  href: api/D3vS1m.Domain.Data.Scene.Vertex.html#D3vS1m_Domain_Data_Scene_Vertex_Origin_
+  commentId: Overload:D3vS1m.Domain.Data.Scene.Vertex.Origin
+  isSpec: "True"
+  fullName: D3vS1m.Domain.Data.Scene.Vertex.Origin
+  nameWithType: Vertex.Origin
 - uid: D3vS1m.Domain.Data.Scene.Vertex.RotateRadX(System.Single,D3vS1m.Domain.Data.Scene.Vertex)
   name: RotateRadX(Single, Vertex)
   href: api/D3vS1m.Domain.Data.Scene.Vertex.html#D3vS1m_Domain_Data_Scene_Vertex_RotateRadX_System_Single_D3vS1m_Domain_Data_Scene_Vertex_
@@ -4656,260 +5356,6 @@ references:
   commentId: T:D3vS1m.Domain.Events.SimulatorEventHandler
   fullName: D3vS1m.Domain.Events.SimulatorEventHandler
   nameWithType: SimulatorEventHandler
-- uid: D3vS1m.Domain.Infrastructure.Mqtt
-  name: D3vS1m.Domain.Infrastructure.Mqtt
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.html
-  commentId: N:D3vS1m.Domain.Infrastructure.Mqtt
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt
-  nameWithType: D3vS1m.Domain.Infrastructure.Mqtt
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable
-  name: IMqttControlable
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html
-  commentId: T:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable
-  nameWithType: IMqttControlable
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Config
-  name: Config
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_Config
-  commentId: P:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Config
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Config
-  nameWithType: IMqttControlable.Config
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Config*
-  name: Config
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_Config_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Config
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Config
-  nameWithType: IMqttControlable.Config
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.ConnectAsync
-  name: ConnectAsync()
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_ConnectAsync
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.ConnectAsync
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.ConnectAsync()
-  nameWithType: IMqttControlable.ConnectAsync()
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.ConnectAsync*
-  name: ConnectAsync
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_ConnectAsync_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.ConnectAsync
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.ConnectAsync
-  nameWithType: IMqttControlable.ConnectAsync
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Connected
-  name: Connected
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_Connected
-  commentId: E:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Connected
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Connected
-  nameWithType: IMqttControlable.Connected
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.CreateClient(D3vS1m.Domain.Config.ConfigBase)
-  name: CreateClient(ConfigBase)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_CreateClient_D3vS1m_Domain_Config_ConfigBase_
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.CreateClient(D3vS1m.Domain.Config.ConfigBase)
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.CreateClient(D3vS1m.Domain.Config.ConfigBase)
-  nameWithType: IMqttControlable.CreateClient(ConfigBase)
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.CreateClient*
-  name: CreateClient
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_CreateClient_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.CreateClient
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.CreateClient
-  nameWithType: IMqttControlable.CreateClient
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.DisconnectAsync
-  name: DisconnectAsync()
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_DisconnectAsync
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.DisconnectAsync
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.DisconnectAsync()
-  nameWithType: IMqttControlable.DisconnectAsync()
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.DisconnectAsync*
-  name: DisconnectAsync
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_DisconnectAsync_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.DisconnectAsync
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.DisconnectAsync
-  nameWithType: IMqttControlable.DisconnectAsync
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Disconnected
-  name: Disconnected
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_Disconnected
-  commentId: E:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Disconnected
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.Disconnected
-  nameWithType: IMqttControlable.Disconnected
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.MessageReceived
-  name: MessageReceived
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_MessageReceived
-  commentId: E:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.MessageReceived
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.MessageReceived
-  nameWithType: IMqttControlable.MessageReceived
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync(System.String,System.String)
-  name: PublishAsync(String, String)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_PublishAsync_System_String_System_String_
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync(System.String,System.String)
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync(System.String, System.String)
-  nameWithType: IMqttControlable.PublishAsync(String, String)
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync(System.String,System.String,System.Int32)
-  name: PublishAsync(String, String, Int32)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_PublishAsync_System_String_System_String_System_Int32_
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync(System.String,System.String,System.Int32)
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync(System.String, System.String, System.Int32)
-  nameWithType: IMqttControlable.PublishAsync(String, String, Int32)
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync*
-  name: PublishAsync
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.html#D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_PublishAsync_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable.PublishAsync
-  nameWithType: IMqttControlable.PublishAsync
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs
-  name: MqttConnectedEventArgs
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html
-  commentId: T:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs
-  nameWithType: MqttConnectedEventArgs
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.#ctor(System.String,System.Int32,System.String)
-  name: MqttConnectedEventArgs(String, Int32, String)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs__ctor_System_String_System_Int32_System_String_
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.#ctor(System.String,System.Int32,System.String)
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.MqttConnectedEventArgs(System.String, System.Int32, System.String)
-  nameWithType: MqttConnectedEventArgs.MqttConnectedEventArgs(String, Int32, String)
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.#ctor*
-  name: MqttConnectedEventArgs
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs__ctor_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.MqttConnectedEventArgs
-  nameWithType: MqttConnectedEventArgs.MqttConnectedEventArgs
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Broker
-  name: Broker
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_Broker
-  commentId: P:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Broker
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Broker
-  nameWithType: MqttConnectedEventArgs.Broker
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Broker*
-  name: Broker
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_Broker_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Broker
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Broker
-  nameWithType: MqttConnectedEventArgs.Broker
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ClientID
-  name: ClientID
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_ClientID
-  commentId: P:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ClientID
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ClientID
-  nameWithType: MqttConnectedEventArgs.ClientID
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ClientID*
-  name: ClientID
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_ClientID_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ClientID
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ClientID
-  nameWithType: MqttConnectedEventArgs.ClientID
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Port
-  name: Port
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_Port
-  commentId: P:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Port
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Port
-  nameWithType: MqttConnectedEventArgs.Port
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Port*
-  name: Port
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_Port_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Port
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.Port
-  nameWithType: MqttConnectedEventArgs.Port
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ToString
-  name: ToString()
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_ToString
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ToString
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ToString()
-  nameWithType: MqttConnectedEventArgs.ToString()
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ToString*
-  name: ToString
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttConnectedEventArgs_ToString_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ToString
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventArgs.ToString
-  nameWithType: MqttConnectedEventArgs.ToString
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventHandler
-  name: MqttConnectedEventHandler
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventHandler.html
-  commentId: T:D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventHandler
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttConnectedEventHandler
-  nameWithType: MqttConnectedEventHandler
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttMessageReceivedEventHandler
-  name: MqttMessageReceivedEventHandler
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttMessageReceivedEventHandler.html
-  commentId: T:D3vS1m.Domain.Infrastructure.Mqtt.MqttMessageReceivedEventHandler
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttMessageReceivedEventHandler
-  nameWithType: MqttMessageReceivedEventHandler
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs
-  name: MqttReceivedEventArgs
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html
-  commentId: T:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs
-  nameWithType: MqttReceivedEventArgs
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.#ctor(System.String,System.String)
-  name: MqttReceivedEventArgs(String, String)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs__ctor_System_String_System_String_
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.#ctor(System.String,System.String)
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.MqttReceivedEventArgs(System.String, System.String)
-  nameWithType: MqttReceivedEventArgs.MqttReceivedEventArgs(String, String)
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.#ctor*
-  name: MqttReceivedEventArgs
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs__ctor_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.MqttReceivedEventArgs
-  nameWithType: MqttReceivedEventArgs.MqttReceivedEventArgs
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize*
-  name: Deserialize
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Deserialize_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize
-  nameWithType: MqttReceivedEventArgs.Deserialize
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize``1(Sin.Net.Domain.Persistence.Adapter.AdapterBase)
-  name: Deserialize<T>(AdapterBase)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Deserialize__1_Sin_Net_Domain_Persistence_Adapter_AdapterBase_
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize``1(Sin.Net.Domain.Persistence.Adapter.AdapterBase)
-  name.vb: Deserialize(Of T)(AdapterBase)
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize<T>(Sin.Net.Domain.Persistence.Adapter.AdapterBase)
-  fullName.vb: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize(Of T)(Sin.Net.Domain.Persistence.Adapter.AdapterBase)
-  nameWithType: MqttReceivedEventArgs.Deserialize<T>(AdapterBase)
-  nameWithType.vb: MqttReceivedEventArgs.Deserialize(Of T)(AdapterBase)
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize``1(System.Func{System.String,``0})
-  name: Deserialize<T>(Func<String, T>)
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Deserialize__1_System_Func_System_String___0__
-  commentId: M:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize``1(System.Func{System.String,``0})
-  name.vb: Deserialize(Of T)(Func(Of String, T))
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize<T>(System.Func<System.String, T>)
-  fullName.vb: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Deserialize(Of T)(System.Func(Of System.String, T))
-  nameWithType: MqttReceivedEventArgs.Deserialize<T>(Func<String, T>)
-  nameWithType.vb: MqttReceivedEventArgs.Deserialize(Of T)(Func(Of String, T))
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Message
-  name: Message
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Message
-  commentId: P:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Message
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Message
-  nameWithType: MqttReceivedEventArgs.Message
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Message*
-  name: Message
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Message_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Message
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Message
-  nameWithType: MqttReceivedEventArgs.Message
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Topic
-  name: Topic
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Topic
-  commentId: P:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Topic
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Topic
-  nameWithType: MqttReceivedEventArgs.Topic
-- uid: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Topic*
-  name: Topic
-  href: api/D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.html#D3vS1m_Domain_Infrastructure_Mqtt_MqttReceivedEventArgs_Topic_
-  commentId: Overload:D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Topic
-  isSpec: "True"
-  fullName: D3vS1m.Domain.Infrastructure.Mqtt.MqttReceivedEventArgs.Topic
-  nameWithType: MqttReceivedEventArgs.Topic
 - uid: D3vS1m.Domain.Runtime
   name: D3vS1m.Domain.Runtime
   href: api/D3vS1m.Domain.Runtime.html
@@ -5478,15 +5924,15 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Domain.Simulation.SimulatorRepository.GetByName
   nameWithType: SimulatorRepository.GetByName
-- uid: D3vS1m.Domain.Simulation.SimulatorRepository.Item(D3vS1m.Domain.System.Enumerations.SimulationModels)
-  name: Item[SimulationModels]
-  href: api/D3vS1m.Domain.Simulation.SimulatorRepository.html#D3vS1m_Domain_Simulation_SimulatorRepository_Item_D3vS1m_Domain_System_Enumerations_SimulationModels_
-  commentId: P:D3vS1m.Domain.Simulation.SimulatorRepository.Item(D3vS1m.Domain.System.Enumerations.SimulationModels)
-  name.vb: Item(SimulationModels)
-  fullName: D3vS1m.Domain.Simulation.SimulatorRepository.Item[D3vS1m.Domain.System.Enumerations.SimulationModels]
-  fullName.vb: D3vS1m.Domain.Simulation.SimulatorRepository.Item(D3vS1m.Domain.System.Enumerations.SimulationModels)
-  nameWithType: SimulatorRepository.Item[SimulationModels]
-  nameWithType.vb: SimulatorRepository.Item(SimulationModels)
+- uid: D3vS1m.Domain.Simulation.SimulatorRepository.Item(D3vS1m.Domain.System.Enumerations.SimulationTypes)
+  name: Item[SimulationTypes]
+  href: api/D3vS1m.Domain.Simulation.SimulatorRepository.html#D3vS1m_Domain_Simulation_SimulatorRepository_Item_D3vS1m_Domain_System_Enumerations_SimulationTypes_
+  commentId: P:D3vS1m.Domain.Simulation.SimulatorRepository.Item(D3vS1m.Domain.System.Enumerations.SimulationTypes)
+  name.vb: Item(SimulationTypes)
+  fullName: D3vS1m.Domain.Simulation.SimulatorRepository.Item[D3vS1m.Domain.System.Enumerations.SimulationTypes]
+  fullName.vb: D3vS1m.Domain.Simulation.SimulatorRepository.Item(D3vS1m.Domain.System.Enumerations.SimulationTypes)
+  nameWithType: SimulatorRepository.Item[SimulationTypes]
+  nameWithType.vb: SimulatorRepository.Item(SimulationTypes)
 - uid: D3vS1m.Domain.Simulation.SimulatorRepository.Item(System.String)
   name: Item[String]
   href: api/D3vS1m.Domain.Simulation.SimulatorRepository.html#D3vS1m_Domain_Simulation_SimulatorRepository_Item_System_String_
@@ -5516,6 +5962,19 @@ references:
   isSpec: "True"
   fullName: D3vS1m.Domain.Simulation.SimulatorRepository.SetArguments
   nameWithType: SimulatorRepository.SetArguments
+- uid: D3vS1m.Domain.Simulation.SimulatorRepository.SortActiveSimulators
+  name: SortActiveSimulators()
+  href: api/D3vS1m.Domain.Simulation.SimulatorRepository.html#D3vS1m_Domain_Simulation_SimulatorRepository_SortActiveSimulators
+  commentId: M:D3vS1m.Domain.Simulation.SimulatorRepository.SortActiveSimulators
+  fullName: D3vS1m.Domain.Simulation.SimulatorRepository.SortActiveSimulators()
+  nameWithType: SimulatorRepository.SortActiveSimulators()
+- uid: D3vS1m.Domain.Simulation.SimulatorRepository.SortActiveSimulators*
+  name: SortActiveSimulators
+  href: api/D3vS1m.Domain.Simulation.SimulatorRepository.html#D3vS1m_Domain_Simulation_SimulatorRepository_SortActiveSimulators_
+  commentId: Overload:D3vS1m.Domain.Simulation.SimulatorRepository.SortActiveSimulators
+  isSpec: "True"
+  fullName: D3vS1m.Domain.Simulation.SimulatorRepository.SortActiveSimulators
+  nameWithType: SimulatorRepository.SortActiveSimulators
 - uid: D3vS1m.Domain.System.Constants
   name: D3vS1m.Domain.System.Constants
   href: api/D3vS1m.Domain.System.Constants.html
@@ -5862,60 +6321,60 @@ references:
   commentId: F:D3vS1m.Domain.System.Enumerations.PartTypes.Transceiver
   fullName: D3vS1m.Domain.System.Enumerations.PartTypes.Transceiver
   nameWithType: PartTypes.Transceiver
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels
-  name: SimulationModels
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html
-  commentId: T:D3vS1m.Domain.System.Enumerations.SimulationModels
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels
-  nameWithType: SimulationModels
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Antenna
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes
+  name: SimulationTypes
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html
+  commentId: T:D3vS1m.Domain.System.Enumerations.SimulationTypes
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes
+  nameWithType: SimulationTypes
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Antenna
   name: Antenna
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Antenna
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Antenna
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Antenna
-  nameWithType: SimulationModels.Antenna
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Channel
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Antenna
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Antenna
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Antenna
+  nameWithType: SimulationTypes.Antenna
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Channel
   name: Channel
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Channel
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Channel
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Channel
-  nameWithType: SimulationModels.Channel
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Communication
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Channel
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Channel
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Channel
+  nameWithType: SimulationTypes.Channel
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Communication
   name: Communication
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Communication
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Communication
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Communication
-  nameWithType: SimulationModels.Communication
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Custom
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Communication
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Communication
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Communication
+  nameWithType: SimulationTypes.Communication
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Custom
   name: Custom
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Custom
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Custom
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Custom
-  nameWithType: SimulationModels.Custom
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Devices
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Custom
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Custom
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Custom
+  nameWithType: SimulationTypes.Custom
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Devices
   name: Devices
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Devices
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Devices
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Devices
-  nameWithType: SimulationModels.Devices
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Energy
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Devices
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Devices
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Devices
+  nameWithType: SimulationTypes.Devices
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Energy
   name: Energy
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Energy
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Energy
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Energy
-  nameWithType: SimulationModels.Energy
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Network
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Energy
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Energy
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Energy
+  nameWithType: SimulationTypes.Energy
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Network
   name: Network
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Network
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Network
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Network
-  nameWithType: SimulationModels.Network
-- uid: D3vS1m.Domain.System.Enumerations.SimulationModels.Scene
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Network
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Network
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Network
+  nameWithType: SimulationTypes.Network
+- uid: D3vS1m.Domain.System.Enumerations.SimulationTypes.Scene
   name: Scene
-  href: api/D3vS1m.Domain.System.Enumerations.SimulationModels.html#D3vS1m_Domain_System_Enumerations_SimulationModels_Scene
-  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationModels.Scene
-  fullName: D3vS1m.Domain.System.Enumerations.SimulationModels.Scene
-  nameWithType: SimulationModels.Scene
+  href: api/D3vS1m.Domain.System.Enumerations.SimulationTypes.html#D3vS1m_Domain_System_Enumerations_SimulationTypes_Scene
+  commentId: F:D3vS1m.Domain.System.Enumerations.SimulationTypes.Scene
+  fullName: D3vS1m.Domain.System.Enumerations.SimulationTypes.Scene
+  nameWithType: SimulationTypes.Scene
 - uid: D3vS1m.Domain.System.Exceptions
   name: D3vS1m.Domain.System.Exceptions
   href: api/D3vS1m.Domain.System.Exceptions.html
@@ -6179,230 +6638,6 @@ references:
   commentId: T:D3vS1m.Infrastructure.Class1
   fullName: D3vS1m.Infrastructure.Class1
   nameWithType: Class1
-- uid: D3vS1m.Infrastructure.Mqtt
-  name: D3vS1m.Infrastructure.Mqtt
-  href: api/D3vS1m.Infrastructure.Mqtt.html
-  commentId: N:D3vS1m.Infrastructure.Mqtt
-  fullName: D3vS1m.Infrastructure.Mqtt
-  nameWithType: D3vS1m.Infrastructure.Mqtt
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig
-  name: MqttConfig
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html
-  commentId: T:D3vS1m.Infrastructure.Mqtt.MqttConfig
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig
-  nameWithType: MqttConfig
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.#ctor
-  name: MqttConfig()
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig__ctor
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttConfig.#ctor
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.MqttConfig()
-  nameWithType: MqttConfig.MqttConfig()
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.#ctor*
-  name: MqttConfig
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig__ctor_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.MqttConfig
-  nameWithType: MqttConfig.MqttConfig
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.Broker
-  name: Broker
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_Broker
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttConfig.Broker
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.Broker
-  nameWithType: MqttConfig.Broker
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.Broker*
-  name: Broker
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_Broker_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.Broker
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.Broker
-  nameWithType: MqttConfig.Broker
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.ClientID
-  name: ClientID
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_ClientID
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttConfig.ClientID
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.ClientID
-  nameWithType: MqttConfig.ClientID
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.ClientID*
-  name: ClientID
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_ClientID_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.ClientID
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.ClientID
-  nameWithType: MqttConfig.ClientID
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.LasWill
-  name: LasWill
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_LasWill
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttConfig.LasWill
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.LasWill
-  nameWithType: MqttConfig.LasWill
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.LasWill*
-  name: LasWill
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_LasWill_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.LasWill
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.LasWill
-  nameWithType: MqttConfig.LasWill
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.Port
-  name: Port
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_Port
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttConfig.Port
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.Port
-  nameWithType: MqttConfig.Port
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.Port*
-  name: Port
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_Port_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.Port
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.Port
-  nameWithType: MqttConfig.Port
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.QoS
-  name: QoS
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_QoS
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttConfig.QoS
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.QoS
-  nameWithType: MqttConfig.QoS
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.QoS*
-  name: QoS
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_QoS_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.QoS
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.QoS
-  nameWithType: MqttConfig.QoS
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.Topics
-  name: Topics
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_Topics
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttConfig.Topics
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.Topics
-  nameWithType: MqttConfig.Topics
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.Topics*
-  name: Topics
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_Topics_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.Topics
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.Topics
-  nameWithType: MqttConfig.Topics
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.ToString
-  name: ToString()
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_ToString
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttConfig.ToString
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.ToString()
-  nameWithType: MqttConfig.ToString()
-- uid: D3vS1m.Infrastructure.Mqtt.MqttConfig.ToString*
-  name: ToString
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttConfig.html#D3vS1m_Infrastructure_Mqtt_MqttConfig_ToString_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttConfig.ToString
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttConfig.ToString
-  nameWithType: MqttConfig.ToString
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController
-  name: MqttNetController
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html
-  commentId: T:D3vS1m.Infrastructure.Mqtt.MqttNetController
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController
-  nameWithType: MqttNetController
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.#ctor
-  name: MqttNetController()
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController__ctor
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttNetController.#ctor
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.MqttNetController()
-  nameWithType: MqttNetController.MqttNetController()
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.#ctor*
-  name: MqttNetController
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController__ctor_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttNetController.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.MqttNetController
-  nameWithType: MqttNetController.MqttNetController
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.Config
-  name: Config
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_Config
-  commentId: P:D3vS1m.Infrastructure.Mqtt.MqttNetController.Config
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.Config
-  nameWithType: MqttNetController.Config
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.Config*
-  name: Config
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_Config_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttNetController.Config
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.Config
-  nameWithType: MqttNetController.Config
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.ConnectAsync
-  name: ConnectAsync()
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_ConnectAsync
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttNetController.ConnectAsync
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.ConnectAsync()
-  nameWithType: MqttNetController.ConnectAsync()
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.ConnectAsync*
-  name: ConnectAsync
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_ConnectAsync_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttNetController.ConnectAsync
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.ConnectAsync
-  nameWithType: MqttNetController.ConnectAsync
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.Connected
-  name: Connected
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_Connected
-  commentId: E:D3vS1m.Infrastructure.Mqtt.MqttNetController.Connected
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.Connected
-  nameWithType: MqttNetController.Connected
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.CreateClient(D3vS1m.Domain.Config.ConfigBase)
-  name: CreateClient(ConfigBase)
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_CreateClient_D3vS1m_Domain_Config_ConfigBase_
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttNetController.CreateClient(D3vS1m.Domain.Config.ConfigBase)
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.CreateClient(D3vS1m.Domain.Config.ConfigBase)
-  nameWithType: MqttNetController.CreateClient(ConfigBase)
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.CreateClient*
-  name: CreateClient
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_CreateClient_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttNetController.CreateClient
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.CreateClient
-  nameWithType: MqttNetController.CreateClient
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.DisconnectAsync
-  name: DisconnectAsync()
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_DisconnectAsync
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttNetController.DisconnectAsync
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.DisconnectAsync()
-  nameWithType: MqttNetController.DisconnectAsync()
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.DisconnectAsync*
-  name: DisconnectAsync
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_DisconnectAsync_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttNetController.DisconnectAsync
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.DisconnectAsync
-  nameWithType: MqttNetController.DisconnectAsync
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.Disconnected
-  name: Disconnected
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_Disconnected
-  commentId: E:D3vS1m.Infrastructure.Mqtt.MqttNetController.Disconnected
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.Disconnected
-  nameWithType: MqttNetController.Disconnected
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.MessageReceived
-  name: MessageReceived
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_MessageReceived
-  commentId: E:D3vS1m.Infrastructure.Mqtt.MqttNetController.MessageReceived
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.MessageReceived
-  nameWithType: MqttNetController.MessageReceived
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync(System.String,System.String)
-  name: PublishAsync(String, String)
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_PublishAsync_System_String_System_String_
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync(System.String,System.String)
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync(System.String, System.String)
-  nameWithType: MqttNetController.PublishAsync(String, String)
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync(System.String,System.String,System.Int32)
-  name: PublishAsync(String, String, Int32)
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_PublishAsync_System_String_System_String_System_Int32_
-  commentId: M:D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync(System.String,System.String,System.Int32)
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync(System.String, System.String, System.Int32)
-  nameWithType: MqttNetController.PublishAsync(String, String, Int32)
-- uid: D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync*
-  name: PublishAsync
-  href: api/D3vS1m.Infrastructure.Mqtt.MqttNetController.html#D3vS1m_Infrastructure_Mqtt_MqttNetController_PublishAsync_
-  commentId: Overload:D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync
-  isSpec: "True"
-  fullName: D3vS1m.Infrastructure.Mqtt.MqttNetController.PublishAsync
-  nameWithType: MqttNetController.PublishAsync
 - uid: D3vS1m.Persistence
   name: D3vS1m.Persistence
   href: api/D3vS1m.Persistence.html
@@ -6415,6 +6650,24 @@ references:
   commentId: T:D3vS1m.Persistence.Constants
   fullName: D3vS1m.Persistence.Constants
   nameWithType: Constants
+- uid: D3vS1m.Persistence.Constants.Parquet
+  name: Constants.Parquet
+  href: api/D3vS1m.Persistence.Constants.Parquet.html
+  commentId: T:D3vS1m.Persistence.Constants.Parquet
+  fullName: D3vS1m.Persistence.Constants.Parquet
+  nameWithType: Constants.Parquet
+- uid: D3vS1m.Persistence.Constants.Parquet.Extension
+  name: Extension
+  href: api/D3vS1m.Persistence.Constants.Parquet.html#D3vS1m_Persistence_Constants_Parquet_Extension
+  commentId: F:D3vS1m.Persistence.Constants.Parquet.Extension
+  fullName: D3vS1m.Persistence.Constants.Parquet.Extension
+  nameWithType: Constants.Parquet.Extension
+- uid: D3vS1m.Persistence.Constants.Parquet.Key
+  name: Key
+  href: api/D3vS1m.Persistence.Constants.Parquet.html#D3vS1m_Persistence_Constants_Parquet_Key
+  commentId: F:D3vS1m.Persistence.Constants.Parquet.Key
+  fullName: D3vS1m.Persistence.Constants.Parquet.Key
+  nameWithType: Constants.Parquet.Key
 - uid: D3vS1m.Persistence.Constants.Wavefront
   name: Constants.Wavefront
   href: api/D3vS1m.Persistence.Constants.Wavefront.html
@@ -6433,1097 +6686,222 @@ references:
   commentId: F:D3vS1m.Persistence.Constants.Wavefront.Key
   fullName: D3vS1m.Persistence.Constants.Wavefront.Key
   nameWithType: Constants.Wavefront.Key
-- uid: D3vS1m.Persistence.IOController
-  name: IOController
-  href: api/D3vS1m.Persistence.IOController.html
-  commentId: T:D3vS1m.Persistence.IOController
-  fullName: D3vS1m.Persistence.IOController
-  nameWithType: IOController
-- uid: D3vS1m.Persistence.IOController.#ctor
-  name: IOController()
-  href: api/D3vS1m.Persistence.IOController.html#D3vS1m_Persistence_IOController__ctor
-  commentId: M:D3vS1m.Persistence.IOController.#ctor
-  fullName: D3vS1m.Persistence.IOController.IOController()
-  nameWithType: IOController.IOController()
-- uid: D3vS1m.Persistence.IOController.#ctor*
-  name: IOController
-  href: api/D3vS1m.Persistence.IOController.html#D3vS1m_Persistence_IOController__ctor_
-  commentId: Overload:D3vS1m.Persistence.IOController.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.Persistence.IOController.IOController
-  nameWithType: IOController.IOController
-- uid: D3vS1m.Persistence.IOController.InitExports
-  name: InitExports()
-  href: api/D3vS1m.Persistence.IOController.html#D3vS1m_Persistence_IOController_InitExports
-  commentId: M:D3vS1m.Persistence.IOController.InitExports
-  fullName: D3vS1m.Persistence.IOController.InitExports()
-  nameWithType: IOController.InitExports()
-- uid: D3vS1m.Persistence.IOController.InitExports*
-  name: InitExports
-  href: api/D3vS1m.Persistence.IOController.html#D3vS1m_Persistence_IOController_InitExports_
-  commentId: Overload:D3vS1m.Persistence.IOController.InitExports
-  isSpec: "True"
-  fullName: D3vS1m.Persistence.IOController.InitExports
-  nameWithType: IOController.InitExports
-- uid: D3vS1m.Persistence.IOController.InitImports
-  name: InitImports()
-  href: api/D3vS1m.Persistence.IOController.html#D3vS1m_Persistence_IOController_InitImports
-  commentId: M:D3vS1m.Persistence.IOController.InitImports
-  fullName: D3vS1m.Persistence.IOController.InitImports()
-  nameWithType: IOController.InitImports()
-- uid: D3vS1m.Persistence.IOController.InitImports*
-  name: InitImports
-  href: api/D3vS1m.Persistence.IOController.html#D3vS1m_Persistence_IOController_InitImports_
-  commentId: Overload:D3vS1m.Persistence.IOController.InitImports
-  isSpec: "True"
-  fullName: D3vS1m.Persistence.IOController.InitImports
-  nameWithType: IOController.InitImports
-- uid: D3vS1m.WebAPI
-  name: D3vS1m.WebAPI
-  href: api/D3vS1m.WebAPI.html
-  commentId: N:D3vS1m.WebAPI
-  fullName: D3vS1m.WebAPI
-  nameWithType: D3vS1m.WebAPI
-- uid: D3vS1m.WebAPI.Controllers
-  name: D3vS1m.WebAPI.Controllers
-  href: api/D3vS1m.WebAPI.Controllers.html
-  commentId: N:D3vS1m.WebAPI.Controllers
-  fullName: D3vS1m.WebAPI.Controllers
-  nameWithType: D3vS1m.WebAPI.Controllers
-- uid: D3vS1m.WebAPI.Controllers.Api
-  name: D3vS1m.WebAPI.Controllers.Api
-  href: api/D3vS1m.WebAPI.Controllers.Api.html
-  commentId: N:D3vS1m.WebAPI.Controllers.Api
-  fullName: D3vS1m.WebAPI.Controllers.Api
-  nameWithType: D3vS1m.WebAPI.Controllers.Api
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase
-  name: ApiControllerBase
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html
-  commentId: T:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase
-  nameWithType: ApiControllerBase
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase)
-  name: ApiControllerBase(IHostingEnvironment, FactoryBase)
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Application_FactoryBase_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase)
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.ApiControllerBase(Microsoft.AspNetCore.Hosting.IHostingEnvironment, D3vS1m.Application.FactoryBase)
-  nameWithType: ApiControllerBase.ApiControllerBase(IHostingEnvironment, FactoryBase)
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.#ctor*
-  name: ApiControllerBase
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.ApiControllerBase
-  nameWithType: ApiControllerBase.ApiControllerBase
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._dataPath
-  name: _dataPath
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase__dataPath
-  commentId: F:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._dataPath
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._dataPath
-  nameWithType: ApiControllerBase._dataPath
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._factory
-  name: _factory
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase__factory
-  commentId: F:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._factory
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._factory
-  nameWithType: ApiControllerBase._factory
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._hostingEnvironment
-  name: _hostingEnvironment
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase__hostingEnvironment
-  commentId: F:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._hostingEnvironment
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._hostingEnvironment
-  nameWithType: ApiControllerBase._hostingEnvironment
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._webRootPath
-  name: _webRootPath
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase__webRootPath
-  commentId: F:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._webRootPath
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase._webRootPath
-  nameWithType: ApiControllerBase._webRootPath
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.Persistence
-  name: Persistence
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase_Persistence
-  commentId: P:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.Persistence
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.Persistence
-  nameWithType: ApiControllerBase.Persistence
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.Persistence*
-  name: Persistence
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase_Persistence_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.Persistence
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.Persistence
-  nameWithType: ApiControllerBase.Persistence
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.SessionArguments
-  name: SessionArguments()
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase_SessionArguments
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.SessionArguments
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.SessionArguments()
-  nameWithType: ApiControllerBase.SessionArguments()
-- uid: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.SessionArguments*
-  name: SessionArguments
-  href: api/D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.html#D3vS1m_WebAPI_Controllers_Api_ApiControllerBase_SessionArguments_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.SessionArguments
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.ApiControllerBase.SessionArguments
-  nameWithType: ApiControllerBase.SessionArguments
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController
-  name: ArgumentsController
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html
-  commentId: T:D3vS1m.WebAPI.Controllers.Api.ArgumentsController
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController
-  nameWithType: ArgumentsController
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase)
-  name: ArgumentsController(IHostingEnvironment, FactoryBase)
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Application_FactoryBase_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase)
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.ArgumentsController(Microsoft.AspNetCore.Hosting.IHostingEnvironment, D3vS1m.Application.FactoryBase)
-  nameWithType: ArgumentsController.ArgumentsController(IHostingEnvironment, FactoryBase)
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.#ctor*
-  name: ArgumentsController
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.ArgumentsController
-  nameWithType: ArgumentsController.ArgumentsController
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get
-  name: Get()
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController_Get
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get()
-  nameWithType: ArgumentsController.Get()
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get(System.String)
-  name: Get(String)
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController_Get_System_String_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get(System.String)
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get(System.String)
-  nameWithType: ArgumentsController.Get(String)
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get*
-  name: Get
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController_Get_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Get
-  nameWithType: ArgumentsController.Get
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Put(System.String,System.String)
-  name: Put(String, String)
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController_Put_System_String_System_String_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Put(System.String,System.String)
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Put(System.String, System.String)
-  nameWithType: ArgumentsController.Put(String, String)
-- uid: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Put*
-  name: Put
-  href: api/D3vS1m.WebAPI.Controllers.Api.ArgumentsController.html#D3vS1m_WebAPI_Controllers_Api_ArgumentsController_Put_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Put
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.ArgumentsController.Put
-  nameWithType: ArgumentsController.Put
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController
-  name: DevicesController
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html
-  commentId: T:D3vS1m.WebAPI.Controllers.Api.DevicesController
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController
-  nameWithType: DevicesController
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Delete(System.Int32)
-  name: Delete(Int32)
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Delete_System_Int32_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.DevicesController.Delete(System.Int32)
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Delete(System.Int32)
-  nameWithType: DevicesController.Delete(Int32)
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Delete*
-  name: Delete
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Delete_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.DevicesController.Delete
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Delete
-  nameWithType: DevicesController.Delete
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Get
-  name: Get()
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Get
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.DevicesController.Get
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Get()
-  nameWithType: DevicesController.Get()
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Get(System.Int32)
-  name: Get(Int32)
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Get_System_Int32_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.DevicesController.Get(System.Int32)
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Get(System.Int32)
-  nameWithType: DevicesController.Get(Int32)
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Get*
-  name: Get
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Get_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.DevicesController.Get
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Get
-  nameWithType: DevicesController.Get
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Post(System.String)
-  name: Post(String)
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Post_System_String_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.DevicesController.Post(System.String)
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Post(System.String)
-  nameWithType: DevicesController.Post(String)
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Post*
-  name: Post
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Post_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.DevicesController.Post
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Post
-  nameWithType: DevicesController.Post
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Put(System.Int32,System.String)
-  name: Put(Int32, String)
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Put_System_Int32_System_String_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.DevicesController.Put(System.Int32,System.String)
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Put(System.Int32, System.String)
-  nameWithType: DevicesController.Put(Int32, String)
-- uid: D3vS1m.WebAPI.Controllers.Api.DevicesController.Put*
-  name: Put
-  href: api/D3vS1m.WebAPI.Controllers.Api.DevicesController.html#D3vS1m_WebAPI_Controllers_Api_DevicesController_Put_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.DevicesController.Put
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.DevicesController.Put
-  nameWithType: DevicesController.Put
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController
-  name: SimulationController
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html
-  commentId: T:D3vS1m.WebAPI.Controllers.Api.SimulationController
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController
-  nameWithType: SimulationController
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase,D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)
-  name: SimulationController(IHostingEnvironment, FactoryBase, IMqttControlable)
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html#D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Application_FactoryBase_D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Application.FactoryBase,D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController.SimulationController(Microsoft.AspNetCore.Hosting.IHostingEnvironment, D3vS1m.Application.FactoryBase, D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)
-  nameWithType: SimulationController.SimulationController(IHostingEnvironment, FactoryBase, IMqttControlable)
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor*
-  name: SimulationController
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html#D3vS1m_WebAPI_Controllers_Api_SimulationController__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.SimulationController.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController.SimulationController
-  nameWithType: SimulationController.SimulationController
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController.Get
-  name: Get()
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html#D3vS1m_WebAPI_Controllers_Api_SimulationController_Get
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.SimulationController.Get
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController.Get()
-  nameWithType: SimulationController.Get()
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController.Get*
-  name: Get
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html#D3vS1m_WebAPI_Controllers_Api_SimulationController_Get_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.SimulationController.Get
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController.Get
-  nameWithType: SimulationController.Get
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.String,System.Object)
-  name: Run(String, Object)
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html#D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_System_String_System_Object_
-  commentId: M:D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.String,System.Object)
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController.Run(System.String, System.Object)
-  nameWithType: SimulationController.Run(String, Object)
-- uid: D3vS1m.WebAPI.Controllers.Api.SimulationController.Run*
-  name: Run
-  href: api/D3vS1m.WebAPI.Controllers.Api.SimulationController.html#D3vS1m_WebAPI_Controllers_Api_SimulationController_Run_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.Api.SimulationController.Run
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.Api.SimulationController.Run
-  nameWithType: SimulationController.Run
-- uid: D3vS1m.WebAPI.Controllers.ErrorController
-  name: ErrorController
-  href: api/D3vS1m.WebAPI.Controllers.ErrorController.html
-  commentId: T:D3vS1m.WebAPI.Controllers.ErrorController
-  fullName: D3vS1m.WebAPI.Controllers.ErrorController
-  nameWithType: ErrorController
-- uid: D3vS1m.WebAPI.Controllers.ErrorController.#ctor
-  name: ErrorController()
-  href: api/D3vS1m.WebAPI.Controllers.ErrorController.html#D3vS1m_WebAPI_Controllers_ErrorController__ctor
-  commentId: M:D3vS1m.WebAPI.Controllers.ErrorController.#ctor
-  fullName: D3vS1m.WebAPI.Controllers.ErrorController.ErrorController()
-  nameWithType: ErrorController.ErrorController()
-- uid: D3vS1m.WebAPI.Controllers.ErrorController.#ctor*
-  name: ErrorController
-  href: api/D3vS1m.WebAPI.Controllers.ErrorController.html#D3vS1m_WebAPI_Controllers_ErrorController__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.ErrorController.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.ErrorController.ErrorController
-  nameWithType: ErrorController.ErrorController
-- uid: D3vS1m.WebAPI.Controllers.ErrorController.Index
-  name: Index()
-  href: api/D3vS1m.WebAPI.Controllers.ErrorController.html#D3vS1m_WebAPI_Controllers_ErrorController_Index
-  commentId: M:D3vS1m.WebAPI.Controllers.ErrorController.Index
-  fullName: D3vS1m.WebAPI.Controllers.ErrorController.Index()
-  nameWithType: ErrorController.Index()
-- uid: D3vS1m.WebAPI.Controllers.ErrorController.Index*
-  name: Index
-  href: api/D3vS1m.WebAPI.Controllers.ErrorController.html#D3vS1m_WebAPI_Controllers_ErrorController_Index_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.ErrorController.Index
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.ErrorController.Index
-  nameWithType: ErrorController.Index
-- uid: D3vS1m.WebAPI.Controllers.HomeController
-  name: HomeController
-  href: api/D3vS1m.WebAPI.Controllers.HomeController.html
-  commentId: T:D3vS1m.WebAPI.Controllers.HomeController
-  fullName: D3vS1m.WebAPI.Controllers.HomeController
-  nameWithType: HomeController
-- uid: D3vS1m.WebAPI.Controllers.HomeController.Foo
-  name: Foo()
-  href: api/D3vS1m.WebAPI.Controllers.HomeController.html#D3vS1m_WebAPI_Controllers_HomeController_Foo
-  commentId: M:D3vS1m.WebAPI.Controllers.HomeController.Foo
-  fullName: D3vS1m.WebAPI.Controllers.HomeController.Foo()
-  nameWithType: HomeController.Foo()
-- uid: D3vS1m.WebAPI.Controllers.HomeController.Foo*
-  name: Foo
-  href: api/D3vS1m.WebAPI.Controllers.HomeController.html#D3vS1m_WebAPI_Controllers_HomeController_Foo_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.HomeController.Foo
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.HomeController.Foo
-  nameWithType: HomeController.Foo
-- uid: D3vS1m.WebAPI.Controllers.HomeController.Index
-  name: Index()
-  href: api/D3vS1m.WebAPI.Controllers.HomeController.html#D3vS1m_WebAPI_Controllers_HomeController_Index
-  commentId: M:D3vS1m.WebAPI.Controllers.HomeController.Index
-  fullName: D3vS1m.WebAPI.Controllers.HomeController.Index()
-  nameWithType: HomeController.Index()
-- uid: D3vS1m.WebAPI.Controllers.HomeController.Index*
-  name: Index
-  href: api/D3vS1m.WebAPI.Controllers.HomeController.html#D3vS1m_WebAPI_Controllers_HomeController_Index_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.HomeController.Index
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.HomeController.Index
-  nameWithType: HomeController.Index
-- uid: D3vS1m.WebAPI.Controllers.ViewControllerBase
-  name: ViewControllerBase
-  href: api/D3vS1m.WebAPI.Controllers.ViewControllerBase.html
-  commentId: T:D3vS1m.WebAPI.Controllers.ViewControllerBase
-  fullName: D3vS1m.WebAPI.Controllers.ViewControllerBase
-  nameWithType: ViewControllerBase
-- uid: D3vS1m.WebAPI.Controllers.ViewControllerBase.SetViewBag
-  name: SetViewBag()
-  href: api/D3vS1m.WebAPI.Controllers.ViewControllerBase.html#D3vS1m_WebAPI_Controllers_ViewControllerBase_SetViewBag
-  commentId: M:D3vS1m.WebAPI.Controllers.ViewControllerBase.SetViewBag
-  fullName: D3vS1m.WebAPI.Controllers.ViewControllerBase.SetViewBag()
-  nameWithType: ViewControllerBase.SetViewBag()
-- uid: D3vS1m.WebAPI.Controllers.ViewControllerBase.SetViewBag*
-  name: SetViewBag
-  href: api/D3vS1m.WebAPI.Controllers.ViewControllerBase.html#D3vS1m_WebAPI_Controllers_ViewControllerBase_SetViewBag_
-  commentId: Overload:D3vS1m.WebAPI.Controllers.ViewControllerBase.SetViewBag
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Controllers.ViewControllerBase.SetViewBag
-  nameWithType: ViewControllerBase.SetViewBag
-- uid: D3vS1m.WebAPI.Extensions
-  name: D3vS1m.WebAPI.Extensions
-  href: api/D3vS1m.WebAPI.Extensions.html
-  commentId: N:D3vS1m.WebAPI.Extensions
-  fullName: D3vS1m.WebAPI.Extensions
-  nameWithType: D3vS1m.WebAPI.Extensions
-- uid: D3vS1m.WebAPI.Extensions.ControllerExtensions
-  name: ControllerExtensions
-  href: api/D3vS1m.WebAPI.Extensions.ControllerExtensions.html
-  commentId: T:D3vS1m.WebAPI.Extensions.ControllerExtensions
-  fullName: D3vS1m.WebAPI.Extensions.ControllerExtensions
-  nameWithType: ControllerExtensions
-- uid: D3vS1m.WebAPI.Extensions.ControllerExtensions.HttpSession(Microsoft.AspNetCore.Mvc.ControllerBase)
-  name: HttpSession(ControllerBase)
-  href: api/D3vS1m.WebAPI.Extensions.ControllerExtensions.html#D3vS1m_WebAPI_Extensions_ControllerExtensions_HttpSession_Microsoft_AspNetCore_Mvc_ControllerBase_
-  commentId: M:D3vS1m.WebAPI.Extensions.ControllerExtensions.HttpSession(Microsoft.AspNetCore.Mvc.ControllerBase)
-  fullName: D3vS1m.WebAPI.Extensions.ControllerExtensions.HttpSession(Microsoft.AspNetCore.Mvc.ControllerBase)
-  nameWithType: ControllerExtensions.HttpSession(ControllerBase)
-- uid: D3vS1m.WebAPI.Extensions.ControllerExtensions.HttpSession*
-  name: HttpSession
-  href: api/D3vS1m.WebAPI.Extensions.ControllerExtensions.html#D3vS1m_WebAPI_Extensions_ControllerExtensions_HttpSession_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.ControllerExtensions.HttpSession
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.ControllerExtensions.HttpSession
-  nameWithType: ControllerExtensions.HttpSession
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions
-  name: HttpSessionExtensions
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html
-  commentId: T:D3vS1m.WebAPI.Extensions.HttpSessionExtensions
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions
-  nameWithType: HttpSessionExtensions
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ARGUMENTS_KEY
-  name: ARGUMENTS_KEY
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_ARGUMENTS_KEY
-  commentId: F:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ARGUMENTS_KEY
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ARGUMENTS_KEY
-  nameWithType: HttpSessionExtensions.ARGUMENTS_KEY
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ArgumentsBinder
-  name: ArgumentsBinder
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_ArgumentsBinder
-  commentId: P:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ArgumentsBinder
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ArgumentsBinder
-  nameWithType: HttpSessionExtensions.ArgumentsBinder
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ArgumentsBinder*
-  name: ArgumentsBinder
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_ArgumentsBinder_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ArgumentsBinder
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.ArgumentsBinder
-  nameWithType: HttpSessionExtensions.ArgumentsBinder
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Contains(Microsoft.AspNetCore.Http.ISession,System.String)
-  name: Contains(ISession, String)
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_Contains_Microsoft_AspNetCore_Http_ISession_System_String_
-  commentId: M:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Contains(Microsoft.AspNetCore.Http.ISession,System.String)
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Contains(Microsoft.AspNetCore.Http.ISession, System.String)
-  nameWithType: HttpSessionExtensions.Contains(ISession, String)
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Contains*
-  name: Contains
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_Contains_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Contains
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Contains
-  nameWithType: HttpSessionExtensions.Contains
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get*
-  name: Get
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_Get_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get
-  nameWithType: HttpSessionExtensions.Get
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get``1(Microsoft.AspNetCore.Http.ISession,System.String)
-  name: Get<T>(ISession, String)
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_Get__1_Microsoft_AspNetCore_Http_ISession_System_String_
-  commentId: M:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get``1(Microsoft.AspNetCore.Http.ISession,System.String)
-  name.vb: Get(Of T)(ISession, String)
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get<T>(Microsoft.AspNetCore.Http.ISession, System.String)
-  fullName.vb: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Get(Of T)(Microsoft.AspNetCore.Http.ISession, System.String)
-  nameWithType: HttpSessionExtensions.Get<T>(ISession, String)
-  nameWithType.vb: HttpSessionExtensions.Get(Of T)(ISession, String)
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.GetArguments(Microsoft.AspNetCore.Http.ISession)
-  name: GetArguments(ISession)
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_GetArguments_Microsoft_AspNetCore_Http_ISession_
-  commentId: M:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.GetArguments(Microsoft.AspNetCore.Http.ISession)
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.GetArguments(Microsoft.AspNetCore.Http.ISession)
-  nameWithType: HttpSessionExtensions.GetArguments(ISession)
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.GetArguments*
-  name: GetArguments
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_GetArguments_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.GetArguments
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.GetArguments
-  nameWithType: HttpSessionExtensions.GetArguments
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set*
-  name: Set
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_Set_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set
-  nameWithType: HttpSessionExtensions.Set
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set``1(Microsoft.AspNetCore.Http.ISession,System.String,``0)
-  name: Set<T>(ISession, String, T)
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_Set__1_Microsoft_AspNetCore_Http_ISession_System_String___0_
-  commentId: M:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set``1(Microsoft.AspNetCore.Http.ISession,System.String,``0)
-  name.vb: Set(Of T)(ISession, String, T)
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set<T>(Microsoft.AspNetCore.Http.ISession, System.String, T)
-  fullName.vb: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.Set(Of T)(Microsoft.AspNetCore.Http.ISession, System.String, T)
-  nameWithType: HttpSessionExtensions.Set<T>(ISession, String, T)
-  nameWithType.vb: HttpSessionExtensions.Set(Of T)(ISession, String, T)
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments(Microsoft.AspNetCore.Http.ISession,D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  name: SetArguments(ISession, ArgumentsBase[])
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_SetArguments_Microsoft_AspNetCore_Http_ISession_D3vS1m_Domain_Data_Arguments_ArgumentsBase___
-  commentId: M:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments(Microsoft.AspNetCore.Http.ISession,D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  name.vb: SetArguments(ISession, ArgumentsBase())
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments(Microsoft.AspNetCore.Http.ISession, D3vS1m.Domain.Data.Arguments.ArgumentsBase[])
-  fullName.vb: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments(Microsoft.AspNetCore.Http.ISession, D3vS1m.Domain.Data.Arguments.ArgumentsBase())
-  nameWithType: HttpSessionExtensions.SetArguments(ISession, ArgumentsBase[])
-  nameWithType.vb: HttpSessionExtensions.SetArguments(ISession, ArgumentsBase())
-- uid: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments*
-  name: SetArguments
-  href: api/D3vS1m.WebAPI.Extensions.HttpSessionExtensions.html#D3vS1m_WebAPI_Extensions_HttpSessionExtensions_SetArguments_
-  commentId: Overload:D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Extensions.HttpSessionExtensions.SetArguments
-  nameWithType: HttpSessionExtensions.SetArguments
-- uid: D3vS1m.WebAPI.Models
-  name: D3vS1m.WebAPI.Models
-  href: api/D3vS1m.WebAPI.Models.html
-  commentId: N:D3vS1m.WebAPI.Models
-  fullName: D3vS1m.WebAPI.Models
-  nameWithType: D3vS1m.WebAPI.Models
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView
-  name: AdaptedFriisArgsView
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html
-  commentId: T:D3vS1m.WebAPI.Models.AdaptedFriisArgsView
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView
-  nameWithType: AdaptedFriisArgsView
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.#ctor(D3vS1m.Application.Channel.AdaptedFriisArgs)
-  name: AdaptedFriisArgsView(AdaptedFriisArgs)
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView__ctor_D3vS1m_Application_Channel_AdaptedFriisArgs_
-  commentId: M:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.#ctor(D3vS1m.Application.Channel.AdaptedFriisArgs)
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AdaptedFriisArgsView(D3vS1m.Application.Channel.AdaptedFriisArgs)
-  nameWithType: AdaptedFriisArgsView.AdaptedFriisArgsView(AdaptedFriisArgs)
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.#ctor*
-  name: AdaptedFriisArgsView
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AdaptedFriisArgsView
-  nameWithType: AdaptedFriisArgsView.AdaptedFriisArgsView
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationExponent
-  name: AttenuationExponent
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_AttenuationExponent
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationExponent
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationExponent
-  nameWithType: AdaptedFriisArgsView.AttenuationExponent
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationExponent*
-  name: AttenuationExponent
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_AttenuationExponent_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationExponent
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationExponent
-  nameWithType: AdaptedFriisArgsView.AttenuationExponent
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationOffset
-  name: AttenuationOffset
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_AttenuationOffset
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationOffset
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationOffset
-  nameWithType: AdaptedFriisArgsView.AttenuationOffset
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationOffset*
-  name: AttenuationOffset
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_AttenuationOffset_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationOffset
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.AttenuationOffset
-  nameWithType: AdaptedFriisArgsView.AttenuationOffset
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Guid
-  name: Guid
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_Guid
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Guid
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Guid
-  nameWithType: AdaptedFriisArgsView.Guid
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Guid*
-  name: Guid
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_Guid_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Guid
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Guid
-  nameWithType: AdaptedFriisArgsView.Guid
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Name
-  name: Name
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_Name
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Name
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Name
-  nameWithType: AdaptedFriisArgsView.Name
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Name*
-  name: Name
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_Name_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Name
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Name
-  nameWithType: AdaptedFriisArgsView.Name
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RadioBox
-  name: RadioBox
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RadioBox
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RadioBox
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RadioBox
-  nameWithType: AdaptedFriisArgsView.RadioBox
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RadioBox*
-  name: RadioBox
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RadioBox_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RadioBox
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RadioBox
-  nameWithType: AdaptedFriisArgsView.RadioBox
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Reset
-  name: Reset()
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_Reset
-  commentId: M:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Reset
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Reset()
-  nameWithType: AdaptedFriisArgsView.Reset()
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Reset*
-  name: Reset
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_Reset_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Reset
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.Reset
-  nameWithType: AdaptedFriisArgsView.Reset
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxColors
-  name: RxColors
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RxColors
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxColors
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxColors
-  nameWithType: AdaptedFriisArgsView.RxColors
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxColors*
-  name: RxColors
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RxColors_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxColors
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxColors
-  nameWithType: AdaptedFriisArgsView.RxColors
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxPositions
-  name: RxPositions
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RxPositions
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxPositions
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxPositions
-  nameWithType: AdaptedFriisArgsView.RxPositions
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxPositions*
-  name: RxPositions
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RxPositions_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxPositions
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxPositions
-  nameWithType: AdaptedFriisArgsView.RxPositions
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxValues
-  name: RxValues
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RxValues
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxValues
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxValues
-  nameWithType: AdaptedFriisArgsView.RxValues
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxValues*
-  name: RxValues
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_RxValues_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxValues
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.RxValues
-  nameWithType: AdaptedFriisArgsView.RxValues
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UpdatePositions
-  name: UpdatePositions()
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_UpdatePositions
-  commentId: M:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UpdatePositions
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UpdatePositions()
-  nameWithType: AdaptedFriisArgsView.UpdatePositions()
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UpdatePositions*
-  name: UpdatePositions
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_UpdatePositions_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UpdatePositions
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UpdatePositions
-  nameWithType: AdaptedFriisArgsView.UpdatePositions
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UseObstacles
-  name: UseObstacles
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_UseObstacles
-  commentId: P:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UseObstacles
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UseObstacles
-  nameWithType: AdaptedFriisArgsView.UseObstacles
-- uid: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UseObstacles*
-  name: UseObstacles
-  href: api/D3vS1m.WebAPI.Models.AdaptedFriisArgsView.html#D3vS1m_WebAPI_Models_AdaptedFriisArgsView_UseObstacles_
-  commentId: Overload:D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UseObstacles
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.AdaptedFriisArgsView.UseObstacles
-  nameWithType: AdaptedFriisArgsView.UseObstacles
-- uid: D3vS1m.WebAPI.Models.ErrorResponse
-  name: ErrorResponse
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html
-  commentId: T:D3vS1m.WebAPI.Models.ErrorResponse
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse
-  nameWithType: ErrorResponse
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.#ctor
-  name: ErrorResponse()
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse__ctor
-  commentId: M:D3vS1m.WebAPI.Models.ErrorResponse.#ctor
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.ErrorResponse()
-  nameWithType: ErrorResponse.ErrorResponse()
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.#ctor*
-  name: ErrorResponse
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Models.ErrorResponse.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.ErrorResponse
-  nameWithType: ErrorResponse.ErrorResponse
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.Exception
-  name: Exception
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_Exception
-  commentId: P:D3vS1m.WebAPI.Models.ErrorResponse.Exception
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.Exception
-  nameWithType: ErrorResponse.Exception
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.Exception*
-  name: Exception
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_Exception_
-  commentId: Overload:D3vS1m.WebAPI.Models.ErrorResponse.Exception
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.Exception
-  nameWithType: ErrorResponse.Exception
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.RequestId
-  name: RequestId
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_RequestId
-  commentId: P:D3vS1m.WebAPI.Models.ErrorResponse.RequestId
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.RequestId
-  nameWithType: ErrorResponse.RequestId
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.RequestId*
-  name: RequestId
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_RequestId_
-  commentId: Overload:D3vS1m.WebAPI.Models.ErrorResponse.RequestId
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.RequestId
-  nameWithType: ErrorResponse.RequestId
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.ShowRequestId
-  name: ShowRequestId
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_ShowRequestId
-  commentId: P:D3vS1m.WebAPI.Models.ErrorResponse.ShowRequestId
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.ShowRequestId
-  nameWithType: ErrorResponse.ShowRequestId
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.ShowRequestId*
-  name: ShowRequestId
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_ShowRequestId_
-  commentId: Overload:D3vS1m.WebAPI.Models.ErrorResponse.ShowRequestId
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.ShowRequestId
-  nameWithType: ErrorResponse.ShowRequestId
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.StatusCode
-  name: StatusCode
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_StatusCode
-  commentId: P:D3vS1m.WebAPI.Models.ErrorResponse.StatusCode
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.StatusCode
-  nameWithType: ErrorResponse.StatusCode
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.StatusCode*
-  name: StatusCode
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_StatusCode_
-  commentId: Overload:D3vS1m.WebAPI.Models.ErrorResponse.StatusCode
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.StatusCode
-  nameWithType: ErrorResponse.StatusCode
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.StatusMessage
-  name: StatusMessage
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_StatusMessage
-  commentId: P:D3vS1m.WebAPI.Models.ErrorResponse.StatusMessage
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.StatusMessage
-  nameWithType: ErrorResponse.StatusMessage
-- uid: D3vS1m.WebAPI.Models.ErrorResponse.StatusMessage*
-  name: StatusMessage
-  href: api/D3vS1m.WebAPI.Models.ErrorResponse.html#D3vS1m_WebAPI_Models_ErrorResponse_StatusMessage_
-  commentId: Overload:D3vS1m.WebAPI.Models.ErrorResponse.StatusMessage
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Models.ErrorResponse.StatusMessage
-  nameWithType: ErrorResponse.StatusMessage
-- uid: D3vS1m.WebAPI.Program
-  name: Program
-  href: api/D3vS1m.WebAPI.Program.html
-  commentId: T:D3vS1m.WebAPI.Program
-  fullName: D3vS1m.WebAPI.Program
-  nameWithType: Program
-- uid: D3vS1m.WebAPI.Program.CreateWebHostBuilder(System.String[])
-  name: CreateWebHostBuilder(String[])
-  href: api/D3vS1m.WebAPI.Program.html#D3vS1m_WebAPI_Program_CreateWebHostBuilder_System_String___
-  commentId: M:D3vS1m.WebAPI.Program.CreateWebHostBuilder(System.String[])
-  name.vb: CreateWebHostBuilder(String())
-  fullName: D3vS1m.WebAPI.Program.CreateWebHostBuilder(System.String[])
-  fullName.vb: D3vS1m.WebAPI.Program.CreateWebHostBuilder(System.String())
-  nameWithType: Program.CreateWebHostBuilder(String[])
-  nameWithType.vb: Program.CreateWebHostBuilder(String())
-- uid: D3vS1m.WebAPI.Program.CreateWebHostBuilder*
-  name: CreateWebHostBuilder
-  href: api/D3vS1m.WebAPI.Program.html#D3vS1m_WebAPI_Program_CreateWebHostBuilder_
-  commentId: Overload:D3vS1m.WebAPI.Program.CreateWebHostBuilder
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Program.CreateWebHostBuilder
-  nameWithType: Program.CreateWebHostBuilder
-- uid: D3vS1m.WebAPI.Program.Main(System.String[])
-  name: Main(String[])
-  href: api/D3vS1m.WebAPI.Program.html#D3vS1m_WebAPI_Program_Main_System_String___
-  commentId: M:D3vS1m.WebAPI.Program.Main(System.String[])
-  name.vb: Main(String())
-  fullName: D3vS1m.WebAPI.Program.Main(System.String[])
-  fullName.vb: D3vS1m.WebAPI.Program.Main(System.String())
-  nameWithType: Program.Main(String[])
-  nameWithType.vb: Program.Main(String())
-- uid: D3vS1m.WebAPI.Program.Main*
-  name: Main
-  href: api/D3vS1m.WebAPI.Program.html#D3vS1m_WebAPI_Program_Main_
-  commentId: Overload:D3vS1m.WebAPI.Program.Main
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Program.Main
-  nameWithType: Program.Main
-- uid: D3vS1m.WebAPI.Startup
-  name: Startup
-  href: api/D3vS1m.WebAPI.Startup.html
-  commentId: T:D3vS1m.WebAPI.Startup
-  fullName: D3vS1m.WebAPI.Startup
-  nameWithType: Startup
-- uid: D3vS1m.WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  name: Startup(IConfiguration)
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup__ctor_Microsoft_Extensions_Configuration_IConfiguration_
-  commentId: M:D3vS1m.WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  fullName: D3vS1m.WebAPI.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
-  nameWithType: Startup.Startup(IConfiguration)
-- uid: D3vS1m.WebAPI.Startup.#ctor*
-  name: Startup
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup__ctor_
-  commentId: Overload:D3vS1m.WebAPI.Startup.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Startup.Startup
-  nameWithType: Startup.Startup
-- uid: D3vS1m.WebAPI.Startup.Configuration
-  name: Configuration
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup_Configuration
-  commentId: P:D3vS1m.WebAPI.Startup.Configuration
-  fullName: D3vS1m.WebAPI.Startup.Configuration
-  nameWithType: Startup.Configuration
-- uid: D3vS1m.WebAPI.Startup.Configuration*
-  name: Configuration
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup_Configuration_
-  commentId: Overload:D3vS1m.WebAPI.Startup.Configuration
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Startup.Configuration
-  nameWithType: Startup.Configuration
-- uid: D3vS1m.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)
-  name: Configure(IApplicationBuilder, IHostingEnvironment, IMqttControlable)
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Hosting_IHostingEnvironment_D3vS1m_Domain_Infrastructure_Mqtt_IMqttControlable_
-  commentId: M:D3vS1m.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)
-  fullName: D3vS1m.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment, D3vS1m.Domain.Infrastructure.Mqtt.IMqttControlable)
-  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment, IMqttControlable)
-- uid: D3vS1m.WebAPI.Startup.Configure*
-  name: Configure
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup_Configure_
-  commentId: Overload:D3vS1m.WebAPI.Startup.Configure
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Startup.Configure
-  nameWithType: Startup.Configure
-- uid: D3vS1m.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  name: ConfigureServices(IServiceCollection)
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:D3vS1m.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName: D3vS1m.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  nameWithType: Startup.ConfigureServices(IServiceCollection)
-- uid: D3vS1m.WebAPI.Startup.ConfigureServices*
-  name: ConfigureServices
-  href: api/D3vS1m.WebAPI.Startup.html#D3vS1m_WebAPI_Startup_ConfigureServices_
-  commentId: Overload:D3vS1m.WebAPI.Startup.ConfigureServices
-  isSpec: "True"
-  fullName: D3vS1m.WebAPI.Startup.ConfigureServices
-  nameWithType: Startup.ConfigureServices
-- uid: D3vS1m.WebAPI.System.Enumerations
-  name: D3vS1m.WebAPI.System.Enumerations
-  href: api/D3vS1m.WebAPI.System.Enumerations.html
-  commentId: N:D3vS1m.WebAPI.System.Enumerations
-  fullName: D3vS1m.WebAPI.System.Enumerations
-  nameWithType: D3vS1m.WebAPI.System.Enumerations
-- uid: D3vS1m.WebAPI.System.Enumerations.SessionStorages
-  name: SessionStorages
-  href: api/D3vS1m.WebAPI.System.Enumerations.SessionStorages.html
-  commentId: T:D3vS1m.WebAPI.System.Enumerations.SessionStorages
-  fullName: D3vS1m.WebAPI.System.Enumerations.SessionStorages
-  nameWithType: SessionStorages
-- uid: D3vS1m.WebAPI.System.Enumerations.SessionStorages.Binary
-  name: Binary
-  href: api/D3vS1m.WebAPI.System.Enumerations.SessionStorages.html#D3vS1m_WebAPI_System_Enumerations_SessionStorages_Binary
-  commentId: F:D3vS1m.WebAPI.System.Enumerations.SessionStorages.Binary
-  fullName: D3vS1m.WebAPI.System.Enumerations.SessionStorages.Binary
-  nameWithType: SessionStorages.Binary
-- uid: D3vS1m.WebAPI.System.Enumerations.SessionStorages.Json
-  name: Json
-  href: api/D3vS1m.WebAPI.System.Enumerations.SessionStorages.html#D3vS1m_WebAPI_System_Enumerations_SessionStorages_Json
-  commentId: F:D3vS1m.WebAPI.System.Enumerations.SessionStorages.Json
-  fullName: D3vS1m.WebAPI.System.Enumerations.SessionStorages.Json
-  nameWithType: SessionStorages.Json
-- uid: D3vS1m.WebUI
-  name: D3vS1m.WebUI
-  href: api/D3vS1m.WebUI.html
-  commentId: N:D3vS1m.WebUI
-  fullName: D3vS1m.WebUI
-  nameWithType: D3vS1m.WebUI
-- uid: D3vS1m.WebUI.Controllers
-  name: D3vS1m.WebUI.Controllers
-  href: api/D3vS1m.WebUI.Controllers.html
-  commentId: N:D3vS1m.WebUI.Controllers
-  fullName: D3vS1m.WebUI.Controllers
-  nameWithType: D3vS1m.WebUI.Controllers
-- uid: D3vS1m.WebUI.Controllers.HomeController
-  name: HomeController
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html
-  commentId: T:D3vS1m.WebUI.Controllers.HomeController
-  fullName: D3vS1m.WebUI.Controllers.HomeController
-  nameWithType: HomeController
-- uid: D3vS1m.WebUI.Controllers.HomeController.Error
-  name: Error()
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html#D3vS1m_WebUI_Controllers_HomeController_Error
-  commentId: M:D3vS1m.WebUI.Controllers.HomeController.Error
-  fullName: D3vS1m.WebUI.Controllers.HomeController.Error()
-  nameWithType: HomeController.Error()
-- uid: D3vS1m.WebUI.Controllers.HomeController.Error*
-  name: Error
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html#D3vS1m_WebUI_Controllers_HomeController_Error_
-  commentId: Overload:D3vS1m.WebUI.Controllers.HomeController.Error
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Controllers.HomeController.Error
-  nameWithType: HomeController.Error
-- uid: D3vS1m.WebUI.Controllers.HomeController.Index
-  name: Index()
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html#D3vS1m_WebUI_Controllers_HomeController_Index
-  commentId: M:D3vS1m.WebUI.Controllers.HomeController.Index
-  fullName: D3vS1m.WebUI.Controllers.HomeController.Index()
-  nameWithType: HomeController.Index()
-- uid: D3vS1m.WebUI.Controllers.HomeController.Index*
-  name: Index
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html#D3vS1m_WebUI_Controllers_HomeController_Index_
-  commentId: Overload:D3vS1m.WebUI.Controllers.HomeController.Index
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Controllers.HomeController.Index
-  nameWithType: HomeController.Index
-- uid: D3vS1m.WebUI.Controllers.HomeController.Privacy
-  name: Privacy()
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html#D3vS1m_WebUI_Controllers_HomeController_Privacy
-  commentId: M:D3vS1m.WebUI.Controllers.HomeController.Privacy
-  fullName: D3vS1m.WebUI.Controllers.HomeController.Privacy()
-  nameWithType: HomeController.Privacy()
-- uid: D3vS1m.WebUI.Controllers.HomeController.Privacy*
-  name: Privacy
-  href: api/D3vS1m.WebUI.Controllers.HomeController.html#D3vS1m_WebUI_Controllers_HomeController_Privacy_
-  commentId: Overload:D3vS1m.WebUI.Controllers.HomeController.Privacy
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Controllers.HomeController.Privacy
-  nameWithType: HomeController.Privacy
-- uid: D3vS1m.WebUI.Models
-  name: D3vS1m.WebUI.Models
-  href: api/D3vS1m.WebUI.Models.html
-  commentId: N:D3vS1m.WebUI.Models
-  fullName: D3vS1m.WebUI.Models
-  nameWithType: D3vS1m.WebUI.Models
-- uid: D3vS1m.WebUI.Models.AppInfoModel
-  name: AppInfoModel
-  href: api/D3vS1m.WebUI.Models.AppInfoModel.html
-  commentId: T:D3vS1m.WebUI.Models.AppInfoModel
-  fullName: D3vS1m.WebUI.Models.AppInfoModel
-  nameWithType: AppInfoModel
-- uid: D3vS1m.WebUI.Models.AppInfoModel.AppName
-  name: AppName
-  href: api/D3vS1m.WebUI.Models.AppInfoModel.html#D3vS1m_WebUI_Models_AppInfoModel_AppName
-  commentId: P:D3vS1m.WebUI.Models.AppInfoModel.AppName
-  fullName: D3vS1m.WebUI.Models.AppInfoModel.AppName
-  nameWithType: AppInfoModel.AppName
-- uid: D3vS1m.WebUI.Models.AppInfoModel.AppName*
-  name: AppName
-  href: api/D3vS1m.WebUI.Models.AppInfoModel.html#D3vS1m_WebUI_Models_AppInfoModel_AppName_
-  commentId: Overload:D3vS1m.WebUI.Models.AppInfoModel.AppName
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Models.AppInfoModel.AppName
-  nameWithType: AppInfoModel.AppName
-- uid: D3vS1m.WebUI.Models.AppInfoModel.AppVersion
-  name: AppVersion
-  href: api/D3vS1m.WebUI.Models.AppInfoModel.html#D3vS1m_WebUI_Models_AppInfoModel_AppVersion
-  commentId: P:D3vS1m.WebUI.Models.AppInfoModel.AppVersion
-  fullName: D3vS1m.WebUI.Models.AppInfoModel.AppVersion
-  nameWithType: AppInfoModel.AppVersion
-- uid: D3vS1m.WebUI.Models.AppInfoModel.AppVersion*
-  name: AppVersion
-  href: api/D3vS1m.WebUI.Models.AppInfoModel.html#D3vS1m_WebUI_Models_AppInfoModel_AppVersion_
-  commentId: Overload:D3vS1m.WebUI.Models.AppInfoModel.AppVersion
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Models.AppInfoModel.AppVersion
-  nameWithType: AppInfoModel.AppVersion
-- uid: D3vS1m.WebUI.Models.ErrorViewModel
-  name: ErrorViewModel
-  href: api/D3vS1m.WebUI.Models.ErrorViewModel.html
-  commentId: T:D3vS1m.WebUI.Models.ErrorViewModel
-  fullName: D3vS1m.WebUI.Models.ErrorViewModel
-  nameWithType: ErrorViewModel
-- uid: D3vS1m.WebUI.Models.ErrorViewModel.RequestId
-  name: RequestId
-  href: api/D3vS1m.WebUI.Models.ErrorViewModel.html#D3vS1m_WebUI_Models_ErrorViewModel_RequestId
-  commentId: P:D3vS1m.WebUI.Models.ErrorViewModel.RequestId
-  fullName: D3vS1m.WebUI.Models.ErrorViewModel.RequestId
-  nameWithType: ErrorViewModel.RequestId
-- uid: D3vS1m.WebUI.Models.ErrorViewModel.RequestId*
-  name: RequestId
-  href: api/D3vS1m.WebUI.Models.ErrorViewModel.html#D3vS1m_WebUI_Models_ErrorViewModel_RequestId_
-  commentId: Overload:D3vS1m.WebUI.Models.ErrorViewModel.RequestId
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Models.ErrorViewModel.RequestId
-  nameWithType: ErrorViewModel.RequestId
-- uid: D3vS1m.WebUI.Models.ErrorViewModel.ShowRequestId
-  name: ShowRequestId
-  href: api/D3vS1m.WebUI.Models.ErrorViewModel.html#D3vS1m_WebUI_Models_ErrorViewModel_ShowRequestId
-  commentId: P:D3vS1m.WebUI.Models.ErrorViewModel.ShowRequestId
-  fullName: D3vS1m.WebUI.Models.ErrorViewModel.ShowRequestId
-  nameWithType: ErrorViewModel.ShowRequestId
-- uid: D3vS1m.WebUI.Models.ErrorViewModel.ShowRequestId*
-  name: ShowRequestId
-  href: api/D3vS1m.WebUI.Models.ErrorViewModel.html#D3vS1m_WebUI_Models_ErrorViewModel_ShowRequestId_
-  commentId: Overload:D3vS1m.WebUI.Models.ErrorViewModel.ShowRequestId
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Models.ErrorViewModel.ShowRequestId
-  nameWithType: ErrorViewModel.ShowRequestId
-- uid: D3vS1m.WebUI.Program
-  name: Program
-  href: api/D3vS1m.WebUI.Program.html
-  commentId: T:D3vS1m.WebUI.Program
-  fullName: D3vS1m.WebUI.Program
-  nameWithType: Program
-- uid: D3vS1m.WebUI.Program.CreateWebHostBuilder(System.String[])
-  name: CreateWebHostBuilder(String[])
-  href: api/D3vS1m.WebUI.Program.html#D3vS1m_WebUI_Program_CreateWebHostBuilder_System_String___
-  commentId: M:D3vS1m.WebUI.Program.CreateWebHostBuilder(System.String[])
-  name.vb: CreateWebHostBuilder(String())
-  fullName: D3vS1m.WebUI.Program.CreateWebHostBuilder(System.String[])
-  fullName.vb: D3vS1m.WebUI.Program.CreateWebHostBuilder(System.String())
-  nameWithType: Program.CreateWebHostBuilder(String[])
-  nameWithType.vb: Program.CreateWebHostBuilder(String())
-- uid: D3vS1m.WebUI.Program.CreateWebHostBuilder*
-  name: CreateWebHostBuilder
-  href: api/D3vS1m.WebUI.Program.html#D3vS1m_WebUI_Program_CreateWebHostBuilder_
-  commentId: Overload:D3vS1m.WebUI.Program.CreateWebHostBuilder
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Program.CreateWebHostBuilder
-  nameWithType: Program.CreateWebHostBuilder
-- uid: D3vS1m.WebUI.Program.Main(System.String[])
-  name: Main(String[])
-  href: api/D3vS1m.WebUI.Program.html#D3vS1m_WebUI_Program_Main_System_String___
-  commentId: M:D3vS1m.WebUI.Program.Main(System.String[])
-  name.vb: Main(String())
-  fullName: D3vS1m.WebUI.Program.Main(System.String[])
-  fullName.vb: D3vS1m.WebUI.Program.Main(System.String())
-  nameWithType: Program.Main(String[])
-  nameWithType.vb: Program.Main(String())
-- uid: D3vS1m.WebUI.Program.Main*
-  name: Main
-  href: api/D3vS1m.WebUI.Program.html#D3vS1m_WebUI_Program_Main_
-  commentId: Overload:D3vS1m.WebUI.Program.Main
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Program.Main
-  nameWithType: Program.Main
-- uid: D3vS1m.WebUI.Startup
-  name: Startup
-  href: api/D3vS1m.WebUI.Startup.html
-  commentId: T:D3vS1m.WebUI.Startup
-  fullName: D3vS1m.WebUI.Startup
-  nameWithType: Startup
-- uid: D3vS1m.WebUI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  name: Startup(IConfiguration)
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup__ctor_Microsoft_Extensions_Configuration_IConfiguration_
-  commentId: M:D3vS1m.WebUI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
-  fullName: D3vS1m.WebUI.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)
-  nameWithType: Startup.Startup(IConfiguration)
-- uid: D3vS1m.WebUI.Startup.#ctor*
-  name: Startup
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup__ctor_
-  commentId: Overload:D3vS1m.WebUI.Startup.#ctor
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Startup.Startup
-  nameWithType: Startup.Startup
-- uid: D3vS1m.WebUI.Startup.Configuration
-  name: Configuration
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup_Configuration
-  commentId: P:D3vS1m.WebUI.Startup.Configuration
-  fullName: D3vS1m.WebUI.Startup.Configuration
-  nameWithType: Startup.Configuration
-- uid: D3vS1m.WebUI.Startup.Configuration*
-  name: Configuration
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup_Configuration_
-  commentId: Overload:D3vS1m.WebUI.Startup.Configuration
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Startup.Configuration
-  nameWithType: Startup.Configuration
-- uid: D3vS1m.WebUI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  name: Configure(IApplicationBuilder, IHostingEnvironment)
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Hosting_IHostingEnvironment_
-  commentId: M:D3vS1m.WebUI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  fullName: D3vS1m.WebUI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-  nameWithType: Startup.Configure(IApplicationBuilder, IHostingEnvironment)
-- uid: D3vS1m.WebUI.Startup.Configure*
-  name: Configure
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup_Configure_
-  commentId: Overload:D3vS1m.WebUI.Startup.Configure
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Startup.Configure
-  nameWithType: Startup.Configure
-- uid: D3vS1m.WebUI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  name: ConfigureServices(IServiceCollection)
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:D3vS1m.WebUI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName: D3vS1m.WebUI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  nameWithType: Startup.ConfigureServices(IServiceCollection)
-- uid: D3vS1m.WebUI.Startup.ConfigureServices*
-  name: ConfigureServices
-  href: api/D3vS1m.WebUI.Startup.html#D3vS1m_WebUI_Startup_ConfigureServices_
-  commentId: Overload:D3vS1m.WebUI.Startup.ConfigureServices
-  isSpec: "True"
-  fullName: D3vS1m.WebUI.Startup.ConfigureServices
-  nameWithType: Startup.ConfigureServices
+- uid: D3vS1m.Persistence.Exports
+  name: D3vS1m.Persistence.Exports
+  href: api/D3vS1m.Persistence.Exports.html
+  commentId: N:D3vS1m.Persistence.Exports
+  fullName: D3vS1m.Persistence.Exports
+  nameWithType: D3vS1m.Persistence.Exports
+- uid: D3vS1m.Persistence.Exports.ParquetExporter
+  name: ParquetExporter
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html
+  commentId: T:D3vS1m.Persistence.Exports.ParquetExporter
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter
+  nameWithType: ParquetExporter
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.#ctor
+  name: ParquetExporter()
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter__ctor
+  commentId: M:D3vS1m.Persistence.Exports.ParquetExporter.#ctor
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.ParquetExporter()
+  nameWithType: ParquetExporter.ParquetExporter()
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.#ctor*
+  name: ParquetExporter
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter__ctor_
+  commentId: Overload:D3vS1m.Persistence.Exports.ParquetExporter.#ctor
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.ParquetExporter
+  nameWithType: ParquetExporter.ParquetExporter
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Build*
+  name: Build
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Build_
+  commentId: Overload:D3vS1m.Persistence.Exports.ParquetExporter.Build
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Build
+  nameWithType: ParquetExporter.Build
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Build``1(``0)
+  name: Build<T>(T)
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_
+  commentId: M:D3vS1m.Persistence.Exports.ParquetExporter.Build``1(``0)
+  name.vb: Build(Of T)(T)
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Build<T>(T)
+  fullName.vb: D3vS1m.Persistence.Exports.ParquetExporter.Build(Of T)(T)
+  nameWithType: ParquetExporter.Build<T>(T)
+  nameWithType.vb: ParquetExporter.Build(Of T)(T)
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Build``1(``0,Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  name: Build<T>(T, IAdaptable)
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_Sin_Net_Domain_Persistence_Adapter_IAdaptable_
+  commentId: M:D3vS1m.Persistence.Exports.ParquetExporter.Build``1(``0,Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  name.vb: Build(Of T)(T, IAdaptable)
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Build<T>(T, Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  fullName.vb: D3vS1m.Persistence.Exports.ParquetExporter.Build(Of T)(T, Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  nameWithType: ParquetExporter.Build<T>(T, IAdaptable)
+  nameWithType.vb: ParquetExporter.Build(Of T)(T, IAdaptable)
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Export
+  name: Export()
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Export
+  commentId: M:D3vS1m.Persistence.Exports.ParquetExporter.Export
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Export()
+  nameWithType: ParquetExporter.Export()
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Export*
+  name: Export
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Export_
+  commentId: Overload:D3vS1m.Persistence.Exports.ParquetExporter.Export
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Export
+  nameWithType: ParquetExporter.Export
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)
+  name: Setup(SettingsBase)
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Setup_Sin_Net_Domain_Persistence_Settings_SettingsBase_
+  commentId: M:D3vS1m.Persistence.Exports.ParquetExporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)
+  nameWithType: ParquetExporter.Setup(SettingsBase)
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Setup*
+  name: Setup
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Setup_
+  commentId: Overload:D3vS1m.Persistence.Exports.ParquetExporter.Setup
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Setup
+  nameWithType: ParquetExporter.Setup
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Type
+  name: Type
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Type
+  commentId: P:D3vS1m.Persistence.Exports.ParquetExporter.Type
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Type
+  nameWithType: ParquetExporter.Type
+- uid: D3vS1m.Persistence.Exports.ParquetExporter.Type*
+  name: Type
+  href: api/D3vS1m.Persistence.Exports.ParquetExporter.html#D3vS1m_Persistence_Exports_ParquetExporter_Type_
+  commentId: Overload:D3vS1m.Persistence.Exports.ParquetExporter.Type
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Exports.ParquetExporter.Type
+  nameWithType: ParquetExporter.Type
+- uid: D3vS1m.Persistence.Exports.ToParquetAdapter
+  name: ToParquetAdapter
+  href: api/D3vS1m.Persistence.Exports.ToParquetAdapter.html
+  commentId: T:D3vS1m.Persistence.Exports.ToParquetAdapter
+  fullName: D3vS1m.Persistence.Exports.ToParquetAdapter
+  nameWithType: ToParquetAdapter
+- uid: D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt*
+  name: Adapt
+  href: api/D3vS1m.Persistence.Exports.ToParquetAdapter.html#D3vS1m_Persistence_Exports_ToParquetAdapter_Adapt_
+  commentId: Overload:D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt
+  nameWithType: ToParquetAdapter.Adapt
+- uid: D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt``2(``0)
+  name: Adapt<Tin, Tout>(Tin)
+  href: api/D3vS1m.Persistence.Exports.ToParquetAdapter.html#D3vS1m_Persistence_Exports_ToParquetAdapter_Adapt__2___0_
+  commentId: M:D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt``2(``0)
+  name.vb: Adapt(Of Tin, Tout)(Tin)
+  fullName: D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt<Tin, Tout>(Tin)
+  fullName.vb: D3vS1m.Persistence.Exports.ToParquetAdapter.Adapt(Of Tin, Tout)(Tin)
+  nameWithType: ToParquetAdapter.Adapt<Tin, Tout>(Tin)
+  nameWithType.vb: ToParquetAdapter.Adapt(Of Tin, Tout)(Tin)
+- uid: D3vS1m.Persistence.Imports
+  name: D3vS1m.Persistence.Imports
+  href: api/D3vS1m.Persistence.Imports.html
+  commentId: N:D3vS1m.Persistence.Imports
+  fullName: D3vS1m.Persistence.Imports
+  nameWithType: D3vS1m.Persistence.Imports
+- uid: D3vS1m.Persistence.Imports.ObjImporter
+  name: ObjImporter
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html
+  commentId: T:D3vS1m.Persistence.Imports.ObjImporter
+  fullName: D3vS1m.Persistence.Imports.ObjImporter
+  nameWithType: ObjImporter
+- uid: D3vS1m.Persistence.Imports.ObjImporter.As*
+  name: As
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_As_
+  commentId: Overload:D3vS1m.Persistence.Imports.ObjImporter.As
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.As
+  nameWithType: ObjImporter.As
+- uid: D3vS1m.Persistence.Imports.ObjImporter.As``1
+  name: As<T>()
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_As__1
+  commentId: M:D3vS1m.Persistence.Imports.ObjImporter.As``1
+  name.vb: As(Of T)()
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.As<T>()
+  fullName.vb: D3vS1m.Persistence.Imports.ObjImporter.As(Of T)()
+  nameWithType: ObjImporter.As<T>()
+  nameWithType.vb: ObjImporter.As(Of T)()
+- uid: D3vS1m.Persistence.Imports.ObjImporter.As``1(Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  name: As<T>(IAdaptable)
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_As__1_Sin_Net_Domain_Persistence_Adapter_IAdaptable_
+  commentId: M:D3vS1m.Persistence.Imports.ObjImporter.As``1(Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  name.vb: As(Of T)(IAdaptable)
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.As<T>(Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  fullName.vb: D3vS1m.Persistence.Imports.ObjImporter.As(Of T)(Sin.Net.Domain.Persistence.Adapter.IAdaptable)
+  nameWithType: ObjImporter.As<T>(IAdaptable)
+  nameWithType.vb: ObjImporter.As(Of T)(IAdaptable)
+- uid: D3vS1m.Persistence.Imports.ObjImporter.AsItIs
+  name: AsItIs()
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_AsItIs
+  commentId: M:D3vS1m.Persistence.Imports.ObjImporter.AsItIs
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.AsItIs()
+  nameWithType: ObjImporter.AsItIs()
+- uid: D3vS1m.Persistence.Imports.ObjImporter.AsItIs*
+  name: AsItIs
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_AsItIs_
+  commentId: Overload:D3vS1m.Persistence.Imports.ObjImporter.AsItIs
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.AsItIs
+  nameWithType: ObjImporter.AsItIs
+- uid: D3vS1m.Persistence.Imports.ObjImporter.Import
+  name: Import()
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_Import
+  commentId: M:D3vS1m.Persistence.Imports.ObjImporter.Import
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.Import()
+  nameWithType: ObjImporter.Import()
+- uid: D3vS1m.Persistence.Imports.ObjImporter.Import*
+  name: Import
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_Import_
+  commentId: Overload:D3vS1m.Persistence.Imports.ObjImporter.Import
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.Import
+  nameWithType: ObjImporter.Import
+- uid: D3vS1m.Persistence.Imports.ObjImporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)
+  name: Setup(SettingsBase)
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_Setup_Sin_Net_Domain_Persistence_Settings_SettingsBase_
+  commentId: M:D3vS1m.Persistence.Imports.ObjImporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)
+  nameWithType: ObjImporter.Setup(SettingsBase)
+- uid: D3vS1m.Persistence.Imports.ObjImporter.Setup*
+  name: Setup
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_Setup_
+  commentId: Overload:D3vS1m.Persistence.Imports.ObjImporter.Setup
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.Setup
+  nameWithType: ObjImporter.Setup
+- uid: D3vS1m.Persistence.Imports.ObjImporter.Type
+  name: Type
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_Type
+  commentId: P:D3vS1m.Persistence.Imports.ObjImporter.Type
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.Type
+  nameWithType: ObjImporter.Type
+- uid: D3vS1m.Persistence.Imports.ObjImporter.Type*
+  name: Type
+  href: api/D3vS1m.Persistence.Imports.ObjImporter.html#D3vS1m_Persistence_Imports_ObjImporter_Type_
+  commentId: Overload:D3vS1m.Persistence.Imports.ObjImporter.Type
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.Imports.ObjImporter.Type
+  nameWithType: ObjImporter.Type
+- uid: D3vS1m.Persistence.JsonHelper
+  name: JsonHelper
+  href: api/D3vS1m.Persistence.JsonHelper.html
+  commentId: T:D3vS1m.Persistence.JsonHelper
+  fullName: D3vS1m.Persistence.JsonHelper
+  nameWithType: JsonHelper
+- uid: D3vS1m.Persistence.JsonHelper.Binder
+  name: Binder
+  href: api/D3vS1m.Persistence.JsonHelper.html#D3vS1m_Persistence_JsonHelper_Binder
+  commentId: P:D3vS1m.Persistence.JsonHelper.Binder
+  fullName: D3vS1m.Persistence.JsonHelper.Binder
+  nameWithType: JsonHelper.Binder
+- uid: D3vS1m.Persistence.JsonHelper.Binder*
+  name: Binder
+  href: api/D3vS1m.Persistence.JsonHelper.html#D3vS1m_Persistence_JsonHelper_Binder_
+  commentId: Overload:D3vS1m.Persistence.JsonHelper.Binder
+  isSpec: "True"
+  fullName: D3vS1m.Persistence.JsonHelper.Binder
+  nameWithType: JsonHelper.Binder

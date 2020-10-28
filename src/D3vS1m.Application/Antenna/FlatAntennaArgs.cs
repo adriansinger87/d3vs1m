@@ -8,12 +8,14 @@ namespace D3vS1m.Application.Antenna
     {
         public FlatAntennaArgs() : base()
         {
+            base.Key = Models.Antenna.Flat.Key;
+            base.Name = Models.Antenna.Flat.Name;
             Reset();
         }
 
         public override void Reset()
         {
-            base.Name = Models.Antenna.Flat.Key;
+            
         }
 
         /// <summary>

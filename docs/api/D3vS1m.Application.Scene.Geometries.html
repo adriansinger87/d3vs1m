@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace D3vS1m.Application.Scene.Geometries
    | D3vS1m API Reference ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.1.0">
     
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -78,11 +78,19 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="D3vS1m.Application.Scene.Geometries.Face.html">Face</a></h4>
-      <section></section>
+      <section><p>This class represents a single face with three or four point defining it.
+The lists of Vertices and Normals can have an arbitrary range and
+the first four elements are accessible with explicit properties.</p>
+</section>
       <h4><a class="xref" href="D3vS1m.Application.Scene.Geometries.Geometry.html">Geometry</a></h4>
-      <section></section>
+      <section><p>The Geometry class composes a lists of faces unattached vertices and normals.
+This class follows the composite-pattern so it has a list of children of the same time
+in order to create trees of geometries.
+Empty geometries for grouping purposes can exsist as well.</p>
+</section>
       <h4><a class="xref" href="D3vS1m.Application.Scene.Geometries.GeometryRepository.html">GeometryRepository</a></h4>
-      <section></section>
+      <section><p>This class aggregates all Geometry objects and provides additional functions or properties.</p>
+</section>
 </article>
           </div>
           

@@ -1,4 +1,5 @@
-﻿using D3vS1m.Application.Antenna;
+﻿using D3vS1m.Application;
+using D3vS1m.Application.Antenna;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MSTests.Application
@@ -24,11 +25,14 @@ namespace MSTests.Application
         public void SimulateSphericAntenna()
         {
             // arrange
+
             var antennaSim = new SphericAntennaSimulator();
             _antennaArgs = new SphericAntennaArgs();
             LoadAntennaData(_antennaArgs);
-
+            
+            DumpToJson(_antennaArgs, "spheric_antenna_args.json");
             antennaSim.With(_antennaArgs);
+
 
             // act
             antennaSim.Run();

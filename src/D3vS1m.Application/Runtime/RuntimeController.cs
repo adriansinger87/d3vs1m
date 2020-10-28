@@ -5,6 +5,7 @@ using D3vS1m.Domain.Runtime;
 using FluentValidation.Results;
 using Sin.Net.Domain.Persistence.Logging;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace D3vS1m.Application.Runtime
@@ -12,7 +13,6 @@ namespace D3vS1m.Application.Runtime
     /// <summary>
     /// Implements the abstract class RuntimeBase and adds some behavior for validation and conrete runtime arguments
     /// </summary>
-    [Serializable]
     public class RuntimeController : RuntimeBase
     {
         // -- fields
@@ -20,7 +20,6 @@ namespace D3vS1m.Application.Runtime
         /// <summary>
         /// injected concretion of the validation of the simulation models
         /// </summary>
-        [NonSerialized]
         private BasicValidator _validator;
 
         /// <summary>
@@ -28,21 +27,36 @@ namespace D3vS1m.Application.Runtime
         /// </summary>
         private RuntimeArgs _args;
 
+        private Stopwatch _watch;
+
         // -- constructor
 
         /// <summary>
         /// The constructor gets the concrete validator injected and instanciates the concrete arguments of RuntimeArgs type
         /// </summary>
         /// <param name="validator">The validator concretion could be of type BasicValidator or a derived class</param>
-        public RuntimeController(BasicValidator validator)
+        public RuntimeController(BasicValidator validator) :base()
         {
             _validator = validator;
             _args = new RuntimeArgs();
 
             base.IterationPassed += OnIterationPassed;
+            base.Started += OnStarted;
+            base.Stopped += OnStopped;
         }
 
         // -- methods
+
+        /// <summary>
+        /// The arguments must be of type RuntimeArgs.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public override RuntimeBase With(ArgumentsBase args)
+        {
+            _args = args as RuntimeArgs;
+            return this;
+        }
 
         /// <summary>
         /// Validate the simulation models and their arguments
@@ -61,7 +75,8 @@ namespace D3vS1m.Application.Runtime
                     string property = (!string.IsNullOrEmpty(failure.PropertyName) ? $" property: {failure.PropertyName}" : "");
                     Log.Error($"failed validation: {failure.ErrorMessage}{property}");
                 }
-            } else
+            }
+            else
             {
                 Log.Info("Validation passed");
             }
@@ -84,12 +99,26 @@ namespace D3vS1m.Application.Runtime
             return base.RunAsync(condition);
         }
 
+        // -- event methods
+
+        private void OnStarted(object sender, SimulatorEventArgs e)
+        {
+            _watch = new Stopwatch();
+            _watch.Start();
+        }
+
         private void OnIterationPassed(object sender, SimulatorEventArgs e)
         {
             _args.Iterations++;
-            _args.ElapsedTime = _args.ElapsedTime.Add(_args.CycleDuration);
+            _args.SimulatedTime = _args.SimulatedTime.Add(_args.CycleDuration);
+            Log.Trace($"{_args.Iterations} iterations at simulated duration: {_args.SimulatedTime}");
+        }
 
-            Log.Trace($"{_args.Iterations} iterations, duration: {_args.ElapsedTime}");
+        private void OnStopped(object sender, SimulatorEventArgs e)
+        {
+            _watch.Stop();
+            _args.ElapsedTime = _watch.Elapsed;
+            Log.Trace($"Duration of simulation: {_args.ElapsedTime}.");
         }
 
         // -- properties
