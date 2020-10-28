@@ -13,7 +13,7 @@
     <PackageTags>Simulation IIoT</PackageTags>
     <PackageReleaseNotes>first release</PackageReleaseNotes>
     <PackageIcon>d3vs1m-logo.png</PackageIcon>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
