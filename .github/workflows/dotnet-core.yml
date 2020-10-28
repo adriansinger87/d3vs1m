@@ -1,6 +1,8 @@
 name: .NET Core
-
 on: push
+
+env:
+  working-dir: ./src
 
 defaults:
   run:
@@ -9,8 +11,6 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-dir: ./src
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
