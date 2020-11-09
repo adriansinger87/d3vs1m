@@ -41,6 +41,8 @@ namespace MSTests.Application
             _network = netArgs.Network;
             _network.AddRange(ImportDevices().ToArray());
 
+            _network.Items[0].Controls.Off();
+
             var simRepo = new SimulatorRepository();
             simRepo.Add(netSim);
             runtime.BindSimulators(simRepo)

@@ -5,18 +5,19 @@ using System;
 namespace D3vS1m.Application.Devices
 {
     [Serializable]
-    public class SimpleDevice
+    public class SimpleDevice : IDevice
     {
         public SimpleDevice()
         {
             Uuid = Guid.NewGuid().ToString();
-
-            Parts = new PartsRepository();
-
             Name = Const.Device.Name;
             Description = Const.Device.Description;
             Position = new Vertex(Const.Device.PosX, Const.Device.PosY, Const.Device.PosZ);
             Orientation = new Angle(Const.Antenna.Azimuth, Const.Antenna.Elevation);
+            IsActive = true;
+
+            Parts = new PartsRepository();
+            Controls = new SimpleControls(this);
         }
 
         // -- public methods
@@ -28,13 +29,13 @@ namespace D3vS1m.Application.Devices
 
         // -- properties
 
-        public string Name { get; set; }
-        public Vertex Position { get; set; }
-
         public string Uuid { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
+        public bool IsActive { get; set; }
+        public Vertex Position { get; set; }
         public Angle Orientation { get; set; }
-
         public PartsRepository Parts { get; }
+        public ControlBase Controls { get; }	
     }
 }
