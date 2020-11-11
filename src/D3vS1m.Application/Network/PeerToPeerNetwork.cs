@@ -5,6 +5,7 @@ using FluentValidation.Results;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Domain.Repository;
 using System;
+using System.Linq;
 
 namespace D3vS1m.Application.Network
 {
@@ -39,6 +40,13 @@ namespace D3vS1m.Application.Network
             RssMatrix.Init(size);
             AngleMatrix.Init(size, new Angle(float.NaN, float.NaN));
         }
+
+        public float Availability()
+		{
+            var online = Items.Where(d => d.IsActive).Count();
+            var all = Items.Count;
+            return (float)online / (float)all;
+		}
 
         private void LogValidationErrors(ValidationResult results)
         {
