@@ -78,7 +78,8 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ParquetExporter</span></div>
+    <div class="level1"><span class="xref">Sin.Net.Persistence.Exports.ExporterBase</span></div>
+    <div class="level2"><span class="xref">ParquetExporter</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -86,6 +87,15 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Sin.Net.Persistence.Exports.ExporterBase._exceptions</span>
+    </div>
+    <div>
+      <span class="xref">Sin.Net.Persistence.Exports.ExporterBase.HandleException(System.Exception, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Sin.Net.Persistence.Exports.ExporterBase.Exception</span>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -112,16 +122,16 @@
   <h6><strong>Assembly</strong>: D3vS1m.Persistence.dll</h6>
   <h5 id="D3vS1m_Persistence_Exports_ParquetExporter_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ParquetExporter : IExportable</code></pre>
+    <pre><code class="lang-csharp hljs">public class ParquetExporter : ExporterBase, IExportable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter__ctor.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter__ctor.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L29">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L28">View Source</a>
   </span>
   <a id="D3vS1m_Persistence_Exports_ParquetExporter__ctor_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.#ctor*"></a>
   <h4 id="D3vS1m_Persistence_Exports_ParquetExporter__ctor" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.#ctor">ParquetExporter()</h4>
@@ -135,10 +145,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Type.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Type.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L88">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L109">View Source</a>
   </span>
   <a id="D3vS1m_Persistence_Exports_ParquetExporter_Type_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Type*"></a>
   <h4 id="D3vS1m_Persistence_Exports_ParquetExporter_Type" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Type">Type</h4>
@@ -146,7 +156,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Type { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override string Type { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -163,14 +173,16 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Sin.Net.Persistence.Exports.ExporterBase.Type</span></div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Build%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Build%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L49">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L49">View Source</a>
   </span>
   <a id="D3vS1m_Persistence_Exports_ParquetExporter_Build_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Build*"></a>
   <h4 id="D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Build``1(``0)">Build&lt;T&gt;(T)</h4>
@@ -178,7 +190,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IExportable Build&lt;T&gt;(T data)</code></pre>
+    <pre><code class="lang-csharp hljs">public override IExportable Build&lt;T&gt;(T data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,12 +239,14 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Sin.Net.Persistence.Exports.ExporterBase.Build&lt;T&gt;(T)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_Sin_Net_Domain_Persistence_Adapter_IAdaptable_.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Build%60%601(%60%600%2CSin.Net.Domain.Persistence.Adapter.IAdaptable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_Sin_Net_Domain_Persistence_Adapter_IAdaptable_.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Build%60%601(%60%600%2CSin.Net.Domain.Persistence.Adapter.IAdaptable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L55">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L63">View Source</a>
   </span>
   <a id="D3vS1m_Persistence_Exports_ParquetExporter_Build_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Build*"></a>
   <h4 id="D3vS1m_Persistence_Exports_ParquetExporter_Build__1___0_Sin_Net_Domain_Persistence_Adapter_IAdaptable_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Build``1(``0,Sin.Net.Domain.Persistence.Adapter.IAdaptable)">Build&lt;T&gt;(T, IAdaptable)</h4>
@@ -240,7 +254,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IExportable Build&lt;T&gt;(T data, IAdaptable adapter)</code></pre>
+    <pre><code class="lang-csharp hljs">public override IExportable Build&lt;T&gt;(T data, IAdaptable adapter)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,12 +308,14 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Sin.Net.Persistence.Exports.ExporterBase.Build&lt;T&gt;(T, Sin.Net.Domain.Persistence.Adapter.IAdaptable)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Export.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Export%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Export.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Export%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L62">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L78">View Source</a>
   </span>
   <a id="D3vS1m_Persistence_Exports_ParquetExporter_Export_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Export*"></a>
   <h4 id="D3vS1m_Persistence_Exports_ParquetExporter_Export" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Export">Export()</h4>
@@ -307,7 +323,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Export()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string Export()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -324,12 +340,14 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Sin.Net.Persistence.Exports.ExporterBase.Export()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Setup_Sin_Net_Domain_Persistence_Settings_SettingsBase_.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter_Setup_Sin_Net_Domain_Persistence_Settings_SettingsBase_.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L36">View Source</a>
+    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L35">View Source</a>
   </span>
   <a id="D3vS1m_Persistence_Exports_ParquetExporter_Setup_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Setup*"></a>
   <h4 id="D3vS1m_Persistence_Exports_ParquetExporter_Setup_Sin_Net_Domain_Persistence_Settings_SettingsBase_" data-uid="D3vS1m.Persistence.Exports.ParquetExporter.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)">Setup(SettingsBase)</h4>
@@ -337,7 +355,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IExportable Setup(SettingsBase setting)</code></pre>
+    <pre><code class="lang-csharp hljs">public override IExportable Setup(SettingsBase setting)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -371,6 +389,8 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Sin.Net.Persistence.Exports.ExporterBase.Setup(Sin.Net.Domain.Persistence.Settings.SettingsBase)</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">Sin.Net.Domain.Persistence.IExportable</span>
@@ -383,10 +403,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/adriansinger87/d3vs1m/new/simulation-dev/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/adriansinger87/d3vs1m/new/master/apiSpec/new?filename=D3vS1m_Persistence_Exports_ParquetExporter.md&amp;value=---%0Auid%3A%20D3vS1m.Persistence.Exports.ParquetExporter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/adriansinger87/d3vs1m/blob/simulation-dev/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/adriansinger87/d3vs1m/blob/master/src/D3vS1m.Persistence/Exports/ParquetExporter.cs/#L17" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
