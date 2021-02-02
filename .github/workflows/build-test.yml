@@ -1,8 +1,9 @@
 name: Build and Test
-on: pull_request
+on: [push, pull_request] # replace with array '[push, pull_request]' to trigger the action on each push and pull request
 
 env:
   working-dir: src
+  test-settings: TeleScope.MSTest/github.runsettings
 
 jobs:
   build:
@@ -23,4 +24,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-restore --settings ${{env.test-settings}} --verbosity normal
