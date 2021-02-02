@@ -3,7 +3,7 @@ on: [push, pull_request] # replace with array '[push, pull_request]' to trigger 
 
 env:
   working-dir: src
-  test-settings: TeleScope.MSTest/github.runsettings
+  test-settings: MSTests/github.runsettings
 
 jobs:
   build:
