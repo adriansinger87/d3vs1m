@@ -163,7 +163,7 @@ namespace D3vS1m.Domain.Data
         {
             if (row < 0 || row > RowsCount)
             {
-                throw new Exception("Die Zeile liegt außerhalb des gültigen Bereichs");
+                throw new ArgumentOutOfRangeException(nameof(row));
             }
         }
 
@@ -171,7 +171,7 @@ namespace D3vS1m.Domain.Data
         {
             if (col < 0 || col > ColsCount)
             {
-                throw new Exception("Die Spalte liegt außerhalb des gültigen Bereichs");
+                throw new ArgumentOutOfRangeException(nameof(col));
             }
         }
 

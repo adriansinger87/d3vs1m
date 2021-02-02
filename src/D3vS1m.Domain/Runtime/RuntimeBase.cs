@@ -1,230 +1,228 @@
-﻿using D3vS1m.Domain.Data.Arguments;
+﻿using System;
+using System.Threading.Tasks;
+using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
-using D3vS1m.Domain.System.Enumerations;
 using Sin.Net.Domain.Persistence;
 using Sin.Net.Domain.Persistence.Adapter;
 using Sin.Net.Domain.Persistence.Logging;
 using Sin.Net.Domain.Persistence.Settings;
-using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace D3vS1m.Domain.Runtime
 {
-    /// <summary>
-    /// Abstract class with some base functionality to setup and run the desired simulation models
-    /// </summary>
-    public abstract class RuntimeBase
-    {
-        // -- fields
+	/// <summary>
+	/// Abstract class with some base functionality to setup and run the desired simulation models
+	/// </summary>
+	public abstract class RuntimeBase
+	{
+		// -- fields
 
-        protected SimulatorRepository _simRepo;
+		protected SimulatorRepository _simRepo;
 
-        protected bool _isValid;
-        protected bool _isRunning;
-        protected bool _stopping;
+		protected bool _isValid;
+		protected bool _isRunning;
+		protected bool _stopping;
 
-        // -- events
+		// -- events
 
-        /// <summary>
-        /// The event gets fired when the simulation starts the first iteration. 
-        /// </summary>
-        public event SimulatorEventHandler Started;
+		/// <summary>
+		/// The event gets fired when the simulation starts the first iteration. 
+		/// </summary>
+		public event SimulatorEventHandler Started;
 
-        /// <summary>
-        /// The event gets fired when the simulation stoppes the last iteration. 
-        /// </summary>
-        public event SimulatorEventHandler Stopped;
+		/// <summary>
+		/// The event gets fired when the simulation stoppes the last iteration. 
+		/// </summary>
+		public event SimulatorEventHandler Stopped;
 
-        /// <summary>
-        /// The event gets fired when the execution of all simulation models has finished one iteration 
-        /// </summary>
-        public event SimulatorEventHandler IterationPassed;
+		/// <summary>
+		/// The event gets fired when the execution of all simulation models has finished one iteration 
+		/// </summary>
+		public event SimulatorEventHandler IterationPassed;
 
 		// -- constructor
 
-		public RuntimeBase()
+		protected RuntimeBase()
 		{
-            _simRepo = new SimulatorRepository();
+			_simRepo = new SimulatorRepository();
 
-        }
-
-        // -- methods
-
-        public abstract RuntimeBase With(ArgumentsBase args);
-
-        /// <summary>
-        /// Takes the Simulator Repository instance with all ready-to-go simulators and sets the internal valid-state to invalid.
-        /// This ensures that the concretion of this base class implements a validation method and runs it before the simulation. 
-        /// </summary>
-        /// <param name="simulatorRepo">The repository instance</param>
-        /// <returns>Returns the calling instance for method chaining</returns>
-        public virtual RuntimeBase BindSimulators(SimulatorRepository simulatorRepo)
-        {
-            _isValid = false;
-            _simRepo = simulatorRepo;
-            return this;
-        }
-
-        public virtual RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
-		{
-            action(_simRepo);
-            return this;
-        }
-
-        public virtual RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
-		{
-            exporter
-                .Setup(setting)
-                .Build(_simRepo.AllArguments, adapter)
-                .Export();
-
-            return this;
 		}
 
-        /// <summary>
-        /// The conrete runtime implementation implements the validation of all simulation models here.
-        /// The Method is called before the iteration of all registered models in the RunAsync method.
-        /// </summary>
-        /// <returns></returns>
-        public abstract bool Validate();
+		// -- methods
 
-        /// <summary>
-        /// Stops the simulation after finishing the current iteration of the simulation.
-        /// </summary>
-        public void Stop()
-        {
-            _isRunning = false;
-            _stopping = true;
-            Log.Trace("Simulation runtime stopping");
-        }
+		public abstract RuntimeBase With(ArgumentsBase args);
 
-        #region RunAsync
-        /// <summary>
-        /// Start the iteration of the run method of all registered simulation models
-        /// without any break condition
-        /// </summary>
-        /// <returns>The task object representing the async task</returns>
-        public async Task RunAsync()
-        {
-            // go baby go!
-            await RunAsync((runtime) => { return true; });
-        }
+		/// <summary>
+		/// Takes the Simulator Repository instance with all ready-to-go simulators and sets the internal valid-state to invalid.
+		/// This ensures that the concretion of this base class implements a validation method and runs it before the simulation. 
+		/// </summary>
+		/// <param name="simulatorRepo">The repository instance</param>
+		/// <returns>Returns the calling instance for method chaining</returns>
+		public virtual RuntimeBase BindSimulators(SimulatorRepository simulatorRepo)
+		{
+			_isValid = false;
+			_simRepo = simulatorRepo;
+			return this;
+		}
 
-        /// <summary>
-        /// Start the iteration of the run method of all registered simulation models
-        /// for a defined number of times
-        /// </summary>
-        /// <param name="count">Determines the number of iterations of all simulation models</param>
-        /// <returns>The task object representing the async task</returns>
-        public async Task RunAsync(int count)
-        {
-            int i = 0;
-            await RunAsync((runtime) =>
-            {
-                if (i >= count)
-                {
-                    return false;
-                }
+		public virtual RuntimeBase SetupSimulators(Action<SimulatorRepository> action)
+		{
+			action(_simRepo);
+			return this;
+		}
 
-                i++;
-                return true;
-            });
-        }
+		public virtual RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
+		{
+			exporter
+				.Setup(setting)
+				.Build(_simRepo.AllArguments(), adapter)
+				.Export();
 
-        /// <summary>
-        /// Start the iteration of the run method of all registered simulation models
-        /// as long as the condition method returns true
-        /// </summary>
-        /// <param name="condition">A method that determines the condition to continue or to end the simulation</param>
-        /// <returns>The task object representing the async task</returns>
-        public virtual async Task RunAsync(Func<RuntimeBase, bool> condition)
-        {
-            _stopping = false;  // reset the stopping flag before entering the async part of the method
-            if (!_isValid)
-            {
-                // stop running
-                Log.Trace("Simulation is invalid or was not validated");
-                Stop();
-                return;
-            }
+			return this;
+		}
 
-            await Task.Run(() =>
-            {
-                Log.Info($"# Start of simulation");
-                _isRunning = condition(this);
+		/// <summary>
+		/// The conrete runtime implementation implements the validation of all simulation models here.
+		/// The Method is called before the iteration of all registered models in the RunAsync method.
+		/// </summary>
+		/// <returns></returns>
+		public abstract bool Validate();
 
-                // fire event on iteration starts
-                Started?.Invoke(this, new SimulatorEventArgs(Arguments));
+		/// <summary>
+		/// Stops the simulation after finishing the current iteration of the simulation.
+		/// </summary>
+		public void Stop()
+		{
+			_isRunning = false;
+			_stopping = true;
+			Log.Trace("Simulation runtime stopping");
+		}
 
-                var list = _simRepo.SortActiveSimulators();
-                while (_isRunning)
-                {
-                    foreach (ISimulatable sim in list)
-                    {
-                        sim.Run();
-                    }
+		#region RunAsync
+		/// <summary>
+		/// Start the iteration of the run method of all registered simulation models
+		/// without any break condition
+		/// </summary>
+		/// <returns>The task object representing the async task</returns>
+		public async Task RunAsync()
+		{
+			// go baby go!
+			await RunAsync((runtime) => { return true; });
+		}
 
-                    // fire event that one iteration of all simulation models has finished
-                    IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
+		/// <summary>
+		/// Start the iteration of the run method of all registered simulation models
+		/// for a defined number of times
+		/// </summary>
+		/// <param name="count">Determines the number of iterations of all simulation models</param>
+		/// <returns>The task object representing the async task</returns>
+		public async Task RunAsync(int count)
+		{
+			int i = 0;
+			await RunAsync((runtime) =>
+			{
+				if (i >= count)
+				{
+					return false;
+				}
 
-                    // separate flag to ensure that the condition method does not overwrite the stop action
-                    if (!_stopping) 
-                    {
-                        _isRunning = condition(this);
-                    }
-                }
-            })
-            .ContinueWith((t) => {
-                if (t.Status == TaskStatus.Faulted)
-                {
-                    Log.Error($"{t.Exception.InnerExceptions.Count} exception occured during simulation.");
-                    foreach (var e in t.Exception.InnerExceptions)
-                    {
-                        Log.Fatal(e);
-                    }
-                }
+				i++;
+				return true;
+			});
+		}
 
-                Log.Info($"# End of simulation");
-                Stopped?.Invoke(this, new SimulatorEventArgs(Arguments));
-            });
-        }
-        #endregion
+		/// <summary>
+		/// Start the iteration of the run method of all registered simulation models
+		/// as long as the condition method returns true
+		/// </summary>
+		/// <param name="condition">A method that determines the condition to continue or to end the simulation</param>
+		/// <returns>The task object representing the async task</returns>
+		public virtual async Task RunAsync(Func<RuntimeBase, bool> condition)
+		{
+			_stopping = false;  // reset the stopping flag before entering the async part of the method
+			if (!_isValid)
+			{
+				// stop running
+				Log.Trace("Simulation is invalid or was not validated");
+				Stop();
+				return;
+			}
 
-        /// <summary>
-        /// Returns the Name property of the Arguments instance
-        /// </summary>
-        /// <returns>result string</returns>
-        public override string ToString()
-        {
-            return Arguments.Name;
-        }
+			await Task.Run(() =>
+			{
+				Log.Info($"# Start of simulation");
+				_isRunning = condition(this);
 
-        // -- properties
+				// fire event on iteration starts
+				Started?.Invoke(this, new SimulatorEventArgs(Arguments));
 
-        /// <summary>
-        /// Gets the specific arguments for the concrete runtime implementation as base class 
-        /// </summary>
-        public abstract ArgumentsBase Arguments { get; }
+				var list = _simRepo.SortActiveSimulators();
+				while (_isRunning)
+				{
+					foreach (ISimulatable sim in list)
+					{
+						sim.Run();
+					}
 
-        /// <summary>
-        /// Gets the information, if the validation was successful or not.
-        /// </summary>
-        public bool IsValid { get { return _isValid; } }
+					// fire event that one iteration of all simulation models has finished
+					IterationPassed?.Invoke(this, new SimulatorEventArgs(Arguments));
 
-        /// <summary>
-        /// Gets the information, if the simulation is running or not. 
-        /// </summary>
-        public bool IsRunning { get { return _isRunning; } }
+					// separate flag to ensure that the condition method does not overwrite the stop action
+					if (!_stopping)
+					{
+						_isRunning = condition(this);
+					}
+				}
+			})
+			.ContinueWith((t) =>
+			{
+				if (t.Status == TaskStatus.Faulted)
+				{
+					Log.Error($"{t.Exception.InnerExceptions.Count} exception occured during simulation.");
+					foreach (var e in t.Exception.InnerExceptions)
+					{
+						Log.Fatal(e);
+					}
+				}
 
-        // -- indexer
+				Log.Info($"# End of simulation");
+				Stopped?.Invoke(this, new SimulatorEventArgs(Arguments));
+			});
+		}
+		#endregion
 
-        /// <summary>
-        /// Gets the repository for the attached simulators.
-        /// </summary>
-        public SimulatorRepository Simulators => _simRepo;
+		/// <summary>
+		/// Returns the Name property of the Arguments instance
+		/// </summary>
+		/// <returns>result string</returns>
+		public override string ToString()
+		{
+			return Arguments.Name;
+		}
 
-    }
+		// -- properties
+
+		/// <summary>
+		/// Gets the specific arguments for the concrete runtime implementation as base class 
+		/// </summary>
+		public abstract ArgumentsBase Arguments { get; }
+
+		/// <summary>
+		/// Gets the information, if the validation was successful or not.
+		/// </summary>
+		public bool IsValid { get { return _isValid; } }
+
+		/// <summary>
+		/// Gets the information, if the simulation is running or not. 
+		/// </summary>
+		public bool IsRunning { get { return _isRunning; } }
+
+		// -- indexer
+
+		/// <summary>
+		/// Gets the repository for the attached simulators.
+		/// </summary>
+		public SimulatorRepository Simulators => _simRepo;
+
+	}
 }

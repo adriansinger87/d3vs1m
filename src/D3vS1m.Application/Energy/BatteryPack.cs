@@ -1,6 +1,7 @@
 ﻿using D3vS1m.Application.Devices;
 using D3vS1m.Domain.System.Enumerations;
 using System;
+using System.Text;
 
 namespace D3vS1m.Application.Energy
 {
@@ -49,25 +50,24 @@ namespace D3vS1m.Application.Energy
         {
             get
             {
-                string s = "y = ";
+                var s = new StringBuilder("y = ");
 
-                // vorwärts-Schleife
                 for (int i = 0; i < this.Polynom.Length; i++)
                 {
-                    s += "(" + this.Polynom[i] + ")";
+                    s.Append($"({this.Polynom[i]})");
 
                     if (i > 0)
                     {
-                        s += " x^" + i;
+                        s.Append($" x^ {i}");
                     }
 
                     if (i < this.Polynom.Length - 1)
                     {
-                        s += " + ";
+                        s.Append(" + ");
                     }
                 }
 
-                return s;
+                return s.ToString();
             }
         }
 

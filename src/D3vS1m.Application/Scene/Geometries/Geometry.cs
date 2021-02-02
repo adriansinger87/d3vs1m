@@ -45,7 +45,7 @@ namespace D3vS1m.Application.Scene.Geometries
         public Geometry FirstByName(string name, bool recursive)
         {
             Geometry found = (Name.Equals(name) ? this : null);
-            if (found == null && recursive == true)
+            if (found == null && recursive)
             {
                 foreach (var g in Children)
                 {

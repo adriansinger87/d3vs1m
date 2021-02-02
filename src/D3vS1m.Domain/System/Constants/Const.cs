@@ -10,11 +10,11 @@ namespace D3vS1m.Domain.System.Constants
     /// within outer layers inside the simulation models.
     /// The other partial classes have a separate scope in line with the simulation models
     /// </summary>
-    public partial class Const
+    public static partial class Const
     {
         // add basic constants or other stuff here...
 
-        public class Runtime
+        public static class Runtime
         {
             public const double IncrementSeconds = 10;
         }

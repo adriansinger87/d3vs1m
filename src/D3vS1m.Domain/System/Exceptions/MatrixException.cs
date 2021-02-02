@@ -6,6 +6,7 @@ namespace D3vS1m.Domain.System.Exceptions
     /// <summary>
     /// The specific Exception type for operations with the Matrix class.
     /// </summary>
+    [Serializable]
     public class MatrixException : Exception
     {
         public MatrixException()

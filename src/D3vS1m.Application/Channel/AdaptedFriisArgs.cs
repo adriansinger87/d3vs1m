@@ -34,9 +34,6 @@ namespace D3vS1m.Application.Channel
 
         // -- properties
 
-        public override string Guid { get => base.Guid; set => base.Guid = value; }
-        public override string Name { get => base.Name; set => base.Name = value; }
-
         public virtual float AttenuationExponent { get; set; }
         public virtual float AttenuationOffset { get; set; }
         public virtual bool UseObstacles { get; set; }

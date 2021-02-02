@@ -20,7 +20,7 @@ namespace D3vS1m.Application.Runtime
         /// <summary>
         /// injected concretion of the validation of the simulation models
         /// </summary>
-        private BasicValidator _validator;
+        private readonly BasicValidator _validator;
 
         /// <summary>
         /// private concretion of the arguments for this specific runtime

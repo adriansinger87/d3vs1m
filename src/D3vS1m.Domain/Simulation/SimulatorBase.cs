@@ -30,7 +30,7 @@ namespace D3vS1m.Domain.Simulation
 
         // -- constructor
 
-        public SimulatorBase(RuntimeBase runtime)
+        protected SimulatorBase(RuntimeBase runtime)
         {
             Guid = global::System.Guid.NewGuid().ToString();
 
@@ -45,8 +45,7 @@ namespace D3vS1m.Domain.Simulation
 
         protected bool ConvertArgs<T>(ArgumentsBase input, ref T target)
         {
-            if (input == null ||
-                input is T == false)
+            if (!(input is T))
             {
                 return false;
             }

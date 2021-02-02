@@ -49,12 +49,15 @@ namespace D3vS1m.Application.Channel
             else return ArgsNotAdded(arguments.Name);
         }
 
-        protected override void BeforeExecution()
+		protected override void BeforeExecution()
         {
             base.BeforeExecution();
+
+            // do own stuff here...
         }
 
-        protected override void AfterExecution()
+
+		protected override void AfterExecution()
         {
             base.AfterExecution();
 
@@ -103,7 +106,6 @@ namespace D3vS1m.Application.Channel
         {
             // adapted friis transmission = c + 20 * log( r ^ a)
             var result = c + 20 * (float)(Math.Log10(Math.Pow(r, a)));
-            //Log.Info($"RSSI: {result}");
             return result;
         }
 
@@ -128,11 +130,11 @@ namespace D3vS1m.Application.Channel
         protected sealed override void OnStarted(object sender, SimulatorEventArgs e)
         {
             ConvertArgs(
-                _runtime?.Simulators.AllArguments.GetByName(Models.Communication.LrWpan.Name),
+                _runtime?.Simulators.AllArguments().GetByName(Models.Communication.LrWpan.Name),
                 ref _commArgs);
 
             ConvertArgs(
-                _runtime?.Simulators.AllArguments.GetByName(Models.Scene.Name),
+                _runtime?.Simulators.AllArguments().GetByName(Models.Scene.Name),
                 ref _sceneArgs);
 
             // override the rx positions field

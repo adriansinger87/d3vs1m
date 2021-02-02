@@ -10,6 +10,19 @@ namespace D3vS1m.Domain.Simulation
     [Serializable]
     public class SimulatorRepository : RepositoryBase<ISimulatable>
     {
+        // -- indexer
+
+        /// <summary>
+        /// Key-based intexer to be able to get the instance with the same Key.
+        /// </summary>
+        /// <param name="key">The key property in the simulator instances</param>
+        /// <returns>the first instance of T with the matching Id property</returns>
+        public ISimulatable this[string key] => Items.FirstOrDefault(s => s.Key == key);
+
+        public ISimulatable this[SimulationTypes type] => Items.FirstOrDefault(s => s.Type == type);
+
+        // -- constructor(s)
+
         public SimulatorRepository() : base()
         {
             base.Name = "simulation models";
@@ -46,20 +59,10 @@ namespace D3vS1m.Domain.Simulation
             return Items.FirstOrDefault(s => s.Name == name);
         }
 
-        // -- properties
+        public ArgumentsBase[] AllArguments()
+		{
+            return Items.Select(s => s.Arguments).ToArray();
 
-        public ArgumentsBase[] AllArguments => Items.Select(s => s.Arguments).ToArray();
-
-        // -- indexer
-
-        /// <summary>
-        /// Key-based intexer to be able to get the instance with the same Key.
-        /// </summary>
-        /// <param name="key">The key property in the simulator instances</param>
-        /// <returns>the first instance of T with the matching Id property</returns>
-        public ISimulatable this[string key] => Items.FirstOrDefault(s => s.Key == key);
-
-        public ISimulatable this[SimulationTypes type] => Items.FirstOrDefault(s => s.Type == type);
-
+        }
     }
 }

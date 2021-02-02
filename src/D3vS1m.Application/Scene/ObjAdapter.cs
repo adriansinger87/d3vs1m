@@ -34,8 +34,8 @@ namespace D3vS1m.Application.Scene
             Type inType = typeof(Tin);
             Type outType = typeof(Tout);
 
-            if (typeof(string).IsAssignableFrom(inType) == false ||
-                typeof(Geometry).IsAssignableFrom(outType) == false)
+            if (!typeof(string).IsAssignableFrom(inType) ||
+                !typeof(Geometry).IsAssignableFrom(outType))
             {
                 Log.Error($"The casting from '{inType.Name}' to '{outType.Name}' is not supported by the {this.GetType().Name}.");
                 return new Tout();
@@ -88,6 +88,7 @@ namespace D3vS1m.Application.Scene
 
             if (lineData[0] == "#")         // a comment in obj
             {
+                // TODO: make something meaningful with a comment
                 return;
             }
             else if (lineData[0] == "g")        // group

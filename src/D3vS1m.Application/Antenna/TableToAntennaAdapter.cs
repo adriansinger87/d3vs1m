@@ -22,8 +22,8 @@ namespace D3vS1m.Application.Antenna
             Type inType = typeof(Tin);
             Type outType = typeof(Tout);
 
-            if (typeof(DataTable).IsAssignableFrom(inType) == false ||
-                typeof(Matrix<SphericGain>).IsAssignableFrom(outType) == false)
+            if (!typeof(DataTable).IsAssignableFrom(inType) ||
+                !typeof(Matrix<SphericGain>).IsAssignableFrom(outType))
             {
                 Log.Error($"The casting from '{inType.Name}' to '{outType.Name}' is not supported by the {this.GetType().Name}.");
                 return new Tout();

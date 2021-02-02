@@ -8,7 +8,7 @@ namespace D3vS1m.Domain.Data.Arguments
     [Serializable]
     public abstract class ArgumentsBase
     {
-        public ArgumentsBase()
+        protected ArgumentsBase()
         {
             Guid = global::System.Guid.NewGuid().ToString();
             Active = true;

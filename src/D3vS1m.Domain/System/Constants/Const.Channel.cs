@@ -5,16 +5,16 @@ using System.Text;
 
 namespace D3vS1m.Domain.System.Constants
 {
-    public partial class Const
+    public static partial class Const
     {
         /// <summary>
         /// Defines the constants for all communication channels i.e. the nested class Radio with its constants. 
         /// </summary>
-        public class Channel
+        public static class Channel
         {
-            public class Radio
+            public static class Radio
             {
-                public class Space
+                public static class Space
                 {
                     public static readonly Vertex MinCorner = new Vertex(-5, -5, -5);
                     public static readonly Vertex MaxCorner = new Vertex(5, 5, 5);

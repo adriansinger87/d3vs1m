@@ -11,7 +11,7 @@ namespace D3vS1m.Application.Communication
     /// Implements the Functionality of the IEEE 802.15.4 standard
     /// </summary>
     [Serializable]
-    public class LRWPANSimulator : SimulatorBase
+    public class LrwpanSimulator : SimulatorBase
     {
         // -- fields
 
@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Communication
 
         // -- constructor
 
-        public LRWPANSimulator(RuntimeBase runtime) : base(runtime)
+        public LrwpanSimulator(RuntimeBase runtime) : base(runtime)
         {
 
         }

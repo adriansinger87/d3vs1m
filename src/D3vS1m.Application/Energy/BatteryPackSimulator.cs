@@ -66,7 +66,7 @@ namespace D3vS1m.Application.Energy
 
         public void Discharge(BatteryPack battery, float current, TimeSpan time)
         {
-            if (Check(battery) == false)
+            if (!Check(battery))
             {
                 return;
             }
@@ -107,7 +107,7 @@ namespace D3vS1m.Application.Energy
              *
              * qn = Summe aller qt über die Zeit, quasi die gesamte verbrauchte Ladung
              */
-            return (float)(current * (seconds / 3600) * state.Now.TemperaturFactor * state.Now.CurrentFactor) + (state.Now.TemperaturFactor * state.Now.SelfDischarge);
+            return (current * (seconds / 3600) * state.Now.TemperaturFactor * state.Now.CurrentFactor) + (state.Now.TemperaturFactor * state.Now.SelfDischarge);
         }
 
         /// <summary>
@@ -180,14 +180,13 @@ namespace D3vS1m.Application.Energy
         /// <returns></returns>
         private bool Check(BatteryPack battery)
         {
-            if (battery.IsUnlimited == true)
+            if (battery.IsUnlimited)
             {
                 return true;
             }
             else if (battery.State.Now.Charge >= battery.State.Initial.Charge ||	// used charge
                      battery.State.Now.Voltage <= battery.CutoffVoltage)		    // too low voltage
             {
-                //battery.State.Now.SoD = 1;
                 return false;
             }
             else

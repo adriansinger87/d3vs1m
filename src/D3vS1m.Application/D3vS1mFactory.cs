@@ -84,7 +84,7 @@ namespace D3vS1m.Application
                     return new SimpleAntennaSimulator(runtime);
 
                 case Models.Communication.LrWpan.Name:
-                    return new LRWPANSimulator(runtime);
+                    return new LrwpanSimulator(runtime);
 
                 case Models.Energy.Battery.Name:
                     return new BatteryPackSimulator(runtime);

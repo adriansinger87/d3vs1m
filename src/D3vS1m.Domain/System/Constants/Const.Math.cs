@@ -10,12 +10,12 @@ namespace D3vS1m.Domain.System.Constants
     /// within outer layers inside the simulation models.
     /// The other partial classes have a separate scope in line with the simulation models
     /// </summary>
-    public partial class Const
+    public static partial class Const
     {
         /// <summary>
         /// Container class for basic an simple mathematical constant functions
         /// </summary>
-        public class Math
+        public static class Math
         {
             /// <summary>
             /// Calculates the Degree from a given float the represents an angle as Radian
@@ -47,7 +47,7 @@ namespace D3vS1m.Domain.System.Constants
                 }
                 else
                 {
-                    return 0; // throw new Exception("Fehler in NUMBERfy.Fract() - Der Input ist keine valide Gleitkommazahl");
+                    return 0;
                 }
             }
         }

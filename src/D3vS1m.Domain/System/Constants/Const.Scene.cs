@@ -7,12 +7,12 @@ namespace D3vS1m.Domain.System.Constants
     /// <summary>
     /// 
     /// </summary>
-    public partial class Const
+    public static partial class Const
     {
         /// <summary>
         /// The subclass contains constants for material properties that are related to the scene model.
         /// </summary>
-        public class Scene
+        public static class Scene
         {
             public const int Frequency = 0;
             public const float PenetrationLoss = 0;

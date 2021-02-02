@@ -43,7 +43,7 @@ namespace D3vS1m.Application.Network
 
         public float Availability()
 		{
-            var online = Items.Where(d => d.IsActive).Count();
+            var online = Items.Count(d => d.IsActive);
             var all = Items.Count;
             return (float)online / (float)all;
 		}

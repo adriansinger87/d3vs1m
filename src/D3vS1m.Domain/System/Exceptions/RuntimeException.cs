@@ -5,6 +5,7 @@ using System.Text;
 
 namespace D3vS1m.Domain.System.Exceptions
 {
+    [Serializable]
     public class RuntimeException : Exception
     {
         public RuntimeException()

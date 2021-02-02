@@ -19,7 +19,7 @@ using Sin.Net.Logging;
 
 namespace D3vS1m.Cli
 {
-	public class Program
+	static class Program
 	{
 
 		// -- fields
@@ -66,7 +66,7 @@ namespace D3vS1m.Cli
 				
 				// -- validate
 
-				if (Runtime.Validate() == false)
+				if (!Runtime.Validate())
 				{
 					throw new RuntimeException("The runtime validation failed.");
 				}
@@ -80,9 +80,6 @@ namespace D3vS1m.Cli
 			{
 				Log.Fatal(ex);
 				WaitAndExit(options.Break);
-			}
-			finally
-			{
 			}
 		}
 

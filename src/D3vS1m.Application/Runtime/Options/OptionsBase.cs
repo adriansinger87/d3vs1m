@@ -6,7 +6,7 @@ namespace D3vS1m.Application.Runtime.Options
 {
 	public abstract class OptionsBase
 	{
-        public OptionsBase()
+        protected OptionsBase()
         {
             Workspace = "";
         }

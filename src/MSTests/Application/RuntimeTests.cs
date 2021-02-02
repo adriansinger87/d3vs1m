@@ -63,7 +63,7 @@ namespace MSTests.Application
 					.With(antennaArgs),
 				new PeerToPeerNetworkSimulator(runtime)
 					.With(netArgs),
-				new LRWPANSimulator(runtime)
+				new LrwpanSimulator(runtime)
 					.With(comArgs)
 			});
 		}

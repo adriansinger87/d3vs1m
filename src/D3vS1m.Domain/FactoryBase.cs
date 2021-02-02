@@ -10,7 +10,7 @@ namespace D3vS1m.Application
 
         // -- constructors
 
-        public FactoryBase()
+        protected FactoryBase()
         {
         }
 
@@ -28,7 +28,7 @@ namespace D3vS1m.Application
 
         // -- properties
 
-        public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments;
+        public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments();
 
         protected SimulatorRepository Simulators { get; set; }
 

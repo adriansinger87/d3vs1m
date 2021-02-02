@@ -85,10 +85,10 @@ namespace D3vS1m.Application.Network
                 var rxDev = _net[c];  // Rx - receiver
 
                 Vertex e_EL = new Vertex(0, 1, 0);    // Einheitsvektor Elevation
-                Vertex tx_EL = new Vertex(0, 1, 0);   // Sender Elevation
+                Vertex tx_EL;                         // Sender Elevation
 
                 Vertex e_AZ = new Vertex(0, 0, 1);    // Einheitsvektor Azimut
-                Vertex tx_AZ = new Vertex(0, 0, 1);   // Sender Azimut
+                Vertex tx_AZ;                         // Sender Azimut
 
                 Vertex line = rxDev.Position - txDev.Position;
 

@@ -16,8 +16,6 @@ namespace D3vS1m.Application.Channel
             MinCorner = Domain.System.Constants.Const.Channel.Radio.Space.MinCorner;
             MaxCorner = Domain.System.Constants.Const.Channel.Radio.Space.MaxCorner;
             Resolution = Domain.System.Constants.Const.Channel.Radio.Space.Resolution;
-
-            //CreateRxPositions();
         }
 
         // --- public methoden

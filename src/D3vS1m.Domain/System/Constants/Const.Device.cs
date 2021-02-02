@@ -5,9 +5,9 @@ using System.Text;
 
 namespace D3vS1m.Domain.System.Constants
 {
-    public partial class Const
+    public static partial class Const
     {
-        public class Device
+        public static class Device
         {
             public const string Name = "Device";
             public const string Description = "basic device type";

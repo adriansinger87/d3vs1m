@@ -8,7 +8,7 @@ namespace D3vS1m.Application.Devices
 	{
 		protected IDevice _device;
 
-		public ControlBase(IDevice device)
+		protected ControlBase(IDevice device)
 		{
 			_device = device;
 		}
