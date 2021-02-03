@@ -50,12 +50,10 @@ namespace MSTests
 		public void LoadAntennaData(SphericAntennaArgs args, string file = "PCB_868_tot.csv")
 		{
 			var setup = new CsvStorageSetup(new FileInfo(Path.Combine(APP_LOCATION, file)), 1);
-			var parser = new CsvToRowParser(24);
-			var csv = new CsvStorage<DataRow>(setup, parser, new GainMatrixToCsvParser());
+			var parser = new CsvToAntennaGainParser(24);
+			var csv = new CsvStorage<DataRow>(setup, parser, new AntennaGainToCsvParser());
 			csv.Read();
-			var table = parser.Table;
-
-			args.GainMatrix = new TableToAntennaGainAdapter().Adapt(table);
+			args.GainMatrix = parser.GetGainMatrix();
 		}
 
 		public RuntimeController GetRuntime()
@@ -100,73 +98,13 @@ namespace MSTests
 
 	}
 
-	class CsvToRowParser : IParsable<DataRow>
-	{
-		private readonly DataTable _table;
+	
 
-		public DataTable Table => _table;
-
-		public CsvToRowParser(int numberOfColumns)
-		{
-			var cols = Enumerable
-				.Range(0, numberOfColumns)
-				.Select(i => new DataColumn(GetAzimuth(i, numberOfColumns))).ToArray();
-			_table = new DataTable();
-			_table.Columns.AddRange(cols);
-		}
-
-		public DataRow Parse<Tin>(Tin input, int index = 0, int length = 1)
-		{
-			var fields = input as string[];
-			var row = _table.NewRow();
-			row.ItemArray = fields;
-			_table.Rows.Add(row);
-			return row;
-		}
-
-		private string GetAzimuth(int index, int count)
-		{
-			return (360 / count * index).ToString();
-		}
-
-
-	}
-
-	class GainMatrixToCsvParser : IParsable<string[]>
+	class AntennaGainToCsvParser : IParsable<string[]>
 	{
 		public string[] Parse<Tin>(Tin input, int index = 0, int length = 1)
 		{
 			throw new NotImplementedException();
-		}
-	}
-
-	class CsvToGainMatrixParser : IParsable<Matrix<SphericGain>>
-	{
-		public Matrix<SphericGain> Parse<Tin>(Tin input, int index = 0, int length = 1)
-		{
-			var fields = input as string[];
-			var cols = fields.Length;
-			var rows = length;
-			var nAz = getAzimuthNumber(cols);
-			var nEl = getElevationNumber(rows);
-
-			var gainMatrix = new Matrix<SphericGain>(nEl, nAz);
-
-			//gainMatrix.
-
-			return new Matrix<SphericGain>();
-		}
-
-		// -- helper
-
-		private int getAzimuthNumber(int cols)
-		{
-			return (cols % 2 == 0 ? cols : cols - 1);
-		}
-
-		private int getElevationNumber(int rows)
-		{
-			return (rows % 2 != 0 ? rows : rows - 1);
 		}
 	}
 }
