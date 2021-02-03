@@ -2,69 +2,34 @@
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
 using FluentValidation.Results;
-using Sin.Net.Domain.Persistence.Logging;
-using Sin.Net.Domain.Repository;
+using Microsoft.Extensions.Logging;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Application.Network
 {
     [Serializable]
-    public class PeerToPeerNetwork : RepositoryBase<SimpleDevice>
+    public class PeerToPeerNetwork : IEnumerable
     {
+
+        // -- fields
+
+        private readonly ILogger<PeerToPeerNetwork> _log;
+
         [NonSerialized]
         private NetworkValidator _validator;
 
-        public PeerToPeerNetwork()
-        {
-            _validator = new NetworkValidator();
-
-            Name = Models.Network.Name;
-
-            AssociationMatrix = new NetworkMatrix<bool>();
-            DistanceMatrix = new NetworkMatrix<float>();
-            RssMatrix = new NetworkMatrix<float>();
-            AngleMatrix = new NetworkMatrix<Angle>();
-        }
-
-        public void SetupMatrices()
-        {
-            // execute validation & log
-            ValidationResult results = _validator.Validate(this);
-            LogValidationErrors(results);
-
-            int size = this.Count;
-
-            AssociationMatrix.Init(size);
-            DistanceMatrix.Init(size);
-            RssMatrix.Init(size);
-            AngleMatrix.Init(size, new Angle(float.NaN, float.NaN));
-        }
-
-        public float Availability()
-		{
-            var online = Items.Count(d => d.IsActive);
-            var all = Items.Count;
-            return (float)online / (float)all;
-		}
-
-        private void LogValidationErrors(ValidationResult results)
-        {
-            if (!results.IsValid)
-            {
-                foreach (var failure in results.Errors)
-                {
-                    string property = (!string.IsNullOrEmpty(failure.PropertyName) ? $" property: {failure.PropertyName}" : "");
-                    Log.Error($"failed validation: {failure.ErrorMessage}{property}");
-                }
-            }
-            else
-            {
-                Log.Debug($"{Name} validated correctly");
-            }
-        }
-
         // -- properties
+
+        public string Name { get; set; }
+
+        public List<IDevice> Items { get; private set; }
+
+        public int Count => Items.Count;
 
         /// <summary>
         /// Gets or sets the communication associations between the devices.
@@ -86,5 +51,69 @@ namespace D3vS1m.Application.Network
         /// </summary>
         public NetworkMatrix<Angle> AngleMatrix { get; set; }
 
-    }
+        // -- indexter
+
+        public IDevice this[int index] => Items[index];
+
+        // -- constructors
+
+        public PeerToPeerNetwork()
+        {
+            _log = LoggingProvider.CreateLogger<PeerToPeerNetwork>();
+            _validator = new NetworkValidator();
+
+            Name = Models.Network.Name;
+            Items = new List<IDevice>();
+            AssociationMatrix = new NetworkMatrix<bool>();
+            DistanceMatrix = new NetworkMatrix<float>();
+            RssMatrix = new NetworkMatrix<float>();
+            AngleMatrix = new NetworkMatrix<Angle>();
+        }
+
+        // -- methods
+
+        public IEnumerator GetEnumerator()
+        {
+            return Items.GetEnumerator();
+        }
+
+        public void SetupMatrices()
+        {
+            // execute validation & log
+            ValidationResult results = _validator.Validate(this);
+            LogValidationErrors(results);
+
+            int size = Items.Count;
+
+            AssociationMatrix.Init(size);
+            DistanceMatrix.Init(size);
+            RssMatrix.Init(size);
+            AngleMatrix.Init(size, new Angle(float.NaN, float.NaN));
+        }
+
+        public float Availability()
+		{
+            var online = Items.Count(d => d.IsActive);
+            var all = Items.Count;
+            return (float)online / (float)all;
+		}
+
+        private void LogValidationErrors(ValidationResult results)
+        {
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    string property = (!string.IsNullOrEmpty(failure.PropertyName) ? $" property: {failure.PropertyName}" : "");
+                    _log.Error($"failed validation: {failure.ErrorMessage}{property}");
+                }
+            }
+            else
+            {
+                _log.Debug($"{Name} validated correctly");
+            }
+        }
+
+
+	}
 }

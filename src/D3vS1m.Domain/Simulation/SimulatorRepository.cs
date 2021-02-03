@@ -11,7 +11,7 @@ namespace D3vS1m.Domain.Simulation
     {
         // -- fields
 
-        private List<ISimulatable> _simulators;
+        public List<ISimulatable> Items { get; private set; }
 
         // -- indexer
 
@@ -20,9 +20,11 @@ namespace D3vS1m.Domain.Simulation
         /// </summary>
         /// <param name="key">The key property in the simulator instances</param>
         /// <returns>the first instance of T with the matching Id property</returns>
-        public ISimulatable this[string key] => _simulators.FirstOrDefault(s => s.Key == key);
+        public ISimulatable this[string key] => Items.FirstOrDefault(s => s.Key == key);
 
-        public ISimulatable this[SimulationTypes type] => _simulators.FirstOrDefault(s => s.Type == type);
+        public ISimulatable this[SimulationTypes type] => Items.FirstOrDefault(s => s.Type == type);
+
+        public int Count => Items.Count;
 
 		// -- properties
 
@@ -33,25 +35,36 @@ namespace D3vS1m.Domain.Simulation
 		public SimulatorRepository() : base()
         {
             Name = "simulation models";
+            Items = new List<ISimulatable>();
         }
 
         // -- methods
 
+        public void Add(ISimulatable simulator)
+        {
+            Items.Add(simulator);
+        }
+
+        public bool Contains(ISimulatable simulator)
+        {
+            return Items.Contains(simulator);
+        }
+
         public void Clear()
         {
-            if (_simulators == null)
+            if (Items == null)
             {
-                _simulators = new List<ISimulatable>();
+                Items = new List<ISimulatable>();
             }
             else
             {
-                _simulators.Clear();
+                Items.Clear();
             }
         }
 
         public List<ISimulatable> SortActiveSimulators()
         {
-            return _simulators
+            return Items
                 .Where(s => s.Arguments.Active)
                 .OrderBy(s => s.Arguments.Index).ToList();
         }
@@ -63,13 +76,15 @@ namespace D3vS1m.Domain.Simulation
 
         public ISimulatable GetByName(string name)
         {
-            return _simulators.FirstOrDefault(s => s.Name == name);
+            return Items.FirstOrDefault(s => s.Name == name);
         }
-
+        
         public ArgumentsBase[] AllArguments()
 		{
-            return _simulators.Select(s => s.Arguments).ToArray();
+            return Items.Select(s => s.Arguments).ToArray();
 
         }
-    }
+
+	
+	}
 }

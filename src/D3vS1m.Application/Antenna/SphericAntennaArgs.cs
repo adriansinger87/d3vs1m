@@ -1,8 +1,8 @@
 ﻿using D3vS1m.Application.Data;
 using D3vS1m.Domain.Data.Arguments;
-using Sin.Net.Domain.Persistence;
-using Sin.Net.Domain.Persistence.Settings;
 using System;
+using System.Linq;
+using TeleScope.Persistence.Abstractions;
 
 namespace D3vS1m.Application.Antenna
 {
@@ -21,10 +21,9 @@ namespace D3vS1m.Application.Antenna
            
         }
 
-        public void LoadData(IPersistenceControlable io, SettingsBase setting, string key)
+        public void LoadData(IReadable<Matrix<SphericGain>> reader)
         {
-            GainMatrix = io.Importer(key).Setup(setting).Import()
-                .As<Matrix<SphericGain>>(new TableToAntennaAdapter());
+            GainMatrix = reader.Read().First();
         }
 
         public Matrix<SphericGain> GainMatrix { get; set; }

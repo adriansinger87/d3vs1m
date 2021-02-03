@@ -7,10 +7,12 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Extensions;
-using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Application.Channel
 {
@@ -19,6 +21,7 @@ namespace D3vS1m.Application.Channel
     {
         // -- fields
 
+        private readonly ILogger<SimulatorBase> _log;
         private AdaptedFriisArgs _radioArgs;
         private WirelessCommArgs _commArgs;
         private InvariantSceneArgs _sceneArgs;
@@ -35,7 +38,7 @@ namespace D3vS1m.Application.Channel
 
         public AdaptedFriisSimulator(RuntimeBase runtime) : base(runtime)
         {
-
+            _log = LoggingProvider.CreateLogger<SimulatorBase>();
         }
 
         // -- methods
@@ -91,7 +94,7 @@ namespace D3vS1m.Application.Channel
 
             // log the brutto duration
             watch.Stop();
-            Log.Trace($"{Name} calculated {_radioArgs.RadioBox.TotalData} values in {watch.ElapsedMilliseconds} ms");
+            _log.Trace($"{Name} calculated {_radioArgs.RadioBox.TotalData} values in {watch.ElapsedMilliseconds} ms");
 
         }
 

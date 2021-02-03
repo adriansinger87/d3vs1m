@@ -5,16 +5,28 @@ using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Constants;
 using D3vS1m.Domain.System.Enumerations;
-using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.Extensions.Logging;
 using System;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Application.Antenna
 {
     [Serializable]
     public class SphericAntennaSimulator : SimulatorBase
     {
+
+        // -- fields
+        private readonly ILogger<SphericAntennaSimulator> _log;
         private SphericAntennaArgs _antennaArgs;
         private NetworkArgs _netArgs;
+
+        // -- properties
+
+        public override string Key => Models.Antenna.Spheric.Name;
+        public override string Name => Models.Antenna.Spheric.Name;
+        public override ArgumentsBase Arguments => _antennaArgs;
+        public override SimulationTypes Type => SimulationTypes.Antenna;
 
         /// <summary>
         /// Baware: no runtime will be usable
@@ -25,6 +37,7 @@ namespace D3vS1m.Application.Antenna
 
         public SphericAntennaSimulator(RuntimeBase runtime) : base(runtime)
         {
+            _log = LoggingProvider.CreateLogger<SphericAntennaSimulator>();
         }
 
         /// <summary>
@@ -56,7 +69,7 @@ namespace D3vS1m.Application.Antenna
                 _netArgs == null ||
                 _netArgs.Network == null)
             {
-                Log.Warn($"{Arguments.Name} has not all needed arguments so the run method is canceled.");
+                _log.Warn($"{Arguments.Name} has not all needed arguments so the run method is canceled.");
                 base.AfterExecution();
                 return;
             }
@@ -110,9 +123,6 @@ namespace D3vS1m.Application.Antenna
             return (gain.x + gain.y + gain.z + gain.w);
         }
 
-        public override string Key => Models.Antenna.Spheric.Name;
-        public override string Name => Models.Antenna.Spheric.Name;
-        public override ArgumentsBase Arguments => _antennaArgs;
-        public override SimulationTypes Type => SimulationTypes.Antenna;
+
     }
 }

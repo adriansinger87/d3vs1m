@@ -1,6 +1,8 @@
 ﻿using D3vS1m.Domain.Data.Scene;
-using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.Extensions.Logging;
 using System;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Application.Channel
 {
@@ -10,9 +12,23 @@ namespace D3vS1m.Application.Channel
     [Serializable]
     public class RadioCuboid
     {
+        // -- fields
+
+        private readonly ILogger<RadioCuboid> _log;
+ 
+        // --- properties
+
+        public Vertex MinCorner { get; set; }
+        public Vertex MaxCorner { get; set; }
+        public float Resolution { get; set; }
+        public int[] DataDimension { get; set; }
+        public int TotalData { get; set; }
+
+        // -- constructors
 
         public RadioCuboid()
         {
+            _log = LoggingProvider.CreateLogger<RadioCuboid>();
             MinCorner = Domain.System.Constants.Const.Channel.Radio.Space.MinCorner;
             MaxCorner = Domain.System.Constants.Const.Channel.Radio.Space.MaxCorner;
             Resolution = Domain.System.Constants.Const.Channel.Radio.Space.Resolution;
@@ -48,7 +64,7 @@ namespace D3vS1m.Application.Channel
                 }
             }
 
-            Log.Trace($"{positions.Length} rx positions created");
+            _log.Trace($"{positions.Length} rx positions created");
             return positions;
         }
 
@@ -57,12 +73,6 @@ namespace D3vS1m.Application.Channel
             return $"Min: {MinCorner} Max: {MaxCorner}";
         }
 
-        // --- properties
-
-        public Vertex MinCorner { get; set; }
-        public Vertex MaxCorner { get; set; }
-        public float Resolution { get; set; }
-        public int[] DataDimension { get; set; }
-        public int TotalData { get; set; }
+       
     }
 }

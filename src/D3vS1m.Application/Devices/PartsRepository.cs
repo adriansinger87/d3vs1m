@@ -1,27 +1,37 @@
 ﻿using D3vS1m.Domain.System.Enumerations;
-using Sin.Net.Domain.Repository;
+
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace D3vS1m.Application.Devices
 {
     [Serializable]
-    public class PartsRepository : RepositoryBase<PartBase>
+    public class PartsRepository
     {
+        // -- fields
+
+        private List<PartBase> _items;
+
+		// -- properties
+
+		public string Name { get; set; }
+
+		public bool HasPowerSupply => _items.Any(p => p.Type == PartTypes.PowerSupply);
+
+        // -- constructors
+
         public PartsRepository()
         {
             Name = "part repository";
+            _items = new List<PartBase>();
         }
 
         // -- methods
 
         public PartBase GetPowerSupply()
 		{
-            return this.Items.FirstOrDefault(p => p.Type == PartTypes.PowerSupply);
+            return _items.FirstOrDefault(p => p.Type == PartTypes.PowerSupply);
 		}
-
-        // -- properties
-
-        public bool HasPowerSupply => this.Items.Any(p => p.Type == PartTypes.PowerSupply);
     }
 }

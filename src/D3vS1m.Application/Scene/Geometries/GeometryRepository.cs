@@ -1,5 +1,5 @@
-﻿using Sin.Net.Domain.Repository;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace D3vS1m.Application.Scene.Geometries
@@ -8,14 +8,21 @@ namespace D3vS1m.Application.Scene.Geometries
     /// This class aggregates all Geometry objects and provides additional functions or properties. 
     /// </summary>
     [Serializable]
-    public class GeometryRepository : RepositoryBase<Geometry>
+    public class GeometryRepository
     {
+
+        // -- fields
+
+        private List<Geometry> _items;
+
+        // -- constructors
+
         /// <summary>
         /// default empty constructor
         /// </summary>
-        public GeometryRepository() : base()
+        public GeometryRepository()
         {
-
+            _items = new List<Geometry>();
         }
 
         // -- methods
@@ -30,7 +37,7 @@ namespace D3vS1m.Application.Scene.Geometries
         public Geometry FirstOrDefault(string name, bool recursive)
         {
             var found = default(Geometry);
-            foreach(var g in Items)
+            foreach(var g in _items)
             {
                 found = g.FirstByName(name, recursive);
                 if (found != null)
@@ -51,8 +58,8 @@ namespace D3vS1m.Application.Scene.Geometries
         public Geometry Add(Geometry item, string name)
         {
             item.Name = name;
-            Items.Add(item);
-            return Items.Last();
+            _items.Add(item);
+            return _items.Last();
         }
 
         // -- indexer 
@@ -67,7 +74,7 @@ namespace D3vS1m.Application.Scene.Geometries
         {
             get
             {
-                return Items.FirstOrDefault(g => g.Name == name);
+                return _items.FirstOrDefault(g => g.Name == name);
             }
         }
     }

@@ -1,13 +1,11 @@
 ﻿using D3vS1m.Application.Data;
-using Sin.Net.Domain.Persistence.Adapter;
-using Sin.Net.Domain.Persistence.Logging;
 using System;
 using System.Data;
 
 namespace D3vS1m.Application.Antenna
 {
     [Serializable]
-    public class TableToAntennaAdapter : IAdaptable
+    public class TableToAntennaAdapter
     {
         // -- fields
 
@@ -25,7 +23,6 @@ namespace D3vS1m.Application.Antenna
             if (!typeof(DataTable).IsAssignableFrom(inType) ||
                 !typeof(Matrix<SphericGain>).IsAssignableFrom(outType))
             {
-                Log.Error($"The casting from '{inType.Name}' to '{outType.Name}' is not supported by the {this.GetType().Name}.");
                 return new Tout();
             }
 
