@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using D3vS1m.Application;
 using D3vS1m.Application.Antenna;
@@ -14,7 +15,6 @@ using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Persistence.Logging;
 
 namespace MSTests.Application
 {
@@ -38,7 +38,7 @@ namespace MSTests.Application
 			{
 				var runtimeArgs = e.Arguments as RuntimeArgs;
 				var duration = (DateTime.Now - runtimeArgs.StartTime);
-				Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
+				//Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
 			};
 
 			//SetupDemoRepo(_runtime);
@@ -112,7 +112,7 @@ namespace MSTests.Application
 			runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
 			runtime.Simulators[SimulationTypes.Energy].With(netArgs);
 
-			DumpToJson(runtime.Arguments, "runtime_args.json");
+			WriteJson(runtime.Arguments, "runtime_args.json");
 			_runtime.Started += (o, e) =>
 			{
 
@@ -125,7 +125,7 @@ namespace MSTests.Application
 				Assert.Fail("error on validating the simulation");
 			}
 
-			Log.Trace($"RunAsync for {iterations} times");
+			//Log.Trace($"RunAsync for {iterations} times");
 			await _runtime.RunAsync(iterations);
 
 			// assert

@@ -36,10 +36,12 @@ namespace D3vS1m.Application.Network
         /// </summary>
         public NetworkMatrix<bool> AssociationMatrix { get; set; }
 
-        /// <summary>
-        /// Gets or sets the distances between the devices.
-        /// </summary>
-        public NetworkMatrix<float> DistanceMatrix { get; set; }
+		
+
+		/// <summary>
+		/// Gets or sets the distances between the devices.
+		/// </summary>
+		public NetworkMatrix<float> DistanceMatrix { get; set; }
 
         /// <summary>
         /// Gets or sets the received signal strength (RSS) between the devices.
@@ -72,6 +74,16 @@ namespace D3vS1m.Application.Network
 
         // -- methods
 
+        public void Add(SimpleDevice device)
+		{
+            Items.Add(device);
+        }
+
+        public void AddRange(SimpleDevice[] simpleDevices)
+        {
+            Items.AddRange(simpleDevices);
+        }
+        
         public IEnumerator GetEnumerator()
         {
             return Items.GetEnumerator();

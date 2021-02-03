@@ -1,4 +1,5 @@
-﻿using D3vS1m.Domain.System.Enumerations;
+﻿using D3vS1m.Application.Energy;
+using D3vS1m.Domain.System.Enumerations;
 
 using System;
 using System.Collections.Generic;
@@ -33,5 +34,11 @@ namespace D3vS1m.Application.Devices
 		{
             return _items.FirstOrDefault(p => p.Type == PartTypes.PowerSupply);
 		}
-    }
+
+		public void Add(BatteryPack battery)
+		{
+            _items.Add(battery);
+
+        }
+	}
 }

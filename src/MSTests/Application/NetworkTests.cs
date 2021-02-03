@@ -1,10 +1,10 @@
-﻿using D3vS1m.Application.Network;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using D3vS1m.Application.Network;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Simulation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Persistence.Logging;
-using System.Threading.Tasks;
 
 namespace MSTests.Application
 {
@@ -30,7 +30,7 @@ namespace MSTests.Application
 		{
 			// arrange
 			var runtime = new RuntimeController(new BasicValidator());
-			
+
 
 			var netSim = new PeerToPeerNetworkSimulator(runtime);
 			var netArgs = new NetworkArgs();
@@ -45,7 +45,7 @@ namespace MSTests.Application
 			var simRepo = new SimulatorRepository();
 			simRepo.Add(netSim);
 
-			
+
 			var pass = 0;
 			var maxPasses = 3;
 			runtime.IterationPassed += (o, e) =>
@@ -55,7 +55,7 @@ namespace MSTests.Application
 				{
 					var dev = netArgs.Network.Items[0];
 					dev.Controls.Off();
-					Log.Trace($"Device '{dev.Name}' was turned off.");
+					//Log.Trace($"Device '{dev.Name}' was turned off.");
 				}
 			};
 			runtime.BindSimulators(simRepo)
@@ -79,7 +79,7 @@ namespace MSTests.Application
 			netArgs.Network.DistanceMatrix.Each((r, c, v) =>
 			{
 				Assert.IsTrue(v > 0, $"position at row '{r}' and col '{c}' should not be '{v}'");
-				Log.Trace($"{r}:{c} -> distance: {v}");
+				//Log.Trace($"{r}:{c} -> distance: {v}");
 				return v;
 			});
 
@@ -87,7 +87,7 @@ namespace MSTests.Application
 			{
 				Assert.IsTrue(float.IsNaN(v.Azimuth) == false, $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
 				Assert.IsTrue(float.IsNaN(v.Elevation) == false, $"Elevation at position at row '{r}' and col '{c}' should not be NaN");
-				Log.Trace($"{r}:{c} -> angle: {v.ToString()}");
+				//Log.Trace($"{r}:{c} -> angle: {v.ToString()}");
 				return v;
 			});
 		}

@@ -19,7 +19,7 @@ using TeleScope.UI.Cli.Options;
 
 namespace D3vS1m.Cli
 {
-	static class Program
+	public static class Program
 	{
 
 		// -- fields

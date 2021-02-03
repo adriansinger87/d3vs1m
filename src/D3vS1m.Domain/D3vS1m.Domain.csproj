@@ -35,7 +35,7 @@
 
   <ItemGroup>
     <PackageReference Include="TeleScope.Logging" Version="0.2.0" />
-    <PackageReference Include="TeleScope.Persistence.Abstractions" Version="0.1.0" />
+    <PackageReference Include="TeleScope.Persistence.Abstractions" Version="0.4.0" />
   </ItemGroup>
 
 </Project>

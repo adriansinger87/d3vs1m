@@ -62,7 +62,13 @@ namespace D3vS1m.Domain.Simulation
             }
         }
 
-        public List<ISimulatable> SortActiveSimulators()
+		public void AddRange(ISimulatable[] simulatables)
+		{
+            Items.AddRange(simulatables);
+
+        }
+
+		public List<ISimulatable> SortActiveSimulators()
         {
             return Items
                 .Where(s => s.Arguments.Active)

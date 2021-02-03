@@ -5,7 +5,6 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Persistence.Imports.Reader;
-using Sin.Net.Persistence;
 
 namespace D3vS1m.Persistence.Imports
 {
@@ -13,7 +12,7 @@ namespace D3vS1m.Persistence.Imports
 	{
 		// --fields
 
-		private PersistenceController _io;
+		//private PersistenceController _io;
 
 		// -- constructor
 
@@ -43,18 +42,18 @@ namespace D3vS1m.Persistence.Imports
 
 		public RuntimeBase Runtime { get; private set; }
 
-		public PersistenceController IO
-		{
-			get
-			{
-				if (_io == null)
-				{
-					_io = new PersistenceController();
-					_io.Add(D3vS1m.Persistence.Constants.Wavefront.Key, new ObjImporter());
-				}
-				return _io;
-			}
-		}
+		//public PersistenceController IO
+		//{
+		//	get
+		//	{
+		//		if (_io == null)
+		//		{
+		//			_io = new PersistenceController();
+		//			_io.Add(D3vS1m.Persistence.Constants.Wavefront.Key, new ObjImporter());
+		//		}
+		//		return _io;
+		//	}
+		//}
 
 	}
 }

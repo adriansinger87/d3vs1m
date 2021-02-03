@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
+using System.Linq;
 using D3vS1m.Application.Antenna;
 using D3vS1m.Application.Channel;
 using D3vS1m.Application.Data;
@@ -8,12 +10,13 @@ using D3vS1m.Application.Devices;
 using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
-using D3vS1m.Persistence.Imports;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TeleScope.Logging;
-using TeleScope.Logging.Extensions;
 using TeleScope.Logging.Extensions.Serilog;
+using TeleScope.Persistence.Abstractions;
+using TeleScope.Persistence.Csv;
+using TeleScope.Persistence.Json;
 
 namespace MSTests
 {
@@ -41,32 +44,18 @@ namespace MSTests
 		[TestCleanup]
 		public virtual void Cleanup()
 		{
-			
-		}
 
-		protected IPersistenceControlable ArrangeIOController()
-		{
-			var io = new PersistenceController();
-			io.Add(D3vS1m.Persistence.Constants.Wavefront.Key, new ObjImporter());
-
-			return io;
 		}
 
 		public void LoadAntennaData(SphericAntennaArgs args, string file = "PCB_868_tot.csv")
 		{
-			var io = ArrangeIOController();
+			var setup = new CsvStorageSetup(new FileInfo(Path.Combine(APP_LOCATION, file)), 1);
+			var parser = new CsvToRowParser(24);
+			var csv = new CsvStorage<DataRow>(setup, parser, new GainMatrixToCsvParser());
+			csv.Read();
+			var table = parser.Table;
 
-			var settings = new CsvSetting
-			{
-				Location = APP_LOCATION,
-				Name = file,
-			};
-
-			args.GainMatrix = io
-				.Importer(Sin.Net.Persistence.Constants.Csv.Key)
-				.Setup(settings)
-				.Import()
-				.As<Matrix<SphericGain>>(new TableToAntennaAdapter());
+			args.GainMatrix = new TableToAntennaGainAdapter().Adapt(table);
 		}
 
 		public RuntimeController GetRuntime()
@@ -86,55 +75,98 @@ namespace MSTests
 			radioArgs.RadioBox.MinCorner = min;
 			radioArgs.RadioBox.MaxCorner = max;
 
-			DumpToJson(radioArgs, "adapted_friis_Args.json");
+			WriteJson(radioArgs, "adapted_friis_Args.json");
 			// update the positions always when the box changes
 			radioArgs.RxPositions = radioArgs.RadioBox.CreateRxPositions();
 
 			return radioArgs;
 		}
 
-		public List<SimpleDevice> ImportDevices(string filename = "devices.json")
+		public IEnumerable<SimpleDevice> ImportDevices()
 		{
-			// arrange
-			var _setting = new JsonSetting
-			{
-				Location = APP_LOCATION,
-				Name = filename
-			};
-
-			IPersistenceControlable io = new PersistenceController();
-			// act
-			List<SimpleDevice> devices = io.Importer(Sin.Net.Persistence.Constants.Json.Key)
-				.Setup(_setting)
-				.Import()
-				.As<List<SimpleDevice>>();
-
-			return devices;
+			return ImportDevices(Path.Combine(APP_LOCATION, "devices.json"));
 		}
 
-		public void DumpToJson(object obj, string file)
+		public IEnumerable<SimpleDevice> ImportDevices(string file)
 		{
-			var success = JsonIO.SaveToJson(obj, file);
-			if (!success)
-			{
-				_log.Error($"Saving the file '{file}' has failed.");
-			}
+			return new JsonStorage<SimpleDevice>(file).Read();
 		}
 
-		// -- properties
-
-		public string BaseDirectory
+		public void WriteJson(object obj, string file)
 		{
-			get
-			{
-				string dir = AppDomain.CurrentDomain.BaseDirectory;
-				dir = Path.Combine(
-					AppDomain.CurrentDomain.BaseDirectory.Replace(@"\MSTests\bin\Debug\netcoreapp2.1", ""),
-					@"D3vS1m.Web\wwwroot");
+			new JsonStorage<object>(file).Write(new object[] { obj });
+		}
 
-				return dir;
 
-			}
+	}
+
+	class CsvToRowParser : IParsable<DataRow>
+	{
+		private readonly DataTable _table;
+
+		public DataTable Table => _table;
+
+		public CsvToRowParser(int numberOfColumns)
+		{
+			var cols = Enumerable
+				.Range(0, numberOfColumns)
+				.Select(i => new DataColumn(GetAzimuth(i, numberOfColumns))).ToArray();
+			_table = new DataTable();
+			_table.Columns.AddRange(cols);
+		}
+
+		public DataRow Parse<Tin>(Tin input, int index = 0, int length = 1)
+		{
+			var fields = input as string[];
+			var row = _table.NewRow();
+			row.ItemArray = fields;
+			_table.Rows.Add(row);
+			return row;
+		}
+
+		private string GetAzimuth(int index, int count)
+		{
+			return (360 / count * index).ToString();
+		}
+
+
+	}
+
+	class GainMatrixToCsvParser : IParsable<string[]>
+	{
+		public string[] Parse<Tin>(Tin input, int index = 0, int length = 1)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	class CsvToGainMatrixParser : IParsable<Matrix<SphericGain>>
+	{
+		public Matrix<SphericGain> Parse<Tin>(Tin input, int index = 0, int length = 1)
+		{
+			var fields = input as string[];
+			var cols = fields.Length;
+			var rows = length;
+			var nAz = getAzimuthNumber(cols);
+			var nEl = getElevationNumber(rows);
+
+			var gainMatrix = new Matrix<SphericGain>(nEl, nAz);
+
+			//gainMatrix.
+
+			return new Matrix<SphericGain>();
+		}
+
+		// -- helper
+
+		private int getAzimuthNumber(int cols)
+		{
+			return (cols % 2 == 0 ? cols : cols - 1);
+		}
+
+		private int getElevationNumber(int rows)
+		{
+			return (rows % 2 != 0 ? rows : rows - 1);
 		}
 	}
 }
