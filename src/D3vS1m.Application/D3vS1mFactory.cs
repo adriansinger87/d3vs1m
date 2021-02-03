@@ -7,8 +7,10 @@ using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.Simulation;
-using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Application
 {
@@ -19,10 +21,13 @@ namespace D3vS1m.Application
     {
         // -- fields
 
+        private readonly ILogger<D3vS1mFactory> _log;
+
         // -- constructors
 
         public D3vS1mFactory() : base()
         {
+            _log = LoggingProvider.CreateLogger<D3vS1mFactory>();
             base.Simulators = new SimulatorRepository();
         }
 
@@ -123,7 +128,7 @@ namespace D3vS1m.Application
             simulator.With(args);
             if (Simulators.Contains(simulator))
             {
-                Log.Error($"The Simulation model '{simulator.Name}' must not registered twice.");
+                _log.Error($"The Simulation model '{simulator.Name}' must not registered twice.");
                 return simulator;
             }
             Simulators.Add(simulator);

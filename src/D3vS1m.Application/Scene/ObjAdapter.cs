@@ -1,11 +1,12 @@
 ﻿using D3vS1m.Application.Scene.Geometries;
 using D3vS1m.Domain.Data.Scene;
-using Sin.Net.Domain.Persistence.Adapter;
-using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Application.Scene
 {
@@ -16,9 +17,11 @@ namespace D3vS1m.Application.Scene
      * License of Original: MIT
      */
 
-    public class ObjAdapter : IAdaptable
+    public class ObjAdapter
     {
         // -- fields
+
+        private readonly ILogger<ObjAdapter> _log;
 
         private Geometry _root;
         private Geometry _current;
@@ -26,7 +29,13 @@ namespace D3vS1m.Application.Scene
         private List<Vertex> _vertices;
         private List<Vertex> _normales;
 
-        // -- methods
+		// -- methods
+
+		public ObjAdapter()
+		{
+            _log = LoggingProvider.CreateLogger<ObjAdapter>();
+
+        }
 
         public Tout Adapt<Tin, Tout>(Tin input) where Tout : new()
         {
@@ -37,7 +46,7 @@ namespace D3vS1m.Application.Scene
             if (!typeof(string).IsAssignableFrom(inType) ||
                 !typeof(Geometry).IsAssignableFrom(outType))
             {
-                Log.Error($"The casting from '{inType.Name}' to '{outType.Name}' is not supported by the {this.GetType().Name}.");
+                _log.Error($"The casting from '{inType.Name}' to '{outType.Name}' is not supported by the {this.GetType().Name}.");
                 return new Tout();
             }
 
@@ -60,7 +69,7 @@ namespace D3vS1m.Application.Scene
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex);
+                _log.Critical(ex);
             }
             finally
             {
@@ -111,7 +120,7 @@ namespace D3vS1m.Application.Scene
             else if (lineData[0] == "f")        // face
             {
                 _current.Faces.Add(
-                    ReadFace(lineData, _current));
+                    ReadFace(lineData));
             }
         }
 
@@ -184,7 +193,7 @@ namespace D3vS1m.Application.Scene
             return float.Parse(s.Replace(',', '.'), System.Globalization.CultureInfo.InvariantCulture);
         }
 
-        private Face ReadFace(string[] faceData, Geometry current)
+        private Face ReadFace(string[] faceData)
         {
             Face f = new Face();
 
@@ -239,8 +248,7 @@ namespace D3vS1m.Application.Scene
             }
             catch (Exception ex)
             {
-                Log.Error("Could not normalize face");
-                Log.Fatal(ex);
+                _log.Error("Could not normalize face");
             }
 
             return f;

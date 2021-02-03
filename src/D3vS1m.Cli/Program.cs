@@ -11,11 +11,11 @@ using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
 using D3vS1m.Persistence.Imports;
 using D3vS1m.Persistence.Imports.Reader;
-using NLog;
-using Sin.Net.Domain.Persistence;
-using Sin.Net.Domain.Persistence.Adapter;
-using Sin.Net.Domain.Persistence.Logging;
-using Sin.Net.Logging;
+using Microsoft.Extensions.Logging;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
+using TeleScope.Logging.Extensions.Serilog;
+using TeleScope.UI.Cli.Options;
 
 namespace D3vS1m.Cli
 {
@@ -23,6 +23,7 @@ namespace D3vS1m.Cli
 	{
 
 		// -- fields
+		private static ILogger _log;
 
 		private static D3vS1mFactory _factory;
 		private static RuntimeController _runtime;
@@ -32,21 +33,18 @@ namespace D3vS1m.Cli
 
 		public static async Task Main(string[] args)
 		{
-			Console.WriteLine("Starting D3vS1m command line tool...");
-			var options = new CliOptions();
+			var options = new CliOptionParser<CliOptions>().ReadArguments(args);
+			LoggingProvider.Initialize(
+				 new LoggerFactory()
+					 .UseLevel(options.GetLogLevel())
+					 .AddSerilogConsole());
+			_log = LoggingProvider.CreateLogger(typeof(Program));
+			_log.Info($"Starting D3vS1m command line tool...");
+			_log.Debug($"Start arguments: {string.Join(' ', args)}");
+
 			try
 			{
-				options = new OptionParser().ReadArguments(args);
-
-				var logger = new NLogger { MinRule = options.Verbose ? LogLevel.Trace : LogLevel.Info };
-				Log.Inject(logger.Start());
-
-				// -- read arguments
-
-				ReadArgs(options);
-
-				// -- setup
-
+				ImportSimulationArguments(options);
 				Factory.SetupRuntime(SimArgs.Values.ToArray(), Runtime);
 
 				Runtime.SetupSimulators((repo) =>
@@ -78,7 +76,7 @@ namespace D3vS1m.Cli
 			}
 			catch (Exception ex)
 			{
-				Log.Fatal(ex);
+				_log.Critical(ex);
 				WaitAndExit(options.Break);
 			}
 		}
@@ -98,9 +96,9 @@ namespace D3vS1m.Cli
 			}
 		}
 
-		private static void ReadArgs(CliOptions options)
+		private static void ImportSimulationArguments(CliOptions options)
 		{
-			Log.Info("Processing cli options");
+			_log.Debug("Processing cli options");
 
 			SimArgs = new ImportPipeline(options, Factory, Runtime)
 				.Run(new RuntimeReader())
@@ -112,7 +110,7 @@ namespace D3vS1m.Cli
 				.Run(new CommunicationReader())
 				.Arguments;
 
-			Log.Info("Cli options processed");
+			_log.Debug("Cli options processed");
 		}
 
 		// -- properties

@@ -2,9 +2,7 @@
 using D3vS1m.Application.Scene.Geometries;
 using D3vS1m.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Persistence;
-using Sin.Net.Persistence;
-using Sin.Net.Persistence.Settings;
+
 
 namespace MSTests.Application
 {
@@ -12,7 +10,6 @@ namespace MSTests.Application
     public class SceneTests : TestBase
     {
         GeometryRepository _geometries;
-        IPersistenceControlable _io;
 
         [TestInitialize]
         public override void Arrange()

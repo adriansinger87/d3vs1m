@@ -9,13 +9,11 @@ using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Data.Scene;
 using D3vS1m.Persistence.Imports;
+using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sin.Net.Domain.Persistence;
-using Sin.Net.Domain.Persistence.Logging;
-using Sin.Net.Logging;
-using Sin.Net.Persistence;
-using Sin.Net.Persistence.IO.Json;
-using Sin.Net.Persistence.Settings;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
+using TeleScope.Logging.Extensions.Serilog;
 
 namespace MSTests
 {
@@ -23,6 +21,7 @@ namespace MSTests
 	{
 		// -- fields
 
+		protected ILogger _log;
 		protected const string APP_LOCATION = "App_Data";
 
 		// -- basic methods
@@ -31,16 +30,18 @@ namespace MSTests
 		[TestInitialize]
 		public virtual void Arrange()
 		{
-			if (Log.IsNotNull == false)
-			{
-				Log.Inject(new TestLogger().Start());
-			}
+			LoggingProvider.Initialize(
+				 new LoggerFactory()
+					 .UseTemplate("{Timestamp: HH:mm:ss} [{Level} | {SourceContext:l}] - {Message}{NewLine}{Exception}")
+					 .UseLevel(LogLevel.Trace)
+					 .AddSerilogConsole());
+			_log = LoggingProvider.CreateLogger<TestsBase>();
 		}
 
 		[TestCleanup]
 		public virtual void Cleanup()
 		{
-			Log.Stop();
+			
 		}
 
 		protected IPersistenceControlable ArrangeIOController()
@@ -114,7 +115,10 @@ namespace MSTests
 		public void DumpToJson(object obj, string file)
 		{
 			var success = JsonIO.SaveToJson(obj, file);
-			if (!success) Log.Error($"Saving the file '{file}' has failed.");
+			if (!success)
+			{
+				_log.Error($"Saving the file '{file}' has failed.");
+			}
 		}
 
 		// -- properties

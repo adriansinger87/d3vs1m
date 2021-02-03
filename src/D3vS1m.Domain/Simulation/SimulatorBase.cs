@@ -2,8 +2,10 @@
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
-using Sin.Net.Domain.Persistence.Logging;
+using Microsoft.Extensions.Logging;
 using System;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
 
 namespace D3vS1m.Domain.Simulation
 {
@@ -11,6 +13,8 @@ namespace D3vS1m.Domain.Simulation
     public abstract class SimulatorBase : ISimulatable
     {
         // -- fields
+
+        private readonly ILogger<SimulatorBase> _log;
 
         protected RuntimeBase _runtime;
 
@@ -32,6 +36,7 @@ namespace D3vS1m.Domain.Simulation
 
         protected SimulatorBase(RuntimeBase runtime)
         {
+            _log = LoggingProvider.CreateLogger<SimulatorBase>();
             Guid = global::System.Guid.NewGuid().ToString();
 
             if (runtime != null)
@@ -58,7 +63,7 @@ namespace D3vS1m.Domain.Simulation
 
         protected ISimulatable ArgsNotAdded(string argsName)
         {
-            Log.Warn($"The unnecessary arguments '{argsName}' were not added to the simulation model '{Name}'");
+            _log.Warn($"The unnecessary arguments '{argsName}' were not added to the simulation model '{Name}'");
             return this;
         }
 
@@ -80,7 +85,7 @@ namespace D3vS1m.Domain.Simulation
         /// </summary>
         protected virtual void BeforeExecution()
         {
-            Log.Trace($"- execute {this.Arguments.Name}");
+            _log.Trace($"Start executing {this.Arguments.Name}");
             OnExecuting?.Invoke(this, new SimulatorEventArgs(this.Arguments));
         }
 

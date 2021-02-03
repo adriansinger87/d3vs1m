@@ -1,4 +1,6 @@
 ﻿using D3vS1m.Application.Runtime.Options;
+using Microsoft.Extensions.Logging;
+using TeleScope.UI.Cli.Options;
 
 namespace D3vS1m.Cli.Options
 {
@@ -7,11 +9,6 @@ namespace D3vS1m.Cli.Options
     /// </summary>
     public class CliOptions : OptionsBase
     {
-        public CliOptions()
-        {
-            Workspace = "";
-        }
-
         // properties
 
         [Cli(Short = "w", Long = "workspace")]
@@ -43,5 +40,31 @@ namespace D3vS1m.Cli.Options
 
         [Cli(Short = "b", Long = "break")]
         public override bool Break { get; set; }
+
+        // -- constructors
+
+        public CliOptions()
+        {
+            Workspace = "";
+        }
+
+        // -- methods
+
+        public LogLevel GetLogLevel()
+		{
+            if (Verbose)
+            {
+                return LogLevel.Trace;
+            }
+            else
+            {
+#if DEBUG
+				return LogLevel.Debug;
+#else
+                return LogLevel.Information;
+#endif
+            }
+        }
+       
     }
 }

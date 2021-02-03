@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sin.Net.Domain" Version="0.3.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\..\images\d3vs1m-logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -35,6 +31,11 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TeleScope.Logging" Version="0.2.0" />
+    <PackageReference Include="TeleScope.Persistence.Abstractions" Version="0.1.0" />
   </ItemGroup>
 
 </Project>

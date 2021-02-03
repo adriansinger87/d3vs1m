@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Events;
 using D3vS1m.Domain.Simulation;
-using Sin.Net.Domain.Persistence;
-using Sin.Net.Domain.Persistence.Adapter;
-using Sin.Net.Domain.Persistence.Logging;
-using Sin.Net.Domain.Persistence.Settings;
+using Microsoft.Extensions.Logging;
+using TeleScope.Logging;
+using TeleScope.Logging.Extensions;
+using TeleScope.Persistence.Abstractions;
 
 namespace D3vS1m.Domain.Runtime
 {
@@ -16,6 +16,8 @@ namespace D3vS1m.Domain.Runtime
 	public abstract class RuntimeBase
 	{
 		// -- fields
+
+		private readonly ILogger<RuntimeBase> _log;
 
 		protected SimulatorRepository _simRepo;
 
@@ -44,8 +46,8 @@ namespace D3vS1m.Domain.Runtime
 
 		protected RuntimeBase()
 		{
+			_log = LoggingProvider.CreateLogger<RuntimeBase>();
 			_simRepo = new SimulatorRepository();
-
 		}
 
 		// -- methods
@@ -71,13 +73,9 @@ namespace D3vS1m.Domain.Runtime
 			return this;
 		}
 
-		public virtual RuntimeBase ExportResults(IExportable exporter, SettingsBase setting, IAdaptable adapter)
+		public virtual RuntimeBase ExportResults(IWritable<ArgumentsBase> exporter)
 		{
-			exporter
-				.Setup(setting)
-				.Build(_simRepo.AllArguments(), adapter)
-				.Export();
-
+			exporter.Write(_simRepo.AllArguments());
 			return this;
 		}
 
@@ -93,9 +91,9 @@ namespace D3vS1m.Domain.Runtime
 		/// </summary>
 		public void Stop()
 		{
+			_log.Trace("Simulation runtime stopping");
 			_isRunning = false;
 			_stopping = true;
-			Log.Trace("Simulation runtime stopping");
 		}
 
 		#region RunAsync
@@ -143,14 +141,14 @@ namespace D3vS1m.Domain.Runtime
 			if (!_isValid)
 			{
 				// stop running
-				Log.Trace("Simulation is invalid or was not validated");
+				_log.Trace("Simulation is invalid or was not validated");
 				Stop();
 				return;
 			}
 
 			await Task.Run(() =>
 			{
-				Log.Info($"# Start of simulation");
+				_log.Info($"# Start of simulation");
 				_isRunning = condition(this);
 
 				// fire event on iteration starts
@@ -178,14 +176,14 @@ namespace D3vS1m.Domain.Runtime
 			{
 				if (t.Status == TaskStatus.Faulted)
 				{
-					Log.Error($"{t.Exception.InnerExceptions.Count} exception occured during simulation.");
+					_log.Error($"{t.Exception.InnerExceptions.Count} exception occured during simulation.");
 					foreach (var e in t.Exception.InnerExceptions)
 					{
-						Log.Fatal(e);
+						_log.Critical(e);
 					}
 				}
 
-				Log.Info($"# End of simulation");
+				_log.Info($"# End of simulation");
 				Stopped?.Invoke(this, new SimulatorEventArgs(Arguments));
 			});
 		}
