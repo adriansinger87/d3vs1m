@@ -19,7 +19,7 @@ namespace D3vS1m.Application.Antenna
 		{
 			var cols = Enumerable
 				.Range(0, numberOfColumns)
-				.Select(i => new DataColumn(GetAzimuth(i, numberOfColumns))).ToArray();
+				.Select(i => new DataColumn(GetAzimuthByIndex(i, numberOfColumns))).ToArray();
 			_table = new DataTable();
 			_table.Columns.AddRange(cols);
 		}
@@ -37,40 +37,44 @@ namespace D3vS1m.Application.Antenna
 
 		public Matrix<SphericGain> GetGainMatrix()
 		{
-			int nAz = getAzimuthNumber(_table.Columns.Count);
-			int nEl = getElevationNumber(_table.Rows.Count);
+			if (_table == null || _table.Rows.Count == 0 || _table.Columns.Count == 0)
+			{
+				throw new FieldAccessException("The internal table has no data.");
+			}
+			int nAz = GetAzimuthNumber(_table.Columns.Count);
+			int nEl = GetElevationNumber(_table.Rows.Count);
 
 			var gainMatrix = new Matrix<SphericGain>(nEl, nAz);
 
-			gainMatrix.Each(initGain);
-			gainMatrix.Each(readCsvField);
+			gainMatrix.Each(InitGain);
+			gainMatrix.Each(ReadCsvField);
 
 			return gainMatrix;
 		}
 
 		// -- helper methods
 
-		private string GetAzimuth(int index, int count)
+		private string GetAzimuthByIndex(int index, int count)
 		{
 			return (360 / count * index).ToString();
 		}
 
-		private int getAzimuthNumber(int cols)
+		private int GetAzimuthNumber(int cols)
 		{
 			return (cols % 2 == 0 ? cols : cols - 1);
 		}
 
-		private int getElevationNumber(int rows)
+		private int GetElevationNumber(int rows)
 		{
 			return (rows % 2 != 0 ? rows : rows - 1);
 		}
 
-		private SphericGain initGain(int row, int col, SphericGain gain)
+		private SphericGain InitGain(int row, int col, SphericGain gain)
 		{
 			return new SphericGain();
 		}
 
-		private SphericGain readCsvField(int row, int col, SphericGain gain)
+		private SphericGain ReadCsvField(int row, int col, SphericGain gain)
 		{
 			gain.Azimuth = float.Parse(_table.Columns[col].ColumnName);
 			gain.Elevation = (180.0f / (float)(_table.Rows.Count - 1)) * row;
