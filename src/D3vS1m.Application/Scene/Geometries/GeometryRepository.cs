@@ -25,7 +25,13 @@ namespace D3vS1m.Application.Scene.Geometries
             _items = new List<Geometry>();
         }
 
+
         // -- methods
+
+        public void Add(Geometry geometry)
+        {
+            _items.Add(geometry);
+        }
 
         /// <summary>
         /// This search method returns the first element that matches the name property.

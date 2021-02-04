@@ -1,4 +1,6 @@
-﻿using D3vS1m.Application.Scene;
+﻿using System.IO;
+using System.Linq;
+using D3vS1m.Application.Scene;
 using D3vS1m.Application.Scene.Geometries;
 using D3vS1m.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,7 +18,6 @@ namespace MSTests.Application
         {
             base.Arrange();
 
-           // _io = ArrangeIOController();
             _geometries = new GeometryRepository();
         }
 
@@ -32,30 +33,21 @@ namespace MSTests.Application
         public void ImportGeometryFromObj()
         {
             // arrange
-            //var key = D3vS1m.Persistence.Constants.Wavefront.Key;
-            //var _setting = new FileSetting
-            //{
-            //    Location = APP_LOCATION,
-            //    Name = "WallTest5.obj"
-            //};
+            var file = Path.Combine(APP_LOCATION, "WallTest5.obj");
 
-            //// act
-            //var sceneRoot = _io.Importer(key)
-            //     .Setup(_setting)
-            //     .Import()
-            //     .As<Geometry>(new ObjAdapter());
-            //_geometries.Add(sceneRoot, _setting.Name);
+            // act
+            var sceneRoot = new ObjReader(file).Read().First();
+            _geometries.Add(sceneRoot);
+            // assert
+            Assert.IsNotNull(sceneRoot, "no imported object");
 
-            //// assert
-            //Assert.IsNotNull(sceneRoot, "no imported object");
+			var name = "Wand";
+			var found = _geometries.FirstOrDefault(name, true);
 
-            //var name = "Wand";
-            //var found = _geometries.FirstOrDefault(name, true);
+			Assert.IsTrue(sceneRoot.Children.Count == 2, "wrong children found");
+			Assert.IsNotNull(found, $"The geometry '{name}' is missing");
 
-            //Assert.IsTrue(sceneRoot.Children.Count == 2, "wrong children found");
-            //Assert.IsNotNull(found, $"The geometry '{name}' is missing");
-
-        }
+		}
 
         [TestMethod]
         public void TrySceneSimulator()

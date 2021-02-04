@@ -13,6 +13,40 @@ namespace D3vS1m.Application.Scene.Geometries
     [Serializable]
     public class Geometry
     {
+
+        // -- properties
+
+        /// <summary>
+        /// Gets or sets the name of the instance.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the comment of the instance.
+        /// </summary>
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Gets or sets the material GUID to look for in a channel simulation.
+        /// </summary>
+        public string MaterialGuid { get; set; }
+        /// <summary>
+        /// Gets or sets the list of faces that create the surface of the geometry.
+        /// </summary>
+        public List<Face> Faces { get; set; }
+        /// <summary>
+        /// Gets or sets a list unattached vertices.
+        /// </summary>
+        public List<Vertex> Vertices { get; set; }
+        /// <summary>
+        /// Gets or sets a list unattached normals.
+        /// </summary>
+        public List<Vertex> Normales { get; set; }
+        /// <summary>
+        /// Gets or sets a list of child geometries.
+        /// </summary>
+        public List<Geometry> Children { get; set; }
+
         /// <summary>
         /// The default constructor instantiates all list properties and a default name.
         /// </summary>
@@ -69,31 +103,6 @@ namespace D3vS1m.Application.Scene.Geometries
             return $"{Name} - Childs: {Children.Count}, Faces: {Faces.Count}, Vertices: {Vertices.Count}";
         }
 
-        // -- properties
 
-        /// <summary>
-        /// Gets or sets the name of the instance.
-        /// </summary>
-        public string Name { get; set; }
-        /// <summary>
-        /// Gets or sets the material GUID to look for in a channel simulation.
-        /// </summary>
-        public string MaterialGuid { get; set; }
-        /// <summary>
-        /// Gets or sets the list of faces that create the surface of the geometry.
-        /// </summary>
-        public List<Face> Faces { get; set; }
-        /// <summary>
-        /// Gets or sets a list unattached vertices.
-        /// </summary>
-        public List<Vertex> Vertices { get; set; }
-        /// <summary>
-        /// Gets or sets a list unattached normals.
-        /// </summary>
-        public List<Vertex> Normales { get; set; }
-        /// <summary>
-        /// Gets or sets a list of child geometries.
-        /// </summary>
-        public List<Geometry> Children { get; set; }
     }
 }

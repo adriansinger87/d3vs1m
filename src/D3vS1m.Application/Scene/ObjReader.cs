@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using TeleScope.Logging;
 using TeleScope.Logging.Extensions;
+using TeleScope.Persistence.Abstractions;
 
 namespace D3vS1m.Application.Scene
 {
@@ -17,11 +18,12 @@ namespace D3vS1m.Application.Scene
      * License of Original: MIT
      */
 
-    public class ObjAdapter
+    public class ObjReader : IReadable<Geometry>
     {
         // -- fields
 
-        private readonly ILogger<ObjAdapter> _log;
+        private readonly ILogger<ObjReader> _log;
+        private readonly string _file;
 
         private Geometry _root;
         private Geometry _current;
@@ -31,26 +33,14 @@ namespace D3vS1m.Application.Scene
 
 		// -- methods
 
-		public ObjAdapter()
+		public ObjReader(string file)
 		{
-            _log = LoggingProvider.CreateLogger<ObjAdapter>();
-
+            _log = LoggingProvider.CreateLogger<ObjReader>();
+            _file = file;
         }
 
-        public Tout Adapt<Tin, Tout>(Tin input) where Tout : new()
+        public IEnumerable<Geometry> Read()
         {
-            // validation
-            Type inType = typeof(Tin);
-            Type outType = typeof(Tout);
-
-            if (!typeof(string).IsAssignableFrom(inType) ||
-                !typeof(Geometry).IsAssignableFrom(outType))
-            {
-                _log.Error($"The casting from '{inType.Name}' to '{outType.Name}' is not supported by the {this.GetType().Name}.");
-                return new Tout();
-            }
-
-            // instantiate global objects
             _root = new Geometry();
             _current = _root;
             _vertices = new List<Vertex>();
@@ -58,13 +48,10 @@ namespace D3vS1m.Application.Scene
 
             try
             {
-                using (StringReader reader = new StringReader(input as string))
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        ReadLine(line);
-                    }
+                string[] lines = File.ReadAllLines(_file);
+                foreach(var line in lines)
+				{
+                    ReadLine(line);
                 }
             }
             catch (Exception ex)
@@ -77,8 +64,7 @@ namespace D3vS1m.Application.Scene
                 _normales = null;
             }
 
-            // final return
-            return (Tout)Convert.ChangeType(_root, outType);
+            return new Geometry[] { _root };
         }
 
         /// <summary>
@@ -97,8 +83,7 @@ namespace D3vS1m.Application.Scene
 
             if (lineData[0] == "#")         // a comment in obj
             {
-                // TODO: make something meaningful with a comment
-                return;
+                _current.Comment = line.TrimStart('#',' ');
             }
             else if (lineData[0] == "g")        // group
             {
@@ -269,5 +254,5 @@ namespace D3vS1m.Application.Scene
         }
 
 
-    }
+	}
 }
