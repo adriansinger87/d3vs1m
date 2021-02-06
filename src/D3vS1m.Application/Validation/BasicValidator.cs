@@ -9,6 +9,11 @@ namespace D3vS1m.Application.Validation
     {
         public BasicValidator()
         {
+            Init();
+        }
+
+        private void Init()
+		{
             SetupRules();
         }
 

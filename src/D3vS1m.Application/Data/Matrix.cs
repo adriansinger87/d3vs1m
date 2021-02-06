@@ -42,7 +42,7 @@ namespace D3vS1m.Application.Data
         /// <param name="cols">The number of columns.</param>
         public void Init(int rows, int cols)
         {
-            Init(rows, cols, default(T));
+            Init(rows, cols, default);
         }
 
         /// <summary>

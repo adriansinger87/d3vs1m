@@ -17,7 +17,7 @@ namespace D3vS1m.Application.Validation
 
         private void SetupRules()
         {
-            CascadeMode = CascadeMode.StopOnFirstFailure;
+            CascadeMode = CascadeMode.Stop;
 
             RuleFor(net => net)
                 .Must(n => ContainsDevices(n))

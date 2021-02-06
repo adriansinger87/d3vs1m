@@ -14,7 +14,7 @@ namespace D3vS1m.Application.Validation
 
         protected override void SetupRules()
         {
-            CascadeMode = CascadeMode.StopOnFirstFailure;
+            CascadeMode = CascadeMode.Stop;
 
             base.SetupRules();
 

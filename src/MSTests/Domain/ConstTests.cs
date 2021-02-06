@@ -1,6 +1,7 @@
 ﻿using System;
 using D3vS1m.Domain.System.Constants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TeleScope.Logging.Extensions;
 
 namespace MSTests.Domain
 {
@@ -44,11 +45,13 @@ namespace MSTests.Domain
 			// Act
 			float test1 = Const.Math.Fract(f1);
 			float test2 = Const.Math.Fract(f2);
-			//Log.Info($"test1 is {test1}");
-			//Log.Info($"test2 is {test2}");
+			_log.Info($"test1 is {test1}");
+			_log.Info($"test2 is {test2}");
 
-			// TODO: fix this on linux, here the result is 2 not 0.2 for example
+			
 			// Assert
+			Assert.AreNotEqual(test1, test2);
+			// TODO: fix this on linux, here the result is 2 not 0.2 for example
 			//Assert.IsTrue(test1 == 0.2f, $"fract should be 0.2, but it is {test1}");
 			//Assert.IsTrue(test2 == -0.7f, $"fract should be -0.7, but it is {test2}");
 

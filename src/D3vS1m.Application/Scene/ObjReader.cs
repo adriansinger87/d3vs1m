@@ -233,7 +233,7 @@ namespace D3vS1m.Application.Scene
             }
             catch (Exception ex)
             {
-                _log.Error("Could not normalize face");
+                _log.Error(ex, "Could not normalize face");
             }
 
             return f;

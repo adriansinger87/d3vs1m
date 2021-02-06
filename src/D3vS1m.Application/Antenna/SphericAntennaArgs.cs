@@ -1,34 +1,32 @@
-﻿using D3vS1m.Application.Data;
+﻿using System;
+using D3vS1m.Application.Data;
 using D3vS1m.Domain.Data.Arguments;
-using System;
-using System.Linq;
-using TeleScope.Persistence.Abstractions;
 
 namespace D3vS1m.Application.Antenna
 {
-    [Serializable]
-    public class SphericAntennaArgs : ArgumentsBase
-    {
-        // -- properties
+	[Serializable]
+	public class SphericAntennaArgs : ArgumentsBase
+	{
+		// -- properties
 
-        public Matrix<SphericGain> GainMatrix { get; set; }
+		public Matrix<SphericGain> GainMatrix { get; set; }
 
-        public string DataSource { get; set; }
+		public string DataSource { get; set; }
 
-        // --constructor
+		// --constructor
 
-        public SphericAntennaArgs() : base()
-        {
-            Key = Models.Antenna.Spheric.Key;
-            Name = Models.Antenna.Spheric.Name;
-        }
+		public SphericAntennaArgs() : base()
+		{
+			Key = Models.Antenna.Spheric.Key;
+			Name = Models.Antenna.Spheric.Name;
+		}
 
-        // -- methods
+		// -- methods
 
-        public override void Reset()
-        {
-            DataSource = string.Empty;
-            GainMatrix = null;
-        }
-    }
+		public override void Reset()
+		{
+			DataSource = string.Empty;
+			GainMatrix = null;
+		}
+	}
 }

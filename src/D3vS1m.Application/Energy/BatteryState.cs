@@ -5,8 +5,18 @@ namespace D3vS1m.Application.Energy
     [Serializable]
     public class BatteryState
     {
-        public StateFields Initial;
-        public StateFields Now;
+        // -- fields
+
+        private StateFields _now;
+
+        // -- properties
+
+        public StateFields Initial { get; set; }
+        public StateFields Now
+        {
+            get { return _now; }
+            set { _now = value; }
+        }
 
         private float _cutoffVoltage;
 
@@ -46,8 +56,8 @@ namespace D3vS1m.Application.Energy
 
             // copy properties
             Initial = fields;
-            Now = fields;
-            Now.Charge = 0;    // actual used load should be zero and will be increased during simulation
+            _now = fields;
+            _now.Charge = 0;    // actual used load should be zero and will be increased during simulation
         }
 
 
@@ -74,42 +84,42 @@ namespace D3vS1m.Application.Energy
             /// <summary>
             /// Gibt den aktuellen Stand der Entladung (State-of-Discharge) [1..0] aus oder legt diesen fest.
             /// </summary>
-            public float SoD;
+            public float SoD { get; set; }
 
             /// <summary>
             /// Gibt die Selbstentladungsrate (Self-Discharge-Ratio) der Zelle aus die in einem Jahr "Nichtstun" entsteht oder legt diese fest.
             /// </summary>
-            public float SDR;
+            public float SDR { get; set; }
 
             /// <summary>
             /// Gibt aktuelle Spannung des Objektes aus.
             /// </summary>
-            public float Voltage;
+            public float Voltage { get; set; }
 
             /// <summary>
             /// Gibt die verbrauchte elektrische Ladung aus oder legt diese fest.
             /// </summary>
-            public float Charge;
+            public float Charge { get; set; }
 
             /// <summary>
             /// Gibt die bereits abgelaufene Zeit in Sekunden aus oder legt diese fest.
             /// </summary>
-            public TimeSpan ElapsedTime;
+            public TimeSpan ElapsedTime { get; set; }
 
             /// <summary>
             /// 
             /// </summary>
-            public float TemperaturFactor;
+            public float TemperaturFactor { get; set; }
 
             /// <summary>
             /// 
             /// </summary>
-            public float CurrentFactor;
+            public float CurrentFactor { get; set; }
 
             /// <summary>
             /// Gibt die momentane Selbstentladung in mAh aus oder legt diese fest.
             /// </summary>
-            public float SelfDischarge;
+            public float SelfDischarge { get; set; }
 
             /// <summary>
             /// Adds a new time span to the existing elapsed time object.

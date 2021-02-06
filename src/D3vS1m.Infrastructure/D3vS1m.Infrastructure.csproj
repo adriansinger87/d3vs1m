@@ -5,7 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\D3vS1m.Domain\D3vS1m.Domain.csproj" />
+    <Compile Remove="IOController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TeleScope.Persistence.Csv" Version="0.4.0" />
+    <PackageReference Include="TeleScope.Persistence.Json" Version="0.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\D3vS1m.Application\D3vS1m.Application.csproj" />
   </ItemGroup>
 
 </Project>

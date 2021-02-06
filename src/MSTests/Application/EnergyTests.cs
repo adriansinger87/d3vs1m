@@ -73,7 +73,7 @@ namespace MSTests.Application
 
 			var repo = new SimulatorRepository();
 			repo.Add(batterySim);
-			if (runtime.BindSimulators(repo).Validate() == false)
+			if (!runtime.BindSimulators(repo).Validate())
 			{
 				Assert.Fail("error on validating the simulation");
 			}
@@ -90,7 +90,7 @@ namespace MSTests.Application
 			Assert.AreNotEqual(s.Initial.Charge, s.Now.Charge, "Charge should not be equal");
 			Assert.AreNotEqual(s.Initial.SoD, s.Now.SoD, "SoD should not be equal");
 			Assert.AreNotEqual(s.Initial.Voltage, s.Now.Voltage, "Voltage should not be equal");
-			Assert.IsTrue(_battery.State.IsDepleted == true, "battery should be empty");
+			Assert.IsTrue(_battery.State.IsDepleted, "battery should be empty");
 		}
 	}
 }

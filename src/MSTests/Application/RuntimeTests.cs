@@ -15,6 +15,7 @@ using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TeleScope.Logging.Extensions;
 
 namespace MSTests.Application
 {
@@ -37,11 +38,9 @@ namespace MSTests.Application
 			_runtime.IterationPassed += (o, e) =>
 			{
 				var runtimeArgs = e.Arguments as RuntimeArgs;
-				var duration = (DateTime.Now - runtimeArgs.StartTime);
-				//Log.Trace($"'{o.ToString()}' passed one iteration after {duration}");
+				_log.Debug(runtimeArgs);
 			};
 
-			//SetupDemoRepo(_runtime);
 		}
 
 		private void SetupDemoRepo(RuntimeBase runtime)
@@ -120,12 +119,12 @@ namespace MSTests.Application
 
 			// act
 			int iterations = 5;
-			if (runtime.Validate() == false)
+			if (!runtime.Validate())
 			{
 				Assert.Fail("error on validating the simulation");
 			}
 
-			//Log.Trace($"RunAsync for {iterations} times");
+			_log.Trace($"RunAsync for {iterations} times");
 			await _runtime.RunAsync(iterations);
 
 			// assert

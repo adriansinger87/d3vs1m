@@ -9,7 +9,7 @@ using D3vS1m.Cli.Options;
 using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
-using D3vS1m.Persistence.Imports;
+using D3vS1m.Infrastructure.Imports;
 using Microsoft.Extensions.Logging;
 using TeleScope.Logging;
 using TeleScope.Logging.Extensions;

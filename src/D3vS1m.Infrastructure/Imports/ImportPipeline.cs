@@ -5,7 +5,7 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.Runtime;
 using D3vS1m.Domain.System.Enumerations;
 
-namespace D3vS1m.Persistence.Imports
+namespace D3vS1m.Infrastructure.Imports
 {
 	public class ImportPipeline
 	{

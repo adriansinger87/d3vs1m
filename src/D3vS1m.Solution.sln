@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3vS1m.Domain", "D3vS1m.Domain\D3vS1m.Domain.csproj", "{E70606E0-D54C-48D4-B650-AA52FAE25E75}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3vS1m.Persistence", "D3vS1m.Persistence\D3vS1m.Persistence.csproj", "{2217EEDA-E303-423C-A2C4-D2F65837748E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3vS1m.Infrastructure", "D3vS1m.Infrastructure\D3vS1m.Infrastructure.csproj", "{2217EEDA-E303-423C-A2C4-D2F65837748E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3vS1m.Application", "D3vS1m.Application\D3vS1m.Application.csproj", "{6D46A54C-A368-4360-AEA9-2338DE9718CD}"
 EndProject

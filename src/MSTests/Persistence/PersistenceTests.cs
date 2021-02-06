@@ -8,22 +8,21 @@ using D3vS1m.Application.Scene.Materials;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Extensions;
-using D3vS1m.Persistence;
+using D3vS1m.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TeleScope.Persistence.Json;
 
 namespace MSTests.Persistence
 {
 	[TestClass]
 	public class PersistenceTests : TestsBase
 	{
-		/*
-		private IPersistenceControlable _io;
+
 
 		[TestInitialize]
 		public override void Arrange()
 		{
 			base.Arrange();
-			_io = ArrangeIOController();
 		}
 
 		[TestCleanup]
@@ -33,98 +32,7 @@ namespace MSTests.Persistence
 		}
 
 		// -- test methods
-
-		[TestMethod]
-		public async Task ExportParquet()
-		{
-			// arrange
-			var setting = new FileSetting
-			{
-				Location = "App_Data",
-				Name = "spheric-antenna-args.parquet",
-			};
-
-			var runtime = new RuntimeController(new D3vS1mValidator());
-			var factory = new D3vS1mFactory();
-
-			// load all relevant arguments
-			var simArgs = factory.GetPredefinedArguments();
-			var netArgs = simArgs.GetByName(Models.Network.Name) as NetworkArgs;
-			netArgs.Index = 10;
-			netArgs.Network.AddRange(
-			   base.ImportDevices().ToArray());
-
-			factory.SetupRuntime(simArgs, runtime);
-			runtime.Simulators[SimulationTypes.Antenna].With(netArgs);
-			if (runtime.Validate() == false)
-			{
-				Assert.Fail("error on validating the simulation");
-			}
-			await runtime.RunAsync(1);
-
-			// act
-			var result = new ParquetExporter()
-				.Setup(setting)
-				.Build(simArgs.ToList(), new SimArgsToParquetAdapter())
-				.Export();
-
-			// assert
-			Assert.IsTrue(!string.IsNullOrEmpty(result), "There is no file result");
-		}
-
-		[TestMethod]
-		public void MultipleWritesToParquet()
-		{
-			//var adapter = new 
-			//var result = new ParquetExporter()
-			//   .Setup(setting)
-			//   .Build(simArgs.ToList(), new SimArgsToParquetAdapter())
-			//   .Export();
-
-			//// assert
-			//Assert.IsTrue(!string.IsNullOrEmpty(result), "There is no file result");
-		}
-
-		[TestMethod]
-		public void ExportMaterials()
-		{
-			var setting = new JsonSetting
-			{
-				Name = "material_config_export.json",
-				Location = APP_LOCATION,
-				Binder = JsonHelper.Binder
-			};
-
-			var result = _io.Exporter(Sin.Net.Persistence.Constants.Json.Key)
-				.Setup(setting)
-				.Build(CreateDemoMaterials())
-				.Export();
-
-			Assert.IsTrue(!string.IsNullOrEmpty(result), "export should not be null.");
-		}
-
-		[TestMethod]
-		public void ImportMaterials()
-		{
-			// arrange
-			var setting = new JsonSetting
-			{
-				Name = "material_config.json",
-				Location = APP_LOCATION,
-				Binder = JsonHelper.Binder
-			};
-
-			// act
-			var materials = _io.Importer(Sin.Net.Persistence.Constants.Json.Key)
-				.Setup(setting)
-				.Import()
-				.As<List<Material>>();
-
-			// assert
-			Assert.IsNotNull(materials, "Materials should be present");
-			Assert.IsTrue(materials.Count > 0, "Materials should be more than zero.");
-		}
-
+		
 		protected static List<Material> CreateDemoMaterials()
 		{
 			var freq = 2405.0F;
@@ -188,6 +96,5 @@ namespace MSTests.Persistence
 
 			return list;
 		}
-		*/
 	}
 }

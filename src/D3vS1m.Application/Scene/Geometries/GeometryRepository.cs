@@ -15,6 +15,22 @@ namespace D3vS1m.Application.Scene.Geometries
 
         private List<Geometry> _items;
 
+        // -- indexer 
+
+        /// <summary>
+        /// Name-based intexer to be able to find items by Name property without recursive search.
+        /// For recursive search use FirstByName method of the items.
+        /// </summary>
+        /// <param name="name">name-based index</param>
+        /// <returns>the instance of T or default type that is null.</returns>
+        public Geometry this[string name]
+        {
+            get
+            {
+                return _items.FirstOrDefault(g => g.Name == name);
+            }
+        }
+
         // -- constructors
 
         /// <summary>
@@ -31,6 +47,19 @@ namespace D3vS1m.Application.Scene.Geometries
         public void Add(Geometry geometry)
         {
             _items.Add(geometry);
+        }
+
+        /// <summary>
+        /// Adds a new element and returns it.
+        /// </summary>
+        /// <param name="item">The new Geometry instance</param>
+        /// <param name="name">The name of the instance.</param>
+        /// <returns></returns>
+        public Geometry Add(Geometry item, string name)
+        {
+            item.Name = name;
+            _items.Add(item);
+            return _items.Last();
         }
 
         /// <summary>
@@ -53,35 +82,6 @@ namespace D3vS1m.Application.Scene.Geometries
             }
 
             return found;
-        }
-
-        /// <summary>
-        /// Adds a new element and returns it.
-        /// </summary>
-        /// <param name="item">The new Geometry instance</param>
-        /// <param name="name">The name of the instance.</param>
-        /// <returns></returns>
-        public Geometry Add(Geometry item, string name)
-        {
-            item.Name = name;
-            _items.Add(item);
-            return _items.Last();
-        }
-
-        // -- indexer 
-
-        /// <summary>
-        /// Name-based intexer to be able to find items by Name property without recursive search.
-        /// For recursive search use FirstByName method of the items.
-        /// </summary>
-        /// <param name="name">name-based index</param>
-        /// <returns>the instance of T or default type that is null.</returns>
-        public Geometry this[string name]
-        {
-            get
-            {
-                return _items.FirstOrDefault(g => g.Name == name);
-            }
         }
     }
 }

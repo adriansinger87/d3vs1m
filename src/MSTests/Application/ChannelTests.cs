@@ -5,6 +5,7 @@ using D3vS1m.Application.Network;
 using D3vS1m.Application.Scene;
 using D3vS1m.Domain.Data.Scene;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TeleScope.Logging.Extensions;
 
 namespace MSTests.Application
 {
@@ -45,12 +46,12 @@ namespace MSTests.Application
 
 			sim.OnExecuting += (obj, e) =>
 			{
-				//Log.Trace($"{obj.ToString()} started");
+				_log.Trace($"{obj} started");
 			};
 
 			sim.Executed += (obj, e) =>
 			{
-				//Log.Trace($"{obj.ToString()} finished");
+				_log.Trace($"{obj} finished");
 			};
 
 			// act

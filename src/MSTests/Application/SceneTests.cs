@@ -2,7 +2,7 @@
 using System.Linq;
 using D3vS1m.Application.Scene;
 using D3vS1m.Application.Scene.Geometries;
-using D3vS1m.Persistence;
+using D3vS1m.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 

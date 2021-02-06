@@ -5,7 +5,7 @@ using D3vS1m.Application.Channel;
 using D3vS1m.Domain.System.Enumerations;
 using TeleScope.Persistence.Json;
 
-namespace D3vS1m.Persistence.Imports
+namespace D3vS1m.Infrastructure.Imports
 {
 	public class ChannelImporter : IImportable
 	{
