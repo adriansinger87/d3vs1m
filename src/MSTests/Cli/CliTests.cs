@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MSTests.Cli
 {
     [TestClass]
-    public class CliTests : TestBase
+    public class CliTests : TestsBase
     {
         [TestInitialize]
         public override void Arrange()

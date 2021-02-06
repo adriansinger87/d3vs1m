@@ -5,11 +5,12 @@ using D3vS1m.Application.Runtime;
 using D3vS1m.Application.Validation;
 using D3vS1m.Domain.Simulation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TeleScope.Logging.Extensions;
 
 namespace MSTests.Application
 {
 	[TestClass]
-	public class NetworkTests : TestBase
+	public class NetworkTests : TestsBase
 	{
 		private PeerToPeerNetwork _network;
 
@@ -40,7 +41,7 @@ namespace MSTests.Application
 			};
 			netSim.With(netArgs);
 			_network = netArgs.Network;
-			_network.AddRange(ImportDevices().ToArray());
+			_network.AddRange(ImportDevices().First());
 
 			var simRepo = new SimulatorRepository();
 			simRepo.Add(netSim);
@@ -55,7 +56,7 @@ namespace MSTests.Application
 				{
 					var dev = netArgs.Network.Items[0];
 					dev.Controls.Off();
-					//Log.Trace($"Device '{dev.Name}' was turned off.");
+					_log.Trace($"Device '{dev.Name}' was turned off.");
 				}
 			};
 			runtime.BindSimulators(simRepo)
@@ -79,15 +80,15 @@ namespace MSTests.Application
 			netArgs.Network.DistanceMatrix.Each((r, c, v) =>
 			{
 				Assert.IsTrue(v > 0, $"position at row '{r}' and col '{c}' should not be '{v}'");
-				//Log.Trace($"{r}:{c} -> distance: {v}");
+				_log.Trace($"{r}:{c} -> distance: {v}");
 				return v;
 			});
 
 			netArgs.Network.AngleMatrix.Each((r, c, v) =>
 			{
-				Assert.IsTrue(float.IsNaN(v.Azimuth) == false, $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
-				Assert.IsTrue(float.IsNaN(v.Elevation) == false, $"Elevation at position at row '{r}' and col '{c}' should not be NaN");
-				//Log.Trace($"{r}:{c} -> angle: {v.ToString()}");
+				Assert.IsTrue(!float.IsNaN(v.Azimuth), $"Azimuth at position at row '{r}' and col '{c}' should not be NaN");
+				Assert.IsTrue(!float.IsNaN(v.Elevation), $"Elevation at position at row '{r}' and col '{c}' should not be NaN");
+				_log.Trace($"{r}:{c} -> angle: {v}");
 				return v;
 			});
 		}

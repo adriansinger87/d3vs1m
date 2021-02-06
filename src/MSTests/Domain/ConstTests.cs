@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Domain
 {
 	[TestClass]
-	public class ConstTests : TestBase
+	public class ConstTests : TestsBase
 	{
 		[TestInitialize]
 		public override void Arrange()

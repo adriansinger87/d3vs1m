@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Application
 {
 	[TestClass]
-	public class ChannelTests : TestBase
+	public class ChannelTests : TestsBase
 	{
 		// -- inherits
 

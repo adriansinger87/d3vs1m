@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Application
 {
     [TestClass]
-    public class SceneTests : TestBase
+    public class SceneTests : TestsBase
     {
         GeometryRepository _geometries;
 

@@ -11,7 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Application
 {
 	[TestClass]
-	public class EnergyTests : TestBase
+	public class EnergyTests : TestsBase
 	{
 		BatteryPack _battery;
 

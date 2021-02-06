@@ -14,7 +14,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Persistence
 {
 	[TestClass]
-	public class PersistenceTests : TestBase
+	public class PersistenceTests : TestsBase
 	{
 		/*
 		private IPersistenceControlable _io;

@@ -19,7 +19,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MSTests.Application
 {
 	[TestClass]
-	public class RuntimeTests : TestBase
+	public class RuntimeTests : TestsBase
 	{
 		// -- fields
 
@@ -104,7 +104,7 @@ namespace MSTests.Application
 			var netArgs = simArgs.GetByName(Models.Network.Name) as NetworkArgs;
 			netArgs.Index = 10;
 			netArgs.Network.AddRange(
-			   base.ImportDevices().ToArray());
+			   base.ImportDevices().First());
 
 			// final setup, cross-bind some arguments
 			var runtime = factory.SetupRuntime(simArgs, _runtime);
