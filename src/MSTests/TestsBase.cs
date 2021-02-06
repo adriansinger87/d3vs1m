@@ -100,11 +100,5 @@ namespace MSTests
 
 	
 
-	class AntennaGainToCsvParser : IParsable<string[]>
-	{
-		public string[] Parse<Tin>(Tin input, int index = 0, int length = 1)
-		{
-			throw new NotImplementedException();
-		}
-	}
+	
 }

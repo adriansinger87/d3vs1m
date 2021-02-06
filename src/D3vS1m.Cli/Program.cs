@@ -10,7 +10,6 @@ using D3vS1m.Domain.Data.Arguments;
 using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.Domain.System.Exceptions;
 using D3vS1m.Persistence.Imports;
-using D3vS1m.Persistence.Imports.Reader;
 using Microsoft.Extensions.Logging;
 using TeleScope.Logging;
 using TeleScope.Logging.Extensions;
@@ -21,10 +20,9 @@ namespace D3vS1m.Cli
 {
 	public static class Program
 	{
-
 		// -- fields
+	
 		private static ILogger _log;
-
 		private static D3vS1mFactory _factory;
 		private static RuntimeController _runtime;
 		private static Dictionary<SimulationTypes, ArgumentsBase> _simArgs;
@@ -33,7 +31,7 @@ namespace D3vS1m.Cli
 
 		public static async Task Main(string[] args)
 		{
-			var options = new CliOptionParser<CliOptions>().ReadArguments(args);
+			var options = new CliOptionParser<CliOptions> { Prefix = "--" }.ReadArguments(args);
 			LoggingProvider.Initialize(
 				 new LoggerFactory()
 					 .UseLevel(options.GetLogLevel())
@@ -50,6 +48,7 @@ namespace D3vS1m.Cli
 				Runtime.SetupSimulators((repo) =>
 				{
 					repo[SimulationTypes.Antenna].With(SimArgs[SimulationTypes.Network]);
+					repo[SimulationTypes.Energy].With(SimArgs[SimulationTypes.Network]);
 				});
 
 				Runtime.Stopped += (o, e) =>
@@ -58,10 +57,10 @@ namespace D3vS1m.Cli
 				};
 
 				Runtime.IterationPassed += (o, e) =>
-				{ 
-				
+				{
+
 				};
-				
+
 				// -- validate
 
 				if (!Runtime.Validate())
@@ -101,13 +100,13 @@ namespace D3vS1m.Cli
 			_log.Debug("Processing cli options");
 
 			SimArgs = new ImportPipeline(options, Factory, Runtime)
-				.Run(new RuntimeReader())
-				.Run(new EnergyReader())
-				.Run(new DevicesReader())
-				.Run(new SceneReader())
-				.Run(new ChannelReader())
-				.Run(new AntennaReader())
-				.Run(new CommunicationReader())
+				.Run(new RuntimeImporter())
+				.Run(new EnergyImporter())
+				.Run(new DevicesImporter())
+				.Run(new SceneImporter())
+				.Run(new ChannelImporter())
+				.Run(new AntennaImporter())
+				.Run(new CommunicationImporter())
 				.Arguments;
 
 			_log.Debug("Cli options processed");

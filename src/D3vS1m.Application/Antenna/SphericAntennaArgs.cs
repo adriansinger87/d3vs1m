@@ -9,25 +9,26 @@ namespace D3vS1m.Application.Antenna
     [Serializable]
     public class SphericAntennaArgs : ArgumentsBase
     {
-        public SphericAntennaArgs() : base()
-        {
-            Key = Models.Antenna.Spheric.Key;
-            Name = Models.Antenna.Spheric.Name;
-            Reset();
-        }
-
-        public override void Reset()
-        {
-           
-        }
-
-        public void LoadData(IReadable<Matrix<SphericGain>> reader)
-        {
-            GainMatrix = reader.Read().First();
-        }
+        // -- properties
 
         public Matrix<SphericGain> GainMatrix { get; set; }
 
         public string DataSource { get; set; }
+
+        // --constructor
+
+        public SphericAntennaArgs() : base()
+        {
+            Key = Models.Antenna.Spheric.Key;
+            Name = Models.Antenna.Spheric.Name;
+        }
+
+        // -- methods
+
+        public override void Reset()
+        {
+            DataSource = string.Empty;
+            GainMatrix = null;
+        }
     }
 }

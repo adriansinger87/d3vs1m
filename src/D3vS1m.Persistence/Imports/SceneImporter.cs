@@ -1,11 +1,11 @@
 ﻿using D3vS1m.Application;
 using D3vS1m.Domain.System.Enumerations;
 
-namespace D3vS1m.Persistence.Imports.Reader
+namespace D3vS1m.Persistence.Imports
 {
-	public class SceneReader : IReadable
+	public class SceneImporter : IImportable
 	{
-		public void Read(ImportPipeline pipe)
+		public void Import(ImportPipeline pipe)
 		{
 			var args = pipe.Factory.NewArgument(Models.Scene.Name);
 			pipe.Arguments.Add(SimulationTypes.Scene, args);

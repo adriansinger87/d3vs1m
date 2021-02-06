@@ -25,6 +25,30 @@ namespace D3vS1m.Domain.Runtime
 		protected bool _isRunning;
 		protected bool _stopping;
 
+		// -- properties
+
+		/// <summary>
+		/// Gets the specific arguments for the concrete runtime implementation as base class 
+		/// </summary>
+		public abstract ArgumentsBase Arguments { get; }
+
+		/// <summary>
+		/// Gets the information, if the validation was successful or not.
+		/// </summary>
+		public bool IsValid { get { return _isValid; } }
+
+		/// <summary>
+		/// Gets the information, if the simulation is running or not. 
+		/// </summary>
+		public bool IsRunning { get { return _isRunning; } }
+
+		// -- indexer
+
+		/// <summary>
+		/// Gets the repository for the attached simulators.
+		/// </summary>
+		public SimulatorRepository Simulators => _simRepo;
+
 		// -- events
 
 		/// <summary>
@@ -198,29 +222,7 @@ namespace D3vS1m.Domain.Runtime
 			return Arguments.Name;
 		}
 
-		// -- properties
-
-		/// <summary>
-		/// Gets the specific arguments for the concrete runtime implementation as base class 
-		/// </summary>
-		public abstract ArgumentsBase Arguments { get; }
-
-		/// <summary>
-		/// Gets the information, if the validation was successful or not.
-		/// </summary>
-		public bool IsValid { get { return _isValid; } }
-
-		/// <summary>
-		/// Gets the information, if the simulation is running or not. 
-		/// </summary>
-		public bool IsRunning { get { return _isRunning; } }
-
-		// -- indexer
-
-		/// <summary>
-		/// Gets the repository for the attached simulators.
-		/// </summary>
-		public SimulatorRepository Simulators => _simRepo;
+		
 
 	}
 }
