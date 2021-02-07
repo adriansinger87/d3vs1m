@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GraphQL" Version="3.3.0" />
     <PackageReference Include="TeleScope.Logging.Extensions.Serilog" Version="0.2.1" />
     <PackageReference Include="TeleScope.UI.Cli" Version="0.1.3" />
   </ItemGroup>
