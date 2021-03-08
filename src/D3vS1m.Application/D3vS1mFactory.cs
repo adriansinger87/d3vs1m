@@ -148,7 +148,5 @@ namespace D3vS1m.Application
             return runtime;
         }
 
-        // -- properties
-
     }
 }

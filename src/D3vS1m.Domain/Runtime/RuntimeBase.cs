@@ -221,8 +221,5 @@ namespace D3vS1m.Domain.Runtime
 		{
 			return Arguments.Name;
 		}
-
-		
-
 	}
 }

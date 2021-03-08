@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using D3vS1m.Application.Runtime;
+using D3vS1m.Application.Validation;
+using D3vS1m.Domain.Runtime;
+using D3vS1m.Domain.System.Enumerations;
 using D3vS1m.WebApi.GraphQL.Schemas;
 using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
@@ -25,9 +29,15 @@ namespace D3vS1m.WebApi
 
 		public IConfiguration Configuration { get; }
 
-		// This method gets called by the runtime. Use this method to add services to the container.
+		// Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+
+			services.AddScoped<RuntimeBase>(ConfigureSimulation);
+
+			/*
+			 * GraphQL tutorial: https://code-maze.com/graphql-asp-net-core-tutorial/
+			 */
 			services.AddScoped<ApiSchema>();
 			services.AddGraphQL()
 				.AddSystemTextJson()
@@ -36,7 +46,7 @@ namespace D3vS1m.WebApi
 			services.AddControllers();
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		// Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
@@ -57,6 +67,31 @@ namespace D3vS1m.WebApi
 			{
 				endpoints.MapControllers();
 			});
+		}
+	
+		// -- helper
+	
+		private RuntimeBase ConfigureSimulation(IServiceProvider provider)
+		{
+			var runtime = new RuntimeController(new D3vS1mValidator());
+
+			runtime.SetupSimulators((repo) =>
+			{
+				//repo[SimulationTypes.Antenna].With(SimArgs[SimulationTypes.Network]);
+				//repo[SimulationTypes.Energy].With(SimArgs[SimulationTypes.Network]);
+			});
+
+			runtime.Stopped += (o, e) =>
+			{
+				// done!
+			};
+
+			runtime.IterationPassed += (o, e) =>
+			{
+				// iteration done!
+			};
+
+			return runtime;
 		}
 	}
 }

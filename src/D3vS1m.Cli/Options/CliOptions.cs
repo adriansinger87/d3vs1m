@@ -9,13 +9,18 @@ namespace D3vS1m.Cli.Options
     /// </summary>
     public class CliOptions : OptionsBase
     {
-        // properties
+        // own cli properties
+
+        [Cli(Short = "v", Long = "verbose")]
+        public bool Verbose { get; set; }
+
+        [Cli(Short = "b", Long = "break")]
+        public bool Break { get; set; }
+
+        // -- overrides
 
         [Cli(Short = "w", Long = "workspace")]
         public override string Workspace { get; set; }
-
-        [Cli(Short = "v", Long = "verbose")]
-        public override bool Verbose { get; set; }
 
         [Cli(Short = "t", Long = "runtime")]
         public override string RuntimeFile { get; set; }
@@ -37,9 +42,6 @@ namespace D3vS1m.Cli.Options
 
         [Cli(Short = "s", Long = "scene")]
         public override string SceneFile { get; set; }
-
-        [Cli(Short = "b", Long = "break")]
-        public override bool Break { get; set; }
 
         // -- constructors
 
@@ -65,6 +67,5 @@ namespace D3vS1m.Cli.Options
 #endif
             }
         }
-       
     }
 }

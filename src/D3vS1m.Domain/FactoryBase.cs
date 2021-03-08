@@ -8,10 +8,17 @@ namespace D3vS1m.Application
     {
         // -- fields
 
+        // -- properties
+
+        public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments();
+
+        protected SimulatorRepository Simulators { get; set; }
+
         // -- constructors
 
         protected FactoryBase()
         {
+
         }
 
         // -- methods
@@ -26,11 +33,7 @@ namespace D3vS1m.Application
 
         public abstract RuntimeBase SetupRuntime(ArgumentsBase[] args, RuntimeBase runtime);
 
-        // -- properties
 
-        public virtual ArgumentsBase[] SimulationArguments => Simulators.AllArguments();
-
-        protected SimulatorRepository Simulators { get; set; }
 
 
     }

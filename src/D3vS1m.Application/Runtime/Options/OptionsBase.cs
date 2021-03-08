@@ -15,8 +15,6 @@ namespace D3vS1m.Application.Runtime.Options
 
         public abstract string Workspace { get; set; }
 
-        public abstract bool Verbose { get; set; }
-
         public abstract string RuntimeFile { get; set; }
 
         public abstract string DevicesFile { get; set; }
@@ -30,7 +28,5 @@ namespace D3vS1m.Application.Runtime.Options
         public abstract string EnergyFile { get; set; }
 
         public abstract string SceneFile { get; set; }
-
-        public abstract bool Break { get; set; }
     }
 }

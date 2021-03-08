@@ -22,7 +22,6 @@ namespace D3vS1m.Application.Energy
             Type = PartTypes.PowerSupply;
 
             State = new BatteryState();
-            State.Init(this);
         }
 
         /// <summary>

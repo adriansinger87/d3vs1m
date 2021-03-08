@@ -8,6 +8,7 @@ using D3vS1m.Domain.Simulation;
 using D3vS1m.Domain.System.Enumerations;
 using Microsoft.Extensions.Logging;
 using TeleScope.Logging;
+using static D3vS1m.Application.Energy.BatteryState;
 
 namespace D3vS1m.Application.Energy
 {
@@ -83,25 +84,26 @@ namespace D3vS1m.Application.Energy
 
 			// Vorbereitungen...
 			var seconds = (float)time.TotalSeconds;
-			var state = battery.State;
+			var initial = battery.State.Initial();
+			var now = battery.State.Now();
 
 			// Berechnungen...
-			state.Now.TemperaturFactor = 1;
-			state.Now.CurrentFactor = 1;
-			SetSelfDischarge(battery.State, seconds);
-			float qt = GetChargeConsumption(state, seconds, current);
+			now.TemperaturFactor = 1;
+			now.CurrentFactor = 1;
+			SetSelfDischarge(initial, now, seconds);
+			float qt = GetChargeConsumption(now, seconds, current);
 
-			SetStateOfDischarge(state, qt);
+			SetStateOfDischarge(initial, now, qt);
 
-			state.Now.Voltage = GetDischargeVoltage(battery);
-			state.Now.Charge += qt;
-			state.Now.AddTime(time);
+			now.Voltage = GetDischargeVoltage(battery, now);
+			now.Charge += qt;
+			now.AddTime(time);
 
 			// finish & check again
 			Check(battery);
 		}
 
-		private float GetChargeConsumption(BatteryState state, float seconds, float current)
+		private float GetChargeConsumption(BatteryFields state, float seconds, float current)
 		{
 			/*
              * Berechnung des Ladungsverbrauchs für den Zeitraum t:
@@ -117,7 +119,7 @@ namespace D3vS1m.Application.Energy
              *
              * qn = Summe aller qt über die Zeit, quasi die gesamte verbrauchte Ladung
              */
-			return (current * (seconds / 3600) * state.Now.TemperaturFactor * state.Now.CurrentFactor) + (state.Now.TemperaturFactor * state.Now.SelfDischarge);
+			return (current * (seconds / 3600) * state.TemperaturFactor * state.CurrentFactor) + (state.TemperaturFactor * state.SelfDischarge);
 		}
 
 		/// <summary>
@@ -126,7 +128,7 @@ namespace D3vS1m.Application.Energy
 		/// <param name="state"></param>
 		/// <param name="qt">Charge of a time span t</param>
 		/// <returns></returns>
-		private void SetStateOfDischarge(BatteryState state, float qt)
+		private void SetStateOfDischarge(BatteryFields initial, BatteryFields now, float qt)
 		{
 			/*
             * Berechnung des neuen State-Of-Discharge mittels des neuen timeSlots
@@ -136,7 +138,7 @@ namespace D3vS1m.Application.Energy
             * SOD_0	-> initiale Selbstentladung "init_sod"
             * Q_0		-> initiale el. Ladung des BatteriePacks "Initial.Charge"
             */
-			state.Now.SoD = state.Initial.SoD + ((1 - state.Initial.SoD) / state.Initial.Charge) * (qt + state.Now.Charge);
+			now.SoD = initial.SoD + ((1 - initial.SoD) / initial.Charge) * (qt + now.Charge);
 		}
 
 		/// <summary>
@@ -144,22 +146,22 @@ namespace D3vS1m.Application.Energy
 		/// </summary>
 		/// <param name="state">Zustandseigenschaften der Batterie</param>
 		/// <param name="seconds">Zeitschlitz in Sekunden</param>
-		private void SetSelfDischarge(BatteryState state, float seconds)
+		private void SetSelfDischarge(BatteryFields initial, BatteryFields now, float seconds)
 		{
 			// Umrechnung sdr pro Jahr in sdr pro Sekunde: [ / Tag * h * min * s] [ / 365 * 24 * 60 * 60]; -> "31536000"
-			var availableCharge = state.Initial.Charge - state.Now.Charge;
-			var selfDischarge = availableCharge * state.Now.SDR;
+			var availableCharge = initial.Charge - now.Charge;
+			var selfDischarge = availableCharge * now.SDR;
 			selfDischarge /= 31536000;
 			selfDischarge *= seconds;
 
-			state.Now.SelfDischarge = selfDischarge;
+			now.SelfDischarge = selfDischarge;
 		}
 
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <returns>the resulting voltage </returns>
-		private float GetDischargeVoltage(BatteryPack battery)
+		private float GetDischargeVoltage(BatteryPack battery, BatteryFields now)
 		{
 			/*
              * Berechnung des Entladeverhaltens:
@@ -176,9 +178,9 @@ namespace D3vS1m.Application.Energy
 			float v = 0;
 			for (int i = 0; i < battery.Polynom.Length; i++)
 			{
-				v += (float)(battery.Polynom[i] * Math.Pow(battery.State.Now.SoD, i));
+				v += (float)(battery.Polynom[i] * Math.Pow(now.SoD, i));
 			}
-			v *= battery.State.Now.TemperaturFactor;
+			v *= now.TemperaturFactor;
 
 			return v;
 		}
@@ -194,14 +196,9 @@ namespace D3vS1m.Application.Energy
 			{
 				return true;
 			}
-			else if (battery.State.Now.Charge >= battery.State.Initial.Charge ||    // used charge
-					 battery.State.Now.Voltage <= battery.CutoffVoltage)            // too low voltage
-			{
-				return false;
-			}
 			else
 			{
-				return true;
+				return battery.State.IsDepleted;
 			}
 		}
 
