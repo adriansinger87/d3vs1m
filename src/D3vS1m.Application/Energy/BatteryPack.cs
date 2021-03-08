@@ -10,37 +10,6 @@ namespace D3vS1m.Application.Energy
     {
         // --- fields
 
-        // --- constructor
-
-        #region constructor (2)
-        /// <summary>
-        /// Constructs a new instance with standard properites
-        /// </summary>
-        public BatteryPack()
-        {
-            Name = Models.Energy.Battery.Name;
-            Type = PartTypes.PowerSupply;
-
-            State = new BatteryState();
-        }
-
-        /// <summary>
-        /// Constructs a new instance with a specific name
-        /// </summary>
-        /// <param name="name"></param>
-        public BatteryPack(string name) : this()
-        {
-            base.Name = name;
-        }
-        #endregion
-
-        // --- public methods
-
-        public override string ToString()
-        {
-            return base.Name + " " + this.DischargeFunction;
-        }
-
         // --- properties
 
         public BatteryState State { get; set; }
@@ -107,5 +76,38 @@ namespace D3vS1m.Application.Energy
         /// Beim setzen des Wertes müssen Eigenchaften wie Spannung oder Ladung neu berechnet werden.
         /// </summary>
         public bool ParallelCellPack { get; set; }
+
+        // --- constructor
+
+        #region constructor (2)
+        /// <summary>
+        /// Constructs a new instance with standard properites
+        /// </summary>
+        public BatteryPack()
+        {
+            Name = Models.Energy.Battery.Name;
+            Type = PartTypes.PowerSupply;
+            State = BatteryState.R6;
+            Polynom = BatteryState.R6_POLYNOM;
+        }
+
+        /// <summary>
+        /// Constructs a new instance with a specific name
+        /// </summary>
+        /// <param name="name"></param>
+        public BatteryPack(string name) : this()
+        {
+            base.Name = name;
+        }
+        #endregion
+
+        // --- public methods
+
+        public override string ToString()
+        {
+            return base.Name + " " + this.DischargeFunction;
+        }
+
+       
     }
 }

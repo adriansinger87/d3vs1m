@@ -34,14 +34,13 @@ namespace MSTests.Application
 		public void SetupBatteryPack()
 		{
 			// arrange
+			int sec = 3;
 
 			// act
-			int sec = 3;
 			_battery.State.Now.AddTime(new TimeSpan(0, 0, sec));
 
 			// assert
-			Assert.IsNotNull(_battery, "battery object should not be null");
-			Assert.IsTrue(_battery.State.Initial.Charge > 0 && _battery.State.Now.Charge == 0, "charge of the battery is not valid");
+			Assert.IsTrue(_battery.State.Initial.Charge != 0 && _battery.State.Now.Charge == 0, "charge of the battery is not valid");
 			Assert.IsTrue(_battery.State.Initial.ElapsedTime.TotalSeconds == 0, $"battery should be initialized with no elapsed time");
 			Assert.IsTrue(_battery.State.Now.ElapsedTime.TotalSeconds >= sec, $"battery should be used at leased {sec} seconds");
 		}
@@ -54,9 +53,7 @@ namespace MSTests.Application
 
 			// TODO: seem to have a bug when setting up a higher cutoff voltage --> test and fix it
 			_battery.CutoffVoltage = 1.2F;
-			_battery.State.Init(_battery);
-			BatteryState s = _battery.State;
-
+			var s = _battery.State; 
 			var batteryArgs = new BatteryArgs();
 			batteryArgs.Batteries.Add(_battery);
 

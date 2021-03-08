@@ -84,8 +84,8 @@ namespace D3vS1m.Application.Energy
 
 			// Vorbereitungen...
 			var seconds = (float)time.TotalSeconds;
-			var initial = battery.State.Initial();
-			var now = battery.State.Now();
+			var initial = battery.State.Initial;
+			var now = battery.State.Now;
 
 			// Berechnungen...
 			now.TemperaturFactor = 1;
@@ -198,7 +198,7 @@ namespace D3vS1m.Application.Energy
 			}
 			else
 			{
-				return battery.State.IsDepleted;
+				return !battery.State.IsDepleted;
 			}
 		}
 

@@ -7,7 +7,7 @@ namespace D3vS1m.Application.Energy
 	{
 		// -- static fields
 
-		private static readonly float[] DEFAULT_POLYNOM = {
+		public static readonly float[] R6_POLYNOM = {
 			1.385749902f,
 			-1.147810559f,
 			6.134051602f,
@@ -16,13 +16,13 @@ namespace D3vS1m.Application.Energy
 			-8.52820309f
 		};
 
-		private static readonly BatteryFields R6_FIELDS = new BatteryFields
+		public static readonly BatteryFields R6_FIELDS = new BatteryFields
 		{
 			CutoffVoltage = 0.9F,
 			SoD = 0,
 			SDR = 0.15f,
 			Charge = 2700,
-			Voltage = DEFAULT_POLYNOM[0],
+			Voltage = R6_POLYNOM[0],
 			TemperaturFactor = 1F,
 			CurrentFactor = 1F,
 			SelfDischarge = 0,
@@ -31,50 +31,40 @@ namespace D3vS1m.Application.Energy
 
 		// -- instance fields
 
-		private readonly BatteryFields _initial;
-		private readonly BatteryFields _now;
-
-		// --constructors
-
-		public BatteryState() : this(R6_FIELDS)
-		{	
-		}
-
-		public BatteryState(BatteryFields fields)
-		{
-			_initial = fields;
-			_now = fields;
-			_now.Charge = 0;    // actual used load should be zero and will be increased during simulation
-		}
-
-		public BatteryFields Initial()
-		{
-			return _initial;
-		}
-
-		public BatteryFields Now()
-		{
-			return _now;
-		}
-
-		public override string ToString()
-		{
-			return $"Initial: {_initial}, Now: {_now}";
-		}
-
 		// -- properties
+
+		public static BatteryState R6 => new BatteryState(R6_FIELDS);
+
+		public BatteryFields Initial { get; private set; }
+
+		public BatteryFields Now { get; private set; }
 
 		/// <summary>
 		/// Gets the information wheather the battery pack is empty or not. 
 		/// </summary>
 		public bool IsDepleted
 		{
-			get { return (_now.SoD >= 1 || _now.Voltage <= _initial.CutoffVoltage); }
+			get { return (Now.SoD >= 1 || Now.Voltage <= Initial.CutoffVoltage); }
+		}
+
+		// --constructors
+
+		public BatteryState(BatteryFields fields)
+		{
+			Initial = fields;
+			Now = fields.Copy();
+			Now.Charge = 0;    // actual used load should be zero and will be increased during simulation
+		}
+
+
+		public override string ToString()
+		{
+			return $"Initial: {Initial}, Now: {Now}";
 		}
 		
 		// -- inner struct
 
-		public struct BatteryFields
+		public class BatteryFields
 		{
 
 			public float CutoffVoltage { get; set; }
@@ -120,6 +110,11 @@ namespace D3vS1m.Application.Energy
 			public float SelfDischarge { get; set; }
 
 			// -- methods
+
+			public BatteryFields Copy()
+			{
+				return (BatteryFields) this.MemberwiseClone();
+			}
 
 			/// <summary>
 			/// Adds a new time span to the existing elapsed time object.
