@@ -8,5 +8,9 @@
     <Folder Include="Controllers\Api\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.0" />
+  </ItemGroup>
+
 
 </Project>
